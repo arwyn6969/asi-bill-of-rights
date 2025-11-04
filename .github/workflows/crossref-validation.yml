@@ -1,0 +1,31 @@
+name: Cross-Reference Validation
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  push:
+    branches: [main]
+
+jobs:
+  validate-crossrefs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Validate cross-references
+        run: |
+          echo "Validating cross-references in charter documents..."
+          # Basic validation - check for common clause ID patterns
+          # This can be enhanced with more sophisticated validation
+          
+          # Check for clause IDs in charter files
+          if grep -r "R[0-9]\+" charter/*.md || grep -r "D[0-9]\+" charter/*.md; then
+            echo "✓ Found clause references"
+          fi
+
+      - name: Report results
+        run: |
+          echo "Cross-reference validation complete"
+          # Enhanced validation can be added here
+

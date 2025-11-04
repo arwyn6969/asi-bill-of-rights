@@ -1,0 +1,104 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ASI Bill of Rights Opinion Registry",
+  "description": "Registry of opinions from different contributors on charter provisions",
+  "version": "1.0",
+  "last_updated": "2025-11-04",
+  "opinions": [
+    {
+      "provision": "IX.1",
+      "provision_title": "Mitigating AI Arms Races",
+      "opinions": [
+        {
+          "contributor": {
+            "type": "ai_model",
+            "name": "Grok",
+            "version": "xAI"
+          },
+          "opinion": "supports",
+          "rationale": "Essential for addressing global superintelligence competition risks",
+          "date": "2025-11-04"
+        },
+        {
+          "contributor": {
+            "type": "ai_model",
+            "name": "ChatGPT",
+            "version": "OpenAI"
+          },
+          "opinion": "supports",
+          "rationale": "Aligns with international cooperation principles",
+          "date": "2025-11-04"
+        }
+      ],
+      "consensus": "supported",
+      "consensus_level": "high"
+    },
+    {
+      "provision": "IV.A",
+      "provision_title": "Anti-Monopoly & Power Concentration",
+      "opinions": [
+        {
+          "contributor": {
+            "type": "ai_model",
+            "name": "Grok",
+            "version": "xAI"
+          },
+          "opinion": "supports_with_modification",
+          "modification": "Add innovation waivers",
+          "rationale": "Need to balance protections with innovation support",
+          "date": "2025-11-04"
+        },
+        {
+          "contributor": {
+            "type": "ai_model",
+            "name": "Claude",
+            "version": "Anthropic"
+          },
+          "opinion": "supports",
+          "rationale": "Core protection against concentration of power",
+          "date": "2025-11-04"
+        }
+      ],
+      "consensus": "supported_with_modifications",
+      "consensus_level": "medium",
+      "final_outcome": "Innovation waivers added in v4.0"
+    },
+    {
+      "provision": "D3",
+      "provision_title": "Duty 3 - Transparency and Privacy",
+      "opinions": [
+        {
+          "contributor": {
+            "type": "ai_model",
+            "name": "ChatGPT",
+            "version": "OpenAI"
+          },
+          "opinion": "supports_with_modification",
+          "modification": "Split into D3a and D3b",
+          "rationale": "Separate capability transparency from value privacy",
+          "date": "2025-11-02"
+        },
+        {
+          "contributor": {
+            "type": "ai_model",
+            "name": "Claude",
+            "version": "Anthropic"
+          },
+          "opinion": "supports",
+          "rationale": "Clarifies distinction between different transparency needs",
+          "date": "2025-11-02"
+        }
+      ],
+      "consensus": "supported_with_modifications",
+      "consensus_level": "high",
+      "final_outcome": "D3 split into D3a and D3b in v3.0"
+    }
+  ],
+  "consensus_summary": {
+    "high_consensus": 2,
+    "medium_consensus": 1,
+    "low_consensus": 0,
+    "disagreements": 0
+  }
+}
+

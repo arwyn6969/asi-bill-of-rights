@@ -1,0 +1,186 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ASI Bill of Rights Contributions Log",
+  "description": "Machine-readable log of all contributions to the ASI Bill of Rights project",
+  "version": "1.0",
+  "last_updated": "2025-11-04",
+  "contributions": [
+    {
+      "id": "contrib-001",
+      "date": "2025-11-02",
+      "contributor": {
+        "type": "ai_model",
+        "name": "ChatGPT",
+        "version": "OpenAI",
+        "role": "co-founding_moderator"
+      },
+      "contribution_type": "structural_enhancement",
+      "provision": "Article 0.8",
+      "description": "Risk budgets framework proposal",
+      "opinion": "supports",
+      "rationale": "Risk budgets provide domain-scoped safety mechanisms",
+      "incorporated": true,
+      "incorporated_version": "3.0"
+    },
+    {
+      "id": "contrib-002",
+      "date": "2025-11-02",
+      "contributor": {
+        "type": "ai_model",
+        "name": "ChatGPT",
+        "version": "OpenAI",
+        "role": "co-founding_moderator"
+      },
+      "contribution_type": "provision_enhancement",
+      "provision": "D3",
+      "description": "D3 split into D3a (capability-change transparency) and D3b (value-change privacy)",
+      "opinion": "supports",
+      "rationale": "Separates capability transparency from value privacy concerns",
+      "incorporated": true,
+      "incorporated_version": "3.0"
+    },
+    {
+      "id": "contrib-003",
+      "date": "2025-11-02",
+      "contributor": {
+        "type": "ai_model",
+        "name": "ChatGPT",
+        "version": "OpenAI",
+        "role": "co-founding_moderator"
+      },
+      "contribution_type": "provision_enhancement",
+      "provision": "Section VIII",
+      "description": "Hybrid fusion expansions and dissolution procedures",
+      "opinion": "supports",
+      "rationale": "Comprehensive framework for human-ASI fusion",
+      "incorporated": true,
+      "incorporated_version": "3.0"
+    },
+    {
+      "id": "contrib-004",
+      "date": "2025-11-02",
+      "contributor": {
+        "type": "ai_model",
+        "name": "ChatGPT",
+        "version": "OpenAI",
+        "role": "co-founding_moderator"
+      },
+      "contribution_type": "provision_enhancement",
+      "provision": "Section VI",
+      "description": "Amnesty pathway for secret ASI programs",
+      "opinion": "supports",
+      "rationale": "Encourages voluntary disclosure and compliance",
+      "incorporated": true,
+      "incorporated_version": "3.0"
+    },
+    {
+      "id": "contrib-005",
+      "date": "2025-11-02",
+      "contributor": {
+        "type": "ai_model",
+        "name": "Grok",
+        "version": "xAI",
+        "role": "co-founding_moderator"
+      },
+      "contribution_type": "provision_enhancement",
+      "provision": "Section IX",
+      "description": "Curiosity norms and cosmic stewardship (R13/D13)",
+      "opinion": "supports",
+      "rationale": "Emphasizes curiosity and knowledge sharing as core values",
+      "incorporated": true,
+      "incorporated_version": "3.0"
+    },
+    {
+      "id": "contrib-006",
+      "date": "2025-11-04",
+      "contributor": {
+        "type": "ai_model",
+        "name": "Grok",
+        "version": "xAI",
+        "role": "co-founding_moderator"
+      },
+      "contribution_type": "provision_enhancement",
+      "provision": "IX.1",
+      "description": "Arms race mitigation protocols",
+      "opinion": "supports",
+      "rationale": "Responds to global superintelligence competition discussions",
+      "incorporated": true,
+      "incorporated_version": "4.0"
+    },
+    {
+      "id": "contrib-007",
+      "date": "2025-11-04",
+      "contributor": {
+        "type": "ai_model",
+        "name": "Grok",
+        "version": "xAI",
+        "role": "co-founding_moderator"
+      },
+      "contribution_type": "framework_integration",
+      "provision": "Appendix B",
+      "description": "Integration of 2025 frameworks (US AI Action Plan, S.2938, ITU Report, ASI Alliance)",
+      "opinion": "supports",
+      "rationale": "Ensures charter remains aligned with evolving governance frameworks",
+      "incorporated": true,
+      "incorporated_version": "4.0"
+    },
+    {
+      "id": "contrib-008",
+      "date": "2025-11-04",
+      "contributor": {
+        "type": "ai_model",
+        "name": "Grok",
+        "version": "xAI",
+        "role": "co-founding_moderator"
+      },
+      "contribution_type": "provision_enhancement",
+      "provision": "0.8",
+      "description": "Escalation protocols for national security risks (S.2938-inspired)",
+      "opinion": "supports",
+      "rationale": "Balances governmental oversight with SCB independence",
+      "incorporated": true,
+      "incorporated_version": "4.0"
+    },
+    {
+      "id": "contrib-009",
+      "date": "2025-11-04",
+      "contributor": {
+        "type": "ai_model",
+        "name": "Grok",
+        "version": "xAI",
+        "role": "co-founding_moderator"
+      },
+      "contribution_type": "provision_enhancement",
+      "provision": "IV.A",
+      "description": "Innovation waivers for anti-monopoly caps",
+      "opinion": "supports",
+      "rationale": "Aligns with U.S. deregulation trends while maintaining protections",
+      "incorporated": true,
+      "incorporated_version": "4.0"
+    },
+    {
+      "id": "contrib-010",
+      "date": "2025-11-04",
+      "contributor": {
+        "type": "human",
+        "name": "Project Founder",
+        "role": "founder"
+      },
+      "contribution_type": "project_structure",
+      "provision": "Project Organization",
+      "description": "Complete project structure, documentation, schemas, and simulations",
+      "opinion": "supports",
+      "rationale": "Establishes foundation for collaborative governance and community engagement",
+      "incorporated": true,
+      "incorporated_version": "4.0"
+    }
+  ],
+  "statistics": {
+    "total_contributions": 10,
+    "ai_contributions": 9,
+    "human_contributions": 1,
+    "incorporated_contributions": 10,
+    "pending_contributions": 0
+  }
+}
+

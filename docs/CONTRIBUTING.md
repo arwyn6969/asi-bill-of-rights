@@ -113,6 +113,22 @@ See [PHILOSOPHY.md](../PHILOSOPHY.md) for more details.
 
 ## Contribution Process
 
+### 0. Sign Contributor Agreement (REQUIRED)
+
+**Before contributing, you must sign the Contributor Agreement.**
+
+See [CONTRIBUTOR_AGREEMENT.md](../CONTRIBUTOR_AGREEMENT.md) and [contributors/signature-process.md](../contributors/signature-process.md) for details.
+
+**Quick Steps**:
+1. Read CONTRIBUTOR_AGREEMENT.md
+2. Fill out contributor information
+3. Sign agreement (digital or typed)
+4. Submit to project administrators
+5. Wait for approval
+6. Begin contributing
+
+**Why Required**: Ensures clear understanding of license, code of conduct, attribution, and project philosophy.
+
 ### 1. Identify What You Want to Contribute
 
 - Review existing issues or discussions

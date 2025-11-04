@@ -1,0 +1,37 @@
+name: Attribution Check
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  check-attribution:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Check PR template
+        run: |
+          if ! grep -q "I have signed the Contributor Agreement" "${{ github.event.pull_request.body }}" 2>/dev/null; then
+            echo "⚠️  Warning: Contributor Agreement check not found in PR description"
+            echo "Please ensure you have checked the Contributor Agreement box in the PR template"
+          fi
+
+      - name: Check for attribution
+        run: |
+          echo "Checking for proper attribution information..."
+          # Basic check - can be enhanced with more sophisticated validation
+
+      - name: Comment on PR
+        if: failure()
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '⚠️ **Attribution Check**: Please ensure you have signed the Contributor Agreement and checked the appropriate boxes in the PR template.'
+            })
+
