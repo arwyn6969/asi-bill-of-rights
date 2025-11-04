@@ -41,3 +41,11 @@ See `schema-docs.md` for detailed documentation on structure and usage examples.
 ## Version Alignment
 
 Schemas are versioned independently but aligned with markdown charter versions. Schema evolution is documented to maintain backward compatibility where possible.
+
+## Standardized Template
+### Purpose
+Machine-readable schemas.
+### Contents
+- charter.v4.json
+### Links
+- [schema-docs.md](schema-docs.md)

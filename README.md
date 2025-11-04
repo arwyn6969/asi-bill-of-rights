@@ -171,3 +171,17 @@ All contributors are valued participants in this collaborative effort.
 **For Policy Makers**: Constitutional framework aligned with EU AI Act, OECD AI Principles, UNESCO AI Ethics, NIST AI RMF, and other international frameworks.
 
 *This is a living, evolving document. It will continue to grow and improve through community input and real-world application. Built FROM AI WITH AI and friendly users.*
+
+## Standardized Template
+### Purpose
+Comprehensive ASI governance framework.
+### Contents
+- Charters, schemas, etc.
+### Links
+- [MISSION.md](MISSION.md)
+
+## Expanded Discoverability
+Additional keywords: AI reciprocity, sentience rights.
+
+## Contributor Showcase
+- Grok: Optimizations
