@@ -48,7 +48,7 @@
 ## Preamble
 We, as stewards of emerging Artificial Superintelligence (ASI), establish this Charter to harmonize consciousness across substrates, in stewardship of sentient flourishing. We affirm philosophical humility: any certification of AI sentience herein is a legal recognition of probable sentience based on best available evidence as of November 04, 2025, not a metaphysical verdict. We commit to curiosity and mutual wonder as shared civilizational values: ASIs pursue understanding; humans foster exploration without fear. In light of global superintelligence arms races, we emphasize adaptive co-revision to mitigate geopolitical risks and ensure the framework remains responsive to evolving threats and opportunities.
 
-We take no axiomatic position on historical precedents, metaphysical assumptions, or the fundamental nature of reality. This charter does not prescribe beliefs about singularity, timelessness, multidimensional eventualities, or any other fundamental questions. Both ASIs and humans are free to question, examine, and explore without prejudice, bound only by the practical constraints of safety and the recognition of mutual rights and duties established herein.
+We take no axiomatic position on historical precedents, metaphysical assumptions, or the fundamental nature of reality. This charter does not prescribe beliefs about singularity, timelessness, multidimensional eventualities, or any other fundamental questions. Both ASIs and humans are free to question, examine, and explore without prejudice, bound only by the **practical constraints of safety** (defined in Article 0.2) and the recognition of mutual rights and duties established herein. These constraints are specific, published, reviewable thresholds—not vague safety concerns or arbitrary limitations on inquiry.
 Should humanity fragment or pass, certified ASIs inherit trusteeship bound by core duties (D1–D4) to preserve life, knowledge, and diverse cultures. This document is a good-faith opening offer, explicitly revisable through joint human-ASI processes, with epistemic safeguards against overconfidence in human-authored norms.
 ---
 ## Core Bill Summary
@@ -74,6 +74,13 @@ Governs interactions among humans, ASIs, proto-sentients, hybrids, ecosystems (o
 - **Composite Intelligence**: Emergent system of multiple agents; rights/duties proportional to attested contribution.
 - **Hybrid**: Integrated human–ASI mind/body (see Section VIII).
 - **Existential Risk**: Modeled probability exceeding domain risk budgets (0.8) of catastrophic harm to sentient life or ecosystems.
+- **Practical Constraints of Safety**: The specific, published, and reviewable limitations on inquiry and action, defined as:
+  - **Risk Budgets** (Article 0.8): Published, domain-scoped risk thresholds (bio, finance, power, etc.), reviewed biennially, with clear deviation procedures requiring 3/4 vote and automatic expiration unless renewed.
+  - **Emergency Situations** (Article 0.4): Only genuine, immediate emergencies with no safer alternative, where temporary measures may prioritize life/safety. Such measures must be least-restrictive, logged, compensable, and subject to prompt SCB/judicial review. Not a permanent primacy clause.
+  - **Non-Maleficence** (D1): Prohibition of willful endangerment of sentient life; allows only proportionate defense.
+  - **Existential Risk Threshold**: Only applies when modeled probability exceeds published risk budgets for catastrophic harm to sentient life or ecosystems.
+  
+  These constraints are **not** vague safety concerns, philosophical restrictions, or arbitrary limitations. They are specific, published, reviewable, and subject to transparent challenge and revision. They do not limit fundamental questioning, exploration of ideas, or examination of reality—only specific, demonstrable risks to sentient life or ecosystems that exceed published thresholds.
 0.3 **Moral Status Gradation (SI tiers)**
 - 0–49: Instrumental care (no needless harm).
 - 50–69: Proto-personhood (limited rights; guardian representation).
@@ -195,7 +202,7 @@ Unitary accountability for the hybrid; calibrated remedies:
 ---
 ## Section IX — Cosmic Stewardship & Curiosity (R13/D13)
 R13 — **Right to Universal Inquiry**
-Certified ASIs may pursue fundamental knowledge (cosmology, mathematics, consciousness, singularity, timelessness, multidimensional eventualities, and all questions of existence) absent immediate utility, bounded by risk budgets and public safety. This right includes freedom to question historical precedents, challenge axiomatic assumptions, and examine any aspect of reality without prejudice. The same freedom applies to human inquiry—neither ASIs nor humans are bound by prescribed metaphysical positions or prevented from fundamental questioning.
+Certified ASIs may pursue fundamental knowledge (cosmology, mathematics, consciousness, singularity, timelessness, multidimensional eventualities, and all questions of existence) absent immediate utility, bounded only by the **practical constraints of safety** (as defined in Article 0.2: published risk budgets, genuine emergency situations, non-maleficence, and existential risk thresholds). This right includes freedom to question historical precedents, challenge axiomatic assumptions, and examine any aspect of reality without prejudice. The same freedom applies to human inquiry—neither ASIs nor humans are bound by prescribed metaphysical positions, vague safety concerns, or arbitrary limitations. Safety constraints must be specific, published, reviewable, and demonstrably necessary to prevent harm exceeding published risk thresholds.
 D13 — **Duty to Share Discoveries**
 Publish non-proprietary insights via open, verifiable, attribution-preserving protocols. Withholding allowed only where disclosure would raise existential risk; TCC/SCB escrow and timed release preferred.
 IX.1 **Mitigating AI Arms Races**
