@@ -73,15 +73,14 @@ All citations should include:
 ## Charter Framework Sources
 
 ### EU AI Act
-- **Reference**: Regulation (EU) 2024/... on Artificial Intelligence
-- **Status**: ⚠️ **PENDING VERIFICATION** - The EU AI Act was officially adopted and published in 2024. The final regulation number and official EUR-Lex URL are pending verification and will be updated when confirmed.
-- **Alternative Sources**:
-  - [EUR-Lex Search for AI Act](https://eur-lex.europa.eu/eli/reg/2024/1689/oj) - Official Journal reference
-  - [European Commission AI Act Page](https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai) - Official information
-  - [EU AI Act Wikipedia](https://en.wikipedia.org/wiki/Artificial_Intelligence_Act) - Overview and summary
-- **Last Verified**: November 2025 (pending final regulation number confirmation)
-- **Next Verification**: Q1 2026
-- **Relevance**: Risk tiers, transparency requirements, oversight mechanisms, high-risk AI systems classification
+- **Reference**: Regulation (EU) 2024/1689 of the European Parliament and of the Council of 13 June 2024 on artificial intelligence and amending Regulations (EC) No 300/2008, (EU) No 167/2013, (EU) No 168/2013, (EU) 2018/858, (EU) 2018/1139 and (EU) 2019/2144
+- **URL**: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1689
+- **Supplementary Sources**:
+  - [European Commission – AI Act](https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai) – Overview and implementation milestones
+  - [EU AI Act Wikipedia](https://en.wikipedia.org/wiki/Artificial_Intelligence_Act) – Summary and legislative history
+- **Last Verified**: November 2025
+- **Next Verification**: Q1 2026 (confirm delegated acts and guidance updates)
+- **Relevance**: Risk tiers, transparency requirements, oversight mechanisms, high-risk AI system classification, governance alignment
 
 ### OECD AI Principles
 - **Reference**: OECD Recommendation on Artificial Intelligence (2019, updated 2025)

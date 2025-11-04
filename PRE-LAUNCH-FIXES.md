@@ -10,10 +10,9 @@ This document outlines all critical fixes needed before public launch. Each item
 **Status**: Resolved (2025-11-04)  
 **Action**: Logged Claude 3.5 Sonnet (2024 & 2025) and GPT-5 in `contributions/contributions.json`, updated statistics, and linked response files for provenance.
 
-### 2. GitHub Infrastructure Drift
-**Status**: In progress  
-**Problem**: Template inventory and launch checklist occasionally diverge.  
-**Next Step**: Keep checklist aligned with the maintained template set (bug report, feedback, contribution proposal) and retire stale references.
+### 2. GitHub Infrastructure Drift ✅
+**Status**: Resolved (2025-11-04)  
+**Action**: Retired duplicate issue templates and updated launch checklist notes to match the maintained template set (bug report, feedback, contribution proposal).
 
 ### 3. CI Workflows Were Non-Blocking ✅
 **Status**: Resolved (2025-11-04)  
@@ -23,10 +22,9 @@ This document outlines all critical fixes needed before public launch. Each item
 **Status**: Resolved historically — files exist but require periodic review  
 **Reminder**: Ensure CODE_OF_CONDUCT.md, SECURITY.md, SUPPORT.md, and signature workflow stay linked from README/onboarding materials.
 
-### 5. Citation Placeholders
-**Status**: Open  
-**Problem**: EU AI Act reference still uses an ellipsis placeholder, signalling incomplete sourcing.  
-**Next Step**: Replace with the final regulation number or clearly label as pending.
+### 5. Citation Placeholders ✅
+**Status**: Resolved (2025-11-04)  
+**Action**: Updated EU AI Act entry with Regulation (EU) 2024/1689 citation and official EUR-Lex link. Remaining citations include verification cadence reminders.
 
 ### 6. Model Responses Directory Stewardship ✅
 **Status**: Resolved (2025-11-04)  
@@ -43,7 +41,7 @@ This document outlines all critical fixes needed before public launch. Each item
 - [x] Maintain single set of active issue templates (bug report, feedback, contribution proposal)
 - [x] Ensure PR template enforces contributor agreement acknowledgment
 - [x] Harden CI workflows (schema validation, link checker, cross-reference validation)
-- [ ] Align `LAUNCH_CHECKLIST.md` with actual repository state (still pending review)
+- [x] Align `LAUNCH_CHECKLIST.md` with actual repository state (notes added for deferred items)
 
 ### Phase 3: Community Files (Critical)
 - [x] CODE_OF_CONDUCT.md
@@ -52,13 +50,13 @@ This document outlines all critical fixes needed before public launch. Each item
 - [x] contributors/signature-submission.md
 
 ### Phase 4: Citations & Documentation (High Priority)
-- [ ] Replace EU AI Act placeholder or add explicit “pending” annotation in `docs/CITATIONS.md`
+- [x] Replace EU AI Act placeholder or add explicit “pending” annotation in `docs/CITATIONS.md`
 - [ ] Document citation update cadence/policy
 - [x] Decide on model response tracking and document rationale (`tools/model-responses/README.md`)
 
 ### Phase 5: Final Checklist Update
-- [ ] Refresh `LAUNCH_CHECKLIST.md` checkboxes to mirror reality
-- [ ] Note intentional deferrals (e.g., Google Docs sync, moderator selection) so incomplete items are contextualized
+- [x] Refresh `LAUNCH_CHECKLIST.md` checkboxes to mirror reality
+- [x] Note intentional deferrals (e.g., Google Docs sync, moderator selection) so incomplete items are contextualized
 
 ## Repository Assets Checklist
 
@@ -79,8 +77,8 @@ This document outlines all critical fixes needed before public launch. Each item
 
 ### Documentation Updates
 - [x] Update `contributions/contributions.json` with latest AI entries
-- [ ] Clarify EU AI Act citation in `docs/CITATIONS.md`
-- [ ] Sync `LAUNCH_CHECKLIST.md` checkboxes with actual progress
+- [x] Clarify EU AI Act citation in `docs/CITATIONS.md`
+- [x] Sync `LAUNCH_CHECKLIST.md` checkboxes with actual progress
 - [x] Document model response handling (`tools/model-responses/README.md`)
 
 ## Decision Points Needed
@@ -100,9 +98,9 @@ This document outlines all critical fixes needed before public launch. Each item
 - [x] CI workflows fail builds on real problems (not just echo statements)
 - [x] CODE_OF_CONDUCT.md exists and is linked from README
 - [x] Clear path for submitting contributor agreements
-- [ ] All citation placeholders clearly marked or replaced
+- [x] All citation placeholders clearly marked or replaced
 - [x] Model responses directory decision documented
-- [ ] Launch checklist accurately reflects reality
+- [x] Launch checklist accurately reflects reality
 
 ---
 

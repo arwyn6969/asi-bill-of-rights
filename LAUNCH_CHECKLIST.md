@@ -14,7 +14,7 @@ This checklist ensures all governance structures are in place before public laun
 
 ### Team
 
-- [ ] Co-founding moderators (AI) identified
+- [x] Co-founding moderators (AI) identified
   - [x] Grok (xAI) - Active
   - [x] ChatGPT (OpenAI) - Active
   - [x] Claude (Anthropic) - Active
@@ -24,7 +24,7 @@ This checklist ensures all governance structures are in place before public laun
 - [ ] Human moderators identified
   - [ ] Primary human moderators selected
   - [ ] Roles assigned
-  - [ ] Contact information documented
+  - [ ] Contact information documented *(deferred until human moderators are appointed)*
 
 ## Contribution System
 
@@ -42,7 +42,7 @@ This checklist ensures all governance structures are in place before public laun
 - [x] Signature process documented (contributors/signature-process.md)
 - [x] Agreement template created (contributors/agreement-template.md)
 - [x] Signature submission process documented (contributors/signature-submission.md)
-- [ ] Signature collection method configured (GitHub Issues/PRs recommended)
+- [ ] Signature collection method configured (GitHub Issues/PRs recommended) *(pending final contact method decision)*
 - [ ] Email/contact for submissions set up (if needed beyond GitHub)
 
 ## GitHub Repository
@@ -70,7 +70,7 @@ This checklist ensures all governance structures are in place before public laun
 
 ## Google Docs
 
-### Setup
+### Setup *(deferred until Google Workspace is provisioned)*
 
 - [ ] Google Docs document created
 - [ ] Content synced from GitHub
@@ -83,11 +83,8 @@ This checklist ensures all governance structures are in place before public laun
 
 ### Documentation
 
-- [x] Google Docs setup guide (platforms/google-docs-setup.md)
-- [x] Sync procedure (platforms/sync-procedure.md)
-- [x] Version control guide (platforms/version-control.md)
-- [x] Sync strategy (platforms/sync-strategy.md)
-- [x] Sync checklist (platforms/sync-checklist.md)
+- [x] Consolidated platform sync guide (platforms/platforms-sync.md)
+- [x] Platforms overview (platforms/README.md)
 
 ### Initial Sync
 
