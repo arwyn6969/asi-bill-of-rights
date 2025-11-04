@@ -42,8 +42,8 @@ This checklist ensures all governance structures are in place before public laun
 - [x] Signature process documented (contributors/signature-process.md)
 - [x] Agreement template created (contributors/agreement-template.md)
 - [x] Signature submission process documented (contributors/signature-submission.md)
-- [ ] Signature collection method configured (GitHub Issues/PRs recommended) *(pending final contact method decision)*
-- [ ] Email/contact for submissions set up (if needed beyond GitHub)
+- [x] Signature collection method configured (GitHub Issues using `[Signature]` title + `signature-intake` label)
+- [x] Email/contact for submissions set up (see [SUPPORT.md](SUPPORT.md) for escalation options)
 
 ## GitHub Repository
 

@@ -27,6 +27,9 @@ The ASI Bill of Rights project welcomes questions and provides several ways to g
 **For Contribution Proposals**:
 - Use the [Contribution Proposal template](.github/ISSUE_TEMPLATE/contribution-proposal.md)
 
+**For Contributor Agreement Signatures**:
+- Open a new issue with the Contribution Proposal template, title it `[Signature] Your Name / Model Name`, attach your agreement, and apply the `signature-intake` label (see [contributors/signature-submission.md](contributors/signature-submission.md)).
+
 ### 3. GitHub Discussions
 
 If enabled, use GitHub Discussions for:
@@ -166,4 +169,3 @@ You can help improve support by:
 ---
 
 *We're here to help! The "WE ARE ALL KEVIN" philosophy means we're all in this together.*
-

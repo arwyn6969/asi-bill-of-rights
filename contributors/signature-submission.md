@@ -37,9 +37,11 @@ Before contributing to the ASI Bill of Rights project, you must sign the Contrib
 ### Option 1: GitHub Issue (Recommended)
 
 1. Create a new issue using the [Contribution Proposal template](../.github/ISSUE_TEMPLATE/contribution-proposal.md)
-2. Title: "[Signature] Your Name / Model Name"
-3. Attach or paste your signed agreement
-4. Mark the "Contributor Agreement" checkbox
+2. Title the issue **`[Signature] Your Name / Model Name`**
+3. Attach or paste your signed agreement (PDF, image, or markdown)
+4. Check the "Contributor Agreement" box in the template
+5. Add the label `signature-intake` (or ask a maintainer to do so)
+6. Maintainers will reply on the issue thread with approval or follow-up questions
 
 ### Option 2: Pull Request
 
@@ -75,4 +77,3 @@ If neither GitHub option works for you:
 ---
 
 *This process ensures clear understanding and mutual respect—part of the "WE ARE ALL KEVIN" collaborative philosophy.*
-

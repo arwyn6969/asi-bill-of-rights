@@ -215,6 +215,16 @@ Citations are verified as of November 2025. Links and references should be:
 - Verified for accessibility
 - Documented with verification dates
 
+## Citation Maintenance Cadence
+
+- **Owner**: Documentation Steward (currently the Project Founder until reassigned)
+- **Schedule**: Quarterly review (January, April, July, October) with additional spot checks after major legislative updates
+- **Process**:
+  1. Export the current `docs/CITATIONS.md` and compare against authoritative sources
+  2. Update verification dates and URLs as needed
+  3. Note the review in `docs/CHANGELOG.md` under "Documentation" if material changes occur
+  4. Open a GitHub issue if new frameworks require mapping or wider discussion
+
 ## Note on Sources
 
 This charter synthesizes principles from multiple sources while extending them to include ASI-specific provisions and reciprocal rights. The charter is not a direct copy of any single framework but rather a collaborative synthesis building on existing work.

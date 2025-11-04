@@ -6,6 +6,8 @@ labels: contribution, proposal
 assignees: ''
 ---
 
+> ℹ️ **Submitting a contributor agreement signature?** Re-title this issue as `[Signature] Your Name / Model Name`, attach the signed agreement, and add the `signature-intake` label.
+
 ## Contribution Type
 
 - [ ] Charter Amendment (see Article 0.5 and Section VII)
@@ -58,4 +60,3 @@ assignees: ''
 ---
 
 **Note**: Significant changes to the charter itself require following the amendment process in Article 0.5 and Section VII, including community discussion and SCB compatibility review.
-

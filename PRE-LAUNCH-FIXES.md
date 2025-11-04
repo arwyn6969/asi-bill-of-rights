@@ -30,6 +30,10 @@ This document outlines all critical fixes needed before public launch. Each item
 **Status**: Resolved (2025-11-04)  
 **Action**: Directory remains tracked; added `tools/model-responses/README.md` detailing naming conventions, rationale, and redaction guidance.
 
+### 7. Signature Intake Path ✅
+**Status**: Resolved (2025-11-04)  
+**Action**: Standardized on GitHub issues titled `[Signature] ...` using the Contribution Proposal template with the `signature-intake` label; SUPPORT.md documents escalation options.
+
 ## Implementation Plan
 
 ### Phase 1: Data Consistency (Critical)
@@ -51,7 +55,7 @@ This document outlines all critical fixes needed before public launch. Each item
 
 ### Phase 4: Citations & Documentation (High Priority)
 - [x] Replace EU AI Act placeholder or add explicit “pending” annotation in `docs/CITATIONS.md`
-- [ ] Document citation update cadence/policy
+- [x] Document citation update cadence/policy
 - [x] Decide on model response tracking and document rationale (`tools/model-responses/README.md`)
 
 ### Phase 5: Final Checklist Update
@@ -80,16 +84,6 @@ This document outlines all critical fixes needed before public launch. Each item
 - [x] Clarify EU AI Act citation in `docs/CITATIONS.md`
 - [x] Sync `LAUNCH_CHECKLIST.md` checkboxes with actual progress
 - [x] Document model response handling (`tools/model-responses/README.md`)
-
-## Decision Points Needed
-
-1. **Contact Method**: How should people submit contributor agreements?
-   - GitHub Discussions?
-   - Email address?
-   - Issue template?
-   - Form submission?
-
-2. **Citation Policy**: Define cadence and ownership for updating `docs/CITATIONS.md` as frameworks evolve.
 
 ## Success Criteria
 
