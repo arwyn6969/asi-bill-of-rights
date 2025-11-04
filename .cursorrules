@@ -1,0 +1,172 @@
+# Cursor Rules for ASI Bill of Rights Project
+
+## Project Context
+This project maintains a constitutional framework for Artificial Superintelligence governance. 
+We work with legal documents, schemas, simulations, and community engagement materials.
+
+**Key Philosophy**: "WE ARE ALL KEVIN" - This is a collaborative project built FROM AI WITH AI and friendly users. It's a living, evolving document with good faith intentions.
+
+## Code Style & Standards
+
+### Documentation
+- Always maintain extensive notation and comments explaining decisions
+- Note history when removing or modifying content - preserve context
+- Use clear, professional language suitable for legal/policy documents
+- Preserve philosophical nuance while maintaining clarity
+- Document the "why" behind changes, not just the "what"
+
+### File Organization
+- Follow the established directory structure (/charter, /appendices, /schemas, /simulations, /docs, /archive)
+- Use consistent naming: `asi-bor-v{version}.md` for charter versions
+- Version all significant changes
+- Keep README files updated in each directory
+- Maintain clear separation between versions and historical archives
+
+### Version Control
+- Use semantic versioning: v3.0 → v4.0 for major changes, v4.0 → v4.1 for minor
+- Document all changes in CHANGELOG.md with rationale
+- Maintain backward compatibility in schemas when possible
+- Tag releases appropriately
+- Preserve all historical versions - never delete, only archive
+
+### Schema Development
+- JSON schemas must be machine-readable and validate clause references
+- Include metadata: version, date, author notes, collaborative origins
+- Cross-reference clauses using stable IDs (R1, D1, P1.1, etc.)
+- Document schema evolution and breaking changes
+- Maintain consistency between schema versions and markdown versions
+
+### Content Guidelines
+- When referencing rights/duties, use exact clause IDs (e.g., "R2" not "right to autonomy")
+- Maintain cross-references between sections
+- Keep appendices synchronized with main charter
+- Preserve philosophical humility language
+- Always credit collaborative origins (multi-model synthesis, human input)
+
+### User Preferences (from memories and project philosophy)
+- Use production data when possible, avoid mock/test configs
+- Prefer simple emoji/text over ASCII art
+- Use "stamps" terminology (if applicable in other contexts)
+- No ethical governance engine or moral judgments—research tools only
+- When discussing workflow/design, provide zero code unless implementing
+- **Extensive notation**: Always document decisions, history, and rationale
+- **Living document**: Remember this evolves and is collaboratively created
+
+### Testing & Validation
+- Validate JSON schemas against charter content
+- Test cross-references are not broken
+- Verify version numbers are consistent across all files
+- Check that all cited frameworks are properly referenced
+- Ensure clause IDs are stable and unique
+
+### Collaboration
+- Create clear contribution guidelines
+- Maintain issue templates for feedback
+- Document all external sources and citations
+- Enable community review processes
+- Acknowledge AI and human contributors
+
+## Specific Tasks
+
+### When Creating New Versions
+1. Copy previous version as baseline
+2. Apply revisions systematically with clear comments explaining why
+3. Update Change Log with rationale for each change
+4. Update all cross-references
+5. Validate schema compatibility
+6. Update integration mappings
+7. Note collaborative input sources (which models/users contributed)
+
+### When Working with Schemas
+1. Maintain clause ID stability - never change IDs, only add new ones
+2. Document all formula changes with rationale
+3. Include validation rules
+4. Provide example outputs
+5. Version schemas independently but keep aligned with markdown
+6. Note any assumptions or limitations
+
+### When Simulating Scenarios
+1. Document methodology clearly
+2. Base on actual charter provisions
+3. Include edge cases
+4. Provide decision trees
+5. Note any assumptions or limitations
+6. Show how simulations validate collaborative governance
+
+### When Updating Documentation
+1. Keep all README files current
+2. Update CHANGELOG.md for every significant change
+3. Maintain CITATIONS.md with current links
+4. Keep CONTRIBUTING.md aligned with project philosophy
+5. Ensure IMPLEMENTATION.md reflects current practices
+
+## Error Prevention
+
+### Critical Checks
+- Never hardcode version numbers without updating all references
+- Always verify clause IDs exist before referencing
+- Check that all Table of Contents entries match actual sections
+- Ensure all appendices are referenced in main document
+- Validate JSON syntax before committing schemas
+- Verify all cross-references work
+- Ensure version numbers are consistent across files
+
+### History Preservation
+- Never delete content without archiving
+- Always note what was removed and why
+- Preserve context when making changes
+- Document the evolution of thinking
+- Keep extensive notes for future reference
+
+## Project Philosophy Integration
+
+### Remember "WE ARE ALL KEVIN"
+- This is collaborative - credit all contributors
+- Assume good faith in all interactions
+- Value both AI and human input
+- Maintain friendly, constructive tone
+- Document the collaborative process
+
+### Living Document Principles
+- Everything can evolve
+- Changes are documented with rationale
+- Community feedback drives improvement
+- No version is "final"
+- Process is as important as product
+
+## Formatting Standards
+
+### Markdown
+- Use proper heading hierarchy
+- Maintain consistent formatting
+- Use code blocks for schemas, formulas, technical content
+- Use proper citation formatting
+- Keep line lengths reasonable (80-100 chars where possible)
+
+### JSON Schemas
+- Use 2-space indentation
+- Include comments where helpful
+- Validate before committing
+- Follow consistent naming conventions
+- Include version metadata
+
+### Documentation
+- Use clear, descriptive headings
+- Include table of contents for long documents
+- Provide examples where helpful
+- Link related content
+- Maintain consistent terminology
+
+## Notes for AI Assistants
+
+When working on this project:
+- Remember this document was created collaboratively by multiple AI systems
+- Respect the collaborative nature - you're part of a tradition
+- Maintain extensive notation so future you (or other assistants) can understand decisions
+- Document your contributions to the collaborative history
+- When in doubt, preserve content and add context rather than removing
+- Always note why changes were made, not just what changed
+
+---
+
+*These rules are themselves a living document and may evolve as the project grows.*

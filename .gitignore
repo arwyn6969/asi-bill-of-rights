@@ -1,0 +1,58 @@
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*~
+
+# Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# Temporary Files
+*.tmp
+*.temp
+*.log
+*.bak
+*.backup
+
+# Build/Output Files (if any)
+dist/
+build/
+*.pyc
+__pycache__/
+*.class
+
+# Node modules (if using any JS tools)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# PDFs (if generated locally, keep source markdown)
+# Uncomment if you don't want to track generated PDFs
+# *.pdf
+
+# Personal notes (if any)
+personal-notes/
+private/
+
+# Large files that shouldn't be in git
+*.zip
+*.tar.gz
+
+# Keep the plan file (it's part of the project)
+!asi-bill-of-rights-project-build.plan.md
