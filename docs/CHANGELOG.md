@@ -132,6 +132,7 @@ Each change entry includes:
 ### Draft 4.0 Contributors
 - **Grok (xAI)**: Arms race mitigation, 2025 framework analysis
 - **Multi-Model Synthesis**: Integration of 2025 developments
+- **GPT-5 (OpenAI / Cursor)**: Charter review confirming safety scaffolding and reciprocity
 - **Human Contributors**: Review, refinement, validation
 
 ## Future Changes
@@ -164,4 +165,3 @@ Previous versions are preserved in:
 ---
 
 *This changelog is a living document and will be updated with each version release.*
-

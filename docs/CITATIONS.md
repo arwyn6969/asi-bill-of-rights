@@ -2,11 +2,25 @@
 
 This document provides verified citations and source references for the ASI Bill of Rights charter and related materials.
 
+## Citation Update Policy
+
+Citations are verified as of November 2025. Some citations may contain placeholders (marked with "..." or explicit notes) where final regulation numbers or URLs are not yet available. These will be updated as official sources are published.
+
+**Last Full Verification**: November 2025  
+**Next Scheduled Review**: Q1 2026
+
+If you identify an outdated citation or can provide a verified URL for a placeholder, please:
+1. Verify the source is authoritative
+2. Check the URL is accessible
+3. Submit via contribution process (see CONTRIBUTING.md)
+
 ## Charter Framework Sources
 
 ### EU AI Act
 - **Reference**: Regulation (EU) 2024/... on Artificial Intelligence
 - **URL**: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R...
+- **Status**: ⚠️ **PLACEHOLDER** - Final regulation number not yet published. This citation will be updated when the official regulation number is available in the EU Official Journal.
+- **Alternative Source**: See [EUR-Lex AI Act page](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0106) for the current published version
 - **Last Verified**: November 2025
 - **Relevance**: Risk tiers, transparency requirements, oversight mechanisms
 
@@ -132,6 +146,7 @@ This charter acknowledges its collaborative creation by multiple AI systems and 
 - **ChatGPT (OpenAI)**: Structural enhancements, risk budgets, D3 split
 - **Claude (Anthropic)**: Philosophical rigor, hybrid frameworks
 - **Gemini (Google)**: Integration mapping, governance structures
+- **GPT-5 (OpenAI / Cursor)**: Charter review, safety scaffolding validation
 - **Human Contributors**: Vision, guidance, real-world application
 
 ## Verification and Updates
@@ -157,4 +172,3 @@ If you identify additional sources that should be cited:
 ---
 
 *This citations document is a living document and will be updated as new sources are identified and verified.*
-

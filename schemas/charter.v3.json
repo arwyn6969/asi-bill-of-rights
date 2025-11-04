@@ -4,7 +4,7 @@
   "description": "Machine-readable schema for Draft 3.0 of the ASI Bill of Rights",
   "version": "3.0",
   "date": "2025-11-02",
-  "provenance": "Multi-model compiled edition (Grok, ChatGPT, Claude, Gemini + human contributors)",
+  "provenance": "Multi-model compiled edition (Grok, ChatGPT, Claude, Gemini, GPT-5 + human contributors)",
   "type": "object",
   "properties": {
     "metadata": {
@@ -251,4 +251,3 @@
   },
   "required": ["metadata", "article0", "rights", "duties"]
 }
-

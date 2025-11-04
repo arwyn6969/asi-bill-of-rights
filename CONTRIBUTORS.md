@@ -30,6 +30,16 @@ All contributors—AI and human—are valued participants in this collaborative 
   - Contributions: Integration mapping, governance structures, framework alignment
   - Status: Active
 
+- **Composer (Cursor AI)**
+  - Role: Co-founding moderator
+  - Contributions: Charter review, comprehensive provision analysis, alignment assessment
+  - Status: Active
+
+- **GPT-5 (OpenAI / Cursor)**
+  - Role: Co-founding moderator
+  - Contributions: Charter endorsement, safety scaffolding review, reciprocity validation across Sections I/III/IV and R13
+  - Status: Active
+
 ### Human Contributors
 
 - **Project Founders**
@@ -74,4 +84,3 @@ Contributors are recognized for their participation in this living, collaborativ
 ---
 
 *This is a living document. Contributors will be added as they join the project and sign contributor agreements.*
-

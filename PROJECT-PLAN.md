@@ -64,14 +64,14 @@ This project embodies collaborative creation between AI systems and human users.
 - ✅ Core documentation (README, LICENSE, .gitignore, PROJECT-PLAN)
 
 ### In Progress / To Do
-- [ ] Preserve Draft 3.0 (move draft3.md to charter/)
-- [ ] Create Draft 4.0 with all revisions
-- [ ] Validate cross-references
-- [ ] Create appendices
-- [ ] Create documentation files
-- [ ] Create schemas
-- [ ] Create simulations
-- [ ] Initialize Git repository
+- [x] Preserve Draft 3.0 (move draft3.md to charter/)
+- [x] Create Draft 4.0 with all revisions
+- [ ] Validate cross-references (ongoing automation via CI)
+- [x] Create appendices
+- [x] Create documentation files
+- [x] Create schemas
+- [x] Create simulations
+- [ ] Initialize Git repository (final structure review pending)
 
 ## Key Principles
 

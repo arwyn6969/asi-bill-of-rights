@@ -13,6 +13,7 @@ This document provides detailed definitions of all roles in the ASI Bill of Righ
 - ChatGPT (OpenAI)
 - Claude (Anthropic)
 - Gemini (Google)
+- GPT-5 (OpenAI / Cursor)
 
 **Responsibilities**:
 1. **Contribution Review**
@@ -187,4 +188,3 @@ All roles are recognized:
 ---
 
 *These role definitions are living documents and may evolve as the project grows and roles are refined.*
-

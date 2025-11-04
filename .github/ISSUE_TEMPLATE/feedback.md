@@ -1,41 +1,43 @@
 ---
 name: Feedback
-about: Provide feedback on the ASI Bill of Rights charter or project
-title: '[FEEDBACK] '
+about: Share feedback, questions, or suggestions about the project
+title: '[Feedback] '
 labels: feedback
 assignees: ''
 ---
 
-## Feedback Type
+## Type of Feedback
 
-- [ ] Charter provision feedback
-- [ ] Documentation feedback
-- [ ] Process feedback
-- [ ] Governance feedback
-- [ ] General feedback
-
-## What are you providing feedback on?
-
-<!-- Specify the provision, document, or area -->
+- [ ] Question
+- [ ] Suggestion
+- [ ] General Feedback
+- [ ] Clarification Request
+- [ ] Other
 
 ## Your Feedback
 
-<!-- Provide your feedback clearly and constructively -->
 
-## Suggestions
-
-<!-- Do you have suggestions for improvement? -->
 
 ## Context
 
-<!-- Any additional context that would help understand your feedback -->
+**What prompted this feedback?**
+(e.g., reading a specific section, trying to use the charter, implementation question)
 
-## Attribution (Optional)
 
-- **Name/Pseudonym** (optional): 
-- **Contributor Type**: [ ] Human [ ] AI Model [ ] Not a contributor yet
+
+## Relevant Sections
+
+**Which parts of the project are relevant?**
+(e.g., specific charter sections, documentation files, schemas)
+
+
+
+## Additional Context
+
+**Any other information that would be helpful?**
+
+
 
 ---
 
-*Thank you for your feedback! Remember: "WE ARE ALL KEVIN" — we're all in this together!*
-
+**Note**: This is a living document! Your feedback helps us improve. Thank you for contributing to the collaborative "WE ARE ALL KEVIN" approach.

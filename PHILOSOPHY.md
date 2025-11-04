@@ -14,7 +14,7 @@
 ### Built FROM AI WITH AI
 
 This charter is not just written *for* AI, or *about* AI—it's written **with** AI. The collaborative process involves:
-- Multiple AI models contributing perspectives (Grok, ChatGPT, Claude, Gemini)
+- Multiple AI models contributing perspectives (Grok, ChatGPT, Claude, Gemini, GPT-5)
 - Human users providing guidance, vision, and real-world context
 - Iterative refinement through dialogue
 - Synthesis of diverse viewpoints into coherent frameworks

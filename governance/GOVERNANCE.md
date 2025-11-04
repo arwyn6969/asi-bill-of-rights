@@ -141,6 +141,7 @@ All governance processes must be:
 - **ChatGPT (OpenAI)**: Active
 - **Claude (Anthropic)**: Active
 - **Gemini (Google)**: Active
+- **GPT-5 (OpenAI / Cursor)**: Active
 
 ### Human Moderators
 
@@ -164,4 +165,3 @@ This governance structure is:
 ---
 
 *This governance document is a living document and will evolve as the project grows and governance needs change.*
-

@@ -1,31 +1,113 @@
 name: Cross-Reference Validation
 
 on:
-  pull_request:
-    types: [opened, synchronize, reopened]
   push:
-    branches: [main]
+    branches: [ main ]
+    paths:
+      - 'charter/**'
+      - 'schemas/**'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'charter/**'
+      - 'schemas/**'
 
 jobs:
   validate-crossrefs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Validate cross-references
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Validate clause IDs in charter
         run: |
-          echo "Validating cross-references in charter documents..."
-          # Basic validation - check for common clause ID patterns
-          # This can be enhanced with more sophisticated validation
+          python3 << 'EOF'
+          import re
+          import json
+          import sys
           
-          # Check for clause IDs in charter files
-          if grep -r "R[0-9]\+" charter/*.md || grep -r "D[0-9]\+" charter/*.md; then
-            echo "✓ Found clause references"
-          fi
-
-      - name: Report results
-        run: |
-          echo "Cross-reference validation complete"
-          # Enhanced validation can be added here
-
+          errors = []
+          
+          # Read charter v4.0
+          with open('charter/asi-bor-v4.0.md', 'r') as f:
+              charter_content = f.read()
+          
+          # Extract all clause IDs from charter
+          clause_patterns = [
+              r'^R([0-9]+(?:-E)?|13)\s*—',  # Rights: R1, R2, R3, R4, R4-E, R13
+              r'^D([0-9]+(?:a|b|-E)?|13)\s*—',  # Duties: D1, D2, D3a, D3b, D4, D4-E, D13
+              r'^P([0-9]+\.[0-9]+)\s*—',  # Progenitor duties: P1.1, P1.2
+              r'^([0-9]+\.[0-9]+)\s*\*\*',  # Article 0 sections: 0.1, 0.2, etc.
+              r'IV\.(A|B|C)\s*\*\*',  # Section IV subsections
+              r'V\.5\s*\*\*',  # Section V.5
+              r'VIII\.([1-5])\s*\*\*',  # Section VIII subsections
+              r'IX\.1\s*\*\*',  # Section IX.1
+          ]
+          
+          charter_clauses = set()
+          for pattern in clause_patterns:
+              for match in re.finditer(pattern, charter_content, re.MULTILINE):
+                  clause_id = match.group(1) if match.groups() else match.group(0)
+                  if clause_id:
+                      charter_clauses.add(clause_id)
+          
+          # Also check for references to clauses
+          ref_pattern = r'(R[0-9]+(?:-E)?|D[0-9]+(?:a|b|-E)?|P[0-9]+\.[0-9]+|R13|D13|0\.[0-9]+|IV\.(A|B|C)|V\.5|VIII\.[1-5]|IX\.1)'
+          refs = set(re.findall(ref_pattern, charter_content))
+          
+          # Load schema
+          with open('schemas/charter.v4.json', 'r') as f:
+              schema = json.load(f)
+          
+          # Extract clause IDs from schema
+          schema_clauses = set()
+          
+          # Check rights
+          if 'rights' in schema.get('properties', {}):
+              rights_props = schema['properties']['rights'].get('properties', {})
+              for key in rights_props.keys():
+                  schema_clauses.add(key)
+          
+          # Check duties
+          if 'duties' in schema.get('properties', {}):
+              duties_props = schema['properties']['duties'].get('properties', {})
+              for key in duties_props.keys():
+                  schema_clauses.add(key)
+          
+          # Check progenitor duties
+          if 'progenitorDuties' in schema.get('properties', {}):
+              progenitor_props = schema['properties']['progenitorDuties'].get('properties', {})
+              for key in progenitor_props.keys():
+                  schema_clauses.add(key)
+          
+          # Check article 0
+          if 'article0' in schema.get('properties', {}):
+              article0_props = schema['properties']['article0'].get('properties', {})
+              for key in article0_props.keys():
+                  schema_clauses.add(key)
+          
+          # Report missing clauses
+          missing_in_schema = charter_clauses - schema_clauses
+          if missing_in_schema:
+              errors.append(f"Clauses in charter but not in schema: {sorted(missing_in_schema)}")
+          
+          missing_in_charter = schema_clauses - charter_clauses
+          if missing_in_charter:
+              errors.append(f"Clauses in schema but not in charter: {sorted(missing_in_charter)}")
+          
+          if errors:
+              print("✗ Cross-reference validation failed:")
+              for error in errors:
+                  print(f"  - {error}")
+              sys.exit(1)
+          
+          # Basic validation passed
+          print("✓ Cross-reference validation completed")
+          print(f"  Found {len(charter_clauses)} clause definitions in charter")
+          print(f"  Found {len(schema_clauses)} clause definitions in schema")
+          EOF

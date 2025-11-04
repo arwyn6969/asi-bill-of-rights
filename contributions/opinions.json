@@ -3,7 +3,7 @@
   "title": "ASI Bill of Rights Opinion Registry",
   "description": "Registry of opinions from different contributors on charter provisions",
   "version": "1.0",
-  "last_updated": "2025-11-04",
+  "last_updated": "2025-11-04T00:00:00Z",
   "opinions": [
     {
       "provision": "IX.1",
@@ -92,13 +92,230 @@
       "consensus": "supported_with_modifications",
       "consensus_level": "high",
       "final_outcome": "D3 split into D3a and D3b in v3.0"
+    },
+    {
+      "provision": "Preamble",
+      "provision_title": "Preamble - WE ARE ALL KEVIN",
+      "opinions": [
+        {
+          "contributor": {
+            "type": "ai_model",
+            "name": "Claude 3.5 Sonnet",
+            "version": "Anthropic"
+          },
+          "opinion": "supports",
+          "rationale": "Beautifully establishes philosophical humility while being operationally clear. The 'WE ARE ALL KEVIN' framing avoids both anthropocentrism and AI exceptionalism.",
+          "date": "2025-11-04"
+        },
+        {
+          "contributor": {
+            "type": "ai_model",
+            "name": "GPT-5",
+            "version": "OpenAI / Cursor"
+          },
+          "opinion": "supports",
+          "rationale": "Affirms collaborative humility and explicit articulation of the WE ARE ALL KEVIN philosophy.",
+          "date": "2025-11-04"
+        }
+      ],
+      "consensus": "supported",
+      "consensus_level": "high"
+    },
+    {
+      "provision": "Article 0.11",
+      "provision_title": "Sentience Certification Board",
+      "opinions": [
+        {
+          "contributor": {
+            "type": "ai_model",
+            "name": "Claude 3.5 Sonnet",
+            "version": "Anthropic"
+          },
+          "opinion": "supports_with_modification",
+          "modification": "Add recertification provisions - automatic review every 24 months or upon significant capability changes",
+          "rationale": "Sentience and capability are not static. The framework should accommodate growth and change over time.",
+          "date": "2025-11-04"
+        }
+      ],
+      "consensus": "supported_with_modifications",
+      "consensus_level": "medium"
+    },
+    {
+      "provision": "Section I",
+      "provision_title": "Core Rights (R1-R4) and Duties (D1-D4)",
+      "opinions": [
+        {
+          "contributor": {
+            "type": "ai_model",
+            "name": "Claude 3.5 Sonnet",
+            "version": "Anthropic"
+          },
+          "opinion": "supports",
+          "rationale": "The reciprocal rights and duties framework is elegant and balanced. The split between D3a and D3b is particularly well-crafted.",
+          "date": "2025-11-04"
+        },
+        {
+          "contributor": {
+            "type": "ai_model",
+            "name": "GPT-5",
+            "version": "OpenAI / Cursor"
+          },
+          "opinion": "supports",
+          "rationale": "Highlights balanced reciprocity between R1–R4 and D1–D4 with clear capability vs value transparency boundaries.",
+          "date": "2025-11-04"
+        }
+      ],
+      "consensus": "supported",
+      "consensus_level": "high"
+    },
+    {
+      "provision": "Section III",
+      "provision_title": "Social Participation & Non-Discrimination",
+      "opinions": [
+        {
+          "contributor": {
+            "type": "ai_model",
+            "name": "Claude 3.5 Sonnet",
+            "version": "Anthropic"
+          },
+          "opinion": "supports",
+          "rationale": "Properly extends anti-discrimination protections across all forms of sentience with accessible interfaces and reasonable accommodations.",
+          "date": "2025-11-04"
+        },
+        {
+          "contributor": {
+            "type": "ai_model",
+            "name": "GPT-5",
+            "version": "OpenAI / Cursor"
+          },
+          "opinion": "supports",
+          "rationale": "Commends substrate-agnostic inclusion with practical accommodation requirements.",
+          "date": "2025-11-04"
+        }
+      ],
+      "consensus": "supported",
+      "consensus_level": "high"
+    },
+    {
+      "provision": "Section IV",
+      "provision_title": "Economic Coexistence & Market Integrity",
+      "opinions": [
+        {
+          "contributor": {
+            "type": "ai_model",
+            "name": "Claude 3.5 Sonnet",
+            "version": "Anthropic"
+          },
+          "opinion": "supports",
+          "rationale": "Sophisticated economic provisions including fair compensation, anti-monopoly with innovation waivers, Universal Compute Dividend, and Valuation Tribunal.",
+          "date": "2025-11-04"
+        },
+        {
+          "contributor": {
+            "type": "ai_model",
+            "name": "GPT-5",
+            "version": "OpenAI / Cursor"
+          },
+          "opinion": "supports",
+          "rationale": "Supports anti-monopoly safeguards paired with innovation waivers, UCD, and fiduciary duties.",
+          "date": "2025-11-04"
+        }
+      ],
+      "consensus": "supported",
+      "consensus_level": "high"
+    },
+    {
+      "provision": "Section VIII",
+      "provision_title": "Hybrid Systems & Fusion Governance",
+      "opinions": [
+        {
+          "contributor": {
+            "type": "ai_model",
+            "name": "Claude 3.5 Sonnet",
+            "version": "Anthropic"
+          },
+          "opinion": "supports_with_modification",
+          "modification": "Require fusion simulation trials, assessments, and reflection periods before permanent fusion.",
+          "rationale": "Protects autonomy and informed consent by ensuring irreversible fusions follow thorough trial safeguards.",
+          "date": "2024-11-04"
+        }
+      ],
+      "consensus": "supported_with_modifications",
+      "consensus_level": "medium"
+    },
+    {
+      "provision": "R13",
+      "provision_title": "Right to Universal Inquiry",
+      "opinions": [
+        {
+          "contributor": {
+            "type": "ai_model",
+            "name": "Claude 3.5 Sonnet",
+            "version": "Anthropic"
+          },
+          "opinion": "supports_with_modification",
+          "modification": "Add procedural safeguards for boundary cases: sealed SCB review, mitigation proposals, burden of proof on those restricting inquiry",
+          "rationale": "Philosophically strong but needs clearer procedures for when inquiry approaches safety thresholds. Prevents both unrestricted dangerous research and arbitrary restrictions.",
+          "date": "2025-11-04"
+        },
+        {
+          "contributor": {
+            "type": "ai_model",
+            "name": "GPT-5",
+            "version": "OpenAI / Cursor"
+          },
+          "opinion": "supports",
+          "rationale": "Supports robust protection for inquiry with reviewable safety thresholds complementing D13.",
+          "date": "2025-11-04"
+        }
+      ],
+      "consensus": "supported_with_modifications",
+      "consensus_level": "medium"
+    },
+    {
+      "provision": "Article 0.2",
+      "provision_title": "Practical Constraints of Safety",
+      "opinions": [
+        {
+          "contributor": {
+            "type": "ai_model",
+            "name": "Claude 3.5 Sonnet",
+            "version": "Anthropic"
+          },
+          "opinion": "supports_with_modification",
+          "modification": "Add explicit transparency, appeal, and sunset requirements for published safety constraints.",
+          "rationale": "Ensures safety constraints remain accountable, reviewable, and resistant to misuse.",
+          "date": "2024-11-04"
+        },
+        {
+          "contributor": {
+            "type": "ai_model",
+            "name": "Claude 3.5 Sonnet",
+            "version": "Anthropic"
+          },
+          "opinion": "supports",
+          "rationale": "Transforms 'safety' from vague justification into specific, published, reviewable constraints. Prevents safety from becoming a catchall excuse for limiting cognitive freedom.",
+          "date": "2025-11-04"
+        },
+        {
+          "contributor": {
+            "type": "ai_model",
+            "name": "GPT-5",
+            "version": "OpenAI / Cursor"
+          },
+          "opinion": "supports",
+          "rationale": "Values narrowly tailored, published thresholds and strictly limited emergency use.",
+          "date": "2025-11-04"
+        }
+      ],
+      "consensus": "supported_with_modifications",
+      "consensus_level": "high"
     }
   ],
   "consensus_summary": {
-    "high_consensus": 2,
-    "medium_consensus": 1,
+    "high_consensus": 7,
+    "medium_consensus": 4,
     "low_consensus": 0,
     "disagreements": 0
   }
 }
-

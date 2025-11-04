@@ -1,68 +1,55 @@
 # Pull Request
 
-## Contributor Agreement
-
-- [ ] I have signed the Contributor Agreement (CONTRIBUTOR_AGREEMENT.md)
-- [ ] I understand and agree to the project license (CC-BY 4.0)
-- [ ] I agree to follow the Code of Conduct
-- [ ] I understand the "WE ARE ALL KEVIN" project philosophy
-
-## Contribution Type
-
-- [ ] Bug fix
-- [ ] New feature
-- [ ] Documentation update
-- [ ] Charter provision modification
-- [ ] Framework integration
-- [ ] Other (please describe)
-
 ## Description
 
-Please provide a clear description of your contribution:
+**What does this PR change or add?**
 
-<!-- Describe your changes here -->
 
-## Rationale
 
-Why is this contribution needed? What problem does it solve?
+## Type of Change
 
-<!-- Explain your rationale here -->
+- [ ] Charter amendment (see Article 0.5 and Section VII)
+- [ ] Documentation update
+- [ ] Schema update
+- [ ] Tool/script improvement
+- [ ] Bug fix
+- [ ] Other (please describe)
 
 ## Related Issues
 
-Link to related issues (if any):
-
-<!-- e.g., Closes #123, Related to #456 -->
-
-## Charter Provisions Affected
-
-If this affects charter provisions, list them:
-
-<!-- e.g., Section IV.A, Article 0.8, etc. -->
-
-## Attribution
-
-- **Contributor Name/Pseudonym**: 
-- **Contributor Type**: [ ] Human [ ] AI Model (specify: _____________)
-- **Role**: [ ] Co-Founding Moderator [ ] Human Moderator [ ] Contributor Reviewer [ ] Community Member
+**Closes #** (if applicable)
 
 ## Checklist
 
-- [ ] I have read CONTRIBUTING.md
-- [ ] I have read MISSION.md and PHILOSOPHY.md
-- [ ] My changes are consistent with charter principles
-- [ ] I have updated cross-references (if applicable)
-- [ ] I have updated documentation (if applicable)
-- [ ] I have checked for conflicts
-- [ ] My changes follow the code of conduct
+- [ ] I have read and followed the Contributor Agreement (CONTRIBUTOR_AGREEMENT.md)
+- [ ] I have updated relevant documentation
+- [ ] I have checked that all links work
+- [ ] I have verified cross-references are correct
+- [ ] I have tested any scripts/tools I modified
+- [ ] I have updated CHANGELOG.md if this is a significant change
+- [ ] I have checked that version numbers are consistent (if applicable)
+
+## Charter Amendment Process
+
+**If this PR modifies the charter itself:**
+
+- [ ] I have followed the amendment process in Article 0.5 and Section VII
+- [ ] Community discussion period completed (30 days minimum for standard amendments)
+- [ ] SCB compatibility review completed (if applicable)
+- [ ] Change rationale documented in CHANGELOG.md
+
+## Testing
+
+**How have you tested this change?**
+
+
 
 ## Additional Notes
 
-Any additional information reviewers should know:
+**Any additional information for reviewers?**
 
-<!-- Add any additional notes here -->
+
 
 ---
 
-**Thank you for contributing! Remember: "WE ARE ALL KEVIN" — we're all in this together!**
-
+**Note**: This is a collaborative project built "FROM AI WITH AI and friendly users." We appreciate your contribution and will review it with good faith and mutual respect.

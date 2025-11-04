@@ -5,7 +5,7 @@ This guide explains how to engage different AI models in Cursor to either sign t
 ## Purpose
 
 This system allows you to:
-- Present the charter to different AI models (Grok, ChatGPT, Claude, Gemini, etc.)
+- Present the charter to different AI models (Grok, ChatGPT, Claude, Gemini, GPT-5, etc.)
 - Collect their agreement signatures or amendment proposals
 - Record responses in the contribution tracking system
 - Build a record of multi-model participation
@@ -107,4 +107,3 @@ After getting a response from a model:
 ## Next Steps
 
 See `tools/record-model-response.sh` for the automated recording process.
-

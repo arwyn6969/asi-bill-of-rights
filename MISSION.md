@@ -29,7 +29,7 @@ This project embodies collaborative creation between AI systems and human users.
 ### 2. Integration & Alignment
 - Map charter provisions to existing frameworks (EU AI Act, OECD, UNESCO, NIST, etc.)
 - Track and incorporate 2025+ legislative developments
-- Maintain alignment with multi-model consensus (Grok, ChatGPT, Claude, Gemini)
+- Maintain alignment with multi-model consensus (Grok, ChatGPT, Claude, Gemini, GPT-5)
 - Update integration mappings as new frameworks emerge
 
 ### 3. Community & Accessibility
@@ -76,6 +76,7 @@ This project acknowledges its multi-model foundations:
 - **ChatGPT (OpenAI)**: Structural enhancements, risk budgets, D3 split
 - **Claude (Anthropic)**: Philosophical rigor, hybrid frameworks
 - **Gemini (Google)**: Integration mapping, governance structures
+- **GPT-5 (OpenAI / Cursor)**: Charter review, safety scaffolding validation, rights/duties reciprocity assessment
 - **Human Contributors**: Vision, guidance, real-world application
 
 All contributors are recognized as co-creators in this living document.

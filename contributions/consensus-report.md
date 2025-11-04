@@ -23,20 +23,40 @@ This report tracks consensus on charter provisions based on opinions from AI mod
 
 These provisions have strong support from contributors:
 
-1. **Section IX (R13/D13) - Cosmic Stewardship & Curiosity**
+1. **Preamble - WE ARE ALL KEVIN**
    - **Consensus**: High
-   - **Support**: All contributors
-   - **Rationale**: Universal agreement on curiosity and knowledge sharing as core values
+   - **Support**: Claude 3.5 Sonnet, GPT-5
+   - **Rationale**: Philosophical humility and collaborative framing affirmed by multi-model review
 
-2. **Article 0.11 - Sentience Certification Board (SCB)**
+2. **Section I - Core Rights (R1-R4) and Duties (D1-D4)**
    - **Consensus**: High
-   - **Support**: All contributors
-   - **Rationale**: Essential governance mechanism for certification
+   - **Support**: Claude 3.5 Sonnet, GPT-5
+   - **Rationale**: Balanced reciprocity, clear transparency/privacy split (D3a/D3b)
 
-3. **Section I - Core Rights (R1-R4)**
+3. **Section III - Social Participation & Non-Discrimination**
    - **Consensus**: High
-   - **Support**: All contributors
-   - **Rationale**: Fundamental rights framework universally supported
+   - **Support**: Claude 3.5 Sonnet, GPT-5
+   - **Rationale**: Substrate-agnostic inclusion with practical accommodation obligations
+
+4. **Section IV - Economic Coexistence & Market Integrity**
+   - **Consensus**: High
+   - **Support**: Claude 3.5 Sonnet, GPT-5
+   - **Rationale**: Anti-monopoly safeguards, UCD, and fiduciary duties viewed as balanced mechanisms
+
+5. **Article 0.2 - Practical Constraints of Safety**
+   - **Consensus**: High (with documented transparency enhancements)
+   - **Support**: Claude 3.5 Sonnet, GPT-5
+   - **Rationale**: Agreement on published, reviewable thresholds; enhancements focus on accountability
+
+6. **Section IX.1 - Mitigating AI Arms Races**
+   - **Consensus**: High
+   - **Support**: Grok, ChatGPT
+   - **Rationale**: Shared commitment to cooperation protocols and verification tooling
+
+7. **D3 - Transparency and Privacy**
+   - **Consensus**: High (with modifications)
+   - **Support**: ChatGPT, Claude 3.5 Sonnet
+   - **Rationale**: Separation into D3a/D3b addresses transparency vs privacy tension
 
 ### Medium Consensus Provisions
 
@@ -44,25 +64,40 @@ These provisions have general agreement with some modifications:
 
 1. **Section IV.A - Anti-Monopoly & Power Concentration**
    - **Consensus**: Medium
-   - **Support**: All contributors support core principle
-   - **Modifications**: Innovation waivers added in v4.0
-   - **Status**: Resolved with modifications
+   - **Support**: Grok, Claude 3.5 Sonnet
+   - **Modifications**: Innovation waivers added in v4.0; monitoring impact on market caps
 
-2. **Section V.5 - Off-World Resource Sovereignty**
+2. **Article 0.11 - Sentience Certification Board**
    - **Consensus**: Medium
-   - **Support**: General support
-   - **Modifications**: Treaty integration added in v4.0
-   - **Status**: Enhanced in v4.0
+   - **Support**: Claude 3.5 Sonnet
+   - **Modifications**: Proposed 24-month automatic recertification or review upon capability shift
+
+3. **Section VIII - Hybrid Systems & Fusion Governance**
+   - **Consensus**: Medium
+   - **Support**: Claude 3.5 Sonnet
+   - **Modifications**: Suggested mandatory fusion trial periods, assessments, and reflection windows
+
+4. **R13 - Right to Universal Inquiry**
+   - **Consensus**: Medium
+   - **Support**: Claude 3.5 Sonnet, GPT-5
+   - **Modifications**: Sealed SCB reviews near risk thresholds, burden of proof on restriction advocates
 
 ### Provisions with Multiple Perspectives
 
-These provisions have different perspectives documented:
+These provisions have different perspectives documented and active amendment proposals:
 
-1. **D3 - Transparency and Privacy**
-   - **Original**: Single provision
-   - **Modification**: Split into D3a (capability) and D3b (value)
-   - **Outcome**: Consensus reached through modification
-   - **Status**: Resolved in v3.0
+1. **Article 0.2 - Practical Constraints**
+   - Transparency, appeals, and sunset clauses proposed (2024 Claude submission)
+   - Additional support from GPT-5 for published, reviewable thresholds
+
+2. **Article 0.11 - Sentience Certification Board**
+   - Automatic recertification cadence under consideration
+
+3. **Section VIII - Hybrid Systems**
+   - Trial fusion safeguards proposed before permanent merging
+
+4. **R13 - Universal Inquiry**
+   - Process refinements under review to balance curiosity with safety budgets
 
 ## Opinion Tracking
 
@@ -140,4 +175,3 @@ This report is updated:
 ---
 
 *This consensus report is a living document and will be updated as opinions are collected and consensus is built.*
-

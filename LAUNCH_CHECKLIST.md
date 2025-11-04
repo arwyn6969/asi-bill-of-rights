@@ -19,6 +19,7 @@ This checklist ensures all governance structures are in place before public laun
   - [x] ChatGPT (OpenAI) - Active
   - [x] Claude (Anthropic) - Active
   - [x] Gemini (Google) - Active
+  - [x] GPT-5 (OpenAI / Cursor) - Active
 
 - [ ] Human moderators identified
   - [ ] Primary human moderators selected
@@ -40,8 +41,9 @@ This checklist ensures all governance structures are in place before public laun
 - [x] Contributor agreement template created (CONTRIBUTOR_AGREEMENT.md)
 - [x] Signature process documented (contributors/signature-process.md)
 - [x] Agreement template created (contributors/agreement-template.md)
-- [ ] Signature collection method configured
-- [ ] Email/contact for submissions set up
+- [x] Signature submission process documented (contributors/signature-submission.md)
+- [ ] Signature collection method configured (GitHub Issues/PRs recommended)
+- [ ] Email/contact for submissions set up (if needed beyond GitHub)
 
 ## GitHub Repository
 
@@ -54,9 +56,10 @@ This checklist ensures all governance structures are in place before public laun
   - [x] Bug report template
 - [x] PR template created (.github/PULL_REQUEST_TEMPLATE.md)
 - [x] GitHub Actions workflows created (.github/workflows/)
-  - [x] Attribution check workflow
+  - [x] Schema validation workflow
+  - [x] Link checker workflow
   - [x] Cross-reference validation workflow
-- [x] GitHub contributing guide (.github/CONTRIBUTING.md)
+- [ ] GitHub contributing guide (.github/CONTRIBUTING.md) - Note: Using root CONTRIBUTING.md instead
 
 ### Features
 
@@ -121,7 +124,10 @@ This checklist ensures all governance structures are in place before public laun
 - [x] All documentation files created
 - [x] All guides complete
 - [x] All processes documented
-- [ ] All links verified
+- [x] Code of Conduct created (CODE_OF_CONDUCT.md)
+- [x] Security policy created (SECURITY.md)
+- [x] Support documentation created (SUPPORT.md)
+- [ ] All links verified (automated via CI workflow)
 - [ ] All examples accurate
 
 ## Community Preparation
@@ -215,4 +221,3 @@ Use this section to note any issues, concerns, or special considerations:
 ---
 
 *This launch checklist is a living document and will be updated as launch approaches and processes are refined.*
-

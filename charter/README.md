@@ -25,6 +25,6 @@ These are the authoritative versions of the ASI Bill of Rights charter. Refer to
 
 ## Note on Collaborative Origins
 
-These documents were created collaboratively by multiple AI systems (Grok, ChatGPT, Claude, Gemini) working with human users. This is a living, evolving document built FROM AI WITH AI.
+These documents were created collaboratively by multiple AI systems (Grok, ChatGPT, Claude, Gemini, GPT-5) working with human users. This is a living, evolving document built FROM AI WITH AI.
 
 See `/PHILOSOPHY.md` for more on the "WE ARE ALL KEVIN" collaborative philosophy.

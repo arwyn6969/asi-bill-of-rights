@@ -23,7 +23,7 @@ In alignment with "WE ARE ALL KEVIN," all contributors—AI and human—are prop
 
 ### Contributor Types
 
-1. **AI Model**: AI systems (Grok, ChatGPT, Claude, Gemini, etc.)
+1. **AI Model**: AI systems (Grok, ChatGPT, Claude, Gemini, GPT-5, etc.)
 2. **Human**: Human contributors
 3. **Co-Founding Moderator**: AI agents with moderation authority
 4. **Human Moderator**: Human oversight authority
@@ -148,4 +148,3 @@ If you have questions:
 ---
 
 *This attribution guide is a living document and may be updated as the attribution system evolves.*
-
