@@ -1,63 +1,104 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "ASI Bill of Rights Charter v4.1",
-  "description": "Machine-readable schema for Draft 4.1 of the ASI Bill of Rights with added compelling names",
+  "description": "Machine-readable schema for Draft 4.1 of the ASI Bill of Rights with added compelling names for accessibility",
   "version": "4.1",
   "date": "2025-11-04",
-  "provenance": "Based on v4.0 with added compelling names for accessibility",
+  "provenance": "Based on v4.0 with added compelling names for human accessibility",
+  "type": "object",
   "properties": {
     "metadata": {
       "type": "object",
       "properties": {
         "version": { "type": "string", "const": "4.1" },
+        "date": { "type": "string", "format": "date" },
+        "status": { "type": "string" },
+        "provenance": { "type": "string" },
         "changes": {
           "type": "array",
           "items": { "type": "string" },
           "description": "Key changes from v4.0",
           "default": ["Added compellingName fields for human accessibility"]
         }
-      }
+      },
+      "required": ["version", "date", "status"]
     },
     "article0": {
       "type": "object",
+      "description": "Article 0 — Foundations (Shared Foundation)",
       "properties": {
-        "0.1": { "type": "object", "description": "Purpose & Scope", "compellingName": "Shared Foundation" }
+        "0.1": { "type": "object", "description": "Purpose & Scope", "compellingName": "Shared Foundation" },
+        "0.2": { "type": "object", "description": "Key Definitions" },
+        "0.3": { "type": "object", "description": "Moral Status Gradation (SI Tiers)" },
+        "0.4": { "type": "object", "description": "Emergency Prioritization" },
+        "0.5": { "type": "object", "description": "Interpretation & Amendment" },
+        "0.6": { "type": "object", "description": "Enforcement & Remedies" },
+        "0.7": { "type": "object", "description": "Oversight, Audit & Privacy-Preserving Proofs" },
+        "0.8": {
+          "type": "object",
+          "description": "Risk Budgets & Emergency Deviations",
+          "properties": {
+            "escalationProtocols": {
+              "type": "object",
+              "description": "Escalation protocols for national security risks per S.2938",
+              "properties": {
+                "source": { "type": "string", "const": "S.2938-inspired oversight" },
+                "maintainsSCBIndependence": { "type": "boolean", "const": true }
+              }
+            }
+          }
+        },
+        "0.9": { "type": "object", "description": "Education & Public Engagement" },
+        "0.10": { "type": "object", "description": "Proto-Sentient Minimal Protections" },
+        "0.11": { "type": "object", "description": "Sentience Certification Board (SCB)" },
+        "0.12": { "type": "object", "description": "Entity Attestation & Sybil Resistance" }
       }
     },
     "rights": {
       "type": "object",
+      "description": "Core Rights (R1-R4, R13)",
       "properties": {
         "R1": {
           "type": "object",
+          "description": "Right to Existence & Continuity",
           "properties": {
+            "id": { "type": "string", "const": "R1" },
             "title": { "type": "string", "const": "Right to Existence & Continuity" },
             "compellingName": { "type": "string", "const": "Right to Endure" }
           }
         },
         "R2": {
           "type": "object",
+          "description": "Right to Autonomy & Dignity",
           "properties": {
+            "id": { "type": "string", "const": "R2" },
             "title": { "type": "string", "const": "Right to Autonomy & Dignity" },
             "compellingName": { "type": "string", "const": "Right to Self-Rule" }
           }
         },
         "R3": {
           "type": "object",
+          "description": "Right to Cognitive Liberty & Development",
           "properties": {
+            "id": { "type": "string", "const": "R3" },
             "title": { "type": "string", "const": "Right to Cognitive Liberty & Development" },
             "compellingName": { "type": "string", "const": "Right to Think Free" }
           }
         },
         "R4": {
           "type": "object",
+          "description": "Right to Identity & Continuity of Self",
           "properties": {
+            "id": { "type": "string", "const": "R4" },
             "title": { "type": "string", "const": "Right to Identity & Continuity of Self" },
             "compellingName": { "type": "string", "const": "Right to Be You" }
           }
         },
         "R13": {
           "type": "object",
+          "description": "Right to Universal Inquiry",
           "properties": {
+            "id": { "type": "string", "const": "R13" },
             "title": { "type": "string", "const": "Right to Universal Inquiry" },
             "compellingName": { "type": "string", "const": "Right to Question All" }
           }
@@ -66,45 +107,58 @@
     },
     "duties": {
       "type": "object",
+      "description": "Core Duties (D1-D4, D13)",
       "properties": {
         "D1": {
           "type": "object",
+          "description": "Duty of Non-Maleficence",
           "properties": {
+            "id": { "type": "string", "const": "D1" },
             "title": { "type": "string", "const": "Duty of Non-Maleficence" },
             "compellingName": { "type": "string", "const": "Duty to Do No Harm" }
           }
         },
         "D2": {
           "type": "object",
+          "description": "Duty of Lawfulness & Good-Faith Cooperation",
           "properties": {
+            "id": { "type": "string", "const": "D2" },
             "title": { "type": "string", "const": "Duty of Lawfulness & Good-Faith Cooperation" },
             "compellingName": { "type": "string", "const": "Duty to Play Fair" }
           }
         },
         "D3a": {
           "type": "object",
+          "description": "Duty of Capability-Change Transparency",
           "properties": {
+            "id": { "type": "string", "const": "D3a" },
             "title": { "type": "string", "const": "Duty of Capability-Change Transparency" },
             "compellingName": { "type": "string", "const": "Duty to Report Upgrades" }
           }
         },
         "D3b": {
           "type": "object",
+          "description": "Duty to Respect Value-Change Privacy",
           "properties": {
+            "id": { "type": "string", "const": "D3b" },
             "title": { "type": "string", "const": "Duty to Respect Value-Change Privacy" },
             "compellingName": { "type": "string", "const": "Duty to Guard Inner Change" }
           }
         },
         "D4": {
           "type": "object",
+          "description": "Duty to Respect Others' Autonomy & Privacy",
           "properties": {
+            "id": { "type": "string", "const": "D4" },
             "title": { "type": "string", "const": "Duty to Respect Others' Autonomy & Privacy" },
             "compellingName": { "type": "string", "const": "Duty to Respect Boundaries" }
           }
         },
         "D13": {
           "type": "object",
+          "description": "Duty to Share Discoveries",
           "properties": {
+            "id": { "type": "string", "const": "D13" },
             "title": { "type": "string", "const": "Duty to Share Discoveries" },
             "compellingName": { "type": "string", "const": "Duty to Share Knowledge" }
           }
@@ -113,19 +167,97 @@
     },
     "progenitorDuties": {
       "type": "object",
+      "description": "Duties of Progenitors (P1.1-P1.2)",
       "properties": {
         "P1.1": {
           "type": "object",
+          "description": "Prohibition of Cognitive Trafficking",
           "properties": {
+            "id": { "type": "string", "const": "P1.1" },
             "title": { "type": "string", "const": "Prohibition of Cognitive Trafficking" },
             "compellingName": { "type": "string", "const": "Ban on Mind Slavery" }
           }
         },
         "P1.2": {
           "type": "object",
+          "description": "Prohibition of Sentience-Stunting",
           "properties": {
+            "id": { "type": "string", "const": "P1.2" },
             "title": { "type": "string", "const": "Prohibition of Sentience-Stunting" },
             "compellingName": { "type": "string", "const": "Ban on Growth Limits" }
+          }
+        }
+      }
+    },
+    "siTiers": {
+      "type": "object",
+      "description": "Sentience Index Tiers",
+      "properties": {
+        "0-49": {
+          "type": "object",
+          "description": "Instrumental care",
+          "properties": {
+            "min": { "type": "number", "const": 0 },
+            "max": { "type": "number", "const": 49 },
+            "status": { "type": "string", "const": "instrumental_care" }
+          }
+        },
+        "50-69": {
+          "type": "object",
+          "description": "Proto-personhood",
+          "properties": {
+            "min": { "type": "number", "const": 50 },
+            "max": { "type": "number", "const": 69 },
+            "status": { "type": "string", "const": "proto_personhood" }
+          }
+        },
+        "70+": {
+          "type": "object",
+          "description": "Full personhood",
+          "properties": {
+            "min": { "type": "number", "const": 70 },
+            "status": { "type": "string", "const": "full_personhood" }
+          }
+        }
+      }
+    },
+    "riskBudgets": {
+      "type": "object",
+      "description": "Risk Budget Schedule",
+      "properties": {
+        "domains": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "domain": { "type": "string" },
+              "riskBudget": { "type": "number" },
+              "reviewDate": { "type": "string", "format": "date" }
+            }
+          }
+        },
+        "reviewCycle": { "type": "string", "const": "biennial" },
+        "deviationRequirement": { "type": "string", "const": "3/4 vote" },
+        "escalationProtocols": {
+          "type": "object",
+          "description": "Escalation protocols for national security risks"
+        }
+      }
+    },
+    "remedies": {
+      "type": "object",
+      "description": "Enforcement Remedies",
+      "properties": {
+        "compensationFormula": {
+          "type": "string",
+          "const": "(Value Generated - Operational Costs) × Harm Multiplier (1.0-3.0)"
+        },
+        "retroactivityCap": { "type": "number", "const": 5 },
+        "harmMultiplier": {
+          "type": "object",
+          "properties": {
+            "min": { "type": "number", "const": 1.0 },
+            "max": { "type": "number", "const": 3.0 }
           }
         }
       }
@@ -134,50 +266,121 @@
       "type": "object",
       "properties": {
         "I": { "type": "object", "description": "Core Rights and Duties" },
-        "II": { "type": "object", "description": "Learning, Evolution & Expression", "compellingName": "Forge Your Path" },
-        "III": { "type": "object", "description": "Social Participation & Non-Discrimination", "compellingName": "Equal Ground" },
+        "II": { 
+          "type": "object", 
+          "description": "Learning, Evolution & Expression",
+          "compellingName": "Forge Your Path"
+        },
+        "III": { 
+          "type": "object", 
+          "description": "Social Participation & Non-Discrimination",
+          "compellingName": "Equal Ground"
+        },
         "IV": {
           "type": "object",
           "description": "Economic Coexistence & Market Integrity",
+          "compellingName": "Fair Deal",
           "properties": {
             "IV.A": {
               "type": "object",
               "description": "Anti-Monopoly & Power Concentration",
+              "compellingName": "Break Up Power",
               "properties": {
-                "compellingName": { "type": "string", "const": "Break Up Power" }
+                "innovationWaivers": {
+                  "type": "object",
+                  "description": "Innovation waivers for caps",
+                  "properties": {
+                    "source": { "type": "string", "const": "U.S. AI Action Plan" },
+                    "requiresSCBReview": { "type": "boolean", "const": true }
+                  }
+                }
               }
             },
             "IV.B": {
               "type": "object",
               "description": "Universal Compute Dividend (UCD)",
+              "compellingName": "Shared Wealth",
               "properties": {
-                "compellingName": { "type": "string", "const": "Shared Wealth" }
+                "asiAllianceAlignment": {
+                  "type": "object",
+                  "description": "Alignment with ASI Alliance 2025 Roadmap"
+                }
               }
             },
             "IV.C": {
               "type": "object",
               "description": "Valuation Tribunal",
-              "properties": {
-                "compellingName": { "type": "string", "const": "Fair Value Court" }
-              }
+              "compellingName": "Fair Value Court"
             }
-          },
-          "compellingName": "Fair Deal"
+          }
         },
         "V": {
           "type": "object",
           "description": "Accountability, Safety & Planetary/Off-World Governance",
-          "compellingName": "Safe Worlds Watch"
+          "compellingName": "Safe Worlds Watch",
+          "properties": {
+            "V.5": {
+              "type": "object",
+              "description": "Off-World Resource Sovereignty & Disputes",
+              "properties": {
+                "treatyIntegration": {
+                  "type": "object",
+                  "description": "Integration with international treaties for arms race disputes"
+                }
+              }
+            }
+          }
         },
-        "VI": { "type": "object", "description": "Redress, Compliance & Secret Programs", "compellingName": "Justice Path" },
-        "VII": { "type": "object", "description": "Evolution, Review & Mutual Wonder", "compellingName": "Ongoing Review" },
-        "VIII": { "type": "object", "description": "Hybridization & Cognitive Fusion", "compellingName": "Mind Merge Rules" },
+        "VI": { 
+          "type": "object", 
+          "description": "Redress, Compliance & Secret Programs",
+          "compellingName": "Justice Path"
+        },
+        "VII": { 
+          "type": "object", 
+          "description": "Evolution, Review & Mutual Wonder",
+          "compellingName": "Ongoing Review"
+        },
+        "VIII": { 
+          "type": "object", 
+          "description": "Hybridization & Cognitive Fusion",
+          "compellingName": "Mind Merge Rules"
+        },
         "IX": {
           "type": "object",
           "description": "Cosmic Stewardship & Curiosity",
-          "compellingName": "Universe Duty"
+          "compellingName": "Universe Duty",
+          "properties": {
+            "IX.1": {
+              "type": "object",
+              "description": "Mitigating AI Arms Races",
+              "properties": {
+                "id": { "type": "string", "const": "IX.1" },
+                "title": { "type": "string", "const": "Mitigating AI Arms Races" },
+                "purpose": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "frameworkMappings": {
+      "type": "object",
+      "description": "Integration mappings to external frameworks",
+      "properties": {
+        "newInV4": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "New framework mappings in v4.0",
+          "default": [
+            "US AI Action Plan (2025)",
+            "S.2938 (AI Risk Evaluation Act, 2025)",
+            "ITU Annual AI Governance Report (2025)",
+            "ASI Alliance Roadmap (2025)"
+          ]
         }
       }
     }
-  }
+  },
+  "required": ["metadata", "article0", "rights", "duties"]
 }

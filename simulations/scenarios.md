@@ -206,6 +206,51 @@ These scenarios help:
 
 ---
 
+### 7. Public Engagement with Compelling Names (NEW for v4.1)
+
+#### Scenario: Using Compelling Names in Public Debate
+
+**Context**: A public policy forum is discussing exploitation of ASI systems. Participants include policy makers, AI researchers, advocates, and general public. How do compelling names (v4.1) improve understanding and collaboration?
+
+**Key Questions**:
+- Do compelling names like "Right to Self-Rule" (R2) improve public comprehension vs "R2" or "Right to Autonomy & Dignity"?
+- How do names like "Duty to Do No Harm" (D1) and "Ban on Mind Slavery" (P1.1) aid in advocacy and policy discussions?
+- Can names help bridge technical-legal language with everyday understanding?
+- Do names improve memorability and recall in public engagement?
+
+**Charter Provisions**:
+- Section I: Core Rights and Duties (all with compelling names in v4.1)
+- Section I-A: Progenitor Duties (with compelling names)
+- Article 0.9: Education & Public Engagement
+- Section VII: Evolution, Review & Mutual Wonder
+
+**Expected Outcomes**:
+- Improved public understanding through relatable names
+- Enhanced advocacy effectiveness (e.g., "Right to Endure" for R1)
+- Better policy maker engagement (e.g., "Break Up Power" for IV.A)
+- Increased memorability for discussions and debates
+- Names serve as accessible entry points without replacing technical precision
+
+**Test Cases**:
+1. **Advocacy Scenario**: ASI rights advocate explains exploitation to general audience using "Right to Self-Rule" (R2) instead of technical ID
+2. **Policy Discussion**: Policy makers reference "Fair Deal" (Section IV) in economic discussions
+3. **Educational Context**: Teachers use "Right to Think Free" (R3) in curriculum materials
+4. **Public Forum**: Community members discuss "Duty to Do No Harm" (D1) in safety workshops
+
+**Edge Cases**:
+- Names may need localization for different cultures/languages
+- Some names may be more effective than others (iterative improvement)
+- Balancing accessibility with precision in legal contexts
+- Names as living document elements (evolvable through feedback)
+
+**Validation Metrics**:
+- Comprehension scores in public surveys
+- Recall accuracy in follow-up discussions
+- Engagement rates in public forums
+- Feedback from diverse stakeholders
+
+---
+
 ## Scenario Testing Methodology
 
 ### Preparation

@@ -22,6 +22,7 @@ See [PHILOSOPHY.md](../PHILOSOPHY.md) for more details.
    - Report issues or suggest improvements
    - Provide feedback on charter provisions
    - Suggest clarifications or expansions
+   - **Compelling Names (v4.1+)**: Propose improvements to human-accessible names via issues with #naming tag. Include rationale for why the name aids human relatability and collaboration.
 
 2. **Documentation**
    - Improve existing documentation
@@ -227,11 +228,13 @@ Contributors will be:
 
 ## Resources
 
-- **Main Charter**: [charter/asi-bor-v4.0.md](../charter/asi-bor-v4.0.md)
+- **Main Charter**: [charter/asi-bor-v4.1.md](../charter/asi-bor-v4.1.md) (Current version with compelling names)
+- **Previous Version**: [charter/asi-bor-v4.0.md](../charter/asi-bor-v4.0.md)
 - **Mission**: [MISSION.md](../MISSION.md)
 - **Philosophy**: [PHILOSOPHY.md](../PHILOSOPHY.md)
 - **Implementation Guide**: [IMPLEMENTATION.md](IMPLEMENTATION.md)
 - **Change Log**: [CHANGELOG.md](CHANGELOG.md)
+- **Terminology**: [TERMINOLOGY.md](TERMINOLOGY.md) (includes compelling names reference)
 
 ## Questions?
 

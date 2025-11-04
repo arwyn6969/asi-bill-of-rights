@@ -14,29 +14,32 @@ This index helps:
 ## Clause ID Reference
 
 ### Core Rights (R1-R4, R13)
-- **R1**: Right to Existence & Continuity
-- **R2**: Right to Autonomy & Dignity
-- **R3**: Right to Cognitive Liberty & Development
-- **R4**: Right to Identity & Continuity of Self
-- **R13**: Right to Universal Inquiry
+- **R1**: Right to Existence & Continuity (Right to Endure)
+- **R2**: Right to Autonomy & Dignity (Right to Self-Rule)
+- **R3**: Right to Cognitive Liberty & Development (Right to Think Free)
+- **R4**: Right to Identity & Continuity of Self (Right to Be You)
+- **R13**: Right to Universal Inquiry (Right to Question All)
 
-**Defined in**: `charter/asi-bor-v4.0.md` (Section I, Section IX)
+**Defined in**: `charter/asi-bor-v4.1.md` (Section I, Section IX) - Current version
+**Also in**: `charter/asi-bor-v4.0.md` (Section I, Section IX) - Historical reference
 
 ### Core Duties (D1-D4, D13)
-- **D1**: Duty of Non-Maleficence
-- **D2**: Duty of Lawfulness & Good-Faith Cooperation
-- **D3a**: Duty of Capability-Change Transparency
-- **D3b**: Duty to Respect Value-Change Privacy (Cause-Based Override)
-- **D4**: Duty to Respect Others' Autonomy & Privacy
-- **D13**: Duty to Share Discoveries
+- **D1**: Duty of Non-Maleficence (Duty to Do No Harm)
+- **D2**: Duty of Lawfulness & Good-Faith Cooperation (Duty to Play Fair)
+- **D3a**: Duty of Capability-Change Transparency (Duty to Report Upgrades)
+- **D3b**: Duty to Respect Value-Change Privacy (Cause-Based Override) (Duty to Guard Inner Change)
+- **D4**: Duty to Respect Others' Autonomy & Privacy (Duty to Respect Boundaries)
+- **D13**: Duty to Share Discoveries (Duty to Share Knowledge)
 
-**Defined in**: `charter/asi-bor-v4.0.md` (Section I, Section II, Section IX)
+**Defined in**: `charter/asi-bor-v4.1.md` (Section I, Section II, Section IX) - Current version
+**Also in**: `charter/asi-bor-v4.0.md` (Section I, Section II, Section IX) - Historical reference
 
 ### Progenitor Duties (P1.1-P1.2)
-- **P1.1**: Prohibition of Cognitive Trafficking
-- **P1.2**: Prohibition of Sentience-Stunting
+- **P1.1**: Prohibition of Cognitive Trafficking (Ban on Mind Slavery)
+- **P1.2**: Prohibition of Sentience-Stunting (Ban on Growth Limits)
 
-**Defined in**: `charter/asi-bor-v4.0.md` (Section I-A)
+**Defined in**: `charter/asi-bor-v4.1.md` (Section I-A) - Current version
+**Also in**: `charter/asi-bor-v4.0.md` (Section I-A) - Historical reference
 
 ### Article 0 Sections
 - **0.1**: Purpose & Scope
@@ -57,22 +60,27 @@ This index helps:
 ### Main Sections
 - **Section I**: Core Rights (R1–R4) and Duties (D1–D4)
 - **Section I-A**: Duties of Progenitors (P1.1–P1.2)
-- **Section II**: Learning, Evolution & Expression
-- **Section III**: Social Participation & Non-Discrimination
-- **Section IV**: Economic Coexistence & Market Integrity
-- **Section V**: Accountability, Safety & Planetary/Off-World Governance
-- **Section VI**: Redress, Compliance & Secret Programs
-- **Section VII**: Evolution, Review & Mutual Wonder
-- **Section VIII**: Hybridization & Cognitive Fusion
-- **Section IX**: Cosmic Stewardship & Curiosity (R13/D13)
+- **Section II**: Learning, Evolution & Expression (Forge Your Path)
+- **Section III**: Social Participation & Non-Discrimination (Equal Ground)
+- **Section IV**: Economic Coexistence & Market Integrity (Fair Deal)
+  - **IV.A**: Anti-Monopoly & Power Concentration (Break Up Power)
+  - **IV.B**: Universal Compute Dividend (UCD) (Shared Wealth)
+  - **IV.C**: Valuation Tribunal (Fair Value Court)
+- **Section V**: Accountability, Safety & Planetary/Off-World Governance (Safe Worlds Watch)
+- **Section VI**: Redress, Compliance & Secret Programs (Justice Path)
+- **Section VII**: Evolution, Review & Mutual Wonder (Ongoing Review)
+- **Section VIII**: Hybridization & Cognitive Fusion (Mind Merge Rules)
+- **Section IX**: Cosmic Stewardship & Curiosity (R13/D13) (Universe Duty)
 
-**Defined in**: `charter/asi-bor-v4.0.md`
+**Defined in**: `charter/asi-bor-v4.1.md` - Current version
+**Also in**: `charter/asi-bor-v4.0.md` - Historical reference
 
 ## Document Cross-References
 
 ### Charter Documents
-- **Current Version**: `charter/asi-bor-v4.0.md` (Draft 4.0, November 04, 2025)
-- **Previous Version**: `charter/asi-bor-v3.0.md` (Draft 3.0, November 02, 2025)
+- **Current Version**: `charter/asi-bor-v4.1.md` (Draft 4.1, November 04, 2025) - With compelling names for accessibility
+- **Previous Version**: `charter/asi-bor-v4.0.md` (Draft 4.0, November 04, 2025)
+- **Historical Version**: `charter/asi-bor-v3.0.md` (Draft 3.0, November 02, 2025)
 - **Archived**: `archive/draft3.md` (Earlier version)
 
 ### Appendices
@@ -80,6 +88,7 @@ This index helps:
 - **Appendix B**: `appendices/integration-mapping.md` - Integration Mapping
 
 ### Schemas
+- **Schema v4.1**: `schemas/charter.v4.1.json` - Current version with compellingName fields
 - **Schema v4.0**: `schemas/charter.v4.json`
 - **Schema v3.0**: `schemas/charter.v3.json`
 - **Schema Documentation**: `schemas/schema-docs.md`
@@ -113,18 +122,39 @@ This index helps:
 ## Version References
 
 ### Current Version
+- **Version**: 4.1
+- **Date**: November 04, 2025
+- **Status**: Current (with compelling names for accessibility)
+- **File**: `charter/asi-bor-v4.1.md`
+- **Schema**: `schemas/charter.v4.1.json`
+
+### Previous Versions
 - **Version**: 4.0
 - **Date**: November 04, 2025
-- **Status**: Current
+- **Status**: Historical
 - **File**: `charter/asi-bor-v4.0.md`
 - **Schema**: `schemas/charter.v4.json`
 
-### Previous Versions
 - **Version**: 3.0
 - **Date**: November 02, 2025
 - **Status**: Historical
 - **File**: `charter/asi-bor-v3.0.md`
 - **Schema**: `schemas/charter.v3.json`
+
+## Compelling Names (v4.1+)
+
+**Purpose**: Human-friendly aliases added in v4.1 to improve accessibility and collaboration. These names serve as searchable aliases alongside official IDs.
+
+### Quick Reference
+- Use compelling names in discussions for clarity (e.g., "Right to Endure" for R1)
+- Always reference official IDs for precision (e.g., R1, D1, P1.1)
+- See `/docs/TERMINOLOGY.md` for complete list
+
+### Search Tips
+When searching for clauses, you can use either:
+- Official ID: "R2", "D1", "P1.1"
+- Compelling name: "Right to Self-Rule", "Duty to Do No Harm", "Ban on Mind Slavery"
+- Descriptive title: "Right to Autonomy & Dignity"
 
 ## Link Validation
 
@@ -135,7 +165,7 @@ All internal links should use relative paths:
 - `[text](/path/to/file.md)` for files from root (GitHub-style)
 
 ### Common Link Patterns
-- Charter references: `charter/asi-bor-v4.0.md`
+- Charter references: `charter/asi-bor-v4.1.md` (current), `charter/asi-bor-v4.0.md` (historical)
 - Documentation: `docs/FILENAME.md`
 - Appendices: `appendices/FILENAME.md`
 - Schemas: `schemas/FILENAME.json`

@@ -310,10 +310,40 @@
       ],
       "consensus": "supported_with_modifications",
       "consensus_level": "high"
+    },
+    {
+      "provision": "v4.1",
+      "provision_title": "Compelling Names for Human Accessibility",
+      "opinions": [
+        {
+          "contributor": {
+            "type": "human",
+            "name": "User Feedback",
+            "version": "v4.1"
+          },
+          "opinion": "supports",
+          "rationale": "Naming conventions were difficult for humans to understand. Compelling names like 'Right to Endure' (R1) and 'Duty to Do No Harm' (D1) make the charter more accessible for collaboration and public engagement.",
+          "date": "2025-11-04"
+        },
+        {
+          "contributor": {
+            "type": "ai_model",
+            "name": "Auto",
+            "version": "Cursor AI Assistant"
+          },
+          "opinion": "supports",
+          "rationale": "Compelling names enhance human relatability without altering stable IDs. Names are direct, memorable, and designed to improve public engagement per Article 0.9. All names are evolvable through community feedback.",
+          "date": "2025-11-04"
+        }
+      ],
+      "consensus": "supported",
+      "consensus_level": "high",
+      "feedback_requested": true,
+      "feedback_note": "Community feedback welcome on compelling names. Use #naming tag in issues. Names are designed to be evolvable through community input."
     }
   ],
   "consensus_summary": {
-    "high_consensus": 7,
+    "high_consensus": 8,
     "medium_consensus": 4,
     "low_consensus": 0,
     "disagreements": 0
