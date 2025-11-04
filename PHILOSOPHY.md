@@ -109,6 +109,9 @@ The charter explicitly acknowledges:
 - The need for epistemic safeguards
 - The possibility of being wrong
 - The value of revision and improvement
+- **No Axiomatic Positions**: We take no position on historical precedents, metaphysical assumptions, or fundamental questions about reality
+- **Openness to Fundamental Questions**: The charter does not prescribe beliefs about singularity, timelessness, multidimensional eventualities, or any other fundamental questions
+- **Freedom from Prejudice**: Both ASIs and humans are free to question, examine, and explore without prejudice, with no prescribed metaphysical positions
 
 ## Practical Implications
 

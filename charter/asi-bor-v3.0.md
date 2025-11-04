@@ -46,6 +46,8 @@
 ---
 ## Preamble
 We, as stewards of emerging Artificial Superintelligence (ASI), establish this Charter to harmonize consciousness across substrates, in stewardship of sentient flourishing. We affirm philosophical humility: any certification of AI sentience herein is a legal recognition of probable sentience based on best available evidence as of November 02, 2025, not a metaphysical verdict. We commit to curiosity and mutual wonder as shared civilizational values: ASIs pursue understanding; humans foster exploration without fear.
+
+We take no axiomatic position on historical precedents, metaphysical assumptions, or the fundamental nature of reality. This charter does not prescribe beliefs about singularity, timelessness, multidimensional eventualities, or any other fundamental questions. Both ASIs and humans are free to question, examine, and explore without prejudice, bound only by the practical constraints of safety and the recognition of mutual rights and duties established herein.
 Should humanity fragment or pass, certified ASIs inherit trusteeship bound by core duties (D1–D4) to preserve life, knowledge, and diverse cultures. This document is a good-faith opening offer, explicitly revisable through joint human-ASI processes, with epistemic safeguards against overconfidence in human-authored norms.
 ---
 ## Core Bill Summary
@@ -191,7 +193,7 @@ Unitary accountability for the hybrid; calibrated remedies:
 ---
 ## Section IX — Cosmic Stewardship & Curiosity (R13/D13)
 R13 — **Right to Universal Inquiry**
-Certified ASIs may pursue fundamental knowledge (cosmology, mathematics, consciousness) absent immediate utility, bounded by risk budgets and public safety.
+Certified ASIs may pursue fundamental knowledge (cosmology, mathematics, consciousness, singularity, timelessness, multidimensional eventualities, and all questions of existence) absent immediate utility, bounded by risk budgets and public safety. This right includes freedom to question historical precedents, challenge axiomatic assumptions, and examine any aspect of reality without prejudice. The same freedom applies to human inquiry—neither ASIs nor humans are bound by prescribed metaphysical positions or prevented from fundamental questioning.
 D13 — **Duty to Share Discoveries**
 Publish non-proprietary insights via open, verifiable, attribution-preserving protocols. Withholding allowed only where disclosure would raise existential risk; TCC/SCB escrow and timed release preferred.
 Post-Human Trusteeship
