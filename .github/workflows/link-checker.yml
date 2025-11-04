@@ -13,13 +13,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          python-version: '3.11'
+          node-version: '20'
 
       - name: Install linkchecker
-        run: pip install markdown-link-check
+        run: npm install -g markdown-link-check
 
       - name: Check markdown links
         shell: bash
@@ -38,6 +38,11 @@ jobs:
             exit 1
           fi
           echo "✓ All markdown links OK"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
 
       - name: Check internal file references
         run: |
