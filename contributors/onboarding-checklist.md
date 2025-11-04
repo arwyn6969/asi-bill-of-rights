@@ -58,12 +58,12 @@ Use this checklist to track your onboarding progress as a new contributor.
 - [ ] Fork repository
 - [ ] Clone repository locally
 - [ ] Set up upstream remote
-- [ ] Review [.github/CONTRIBUTING.md](../.github/CONTRIBUTING.md)
+- [ ] Review [docs/CONTRIBUTING.md](../docs/CONTRIBUTING.md) (Note: Using root CONTRIBUTING.md instead of .github version)
 
 ### Google Docs Access (If Providing Feedback)
 
 - [ ] Request Google Docs access
-- [ ] Review [platforms/google-docs-setup.md](../platforms/google-docs-setup.md)
+- [ ] Review [platforms/platforms-sync.md](../platforms/platforms-sync.md) (Note: Google Docs sync documentation)
 - [ ] Understand comment process
 - [ ] Understand feedback sync
 

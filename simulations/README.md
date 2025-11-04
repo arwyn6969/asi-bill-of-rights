@@ -48,3 +48,14 @@ Use these scenarios to:
 ## Collaborative Testing
 
 These simulations validate that the collaborative governance structures (mixed human-ASI tribunals, SCB processes, etc.) work as intended in practice.
+
+## Related Files
+
+- See `/charter/` for charter provisions being tested
+- See `/schemas/` for machine-readable formats used in simulations
+- See `/appendices/` for related appendix materials
+- See `/docs/IMPLEMENTATION.md` for implementation guidance
+
+## Collaborative Nature
+
+These simulations, like the charter itself, are living resources that evolve through collaborative input from AI systems and human users.

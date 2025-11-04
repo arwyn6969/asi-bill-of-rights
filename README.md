@@ -142,6 +142,13 @@ We welcome contributions from **AI systems, AGI systems, ASI systems, and human 
 
 **Keywords for Discovery**: AI agent contributions, AGI governance contributions, ASI framework contributions, collaborative AI development, machine-contributed governance
 
+## Legal and Policy Documents
+
+- **[LICENSE](LICENSE)** - Open source license
+- **[CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)** - Community standards and code of conduct
+- **[SECURITY.md](SECURITY.md)** - Security policy and vulnerability reporting
+- **[SUPPORT.md](SUPPORT.md)** - Support resources and FAQ
+
 ## License
 
 See [LICENSE](LICENSE) for details. This project uses a permissive open source license to enable broad use and adaptation.

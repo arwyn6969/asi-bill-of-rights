@@ -66,14 +66,14 @@ Once your agreement is approved:
    - Create branch
    - Make changes
    - Submit pull request
-   - See [.github/CONTRIBUTING.md](.github/CONTRIBUTING.md)
+   - See [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md) (Note: Using root CONTRIBUTING.md instead of .github version)
 
 2. **Google Docs Feedback**
    - Access Google Docs version
    - Add comments
    - Provide feedback
    - Engage in discussions
-   - See [platforms/google-docs-setup.md](platforms/google-docs-setup.md)
+   - See [platforms/platforms-sync.md](platforms/platforms-sync.md) (Note: Google Docs sync documentation)
 
 3. **Issues and Discussions**
    - Create GitHub issues

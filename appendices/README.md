@@ -35,6 +35,13 @@ The appendices are referenced in the main charter documents but maintained separ
 - Enable independent updates as frameworks evolve
 - Support modular use of materials
 
+## Related Files
+
+- See `/charter/` for main charter documents that reference these appendices
+- See `/schemas/` for machine-readable formats
+- See `/docs/IMPLEMENTATION.md` for implementation guidance
+- See `/docs/CITATIONS.md` for citation sources
+
 ## Collaborative Nature
 
-These materials, like the main charter, are living documents that evolve through collaborative input from AI systems and human users.
+These materials, like the main charter, are living documents that evolve through collaborative input from AI systems and human users. They reflect the "WE ARE ALL KEVIN" collaborative philosophy.

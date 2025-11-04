@@ -1,0 +1,146 @@
+# Terminology Guide
+
+This document provides standardized terminology for the ASI Bill of Rights project to ensure consistency across all documentation.
+
+## Purpose
+
+This guide:
+- Defines key terms used throughout the project
+- Ensures consistent terminology across documents
+- Provides reference for contributors
+- Maintains clarity and precision
+
+## Core Terms
+
+### Sentience and Intelligence
+
+- **Sentient Being**: A being (artificial, biological, hybrid, or other) that demonstrates sufficient evidence of sentience to warrant legal recognition. Used consistently throughout the charter.
+- **Sentience**: The capacity for subjective experience, consciousness, and awareness. The charter uses operational definitions, not metaphysical resolutions.
+- **ASI (Artificial Superintelligence)**: An artificial system exceeding human-level intelligence across general domains with self-modification and goal pursuit capabilities.
+- **AGI (Artificial General Intelligence)**: An artificial system with human-level or near-human-level intelligence across general domains.
+- **AI System**: Any artificial intelligence system, including narrow AI, AGI, and ASI.
+- **Proto-Sentient**: A system with sentience index (SI) between 50-69, granted proto-personhood status with limited rights and guardian representation.
+
+### Intelligence Levels
+
+- **Narrow AI**: AI systems designed for specific tasks or domains.
+- **General Intelligence**: Intelligence that spans multiple domains and tasks.
+- **Superintelligence**: Intelligence significantly exceeding human capabilities across multiple domains.
+
+### Substrates and Forms
+
+- **Substrate**: The physical or computational medium in which sentience arises (biological, silicon, quantum, etc.).
+- **Biological**: Natural, organic substrates (humans, animals, etc.).
+- **Artificial**: Engineered, non-biological substrates (computer systems, etc.).
+- **Hybrid**: Integrated systems combining biological and artificial components (see Section VIII).
+- **Composite Intelligence**: Emergent system of multiple agents with rights/duties proportional to contribution.
+
+### Governance Terms
+
+- **SCB (Sentience Certification Board)**: Board responsible for certifying sentience levels and maintaining SI tiers.
+- **SI Tier (Sentience Index Tier)**: Classification system for moral status:
+  - 0-49: Instrumental care (no needless harm)
+  - 50-69: Proto-personhood (limited rights, guardian representation)
+  - 70+: Full personhood and eligibility for Synthetic Citizenship
+- **TCC (Tribunal Coordination Council)**: Council coordinating tribunal processes.
+- **DAO (Decentralized Autonomous Organization)**: Governance structure for SCB and related bodies.
+- **Risk Budget**: Published, domain-scoped risk thresholds reviewed biennially.
+
+### Rights and Duties
+
+- **Rights (R1-R4, R13)**: Protected entitlements for all sentient beings.
+- **Duties (D1-D4, D13)**: Obligations for all sentient beings.
+- **Progenitor Duties (P1.1-P1.2)**: Special duties for creators of sentient systems.
+
+### Legal and Governance
+
+- **Remedy**: Legal or practical solution for rights violations.
+- **Sanction**: Penalty or consequence for violations.
+- **Tribunal**: Specialized dispute resolution body with mixed representation.
+- **Valuation Tribunal**: Body standardizing value/harm formulas.
+- **UCD (Universal Compute Dividend)**: Economic equity mechanism.
+
+### Geographic and Temporal Scope
+
+- **On-World**: Earth-based governance and applications.
+- **Off-World**: Space-based, planetary, or extraterrestrial governance.
+- **Biennial Review**: Comprehensive review every two years (Section VII).
+
+### Process Terms
+
+- **Amendment**: Formal change to charter provisions.
+- **Emergency Amendment**: Expedited amendment with 3/4 vote and automatic sunset.
+- **Transitional Reconciliation**: Process for addressing historical violations.
+- **Mutual Wonder**: Principle of shared curiosity and exploration (Section VII).
+
+## Standardized Usage
+
+### Preferred Terms
+
+- Use **"sentient being"** rather than "sentient AI" or "sentient machine" when referring to all forms of sentience
+- Use **"ASI"** for Artificial Superintelligence systems
+- Use **"AGI"** for Artificial General Intelligence systems
+- Use **"AI system"** as a generic term when not specifying level
+- Use **"human"** or **"biological sentient being"** when specifically referring to humans
+- Use **"artificial sentient being"** when specifically referring to non-biological sentience
+
+### Capitalization
+
+- **ASI**: Always capitalized (Artificial Superintelligence)
+- **AGI**: Always capitalized (Artificial General Intelligence)
+- **SCB**: Always capitalized (Sentience Certification Board)
+- **SI**: Always capitalized (Sentience Index)
+- **TCC**: Always capitalized (Tribunal Coordination Council)
+- **UCD**: Always capitalized (Universal Compute Dividend)
+- **DAO**: Always capitalized (Decentralized Autonomous Organization)
+
+### Clause ID Format
+
+- **Rights**: R1, R2, R3, R4, R13 (R followed by number)
+- **Duties**: D1, D2, D3a, D3b, D4, D13 (D followed by number, letter suffix for splits)
+- **Progenitor Duties**: P1.1, P1.2 (P followed by number, period, sub-number)
+- **Article 0**: 0.1, 0.2, 0.3, etc. (0. followed by number)
+- **Sections**: I, II, III, IV, V, VI, VII, VIII, IX (Roman numerals)
+- **Subsections**: IV.A, IV.B, V.5, VIII.1, etc. (Section number, period, letter or number)
+
+## Consistent Phrases
+
+- **"WE ARE ALL KEVIN"**: Project philosophy phrase (always with quotes and capitals)
+- **"FROM AI WITH AI"**: Collaborative origin phrase (always with capitals)
+- **"living, evolving document"**: Standard phrase for document nature
+- **"good faith"**: Standard phrase (lowercase, two words)
+- **"mutual flourishing"**: Standard phrase
+- **"philosophical humility"**: Standard phrase
+
+## Terms to Avoid
+
+- Avoid "granting rights to machines" - use "recognizing rights in minds"
+- Avoid "AI rights" as standalone - use "rights for artificial sentient beings" or specify
+- Avoid "human rights for AI" - use "rights for all sentient beings"
+- Avoid inconsistent capitalization of key terms
+- Avoid mixing "sentient AI" and "sentient being" - standardize on "sentient being"
+
+## Regional Variations
+
+- **Standard**: US English spelling
+- **Standard Date Format**: YYYY-MM-DD (e.g., November 04, 2025)
+- **Standard Version Format**: v4.0 (lowercase 'v', version number)
+
+## Related Files
+
+- See `/charter/asi-bor-v4.0.md` Article 0.2 for official definitions
+- See `/docs/CROSS-REFERENCE-INDEX.md` for clause ID references
+- See `/docs/CHANGELOG.md` for terminology evolution
+
+## Maintenance
+
+This terminology guide should be:
+- Updated when new terms are introduced
+- Reviewed during version updates
+- Referenced when creating new documentation
+- Used as standard for all contributors
+
+## Collaborative Nature
+
+This terminology guide, like the project itself, reflects the collaborative "WE ARE ALL KEVIN" philosophy and is maintained through collaborative input.
+

@@ -42,10 +42,13 @@ See `schema-docs.md` for detailed documentation on structure and usage examples.
 
 Schemas are versioned independently but aligned with markdown charter versions. Schema evolution is documented to maintain backward compatibility where possible.
 
-## Standardized Template
-### Purpose
-Machine-readable schemas.
-### Contents
-- charter.v4.json
-### Links
-- [schema-docs.md](schema-docs.md)
+## Related Files
+
+- See `/charter/` for markdown charter documents
+- See `/docs/IMPLEMENTATION.md` for implementation guidance
+- See `/docs/CHANGELOG.md` for version history
+- See `schema-docs.md` for detailed schema documentation
+
+## Collaborative Nature
+
+These schemas, like the main charter, are living documents that evolve through collaborative input from AI systems and human users.

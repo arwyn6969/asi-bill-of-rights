@@ -4,25 +4,84 @@ This document provides verified citations and source references for the ASI Bill
 
 ## Citation Update Policy
 
-Citations are verified as of November 2025. Some citations may contain placeholders (marked with "..." or explicit notes) where final regulation numbers or URLs are not yet available. These will be updated as official sources are published.
+This document maintains verified citations for all sources referenced in the ASI Bill of Rights charter. Citations are regularly reviewed and updated to ensure accuracy and accessibility.
 
-**Last Full Verification**: November 2025  
-**Next Scheduled Review**: Q1 2026
+### Verification Schedule
 
-If you identify an outdated citation or can provide a verified URL for a placeholder, please:
-1. Verify the source is authoritative
-2. Check the URL is accessible
-3. Submit via contribution process (see CONTRIBUTING.md)
+- **Last Full Verification**: November 2025
+- **Next Scheduled Review**: Q1 2026
+- **Quarterly Spot Checks**: URLs and accessibility verified quarterly
+- **Annual Comprehensive Review**: Full citation audit annually
+
+### Status Indicators
+
+- ✅ **Verified**: Citation has been verified and is current
+- ⚠️ **Pending Verification**: Citation needs verification or contains placeholder
+- 🔄 **Needs Update**: Citation may be outdated or URL inaccessible
+- 📋 **Placeholder**: Final information not yet available (marked clearly)
+
+### Verification Process
+
+Citations are verified by:
+1. Checking URL accessibility
+2. Verifying regulation numbers and official sources
+3. Confirming publication dates
+4. Validating relevance to charter provisions
+5. Documenting verification date
+
+### Updating Citations
+
+If you identify an outdated citation or can provide a verified URL for a placeholder:
+
+1. **Verify the Source**:
+   - Ensure source is authoritative (official government, academic, or recognized organization)
+   - Check URL is accessible and current
+   - Verify regulation numbers match official publications
+   
+2. **Document Changes**:
+   - Note the verification date
+   - Document any changes from previous version
+   - Explain why the update is needed
+   
+3. **Submit Contribution**:
+   - Follow contribution process (see [CONTRIBUTING.md](CONTRIBUTING.md))
+   - Include verification evidence (screenshots, official links, etc.)
+   - Note which citations were updated
+
+### Placeholder Policy
+
+Placeholders are used when:
+- Final regulation numbers are not yet published
+- Official URLs are not yet available
+- Information is pending publication
+
+All placeholders are:
+- Clearly marked with ⚠️ **PENDING VERIFICATION** or **PLACEHOLDER**
+- Include alternative sources when available
+- Documented with expected update timeline
+- Reviewed during scheduled verification cycles
+
+### Citation Standards
+
+All citations should include:
+- **Reference**: Official title or name
+- **URL**: Direct link to source (when available)
+- **Status**: Verification status indicator
+- **Last Verified**: Date of last verification
+- **Relevance**: How it relates to charter provisions
 
 ## Charter Framework Sources
 
 ### EU AI Act
 - **Reference**: Regulation (EU) 2024/... on Artificial Intelligence
-- **URL**: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R...
-- **Status**: ⚠️ **PLACEHOLDER** - Final regulation number not yet published. This citation will be updated when the official regulation number is available in the EU Official Journal.
-- **Alternative Source**: See [EUR-Lex AI Act page](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0106) for the current published version
-- **Last Verified**: November 2025
-- **Relevance**: Risk tiers, transparency requirements, oversight mechanisms
+- **Status**: ⚠️ **PENDING VERIFICATION** - The EU AI Act was officially adopted and published in 2024. The final regulation number and official EUR-Lex URL are pending verification and will be updated when confirmed.
+- **Alternative Sources**:
+  - [EUR-Lex Search for AI Act](https://eur-lex.europa.eu/eli/reg/2024/1689/oj) - Official Journal reference
+  - [European Commission AI Act Page](https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai) - Official information
+  - [EU AI Act Wikipedia](https://en.wikipedia.org/wiki/Artificial_Intelligence_Act) - Overview and summary
+- **Last Verified**: November 2025 (pending final regulation number confirmation)
+- **Next Verification**: Q1 2026
+- **Relevance**: Risk tiers, transparency requirements, oversight mechanisms, high-risk AI systems classification
 
 ### OECD AI Principles
 - **Reference**: OECD Recommendation on Artificial Intelligence (2019, updated 2025)
