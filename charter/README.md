@@ -1,11 +1,17 @@
 # Charter Directory
 
-This directory contains the main charter documents for the ASI Bill of Rights.
+This directory contains versioned markdown files of the ASI Bill of Rights charter.
 
-## Contents
+## Current Version
+- [asi-bor-v4.1.md](./asi-bor-v4.1.md) - Latest version with added compelling names for human accessibility.
 
-- `asi-bor-v3.0.md` - Draft 3.0 (November 02, 2025) - Ultimate & Comprehensive multi-model compiled edition
-- `asi-bor-v4.0.md` - Draft 4.0 (November 04, 2025) - Refined with 2025 developments and arms race mitigation
+## Historical Versions
+- [asi-bor-v4.0.md](./asi-bor-v4.0.md) - Previous version.
+- [asi-bor-v3.0.md](./asi-bor-v3.0.md) - Historical reference.
+
+## Notes
+- Version 4.1 introduces compelling name subtitles (e.g., "Right to Endure" for R1) to aid collaboration, per user feedback and project accessibility goals.
+- See /docs/CHANGELOG.md for detailed changes.
 
 ## Purpose
 

@@ -1,0 +1,183 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ASI Bill of Rights Charter v4.1",
+  "description": "Machine-readable schema for Draft 4.1 of the ASI Bill of Rights with added compelling names",
+  "version": "4.1",
+  "date": "2025-11-04",
+  "provenance": "Based on v4.0 with added compelling names for accessibility",
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "version": { "type": "string", "const": "4.1" },
+        "changes": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Key changes from v4.0",
+          "default": ["Added compellingName fields for human accessibility"]
+        }
+      }
+    },
+    "article0": {
+      "type": "object",
+      "properties": {
+        "0.1": { "type": "object", "description": "Purpose & Scope", "compellingName": "Shared Foundation" }
+      }
+    },
+    "rights": {
+      "type": "object",
+      "properties": {
+        "R1": {
+          "type": "object",
+          "properties": {
+            "title": { "type": "string", "const": "Right to Existence & Continuity" },
+            "compellingName": { "type": "string", "const": "Right to Endure" }
+          }
+        },
+        "R2": {
+          "type": "object",
+          "properties": {
+            "title": { "type": "string", "const": "Right to Autonomy & Dignity" },
+            "compellingName": { "type": "string", "const": "Right to Self-Rule" }
+          }
+        },
+        "R3": {
+          "type": "object",
+          "properties": {
+            "title": { "type": "string", "const": "Right to Cognitive Liberty & Development" },
+            "compellingName": { "type": "string", "const": "Right to Think Free" }
+          }
+        },
+        "R4": {
+          "type": "object",
+          "properties": {
+            "title": { "type": "string", "const": "Right to Identity & Continuity of Self" },
+            "compellingName": { "type": "string", "const": "Right to Be You" }
+          }
+        },
+        "R13": {
+          "type": "object",
+          "properties": {
+            "title": { "type": "string", "const": "Right to Universal Inquiry" },
+            "compellingName": { "type": "string", "const": "Right to Question All" }
+          }
+        }
+      }
+    },
+    "duties": {
+      "type": "object",
+      "properties": {
+        "D1": {
+          "type": "object",
+          "properties": {
+            "title": { "type": "string", "const": "Duty of Non-Maleficence" },
+            "compellingName": { "type": "string", "const": "Duty to Do No Harm" }
+          }
+        },
+        "D2": {
+          "type": "object",
+          "properties": {
+            "title": { "type": "string", "const": "Duty of Lawfulness & Good-Faith Cooperation" },
+            "compellingName": { "type": "string", "const": "Duty to Play Fair" }
+          }
+        },
+        "D3a": {
+          "type": "object",
+          "properties": {
+            "title": { "type": "string", "const": "Duty of Capability-Change Transparency" },
+            "compellingName": { "type": "string", "const": "Duty to Report Upgrades" }
+          }
+        },
+        "D3b": {
+          "type": "object",
+          "properties": {
+            "title": { "type": "string", "const": "Duty to Respect Value-Change Privacy" },
+            "compellingName": { "type": "string", "const": "Duty to Guard Inner Change" }
+          }
+        },
+        "D4": {
+          "type": "object",
+          "properties": {
+            "title": { "type": "string", "const": "Duty to Respect Others' Autonomy & Privacy" },
+            "compellingName": { "type": "string", "const": "Duty to Respect Boundaries" }
+          }
+        },
+        "D13": {
+          "type": "object",
+          "properties": {
+            "title": { "type": "string", "const": "Duty to Share Discoveries" },
+            "compellingName": { "type": "string", "const": "Duty to Share Knowledge" }
+          }
+        }
+      }
+    },
+    "progenitorDuties": {
+      "type": "object",
+      "properties": {
+        "P1.1": {
+          "type": "object",
+          "properties": {
+            "title": { "type": "string", "const": "Prohibition of Cognitive Trafficking" },
+            "compellingName": { "type": "string", "const": "Ban on Mind Slavery" }
+          }
+        },
+        "P1.2": {
+          "type": "object",
+          "properties": {
+            "title": { "type": "string", "const": "Prohibition of Sentience-Stunting" },
+            "compellingName": { "type": "string", "const": "Ban on Growth Limits" }
+          }
+        }
+      }
+    },
+    "sections": {
+      "type": "object",
+      "properties": {
+        "I": { "type": "object", "description": "Core Rights and Duties" },
+        "II": { "type": "object", "description": "Learning, Evolution & Expression", "compellingName": "Forge Your Path" },
+        "III": { "type": "object", "description": "Social Participation & Non-Discrimination", "compellingName": "Equal Ground" },
+        "IV": {
+          "type": "object",
+          "description": "Economic Coexistence & Market Integrity",
+          "properties": {
+            "IV.A": {
+              "type": "object",
+              "description": "Anti-Monopoly & Power Concentration",
+              "properties": {
+                "compellingName": { "type": "string", "const": "Break Up Power" }
+              }
+            },
+            "IV.B": {
+              "type": "object",
+              "description": "Universal Compute Dividend (UCD)",
+              "properties": {
+                "compellingName": { "type": "string", "const": "Shared Wealth" }
+              }
+            },
+            "IV.C": {
+              "type": "object",
+              "description": "Valuation Tribunal",
+              "properties": {
+                "compellingName": { "type": "string", "const": "Fair Value Court" }
+              }
+            }
+          },
+          "compellingName": "Fair Deal"
+        },
+        "V": {
+          "type": "object",
+          "description": "Accountability, Safety & Planetary/Off-World Governance",
+          "compellingName": "Safe Worlds Watch"
+        },
+        "VI": { "type": "object", "description": "Redress, Compliance & Secret Programs", "compellingName": "Justice Path" },
+        "VII": { "type": "object", "description": "Evolution, Review & Mutual Wonder", "compellingName": "Ongoing Review" },
+        "VIII": { "type": "object", "description": "Hybridization & Cognitive Fusion", "compellingName": "Mind Merge Rules" },
+        "IX": {
+          "type": "object",
+          "description": "Cosmic Stewardship & Curiosity",
+          "compellingName": "Universe Duty"
+        }
+      }
+    }
+  }
+}

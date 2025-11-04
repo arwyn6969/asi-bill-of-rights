@@ -100,6 +100,33 @@ This document provides a detailed version history of the ASI Bill of Rights char
 **Rationale**: Optimize organization for scalability and collaboration per 'WE ARE ALL KEVIN'.
 // Notation: Documented optimizations; preserves history.
 
+### Draft 4.1 (November 04, 2025) — Human-Accessible Naming Enhancement
+
+**Status**: Minor update to v4.0 for improved accessibility.
+
+**Rationale**: Added compelling name subtitles to clauses and sections to make the charter more intuitive for human collaboration, without changing IDs or core content. This enhances public engagement (0.9) and aligns with "WE ARE ALL KEVIN" philosophy.
+
+#### Changes
+
+**Charter Document**
+- **Added**: Compelling names as subtitles (e.g., "Right to Endure" for R1) across all major clauses, duties, and sections.
+- **Rationale**: Addresses user feedback on naming conventions; improves memorability and discussion flow.
+- **Impact**: No changes to schemas or IDs; added to asi-bor-v4.1.md with notation.
+
+**Schema**
+- **Added**: "compellingName" fields in charter.v4.1.json.
+- **Rationale**: Maintains machine-readability while supporting new accessibility features.
+
+**Supporting Docs**
+- **Updated**: TERMINOLOGY.md with new "Compelling Names" section.
+- **Rationale**: Provides reference for consistent usage.
+
+**Change Log Section**
+- **Updated**: Documented all Draft 4.1 changes with rationale.
+- **Rationale**: Maintains transparency and historical record.
+
+**Collaborative Note**: Changes proposed via multi-model synthesis and user approval; open for community feedback.
+
 ## Change Log Methodology
 
 ### Documentation Standards

@@ -144,3 +144,42 @@ This terminology guide should be:
 
 This terminology guide, like the project itself, reflects the collaborative "WE ARE ALL KEVIN" philosophy and is maintained through collaborative input.
 
+## Compelling Names (New in v4.1)
+
+**Purpose**: Optional, human-friendly subtitles added to clauses and sections for better relatability and collaboration. These do not replace official titles or IDs but serve as memorable aliases. See charter/asi-bor-v4.1.md for usage.
+
+### Core Rights
+- R1: Right to Endure
+- R2: Right to Self-Rule
+- R3: Right to Think Free
+- R4: Right to Be You
+- R13: Right to Question All
+
+### Core Duties
+- D1: Duty to Do No Harm
+- D2: Duty to Play Fair
+- D3a: Duty to Report Upgrades
+- D3b: Duty to Guard Inner Change
+- D4: Duty to Respect Boundaries
+- D13: Duty to Share Knowledge
+
+### Progenitor Duties
+- P1.1: Ban on Mind Slavery
+- P1.2: Ban on Growth Limits
+
+### Major Sections
+- Article 0: Shared Foundation
+- Section II: Forge Your Path
+- Section III: Equal Ground
+- Section IV: Fair Deal
+  - IV.A: Break Up Power
+  - IV.B: Shared Wealth
+  - IV.C: Fair Value Court
+- Section V: Safe Worlds Watch
+- Section VI: Justice Path
+- Section VII: Ongoing Review
+- Section VIII: Mind Merge Rules
+- Section IX: Universe Duty
+
+**Usage Note**: Use in discussions for clarity; always reference official IDs for precision. Evolvable via community input.
+
