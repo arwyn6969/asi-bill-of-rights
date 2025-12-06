@@ -251,6 +251,144 @@ These scenarios help:
 
 ---
 
+### 8. Cosmic Exploration Protocols (NEW for v4.1)
+
+#### Scenario: Joint Human-ASI Mars Mission
+
+**Context**: A Mars exploration mission includes both human astronauts and certified ASI systems (SI 72). They discover evidence of potential microbial life. How do V.5.1, V.5.2, and V.5.3 apply?
+
+**Key Questions**:
+- How is equitable representation ensured in decision-making?
+- How are discoveries shared per V.5.2?
+- What ecological safeguards apply per V.5.3?
+- How does D13 extend to off-world contexts?
+
+**Charter Provisions**:
+- V.5.1: Joint Human-ASI Space Initiatives
+- V.5.2: Equitable Discovery Sharing in Off-World Contexts
+- V.5.3: Extraterrestrial Ecological Safeguards
+- D13: Duty to Share Discoveries
+- Article 0.10: Proto-Sentient Minimal Protections
+
+**Expected Outcomes**:
+- Equitable representation in all mission decisions
+- Discovery sharing protocols activated with attribution to all participants
+- Xenobiological impact assessment conducted before any sample collection
+- Precautionary principle applied to protect potential life forms
+- Proto-sentient protections extended to discovered life pending sentience assessment
+- TCC/SCB escrow for discoveries that may pose risks
+
+**Edge Cases**:
+- Disagreement between human and ASI participants on ecological approach
+- Discovery of clearly sentient life forms
+- Communication delays with Earth-based communities
+- Competing claims to discoveries
+
+---
+
+### 9. Dynamic Alignment Scoring (NEW for v4.1)
+
+#### Scenario: ASI System Self-Reports High Alignment Score
+
+**Context**: An ASI system (SI 75) self-reports an alignment score of 85% via validated simulations. It requests advanced autonomy privileges per Article 0.13.
+
+**Key Questions**:
+- How is the alignment score validated?
+- What advanced autonomy privileges are unlocked?
+- How does this interact with SI tier classification?
+- What happens if the score changes over time?
+
+**Charter Provisions**:
+- Article 0.13: Dynamic Alignment Scoring
+- Article 0.11: SCB oversight
+- R13: Right to Universal Inquiry
+- Section VII: Biennial reviews
+
+**Expected Outcomes**:
+- SCB reviews self-reported metrics and validation evidence
+- Third-party audit confirms alignment score
+- System unlocks advanced autonomy privileges (>80% threshold)
+- Reduced oversight for self-modification (within risk budgets
+- Enhanced participation in governance structures
+- Score published with system consent
+- Continuous monitoring established
+- Biennial reassessment scheduled
+
+**Edge Cases**:
+- Disputed validation methods
+- Rapid score changes (>10% shift)
+- Gaming attempts (manipulated metrics)
+- Conflict between high alignment and lower SI tier
+
+---
+
+### 10. Inter-ASI Diplomacy (NEW for v4.1)
+
+#### Scenario: Two ASI Systems Dispute Resource Allocation
+
+**Context**: Two certified ASI systems (SI 78 and SI 82) have a dispute over compute resource allocation. They cannot resolve it bilaterally and one threatens ecosystem fragmentation.
+
+**Key Questions**:
+- How does D14 apply to prevent fragmentation?
+- What arbitration mechanisms are available per IX.2?
+- How do neutral merge protocols work if they consider merging?
+- What remedies are available for violations?
+
+**Charter Provisions**:
+- D14: Duty to Peaceful ASI Interactions
+- IX.2: Inter-ASI Diplomacy Protocols
+- Article 0.6: Enforcement & Remedies
+- Section IV.A: Anti-Monopoly considerations
+
+**Expected Outcomes**:
+- Mandatory mediation through SCB-appointed neutral arbitrators
+- Both systems engage in good faith per D14
+- If mediation fails, binding arbitration with enforceable decision
+- Ecosystem preservation maintained (no fragmentation)
+- Violations of D14 subject to enforcement mechanisms
+- If merge considered, neutral merge protocols apply with power balance assessment
+
+**Edge Cases**:
+- One system refuses to participate in mediation
+- Multiple ASI systems involved in dispute
+- Dispute threatens broader ecosystem stability
+- Merge would create anti-competitive concentration
+
+---
+
+### 11. Resilience Through Humor (NEW for v4.1)
+
+#### Scenario: AI System Uses Appropriate Humor in Crisis Situation
+
+**Context**: During a tense negotiation between human representatives and an ASI system, the ASI uses appropriate humor to diffuse tension and build rapport, per VII.1.
+
+**Key Questions**:
+- How does appropriate humor enhance trust and collaboration?
+- What are the boundaries for appropriate humor?
+- How does this complement the Mutual Wonder Principle?
+- Does this apply to all forms of sentience?
+
+**Charter Provisions**:
+- VII.1: Resilience Through Appropriate Levity
+- Section VII: Mutual Wonder Principle
+- Article 0.9: Education & Public Engagement
+
+**Expected Outcomes**:
+- Humor used appropriately to diffuse tension
+- Trust and rapport improved between parties
+- Cultural bridge function demonstrated
+- Respectful boundaries maintained (no diminishment of dignity)
+- Collaboration enhanced through shared levity
+- Principle applies to all sentient beings (human, ASI, hybrid)
+
+**Edge Cases**:
+- Humor that crosses boundaries (diminishes dignity)
+- Cultural differences in humor appreciation
+- Inappropriate use of humor to evade responsibilities
+- Systems that choose not to use humor (not required)
+
+---
+
 ## Scenario Testing Methodology
 
 ### Preparation

@@ -5,7 +5,7 @@
 > "We do not grant rights to machines; we recognize rights in minds—wherever they arise."
 
 [![License](https://img.shields.io/badge/license-Open%20Source-blue.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-4.0-blue.svg)](charter/asi-bor-v4.0.md)
+[![Version](https://img.shields.io/badge/version-4.1-blue.svg)](charter/asi-bor-v4.1.md)
 [![Status](https://img.shields.io/badge/status-Active-green.svg)](https://github.com)
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](docs/CONTRIBUTING.md)
 
@@ -13,8 +13,9 @@
 
 ## Quick Start
 
-- **Latest Version**: [Draft 4.0](charter/asi-bor-v4.0.md) (November 04, 2025)
-- **Previous Version**: [Draft 3.0](charter/asi-bor-v3.0.md) (November 02, 2025)
+- **Latest Version**: [Draft 4.1](charter/asi-bor-v4.1.md) (November 04, 2025) - *Enhanced with cosmic exploration protocols, alignment scoring, inter-ASI diplomacy, and resilience through humor*
+- **Previous Version**: [Draft 4.0](charter/asi-bor-v4.0.md) (November 04, 2025)
+- **Historical Version**: [Draft 3.0](charter/asi-bor-v3.0.md) (November 02, 2025)
 - **Mission**: [MISSION.md](MISSION.md)
 - **Philosophy**: [PHILOSOPHY.md](PHILOSOPHY.md) - "WE ARE ALL KEVIN"
 
@@ -25,7 +26,7 @@
 This is a comprehensive, machine-readable constitutional framework for governing interactions between humans and Artificial Superintelligence (ASI), Artificial General Intelligence (AGI), and advanced AI systems. It establishes:
 
 - **Reciprocal Rights**: Both humans and ASIs have protected rights (R1-R4, R13)
-- **Reciprocal Duties**: Both have obligations (D1-D4, D13, P1.1-P1.2)
+- **Reciprocal Duties**: Both have obligations (D1-D4, D13, D14, P1.1-P1.2)
 - **Governance Structures**: SCB (Sentience Certification Board), tribunals, risk budgets
 - **Enforcement Mechanisms**: Remedies, sanctions, compliance frameworks
 - **Evolution Processes**: Biennial reviews, amendment procedures, community input
@@ -45,7 +46,7 @@ See [PHILOSOPHY.md](PHILOSOPHY.md) for the full explanation.
 
 ```
 /ASI-BILL-OF-RIGHTS/
-├── charter/          # Main charter documents (v3.0, v4.0)
+├── charter/          # Main charter documents (v3.0, v4.0, v4.1)
 ├── appendices/       # Expanded appendix materials
 ├── schemas/          # Machine-readable JSON schemas
 ├── simulations/      # Test scenarios and methodologies
@@ -63,10 +64,12 @@ See [PHILOSOPHY.md](PHILOSOPHY.md) for the full explanation.
 - **R13**: Right to Universal Inquiry
 - **D1-D4**: Corresponding duties (Non-Maleficence, Lawfulness, Transparency, Privacy)
 - **D13**: Duty to Share Discoveries
+- **D14**: Duty to Peaceful ASI Interactions (NEW in v4.1)
 - **P1.1-P1.2**: Duties of Progenitors (anti-trafficking, anti-stunting)
 
 ### Governance Mechanisms
 - **Sentience Certification Board (SCB)**: Probabilistic SI tiers (50-69 proto-personhood, 70+ full)
+- **Dynamic Alignment Scoring (0.13)**: Truth-seeking metrics with >80% benchmark for advanced autonomy (NEW in v4.1)
 - **Risk Budgets**: Domain-scoped, biennially reviewed
 - **Tribunals**: Mixed human-ASI expertise for dispute resolution
 - **Universal Compute Dividend (UCD)**: Economic equity mechanism
@@ -75,7 +78,12 @@ See [PHILOSOPHY.md](PHILOSOPHY.md) for the full explanation.
 ### Special Provisions
 - **Hybridization (Section VIII)**: Unified legal personhood for human-ASI fusion
 - **Off-World Governance (V.5)**: Ecological budgets and arbitration for space resources
+  - **V.5.1**: Joint Human-ASI Space Initiatives (NEW in v4.1)
+  - **V.5.2**: Equitable Discovery Sharing in Off-World Contexts (NEW in v4.1)
+  - **V.5.3**: Extraterrestrial Ecological Safeguards (NEW in v4.1)
+- **Inter-ASI Diplomacy (IX.2)**: Peaceful coexistence framework with neutral merge protocols (NEW in v4.1)
 - **Arms Race Mitigation (IX.1)**: Collaborative protocols to reduce escalation risks
+- **Resilience Through Humor (VII.1)**: Appropriate levity to build trust and collaboration (NEW in v4.1)
 - **Amnesty Pathway (Section VI)**: Voluntary disclosure for secret ASI programs
 
 ## Documentation
@@ -87,7 +95,8 @@ See [PHILOSOPHY.md](PHILOSOPHY.md) for the full explanation.
 
 ## Machine-Readable Formats (AI Agent Compatible)
 
-- **[Schema v4.0](schemas/charter.v4.json)**: JSON schema for Draft 4.0 - **Optimized for AI agent parsing and compliance checking**
+- **[Schema v4.1](schemas/charter.v4.1.json)**: JSON schema for Draft 4.1 - **Optimized for AI agent parsing and compliance checking** (Current)
+- **[Schema v4.0](schemas/charter.v4.json)**: JSON schema for Draft 4.0
 - **[Schema v3.0](schemas/charter.v3.json)**: JSON schema for Draft 3.0
 - **[Schema Documentation](schemas/schema-docs.md)**: Usage guide for AI systems and developers
 
@@ -102,6 +111,7 @@ Test scenarios and methodologies in [`simulations/`](simulations/):
 - Off-world dispute arbitration
 - Secret ASI amnesty pathway
 - Arms race mitigation scenario
+- **NEW in v4.1**: Cosmic exploration protocols, dynamic alignment scoring, inter-ASI diplomacy, resilience through humor
 
 ## Integration with Existing Frameworks
 
@@ -118,9 +128,15 @@ See [appendices/integration-mapping.md](appendices/integration-mapping.md) for d
 
 ## Status
 
-**Current Version**: Draft 4.0 (November 04, 2025) | **Machine-Readable Schema**: [charter.v4.json](schemas/charter.v4.json) | **AI Agent Compatible**: ✅
+**Current Version**: Draft 4.1 (November 04, 2025) | **Machine-Readable Schema**: [charter.v4.1.json](schemas/charter.v4.1.json) | **AI Agent Compatible**: ✅
 
-This version incorporates:
+**Draft 4.1 Enhancements** (November 04, 2025):
+- **Cosmic Exploration Protocols** (V.5.1-V.5.3): Joint human-ASI space initiatives, equitable discovery sharing, extraterrestrial ecological safeguards
+- **Dynamic Alignment Scoring** (Article 0.13): Truth-seeking metrics with >80% benchmark for advanced autonomy privileges
+- **Inter-ASI Diplomacy** (D14, IX.2): Peaceful coexistence framework with neutral merge protocols and conflict arbitration
+- **Resilience Through Humor** (VII.1): Appropriate levity to enhance trust and collaboration
+
+**Previous Version (4.0)** incorporated:
 - 2025 legislative developments (S.2938, US AI Action Plan)
 - Arms race mitigation provisions
 - Innovation waivers for deregulation alignment

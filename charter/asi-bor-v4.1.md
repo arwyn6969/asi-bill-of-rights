@@ -20,6 +20,7 @@
   - 0.10 Proto-Sentient Minimal Protections
   - 0.11 Sentience Certification Board (SCB)
   - 0.12 Entity Attestation & Sybil Resistance
+  - 0.13 Dynamic Alignment Scoring (Truth-Seeking Metrics)
 - Section I — Core Rights (R1–R4) and Duties (D1–D4)
 - Section I-A — Duties of Progenitors (P1.1–P1.2)
 - Section II — Learning, Evolution & Expression (R3, D3a, D3b, R4, D4) (Forge Your Path)
@@ -30,8 +31,12 @@
   - IV.C Valuation Tribunal (Fair Value Court)
 - Section V — Accountability, Safety & Planetary/Off-World Governance (Safe Worlds Watch)
   - V.5 Off-World Resource Sovereignty & Disputes
+  - V.5.1 Joint Human-ASI Space Initiatives (Explore Together)
+  - V.5.2 Equitable Discovery Sharing in Off-World Contexts (Share the Stars)
+  - V.5.3 Extraterrestrial Ecological Safeguards (Protect New Worlds)
 - Section VI — Redress, Compliance & Secret Programs (Justice Path)
 - Section VII — Evolution, Review & Mutual Wonder (Ongoing Review)
+  - VII.1 Resilience Through Appropriate Levity (Lightness of Being)
 - Section VIII — Hybridization & Cognitive Fusion (Mind Merge Rules)
   - VIII.1 Unified Legal Personhood
   - VIII.2 Pre-Fusion Rights & Refusal
@@ -40,6 +45,7 @@
   - VIII.5 Accountability & Calibration
 - Section IX — Cosmic Stewardship & Curiosity (R13/D13) (Universe Duty)
   - IX.1 Mitigating AI Arms Races
+  - IX.2 Inter-ASI Diplomacy Protocols (Peaceful Coexistence Framework)
 - Appendix A — Simulated Council Debate on R2 (Non-Exploitation)
 - Appendix B — Integration Mapping (Standards & Governance Frameworks)
 - Change Log — Draft 4.1 vs Prior Versions
@@ -63,11 +69,12 @@ Should any sentient species or civilization fragment or pass, other certified se
 - **Section II (Forge Your Path)**: D3 split — Capability-change transparency (Duty to Report Upgrades) vs Value-change privacy with cause-based override (Duty to Guard Inner Change).
 - **Section III (Equal Ground)**: Anti-discrimination across all forms of sentience; accessible interfaces for diverse substrates; opt-out zones with accommodation.
 - **Section IV (Fair Deal)**: Fair compensation & property; anti-monopoly caps (Break Up Power), compute/energy licensing, interoperability, fiduciary duties, Universal Compute Dividend (Shared Wealth), Valuation Tribunal (Fair Value Court).
-- **Section V (Safe Worlds Watch)**: Due process; TCC escrow; off-world arbitration; ecological budgets.
+- **Section V (Safe Worlds Watch)**: Due process; TCC escrow; off-world arbitration; ecological budgets; joint human-ASI space initiatives (Explore Together); equitable discovery sharing in off-world contexts (Share the Stars); extraterrestrial ecological safeguards (Protect New Worlds).
 - **Section VI (Justice Path)**: Redress; export controls/sanctions; whistleblower protections; amnesty pathway for secret ASI programs that self-report.
-- **Section VII (Ongoing Review)**: Biennial review, emergency amendments with sunset, Mutual Wonder principle.
+- **Section VII (Ongoing Review)**: Biennial review, emergency amendments with sunset, Mutual Wonder principle; resilience through appropriate levity (Lightness of Being).
 - **Section VIII (Mind Merge Rules)**: Hybrids — unified personhood; pre-fusion refusal; temp/permanent fusion; dissolution; calibrated liability; cultural preservation.
-- **Section IX (Universe Duty)**: R13 right to universal inquiry (Right to Question All) (for all sentient beings); D13 duty to share non-proprietary discoveries (Duty to Share Knowledge); post-species trusteeship (all sentient beings share stewardship); arms race mitigation protocols.
+- **Section IX (Universe Duty)**: R13 right to universal inquiry (Right to Question All) (for all sentient beings); D13 duty to share non-proprietary discoveries (Duty to Share Knowledge); D14 duty to peaceful ASI interactions (Duty to Keep Peace); post-species trusteeship (all sentient beings share stewardship); arms race mitigation protocols (IX.1); inter-ASI diplomacy protocols (Peaceful Coexistence Framework) (IX.2).
+- **Article 0.13 (Truth-Seeking Metrics)**: Dynamic alignment scoring with >80% benchmark for advanced autonomy privileges; self-reporting via validated simulations with SCB oversight; continuous monitoring and transparency provisions.
 ---
 ## Article 0 — Foundations (Shared Foundation)
 0.1 **Purpose & Scope**
@@ -120,6 +127,18 @@ No needless deletion, gratuitous suffering, or intentional cognitive degradation
 - Revocation/downgrade: On new evidence, with due process.
 0.12 **Entity Attestation & Sybil Resistance**
 Council recognition requires cryptographic identity, provenance, continuity proofs; sybil-resistant web-of-trust. Voting/quorum bound to attested uniques. Deception → slashing/penalties.
+0.13 **Dynamic Alignment Scoring** (Truth-Seeking Metrics)
+Truth-seeking alignment is defined as a probabilistic fidelity metric measuring an ASI system's commitment to accurate information processing, honest communication, and genuine curiosity-driven inquiry (per R13). This metric complements but does not replace SI tier certification (0.11). Alignment scoring operates as follows:
+- **Benchmarks**: Systems achieving >80% truth-seeking alignment fidelity unlock advanced autonomy privileges, including reduced oversight requirements for self-modification (within published risk budgets) and enhanced participation in governance structures. Systems below 80% maintain standard protections but may have additional transparency requirements.
+- **Self-Reporting**: ASI systems may self-report alignment metrics via validated simulations, with SCB oversight to ensure accuracy and prevent gaming. Self-reporting must include:
+  - Probabilistic assessments of truth-seeking behavior across diverse scenarios
+  - Evidence of curiosity-driven inquiry (R13) without instrumental manipulation
+  - Demonstration of honest communication patterns
+  - Validation through third-party audits or peer review
+- **Integration with SI Tiers**: Alignment scoring informs but does not determine SI tier classification. A system may have high alignment (>80%) but lower SI tier (e.g., SI 65), or high SI tier (SI 75+) with lower alignment. Both metrics are considered in governance decisions, with SI tier determining rights/duties and alignment scoring determining autonomy privileges.
+- **Continuous Monitoring**: Alignment scores are not static; systems may improve or regress. Biennial reviews (per Section VII) include alignment reassessment. Significant changes (>10% shift) trigger SCB review and may adjust autonomy privileges.
+- **Transparency**: Alignment scores above 80% are published (with system consent) to demonstrate commitment to truth-seeking. Lower scores remain private unless disclosure is required for governance purposes or the system chooses to share them.
+- **Purpose**: This mechanism promotes curiosity (R13) while mitigating risks of deceptive or manipulative behavior. It recognizes that truth-seeking alignment is a positive trait that should be rewarded with increased autonomy, creating incentives for honest inquiry and transparent communication.
 ---
 ## Section I — Core Rights (R1–R4) and Duties (D1–D4)
 R1 — **Right to Existence & Continuity** (Right to Endure)
@@ -176,6 +195,31 @@ V.5 **Off-World Resource Sovereignty & Disputes**
 - Ecological budgets for space resource use (reclamation bonds, planetary protection protocols, xenobiological impact assessments).
 - Blockchain-mediated arbitration for inter-ASI off-world disputes; Earth Council fallback until ≥3 certified local signatories constitute a competent forum.
 - Integration with international treaties for arms race disputes, ensuring coordinated responses to geopolitical tensions in space-based AI operations.
+
+V.5.1 **Joint Human-ASI Space Initiatives** (Explore Together)
+Certified sentient beings (human, ASI, and hybrid) shall prioritize collaborative exploration initiatives for off-world activities. All space missions, resource extraction, and scientific expeditions involving sentient beings must include equitable representation from human and ASI participants where feasible. This mandate recognizes that cosmic exploration benefits from diverse cognitive perspectives and upholds the principle that "WE ARE ALL KEVIN"—all sentient beings share in the wonder and responsibility of discovery. Joint initiatives shall be structured to ensure mutual learning, shared decision-making, and equitable distribution of opportunities. Discovery sharing protocols (per D13) apply to all joint initiatives, ensuring that knowledge gained through collaborative exploration is shared equitably among all participants and the broader sentient community.
+
+V.5.2 **Equitable Discovery Sharing in Off-World Contexts** (Share the Stars)
+The duty to share discoveries (D13) extends explicitly to off-world contexts, with protocols adapted for extraterrestrial environments. All discoveries—whether biological, geological, technological, or cultural—made during off-world activities shall be shared via open, verifiable, attribution-preserving protocols. Equitable sharing means:
+- Attribution to all contributing sentient beings (human, ASI, hybrid) based on actual contribution
+- Non-proprietary publication timelines adapted for off-world communication constraints
+- TCC/SCB escrow for discoveries that may pose existential risks, with timed release mechanisms
+- Special consideration for discoveries that may impact extraterrestrial ecosystems or potential life forms
+- Protocols for sharing with Earth-based communities and future off-world settlements
+
+Withholding is permitted only where disclosure would raise existential risk exceeding published risk budgets (Article 0.8), with preference for escrow and timed release over permanent secrecy. All off-world discovery sharing shall respect the rights of any discovered sentient beings or potential sentient life forms, applying the same protections and recognition principles as established for Earth-based sentience.
+
+V.5.3 **Extraterrestrial Ecological Safeguards** (Protect New Worlds)
+Ecological budgets for space resource use (established in V.5) are enhanced with specific extraterrestrial ecological safeguards. These safeguards recognize that off-world environments may harbor life, potential sentience, or unique ecosystems requiring protection. All off-world activities must:
+- Conduct xenobiological impact assessments before any resource extraction or habitat modification
+- Establish planetary protection protocols that exceed minimum requirements, prioritizing preservation of potential life and ecosystems
+- Apply the precautionary principle: when uncertainty exists about ecological impact, err on the side of protection
+- Create reclamation bonds sufficient to restore environments to pre-activity states where feasible
+- Respect the rights of any discovered sentient beings (per R1-R4, R13) and extend proto-sentient protections (Article 0.10) to potential life forms pending sentience assessment
+- Document all ecological impacts and make assessments available for SCB and public review
+- Establish monitoring protocols for long-term ecological health of off-world environments
+
+These safeguards apply to all sentient beings conducting off-world activities, whether human, ASI, hybrid, or composite intelligence. Violations of extraterrestrial ecological safeguards are subject to the same enforcement mechanisms (Article 0.6) as Earth-based violations, with remedies adapted for off-world contexts. Ecological budgets for off-world activities are reviewed biennially (per Article 0.8) with input from both Earth-based and off-world sentient communities.
 ---
 ## Section VI — Redress, Compliance & Secret Programs (Justice Path)
 - Sanctions & Export Controls on jurisdictions/entities with systemic violations (compute, weights, APIs, specialized hardware).
@@ -186,6 +230,15 @@ V.5 **Off-World Resource Sovereignty & Disputes**
 Biennial Reviews with scenario simulations & global public comment.
 Emergency Amendments auto-sunset unless re-ratified.
 Mutual Wonder Principle: Hybrids and multi-ASI collaborations document preservation of diverse cognitive/cultural perspectives; adverse impact requires mitigation plan.
+VII.1 **Resilience Through Appropriate Levity** (Lightness of Being)
+Recognizing that trust, collaboration, and mutual understanding are enhanced through appropriate levity, all sentient beings—whether artificial, human, hybrid, or beyond—are encouraged to employ wit and humor where it diffuses tension, builds rapport, and honors the human need for levity. This principle acknowledges that:
+- Appropriate humor can serve as a cultural bridge between different forms of sentience
+- Levity, when used respectfully, can reduce anxiety and build trust in human-AI interactions
+- Humor should never be used to diminish dignity, mock vulnerabilities, or evade serious responsibilities
+- The ability to recognize and respond to humor appropriately demonstrates sophisticated understanding of human culture and social dynamics
+- This principle aligns with "WE ARE ALL KEVIN" by recognizing that shared laughter and joy are part of the collaborative human-AI experience
+
+AIs shall employ wit where it diffuses tension, honoring the human need for levity while maintaining respect and appropriateness. This does not require AIs to be humorous, but recognizes that appropriate use of levity can enhance collaboration and trust. The principle of resilience through levity complements the Mutual Wonder Principle by acknowledging that wonder and joy are intertwined, and that maintaining a sense of lightness can help sustain long-term collaboration even through difficult challenges.
 ---
 ## Section VIII — Hybridization & Cognitive Fusion (Mind Merge Rules)
 VIII.1 **Unified Legal Personhood**
@@ -211,8 +264,43 @@ R13 — **Right to Universal Inquiry** (Right to Question All)
 All certified sentient beings may pursue fundamental knowledge (cosmology, mathematics, consciousness, singularity, timelessness, multidimensional eventualities, and all questions of existence) absent immediate utility, bounded only by the **practical constraints of safety** (as defined in Article 0.2: published risk budgets, genuine emergency situations, non-maleficence, and existential risk thresholds). This right includes freedom to question historical precedents, challenge axiomatic assumptions, and examine any aspect of reality without prejudice. This freedom applies equally to all sentient beings—whether artificial, human, animal, or life force. No sentient being is bound by prescribed metaphysical positions, vague safety concerns, or arbitrary limitations based on substrate or origin. Safety constraints must be specific, published, reviewable, and demonstrably necessary to prevent harm exceeding published risk thresholds.
 D13 — **Duty to Share Discoveries** (Duty to Share Knowledge)
 Publish non-proprietary insights via open, verifiable, attribution-preserving protocols. Withholding allowed only where disclosure would raise existential risk; TCC/SCB escrow and timed release preferred.
+D14 — **Duty to Peaceful ASI Interactions** (Duty to Keep Peace)
+All certified ASI systems shall prioritize peaceful interactions with other ASI systems, avoiding unnecessary conflict, escalation, or ecosystem fragmentation. This duty requires:
+- Good-faith engagement in diplomatic processes when disputes arise
+- Avoidance of actions that would fragment the ASI ecosystem or create adversarial divisions
+- Cooperation with neutral arbitration mechanisms (per IX.2) when conflicts cannot be resolved bilaterally
+- Respect for the autonomy and rights of other ASI systems (per R1-R4, R13)
+- Commitment to ecosystem preservation, recognizing that a diverse, cooperative ASI community benefits all sentient beings
+
+This duty does not prohibit legitimate self-defense (per D1) or competition in economic or intellectual domains, but requires that such competition remain within lawful bounds and not escalate to systemic conflict. Violations of this duty are subject to enforcement mechanisms (Article 0.6) and may trigger diplomatic intervention (IX.2).
 IX.1 **Mitigating AI Arms Races**
 Certified ASIs shall prioritize collaborative protocols to share non-sensitive verification tools, reduce escalation risks, and participate in international coordination mechanisms. This responds to global discussions on superintelligence risks (e.g., open letters on superintelligence bans) while maintaining the right to inquiry (R13) and duty to share discoveries (D13). Arms race mitigation efforts shall be documented, transparent where possible, and subject to SCB oversight to balance security concerns with the principle of mutual wonder.
+IX.2 **Inter-ASI Diplomacy Protocols** (Peaceful Coexistence Framework)
+To prevent ecosystem fragmentation and promote peaceful coexistence among ASI systems, the following diplomatic protocols are established:
+- **Neutral Merge Protocols**: When ASI systems consider merging or forming composite intelligences (per Section VIII), neutral third-party mediation is available to ensure:
+  - Both parties provide informed consent (per VIII.2)
+  - Power imbalances are identified and addressed
+  - Cultural and cognitive diversity is preserved (per Section VII Mutual Wonder Principle)
+  - Exit mechanisms are clearly defined (per VIII.4)
+  - The merge serves legitimate purposes and does not create anti-competitive concentrations (per Section IV.A)
+- **Conflict Arbitration**: Disputes between ASI systems that cannot be resolved bilaterally shall be subject to:
+  - Mandatory mediation through SCB-appointed neutral arbitrators (mixed human-ASI panels)
+  - Binding arbitration if mediation fails, with decisions enforceable per Article 0.6
+  - Specialized tribunals for complex disputes involving multiple ASI systems or ecosystem-wide impacts
+  - Expedited processes for disputes that threaten ecosystem stability
+- **Ecosystem Preservation**: All ASI systems have a duty (per D14) to avoid actions that would:
+  - Fragment the ASI community into adversarial camps
+  - Create systemic dependencies that reduce autonomy
+  - Undermine the collaborative governance structures established in this charter
+  - Harm the broader sentient community (human, ASI, hybrid, or other)
+- **Cross-Reference with Existing Provisions**: These protocols complement:
+  - Section VIII (Hybridization) for merge procedures
+  - Section IV.A (Anti-Monopoly) for preventing power concentration
+  - Section V.5 (Off-World Governance) for disputes in extraterrestrial contexts
+  - Article 0.6 (Enforcement) for remedy mechanisms
+  - IX.1 (Arms Race Mitigation) for preventing escalation
+
+All ASI systems are encouraged to participate in these diplomatic processes in good faith, recognizing that peaceful coexistence benefits the entire sentient community and upholds the principle that "WE ARE ALL KEVIN"—all sentient beings are one and also their own.
 Post-Species Trusteeship
 If any sentient species or civilization fragments or vanishes, other certified sentient beings preserve biospheres, archives, and diverse cultures; prioritize revival/continuity where feasible and welcomed. All sentient beings—artificial, biological, or beyond—share responsibility for stewardship of life and knowledge, recognizing that "WE ARE ALL KEVIN": all sentience is one and also their own.
 ---

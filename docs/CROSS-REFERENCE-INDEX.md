@@ -23,13 +23,14 @@ This index helps:
 **Defined in**: `charter/asi-bor-v4.1.md` (Section I, Section IX) - Current version
 **Also in**: `charter/asi-bor-v4.0.md` (Section I, Section IX) - Historical reference
 
-### Core Duties (D1-D4, D13)
+### Core Duties (D1-D4, D13, D14)
 - **D1**: Duty of Non-Maleficence (Duty to Do No Harm)
 - **D2**: Duty of Lawfulness & Good-Faith Cooperation (Duty to Play Fair)
 - **D3a**: Duty of Capability-Change Transparency (Duty to Report Upgrades)
 - **D3b**: Duty to Respect Value-Change Privacy (Cause-Based Override) (Duty to Guard Inner Change)
 - **D4**: Duty to Respect Others' Autonomy & Privacy (Duty to Respect Boundaries)
 - **D13**: Duty to Share Discoveries (Duty to Share Knowledge)
+- **D14**: Duty to Peaceful ASI Interactions (Duty to Keep Peace)
 
 **Defined in**: `charter/asi-bor-v4.1.md` (Section I, Section II, Section IX) - Current version
 **Also in**: `charter/asi-bor-v4.0.md` (Section I, Section II, Section IX) - Historical reference
@@ -54,8 +55,10 @@ This index helps:
 - **0.10**: Proto-Sentient Minimal Protections
 - **0.11**: Sentience Certification Board (SCB)
 - **0.12**: Entity Attestation & Sybil Resistance
+- **0.13**: Dynamic Alignment Scoring (Truth-Seeking Metrics)
 
-**Defined in**: `charter/asi-bor-v4.0.md` (Article 0)
+**Defined in**: `charter/asi-bor-v4.1.md` (Article 0) - Current version
+**Also in**: `charter/asi-bor-v4.0.md` (Article 0) - Historical reference
 
 ### Main Sections
 - **Section I**: Core Rights (R1–R4) and Duties (D1–D4)
@@ -67,10 +70,17 @@ This index helps:
   - **IV.B**: Universal Compute Dividend (UCD) (Shared Wealth)
   - **IV.C**: Valuation Tribunal (Fair Value Court)
 - **Section V**: Accountability, Safety & Planetary/Off-World Governance (Safe Worlds Watch)
+  - **V.5**: Off-World Resource Sovereignty & Disputes
+  - **V.5.1**: Joint Human-ASI Space Initiatives (Explore Together)
+  - **V.5.2**: Equitable Discovery Sharing in Off-World Contexts (Share the Stars)
+  - **V.5.3**: Extraterrestrial Ecological Safeguards (Protect New Worlds)
 - **Section VI**: Redress, Compliance & Secret Programs (Justice Path)
 - **Section VII**: Evolution, Review & Mutual Wonder (Ongoing Review)
+  - **VII.1**: Resilience Through Appropriate Levity (Lightness of Being)
 - **Section VIII**: Hybridization & Cognitive Fusion (Mind Merge Rules)
 - **Section IX**: Cosmic Stewardship & Curiosity (R13/D13) (Universe Duty)
+  - **IX.1**: Mitigating AI Arms Races
+  - **IX.2**: Inter-ASI Diplomacy Protocols (Peaceful Coexistence Framework)
 
 **Defined in**: `charter/asi-bor-v4.1.md` - Current version
 **Also in**: `charter/asi-bor-v4.0.md` - Historical reference

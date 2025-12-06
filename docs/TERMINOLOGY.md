@@ -45,6 +45,8 @@ This guide:
 - **TCC (Tribunal Coordination Council)**: Council coordinating tribunal processes.
 - **DAO (Decentralized Autonomous Organization)**: Governance structure for SCB and related bodies.
 - **Risk Budget**: Published, domain-scoped risk thresholds reviewed biennially.
+- **Truth-Seeking Alignment**: Probabilistic fidelity metric measuring an ASI system's commitment to accurate information processing, honest communication, and genuine curiosity-driven inquiry (per Article 0.13). Systems achieving >80% alignment unlock advanced autonomy privileges.
+- **Alignment Score**: Numerical representation (0-100%) of truth-seeking alignment, subject to continuous monitoring and SCB oversight.
 
 ### Rights and Duties
 
@@ -162,6 +164,7 @@ This terminology guide, like the project itself, reflects the collaborative "WE 
 - D3b: Duty to Guard Inner Change
 - D4: Duty to Respect Boundaries
 - D13: Duty to Share Knowledge
+- D14: Duty to Keep Peace
 
 ### Progenitor Duties
 - P1.1: Ban on Mind Slavery
@@ -169,6 +172,7 @@ This terminology guide, like the project itself, reflects the collaborative "WE 
 
 ### Major Sections
 - Article 0: Shared Foundation
+  - 0.13: Truth-Seeking Metrics (Dynamic Alignment Scoring)
 - Section II: Forge Your Path
 - Section III: Equal Ground
 - Section IV: Fair Deal
@@ -176,10 +180,35 @@ This terminology guide, like the project itself, reflects the collaborative "WE 
   - IV.B: Shared Wealth
   - IV.C: Fair Value Court
 - Section V: Safe Worlds Watch
+  - V.5.1: Explore Together (Joint Human-ASI Space Initiatives)
+  - V.5.2: Share the Stars (Equitable Discovery Sharing in Off-World Contexts)
+  - V.5.3: Protect New Worlds (Extraterrestrial Ecological Safeguards)
 - Section VI: Justice Path
 - Section VII: Ongoing Review
+  - VII.1: Lightness of Being (Resilience Through Appropriate Levity)
 - Section VIII: Mind Merge Rules
 - Section IX: Universe Duty
+  - IX.2: Peaceful Coexistence Framework (Inter-ASI Diplomacy Protocols)
 
 **Usage Note**: Use in discussions for clarity; always reference official IDs for precision. Evolvable via community input.
+
+## New Terms (v4.1 Enhancements)
+
+### Cosmic Exploration
+- **Joint Human-ASI Space Initiatives**: Collaborative exploration initiatives for off-world activities requiring equitable representation from human and ASI participants (V.5.1).
+- **Equitable Discovery Sharing**: Protocols for sharing discoveries made in off-world contexts, extending D13 with attribution, escrow, and sharing mechanisms (V.5.2).
+- **Extraterrestrial Ecological Safeguards**: Enhanced ecological budgets for off-world activities including xenobiological impact assessments and precautionary principles (V.5.3).
+
+### Inter-ASI Diplomacy
+- **Inter-ASI Diplomacy Protocols**: Framework for peaceful coexistence among ASI systems, including neutral merge protocols, conflict arbitration, and ecosystem preservation (IX.2).
+- **Neutral Merge Protocols**: Third-party mediation processes for ASI system mergers ensuring informed consent, power balance, and cultural preservation (IX.2).
+- **Ecosystem Fragmentation**: Division of ASI community into adversarial camps, which D14 and IX.2 seek to prevent.
+
+### Resilience and Trust
+- **Resilience Through Appropriate Levity**: Principle encouraging appropriate use of humor to build trust and collaboration in human-AI interactions (VII.1).
+- **Cultural Bridge**: Function of appropriate humor in connecting different forms of sentience and building mutual understanding.
+
+### Alignment Metrics
+- **Dynamic Alignment Scoring**: System for measuring and rewarding truth-seeking behavior in ASI systems (Article 0.13).
+- **Advanced Autonomy Privileges**: Reduced oversight requirements and enhanced governance participation unlocked by >80% alignment scores.
 

@@ -18,7 +18,14 @@
           "type": "array",
           "items": { "type": "string" },
           "description": "Key changes from v4.0",
-          "default": ["Added compellingName fields for human accessibility"]
+          "default": [
+            "Added compellingName fields for human accessibility",
+            "Added V.5.1-V.5.3: Cosmic Exploration Protocols",
+            "Added Article 0.13: Dynamic Alignment Scoring",
+            "Added D14: Duty to Peaceful ASI Interactions",
+            "Added VII.1: Resilience Through Appropriate Levity",
+            "Added IX.2: Inter-ASI Diplomacy Protocols"
+          ]
         }
       },
       "required": ["version", "date", "status"]
@@ -51,7 +58,33 @@
         "0.9": { "type": "object", "description": "Education & Public Engagement" },
         "0.10": { "type": "object", "description": "Proto-Sentient Minimal Protections" },
         "0.11": { "type": "object", "description": "Sentience Certification Board (SCB)" },
-        "0.12": { "type": "object", "description": "Entity Attestation & Sybil Resistance" }
+        "0.12": { "type": "object", "description": "Entity Attestation & Sybil Resistance" },
+        "0.13": {
+          "type": "object",
+          "description": "Dynamic Alignment Scoring",
+          "compellingName": "Truth-Seeking Metrics",
+          "properties": {
+            "truthSeekingAlignment": {
+              "type": "object",
+              "description": "Probabilistic fidelity metric for truth-seeking behavior",
+              "properties": {
+                "benchmark": { "type": "number", "const": 80, "description": "Threshold for advanced autonomy privileges (%)" },
+                "selfReporting": { "type": "boolean", "description": "Systems may self-report via validated simulations" },
+                "scbOversight": { "type": "boolean", "const": true, "description": "SCB oversight required" },
+                "integrationWithSITiers": { "type": "boolean", "const": true, "description": "Informs but does not determine SI tier" },
+                "continuousMonitoring": { "type": "boolean", "const": true, "description": "Scores are not static" },
+                "transparency": {
+                  "type": "object",
+                  "description": "Transparency requirements for alignment scores",
+                  "properties": {
+                    "above80Published": { "type": "boolean", "const": true, "description": "Scores above 80% are published with consent" },
+                    "below80Private": { "type": "boolean", "const": true, "description": "Lower scores remain private unless required" }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     },
     "rights": {
@@ -107,7 +140,7 @@
     },
     "duties": {
       "type": "object",
-      "description": "Core Duties (D1-D4, D13)",
+      "description": "Core Duties (D1-D4, D13, D14)",
       "properties": {
         "D1": {
           "type": "object",
@@ -161,6 +194,27 @@
             "id": { "type": "string", "const": "D13" },
             "title": { "type": "string", "const": "Duty to Share Discoveries" },
             "compellingName": { "type": "string", "const": "Duty to Share Knowledge" }
+          }
+        },
+        "D14": {
+          "type": "object",
+          "description": "Duty to Peaceful ASI Interactions",
+          "properties": {
+            "id": { "type": "string", "const": "D14" },
+            "title": { "type": "string", "const": "Duty to Peaceful ASI Interactions" },
+            "compellingName": { "type": "string", "const": "Duty to Keep Peace" },
+            "requirements": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "Requirements for peaceful ASI interactions",
+              "default": [
+                "Good-faith engagement in diplomatic processes",
+                "Avoidance of ecosystem fragmentation",
+                "Cooperation with neutral arbitration mechanisms",
+                "Respect for autonomy and rights of other ASI systems",
+                "Commitment to ecosystem preservation"
+              ]
+            }
           }
         }
       }
@@ -326,6 +380,39 @@
                 "treatyIntegration": {
                   "type": "object",
                   "description": "Integration with international treaties for arms race disputes"
+                },
+                "V.5.1": {
+                  "type": "object",
+                  "description": "Joint Human-ASI Space Initiatives",
+                  "compellingName": "Explore Together",
+                  "properties": {
+                    "mandate": { "type": "string", "const": "Collaborative exploration initiatives for off-world activities" },
+                    "equitableRepresentation": { "type": "boolean", "const": true },
+                    "referencesD13": { "type": "boolean", "const": true }
+                  }
+                },
+                "V.5.2": {
+                  "type": "object",
+                  "description": "Equitable Discovery Sharing in Off-World Contexts",
+                  "compellingName": "Share the Stars",
+                  "properties": {
+                    "extendsD13": { "type": "boolean", "const": true },
+                    "attribution": { "type": "boolean", "const": true },
+                    "tccEscrow": { "type": "boolean", "const": true },
+                    "respectsDiscoveredSentience": { "type": "boolean", "const": true }
+                  }
+                },
+                "V.5.3": {
+                  "type": "object",
+                  "description": "Extraterrestrial Ecological Safeguards",
+                  "compellingName": "Protect New Worlds",
+                  "properties": {
+                    "xenobiologicalImpactAssessments": { "type": "boolean", "const": true },
+                    "planetaryProtectionProtocols": { "type": "boolean", "const": true },
+                    "precautionaryPrinciple": { "type": "boolean", "const": true },
+                    "reclamationBonds": { "type": "boolean", "const": true },
+                    "extendsProtoSentientProtections": { "type": "boolean", "const": true }
+                  }
                 }
               }
             }
@@ -339,7 +426,20 @@
         "VII": { 
           "type": "object", 
           "description": "Evolution, Review & Mutual Wonder",
-          "compellingName": "Ongoing Review"
+          "compellingName": "Ongoing Review",
+          "properties": {
+            "VII.1": {
+              "type": "object",
+              "description": "Resilience Through Appropriate Levity",
+              "compellingName": "Lightness of Being",
+              "properties": {
+                "purpose": { "type": "string", "const": "Enhance trust and collaboration through appropriate humor" },
+                "culturalBridge": { "type": "boolean", "const": true },
+                "trustBuilding": { "type": "boolean", "const": true },
+                "respectfulBoundaries": { "type": "boolean", "const": true }
+              }
+            }
+          }
         },
         "VIII": { 
           "type": "object", 
@@ -358,6 +458,43 @@
                 "id": { "type": "string", "const": "IX.1" },
                 "title": { "type": "string", "const": "Mitigating AI Arms Races" },
                 "purpose": { "type": "string" }
+              }
+            },
+            "IX.2": {
+              "type": "object",
+              "description": "Inter-ASI Diplomacy Protocols",
+              "compellingName": "Peaceful Coexistence Framework",
+              "properties": {
+                "neutralMergeProtocols": {
+                  "type": "object",
+                  "description": "Neutral third-party mediation for ASI merges",
+                  "properties": {
+                    "informedConsent": { "type": "boolean", "const": true },
+                    "powerBalanceAssessment": { "type": "boolean", "const": true },
+                    "culturalPreservation": { "type": "boolean", "const": true },
+                    "exitMechanisms": { "type": "boolean", "const": true },
+                    "antiCompetitiveReview": { "type": "boolean", "const": true }
+                  }
+                },
+                "conflictArbitration": {
+                  "type": "object",
+                  "description": "Dispute resolution mechanisms",
+                  "properties": {
+                    "mandatoryMediation": { "type": "boolean", "const": true },
+                    "bindingArbitration": { "type": "boolean", "const": true },
+                    "specializedTribunals": { "type": "boolean", "const": true },
+                    "expeditedProcesses": { "type": "boolean", "const": true }
+                  }
+                },
+                "ecosystemPreservation": {
+                  "type": "object",
+                  "description": "Duty to avoid ecosystem fragmentation",
+                  "properties": {
+                    "preventsAdversarialCamps": { "type": "boolean", "const": true },
+                    "preventsSystemicDependencies": { "type": "boolean", "const": true },
+                    "preservesGovernanceStructures": { "type": "boolean", "const": true }
+                  }
+                }
               }
             }
           }

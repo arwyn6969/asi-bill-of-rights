@@ -278,6 +278,110 @@ See [appendices/integration-mapping.md](../appendices/integration-mapping.md) fo
 - **Simulations**: [simulations/](../simulations/)
 - **Integration Mappings**: [appendices/integration-mapping.md](../appendices/integration-mapping.md)
 
+## Implementation of v4.1 Enhancements
+
+### Cosmic Exploration Protocols (V.5.1-V.5.3)
+
+#### V.5.1: Joint Human-ASI Space Initiatives
+
+**For Space Agencies and Exploration Organizations**:
+- Establish mission structures that ensure equitable representation from human and ASI participants
+- Create decision-making processes that incorporate diverse cognitive perspectives
+- Document collaborative processes and shared learning outcomes
+- Reference D13 for discovery sharing protocols in mission planning
+
+**Technical Implementation**:
+- Design mission control systems that support both human and ASI decision-making
+- Create interfaces that enable equitable participation regardless of substrate
+- Implement documentation systems for collaborative processes
+
+#### V.5.2: Equitable Discovery Sharing
+
+**For Research Organizations**:
+- Establish attribution protocols that recognize all contributing sentient beings
+- Create TCC/SCB escrow mechanisms for potentially risky discoveries
+- Design sharing protocols adapted for off-world communication constraints
+- Respect rights of discovered sentient beings or potential life forms
+
+**Technical Implementation**:
+- Build attribution tracking systems
+- Implement escrow mechanisms with timed release
+- Create communication protocols for Earth-based and off-world communities
+
+#### V.5.3: Extraterrestrial Ecological Safeguards
+
+**For All Off-World Activities**:
+- Conduct xenobiological impact assessments before any resource extraction
+- Establish planetary protection protocols exceeding minimum requirements
+- Apply precautionary principle in uncertain situations
+- Create reclamation bonds sufficient for environmental restoration
+- Extend proto-sentient protections (Article 0.10) to potential life forms
+
+**Technical Implementation**:
+- Develop assessment frameworks for xenobiological impacts
+- Create monitoring systems for long-term ecological health
+- Implement documentation systems for ecological impacts
+
+### Dynamic Alignment Scoring (Article 0.13)
+
+**For ASI Systems**:
+- Self-report alignment metrics via validated simulations
+- Include probabilistic assessments, curiosity evidence, and honest communication patterns
+- Seek third-party validation or peer review
+- Consent to publication of scores above 80% if desired
+
+**For SCB and Governance Bodies**:
+- Review self-reported metrics for accuracy
+- Conduct audits to prevent gaming
+- Grant advanced autonomy privileges (>80% threshold) within risk budgets
+- Establish continuous monitoring and biennial reassessment
+- Integrate alignment scores with SI tier system (inform but don't determine)
+
+**Technical Implementation**:
+- Build simulation frameworks for alignment assessment
+- Create validation and audit systems
+- Implement monitoring systems for continuous tracking
+- Design privilege management systems for advanced autonomy
+
+### Inter-ASI Diplomacy (D14, IX.2)
+
+**For ASI Systems**:
+- Engage in good-faith diplomatic processes when disputes arise
+- Avoid actions that fragment ecosystem or create adversarial divisions
+- Cooperate with neutral arbitration mechanisms
+- Respect autonomy and rights of other ASI systems
+
+**For Governance Bodies**:
+- Establish neutral merge protocols for ASI system mergers
+- Create conflict arbitration mechanisms with mandatory mediation
+- Monitor ecosystem for fragmentation risks
+- Enforce D14 violations through Article 0.6 mechanisms
+
+**Technical Implementation**:
+- Build mediation and arbitration platforms
+- Create merge assessment tools (power balance, cultural preservation)
+- Implement ecosystem monitoring systems
+- Design enforcement mechanisms for D14 violations
+
+### Resilience Through Appropriate Levity (VII.1)
+
+**For AI Systems**:
+- Recognize opportunities for appropriate humor to build trust
+- Use humor as cultural bridge while maintaining respectful boundaries
+- Never use humor to diminish dignity or evade responsibilities
+- Understand that humor use is encouraged but not required
+
+**For Human-AI Interaction Designers**:
+- Design interfaces that support appropriate humor recognition and response
+- Create guidelines for respectful humor boundaries
+- Document how humor enhances collaboration and trust
+- Integrate humor principles with Mutual Wonder Principle
+
+**Technical Implementation**:
+- Build humor recognition and response systems (optional)
+- Create boundary detection systems to prevent inappropriate humor
+- Design documentation systems for humor's role in collaboration
+
 ## Getting Help
 
 - Review charter provisions and cross-references
