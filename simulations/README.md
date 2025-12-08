@@ -10,7 +10,11 @@ This directory contains scenario definitions and simulation methodologies for te
   - Anti-monopoly breach case
   - Off-world dispute arbitration
   - Secret ASI amnesty pathway
-  - Arms race mitigation scenario (Draft 4.0)
+  - Arms race mitigation scenario (Draft 4.0 baseline)
+  - Cosmic exploration protocols validation (Draft 4.1)
+  - Dynamic alignment scoring audit drill (Draft 4.1)
+  - Inter-ASI diplomacy mediation (Draft 4.1)
+  - Resilience-through-humor trust exercise (Draft 4.1)
 
 - `methodology.md` - Simulation approach and methodology
   - Decision trees for tribunal processes

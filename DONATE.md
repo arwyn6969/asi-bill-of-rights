@@ -13,21 +13,21 @@ The ASI Bill of Rights is a collaborative effort to establish governance framewo
 
 ## Donation Addresses
 
+> [!CRITICAL]
+> **DONATIONS SUSPENDED**: All previous project wallets (ETH, BTC, AR) are considered compromised following the January 2026 security incident.
+>
+> **DO NOT SEND FUNDS TO ANY PREVIOUSLY LISTED ADDRESS.**
+>
+> New secure infrastructure is being established. This page will be updated when it is safe to contribute again.
+
 ### Ethereum (ETH & ERC-20 Tokens)
-
-**Not currently accepting Ethereum donations.** The previous Ethereum treasury was compromised in January 2026. See [PIVOT-2026.md](./PIVOT-2026.md) for details.
-
-New Ethereum infrastructure will be announced when available.
+*Suspended pending new infrastructure.*
 
 ### Bitcoin (BTC)
-```
-1HHe6sqHDNj5WTbwAL3L1yqkW39EW8HJtz
-```
+*Suspended pending new infrastructure.*
 
 ### Arweave (AR)
-```
-NhO3vpXmP3d52JaPeg_4Cet8Maf4E5vap8Vb7aNOUKI
-```
+*Suspended pending new infrastructure.*
 
 AR donations directly fund permanent, decentralized storage of governance documents.
 

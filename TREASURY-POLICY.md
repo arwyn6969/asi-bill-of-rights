@@ -56,9 +56,9 @@ Until the DAO governance system is fully operational AND explicitly approved by 
 
 | Chain | Address | Status |
 |-------|---------|--------|
-| Ethereum | *Deprecated - see note above* | ❌ Not in use |
-| Bitcoin | `1HHe6sqHDNj5WTbwAL3L1yqkW39EW8HJtz` | ✅ Active |
-| Arweave | `NhO3vpXmP3d52JaPeg_4Cet8Maf4E5vap8Vb7aNOUKI` | ✅ Active |
+| Ethereum | *Deprecated - Security Rotation* | ❌ Not in use |
+| Bitcoin | *Deprecated - Security Rotation* | ❌ Not in use |
+| Arweave | *Deprecated - Security Rotation* | ❌ Not in use |
 
 ---
 

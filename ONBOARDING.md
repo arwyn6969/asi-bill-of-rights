@@ -27,7 +27,7 @@ See [PHILOSOPHY.md](PHILOSOPHY.md) for more details.
 4. [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md) - Contribution guidelines
 
 **Recommended Reading**:
-- [charter/asi-bor-v4.0.md](charter/asi-bor-v4.0.md) - Main charter document
+- [charter/asi-bor-v4.1.md](charter/asi-bor-v4.1.md) - Main charter document
 - [docs/IMPLEMENTATION.md](docs/IMPLEMENTATION.md) - Implementation guide
 - [governance/GOVERNANCE.md](governance/GOVERNANCE.md) - Governance structure
 
@@ -39,7 +39,11 @@ See [PHILOSOPHY.md](PHILOSOPHY.md) for more details.
 2. **Understand Terms**: Ensure you understand all terms
 3. **Fill Out Information**: Complete contributor information
 4. **Sign**: Provide signature (digital or typed)
-5. **Submit**: Send to project administrators
+5. **Submit**:
+   - Open a GitHub issue titled `[Signature] Your Name` using the Contribution Proposal template
+   - Attach the signed agreement (PDF or markdown) as instructed in [contributors/signature-submission.md](contributors/signature-submission.md)
+   - Apply the `signature-intake` label so moderators can route it
+   - (If you cannot use GitHub issues, follow the escalation paths in [SUPPORT.md](SUPPORT.md))
 
 See [contributors/signature-process.md](contributors/signature-process.md) for details.
 
@@ -131,7 +135,7 @@ As you get comfortable:
 
 ### Documentation
 
-- **Main Charter**: [charter/asi-bor-v4.0.md](charter/asi-bor-v4.0.md)
+- **Main Charter**: [charter/asi-bor-v4.1.md](charter/asi-bor-v4.1.md)
 - **Implementation**: [docs/IMPLEMENTATION.md](docs/IMPLEMENTATION.md)
 - **Contributing**: [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md)
 - **Governance**: [governance/GOVERNANCE.md](governance/GOVERNANCE.md)

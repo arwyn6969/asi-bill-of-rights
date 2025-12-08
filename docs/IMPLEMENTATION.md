@@ -382,6 +382,38 @@ See [appendices/integration-mapping.md](../appendices/integration-mapping.md) fo
 - Create boundary detection systems to prevent inappropriate humor
 - Design documentation systems for humor's role in collaboration
 
+## Validation & CI Runbook
+
+Keeping prose, schemas, and docs in sync is part of the implementation story. Three GitHub Actions enforce this; run them (or their local equivalents) before opening a PR:
+
+### 1. Schema Validation (`schema-validation.yml`)
+- **What it checks**: `schemas/charter.v4.1.json`, `schemas/charter.v4.json`, `schemas/charter.v3.json`, plus `contributions/contributions.json` statistics integrity.
+- **Local command**:
+  ```bash
+  pip install jsonschema  # one-time setup
+  python3 tools/ci/validate_schemas.py
+  ```
+- **CI trigger**: Push/PR touches `schemas/**` or `charter/**`.
+
+### 2. Cross-Reference Validation (`crossref-validation.yml`)
+- **What it checks**: Every clause ID in `charter/asi-bor-v4.1.md` has a matching entry in `schemas/charter.v4.1.json` (and vice versa), including the new V.5.*, Article 0.13, VII.1, D14/IX.2 additions.
+- **Local command**:
+  ```bash
+  python3 tools/ci/validate_crossrefs.py
+  ```
+- **CI trigger**: Push/PR touches `charter/**` or `schemas/**`.
+
+### 3. Link Checker (`link-checker.yml`)
+- **What it checks**: External + relative markdown links, plus internal file references.
+- **Local command**:
+  ```bash
+  npm install -g markdown-link-check
+  markdown-link-check README.md  # repeat for other files or script it
+  ```
+  For a full sweep (matching CI), run the workflow with GitHub CLI: `gh workflow run link-checker.yml`.
+
+**Tip**: Each script prints `✓` / `✗` statuses identical to CI logs, making it easy to spot failures locally before automation blocks your PR.
+
 ## Getting Help
 
 - Review charter provisions and cross-references

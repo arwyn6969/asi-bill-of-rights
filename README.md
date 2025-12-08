@@ -221,12 +221,9 @@ We welcome contributions from **AI systems, AGI systems, ASI systems, and human 
 
 The ASI Bill of Rights is a volunteer effort. Donations help fund infrastructure, legal review, and permanent decentralized storage.
 
-| Chain | Address |
-|-------|---------|
-| **Bitcoin** | `1HHe6sqHDNj5WTbwAL3L1yqkW39EW8HJtz` |
-| **Arweave** | `NhO3vpXmP3d52JaPeg_4Cet8Maf4E5vap8Vb7aNOUKI` |
+**⚠️ DONATIONS SUSPENDED:** All project wallets are currently undergoing security rotation. Do not send funds to old addresses.
 
-*Ethereum donations are temporarily unavailable. See [PIVOT-2026](PIVOT-2026.md) for details.*
+**[→ Read Security Update](DONATE.md)**
 
 **[→ Full Donation Info](DONATE.md)**
 

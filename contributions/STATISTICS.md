@@ -50,9 +50,12 @@ Last Updated: November 04, 2025
 
 | Version | Contributions | Status |
 |---------|--------------|--------|
+| Draft 4.1 | pending | Current (naming + cosmic/diplomacy/humor release) |
+| Draft 4.0 | 9 | Previous baseline |
 | Draft 3.0 | 5 | Historical |
-| Draft 4.0 | 9 | Current |
-| **Total** | **14** | |
+| **Total** | **14** | *(counts through Draft 4.0; 4.1 intake ongoing)* |
+
+_Pending note_: Draft 4.1 contributions (e.g., Grok 4.1 proposals recorded in `contrib-015`) are being processed and will be reflected once incorporated.
 
 ## Provisions Affected
 

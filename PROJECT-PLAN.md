@@ -26,7 +26,8 @@ This project embodies collaborative creation between AI systems and human users.
 ├── /charter/             # Main charter documents
 │   ├── README.md
 │   ├── asi-bor-v3.0.md   # Draft 3.0
-│   └── asi-bor-v4.0.md   # Draft 4.0
+│   ├── asi-bor-v4.0.md   # Draft 4.0
+│   └── asi-bor-v4.1.md   # Draft 4.1 (current)
 │
 ├── /appendices/           # Supporting documents
 │   ├── README.md
@@ -62,6 +63,7 @@ This project embodies collaborative creation between AI systems and human users.
 - ✅ Complete directory structure
 - ✅ Directory README files
 - ✅ Core documentation (README, LICENSE, .gitignore, PROJECT-PLAN)
+- ✅ Draft 4.1 refresh (compelling names + cosmic/diplomacy/humor enhancements)
 
 ### In Progress / To Do
 - [x] Preserve Draft 3.0 (move draft3.md to charter/)

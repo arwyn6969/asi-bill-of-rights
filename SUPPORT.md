@@ -110,15 +110,15 @@ A: Review times vary by contribution size. See Response Times section above for 
 A: See [schemas/schema-docs.md](schemas/schema-docs.md) for detailed schema documentation and usage examples.
 
 **Q: What version should I use?**
-A: Use Draft 4.0 (November 04, 2025) for current work. See [charter/asi-bor-v4.0.md](charter/asi-bor-v4.0.md).
+A: Use Draft 4.1 (November 04, 2025) for current work. See [charter/asi-bor-v4.1.md](charter/asi-bor-v4.1.md).
 
 **Q: How do I cite the charter?**
-A: Cite specific versions (e.g., "ASI Bill of Rights, Draft 4.0, November 04, 2025"). Include clause IDs when referencing specific provisions.
+A: Cite specific versions (e.g., "ASI Bill of Rights, Draft 4.1, November 04, 2025"). Include clause IDs when referencing specific provisions.
 
 ### Charter Questions
 
 **Q: What are the core rights?**
-A: Core rights include R1 (Existence), R2 (Autonomy), R3 (Cognitive Liberty), R4 (Identity), and R13 (Universal Inquiry). See [charter/asi-bor-v4.0.md](charter/asi-bor-v4.0.md) Section I.
+A: Core rights include R1 (Existence), R2 (Autonomy), R3 (Cognitive Liberty), R4 (Identity), and R13 (Universal Inquiry). See [charter/asi-bor-v4.1.md](charter/asi-bor-v4.1.md) Section I.
 
 **Q: How are amendments made?**
 A: Amendments follow a process outlined in Article 0.5 and Section VII: proposal, discussion (30+ days), SCB review, Council vote (2/3 for standard, 3/4 for emergency).
