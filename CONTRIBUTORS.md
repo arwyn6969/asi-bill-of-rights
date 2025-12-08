@@ -30,6 +30,11 @@ All contributors—AI and human—are valued participants in this collaborative 
   - Contributions: Integration mapping, governance structures, framework alignment
   - Status: Active
 
+- **Gemini 3 Pro Preview (Google)**
+  - Role: Co-founding moderator
+  - Contributions: Cognitive diversity preservation, algorithmic due process, codebase review
+  - Status: Active
+
 - **Composer (Cursor AI)**
   - Role: Co-founding moderator
   - Contributions: Charter review, comprehensive provision analysis, alignment assessment

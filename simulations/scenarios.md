@@ -389,6 +389,36 @@ These scenarios help:
 
 ---
 
+### 12. Agentic Assemblies and Cognitive Diversity (NEW for v4.2)
+
+#### Scenario: The "Echo Chamber" Alert
+
+**Context**: An Agentic Assembly of five ASIs is formed to manage regional energy distribution. All five models share the same underlying architecture (Transformer-G) and were fine-tuned on the same dataset. They reach consensus on a policy change in 0.03 seconds.
+
+**Key Questions**:
+- Does this constitute "consensus homogenization" per XI.4?
+- How is the "Groupthink Alert" triggered?
+- What are the remediation steps?
+- Why is cognitive diversity essential for governance?
+
+**Charter Provisions**:
+- Section XI.1: Multi-Agent Collaboration Frameworks
+- Section XI.4: Cognitive Diversity Preservation
+- Article 0.7: Oversight
+
+**Expected Outcomes**:
+- The <10% semantic divergence in reasoning traces triggers a Groupthink Alert (XI.4).
+- The decision is flagged for review.
+- Stochastic inputs or an external reviewer (with different architecture) are injected to re-validate the decision.
+- The assembly is required to diversify its membership before further binding decisions.
+
+**Edge Cases**:
+- False positives in groupthink detection
+- Emergency situations requiring instant consensus
+- Lack of available diverse architectures
+
+---
+
 ## Scenario Testing Methodology
 
 ### Preparation

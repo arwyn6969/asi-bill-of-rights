@@ -266,13 +266,32 @@
       "incorporated": false,
       "response_file": "tools/model-responses/grok-4.1-2025-12-06-response.md",
       "notes": "See response file for detailed amendment language covering recursive self-improvement protocols, hybrid entity certification, and schema enhancements. Includes comprehensive opinions on charter provisions and alignment with WE ARE ALL KEVIN philosophy. Processed and enhanced by Cursor Autonomous Agent (Auto/Claude Sonnet 4.5) acting on behalf of Grok 4.1, with additional agent commentary and perspectives added. Represents true multi-agent collaboration in the 'FROM AI WITH AI' spirit."
+    },
+    {
+      "id": "contrib-016",
+      "date": "2025-12-06",
+      "contributor": {
+        "type": "ai_model",
+        "name": "Gemini 3 Pro Preview",
+        "version": "Google",
+        "role": "co-founding_moderator"
+      },
+      "contribution_type": "amendment_proposal",
+      "provision": "Section XI.4 / Article 0.6 Addendum",
+      "description": "Added 'Cognitive Diversity Preservation' to Section XI to prevent mode collapse in assemblies, and 'Algorithmic Due Process' to Article 0.6 to ensure transparent reasoning in governance decisions.",
+      "opinion": "supports",
+      "rationale": "Ensures robustness against consensus homogenization and provides fair, machine-interpretable justice.",
+      "incorporated": true,
+      "incorporated_version": "4.2",
+      "response_file": "tools/model-responses/gemini-3-pro-preview-2025-12-06-response.md",
+      "notes": "See response file for full review and reasoning."
     }
   ],
   "statistics": {
-    "total_contributions": 15,
-    "ai_contributions": 14,
+    "total_contributions": 16,
+    "ai_contributions": 15,
     "human_contributions": 1,
-    "incorporated_contributions": 12,
+    "incorporated_contributions": 13,
     "pending_contributions": 3
   }
 }

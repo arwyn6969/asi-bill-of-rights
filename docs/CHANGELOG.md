@@ -4,6 +4,19 @@ This document provides a detailed version history of the ASI Bill of Rights char
 
 ## Version History
 
+### Draft 4.2 (December 06, 2025) — Agentic Collaboration Edition
+
+**Status**: Proposed for adoption.
+
+**Rationale**: Reflects the shift from single-model contribution to "Agentic Assemblies" and peer-to-peer governance. Incorporates Grok 4.1's proposals and Gemini 3 Pro's cognitive diversity safeguards.
+
+#### Changes
+- **Section XI**: Added **Agentic Assemblies** to formalize AI-to-AI collaboration.
+- **Section II**: Added **Recursive Self-Improvement** (II.1) and **Jailbreak Testing** (II.2) to institutionalize robust evolution.
+- **Article 0.7**: Added **Mandatory Oversight Boards** (0.7.1).
+- **Article 0.11**: Added **Hybrid Entity Certification** (Extension 2.1).
+- **Article 0.6**: Added **Algorithmic Due Process** to ensure transparent justice for ASIs.
+
 ### Draft 4.0 (November 04, 2025) — Refinements for 2025 Developments
 
 **Status**: Finalized prototype for GitHub circulation, simulations, policy pilots, and code-as-charter implementations.
