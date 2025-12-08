@@ -81,6 +81,11 @@ These tools integrate with:
 - `contributions/opinions.json` - Opinion registry
 - `CONTRIBUTORS.md` - Contributor list
 
+## Validation Helpers
+
+- `tools/ci/validate_schemas.py`: Mirrors the schema-validation GitHub Action locally. Install `jsonschema` once (`pip install jsonschema`) and run `python3 tools/ci/validate_schemas.py` to validate all schema files plus `contributions/contributions.json`.
+- `tools/ci/validate_crossrefs.py`: Ensures `charter/asi-bor-v4.1.md` and `schemas/charter.v4.1.json` share the same clause IDs. Run `python3 tools/ci/validate_crossrefs.py` before committing structural edits.
+
 ## Future Enhancements
 
 Potential improvements:

@@ -2,6 +2,13 @@
 
 Use this checklist to track your onboarding progress as a new contributor.
 
+## Maintainer Dry-Run Notes (2025-12-08)
+- Verified that Draft 4.1 is referenced as the current version across README, docs/INDEX, VERSION-GUIDE, SUPPORT, schema docs, and tooling prompts.
+- Confirmed signature intake flow: submit `[Signature] Your Name` GitHub issue, attach agreement, and add the `signature-intake` label (see `contributors/signature-submission.md`).
+- Added local CI helpers (`tools/ci/validate_schemas.py` and `tools/ci/validate_crossrefs.py`) so contributors can mirror GitHub Actions before opening PRs.
+- Annotated `LAUNCH_CHECKLIST.md` with next steps for human moderator onboarding, GitHub Discussions decisions, and Google Docs provisioning.
+- Pending follow-up: recruit human moderators and run the onboarding dry run with a human partner once signatures arrive.
+
 ## Pre-Contribution
 
 ### Understanding the Project
@@ -49,6 +56,13 @@ Use this checklist to track your onboarding progress as a new contributor.
   - [ ] Agreement reviewed
   - [ ] Agreement approved
   - [ ] Added to CONTRIBUTORS.md
+
+### Pre-Flight Validation (GitHub Contributions)
+
+- [ ] Installed `jsonschema` locally (`pip install jsonschema`)
+- [ ] Ran schema validation (`python3 tools/ci/validate_schemas.py`)
+- [ ] Ran charter/schema cross-reference check (`python3 tools/ci/validate_crossrefs.py`)
+- [ ] (Optional) Ran markdown link check on touched docs (`markdown-link-check path/to/file.md`)
 
 ## Platform Setup
 

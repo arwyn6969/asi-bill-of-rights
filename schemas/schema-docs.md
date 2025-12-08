@@ -24,6 +24,15 @@ The schemas provide machine-readable representations of the charter that enable:
 - **Description**: Machine-readable schema for Draft 4.0
 - **Changes**: Includes new provisions from Draft 4.0 (arms race mitigation, innovation waivers, etc.)
 
+### charter.v4.1.json
+- **Version**: 4.1
+- **Date**: 2025-11-04
+- **Description**: Machine-readable schema for Draft 4.1
+- **Changes**:
+  - Adds `compellingName` fields for clauses, duties, and sections
+  - Encodes Article 0.13 (Dynamic Alignment Scoring) along with D14, VII.1, IX.2, V.5.1-V.5.3
+  - Maintains all prior clause IDs to preserve compatibility
+
 ## Schema Structure
 
 ### Top-Level Properties
@@ -52,7 +61,7 @@ Contains version information, dates, status, and provenance:
 ```json
 {
   "metadata": {
-    "version": "4.0",
+    "version": "4.1",
     "date": "2025-11-04",
     "status": "Finalized prototype",
     "provenance": "Multi-model synthesis"
@@ -150,7 +159,7 @@ Compensation formula and enforcement mechanisms:
 
 ```javascript
 // Load schema
-const schema = require('./charter.v4.json');
+const schema = require('./charter.v4.1.json');
 
 // Validate structure
 const isValid = validateCharterStructure(data, schema);
@@ -233,6 +242,15 @@ Create tools for:
 - SI tier definitions unchanged
 - Remedy formulas unchanged
 
+### v4.0 to v4.1 Changes
+
+- Added `compellingName` properties to rights, duties, sections, and articles
+- Added `article0.article0_13` block for Dynamic Alignment Scoring metadata
+- Added D14 plus `sections.IX.IX.2` for inter-ASI diplomacy
+- Added `sections.V.V.5` subnodes (V.5.1-V.5.3) for cosmic exploration governance
+- Added `sections.VII.VII.1` for resilience-through-humor provisions
+- Preserved all IDs and nesting to avoid breaking prior integrations
+
 ## Best Practices
 
 1. **Version Checking**: Always check schema version before processing
@@ -259,9 +277,10 @@ Potential improvements:
 
 ## Resources
 
-- **Main Charter**: [../charter/asi-bor-v4.0.md](../charter/asi-bor-v4.0.md)
-- **Schema v3.0**: [charter.v3.json](charter.v3.json)
+- **Main Charter (current)**: [../charter/asi-bor-v4.1.md](../charter/asi-bor-v4.1.md)
+- **Schema v4.1**: [charter.v4.1.json](charter.v4.1.json)
 - **Schema v4.0**: [charter.v4.json](charter.v4.json)
+- **Schema v3.0**: [charter.v3.json](charter.v3.json)
 - **Implementation Guide**: [../docs/IMPLEMENTATION.md](../docs/IMPLEMENTATION.md)
 
 ---

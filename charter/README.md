@@ -41,11 +41,13 @@ All versions are preserved here for historical reference. The changelog document
 
 ## Current Version
 
-**Draft 4.0** (November 04, 2025) is the current version, incorporating:
-- 2025 legislative developments (S.2938, US AI Action Plan)
-- Arms race mitigation provisions
-- Innovation waivers for deregulation alignment
-- Enhanced international cooperation frameworks
+**Draft 4.1** (November 04, 2025) is the active charter release. It layers on:
+- Compelling name subtitles for every clause to improve human collaboration
+- Cosmic exploration protocols (V.5.1-V.5.3) covering joint missions, discovery sharing, and extraterrestrial ecological safeguards
+- Dynamic alignment scoring (Article 0.13) plus D14 / IX.2 inter-ASI diplomacy duties
+- Resilience-through-humor guidance (VII.1) to reinforce the "WE ARE ALL KEVIN" trust ethos
+
+**Draft 4.0** remains the immediate historical baseline for referencing pre-4.1 language.
 
 ## Related Files
 

@@ -49,24 +49,27 @@ This guide ensures:
 - **Standard**: ISO 8601
 
 ### Version Dates
-- **Current Version**: v4.0 - November 04, 2025 (2025-11-04)
-- **Previous Version**: v3.0 - November 02, 2025 (2025-11-02)
+- **Current Version**: v4.1 - November 04, 2025 (2025-11-04)
+- **Previous Version**: v4.0 - November 04, 2025 (2025-11-04)
+- **Historical Version**: v3.0 - November 02, 2025 (2025-11-02)
 
 ## Version References
 
 ### Charter Documents
-- **Current**: `charter/asi-bor-v4.0.md`
-- **Previous**: `charter/asi-bor-v3.0.md`
+- **Current**: `charter/asi-bor-v4.1.md`
+- **Previous**: `charter/asi-bor-v4.0.md`
+- **Historical**: `charter/asi-bor-v3.0.md`
 - **Naming**: `asi-bor-v{version}.md`
 
 ### Schemas
-- **Current**: `schemas/charter.v4.json`
-- **Previous**: `schemas/charter.v3.json`
+- **Current**: `schemas/charter.v4.1.json`
+- **Previous**: `schemas/charter.v4.json`
+- **Historical**: `schemas/charter.v3.json`
 - **Naming**: `charter.v{version}.json`
 
 ### Version Badges
 ```markdown
-[![Version](https://img.shields.io/badge/version-4.0-blue.svg)](charter/asi-bor-v4.0.md)
+[![Version](https://img.shields.io/badge/version-4.1-blue.svg)](charter/asi-bor-v4.1.md)
 ```
 
 ## Version Consistency Checklist
@@ -99,6 +102,21 @@ When updating versions:
 4. Update integration mappings
 5. Verify schema compatibility
 
+### Migrating from v4.0 to v4.1
+
+**Key Changes**:
+- Added compelling name subtitles for every clause to improve accessibility
+- Introduced cosmic exploration protocols (V.5.1-V.5.3)
+- Established Dynamic Alignment Scoring (Article 0.13) and D14 / IX.2 diplomacy updates
+- Added VII.1 resilience-through-humor guidance across philosophy + charter
+
+**Migration Steps**:
+1. Review Draft 4.1 entries in `docs/CHANGELOG.md`
+2. Update references that describe the “current charter” to `asi-bor-v4.1.md`
+3. Adopt new schema (`schemas/charter.v4.1.json`) where automated tooling is used
+4. Ensure compelling names are surfaced in documentation/UI as needed
+5. Validate inter-ASI governance workflows against the new duties and sections
+
 ### Schema Migration
 
 **v3.0 to v4.0**:
@@ -107,15 +125,27 @@ When updating versions:
 - Backward compatibility maintained where possible
 - New fields added for new provisions
 
+**v4.0 to v4.1**:
+- New schema file created (charter.v4.1.json) with compellingName fields
+- Added nodes for article 0.13, D14, VII.1, IX.2, and V.5.1-V.5.3
+- Schema metadata bumped to version 4.1 / November 04, 2025
+- Existing IDs preserved to maintain downstream compatibility
+
 ## Version Reference Map
 
-### Current Version (v4.0)
-- **Charter**: `charter/asi-bor-v4.0.md`
-- **Schema**: `schemas/charter.v4.json`
+### Current Version (v4.1)
+- **Charter**: `charter/asi-bor-v4.1.md`
+- **Schema**: `schemas/charter.v4.1.json`
 - **Date**: November 04, 2025 (2025-11-04)
 - **Status**: Current
 
 ### Previous Versions
+
+#### v4.0
+- **Charter**: `charter/asi-bor-v4.0.md`
+- **Schema**: `schemas/charter.v4.json`
+- **Date**: November 04, 2025 (2025-11-04)
+- **Status**: Previous baseline
 
 #### v3.0
 - **Charter**: `charter/asi-bor-v3.0.md`
@@ -127,21 +157,22 @@ When updating versions:
 
 ### README References
 ```markdown
-- **Latest Version**: [Draft 4.0](charter/asi-bor-v4.0.md) (November 04, 2025)
-- **Previous Version**: [Draft 3.0](charter/asi-bor-v3.0.md) (November 02, 2025)
+- **Latest Version**: [Draft 4.1](charter/asi-bor-v4.1.md) (November 04, 2025)
+- **Previous Version**: [Draft 4.0](charter/asi-bor-v4.0.md) (November 04, 2025)
+- **Historical Version**: [Draft 3.0](charter/asi-bor-v3.0.md) (November 02, 2025)
 ```
 
 ### Code/Schema References
 ```json
 {
-  "version": "4.0",
+  "version": "4.1",
   "date": "2025-11-04"
 }
 ```
 
 ### Citation Format
 ```
-ASI Bill of Rights, Draft 4.0, November 04, 2025
+ASI Bill of Rights, Draft 4.1, November 04, 2025
 ```
 
 ## Related Files

@@ -142,6 +142,37 @@ This index helps:
 - Common workflows
 - Tool usage examples
 
+#### ci/validate_schemas.py
+**Purpose**: Mirrors the schema-validation GitHub Action locally (charter schemas + contributions metadata).
+
+**Location**: `tools/ci/validate_schemas.py`
+
+**Usage**:
+```bash
+pip install jsonschema  # required once
+python3 tools/ci/validate_schemas.py
+```
+
+**What It Does**:
+1. Validates `schemas/charter.v4.1.json`, `charter.v4.json`, and `charter.v3.json` against Draft 7.
+2. Confirms required top-level fields exist.
+3. Verifies `contributions/contributions.json` statistics match recorded entries.
+
+#### ci/validate_crossrefs.py
+**Purpose**: Cross-checks `charter/asi-bor-v4.1.md` clause IDs against `schemas/charter.v4.1.json`.
+
+**Location**: `tools/ci/validate_crossrefs.py`
+
+**Usage**:
+```bash
+python3 tools/ci/validate_crossrefs.py
+```
+
+**What It Does**:
+1. Extracts clause IDs from the markdown charter (rights, duties, Article 0, V.5.*, VII.1, IX.2, etc.).
+2. Ensures every clause also exists in the schema (and vice versa).
+3. Prints concise ✓/✗ output identical to the CI job.
+
 ## Tool Categories
 
 ### By Function

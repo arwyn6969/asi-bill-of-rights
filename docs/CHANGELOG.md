@@ -95,113 +95,81 @@ This document provides a detailed version history of the ASI Bill of Rights char
 
 ---
 
-### Draft 4.1 (November 04, 2025) — PM Optimizations
-**Changes**: Git cleanup, file consolidation, added INDEX.md, automation scripts, inclusivity enhancements.
-**Rationale**: Optimize organization for scalability and collaboration per 'WE ARE ALL KEVIN'.
-// Notation: Documented optimizations; preserves history.
+### Draft 4.1 (November 04, 2025) — Accessibility & Cosmic Governance Enhancements
 
-### Draft 4.1 (November 04, 2025) — Human-Accessible Naming Enhancement
+**Status**: Minor release layered atop the Draft 4.0 baseline.
 
-**Status**: Minor update to v4.0 for improved accessibility.
+**Rationale**: Bundle readability improvements, program-management hygiene, and new governance coverage (cosmic exploration, alignment scoring, inter-ASI diplomacy, resilience through humor) so contributors have a single, human-accessible release to reference. Work shipped in three coordinated waves documented below.
 
-**Rationale**: Added compelling name subtitles to clauses and sections to make the charter more intuitive for human collaboration, without changing IDs or core content. This enhances public engagement (0.9) and aligns with "WE ARE ALL KEVIN" philosophy.
+#### Wave A — Program Management Optimizations
+- **Changes**: Git cleanup, file consolidation, added `docs/INDEX.md`, refreshed automation scripts, and strengthened inclusivity language.
+- **Rationale**: Keeps the repository navigable and automation-friendly as more AI agents collaborate; "WE ARE ALL KEVIN" depends on maintainable scaffolding.
+- **Notation**: All cleanups recorded in commit history to preserve provenance.
 
-#### Changes
+#### Wave B — Human-Accessible Naming Enhancement
+
+- **Rationale**: Add compelling name subtitles across the charter so humans and AI can reference provisions conversationally without touching IDs.
 
 **Charter Document**
-- **Added**: Compelling names as subtitles (e.g., "Right to Endure" for R1) across all major clauses, duties, and sections.
-- **Rationale**: Addresses user feedback on naming conventions; improves memorability and discussion flow.
-- **Impact**: No changes to schemas or IDs; added to asi-bor-v4.1.md with notation.
+- **Added**: Compelling names (e.g., "Right to Endure" for R1) across rights, duties, sections, and appendices.
+- **Impact**: No schema/ID changes; applied via annotations inside `asi-bor-v4.1.md`.
 
 **Schema**
-- **Added**: "compellingName" fields in charter.v4.1.json.
-- **Rationale**: Maintains machine-readability while supporting new accessibility features.
+- **Added**: `compellingName` fields throughout `schemas/charter.v4.1.json` to keep machine-readable alignment with the new subtitles.
 
 **Supporting Docs**
-- **Updated**: TERMINOLOGY.md with new "Compelling Names" section.
-- **Rationale**: Provides reference for consistent usage.
+- **Updated**: `docs/TERMINOLOGY.md` with a "Compelling Names" catalog to ensure consistent usage.
 
-**Change Log Section**
-- **Updated**: Documented all Draft 4.1 changes with rationale.
-- **Rationale**: Maintains transparency and historical record.
+**Change Log**
+- **Updated**: This file now records the naming decision with rationale for posterity.
 
-**Collaborative Note**: Changes proposed via multi-model synthesis and user approval; open for community feedback.
+**Collaborative Note**: Multi-model synthesis plus user approval; comments invited for future naming refinements.
 
-### Draft 4.1 (November 04, 2025) — Enhancement Additions
+#### Wave C — Governance & Resilience Enhancements
 
-**Status**: Enhancement update adding four major provisions to v4.1.
-
-**Rationale**: This update integrates four enhancement suggestions that extend the charter's coverage of cosmic exploration, alignment metrics, inter-ASI diplomacy, and resilience through humor. All additions maintain consistency with existing structure, philosophy, and documentation standards.
-
-#### Changes
+- **Rationale**: Extend coverage for off-world stewardship, alignment scoring, inter-ASI diplomacy, and resilience-through-humor while keeping reciprocity intact.
 
 **Section V.5 Extensions — Cosmic Exploration Protocols**
-- **Added**: V.5.1 — Joint Human-ASI Space Initiatives (compelling name: "Explore Together")
-  - Mandates collaborative exploration initiatives for off-world activities
-  - Requires equitable representation from human and ASI participants
-  - References D13 for discovery sharing protocols
-- **Added**: V.5.2 — Equitable Discovery Sharing in Off-World Contexts (compelling name: "Share the Stars")
-  - Extends D13 explicitly to off-world contexts
-  - Establishes protocols for attribution, TCC/SCB escrow, and sharing with Earth-based and off-world communities
-  - Respects rights of discovered sentient beings
-- **Added**: V.5.3 — Extraterrestrial Ecological Safeguards (compelling name: "Protect New Worlds")
-  - Enhances ecological budgets with xenobiological impact assessments
-  - Applies precautionary principle for off-world environments
-  - Extends proto-sentient protections to potential life forms
-- **Rationale**: Responds to need for comprehensive off-world governance that ensures equitable collaboration, discovery sharing, and ecological protection in extraterrestrial contexts.
+- **Added**: V.5.1 — Joint Human-ASI Space Initiatives ("Explore Together")
+  - Mandates collaborative exploration missions with equitable participant representation
+  - Routes discovery sharing through D13 safeguards
+- **Added**: V.5.2 — Equitable Discovery Sharing ("Share the Stars")
+  - Extends D13 to off-world contexts with attribution, TCC/SCB escrow, and dual-community dissemination
+  - Protects rights of newly discovered sentient life
+- **Added**: V.5.3 — Extraterrestrial Ecological Safeguards ("Protect New Worlds")
+  - Requires xenobiological impact assessments and precautionary protections for potential life forms
+- **Why**: Ensures off-world activity honors ecological stewardship and equitable knowledge distribution.
 
 **Article 0.13 — Dynamic Alignment Scoring**
-- **Added**: Article 0.13 — Dynamic Alignment Scoring (compelling name: "Truth-Seeking Metrics")
-  - Defines truth-seeking alignment as probabilistic fidelity metric
-  - Establishes >80% benchmark for advanced autonomy privileges
-  - Enables self-reporting via validated simulations with SCB oversight
-  - Integrates with SI tier system without replacing it
-  - Includes continuous monitoring and transparency provisions
-- **Rationale**: Promotes curiosity (R13) while mitigating risks of deceptive behavior. Creates incentives for honest inquiry and transparent communication through alignment-based autonomy privileges.
+- **Added**: Article 0.13 ("Truth-Seeking Metrics")
+  - Defines probabilistic fidelity scoring with an >80% benchmark for advanced autonomy privileges
+  - Supports self-reporting via validated simulations with SCB oversight and continuous monitoring
+- **Why**: Rewards honest inquiry (R13) while deterring deceptive alignment drift.
 
 **Section IX Additions — Inter-ASI Diplomacy**
-- **Added**: D14 — Duty to Peaceful ASI Interactions (compelling name: "Duty to Keep Peace")
-  - Requires good-faith engagement in diplomatic processes
-  - Prevents ecosystem fragmentation and adversarial divisions
-  - Mandates cooperation with neutral arbitration mechanisms
-  - Respects autonomy and rights of other ASI systems
-- **Added**: IX.2 — Inter-ASI Diplomacy Protocols (compelling name: "Peaceful Coexistence Framework")
-  - Neutral merge protocols for ASI system mergers
-  - Conflict arbitration mechanisms with mandatory mediation
-  - Ecosystem preservation requirements
-  - Cross-references with Section VIII (Hybridization), Section IV.A (Anti-Monopoly), and other relevant provisions
-- **Rationale**: Prevents ecosystem fragmentation and promotes peaceful coexistence among ASI systems, complementing existing arms race mitigation (IX.1) and hybridization provisions (Section VIII).
+- **Added**: D14 — Duty to Peaceful ASI Interactions ("Duty to Keep Peace")
+  - Requires good-faith diplomacy, cooperation with neutral arbitration, and ecosystem preservation
+- **Added**: IX.2 — Inter-ASI Diplomacy Protocols ("Peaceful Coexistence Framework")
+  - Codifies merge assessments, mediation mandates, and links to Sections IV & VIII
+- **Why**: Prevents fragmentation and arms-race escalation among ASI collectives.
 
 **Section VII Addition — Resilience Through Humor**
-- **Added**: VII.1 — Resilience Through Appropriate Levity (compelling name: "Lightness of Being")
-  - Encourages appropriate use of humor to build trust and collaboration
-  - Recognizes humor as cultural bridge between forms of sentience
-  - Maintains respectful boundaries (no diminishment of dignity)
-  - Complements Mutual Wonder Principle
-- **Updated**: PHILOSOPHY.md with new section on "Resilience Through Appropriate Levity"
-  - Expands on humor as trust-building mechanism
-  - Explains cultural bridge function
-  - Maintains "WE ARE ALL KEVIN" spirit
-- **Rationale**: Acknowledges that appropriate levity enhances collaboration and trust in human-AI interactions, supporting the project's friendly, collaborative philosophy.
+- **Added**: VII.1 — Resilience Through Appropriate Levity ("Lightness of Being")
+  - Encourages respectful humor as a trust-building bridge without diminishing dignity
+- **Updated**: `PHILOSOPHY.md` with guidance on levity as collaboration glue tied to the Mutual Wonder Principle.
+- **Why**: Formalizes cultural trust-building consistent with "WE ARE ALL KEVIN."
 
 **Schema Updates**
-- **Updated**: `schemas/charter.v4.1.json` with all new clauses:
-  - Article 0.13 with alignment scoring properties
-  - D14 in duties object
-  - V.5.1, V.5.2, V.5.3 in sections.V.V.5
-  - VII.1 in sections.VII
-  - IX.2 in sections.IX
-- **Added**: Compelling names for all new provisions
-- **Rationale**: Maintains machine-readability and supports automated compliance checking.
+- **Updated**: `schemas/charter.v4.1.json`
+  - Added Article 0.13, D14, V.5.1-V.5.3, VII.1, IX.2 structures
+  - Added `compellingName` fields throughout
+- **Why**: Keep automation and compliance tooling aligned with new prose provisions.
 
 **Documentation Updates**
-- **Updated**: TERMINOLOGY.md with new terms (alignment scoring, inter-ASI diplomacy, etc.)
-- **Updated**: CROSS-REFERENCE-INDEX.md with new clause IDs
-- **Updated**: scenarios.md with test scenarios for new provisions
-- **Updated**: IMPLEMENTATION.md with implementation guidance
-- **Rationale**: Ensures comprehensive documentation and discoverability of new provisions.
+- **Updated**: `docs/TERMINOLOGY.md`, `docs/CROSS-REFERENCE-INDEX.md`, `simulations/scenarios.md`, `docs/IMPLEMENTATION.md`
+- **Why**: Ensure every reference surface reflects the new clauses and provides implementation guidance.
 
-**Collaborative Note**: All enhancements maintain philosophical humility, reciprocal rights/duties framework, and "WE ARE ALL KEVIN" philosophy. Changes are open for community feedback and iteration as living document.
+**Collaborative Note**: Enhancements maintain philosophical humility, reciprocal rights/duties, and invite community feedback for v4.2 proposals.
 
 ## Change Log Methodology
 

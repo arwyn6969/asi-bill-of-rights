@@ -6,6 +6,7 @@ This directory contains machine-readable JSON schemas for the ASI Bill of Rights
 
 - `charter.v3.json` - Machine-readable schema for Draft 3.0
 - `charter.v4.json` - Machine-readable schema for Draft 4.0
+- `charter.v4.1.json` - Machine-readable schema for Draft 4.1 (current)
 - `schema-docs.md` - Documentation explaining schema structure and usage
 
 ## Purpose

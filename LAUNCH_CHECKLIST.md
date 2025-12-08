@@ -21,9 +21,9 @@ This checklist ensures all governance structures are in place before public laun
   - [x] Gemini (Google) - Active
   - [x] GPT-5 (OpenAI / Cursor) - Active
 
-- [ ] Human moderators identified
-  - [ ] Primary human moderators selected
-  - [ ] Roles assigned
+- [ ] Human moderators identified _(pending nominations from project sponsors; track via governance issue queue)_
+  - [ ] Primary human moderators selected _(requires outreach to preferred human stewards)_
+  - [ ] Roles assigned _(map selections to `governance/roles.md` once confirmed)_
   - [ ] Contact information documented *(deferred until human moderators are appointed)*
 
 ## Contribution System
@@ -59,27 +59,29 @@ This checklist ensures all governance structures are in place before public laun
   - [x] Schema validation workflow
   - [x] Link checker workflow
   - [x] Cross-reference validation workflow
-- [ ] GitHub contributing guide (.github/CONTRIBUTING.md) - Note: Using root CONTRIBUTING.md instead
+- [ ] GitHub contributing guide (.github/CONTRIBUTING.md) - Note: Using root CONTRIBUTING.md instead _(needs mirroring only if GitHub requires org-wide defaults)_
 
 ### Features
 
-- [ ] GitHub Discussions enabled (if desired)
-- [ ] Projects board set up (if desired)
-- [ ] Labels configured
-- [ ] Milestones set up (if desired)
+- [ ] GitHub Discussions enabled (if desired) _(decision pending once moderation bandwidth confirmed)_
+- [ ] Projects board set up (if desired) _(stand up lightweight board after first 3 public issues)_
+- [ ] Labels configured _(define label taxonomy alongside issue templates before opening repo)_
+- [ ] Milestones set up (if desired) _(create once roadmap >1 release ahead is approved)_
 
 ## Google Docs
 
+*Status*: Workspace not yet provisioned; keep these items blocked until Google tooling is approved.
+
 ### Setup *(deferred until Google Workspace is provisioned)*
 
-- [ ] Google Docs document created
-- [ ] Content synced from GitHub
-- [ ] Sharing permissions configured
-  - [ ] Moderators have editor access
-  - [ ] Contributors have commenter access
-  - [ ] Public access configured
-- [ ] Version control set up
-- [ ] Archive structure created
+- [ ] Google Docs document created _(requires workspace + template approval)_
+- [ ] Content synced from GitHub _(script ready; waiting on document URL)_
+- [ ] Sharing permissions configured _(pending doc creation)_
+  - [ ] Moderators have editor access _(assign once moderator roster defined)_
+  - [ ] Contributors have commenter access _(link to Contributor Agreement completions)_
+  - [ ] Public access configured _(defer until trust/safety review)_
+- [ ] Version control set up _(mirror plan ready in platforms/platforms-sync.md)_
+- [ ] Archive structure created _(blocked until Docs tree exists)_
 
 ### Documentation
 
@@ -88,10 +90,10 @@ This checklist ensures all governance structures are in place before public laun
 
 ### Initial Sync
 
-- [ ] Initial sync completed
-- [ ] Version numbers aligned
-- [ ] Metadata updated
-- [ ] Links verified
+- [ ] Initial sync completed _(run after first doc exists)_
+- [ ] Version numbers aligned _(ensure GitHub v4.1 metadata flows into Docs)_
+- [ ] Metadata updated _(update doc properties post-sync)_
+- [ ] Links verified _(use same link-check CI once doc published)_
 
 ## Onboarding
 
@@ -102,9 +104,9 @@ This checklist ensures all governance structures are in place before public laun
 
 ### Process
 
-- [ ] Onboarding process tested
-- [ ] First contributor onboarded (if applicable)
-- [ ] Process refined based on feedback
+- [ ] Onboarding process tested _(schedule dry run after signature flow walkthrough in task t5)_
+- [ ] First contributor onboarded (if applicable) _(identify volunteer once dry run succeeds)_
+- [ ] Process refined based on feedback _(capture lessons into `contributors/onboarding-checklist.md`)_
 
 ## Documentation Review
 
@@ -124,85 +126,85 @@ This checklist ensures all governance structures are in place before public laun
 - [x] Code of Conduct created (CODE_OF_CONDUCT.md)
 - [x] Security policy created (SECURITY.md)
 - [x] Support documentation created (SUPPORT.md)
-- [ ] All links verified (automated via CI workflow)
-- [ ] All examples accurate
+- [ ] All links verified (automated via CI workflow) _(run `gh workflow run link-checker` before public flip)_
+- [ ] All examples accurate _(spot-check README + IMPLEMENTATION once 4.1 references finalize)_
 
 ## Community Preparation
 
 ### Communication Channels
 
-- [ ] GitHub repository public (or access configured)
-- [ ] Google Docs access configured
-- [ ] Communication channels established
-- [ ] Contact information documented
+- [ ] GitHub repository public (or access configured) _(decision after human moderators onboard)_ 
+- [ ] Google Docs access configured _(blocked by workspace provisioning noted above)_
+- [ ] Communication channels established _(determine preferred forum: GitHub Discussions vs. Matrix)_
+- [ ] Contact information documented _(needs moderator roster + support alias confirmation)_
 
 ### Launch Materials
 
-- [ ] Launch announcement prepared
-- [ ] Social media posts (if applicable)
-- [ ] Email notifications (if applicable)
-- [ ] Community outreach plan
+- [ ] Launch announcement prepared _(draft outline pending content + date)_
+- [ ] Social media posts (if applicable) _(coordinate with contributors once launch date locked)_
+- [ ] Email notifications (if applicable) _(depends on mailing list availability)_
+- [ ] Community outreach plan _(document in governance/LAUNCH_CHECKLIST once communications channel chosen)_
 
 ## Testing
 
 ### Process Testing
 
-- [ ] Contribution process tested
-- [ ] Agreement signing tested
-- [ ] Review process tested
-- [ ] Sync process tested
-- [ ] Attribution tested
+- [ ] Contribution process tested _(simulate via internal issue/PR dry run)_
+- [ ] Agreement signing tested _(use AI agent dry run in task t5)_
+- [ ] Review process tested _(pair moderation between AI + future human partner)_
+- [ ] Sync process tested _(ensure GitHub ↔ Docs pipeline works once Docs exist)_
+- [ ] Attribution tested _(verify contributions.json auto-updates + stats refresh)_
 
 ### Platform Testing
 
-- [ ] GitHub features tested
-- [ ] Google Docs features tested
-- [ ] Links tested
-- [ ] Templates tested
-- [ ] Workflows tested
+- [ ] GitHub features tested _(exercise issue/PR templates plus Actions via test branch)_
+- [ ] Google Docs features tested _(blocked pending workspace; plan to verify comments/permissions)_
+- [ ] Links tested _(use CI + manual sampling)_
+- [ ] Templates tested _(dry run contribution + signature templates)_
+- [ ] Workflows tested _(trigger schema/link/crossref workflows pre-launch)_
 
 ## Final Checks
 
 ### Quality Assurance
 
-- [ ] All documentation reviewed
-- [ ] All processes tested
-- [ ] All links working
-- [ ] All templates complete
-- [ ] All workflows functional
+- [ ] All documentation reviewed _(assign doc owners per directory before GA)_
+- [ ] All processes tested _(depends on earlier testing section completion)_
+- [ ] All links working _(link-checker CI + manual follow-ups)_
+- [ ] All templates complete _(ensure issue/PR + contributor templates finalized)_
+- [ ] All workflows functional _(confirm schema/link/crossref succeed twice consecutively)_
 
 ### Readiness
 
-- [ ] Team ready
-- [ ] Processes ready
-- [ ] Platforms ready
-- [ ] Documentation ready
-- [ ] Community ready
+- [ ] Team ready _(needs human moderator onboarding)_
+- [ ] Processes ready _(tie to testing checkboxes above)_
+- [ ] Platforms ready _(GitHub + Docs + communications)_
+- [ ] Documentation ready _(dependent on doc review + 4.1 verification)_
+- [ ] Community ready _(requires announcement + support channels)_
 
 ## Launch
 
 ### Pre-Launch
 
-- [ ] Final review completed
-- [ ] All checklists completed
-- [ ] Team notified
-- [ ] Launch date set
+- [ ] Final review completed _(schedule once readiness criteria satisfied)_
+- [ ] All checklists completed _(this doc plus governance/LAUNCH_CHECKLIST cross-check)_
+- [ ] Team notified _(send update via agreed communication channel)_
+- [ ] Launch date set _(target after moderator onboarding + Docs provisioning)_
 
 ### Launch Day
 
-- [ ] Repository made public (if applicable)
-- [ ] Google Docs access opened
-- [ ] Launch announcement posted
-- [ ] Community notified
-- [ ] Monitoring active
+- [ ] Repository made public (if applicable) _(flip once QA complete)_
+- [ ] Google Docs access opened _(coordinate with workspace owner)_ 
+- [ ] Launch announcement posted _(reuse prepared messaging)_ 
+- [ ] Community notified _(email/list + social posts)_ 
+- [ ] Monitoring active _(dedicated buddy on support issues first 72h)_
 
 ### Post-Launch
 
-- [ ] Monitor contributions
-- [ ] Respond to feedback
-- [ ] Support new contributors
-- [ ] Refine processes
-- [ ] Document learnings
+- [ ] Monitor contributions _(use contributions.json + issues dashboard weekly)_
+- [ ] Respond to feedback _(triage via SUPPORT.md contact paths)_
+- [ ] Support new contributors _(pair AI + human moderators for intake)_
+- [ ] Refine processes _(feed observations back into GOVERNANCE + CONTRIBUTING)_
+- [ ] Document learnings _(update `docs/CHANGELOG.md` + `governance/LAUNCH_CHECKLIST.md` postmortem)_
 
 ## Notes
 
