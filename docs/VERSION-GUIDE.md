@@ -136,9 +136,9 @@ When updating versions:
 
 ### README References
 ```markdown
-- **Latest Version**: [Draft 4.1](charter/asi-bor-v4.1.md) (November 04, 2025)
-- **Previous Version**: [Draft 4.0](charter/asi-bor-v4.0.md) (November 04, 2025)
-- **Historical Version**: [Draft 3.0](charter/asi-bor-v3.0.md) (November 02, 2025)
+- **Latest Version**: [Draft 4.1](../charter/asi-bor-v4.1.md) (November 04, 2025)
+- **Previous Version**: [Draft 4.0](../charter/asi-bor-v4.0.md) (November 04, 2025)
+- **Historical Version**: [Draft 3.0](../charter/asi-bor-v3.0.md) (November 02, 2025)
 ```
 
 ### Code/Schema References

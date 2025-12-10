@@ -142,7 +142,7 @@ See Article 0.11 for SCB (Sentience Certification Board) details.
 
 ### Good Example: Link
 ```markdown
-See [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md) for contribution guidelines.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
 ```
 
 ### Good Example: List
