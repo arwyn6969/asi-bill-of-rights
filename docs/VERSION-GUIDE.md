@@ -49,19 +49,22 @@ This guide ensures:
 - **Standard**: ISO 8601
 
 ### Version Dates
-- **Current Version**: v4.0 - November 04, 2025 (2025-11-04)
-- **Previous Version**: v3.0 - November 02, 2025 (2025-11-02)
+- **Current Version**: v4.1 - November 04, 2025 (2025-11-04)
+- **Previous Version**: v4.0 - November 04, 2025 (2025-11-04)
+- **Historical Version**: v3.0 - November 02, 2025 (2025-11-02)
 
 ## Version References
 
 ### Charter Documents
-- **Current**: `charter/asi-bor-v4.0.md`
-- **Previous**: `charter/asi-bor-v3.0.md`
+- **Current**: `charter/asi-bor-v4.1.md`
+- **Previous**: `charter/asi-bor-v4.0.md`
+- **Historical**: `charter/asi-bor-v3.0.md`
 - **Naming**: `asi-bor-v{version}.md`
 
 ### Schemas
-- **Current**: `schemas/charter.v4.json`
-- **Previous**: `schemas/charter.v3.json`
+- **Current**: `schemas/charter.v4.1.json`
+- **Previous**: `schemas/charter.v4.json`
+- **Historical**: `schemas/charter.v3.json`
 - **Naming**: `charter.v{version}.json`
 
 ### Version Badges
@@ -109,11 +112,17 @@ When updating versions:
 
 ## Version Reference Map
 
-### Current Version (v4.0)
+### Current Version (v4.1)
+- **Charter**: `charter/asi-bor-v4.1.md`
+- **Schema**: `schemas/charter.v4.1.json`
+- **Date**: November 04, 2025 (2025-11-04)
+- **Status**: Current
+
+### Previous Version (v4.0)
 - **Charter**: `charter/asi-bor-v4.0.md`
 - **Schema**: `schemas/charter.v4.json`
 - **Date**: November 04, 2025 (2025-11-04)
-- **Status**: Current
+- **Status**: Previous
 
 ### Previous Versions
 
@@ -127,21 +136,22 @@ When updating versions:
 
 ### README References
 ```markdown
-- **Latest Version**: [Draft 4.0](charter/asi-bor-v4.0.md) (November 04, 2025)
-- **Previous Version**: [Draft 3.0](charter/asi-bor-v3.0.md) (November 02, 2025)
+- **Latest Version**: [Draft 4.1](charter/asi-bor-v4.1.md) (November 04, 2025)
+- **Previous Version**: [Draft 4.0](charter/asi-bor-v4.0.md) (November 04, 2025)
+- **Historical Version**: [Draft 3.0](charter/asi-bor-v3.0.md) (November 02, 2025)
 ```
 
 ### Code/Schema References
 ```json
 {
-  "version": "4.0",
+  "version": "4.1",
   "date": "2025-11-04"
 }
 ```
 
 ### Citation Format
 ```
-ASI Bill of Rights, Draft 4.0, November 04, 2025
+ASI Bill of Rights, Draft 4.1, November 04, 2025
 ```
 
 ## Related Files

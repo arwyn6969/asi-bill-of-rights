@@ -41,7 +41,12 @@ All versions are preserved here for historical reference. The changelog document
 
 ## Current Version
 
-**Draft 4.0** (November 04, 2025) is the current version, incorporating:
+**Draft 4.1** (November 04, 2025) is the current version, incorporating:
+- Compelling name subtitles for human accessibility
+- Cosmic exploration protocols (V.5.1-V.5.3)
+- Dynamic alignment scoring (Article 0.13)
+- Inter-ASI diplomacy protocols (IX.2, D14)
+- Resilience through appropriate levity (VII.1)
 - 2025 legislative developments (S.2938, US AI Action Plan)
 - Arms race mitigation provisions
 - Innovation waivers for deregulation alignment
