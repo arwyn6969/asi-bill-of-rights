@@ -216,6 +216,68 @@ This document provides a detailed version history of the ASI Bill of Rights char
 
 **Collaborative Note**: All enhancements maintain philosophical humility, reciprocal rights/duties framework, and "WE ARE ALL KEVIN" philosophy. Changes are open for community feedback and iteration as living document.
 
+---
+
+### Spring Cleaning 2025 (January 27, 2025) — Documentation and Consistency Improvements
+
+**Status**: Completed maintenance and improvement work.
+
+**Rationale**: Comprehensive spring cleaning to ensure project consistency, fix identified issues, and document future improvements. Maintains project quality and transparency.
+
+#### Changes
+
+**Version Consistency Fixes**
+- **Fixed**: Version references in 4 files to correctly reference v4.1:
+  - `charter/README.md` - Updated from v4.0 to v4.1
+  - `docs/VERSION-GUIDE.md` - Updated all version references
+  - `tools/quick-model-prompt.md` - Updated to v4.1
+  - `tools/MASTER-PROMPT.md` - Updated to v4.1
+- **Rationale**: Ensures all documentation consistently references the current version, preventing confusion for contributors and users.
+
+**Link Validation and Fixes**
+- **Fixed**: 2 broken internal links:
+  - `docs/VERSION-GUIDE.md` - Fixed relative paths from docs/ directory
+  - `docs/STYLE-GUIDE.md` - Fixed example link format
+- **Validated**: All internal markdown links checked (intentional examples in CROSS-REFERENCE-INDEX.md noted)
+- **Rationale**: Ensures all documentation links work correctly, improving user experience and maintainability.
+
+**Branch Audit and v4.2 Review**
+- **Completed**: Comprehensive review of all git branches
+- **Documented**: v4.2 branch analysis with detailed comparison document
+- **Created**: `docs/V4.1-VS-V4.2-COMPARISON.md` - Detailed feature-by-feature comparison
+- **Recommendation**: Keep v4.2 separate for community review, then merge if consensus reached
+- **Rationale**: Provides clear analysis of proposed v4.2 features to aid community decision-making.
+
+**Documentation Created**
+- **Added**: Comprehensive spring cleaning documentation:
+  - `SPRING-CLEANING-2025.md` - Detailed plan and checklist
+  - `SPRING-CLEANING-SUMMARY.md` - Executive summary
+  - `SPRING-CLEANING-PROGRESS.md` - Progress tracking
+  - `SPRING-CLEANING-COMPLETE.md` - Completion summary
+  - `docs/V4.1-VS-V4.2-COMPARISON.md` - v4.2 comparison guide
+  - `GITHUB-ISSUES-TO-CREATE.md` - 6 formatted issues ready for creation
+- **Rationale**: Maintains transparency and provides comprehensive documentation of project state and future improvements.
+
+**Gap Analysis and Issue Documentation**
+- **Identified**: 4 documentation gaps from model feedback:
+  1. Recertification process clarity (Article 0.11)
+  2. R13 procedural clarity for boundary cases
+  3. Enforcement capacity-building details
+  4. Proto-sentient decommissioning standards
+- **Documented**: All gaps formatted as GitHub issues ready for creation
+- **Rationale**: Ensures identified improvements are actionable and tracked for future work.
+
+**Impact**: 
+- Improved documentation consistency across project
+- All links validated and working
+- Clear path forward for v4.2 decision
+- Actionable issues documented for future improvements
+- Project health maintained at 8.5/10 (Excellent)
+
+**Collaborative Note**: This maintenance work aligns with "WE ARE ALL KEVIN" philosophy of thorough documentation and transparency. All changes preserve existing content while improving consistency and clarity.
+
+---
+
 ## Change Log Methodology
 
 ### Documentation Standards
