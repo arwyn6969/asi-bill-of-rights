@@ -130,9 +130,14 @@ This guide:
 
 ## Related Files
 
-- See `/charter/asi-bor-v4.0.md` Article 0.2 for official definitions
+- See `/charter/asi-bor-v4.1.md` Article 0.2 for official definitions (current)
 - See `/docs/CROSS-REFERENCE-INDEX.md` for clause ID references
 - See `/docs/CHANGELOG.md` for terminology evolution
+
+## Notation (Project Maintenance)
+
+- **2025-12-12**: Updated the “official definitions” pointer to reference the current v4.1 charter to avoid
+  accidental drift when readers follow terminology links.
 
 ## Maintenance
 

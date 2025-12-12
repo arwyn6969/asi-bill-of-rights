@@ -273,10 +273,16 @@ See [appendices/integration-mapping.md](../appendices/integration-mapping.md) fo
 
 ## Resources
 
-- **Main Charter**: [charter/asi-bor-v4.0.md](../charter/asi-bor-v4.0.md)
+- **Main Charter**: [charter/asi-bor-v4.1.md](../charter/asi-bor-v4.1.md)
+- **Previous Version**: [charter/asi-bor-v4.0.md](../charter/asi-bor-v4.0.md)
 - **Schemas**: [schemas/](../schemas/)
 - **Simulations**: [simulations/](../simulations/)
 - **Integration Mappings**: [appendices/integration-mapping.md](../appendices/integration-mapping.md)
+
+## Notation (Project Maintenance)
+
+- **2025-12-12**: Updated the “Main Charter” resource link to point at the current v4.1 charter while keeping
+  a direct link to v4.0 as historical reference. No normative text changed.
 
 ## Implementation of v4.1 Enhancements
 

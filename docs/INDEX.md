@@ -42,7 +42,7 @@ This index helps:
 ### For Policy Makers
 
 **Charter Documents**:
-- [charter/asi-bor-v4.0.md](../charter/asi-bor-v4.0.md) - Current charter (Draft 4.0)
+- [charter/asi-bor-v4.1.md](../charter/asi-bor-v4.1.md) - Current charter (Draft 4.1)
 - [charter/asi-bor-v3.0.md](../charter/asi-bor-v3.0.md) - Previous charter (Draft 3.0)
 
 **Implementation**:
@@ -57,7 +57,7 @@ This index helps:
 ### For Developers
 
 **Schemas**:
-- [schemas/charter.v4.json](../schemas/charter.v4.json) - Current schema
+- [schemas/charter.v4.1.json](../schemas/charter.v4.1.json) - Current schema
 - [schemas/charter.v3.json](../schemas/charter.v3.json) - Previous schema
 - [schemas/schema-docs.md](../schemas/schema-docs.md) - Schema documentation
 - [schemas/SCHEMA-CHARTER-MAPPING.md](../schemas/SCHEMA-CHARTER-MAPPING.md) - Schema mapping
@@ -74,7 +74,7 @@ This index helps:
 ### For Researchers
 
 **Charter**:
-- [charter/asi-bor-v4.0.md](../charter/asi-bor-v4.0.md) - Current charter
+- [charter/asi-bor-v4.1.md](../charter/asi-bor-v4.1.md) - Current charter
 - [charter/README.md](../charter/README.md) - Charter directory
 
 **Citations**:
@@ -90,7 +90,7 @@ This index helps:
 ### Charter Content
 
 **Main Charter**:
-- [charter/asi-bor-v4.0.md](../charter/asi-bor-v4.0.md) - Draft 4.0 (current)
+- [charter/asi-bor-v4.1.md](../charter/asi-bor-v4.1.md) - Draft 4.1 (current)
 - [charter/asi-bor-v3.0.md](../charter/asi-bor-v3.0.md) - Draft 3.0 (historical)
 
 **Appendices**:
@@ -139,7 +139,7 @@ This index helps:
 - [README.md](../README.md) - Overview
 - [MISSION.md](../MISSION.md) - Mission
 - [PHILOSOPHY.md](../PHILOSOPHY.md) - Philosophy
-- [charter/asi-bor-v4.0.md](../charter/asi-bor-v4.0.md) - Charter
+- [charter/asi-bor-v4.1.md](../charter/asi-bor-v4.1.md) - Charter
 
 ### Contributing
 - [docs/CONTRIBUTING.md](CONTRIBUTING.md) - Guidelines
@@ -162,7 +162,7 @@ This index helps:
 1. [README.md](../README.md) - Start here
 2. [MISSION.md](../MISSION.md) - Project purpose
 3. [PHILOSOPHY.md](../PHILOSOPHY.md) - Collaborative philosophy
-4. [charter/asi-bor-v4.0.md](../charter/asi-bor-v4.0.md) - Main charter
+4. [charter/asi-bor-v4.1.md](../charter/asi-bor-v4.1.md) - Main charter
 
 ### For Contributors
 1. [docs/CONTRIBUTING.md](CONTRIBUTING.md) - Contribution guidelines
@@ -171,8 +171,14 @@ This index helps:
 
 ### For Implementers
 1. [docs/IMPLEMENTATION.md](IMPLEMENTATION.md) - Implementation guide
-2. [schemas/charter.v4.json](../schemas/charter.v4.json) - Schema
+2. [schemas/charter.v4.1.json](../schemas/charter.v4.1.json) - Schema
 3. [appendices/integration-mapping.md](../appendices/integration-mapping.md) - Integration
+
+## Notation (Project Maintenance)
+
+- **2025-12-12**: Updated INDEX links that still pointed to v4.0 / `charter.v4.json` so they consistently
+  reference the current v4.1 charter + schema. This is a documentation-only consistency change (no charter
+  content altered).
 
 ## Search Index
 
