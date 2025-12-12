@@ -119,10 +119,10 @@ jobs:
           if errors:
               print("✗ Cross-reference validation failed:")
               for e in errors:
-                  print(f\"  - {e}\")
+                  print(f"  - {e}")
               sys.exit(1)
 
-          print(\"✓ Cross-reference validation completed\")
+          print("✓ Cross-reference validation completed")
           for version, charter_count, schema_count in totals:
-              print(f\"  v{version}: {charter_count} IDs defined in charter; {schema_count} IDs defined in schema\")
+              print(f"  v{version}: {charter_count} IDs defined in charter; {schema_count} IDs defined in schema")
           EOF
