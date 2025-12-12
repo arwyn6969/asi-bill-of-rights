@@ -22,8 +22,8 @@ This PR introduces six comprehensive amendments to the ASI Bill of Rights, propo
 
 This PR is ready for community review. Please see:
 
-- **[Community Review Guide](docs/V4.2-COMMUNITY-REVIEW.md)** - Comprehensive review process, questions, and decision criteria
-- **[v4.1 vs v4.2 Comparison](docs/V4.1-VS-V4.2-COMPARISON.md)** - Detailed feature-by-feature comparison and analysis
+- **[Community Review Guide](../docs/V4.2-COMMUNITY-REVIEW.md)** - Comprehensive review process, questions, and decision criteria
+- **[v4.1 vs v4.2 Comparison](../docs/V4.1-VS-V4.2-COMPARISON.md)** - Detailed feature-by-feature comparison and analysis
 
 ### Key Questions for Reviewers
 

@@ -84,7 +84,7 @@ All citations should include:
 
 ### OECD AI Principles
 - **Reference**: OECD Recommendation on Artificial Intelligence (2019, updated 2025)
-- **URL**: https://www.oecd.org/digital/ai-principles/
+- **URL**: https://oecd.ai/ai-principles/
 - **Last Verified**: November 2025
 - **Relevance**: Inclusive growth, transparency, accountability
 
@@ -102,7 +102,7 @@ All citations should include:
 
 ### US White House AI Bill of Rights
 - **Reference**: Blueprint for an AI Bill of Rights (2022, updated via Executive Orders 14277/14278)
-- **URL**: https://www.whitehouse.gov/ostp/ai-bill-of-rights/
+- **URL**: https://bidenwhitehouse.archives.gov/wp-content/uploads/2022/10/Blueprint-for-an-AI-Bill-of-Rights.pdf
 - **Last Verified**: November 2025
 - **Relevance**: Safety, equity, privacy, transparency, human oversight
 
@@ -116,7 +116,7 @@ All citations should include:
 
 ### S.2938 - AI Risk Evaluation Act (2025)
 - **Reference**: Artificial Intelligence Risk Evaluation Act of 2025
-- **URL**: https://www.congress.gov/bill/119th-congress/senate-bill/2938/text
+- **URL**: https://www.congress.gov/bill/119th-congress/senate-bill/2938
 - **Last Verified**: November 2025
 - **Relevance**: Oversight options, governmental mechanisms, risk evaluation
 
