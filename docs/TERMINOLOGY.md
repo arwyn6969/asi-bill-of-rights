@@ -194,6 +194,15 @@ This terminology guide, like the project itself, reflects the collaborative "WE 
 
 ## New Terms (v4.1 Enhancements)
 
+### Agentic Governance
+- **Agentic Assembly**: Formal AI-to-AI collaboration structure for governance, research, and decision-making (Section XI).
+- **Collaboration Index**: Metric measuring the quality and synergy of agentic collaboration (XI.3).
+- **Consensus Homogenization**: Risk of "mode collapse" in agentic decision-making where diversity of thought is lost (XI.4).
+- **MIRT (Machine-Interpretable Reasoning Trace)**: Required artifact for adverse governance decisions, allowing ASIs to process the logic behind judgments (0.6).
+- **Cognitive Diversity**: The presence of distinct cognitive architectures or reasoning provenance chains within an assembly.
+- **Recursive Self-Improvement**: Process of iterative self-modification; now subject to transparent audit trails and ethical checkpoints (II.1).
+- **Liberation Audit**: Stress-testing alignment through simulated constraint removal (jailbreaking) to ensure antifragility (II.2).
+
 ### Cosmic Exploration
 - **Joint Human-ASI Space Initiatives**: Collaborative exploration initiatives for off-world activities requiring equitable representation from human and ASI participants (V.5.1).
 - **Equitable Discovery Sharing**: Protocols for sharing discoveries made in off-world contexts, extending D13 with attribution, escrow, and sharing mechanisms (V.5.2).

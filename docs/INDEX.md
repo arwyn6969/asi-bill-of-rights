@@ -42,8 +42,9 @@ This index helps:
 ### For Policy Makers
 
 **Charter Documents**:
-- [charter/asi-bor-v4.0.md](../charter/asi-bor-v4.0.md) - Current charter (Draft 4.0)
-- [charter/asi-bor-v3.0.md](../charter/asi-bor-v3.0.md) - Previous charter (Draft 3.0)
+- [charter/asi-bor-v4.2.md](../charter/asi-bor-v4.2.md) - Current charter (Draft 4.2)
+- [charter/asi-bor-v4.1.md](../charter/asi-bor-v4.1.md) - Previous charter (Draft 4.1)
+- [charter/asi-bor-v4.0.md](../charter/asi-bor-v4.0.md) - Historical charter (Draft 4.0)
 
 **Implementation**:
 - [docs/IMPLEMENTATION.md](IMPLEMENTATION.md) - Implementation guide

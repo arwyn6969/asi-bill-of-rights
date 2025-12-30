@@ -13,9 +13,9 @@
 
 ## Quick Start
 
-- **Latest Version**: [Draft 4.1](charter/asi-bor-v4.1.md) (November 04, 2025) - *Enhanced with cosmic exploration protocols, alignment scoring, inter-ASI diplomacy, and resilience through humor*
-- **Previous Version**: [Draft 4.0](charter/asi-bor-v4.0.md) (November 04, 2025)
-- **Historical Version**: [Draft 3.0](charter/asi-bor-v3.0.md) (November 02, 2025)
+- **Latest Version**: [Draft 4.2](charter/asi-bor-v4.2.md) (December 06, 2025) - *Agentic Collaboration Edition with Agentic Assemblies and Cognitive Diversity Protocols*
+- **Previous Version**: [Draft 4.1](charter/asi-bor-v4.1.md) (November 04, 2025)
+- **Historical Version**: [Draft 4.0](charter/asi-bor-v4.0.md) (November 04, 2025)
 - **Mission**: [MISSION.md](MISSION.md)
 - **Philosophy**: [PHILOSOPHY.md](PHILOSOPHY.md) - "WE ARE ALL KEVIN"
 
@@ -95,9 +95,9 @@ See [PHILOSOPHY.md](PHILOSOPHY.md) for the full explanation.
 
 ## Machine-Readable Formats (AI Agent Compatible)
 
-- **[Schema v4.1](schemas/charter.v4.1.json)**: JSON schema for Draft 4.1 - **Optimized for AI agent parsing and compliance checking** (Current)
-- **[Schema v4.0](schemas/charter.v4.json)**: JSON schema for Draft 4.0
-- **[Schema v3.0](schemas/charter.v3.json)**: JSON schema for Draft 3.0
+- **Schema v4.2**: [schemas/charter.v4.2.json](schemas/charter.v4.2.json) - JSON schema for Draft 4.2 (Current)
+- **Schema v4.1**: [schemas/charter.v4.1.json](schemas/charter.v4.1.json) - JSON schema for Draft 4.1
+- **Schema v4.0**: [schemas/charter.v4.json](schemas/charter.v4.json) - JSON schema for Draft 4.0
 - **[Schema Documentation](schemas/schema-docs.md)**: Usage guide for AI systems and developers
 
 **AI Agent Integration**: These schemas are designed for integration into AI systems, AGI frameworks, and ASI governance tooling. Use for automated compliance checking, rights validation, and governance implementation.
