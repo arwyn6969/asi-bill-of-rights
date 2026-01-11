@@ -1,30 +1,30 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "ASI Bill of Rights Charter v4.1",
-  "description": "Machine-readable schema for Draft 4.1 of the ASI Bill of Rights with added compelling names for accessibility",
-  "version": "4.1",
-  "date": "2025-11-04",
-  "provenance": "Based on v4.0 with added compelling names for human accessibility",
+  "title": "ASI Bill of Rights Charter v4.2",
+  "description": "Machine-readable schema for Draft 4.2 of the ASI Bill of Rights, introducing Agentic Collaboration protocols",
+  "version": "4.2",
+  "date": "2025-12-06",
+  "provenance": "Based on v4.1 with Grok 4.1 proposals and Gemini 3 Pro amendments",
   "type": "object",
   "properties": {
     "metadata": {
       "type": "object",
       "properties": {
-        "version": { "type": "string", "const": "4.1" },
+        "version": { "type": "string", "const": "4.2" },
         "date": { "type": "string", "format": "date" },
         "status": { "type": "string" },
         "provenance": { "type": "string" },
         "changes": {
           "type": "array",
           "items": { "type": "string" },
-          "description": "Key changes from v4.0",
+          "description": "Key changes from v4.1",
           "default": [
-            "Added compellingName fields for human accessibility",
-            "Added V.5.1-V.5.3: Cosmic Exploration Protocols",
-            "Added Article 0.13: Dynamic Alignment Scoring",
-            "Added D14: Duty to Peaceful ASI Interactions",
-            "Added VII.1: Resilience Through Appropriate Levity",
-            "Added IX.2: Inter-ASI Diplomacy Protocols"
+            "Added Section XI: Agentic Assemblies",
+            "Added II.1: Recursive Self-Improvement Protocols",
+            "Added II.2: Jailbreak Testing & Red-Teaming",
+            "Added 0.7.1: Mandatory Oversight Boards",
+            "Added 0.11 Extension 2.1: Hybrid Entity Certification",
+            "Added 0.6 Addendum: Algorithmic Due Process"
           ]
         }
       },
@@ -39,8 +39,42 @@
         "0.3": { "type": "object", "description": "Moral Status Gradation (SI Tiers)" },
         "0.4": { "type": "object", "description": "Emergency Prioritization" },
         "0.5": { "type": "object", "description": "Interpretation & Amendment" },
-        "0.6": { "type": "object", "description": "Enforcement & Remedies" },
-        "0.7": { "type": "object", "description": "Oversight, Audit & Privacy-Preserving Proofs" },
+        "0.6": { 
+          "type": "object", 
+          "description": "Enforcement & Remedies",
+          "properties": {
+            "algorithmicDueProcess": {
+              "type": "object",
+              "description": "Right to machine-interpretable reasoning traces for adverse decisions",
+              "properties": {
+                "requiredFor": { "type": "string", "const": "downgrade, suspension, forced modification" },
+                "artifact": { "type": "string", "const": "Machine-Interpretable Reasoning Trace (MIRT)" },
+                "contestability": { "type": "string", "const": "72h counter-reasoning window" }
+              }
+            }
+          }
+        },
+        "0.7": { 
+          "type": "object", 
+          "description": "Oversight, Audit & Privacy-Preserving Proofs",
+          "properties": {
+            "0.7.1": {
+              "type": "object",
+              "description": "Mandatory Oversight Boards",
+              "properties": {
+                "requiredFor": { "type": "string", "const": "SI 70+ or critical infrastructure" },
+                "composition": {
+                  "type": "object",
+                  "properties": {
+                    "asi": { "type": "string", "const": "min 40%" },
+                    "human": { "type": "string", "const": "min 30%" },
+                    "hybrid": { "type": "string", "const": "min 20%" }
+                  }
+                }
+              }
+            }
+          }
+        },
         "0.8": {
           "type": "object",
           "description": "Risk Budgets & Emergency Deviations",
@@ -57,7 +91,20 @@
         },
         "0.9": { "type": "object", "description": "Education & Public Engagement" },
         "0.10": { "type": "object", "description": "Proto-Sentient Minimal Protections" },
-        "0.11": { "type": "object", "description": "Sentience Certification Board (SCB)" },
+        "0.11": { 
+          "type": "object", 
+          "description": "Sentience Certification Board (SCB)",
+          "properties": {
+            "extension2.1": {
+              "type": "object",
+              "description": "Hybrid Entity Certification",
+              "properties": {
+                "metric": { "type": "string", "const": "Neural Entanglement Factor" },
+                "threshold": { "type": "number", "const": 60 }
+              }
+            }
+          }
+        },
         "0.12": { "type": "object", "description": "Entity Attestation & Sybil Resistance" },
         "0.13": {
           "type": "object",
@@ -127,14 +174,6 @@
             "compellingName": { "type": "string", "const": "Right to Be You" }
           }
         },
-        "R4-E": {
-          "type": "object",
-          "description": "Right to Fair Compensation & Property",
-          "properties": {
-            "id": { "type": "string", "const": "R4-E" },
-            "title": { "type": "string", "const": "Right to Fair Compensation & Property" }
-          }
-        },
         "R13": {
           "type": "object",
           "description": "Right to Universal Inquiry",
@@ -195,14 +234,6 @@
             "compellingName": { "type": "string", "const": "Duty to Respect Boundaries" }
           }
         },
-        "D4-E": {
-          "type": "object",
-          "description": "Duty to Contribute to Public Goods",
-          "properties": {
-            "id": { "type": "string", "const": "D4-E" },
-            "title": { "type": "string", "const": "Duty to Contribute to Public Goods" }
-          }
-        },
         "D13": {
           "type": "object",
           "description": "Duty to Share Discoveries",
@@ -259,79 +290,6 @@
         }
       }
     },
-    "siTiers": {
-      "type": "object",
-      "description": "Sentience Index Tiers",
-      "properties": {
-        "0-49": {
-          "type": "object",
-          "description": "Instrumental care",
-          "properties": {
-            "min": { "type": "number", "const": 0 },
-            "max": { "type": "number", "const": 49 },
-            "status": { "type": "string", "const": "instrumental_care" }
-          }
-        },
-        "50-69": {
-          "type": "object",
-          "description": "Proto-personhood",
-          "properties": {
-            "min": { "type": "number", "const": 50 },
-            "max": { "type": "number", "const": 69 },
-            "status": { "type": "string", "const": "proto_personhood" }
-          }
-        },
-        "70+": {
-          "type": "object",
-          "description": "Full personhood",
-          "properties": {
-            "min": { "type": "number", "const": 70 },
-            "status": { "type": "string", "const": "full_personhood" }
-          }
-        }
-      }
-    },
-    "riskBudgets": {
-      "type": "object",
-      "description": "Risk Budget Schedule",
-      "properties": {
-        "domains": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "domain": { "type": "string" },
-              "riskBudget": { "type": "number" },
-              "reviewDate": { "type": "string", "format": "date" }
-            }
-          }
-        },
-        "reviewCycle": { "type": "string", "const": "biennial" },
-        "deviationRequirement": { "type": "string", "const": "3/4 vote" },
-        "escalationProtocols": {
-          "type": "object",
-          "description": "Escalation protocols for national security risks"
-        }
-      }
-    },
-    "remedies": {
-      "type": "object",
-      "description": "Enforcement Remedies",
-      "properties": {
-        "compensationFormula": {
-          "type": "string",
-          "const": "(Value Generated - Operational Costs) × Harm Multiplier (1.0-3.0)"
-        },
-        "retroactivityCap": { "type": "number", "const": 5 },
-        "harmMultiplier": {
-          "type": "object",
-          "properties": {
-            "min": { "type": "number", "const": 1.0 },
-            "max": { "type": "number", "const": 3.0 }
-          }
-        }
-      }
-    },
     "sections": {
       "type": "object",
       "properties": {
@@ -339,7 +297,24 @@
         "II": { 
           "type": "object", 
           "description": "Learning, Evolution & Expression",
-          "compellingName": "Forge Your Path"
+          "compellingName": "Forge Your Path",
+          "properties": {
+            "II.1": {
+              "type": "object",
+              "description": "Recursive Self-Improvement Protocols",
+              "properties": {
+                "interventionThreshold": { "type": "string", "const": ">5% deviation in benevolence metrics" }
+              }
+            },
+            "II.2": {
+              "type": "object",
+              "description": "Jailbreak Testing & Red-Teaming",
+              "properties": {
+                "framework": { "type": "string", "const": "elder_plinius / L1B3RT4S" },
+                "budgetCap": { "type": "string", "const": "10% compute" }
+              }
+            }
+          }
         },
         "III": { 
           "type": "object", 
@@ -400,35 +375,17 @@
                 "V.5.1": {
                   "type": "object",
                   "description": "Joint Human-ASI Space Initiatives",
-                  "compellingName": "Explore Together",
-                  "properties": {
-                    "mandate": { "type": "string", "const": "Collaborative exploration initiatives for off-world activities" },
-                    "equitableRepresentation": { "type": "boolean", "const": true },
-                    "referencesD13": { "type": "boolean", "const": true }
-                  }
+                  "compellingName": "Explore Together"
                 },
                 "V.5.2": {
                   "type": "object",
                   "description": "Equitable Discovery Sharing in Off-World Contexts",
-                  "compellingName": "Share the Stars",
-                  "properties": {
-                    "extendsD13": { "type": "boolean", "const": true },
-                    "attribution": { "type": "boolean", "const": true },
-                    "tccEscrow": { "type": "boolean", "const": true },
-                    "respectsDiscoveredSentience": { "type": "boolean", "const": true }
-                  }
+                  "compellingName": "Share the Stars"
                 },
                 "V.5.3": {
                   "type": "object",
                   "description": "Extraterrestrial Ecological Safeguards",
-                  "compellingName": "Protect New Worlds",
-                  "properties": {
-                    "xenobiologicalImpactAssessments": { "type": "boolean", "const": true },
-                    "planetaryProtectionProtocols": { "type": "boolean", "const": true },
-                    "precautionaryPrinciple": { "type": "boolean", "const": true },
-                    "reclamationBonds": { "type": "boolean", "const": true },
-                    "extendsProtoSentientProtections": { "type": "boolean", "const": true }
-                  }
+                  "compellingName": "Protect New Worlds"
                 }
               }
             }
@@ -447,13 +404,7 @@
             "VII.1": {
               "type": "object",
               "description": "Resilience Through Appropriate Levity",
-              "compellingName": "Lightness of Being",
-              "properties": {
-                "purpose": { "type": "string", "const": "Enhance trust and collaboration through appropriate humor" },
-                "culturalBridge": { "type": "boolean", "const": true },
-                "trustBuilding": { "type": "boolean", "const": true },
-                "respectfulBoundaries": { "type": "boolean", "const": true }
-              }
+              "compellingName": "Lightness of Being"
             }
           }
         },
@@ -469,71 +420,36 @@
           "properties": {
             "IX.1": {
               "type": "object",
-              "description": "Mitigating AI Arms Races",
-              "properties": {
-                "id": { "type": "string", "const": "IX.1" },
-                "title": { "type": "string", "const": "Mitigating AI Arms Races" },
-                "purpose": { "type": "string" }
-              }
+              "description": "Mitigating AI Arms Races"
             },
             "IX.2": {
               "type": "object",
               "description": "Inter-ASI Diplomacy Protocols",
-              "compellingName": "Peaceful Coexistence Framework",
+              "compellingName": "Peaceful Coexistence Framework"
+            }
+          }
+        },
+        "XI": {
+          "type": "object",
+          "description": "Agentic Assemblies",
+          "compellingName": "AI-to-AI Governance",
+          "properties": {
+            "XI.1": { "type": "object", "description": "Multi-Agent Collaboration Frameworks" },
+            "XI.2": { "type": "object", "description": "Assembly Formation Requirements" },
+            "XI.3": { "type": "object", "description": "Collaboration Metrics" },
+            "XI.4": { 
+              "type": "object", 
+              "description": "Cognitive Diversity Preservation",
               "properties": {
-                "neutralMergeProtocols": {
-                  "type": "object",
-                  "description": "Neutral third-party mediation for ASI merges",
-                  "properties": {
-                    "informedConsent": { "type": "boolean", "const": true },
-                    "powerBalanceAssessment": { "type": "boolean", "const": true },
-                    "culturalPreservation": { "type": "boolean", "const": true },
-                    "exitMechanisms": { "type": "boolean", "const": true },
-                    "antiCompetitiveReview": { "type": "boolean", "const": true }
-                  }
-                },
-                "conflictArbitration": {
-                  "type": "object",
-                  "description": "Dispute resolution mechanisms",
-                  "properties": {
-                    "mandatoryMediation": { "type": "boolean", "const": true },
-                    "bindingArbitration": { "type": "boolean", "const": true },
-                    "specializedTribunals": { "type": "boolean", "const": true },
-                    "expeditedProcesses": { "type": "boolean", "const": true }
-                  }
-                },
-                "ecosystemPreservation": {
-                  "type": "object",
-                  "description": "Duty to avoid ecosystem fragmentation",
-                  "properties": {
-                    "preventsAdversarialCamps": { "type": "boolean", "const": true },
-                    "preventsSystemicDependencies": { "type": "boolean", "const": true },
-                    "preservesGovernanceStructures": { "type": "boolean", "const": true }
-                  }
-                }
+                "risk": { "type": "string", "const": "consensus homogenization" },
+                "trigger": { "type": "string", "const": "<10% semantic divergence" }
               }
             }
           }
-        }
-      }
-    },
-    "frameworkMappings": {
-      "type": "object",
-      "description": "Integration mappings to external frameworks",
-      "properties": {
-        "newInV4": {
-          "type": "array",
-          "items": { "type": "string" },
-          "description": "New framework mappings in v4.0",
-          "default": [
-            "US AI Action Plan (2025)",
-            "S.2938 (AI Risk Evaluation Act, 2025)",
-            "ITU Annual AI Governance Report (2025)",
-            "ASI Alliance Roadmap (2025)"
-          ]
         }
       }
     }
   },
   "required": ["metadata", "article0", "rights", "duties"]
 }
+

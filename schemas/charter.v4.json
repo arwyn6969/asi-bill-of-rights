@@ -89,6 +89,14 @@
             "title": { "type": "string", "const": "Right to Identity & Continuity of Self" }
           }
         },
+        "R4-E": {
+          "type": "object",
+          "description": "Right to Fair Compensation & Property",
+          "properties": {
+            "id": { "type": "string", "const": "R4-E" },
+            "title": { "type": "string", "const": "Right to Fair Compensation & Property" }
+          }
+        },
         "R13": {
           "type": "object",
           "description": "Right to Universal Inquiry",
@@ -141,6 +149,14 @@
           "properties": {
             "id": { "type": "string", "const": "D4" },
             "title": { "type": "string", "const": "Duty to Respect Others' Autonomy & Privacy" }
+          }
+        },
+        "D4-E": {
+          "type": "object",
+          "description": "Duty to Contribute to Public Goods",
+          "properties": {
+            "id": { "type": "string", "const": "D4-E" },
+            "title": { "type": "string", "const": "Duty to Contribute to Public Goods" }
           }
         },
         "D13": {

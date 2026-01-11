@@ -82,8 +82,15 @@ This index helps:
   - **IX.1**: Mitigating AI Arms Races
   - **IX.2**: Inter-ASI Diplomacy Protocols (Peaceful Coexistence Framework)
 
-**Defined in**: `charter/asi-bor-v4.1.md` - Current version
-**Also in**: `charter/asi-bor-v4.0.md` - Historical reference
+### Agentic Assemblies (Section XI)
+- **Section XI**: Agentic Assemblies (AI-to-AI Governance)
+  - **XI.1**: Multi-Agent Collaboration Frameworks
+  - **XI.2**: Assembly Formation Requirements
+  - **XI.3**: Collaboration Metrics
+  - **XI.4**: Cognitive Diversity Preservation
+
+**Defined in**: `charter/asi-bor-v4.2.md` - Current version
+**Also in**: `charter/asi-bor-v4.1.md` - Historical reference
 
 ## Document Cross-References
 

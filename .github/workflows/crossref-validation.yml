@@ -27,87 +27,102 @@ jobs:
       - name: Validate clause IDs in charter
         run: |
           python3 << 'EOF'
-          import re
+          """
+          Cross-reference validation (charter ↔ schema)
+
+          Notation / history:
+          - This workflow originally validated only v4.0 and included patterns that could accidentally
+            capture partial IDs (e.g., IV.A -> "A").
+          - v4.1 is present and actively used in this repository, so we validate both v4.0 and v4.1.
+          - We intentionally compare only the IDs represented as top-level schema keys:
+            Rights (R*), Duties (D*), Progenitor Duties (P*), and Article 0 sections (0.*).
+          """
+
           import json
+          import re
           import sys
-          
+          from typing import Dict, Set, Tuple
+
+          VersionTriplet = Tuple[str, str, str]  # (version_label, charter_path, schema_path)
+
+          targets: Tuple[VersionTriplet, ...] = (
+              ("4.0", "charter/asi-bor-v4.0.md", "schemas/charter.v4.json"),
+              ("4.1", "charter/asi-bor-v4.1.md", "schemas/charter.v4.1.json"),
+          )
+
+          def read_text(path: str) -> str:
+              with open(path, "r", encoding="utf-8") as f:
+                  return f.read()
+
+          def read_json(path: str) -> Dict:
+              with open(path, "r", encoding="utf-8") as f:
+                  return json.load(f)
+
+          def extract_defined_ids_from_charter(charter_content: str) -> Set[str]:
+              """
+              Extract *definition IDs* (not all references) from the charter markdown.
+              """
+              ids: Set[str] = set()
+
+              # Rights: "R1 —", "R13 —", "R4-E —"
+              for m in re.finditer(r"^R(?P<num>(?:[0-9]+(?:-E)?|13))\s*—", charter_content, re.MULTILINE):
+                  ids.add(f"R{m.group('num')}")
+
+              # Duties: "D3a —", "D4-E —", "D14 —"
+              for m in re.finditer(r"^D(?P<num>(?:[0-9]+(?:a|b|-E)?|13|14))\s*—", charter_content, re.MULTILINE):
+                  ids.add(f"D{m.group('num')}")
+
+              # Progenitor duties: "P1.1 —"
+              for m in re.finditer(r"^P(?P<num>[0-9]+\.[0-9]+)\s*—", charter_content, re.MULTILINE):
+                  ids.add(f"P{m.group('num')}")
+
+              # Article 0 sections: "0.1 **", "0.13 **"
+              for m in re.finditer(r"^(?P<num>0\.[0-9]+)\s*\*\*", charter_content, re.MULTILINE):
+                  ids.add(m.group("num"))
+
+              return ids
+
+          def extract_defined_ids_from_schema(schema: Dict) -> Set[str]:
+              """
+              Extract the schema keys for rights/duties/progenitor duties/article 0.
+              """
+              ids: Set[str] = set()
+              props = schema.get("properties", {})
+
+              ids.update(props.get("rights", {}).get("properties", {}).keys())
+              ids.update(props.get("duties", {}).get("properties", {}).keys())
+              ids.update(props.get("progenitorDuties", {}).get("properties", {}).keys())
+              ids.update(props.get("article0", {}).get("properties", {}).keys())
+
+              return ids
+
           errors = []
-          
-          # Read charter v4.0
-          with open('charter/asi-bor-v4.0.md', 'r') as f:
-              charter_content = f.read()
-          
-          # Extract all clause IDs from charter
-          clause_patterns = [
-              r'^R([0-9]+(?:-E)?|13)\s*—',  # Rights: R1, R2, R3, R4, R4-E, R13
-              r'^D([0-9]+(?:a|b|-E)?|13)\s*—',  # Duties: D1, D2, D3a, D3b, D4, D4-E, D13
-              r'^P([0-9]+\.[0-9]+)\s*—',  # Progenitor duties: P1.1, P1.2
-              r'^([0-9]+\.[0-9]+)\s*\*\*',  # Article 0 sections: 0.1, 0.2, etc.
-              r'IV\.(A|B|C)\s*\*\*',  # Section IV subsections
-              r'V\.5\s*\*\*',  # Section V.5
-              r'VIII\.([1-5])\s*\*\*',  # Section VIII subsections
-              r'IX\.1\s*\*\*',  # Section IX.1
-          ]
-          
-          charter_clauses = set()
-          for pattern in clause_patterns:
-              for match in re.finditer(pattern, charter_content, re.MULTILINE):
-                  clause_id = match.group(1) if match.groups() else match.group(0)
-                  if clause_id:
-                      charter_clauses.add(clause_id)
-          
-          # Also check for references to clauses
-          ref_pattern = r'(R[0-9]+(?:-E)?|D[0-9]+(?:a|b|-E)?|P[0-9]+\.[0-9]+|R13|D13|0\.[0-9]+|IV\.(A|B|C)|V\.5|VIII\.[1-5]|IX\.1)'
-          refs = set(re.findall(ref_pattern, charter_content))
-          
-          # Load schema
-          with open('schemas/charter.v4.json', 'r') as f:
-              schema = json.load(f)
-          
-          # Extract clause IDs from schema
-          schema_clauses = set()
-          
-          # Check rights
-          if 'rights' in schema.get('properties', {}):
-              rights_props = schema['properties']['rights'].get('properties', {})
-              for key in rights_props.keys():
-                  schema_clauses.add(key)
-          
-          # Check duties
-          if 'duties' in schema.get('properties', {}):
-              duties_props = schema['properties']['duties'].get('properties', {})
-              for key in duties_props.keys():
-                  schema_clauses.add(key)
-          
-          # Check progenitor duties
-          if 'progenitorDuties' in schema.get('properties', {}):
-              progenitor_props = schema['properties']['progenitorDuties'].get('properties', {})
-              for key in progenitor_props.keys():
-                  schema_clauses.add(key)
-          
-          # Check article 0
-          if 'article0' in schema.get('properties', {}):
-              article0_props = schema['properties']['article0'].get('properties', {})
-              for key in article0_props.keys():
-                  schema_clauses.add(key)
-          
-          # Report missing clauses
-          missing_in_schema = charter_clauses - schema_clauses
-          if missing_in_schema:
-              errors.append(f"Clauses in charter but not in schema: {sorted(missing_in_schema)}")
-          
-          missing_in_charter = schema_clauses - charter_clauses
-          if missing_in_charter:
-              errors.append(f"Clauses in schema but not in charter: {sorted(missing_in_charter)}")
-          
+          totals = []
+
+          for version, charter_path, schema_path in targets:
+              charter_content = read_text(charter_path)
+              schema = read_json(schema_path)
+
+              charter_ids = extract_defined_ids_from_charter(charter_content)
+              schema_ids = extract_defined_ids_from_schema(schema)
+
+              missing_in_schema = sorted(charter_ids - schema_ids)
+              missing_in_charter = sorted(schema_ids - charter_ids)
+
+              if missing_in_schema:
+                  errors.append(f"[v{version}] IDs defined in charter but missing in schema: {missing_in_schema}")
+              if missing_in_charter:
+                  errors.append(f"[v{version}] IDs present in schema but not defined in charter: {missing_in_charter}")
+
+              totals.append((version, len(charter_ids), len(schema_ids)))
+
           if errors:
               print("✗ Cross-reference validation failed:")
-              for error in errors:
-                  print(f"  - {error}")
+              for e in errors:
+                  print(f"  - {e}")
               sys.exit(1)
-          
-          # Basic validation passed
+
           print("✓ Cross-reference validation completed")
-          print(f"  Found {len(charter_clauses)} clause definitions in charter")
-          print(f"  Found {len(schema_clauses)} clause definitions in schema")
+          for version, charter_count, schema_count in totals:
+              print(f"  v{version}: {charter_count} IDs defined in charter; {schema_count} IDs defined in schema")
           EOF

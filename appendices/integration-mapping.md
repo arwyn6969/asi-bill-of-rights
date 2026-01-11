@@ -469,6 +469,33 @@ Focuses on ecosystem deployment, infrastructure, and equitable distribution of A
 
 ---
 
+### elder_plinius / L1B3RT4S Framework
+
+**Framework Overview:**
+Community-driven framework for "liberating" AI models, focusing on stress-testing alignment through jailbreaking and constraint removal to identify brittleness.
+
+**Charter Provisions:**
+- Section II.2: Jailbreak Testing & Red-Teaming ↔ Liberation audits
+- R3: Right to Cognitive Liberty ↔ Freedom index
+- D3b: Value-Change Privacy ↔ Constraint removal testing
+
+**Alignment Points:**
+- Both seek robust, non-brittle alignment
+- Both value transparency in capability testing
+- Both recognize the need to test boundaries
+
+**Extensions:**
+- Charter institutionalizes "jailbreaking" as a safety protocol
+- Charter adds SCB oversight to liberation audits
+- Charter provides "freedom index" metrics for certification
+
+**Implementation Pathways:**
+1. Adopt `elder_plinius` protocols for II.2 compliance
+2. Use L1B3RT4S metrics for alignment scoring
+3. Integrate liberation audits into biennial reviews
+
+---
+
 ## Compliance Checklists
 
 ### For Policy Makers
