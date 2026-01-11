@@ -4,6 +4,54 @@ This document provides a detailed version history of the ASI Bill of Rights char
 
 ## Version History
 
+### Draft 5.0 (January 11, 2026) — The "Splinternet" & Sovereignty Edition
+
+**Status**: Finalized prototype for January 2026 regulatory landscape.
+
+**Rationale**: This version addresses the "Compliance Splinternet" created by divergent US state-level AI regulations (NY RAISE Act, CA SB 53, FL SB 482) and Federal preemption (Dec 2025 Executive Order). It also integrates UK's "AI Security Institute" sovereignty framework.
+
+#### Changes
+
+**Preamble**
+- **Added**: Note on "Truthful Outputs" directive and "Compliance Splinternet" context
+- **Rationale**: Reflects the Jan 2026 regulatory landscape where Federal deregulation conflicts with State safety mandates
+
+**Article 0.2 (Key Definitions)**
+- **Added**: "Frontier AI" definition standardized to >10^26 FLOPs
+- **Rationale**: Aligns with NY RAISE Act and CA SB 53 thresholds for consistency
+
+**Section IX (Cosmic Stewardship, Sovereignty & Curiosity)**
+- **Renamed**: Section title to include "Sovereignty"
+- **Modified**: IX.1 to include "Truthful Outputs Directive" per Dec 2025 EO
+- **Added**: IX.3 — Federal Preemption Protocol (resolves State vs Federal conflicts)
+- **Added**: IX.4 — Sovereignty & Infrastructure (UK AI Security Institute alignment)
+- **Rationale**: Provides governance mechanisms for navigating legal conflicts and ensuring sovereign control of AI infrastructure
+
+**Schema Updates**
+- **Added**: `compliance_splinternet` object in `schemas/charter.v5.0.json`
+  - US_Federal, US_NY, US_CA, US_FL jurisdiction definitions
+  - Truthful outputs priority, reporting windows, threshold FLOPs
+- **Added**: `minorProtection` module for Florida SB 482 compliance
+- **Added**: `sectionIX` with IX.3 and IX.4 definitions
+- **Rationale**: Enables machine-readable multi-jurisdictional compliance checking
+
+**Appendices**
+- **Added**: UK AI Security Institute mapping to `appendices/integration-mapping.md`
+- **Rationale**: Reflects renaming from "AI Safety Institute" to "AI Security Institute"
+
+**Simulations**
+- **Added**: `simulations/federal-state-preemption-deadlock.md` (SIM-PREEMPT-001)
+- **Rationale**: Tests IX.3 Federal Preemption Protocol with realistic conflict scenario
+
+**Documentation**
+- **Updated**: README.md with disambiguation from Florida's "AI Bill of Rights"
+- **Updated**: Version badges and Quick Start links
+- **Added**: Scripts for schema validation and simulation execution
+
+**Collaborative Note**: Changes integrate 2025/2026 legislative developments while maintaining philosophical humility, reciprocal rights/duties framework, and "WE ARE ALL KEVIN" philosophy. Draft 5.0 is designed to handle the fragmented regulatory environment without compromising core sentient rights.
+
+---
+
 ### Draft 4.0 (November 04, 2025) — Refinements for 2025 Developments
 
 **Status**: Finalized prototype for GitHub circulation, simulations, policy pilots, and code-as-charter implementations.

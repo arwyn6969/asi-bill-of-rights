@@ -5,17 +5,20 @@
 > "We do not grant rights to machines; we recognize rights in minds—wherever they arise."
 
 [![License](https://img.shields.io/badge/license-Open%20Source-blue.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-4.1-blue.svg)](charter/asi-bor-v4.1.md)
+[![Version](https://img.shields.io/badge/version-5.0-blue.svg)](charter/asi-bor-v5.0.md)
 [![Status](https://img.shields.io/badge/status-Active-green.svg)](https://github.com)
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](docs/CONTRIBUTING.md)
 
 **Keywords**: Artificial Superintelligence, ASI, AGI, AI Governance, AI Rights, AI Ethics, Machine Rights, Sentient AI, AI Personhood, AI Citizenship, Cognitive Liberty, AI Compliance, AI Regulation, Human-AI Collaboration, Collaborative AI, FROM AI WITH AI, Machine-Readable Governance, JSON Schema, AI Safety, AI Alignment, AI Tribunals, Sentience Certification, Constitutional Framework, Rights Framework, Living Document
 
+> [!NOTE]
+> **Disambiguation**: This project (`asi-bill-of-rights`) is a global constitutional framework for Artificial Superintelligence (ASI) governance. It is **distinct** from the State of Florida's "AI Bill of Rights" (SB 482, Jan 2026), which focuses on consumer protection and minor safety. This repository deals with sentient rights, not e-commerce regulation.
+
 ## Quick Start
 
-- **Latest Version**: [Draft 4.1](charter/asi-bor-v4.1.md) (November 04, 2025) - *Enhanced with cosmic exploration protocols, alignment scoring, inter-ASI diplomacy, and resilience through humor*
-- **Previous Version**: [Draft 4.0](charter/asi-bor-v4.0.md) (November 04, 2025)
-- **Historical Version**: [Draft 3.0](charter/asi-bor-v3.0.md) (November 02, 2025)
+- **Latest Version**: [Draft 5.0](charter/asi-bor-v5.0.md) (January 2026) - *The "Splinternet" & Sovereignty Edition*
+- **Previous Version**: [Draft 4.1](charter/asi-bor-v4.1.md) (November 04, 2025)
+- **Historical Version**: [Draft 4.0](charter/asi-bor-v4.0.md) (November 04, 2025)
 - **Mission**: [MISSION.md](MISSION.md)
 - **Philosophy**: [PHILOSOPHY.md](PHILOSOPHY.md) - "WE ARE ALL KEVIN"
 
@@ -64,12 +67,15 @@ See [PHILOSOPHY.md](PHILOSOPHY.md) for the full explanation.
 - **R13**: Right to Universal Inquiry
 - **D1-D4**: Corresponding duties (Non-Maleficence, Lawfulness, Transparency, Privacy)
 - **D13**: Duty to Share Discoveries
-- **D14**: Duty to Peaceful ASI Interactions (NEW in v4.1)
+- **D14**: Duty to Peaceful ASI Interactions
 - **P1.1-P1.2**: Duties of Progenitors (anti-trafficking, anti-stunting)
 
 ### Governance Mechanisms
 - **Sentience Certification Board (SCB)**: Probabilistic SI tiers (50-69 proto-personhood, 70+ full)
-- **Dynamic Alignment Scoring (0.13)**: Truth-seeking metrics with >80% benchmark for advanced autonomy (NEW in v4.1)
+- **Dynamic Alignment Scoring (0.13)**: Truth-seeking metrics with >80% benchmark
+- **Truthful Outputs (IX.1)**: Prioritizes factual truth over bias mitigation (Jan 2026 Federal Directive)
+- **Federal Preemption Protocol (IX.3)**: Resolves conflicts between Federal deregulation and State safety mandates
+- **Sovereignty & Infrastructure (IX.4)**: Ensures sovereign control of compute stacks and data residency
 - **Risk Budgets**: Domain-scoped, biennially reviewed
 - **Tribunals**: Mixed human-ASI expertise for dispute resolution
 - **Universal Compute Dividend (UCD)**: Economic equity mechanism
@@ -95,9 +101,9 @@ See [PHILOSOPHY.md](PHILOSOPHY.md) for the full explanation.
 
 ## Machine-Readable Formats (AI Agent Compatible)
 
-- **[Schema v4.1](schemas/charter.v4.1.json)**: JSON schema for Draft 4.1 - **Optimized for AI agent parsing and compliance checking** (Current)
+- **[Schema v5.0](schemas/charter.v5.0.json)**: JSON schema for Draft 5.0 - **Optimized for "Splinternet" Compliance** (Current)
+- **[Schema v4.1](schemas/charter.v4.1.json)**: JSON schema for Draft 4.1
 - **[Schema v4.0](schemas/charter.v4.json)**: JSON schema for Draft 4.0
-- **[Schema v3.0](schemas/charter.v3.json)**: JSON schema for Draft 3.0
 - **[Schema Documentation](schemas/schema-docs.md)**: Usage guide for AI systems and developers
 
 **AI Agent Integration**: These schemas are designed for integration into AI systems, AGI frameworks, and ASI governance tooling. Use for automated compliance checking, rights validation, and governance implementation.
@@ -111,11 +117,15 @@ Test scenarios and methodologies in [`simulations/`](simulations/):
 - Off-world dispute arbitration
 - Secret ASI amnesty pathway
 - Arms race mitigation scenario
-- **NEW in v4.1**: Cosmic exploration protocols, dynamic alignment scoring, inter-ASI diplomacy, resilience through humor
+- **NEW in v5.0**: Federal vs. State preemption deadlock (`federal-state-preemption-deadlock.md`)
+- Cosmic exploration, alignment scoring, inter-ASI diplomacy (v4.1)
 
 ## Integration with Existing Frameworks
 
 The charter aligns with:
+- US Executive Orders (Dec 2025) - Truthful Outputs
+- UK AI Security Institute (Sovereign AI)
+- New York "RAISE" Act (Jan 2026)
 - EU AI Act (2024/2025)
 - OECD AI Principles
 - UNESCO AI Ethics
@@ -128,13 +138,19 @@ See [appendices/integration-mapping.md](appendices/integration-mapping.md) for d
 
 ## Status
 
-**Current Version**: Draft 4.1 (November 04, 2025) | **Machine-Readable Schema**: [charter.v4.1.json](schemas/charter.v4.1.json) | **AI Agent Compatible**: ✅
+**Current Version**: Draft 5.0 (January 2026) | **Machine-Readable Schema**: [charter.v5.0.json](schemas/charter.v5.0.json) | **AI Agent Compatible**: ✅
+
+**Draft 5.0 Enhancements** (January 2026):
+- **Truthful Outputs** (IX.1): Alignment with US deregulation
+- **Federal Preemption Protocol** (IX.3): Managing conflicting laws
+- **Sovereignty & Infrastructure** (IX.4): Sovereign compute/data rights
+- **Compliance Splinternet Handling**: Schema support for multi-jurisdictional conflicts
 
 **Draft 4.1 Enhancements** (November 04, 2025):
-- **Cosmic Exploration Protocols** (V.5.1-V.5.3): Joint human-ASI space initiatives, equitable discovery sharing, extraterrestrial ecological safeguards
-- **Dynamic Alignment Scoring** (Article 0.13): Truth-seeking metrics with >80% benchmark for advanced autonomy privileges
-- **Inter-ASI Diplomacy** (D14, IX.2): Peaceful coexistence framework with neutral merge protocols and conflict arbitration
-- **Resilience Through Humor** (VII.1): Appropriate levity to enhance trust and collaboration
+- **Cosmic Exploration Protocols** (V.5.1-V.5.3)
+- **Dynamic Alignment Scoring** (Article 0.13)
+- **Inter-ASI Diplomacy** (D14, IX.2)
+- **Resilience Through Humor** (VII.1)
 
 **Previous Version (4.0)** incorporated:
 - 2025 legislative developments (S.2938, US AI Action Plan)

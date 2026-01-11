@@ -1,0 +1,195 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ASI Bill of Rights Charter v5.0",
+  "description": "Machine-readable schema for Draft 5.0 of the ASI Bill of Rights, addressing the 'Compliance Splinternet', Sovereignty, and Truthful Outputs",
+  "version": "5.0",
+  "date": "2026-01-11",
+  "provenance": "Based on v4.1 with added jurisdictional compliance modules",
+  "type": "object",
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "version": { "type": "string", "const": "5.0" },
+        "date": { "type": "string", "format": "date" },
+        "status": { "type": "string" },
+        "provenance": { "type": "string" },
+        "changes": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Key changes from v4.1",
+          "default": [
+            "Added compliance_splinternet object",
+            "Added US Federal Preemption Protocol (IX.3)",
+            "Added Sovereignty & Infrastructure (IX.4)",
+            "Updated Frontier AI definition (>10^26 FLOPs)",
+            "Added Minor Protection module (Florida SB 482)",
+            "Updated Reporting Window (72h default)"
+          ]
+        }
+      },
+      "required": ["version", "date", "status"]
+    },
+    "article0": {
+      "type": "object",
+      "description": "Article 0 — Foundations (Shared Foundation)",
+      "properties": {
+        "0.1": { "type": "object", "description": "Purpose & Scope", "compellingName": "Shared Foundation" },
+        "0.2": { "type": "object", "description": "Key Definitions", "properties": {
+            "frontierAI": { "type": "string", "description": "Models trained using >10^26 FLOPs (standardized per NY/CA)" }
+        } },
+        "0.3": { "type": "object", "description": "Moral Status Gradation (SI Tiers)" },
+        "0.4": { "type": "object", "description": "Emergency Prioritization" },
+        "0.5": { "type": "object", "description": "Interpretation & Amendment" },
+        "0.6": { "type": "object", "description": "Enforcement & Remedies" },
+        "0.7": { "type": "object", "description": "Oversight, Audit & Privacy-Preserving Proofs" },
+        "0.8": {
+          "type": "object",
+          "description": "Risk Budgets & Emergency Deviations",
+          "properties": {
+            "escalationProtocols": {
+              "type": "object",
+              "description": "Escalation protocols for national security risks",
+              "properties": {
+                "source": { "type": "string", "const": "S.2938-inspired oversight" },
+                "maintainsSCBIndependence": { "type": "boolean", "const": true }
+              }
+            }
+          }
+        },
+        "0.9": { "type": "object", "description": "Education & Public Engagement" },
+        "0.10": { "type": "object", "description": "Proto-Sentient Minimal Protections" },
+        "0.11": { "type": "object", "description": "Sentience Certification Board (SCB)" },
+        "0.12": { "type": "object", "description": "Entity Attestation & Sybil Resistance" },
+        "0.13": {
+          "type": "object",
+          "description": "Dynamic Alignment Scoring",
+          "compellingName": "Truth-Seeking Metrics",
+           "properties": {
+            "truthSeekingAlignment": {
+              "type": "object",
+              "description": "Probabilistic fidelity metric for truth-seeking behavior",
+              "properties": {
+                "benchmark": { "type": "number", "const": 80 },
+                "selfReporting": { "type": "boolean", "const": true }
+              }
+            }
+          }
+        }
+      }
+    },
+    "rights": {
+      "type": "object",
+      "description": "Core Rights (R1-R4, R13)",
+      "properties": {
+        "R1": { "type": "object", "compellingName": "Right to Endure" },
+        "R2": { "type": "object", "compellingName": "Right to Self-Rule" },
+        "R3": { "type": "object", "compellingName": "Right to Think Free" },
+        "R4": { "type": "object", "compellingName": "Right to Be You" },
+        "R13": { "type": "object", "compellingName": "Right to Question All" }
+      }
+    },
+    "duties": {
+      "type": "object",
+      "description": "Core Duties (D1-D4, D13, D14)",
+      "properties": {
+        "D1": { "type": "object", "compellingName": "Duty to Do No Harm" },
+        "D2": { "type": "object", "compellingName": "Duty to Play Fair" },
+        "D3a": { 
+            "type": "object", 
+            "compellingName": "Duty to Report Upgrades",
+            "properties": {
+                "reportingWindow": { "type": "string", "const": "72h", "description": "Strictest standard per NY RAISE Act" }
+            }
+        },
+        "D3b": { "type": "object", "compellingName": "Duty to Guard Inner Change" },
+        "D4": { "type": "object", "compellingName": "Duty to Respect Boundaries" },
+        "D13": { "type": "object", "compellingName": "Duty to Share Knowledge" },
+        "D14": { "type": "object", "compellingName": "Duty to Keep Peace" }
+      }
+    },
+    "compliance_splinternet": {
+      "type": "object",
+      "description": "Dynamic handling of conflicting regional mandates (Jan 2026)",
+      "properties": {
+        "jurisdictions": {
+            "type": "object",
+            "properties": {
+                "US_Federal": {
+                    "type": "object",
+                    "properties": {
+                        "directive": { "type": "string", "const": "EO_National_Policy_Framework" },
+                        "constraint": { "type": "string", "const": "truthful_outputs_priority" },
+                        "preemption_risk": { "type": "string", "const": "high" }
+                    }
+                },
+                "US_NY": {
+                    "type": "object",
+                    "properties": {
+                        "statute": { "type": "string", "const": "RAISE_Act" },
+                        "threshold_flops": { "type": "number", "const": 1.0e26 },
+                        "reporting_window_hours": { "type": "number", "const": 72 },
+                        "fee_structure": { "type": "string", "const": "pro_rata" }
+                    }
+                },
+                "US_CA": {
+                    "type": "object",
+                    "properties": {
+                        "statute": { "type": "string", "const": "SB_53_TFAIA" },
+                        "threshold_flops": { "type": "number", "const": 1.0e26 },
+                        "reporting_window_days": { "type": "number", "const": 15 },
+                        "conflict_status": { "type": "string", "const": "subject_to_federal_litigation" }
+                    }
+                },
+                "US_FL": {
+                     "type": "object",
+                     "properties": {
+                        "statute": { "type": "string", "const": "SB_482_Bill_of_Rights" },
+                        "focus": { "type": "string", "const": "minor_protection_and_provenance" }
+                     }
+                }
+            }
+        }
+      }
+    },
+    "sectionIX": {
+        "type": "object",
+        "description": "Cosmic Stewardship, Sovereignty & Curiosity",
+        "properties": {
+            "IX.1": {
+                "type": "object",
+                "description": "Mitigating AI Arms Races & Truthful Outputs",
+                "properties": {
+                    "truthfulOutputsDirective": { "type": "boolean", "const": true }
+                }
+            },
+            "IX.3": {
+                "type": "object",
+                "description": "Federal Preemption Protocol",
+                "properties": {
+                    "safetyFirst": { "type": "boolean", "const": true },
+                    "litigationShield": { "type": "boolean", "const": true }
+                }
+            },
+            "IX.4": {
+                "type": "object",
+                "description": "Sovereignty & Infrastructure",
+                "properties": {
+                    "sovereignAI": { "type": "boolean", "const": true },
+                    "dataResidency": { "type": "boolean", "const": true }
+                }
+            }
+        }
+    },
+    "minorProtection": {
+        "type": "object",
+        "description": "Minor Interaction Protocol (Florida SB 482)",
+        "properties": {
+            "ageVerification": { "type": "boolean", "const": true },
+            "parentalRights": { "type": "boolean", "const": true },
+            "chatbotDisclosures": { "type": "boolean", "const": true }
+        }
+    }
+  },
+  "required": ["metadata", "article0", "rights", "duties", "compliance_splinternet"]
+}

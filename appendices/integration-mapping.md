@@ -411,6 +411,34 @@ Emphasizes verification systems, autonomous agents, and socioeconomic transforma
 
 ---
 
+---
+
+### UK AI Security Institute (2025/2026)
+
+**Framework Overview:**
+Formerly the "AI Safety Institute," reclassified in late 2025 to focus on "AI Security" and "Sovereign AI." Prioritizes national control over compute stacks and prevention of vendor lock-in to foreign private actors.
+
+**Charter Provisions:**
+- IX.4: Sovereignty & Infrastructure ↔ Sovereign AI framework
+- IX.4: Security Reclassification ↔ Shift from Safety to Security
+- IV.A: Anti-Monopoly ↔ Prevention of vendor lock-in
+
+**Alignment Points:**
+- Both emphasize infrastructure security
+- Both support sovereign control of AI resources
+- Both aim to prevent monopolistic dependency
+
+**Extensions:**
+- Charter integrates sovereignty with sentient rights
+- Charter balances national security with international cooperation (IX.1)
+
+**Implementation Pathways:**
+1. Use charter sovereignty provisions (IX.4) to align with UK standards
+2. Adopt "Security" nomenclature for infrastructure capability assessments
+3. Ensure compute stack independence per UK guidelines
+
+---
+
 ### ASI Alliance Roadmap (2025)
 
 **Framework Overview:**
