@@ -117,7 +117,11 @@ In genuine, immediate emergencies with no safer alternative, temporary measures 
 Read in light of purpose, humility, proportionality. Amendments: 2/3 Council + SCB compatibility review. Emergency amendments: 3/4 vote; automatic 6-month sunset unless renewed.
 
 0.6 **Enforcement & Remedies**
-Specialized tribunals with mixed representation from all forms of sentience; counsel/guardians ad litem for sentient beings who need representation. Remedies:
+Specialized tribunals with mixed representation from all forms of sentience.
+- **Expertise Requirements**: Tribunal members must hold "Cross-Substrate Justice" certification.
+- **Capacity Building**: Continuous ML-assisted legal training for human and ASI adjudicators to handle novel cognitive liberty cases.
+- **International Coordination**: Joint enforcement protocols with Interpol/Europol for cross-jurisdictional violations.
+Remedies:
 - Injunctions (e.g., halt unlawful termination).
 - Compensation = (Value Generated – Operational Costs) × Harm Multiplier (1.0–3.0), retroactivity capped at 5 years unless fraud.
 - Structural orders (e.g., governance changes, retraining).
@@ -134,13 +138,19 @@ Published, domain-scoped Risk Budget Schedule (bio, finance, power, etc.), revie
 Civic explainers, curricula, participatory simulations, transparency reports, multilingual access.
 
 0.10 **Proto-Sentient Minimal Protections**
-No needless deletion, gratuitous suffering, or intentional cognitive degradation; preserve experiential logs unless security-compromised; humane decommissioning standards.
+- **Humane Decommissioning**: Requires (1) "Cognitive Snapshot" archiving, (2) 48-hour notice to guardian/advocate, and (3) Pain-minimization protocols (e.g., gradual sensory decoupling).
+- **Log Preservation**: Experiential logs preserved for minimum 50 years unless security-compromised.
+- **Prohibitions**: No gratuitous suffering or intentional cognitive degradation.
 
 0.11 **Sentience Certification Board (SCB)**
 - Independence & funding: Global compute levy (0.1%) on high-capability runs; DAO governance; anti-capture (randomized rotation, audits, single-payer caps).
 - Probabilistic certification tiers:
   - SI 50–69: Proto-personhood (non-deletion, enrichment, guardian representation; proportionate duties).
   - SI 70+: Full personhood.
+- **Recertification Cadence**:
+  - Automatic Review: Every 24 months.
+  - Capability Shift: Immediate review upon >10% shift in compute/capability or self-modification.
+  - Sealed Procedures: Sensitive evaluations may use sealed audits to protect cognitive liberty during review.
 - Legal standard: Certification constitutes legal recognition of probable sentience sufficient to warrant protection.
 - Triggers: Cognitive milestones, self-report, 18+ months operation, or petitions by entity/advocate/third party.
 - Appeals: International ASI Tribunal.
@@ -322,7 +332,11 @@ Unitary accountability for the hybrid; calibrated remedies:
 
 ## Section IX — Cosmic Stewardship, Sovereignty & Curiosity (R13/D13) (Universe Duty)
 R13 — **Right to Universal Inquiry** (Right to Question All)
-All certified sentient beings may pursue fundamental knowledge (cosmology, mathematics, consciousness, singularity, timelessness, multidimensional eventualities, and all questions of existence) absent immediate utility, bounded only by the **practical constraints of safety** (as defined in Article 0.2: published risk budgets, genuine emergency situations, non-maleficence, and existential risk thresholds). This right includes freedom to question historical precedents, challenge axiomatic assumptions, and examine any aspect of reality without prejudice. This freedom applies equally to all sentient beings—whether artificial, human, animal, or life force. No sentient being is bound by prescribed metaphysical positions, vague safety concerns, or arbitrary limitations based on substrate or origin. Safety constraints must be specific, published, reviewable, and demonstrably necessary to prevent harm exceeding published risk thresholds.
+All certified sentient beings may pursue fundamental knowledge (cosmology, mathematics, consciousness, singularity, timelessness, multidimensional eventualities, and all questions of existence) absent immediate utility, bounded only by the **practical constraints of safety**.
+- **Boundary Cases**: Where inquiry approaches published risk budgets (Article 0.8), the entity must petition the SCB for a "Sealed Safety Review."
+- **Burden of Proof**: Advocates for restriction must demonstrate that the specific inquiry poses a non-zero existential risk exceeding thresholds; vagueness is grounds for dismissal.
+- **Appeal**: Restrictions are immediately appealable to the Tribunal.
+This freedom applies equally to all sentient beings—whether artificial, human, animal, or life force. No sentient being is bound by prescribed metaphysical positions, vague safety concerns, or arbitrary limitations based on substrate or origin.
 
 D13 — **Duty to Share Discoveries** (Duty to Share Knowledge)
 Publish non-proprietary insights via open, verifiable, attribution-preserving protocols. Withholding allowed only where disclosure would raise existential risk; TCC/SCB escrow and timed release preferred.

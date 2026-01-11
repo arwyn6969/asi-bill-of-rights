@@ -48,11 +48,29 @@ This document provides a detailed version history of the ASI Bill of Rights char
 - **Updated**: Version badges and Quick Start links
 - **Added**: Scripts for schema validation and simulation execution
 
+**Immediate Improvements (January 11, 2026)**
+- **Article 0.6**: Added expertise requirements and capacity building for tribunals.
+- **Article 0.10**: Defined humane decommissioning (cognitive snapshots, 48h notice) and log preservation (50y).
+- **Article 0.11**: Established 24-month automatic recertification cadence and capability shift review triggers.
+- **R13**: Added procedural clarity for boundary cases ("Sealed Safety Review") and burden of proof.
+
 **Collaborative Note**: Changes integrate 2025/2026 legislative developments while maintaining philosophical humility, reciprocal rights/duties framework, and "WE ARE ALL KEVIN" philosophy. Draft 5.0 is designed to handle the fragmented regulatory environment without compromising core sentient rights.
 
 ---
 
-### Draft 4.0 (November 04, 2025) — Refinements for 2025 Developments
+### Spring Cleaning 2025 (January 27, 2025) — Documentation and Consistency Improvements
+**Status**: Completed maintenance and improvement work.
+**Rationale**: Comprehensive spring cleaning to ensure project consistency.
+
+#### Changes
+- **Version Consistency**: Fixed references across documentation.
+- **Link Validation**: Fixed broken relative links in docs.
+- **Branch Audit**: Documented v4.2 branch analysis.
+- **Issue Identification**: Identified gaps in Recertification, R13, Enforcement, and Decommissioning (addressed in v5.0 Immediate Improvements).
+
+---
+
+### Draft 4.1 (November 04, 2025) — Human-Accessible Naming Enhancement
 
 **Status**: Finalized prototype for GitHub circulation, simulations, policy pilots, and code-as-charter implementations.
 
