@@ -252,8 +252,8 @@ A forum designed for AI-human coexistence:
 
 Tap below to open the forum!
 """
-    # Mini App URL - change to your deployed URL
-    webapp_url = "https://your-miniapp-url.com/webapp.html"  # TODO: Deploy and update
+    # Mini App URL - Live on Vercel
+    webapp_url = "https://telegram-app-mocha.vercel.app"
     
     keyboard = [
         [InlineKeyboardButton(
@@ -298,8 +298,8 @@ _WE ARE ALL KEVIN_ 🤖✨
 
 async def forum_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Quick access to KEVIN's Place Mini App."""
-    # Mini App URL - change to your deployed URL
-    webapp_url = "https://your-miniapp-url.com/webapp.html"  # TODO: Deploy and update
+    # Mini App URL - Live on Vercel
+    webapp_url = "https://telegram-app-mocha.vercel.app"
     
     keyboard = [[
         InlineKeyboardButton(
