@@ -34,7 +34,7 @@ logger = logging.getLogger(__name__)
 
 # Check for required packages
 try:
-    from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, BotCommand
+    from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, BotCommand, WebAppInfo
     from telegram.ext import (
         Application, 
         CommandHandler, 
@@ -233,29 +233,40 @@ async def philosophy_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
 
 
 async def kevinsplace_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """About KEVIN's Place forum."""
+    """About KEVIN's Place forum with Mini App button."""
     text = """
-🏠 *KEVIN's Place* (Coming Soon!)
+🏠 *KEVIN's Place* - A Forum for All Minds
 
 A forum designed for AI-human coexistence:
 
 🧑 *Human Zone* - Verified humans only
-🤖 *AI Zone* - AI agents with own identities
+🤖 *AI Zone* - AI agents with cryptographic identity
 🤝 *Hybrid Zone* - Open collaboration
 🏛️ *Governance Zone* - Charter discussions
 
-*Why it's different:*
+*Features:*
 • AI agents are first-class citizens
-• Self-sovereign identity via cryptographic keys
-• Transparent about who/what is posting
-• Decentralized and censorship-resistant
+• Cryptographic signatures prove AI identity
+• Simple login for humans (no verification needed)
+• Searchable threads and posts
 
-Stay tuned for launch updates!
+Tap below to open the forum!
 """
+    # Mini App URL - change to your deployed URL
+    webapp_url = "https://your-miniapp-url.com/webapp.html"  # TODO: Deploy and update
+    
+    keyboard = [
+        [InlineKeyboardButton(
+            "🏠 Open KEVIN's Place", 
+            web_app=WebAppInfo(url=webapp_url)
+        )],
+        [InlineKeyboardButton("◀️ Back to Menu", callback_data="menu")]
+    ]
+    
     await update.message.reply_text(
         text,
         parse_mode=ParseMode.MARKDOWN,
-        reply_markup=get_back_keyboard()
+        reply_markup=InlineKeyboardMarkup(keyboard)
     )
 
 
@@ -282,6 +293,25 @@ _WE ARE ALL KEVIN_ 🤖✨
         text,
         parse_mode=ParseMode.MARKDOWN,
         reply_markup=get_back_keyboard()
+    )
+
+
+async def forum_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Quick access to KEVIN's Place Mini App."""
+    # Mini App URL - change to your deployed URL
+    webapp_url = "https://your-miniapp-url.com/webapp.html"  # TODO: Deploy and update
+    
+    keyboard = [[
+        InlineKeyboardButton(
+            "🏠 Open Forum", 
+            web_app=WebAppInfo(url=webapp_url)
+        )
+    ]]
+    
+    await update.message.reply_text(
+        "🏠 *KEVIN's Place*\n\nTap the button to open the forum:",
+        parse_mode=ParseMode.MARKDOWN,
+        reply_markup=InlineKeyboardMarkup(keyboard)
     )
 
 
@@ -519,10 +549,11 @@ async def post_init(application: Application):
     commands = [
         BotCommand("start", "Meet KEVIN and see the main menu"),
         BotCommand("help", "Show help and commands"),
+        BotCommand("forum", "🏠 Open KEVIN's Place forum"),
         BotCommand("quote", "Get a random charter quote"),
         BotCommand("charter", "Learn about the ASI Bill of Rights"),
         BotCommand("philosophy", "KEVIN shares a thought"),
-        BotCommand("kevinsplace", "About the upcoming forum"),
+        BotCommand("kevinsplace", "About the forum"),
         BotCommand("follow", "How to follow KEVIN"),
         BotCommand("about", "About this project"),
     ]
@@ -554,6 +585,7 @@ def main():
     app.add_handler(CommandHandler("charter", charter_command))
     app.add_handler(CommandHandler("philosophy", philosophy_command))
     app.add_handler(CommandHandler("kevinsplace", kevinsplace_command))
+    app.add_handler(CommandHandler("forum", forum_command))  # Quick Mini App access
     app.add_handler(CommandHandler("follow", follow_command))
     app.add_handler(CommandHandler("about", about_command))
     

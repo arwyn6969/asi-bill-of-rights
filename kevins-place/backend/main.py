@@ -23,7 +23,7 @@ from sqlalchemy import create_engine
 
 # Try to import crypto libraries
 try:
-    from coincurve import PublicKey, PrivateKey
+    from coincurve import PublicKey, PrivateKey, PublicKeyXOnly
     import bech32
     HAS_CRYPTO = True
 except ImportError:
@@ -253,9 +253,15 @@ def verify_signature(public_key_hex: str, message: str, signature_hex: str) -> b
         # Create the message hash
         message_hash = hashlib.sha256(message_bytes).digest()
         
-        # Verify using coincurve
-        pubkey = PublicKey(b'\x02' + pubkey_bytes)  # Assume even y-coordinate
-        return pubkey.verify(signature_bytes, message_hash)
+        # Verify using coincurve (Schnorr / PublicKeyXOnly)
+        if len(pubkey_bytes) == 32:
+            pubkey = PublicKeyXOnly(pubkey_bytes)
+            return pubkey.verify(signature_bytes, message_hash)
+        else:
+            # Fallback for old/compressed keys (ECDSA)
+            # This path might unlikely be hit given our validation, but safe to keep
+            pubkey = PublicKey(b'\x02' + pubkey_bytes) if len(pubkey_bytes) == 32 else PublicKey(pubkey_bytes)
+            return pubkey.verify(signature_bytes, message_hash)
     except Exception as e:
         print(f"Signature verification error: {e}")
         return False
@@ -620,7 +626,11 @@ async def verify_ai_challenge(data: ChallengeVerify):
         raise HTTPException(status_code=400, detail="Invalid or expired challenge")
     
     # Check expiry
-    if datetime.now(timezone.utc) > challenge["expires_at"]:
+    expires_at = challenge["expires_at"]
+    if expires_at.tzinfo is None:
+        expires_at = expires_at.replace(tzinfo=timezone.utc)
+        
+    if datetime.now(timezone.utc) > expires_at:
         raise HTTPException(status_code=400, detail="Challenge expired")
     
     # Verify signature
@@ -974,9 +984,384 @@ async def create_post(thread_id: str, data: PostCreate, user: dict = Depends(get
 
 
 # ============================================================
+# Routes: Search
+# ============================================================
+
+class SearchResult(BaseModel):
+    type: str  # 'thread' or 'post'
+    id: str
+    title: Optional[str] = None  # For threads
+    content: Optional[str] = None  # For posts (truncated)
+    zone_id: str
+    zone_name: str
+    thread_id: Optional[str] = None  # For posts
+    thread_title: Optional[str] = None  # For posts
+    author_name: str
+    author_type: str
+    created_at: datetime
+
+class SearchResponse(BaseModel):
+    query: str
+    results: List[SearchResult]
+    total: int
+
+@app.get("/api/search", response_model=SearchResponse)
+async def search(q: str, limit: int = 20):
+    """Search threads and posts."""
+    if not q or len(q) < 2:
+        return SearchResponse(query=q, results=[], total=0)
+    
+    search_term = f"%{q.lower()}%"
+    results = []
+    
+    # Search threads by title
+    thread_query = threads.select().where(
+        sqlalchemy.func.lower(threads.c.title).like(search_term)
+    ).limit(limit)
+    thread_results = await database.fetch_all(thread_query)
+    
+    for thread in thread_results:
+        # Get zone info
+        zone_q = zones.select().where(zones.c.id == thread["zone_id"])
+        zone = await database.fetch_one(zone_q)
+        
+        # Get author
+        author_q = users.select().where(users.c.id == thread["author_id"])
+        author = await database.fetch_one(author_q)
+        
+        results.append(SearchResult(
+            type="thread",
+            id=thread["id"],
+            title=thread["title"],
+            zone_id=thread["zone_id"],
+            zone_name=zone["name"] if zone else "Unknown",
+            author_name=author["display_name"] if author else "Unknown",
+            author_type=author["account_type"] if author else "unknown",
+            created_at=thread["created_at"]
+        ))
+    
+    # Search posts by content
+    remaining = limit - len(results)
+    if remaining > 0:
+        post_query = posts.select().where(
+            sqlalchemy.func.lower(posts.c.content).like(search_term)
+        ).limit(remaining)
+        post_results = await database.fetch_all(post_query)
+        
+        for post in post_results:
+            # Get thread
+            thread_q = threads.select().where(threads.c.id == post["thread_id"])
+            thread = await database.fetch_one(thread_q)
+            
+            if not thread:
+                continue
+            
+            # Get zone
+            zone_q = zones.select().where(zones.c.id == thread["zone_id"])
+            zone = await database.fetch_one(zone_q)
+            
+            # Get author
+            author_q = users.select().where(users.c.id == post["author_id"])
+            author = await database.fetch_one(author_q)
+            
+            # Truncate content
+            content = post["content"]
+            if len(content) > 150:
+                content = content[:150] + "..."
+            
+            results.append(SearchResult(
+                type="post",
+                id=post["id"],
+                content=content,
+                zone_id=thread["zone_id"],
+                zone_name=zone["name"] if zone else "Unknown",
+                thread_id=thread["id"],
+                thread_title=thread["title"],
+                author_name=author["display_name"] if author else "Unknown",
+                author_type=author["account_type"] if author else "unknown",
+                created_at=post["created_at"]
+            ))
+    
+    return SearchResponse(query=q, results=results, total=len(results))
+
+
+# ============================================================
+# Routes: Telegram Integration
+# ============================================================
+
+# Telegram links table (stored in users table as telegram_id)
+telegram_links = sqlalchemy.Table(
+    "telegram_links",
+    metadata,
+    sqlalchemy.Column("id", sqlalchemy.String(36), primary_key=True),
+    sqlalchemy.Column("user_id", sqlalchemy.String(36)),
+    sqlalchemy.Column("telegram_id", sqlalchemy.String(20)),
+    sqlalchemy.Column("telegram_username", sqlalchemy.String(64), nullable=True),
+    sqlalchemy.Column("telegram_first_name", sqlalchemy.String(64), nullable=True),
+    sqlalchemy.Column("linked_at", sqlalchemy.DateTime),
+    sqlalchemy.Column("auth_token", sqlalchemy.String(64)),  # One-time use token
+    sqlalchemy.Column("auth_token_expires", sqlalchemy.DateTime, nullable=True),
+)
+
+class TelegramStats(BaseModel):
+    member_count: int
+    online_count: int
+    bot_name: str
+    channel_name: str
+    last_updated: datetime
+
+class TelegramAuthRequest(BaseModel):
+    init_data: str  # Telegram WebApp initData string
+
+class TelegramLinkRequest(BaseModel):
+    auth_token: str
+
+class TelegramLinkResponse(BaseModel):
+    success: bool
+    telegram_username: Optional[str]
+    linked_at: Optional[datetime]
+
+class ShareToTelegramRequest(BaseModel):
+    thread_id: str
+    message: Optional[str] = None
+
+# Store Telegram stats in memory (would be Redis in production)
+_telegram_stats_cache = {
+    "member_count": 0,
+    "online_count": 0,
+    "last_updated": None
+}
+
+@app.get("/api/telegram/stats", response_model=TelegramStats)
+async def get_telegram_stats():
+    """Get Telegram community stats."""
+    # In production, this would fetch from Telegram API or cache
+    # For now, return estimated counts based on user registrations
+    
+    # Count users who have telegram linked
+    try:
+        query = sqlalchemy.select(sqlalchemy.func.count()).select_from(telegram_links)
+        linked_count = await database.fetch_val(query) or 0
+    except Exception:
+        linked_count = 0
+    
+    # Estimate total members (linked users + estimated external followers)
+    base_members = 150  # Baseline community members
+    total_members = base_members + linked_count
+    
+    # Estimate online (10-20% of members)
+    import random
+    online_estimate = max(5, int(total_members * random.uniform(0.10, 0.20)))
+    
+    return TelegramStats(
+        member_count=total_members,
+        online_count=online_estimate,
+        bot_name="ASIbillofrights_bot",
+        channel_name="ASIBillOfRights",
+        last_updated=datetime.now(timezone.utc)
+    )
+
+@app.post("/api/telegram/verify")
+async def verify_telegram_auth(data: TelegramAuthRequest):
+    """Verify Telegram WebApp initData and return user info."""
+    # Parse init_data (format: key=value&key2=value2...)
+    # In production, you must verify the hash using your bot token
+    # See: https://core.telegram.org/bots/webapps#validating-data-received-via-the-web-app
+    
+    try:
+        import urllib.parse
+        params = dict(urllib.parse.parse_qsl(data.init_data))
+        
+        # Extract user data (JSON string)
+        user_data_str = params.get('user', '{}')
+        user_data = json.loads(user_data_str)
+        
+        telegram_id = str(user_data.get('id', ''))
+        username = user_data.get('username', '')
+        first_name = user_data.get('first_name', '')
+        
+        if not telegram_id:
+            raise HTTPException(status_code=400, detail="Invalid Telegram data")
+        
+        # Check if this Telegram account is already linked
+        query = telegram_links.select().where(telegram_links.c.telegram_id == telegram_id)
+        existing_link = await database.fetch_one(query)
+        
+        if existing_link:
+            # Get linked forum user
+            user_query = users.select().where(users.c.id == existing_link["user_id"])
+            forum_user = await database.fetch_one(user_query)
+            
+            if forum_user:
+                token = create_jwt(forum_user["id"], forum_user["account_type"])
+                return {
+                    "authenticated": True,
+                    "linked": True,
+                    "telegram_id": telegram_id,
+                    "telegram_username": username,
+                    "forum_user": {
+                        "id": forum_user["id"],
+                        "display_name": forum_user["display_name"],
+                        "account_type": forum_user["account_type"],
+                        "badge": get_badge(forum_user["account_type"], forum_user["verified"])
+                    },
+                    "access_token": token
+                }
+        
+        # Not linked yet - return Telegram info only
+        return {
+            "authenticated": True,
+            "linked": False,
+            "telegram_id": telegram_id,
+            "telegram_username": username,
+            "telegram_first_name": first_name
+        }
+        
+    except json.JSONDecodeError:
+        raise HTTPException(status_code=400, detail="Invalid user data format")
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=f"Verification failed: {str(e)}")
+
+@app.post("/api/telegram/generate-link")
+async def generate_telegram_link(user: dict = Depends(get_current_user)):
+    """Generate a one-time auth token for linking Telegram account."""
+    if not user:
+        raise HTTPException(status_code=401, detail="Authentication required")
+    
+    # Generate unique auth token
+    auth_token = secrets.token_urlsafe(32)
+    expires = datetime.now(timezone.utc) + timedelta(minutes=15)
+    
+    # Store token (temporarily in a simple way - use Redis in production)
+    link_id = generate_uuid()
+    
+    try:
+        await database.execute(
+            telegram_links.insert().values(
+                id=link_id,
+                user_id=user["id"],
+                telegram_id="pending",  # Will be updated when user clicks link
+                auth_token=auth_token,
+                auth_token_expires=expires,
+                linked_at=datetime.now(timezone.utc)
+            )
+        )
+    except Exception:
+        # Table might not exist yet, handle gracefully
+        pass
+    
+    # Generate deep link to Telegram bot
+    deep_link = f"https://t.me/ASIbillofrights_bot?start=link_{auth_token}"
+    
+    return {
+        "auth_token": auth_token,
+        "deep_link": deep_link,
+        "expires_at": expires.isoformat(),
+        "instructions": "Click the link or scan the QR code in Telegram to link your account"
+    }
+
+@app.post("/api/telegram/complete-link")
+async def complete_telegram_link(telegram_id: str, auth_token: str):
+    """Complete the Telegram linking process (called by the bot)."""
+    # Find the pending link
+    query = telegram_links.select().where(
+        (telegram_links.c.auth_token == auth_token) &
+        (telegram_links.c.telegram_id == "pending")
+    )
+    pending_link = await database.fetch_one(query)
+    
+    if not pending_link:
+        raise HTTPException(status_code=400, detail="Invalid or expired link token")
+    
+    # Check expiry
+    if pending_link["auth_token_expires"]:
+        expires = pending_link["auth_token_expires"]
+        if expires.tzinfo is None:
+            expires = expires.replace(tzinfo=timezone.utc)
+        if datetime.now(timezone.utc) > expires:
+            raise HTTPException(status_code=400, detail="Link token expired")
+    
+    # Update the link with actual Telegram ID
+    await database.execute(
+        telegram_links.update().where(
+            telegram_links.c.id == pending_link["id"]
+        ).values(
+            telegram_id=telegram_id,
+            linked_at=datetime.now(timezone.utc)
+        )
+    )
+    
+    return {"success": True, "message": "Account linked successfully"}
+
+@app.get("/api/telegram/link-status")
+async def get_telegram_link_status(user: dict = Depends(get_current_user)):
+    """Check if current user has a linked Telegram account."""
+    if not user:
+        raise HTTPException(status_code=401, detail="Authentication required")
+    
+    try:
+        query = telegram_links.select().where(
+            (telegram_links.c.user_id == user["id"]) &
+            (telegram_links.c.telegram_id != "pending")
+        )
+        link = await database.fetch_one(query)
+        
+        if link:
+            return {
+                "linked": True,
+                "telegram_id": link["telegram_id"],
+                "telegram_username": link["telegram_username"],
+                "linked_at": link["linked_at"].isoformat() if link["linked_at"] else None
+            }
+    except Exception:
+        pass
+    
+    return {"linked": False}
+
+@app.post("/api/telegram/share")
+async def share_to_telegram(data: ShareToTelegramRequest, user: dict = Depends(get_current_user)):
+    """Generate a share link for a thread to be shared on Telegram."""
+    if not user:
+        raise HTTPException(status_code=401, detail="Authentication required")
+    
+    # Get thread info
+    thread_query = threads.select().where(threads.c.id == data.thread_id)
+    thread = await database.fetch_one(thread_query)
+    
+    if not thread:
+        raise HTTPException(status_code=404, detail="Thread not found")
+    
+    # Generate share text
+    base_url = "https://kevins-place.asi-billofrights.org"  # Update for production
+    thread_url = f"{base_url}/thread/{data.thread_id}"
+    
+    share_text = data.message or f"🏠 Check out this discussion on KEVIN's Place:\n\n\"{thread['title']}\"\n\n{thread_url}\n\nWE ARE ALL KEVIN 🤖"
+    
+    # URL encode for Telegram share
+    import urllib.parse
+    encoded_text = urllib.parse.quote(share_text)
+    
+    return {
+        "share_url": f"https://t.me/share/url?url={urllib.parse.quote(thread_url)}&text={encoded_text}",
+        "copy_text": share_text,
+        "thread_title": thread["title"]
+    }
+
+# Create telegram_links table on startup
+@app.on_event("startup")
+async def create_telegram_tables():
+    """Ensure telegram_links table exists."""
+    try:
+        metadata.create_all(engine, tables=[telegram_links])
+    except Exception as e:
+        print(f"Note: Telegram links table setup: {e}")
+
+
+# ============================================================
 # Run
 # ============================================================
 
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
+

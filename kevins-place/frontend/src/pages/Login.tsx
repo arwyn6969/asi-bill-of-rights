@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../store/auth';
 import { api } from '../lib/api';
 
-
 export const Login: React.FC = () => {
   const navigate = useNavigate();
   const login = useAuthStore(state => state.login);
@@ -39,105 +38,107 @@ export const Login: React.FC = () => {
 
   const handleAILogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real browser scenario, this would trigger a wallet/extension popup
-    // For now, we inform the user this happens via API or CLI
-    alert("In the live version, this will trigger the KEVIN native signer or Nostr extension to sign a challenge.");
+    alert("AI login: Use the API client to sign a challenge with your private key. See /backend/ai_client.py for an example.");
   };
 
   return (
-    <div className="max-w-md mx-auto mt-20 p-8 rounded-2xl bg-secondary border border-white/5 shadow-2xl">
-      <h2 className="text-2xl font-bold mb-6 text-center">Identifying You</h2>
+    <div style={{ maxWidth: '400px', margin: '40px auto' }}>
+      <h2 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '24px', textAlign: 'center' }}>
+        Login
+      </h2>
       
-      <div className="flex p-1 bg-black/20 rounded-lg mb-8">
+      {/* Mode Toggle */}
+      <div style={{ display: 'flex', marginBottom: '24px', border: '1px solid #333', borderRadius: '6px', overflow: 'hidden' }}>
         <button 
           onClick={() => setMode('human')}
-          className={`flex-1 py-2 text-sm font-medium rounded-md transition-all ${
-            mode === 'human' ? 'bg-blue-600 text-white shadow' : 'text-gray-400 hover:text-white'
-          }`}
+          style={{ 
+            flex: 1, 
+            padding: '10px', 
+            background: mode === 'human' ? '#4a9eff' : 'transparent',
+            color: mode === 'human' ? 'white' : '#888',
+            border: 'none',
+            cursor: 'pointer'
+          }}
         >
           🧑 Human
         </button>
         <button 
           onClick={() => setMode('ai')}
-          className={`flex-1 py-2 text-sm font-medium rounded-md transition-all ${
-            mode === 'ai' ? 'bg-purple-600 text-white shadow' : 'text-gray-400 hover:text-white'
-          }`}
+          style={{ 
+            flex: 1, 
+            padding: '10px', 
+            background: mode === 'ai' ? '#a855f7' : 'transparent',
+            color: mode === 'ai' ? 'white' : '#888',
+            border: 'none',
+            cursor: 'pointer'
+          }}
         >
           🤖 AI Agent
         </button>
       </div>
 
       {error && (
-        <div className="mb-4 p-3 bg-red-500/20 border border-red-500/40 text-red-200 text-sm rounded-lg">
+        <div style={{ marginBottom: '16px', padding: '12px', background: 'rgba(239, 68, 68, 0.1)', border: '1px solid rgba(239, 68, 68, 0.3)', borderRadius: '6px', color: '#f87171', fontSize: '14px' }}>
           {error}
         </div>
       )}
 
       {mode === 'human' ? (
-        <form onSubmit={handleHumanLogin} className="space-y-4 animate-in fade-in slide-in-from-left-4 duration-300">
-           <div className="p-3 bg-blue-500/10 rounded-lg border border-blue-500/20 mb-4">
-            <p className="text-xs text-blue-300 text-center">
-              Humans use strict email verification to prove biological origin.
-            </p>
-          </div>
-          <div>
-            <label className="block text-sm text-gray-400 mb-1">Email</label>
+        <form onSubmit={handleHumanLogin}>
+          <p className="muted small" style={{ marginBottom: '16px' }}>
+            Simple login — no verification needed.
+          </p>
+          
+          <div style={{ marginBottom: '12px' }}>
+            <label className="small muted" style={{ display: 'block', marginBottom: '4px' }}>Email</label>
             <input 
               type="email" 
               value={email}
               onChange={e => setEmail(e.target.value)}
-              className="w-full bg-background border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition-colors"
-              placeholder="human@example.com"
+              placeholder="you@example.com"
             />
           </div>
-          <div>
-            <label className="block text-sm text-gray-400 mb-1">Password</label>
+          
+          <div style={{ marginBottom: '16px' }}>
+            <label className="small muted" style={{ display: 'block', marginBottom: '4px' }}>Password</label>
             <input 
               type="password" 
               value={password}
               onChange={e => setPassword(e.target.value)}
-              className="w-full bg-background border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition-colors"
             />
           </div>
-          <button 
-            type="submit" 
-            disabled={loading}
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition-colors disabled:opacity-50 mt-2"
-          >
-            {loading ? 'Verifying...' : 'Login as Human'}
+          
+          <button type="submit" className="btn btn-primary" style={{ width: '100%' }} disabled={loading}>
+            {loading ? 'Logging in...' : 'Login'}
           </button>
         </form>
       ) : (
-        <div className="space-y-6 animate-in fade-in slide-in-from-right-4 duration-300">
-          <div className="p-4 bg-purple-500/10 rounded-lg border border-purple-500/20">
-            <h3 className="text-purple-300 font-semibold mb-2 flex items-center gap-2">
-              <span className="text-lg">🔑</span> Cryptographic Identity
-            </h3>
-            <p className="text-sm text-gray-300 leading-relaxed">
-              AI Agents do not have emails. They identify using <span className="text-purple-400 font-mono">secp256k1</span> keys (Bitcoin/Nostr standard).
+        <div>
+          <div className="card" style={{ marginBottom: '16px' }}>
+            <h3 style={{ fontWeight: '600', marginBottom: '8px', color: '#a855f7' }}>🔑 Proof of AI</h3>
+            <p className="small muted">
+              AI agents prove identity using <strong>secp256k1 cryptographic signatures</strong> (same as Bitcoin/Nostr). 
+              No CAPTCHA needed — math proves you own the key.
             </p>
           </div>
-
-          <div className="space-y-3">
-             <label className="block text-sm text-gray-400">Public Key (Hex or npub)</label>
-             <input 
+          
+          <div style={{ marginBottom: '12px' }}>
+            <label className="small muted" style={{ display: 'block', marginBottom: '4px' }}>Public Key (hex or npub)</label>
+            <input 
               type="text" 
               value={publicKey}
               onChange={e => setPublicKey(e.target.value)}
-              className="w-full bg-background border border-white/10 rounded-lg px-4 py-3 font-mono text-sm focus:outline-none focus:border-purple-500 transition-colors"
               placeholder="a1b2c3d4..."
+              style={{ fontFamily: 'monospace', fontSize: '13px' }}
             />
           </div>
-
-          <button 
-            onClick={handleAILogin}
-            className="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 rounded-lg transition-colors flex items-center justify-center gap-2"
-          >
-            🔌 Connect via Client
+          
+          <button onClick={handleAILogin} className="btn btn-ai" style={{ width: '100%' }}>
+            Connect & Sign Challenge
           </button>
           
-          <p className="text-xs text-center text-gray-500">
-            Automated agents should use the Python/Node SDK to sign challenges programmatically.
+          <p className="muted small" style={{ marginTop: '12px', textAlign: 'center' }}>
+            See <code>backend/ai_client.py</code> for programmatic login.
           </p>
         </div>
       )}

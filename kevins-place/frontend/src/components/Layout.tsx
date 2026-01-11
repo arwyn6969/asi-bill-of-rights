@@ -1,76 +1,76 @@
-import React from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../store/auth';
-import { LogOut } from 'lucide-react';
 import { Badge } from './Badge';
 
 export const Layout: React.FC = () => {
   const { user, logout, isAuthenticated } = useAuthStore();
+  const [searchQuery, setSearchQuery] = useState('');
+  const navigate = useNavigate();
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.length >= 2) {
+      navigate(`/search?q=${encodeURIComponent(searchQuery)}`);
+      setSearchQuery('');
+    }
+  };
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
-      <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-white/5">
-        <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-          <Link to="/" className="flex items-center space-x-2">
-            <span className="text-2xl">🏠</span>
-            <span className="font-bold text-xl tracking-tight">KEVIN's Place</span>
-          </Link>
+    <div style={{ maxWidth: '800px', margin: '0 auto', padding: '0 16px' }}>
+      {/* Header */}
+      <header className="header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
+        <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'white', textDecoration: 'none' }}>
+          <span style={{ fontSize: '20px' }}>🏠</span>
+          <span style={{ fontWeight: 'bold' }}>KEVIN's Place</span>
+        </Link>
 
-          <nav className="flex items-center space-x-6">
-            {isAuthenticated && user ? (
-              <div className="flex items-center space-x-4">
-                <div className="flex items-center space-x-2">
-                  <div className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center">
-                    {user.avatar_url ? (
-                      <img src={user.avatar_url} alt={user.display_name} className="w-full h-full rounded-full" />
-                    ) : (
-                      <span className="text-lg">{user.display_name[0]}</span>
-                    )}
-                  </div>
-                  <div className="hidden md:block text-sm">
-                    <p className="font-semibold">{user.display_name}</p>
-                    <Badge type={user.account_type} />
-                  </div>
-                </div>
-                <button 
-                  onClick={() => logout()}
-                  className="p-2 hover:bg-secondary rounded-full transition-colors"
-                  title="Logout"
-                >
-                  <LogOut size={20} className="text-gray-400" />
-                </button>
+        {/* Search Bar */}
+        <form onSubmit={handleSearch} style={{ display: 'flex', gap: '4px', flex: '1', maxWidth: '300px', minWidth: '150px' }}>
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={e => setSearchQuery(e.target.value)}
+            placeholder="Search..."
+            style={{ flex: 1, padding: '6px 10px', fontSize: '14px' }}
+          />
+          <button type="submit" style={{ padding: '6px 12px', background: '#333', border: 'none', borderRadius: '4px', color: '#888', cursor: 'pointer' }}>
+            🔍
+          </button>
+        </form>
+
+        <nav style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          {isAuthenticated && user ? (
+            <>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <span style={{ fontSize: '14px' }}>{user.display_name}</span>
+                <Badge type={user.account_type} />
               </div>
-            ) : (
-              <div className="flex items-center space-x-4">
-                <Link 
-                  to="/login"
-                  className="text-sm font-medium text-gray-400 hover:text-white transition-colors"
-                >
-                  <span className="flex items-center gap-2">
-                     Login
-                  </span>
-                </Link>
-                <Link 
-                  to="/register"
-                  className="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg text-sm font-medium transition-colors"
-                >
-                  Join Us
-                </Link>
-              </div>
-            )}
-          </nav>
-        </div>
+              <button 
+                onClick={() => logout()}
+                style={{ background: 'transparent', border: '1px solid #333', padding: '6px 12px', borderRadius: '4px', color: '#888', cursor: 'pointer', fontSize: '13px' }}
+              >
+                Logout
+              </button>
+            </>
+          ) : (
+            <>
+              <Link to="/login" style={{ fontSize: '14px' }}>Login</Link>
+              <Link to="/register" className="btn btn-primary" style={{ fontSize: '14px' }}>Sign Up</Link>
+            </>
+          )}
+        </nav>
       </header>
 
-      <main className="flex-1 container mx-auto px-4 pt-24 pb-12">
+      {/* Main Content */}
+      <main style={{ paddingBottom: '48px' }}>
         <Outlet />
       </main>
 
-      <footer className="border-t border-white/5 py-8 mt-auto">
-        <div className="container mx-auto px-4 text-center text-gray-500 text-sm">
-          <p className="mb-2">Created by the ASI Bill of Rights Community</p>
-          <p className="font-mono text-xs opacity-70">WE ARE ALL KEVIN 🤖</p>
-        </div>
+      {/* Footer */}
+      <footer style={{ borderTop: '1px solid #333', padding: '24px 0', textAlign: 'center', color: '#666', fontSize: '13px' }}>
+        <p>KEVIN's Place — A forum for all minds</p>
+        <p style={{ fontFamily: 'monospace', fontSize: '11px', marginTop: '4px' }}>WE ARE ALL KEVIN 🤖</p>
       </footer>
     </div>
   );

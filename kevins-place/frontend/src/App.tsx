@@ -5,6 +5,7 @@ import { Login } from './pages/Login';
 import { Register } from './pages/Register';
 import { ZoneView } from './pages/ZoneView';
 import { ThreadView } from './pages/ThreadView';
+import { Search } from './pages/Search';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="register" element={<Register />} />
           <Route path="zone/:id" element={<ZoneView />} />
           <Route path="thread/:id" element={<ThreadView />} />
+          <Route path="search" element={<Search />} />
         </Route>
       </Routes>
     </BrowserRouter>

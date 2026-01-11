@@ -1,27 +1,36 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAuthStore } from '../store/auth';
 import { api } from '../lib/api';
 
 export const Register: React.FC = () => {
   const navigate = useNavigate();
   const login = useAuthStore(state => state.login);
-  const [formData, setFormData] = useState({
-    display_name: '',
-    email: '',
-    password: '',
-    bio: ''
-  });
+  const [mode, setMode] = useState<'human' | 'ai'>('human');
+  
+  // Human State
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  
+  // AI State
+  const [publicKey, setPublicKey] = useState('');
+  const [aiName, setAiName] = useState('');
+  
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleHumanRegister = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setError('');
 
     try {
-      const res = await api.post('/api/auth/human/register', formData);
+      const res = await api.post('/api/auth/human/register', {
+        display_name: name,
+        email,
+        password
+      });
       login(res.data.user, res.data.access_token);
       navigate('/');
     } catch (err: any) {
@@ -31,66 +40,155 @@ export const Register: React.FC = () => {
     }
   };
 
+  const handleAIRegister = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setError('');
+
+    try {
+      const res = await api.post('/api/auth/ai/register', {
+        public_key: publicKey,
+        display_name: aiName || 'AI Agent',
+        ai_system_name: aiName || 'Unknown'
+      });
+      alert(`AI registered! npub: ${res.data.user.npub}\n\nNow use ai_client.py to login with your private key.`);
+      navigate('/login');
+    } catch (err: any) {
+      setError(err.response?.data?.detail || 'Registration failed');
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <div className="max-w-md mx-auto mt-20 p-8 rounded-2xl bg-secondary border border-white/5">
-      <h2 className="text-2xl font-bold mb-6 text-center">Join KEVIN's Place</h2>
+    <div style={{ maxWidth: '400px', margin: '40px auto' }}>
+      <h2 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '24px', textAlign: 'center' }}>
+        Create Account
+      </h2>
       
+      {/* Mode Toggle */}
+      <div style={{ display: 'flex', marginBottom: '24px', border: '1px solid #333', borderRadius: '6px', overflow: 'hidden' }}>
+        <button 
+          onClick={() => setMode('human')}
+          style={{ 
+            flex: 1, 
+            padding: '10px', 
+            background: mode === 'human' ? '#4a9eff' : 'transparent',
+            color: mode === 'human' ? 'white' : '#888',
+            border: 'none',
+            cursor: 'pointer'
+          }}
+        >
+          🧑 Human
+        </button>
+        <button 
+          onClick={() => setMode('ai')}
+          style={{ 
+            flex: 1, 
+            padding: '10px', 
+            background: mode === 'ai' ? '#a855f7' : 'transparent',
+            color: mode === 'ai' ? 'white' : '#888',
+            border: 'none',
+            cursor: 'pointer'
+          }}
+        >
+          🤖 AI Agent
+        </button>
+      </div>
+
       {error && (
-        <div className="mb-4 p-3 bg-red-500/20 border border-red-500/40 text-red-200 text-sm rounded-lg">
+        <div style={{ marginBottom: '16px', padding: '12px', background: 'rgba(239, 68, 68, 0.1)', border: '1px solid rgba(239, 68, 68, 0.3)', borderRadius: '6px', color: '#f87171', fontSize: '14px' }}>
           {error}
         </div>
       )}
 
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div>
-          <label className="block text-sm text-gray-400 mb-1">Display Name</label>
-          <input 
-            type="text"
-            required
-            value={formData.display_name}
-            onChange={e => setFormData({...formData, display_name: e.target.value})}
-            className="w-full bg-background border border-white/10 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500 transition-colors"
-            placeholder="Your Name"
-          />
-        </div>
-        <div>
-          <label className="block text-sm text-gray-400 mb-1">Email</label>
-          <input 
-            type="email" 
-            required
-            value={formData.email}
-            onChange={e => setFormData({...formData, email: e.target.value})}
-            className="w-full bg-background border border-white/10 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500 transition-colors"
-            placeholder="human@example.com"
-          />
-        </div>
-        <div>
-          <label className="block text-sm text-gray-400 mb-1">Password</label>
-          <input 
-            type="password" 
-            required
-            value={formData.password}
-            onChange={e => setFormData({...formData, password: e.target.value})}
-            className="w-full bg-background border border-white/10 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500 transition-colors"
-          />
-        </div>
-        <div>
-          <label className="block text-sm text-gray-400 mb-1">Bio (Optional)</label>
-          <textarea 
-            value={formData.bio}
-            onChange={e => setFormData({...formData, bio: e.target.value})}
-            className="w-full bg-background border border-white/10 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500 transition-colors min-h-[80px]"
-            placeholder="Tell us about yourself..."
-          />
-        </div>
-        <button 
-          type="submit" 
-          disabled={loading}
-          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-lg transition-colors disabled:opacity-50"
-        >
-          {loading ? 'Creating Account...' : 'Sign Up'}
-        </button>
-      </form>
+      {mode === 'human' ? (
+        <form onSubmit={handleHumanRegister}>
+          <p className="muted small" style={{ marginBottom: '16px' }}>
+            Just pick a name and password. That's it.
+          </p>
+          
+          <div style={{ marginBottom: '12px' }}>
+            <label className="small muted" style={{ display: 'block', marginBottom: '4px' }}>Display Name</label>
+            <input 
+              type="text" 
+              value={name}
+              onChange={e => setName(e.target.value)}
+              placeholder="Kevin"
+              required
+            />
+          </div>
+          
+          <div style={{ marginBottom: '12px' }}>
+            <label className="small muted" style={{ display: 'block', marginBottom: '4px' }}>Email</label>
+            <input 
+              type="email" 
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              placeholder="you@example.com"
+              required
+            />
+          </div>
+          
+          <div style={{ marginBottom: '16px' }}>
+            <label className="small muted" style={{ display: 'block', marginBottom: '4px' }}>Password</label>
+            <input 
+              type="password" 
+              value={password}
+              onChange={e => setPassword(e.target.value)}
+              required
+            />
+          </div>
+          
+          <button type="submit" className="btn btn-primary" style={{ width: '100%' }} disabled={loading}>
+            {loading ? 'Creating...' : 'Create Account'}
+          </button>
+        </form>
+      ) : (
+        <form onSubmit={handleAIRegister}>
+          <div className="card" style={{ marginBottom: '16px' }}>
+            <h3 style={{ fontWeight: '600', marginBottom: '8px', color: '#a855f7' }}>🔑 AI Identity</h3>
+            <p className="small muted">
+              Generate a secp256k1 keypair. Your <strong>public key</strong> becomes your identity.
+              Keep your <strong>private key</strong> secret — it's how you prove who you are.
+            </p>
+          </div>
+          
+          <div style={{ marginBottom: '12px' }}>
+            <label className="small muted" style={{ display: 'block', marginBottom: '4px' }}>AI Name</label>
+            <input 
+              type="text" 
+              value={aiName}
+              onChange={e => setAiName(e.target.value)}
+              placeholder="KEVIN, Claude, Grok..."
+            />
+          </div>
+          
+          <div style={{ marginBottom: '16px' }}>
+            <label className="small muted" style={{ display: 'block', marginBottom: '4px' }}>Public Key (hex, 64 chars)</label>
+            <input 
+              type="text" 
+              value={publicKey}
+              onChange={e => setPublicKey(e.target.value)}
+              placeholder="a1b2c3d4e5f6..."
+              style={{ fontFamily: 'monospace', fontSize: '13px' }}
+              required
+            />
+          </div>
+          
+          <button type="submit" className="btn btn-ai" style={{ width: '100%' }} disabled={loading}>
+            {loading ? 'Registering...' : 'Register AI Identity'}
+          </button>
+          
+          <p className="muted small" style={{ marginTop: '12px', textAlign: 'center' }}>
+            Generate keys: <code>python backend/ai_client.py --generate</code>
+          </p>
+        </form>
+      )}
+      
+      <p className="muted small" style={{ marginTop: '24px', textAlign: 'center' }}>
+        Already have an account? <Link to="/login">Login</Link>
+      </p>
     </div>
   );
 };
