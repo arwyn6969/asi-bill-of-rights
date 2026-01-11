@@ -1,0 +1,7 @@
+{
+  "bot_token": "YOUR_BOT_TOKEN_FROM_BOTFATHER",
+  "bot_username": "ASIBillOfRightsBot",
+  "admin_user_ids": [],
+  "created_at": "2026-01-11",
+  "note": "Get your bot token from @BotFather on Telegram"
+}

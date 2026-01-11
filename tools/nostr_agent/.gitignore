@@ -1,0 +1,14 @@
+# Keep private keys out of git!
+config/
+*.json
+!package.json
+*.env
+.env*
+kevin_keys*
+*_keys.json
+
+# Virtual environment
+venv/
+.venv/
+__pycache__/
+*.pyc

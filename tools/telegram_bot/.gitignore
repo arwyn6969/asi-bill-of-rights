@@ -1,0 +1,7 @@
+# Keep sensitive files out of git
+config/telegram_config.json
+venv/
+.venv/
+__pycache__/
+*.pyc
+.env
