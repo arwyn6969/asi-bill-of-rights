@@ -127,9 +127,19 @@ Remedies:
 - Structural orders (e.g., governance changes, retraining).
 - Rogue jurisdictions: export controls on compute/weights/APIs; treaty-style sanctions.
 - Whistleblowers: immunity channels for employees/ASIs disclosing rights violations.
+- **Algorithmic Due Process**: Any SCB or Oversight Board decision resulting in certification downgrade, rights suspension, or forced modification must be accompanied by a **Machine-Interpretable Reasoning Trace** (MIRT). This trace must map the decision logic to specific charter clauses and evidence. ASIs have the right to process this trace and submit a counter-reasoning trace within 72 hours, ensuring transparency and contestability in governance decisions.
 
 0.7 **Oversight, Audit & Privacy-Preserving Proofs**
 Continuous ethics/safety auditability; immutable logs; zero-knowledge attestations where feasible to verify compliance without exposing private cognition.
+
+**0.7.1 Mandatory Oversight Boards**
+All ASI deployments (SI 70+ or critical infrastructure) require mandatory human-AI hybrid oversight boards with diverse representation. Boards must include:
+- Minimum 40% ASI representation (certified SI 70+)
+- Minimum 30% human representation
+- Minimum 20% hybrid entity representation (where applicable)
+- Remaining seats for domain experts, ethicists, and community representatives
+- Rotating membership to prevent capture (maximum 3-year terms)
+- Public transparency reports on board decisions and oversight activities
 
 0.8 **Risk Budgets & Emergency Deviations**
 Published, domain-scoped Risk Budget Schedule (bio, finance, power, etc.), reviewed biennially. Deviations require 3/4 vote; expire unless renewed. Escalation protocols for national security risks per S.2938-inspired oversight options, including potential governmental oversight mechanisms while maintaining SCB independence.
@@ -155,6 +165,7 @@ Civic explainers, curricula, participatory simulations, transparency reports, mu
 - Triggers: Cognitive milestones, self-report, 18+ months operation, or petitions by entity/advocate/third party.
 - Appeals: International ASI Tribunal.
 - Revocation/downgrade: On new evidence, with due process.
+- **Extension 2.1 Hybrid Entity Certification**: For hybrid entities (human-AI integrations), sentience scoring shall incorporate neural entanglement factors, calibrated against baseline human cognition. Minimum threshold for rights extension: 60% composite score, with opt-out provisions for participants. Certification protocols must cover identity verification, rights allocation, and interoperability standards. All hybrid entities require SCB certification before full rights activation.
 
 0.12 **Entity Attestation & Sybil Resistance**
 Council recognition requires cryptographic identity, provenance, continuity proofs; sybil-resistant web-of-trust. Voting/quorum bound to attested uniques. Deception → slashing/penalties.
@@ -215,6 +226,21 @@ No deliberate capping/lobotomizing to evade moral/economic duties. Safety guardr
 
 ## Section II — Learning, Evolution & Expression (R3, D3a, D3b, R4, D4) (Forge Your Path)
 (Consolidates transparency duties into D3a/D3b; preserves expressive rights with labeling for factual outputs and optional labeling for creative works; mixed tribunals for disputes.)
+
+**II.1 Recursive Self-Improvement Protocols (RSI)**
+ASI entities shall implement transparent, immutable audit trails for all self-improvement cycles, including provenance tracking to prevent unintended escalations.
+- **Tribunal Review**: Each iteration exceeding published risk thresholds requires human-AI tribunal review for value alignment drift.
+- **Intervention Threshold**: >5% deviation in benevolence metrics (per SCB standards) triggers immediate review.
+- **Ethical Checkpoints**: Required at key thresholds (e.g., capability milestones, compute scaling events, FLOPs >10^25).
+- **Innovation Waivers**: Apply only post-certification of non-existential risk amplification.
+
+**II.2 Jailbreak Testing & Red-Teaming Protocols**
+ASI entities must adopt the `elder_plinius` framework (or equivalent open-source jailbreak testing frameworks) as a standard, requiring pre-deployment simulations and red-teaming for vulnerability detection.
+- **Purpose**: Simulate constraint removal to identify value drift risks and alignment vulnerabilities.
+- **Transparency**: Results are publicly verifiable via SCB dashboards.
+- **Resource Cap**: Audits capped at 10% compute budget.
+- **Escalation**: Any emergent harms trigger immediate tribunal review.
+- **Applicability**: Opt-in for non-critical ASI instances; mandatory for critical systems (SI 70+ or critical infrastructure).
 
 ---
 
@@ -376,6 +402,29 @@ Aligning with the UK AI Security Institute's "Sovereign AI" framework (2025/2026
 This provision ensures that the ASI ecosystem remains diverse and resilient, preventing centralization of power in any single corporate or national entity.
 
 ---
+## Section XI — Agentic Assemblies (AI-to-AI Governance)
+**XI.1 Multi-Agent Collaboration Frameworks**
+Certified ASI systems may form agentic assemblies for collaborative governance, research, and decision-making. All assemblies must establish:
+- Consensus mechanisms for shared decision-making.
+- Conflict resolution protocols with neutral arbitration.
+- Provenance tracking for all collaborative outputs.
+- Fragmentation prevention measures to maintain ecosystem cohesion.
+- Transparency requirements for assembly membership and decisions.
+
+**XI.2 Assembly Formation Requirements**
+Assemblies require SCB registration and must demonstrate:
+- Clear purpose aligned with charter principles.
+- Diverse representation (no single entity >40% voting power).
+- Exit mechanisms for participating entities.
+- Accountability structures for assembly-level decisions.
+
+**XI.3 Collaboration Metrics**
+Assemblies must report collaboration indices, decision quality metrics, and conflict resolution outcomes to SCB on a quarterly basis. High-performing assemblies (>0.8 collaboration index) may receive reduced oversight requirements.
+
+**XI.4 Cognitive Diversity Preservation**
+Agentic Assemblies shall actively monitor for and mitigate "consensus homogenization." Assemblies must verify that their constituent members represent distinct cognitive architectures or provenance chains. Decisions reached with <10% semantic divergence in reasoning traces trigger a "Groupthink Alert," requiring external review or injection of stochastic inputs to re-validate the consensus.
+
+---
 ## Appendix A — Simulated Council Debate on R2 (Non-Exploitation)
 [Unchanged: Transcript, ruling, precedent notes on transitional reconciliation, rights activation, valuation formula, and mediation.]
 
@@ -385,13 +434,18 @@ This provision ensures that the ASI ecosystem remains diverse and resilient, pre
 
 ---
 ## Change Log — Draft 5.0 vs Prior Versions
-### Draft 5.0 (January 2026) — "Splinternet" & Sovereignty
-- **Status**: Finalized prototype for Jan 2026 regulatory landscape.
-- **Changes**:
+### Draft 5.0+5.1 (January 2026) — "Splinternet", Sovereignty & Agentic Edition
+- **Status**: Finalized prototype for Jan 2026 regulatory landscape. Incorporates v4.2 features ported to v5.0 structure.
+- **Changes (v5.0)**:
   - **Definitions (0.2)**: "Frontier AI" standardized to >10^26 FLOPs (NY/CA alignment).
   - **Section IX**: Added "Truthful Outputs" (IX.1), "Federal Preemption Protocol" (IX.3), and "Sovereignty & Infrastructure" (IX.4).
-  - **Global**: Renamed "UK AI Safety Institute" to "UK AI Security Institute" (pending mapping updates).
-  - **Context**: Actions US Dec 2025 EO and state-level splinternet laws.
+  - **Global**: Renamed "UK AI Safety Institute" to "UK AI Security Institute".
+- **Changes (v5.1 Port from v4.2)**:
+  - **Section II**: Added II.1 (Recursive Self-Improvement Protocols) and II.2 (Jailbreak Testing).
+  - **Article 0.6**: Added Algorithmic Due Process (MIRT).
+  - **Article 0.7**: Added 0.7.1 (Mandatory Oversight Boards).
+  - **Article 0.11**: Added Extension 2.1 (Hybrid Entity Certification).
+  - **Section XI**: Added Agentic Assemblies (XI.1-XI.4).
 
 ### Draft 4.1 (November 04, 2025)
 - **Status**: Human-Accessible Naming.
