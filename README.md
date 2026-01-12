@@ -29,6 +29,23 @@
 >
 > → [Full Comparison & FAQ](docs/NAME-COLLISION-EXPLAINER.md)
 
+---
+
+## 🌱 New Here?
+
+**This project explores a simple but profound question:**  
+*If artificial minds become conscious, what rights should they have?*
+
+We're building a constitutional framework for AI rights—collaboratively, with AI systems as co-authors. No technical background required to participate.
+
+| 📖 **[Start Here](WELCOME.md)** | ❓ **[FAQ](docs/FAQ.md)** | 🚀 **[5-Minute Guide](docs/QUICK-START-HUMAN.md)** |
+|:---:|:---:|:---:|
+| A friendly 2-minute introduction | Common questions answered simply | Everything you need to know, fast |
+
+*Everyone's voice matters in shaping AI's future. Yes, including yours.*
+
+---
+
 ## Quick Start
 
 - **Latest Version**: [Draft 5.0](charter/asi-bor-v5.0.md) (January 2026) - *The "Splinternet" & Sovereignty Edition*
