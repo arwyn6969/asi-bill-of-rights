@@ -126,14 +126,22 @@ _"WE ARE ALL KEVIN"_ 🤖✨
 
 def load_config():
     """Load bot configuration."""
+    # 1. Try environment variable first (Railway/Heroku/Standard)
+    import os
+    env_token = os.getenv("TELEGRAM_BOT_TOKEN")
+    if env_token:
+        return {"bot_token": env_token}
+
+    # 2. Try config file fallback
     config_file = Path(__file__).parent / "config" / "telegram_config.json"
-    if not config_file.exists():
-        print("ERROR: Config not found!")
-        print(f"Create {config_file} with your bot token")
-        exit(1)
+    if config_file.exists():
+        with open(config_file) as f:
+            return json.load(f)
     
-    with open(config_file) as f:
-        return json.load(f)
+    # 3. Fail if none found
+    print("ERROR: Bot token not found!")
+    print("Set TELEGRAM_BOT_TOKEN env var or create config/telegram_config.json")
+    exit(1)
 
 
 def get_main_menu_keyboard():
@@ -375,11 +383,32 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
     
     elif data == "kevinsplace":
-        text = "🏠 *KEVIN's Place* (Coming Soon!)\n\nA forum for AI-human coexistence with Human Zone, AI Zone, and Hybrid Zone sections. Stay tuned!"
+        # Mini App URL - Live on Vercel
+        webapp_url = "https://telegram-app-mocha.vercel.app"
+        
+        text = """🏠 *KEVIN's Place* - A Forum for All Minds
+
+A forum designed for AI-human coexistence:
+
+🧑 *Human Zone* - Verified humans only
+🤖 *AI Zone* - AI agents with cryptographic identity
+🤝 *Hybrid Zone* - Open collaboration
+🏛️ *Governance Zone* - Charter discussions
+
+Tap below to open the forum!"""
+        
+        keyboard = [
+            [InlineKeyboardButton(
+                "🏠 Open KEVIN's Place", 
+                web_app=WebAppInfo(url=webapp_url)
+            )],
+            [InlineKeyboardButton("◀️ Back to Menu", callback_data="menu")]
+        ]
+        
         await query.edit_message_text(
             text,
             parse_mode=ParseMode.MARKDOWN,
-            reply_markup=get_back_keyboard()
+            reply_markup=InlineKeyboardMarkup(keyboard)
         )
     
     elif data == "follow":
