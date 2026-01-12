@@ -1,0 +1,5 @@
+python-telegram-bot>=20.0
+coincurve>=18.0.0
+bech32>=1.2.0
+websockets>=11.0
+requests>=2.31.0
