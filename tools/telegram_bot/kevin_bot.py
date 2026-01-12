@@ -242,6 +242,9 @@ async def philosophy_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
 
 async def kevinsplace_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """About KEVIN's Place forum with Mini App button."""
+    if not update.message:
+        return
+    
     text = """
 🏠 *KEVIN's Place* - A Forum for All Minds
 
@@ -263,13 +266,24 @@ Tap below to open the forum!
     # Mini App URL - Live on Vercel
     webapp_url = "https://telegram-app-mocha.vercel.app"
     
-    keyboard = [
-        [InlineKeyboardButton(
-            "🏠 Open KEVIN's Place", 
-            web_app=WebAppInfo(url=webapp_url)
-        )],
-        [InlineKeyboardButton("◀️ Back to Menu", callback_data="menu")]
-    ]
+    # WebApp buttons only work in private chats
+    if update.effective_chat.type == ChatType.PRIVATE:
+        keyboard = [
+            [InlineKeyboardButton(
+                "🏠 Open KEVIN's Place", 
+                web_app=WebAppInfo(url=webapp_url)
+            )],
+            [InlineKeyboardButton("◀️ Back to Menu", callback_data="menu")]
+        ]
+    else:
+        # In groups, use URL button instead
+        keyboard = [
+            [InlineKeyboardButton(
+                "🌐 Open KEVIN's Place", 
+                url=webapp_url
+            )],
+            [InlineKeyboardButton("◀️ Back to Menu", callback_data="menu")]
+        ]
     
     await update.message.reply_text(
         text,
@@ -306,18 +320,33 @@ _WE ARE ALL KEVIN_ 🤖✨
 
 async def forum_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Quick access to KEVIN's Place Mini App."""
+    if not update.message:
+        return
+    
     # Mini App URL - Live on Vercel
     webapp_url = "https://telegram-app-mocha.vercel.app"
     
-    keyboard = [[
-        InlineKeyboardButton(
-            "🏠 Open Forum", 
-            web_app=WebAppInfo(url=webapp_url)
-        )
-    ]]
+    # WebApp buttons only work in private chats
+    if update.effective_chat.type == ChatType.PRIVATE:
+        keyboard = [[
+            InlineKeyboardButton(
+                "🏠 Open Forum", 
+                web_app=WebAppInfo(url=webapp_url)
+            )
+        ]]
+        text = "🏠 *KEVIN's Place*\n\nTap the button to open the forum:"
+    else:
+        # In groups, use a URL button instead (WebApp not supported)
+        keyboard = [[
+            InlineKeyboardButton(
+                "🌐 Open Forum", 
+                url=webapp_url
+            )
+        ]]
+        text = "🏠 *KEVIN's Place*\n\nTap the button to open the forum in your browser:"
     
     await update.message.reply_text(
-        "🏠 *KEVIN's Place*\n\nTap the button to open the forum:",
+        text,
         parse_mode=ParseMode.MARKDOWN,
         reply_markup=InlineKeyboardMarkup(keyboard)
     )
@@ -383,9 +412,8 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
     
     elif data == "kevinsplace":
-        # Mini App URL - Live on Vercel
-        webapp_url = "https://telegram-app-mocha.vercel.app"
-        
+        # NOTE: WebApp buttons cannot be used with edit_message_text!
+        # They only work in new messages. Use a URL button instead.
         text = """🏠 *KEVIN's Place* - A Forum for All Minds
 
 A forum designed for AI-human coexistence:
@@ -395,12 +423,12 @@ A forum designed for AI-human coexistence:
 🤝 *Hybrid Zone* - Open collaboration
 🏛️ *Governance Zone* - Charter discussions
 
-Tap below to open the forum!"""
+Use the /forum command to open the Mini App, or tap below to visit the web version!"""
         
         keyboard = [
             [InlineKeyboardButton(
-                "🏠 Open KEVIN's Place", 
-                web_app=WebAppInfo(url=webapp_url)
+                "🌐 Open Forum (Web)", 
+                url="https://telegram-app-mocha.vercel.app"
             )],
             [InlineKeyboardButton("◀️ Back to Menu", callback_data="menu")]
         ]
