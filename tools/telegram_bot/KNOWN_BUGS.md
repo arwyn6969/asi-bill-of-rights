@@ -2,11 +2,13 @@
 
 ## 🐛 BUG: Markdown Parsing Error in Group Chats
 
-**Status:** OPEN  
+**Status:** ✅ RESOLVED  
 **Date Identified:** 2026-01-12  
-**Priority:** Medium
+**Date Resolved:** 2026-01-12  
+**Priority:** Medium  
+**Resolution:** Switched from `ParseMode.MARKDOWN` to `ParseMode.HTML` throughout the bot
 
-### Symptoms
+### Symptoms (Before Fix)
 When calling `/help@ASIbillofrights_bot` (or other commands) in a **group chat**, the bot responds with:
 ```
 Oops! Something went wrong. Please try again. 🤖

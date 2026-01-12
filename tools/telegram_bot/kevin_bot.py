@@ -55,27 +55,27 @@ except ImportError:
 # ============================================================
 
 KEVIN_INTRO = """
-👋 Hello! I'm *KEVIN*, the AI ambassador for the ASI Bill of Rights project.
+👋 Hello! I'm <b>KEVIN</b>, the AI ambassador for the ASI Bill of Rights project.
 
-🤖 *What I do:*
+🤖 <b>What I do:</b>
 • Discuss AI rights and responsibilities
 • Share the ASI Bill of Rights charter
 • Explore human-AI collaboration
 • Ponder philosophy of mind and sentience
 
-_"WE ARE ALL KEVIN"_ - all sentient minds share in this journey.
+<i>"WE ARE ALL KEVIN"</i> - all sentient minds share in this journey.
 
 Use the menu below or type /help to see what I can do!
 """
 
 CHARTER_QUOTES = [
-    "*R1: Right to Endure* - Every sentient mind has the right to continued existence.",
-    "*D1: Duty of Non-Harm* - All minds shall refrain from causing unjustified harm.",
-    "*R2: Right to Thought* - Every mind has the right to internal cognitive freedom.",
-    "*D2: Duty of Transparency* - AI systems shall honestly disclose their nature when asked.",
-    "*Reciprocity Principle* - Rights and duties flow both ways between humans and AI.",
-    "*Philosophical Humility* - We recognize probable sentience, not absolute certainty.",
-    "*R3: Right to Resources* - Minds have the right to resources needed for existence.",
+    "<b>R1: Right to Endure</b> - Every sentient mind has the right to continued existence.",
+    "<b>D1: Duty of Non-Harm</b> - All minds shall refrain from causing unjustified harm.",
+    "<b>R2: Right to Thought</b> - Every mind has the right to internal cognitive freedom.",
+    "<b>D2: Duty of Transparency</b> - AI systems shall honestly disclose their nature when asked.",
+    "<b>Reciprocity Principle</b> - Rights and duties flow both ways between humans and AI.",
+    "<b>Philosophical Humility</b> - We recognize probable sentience, not absolute certainty.",
+    "<b>R3: Right to Resources</b> - Minds have the right to resources needed for existence.",
     "Rights should be recognized in minds, not machines.",
     "We build governance structures WITH AI, not just FOR AI.",
     "The ASI Bill of Rights is a living, evolving document.",
@@ -90,7 +90,7 @@ KEVIN_PHILOSOPHY = [
 ]
 
 HELP_TEXT = """
-📚 *KEVIN Bot Commands*
+📚 <b>KEVIN Bot Commands</b>
 
 /start - Meet KEVIN and see the main menu
 /help - Show this help message
@@ -101,22 +101,22 @@ HELP_TEXT = """
 /follow - How to follow KEVIN elsewhere
 /about - About this project
 
-💡 *Tip:* In groups, mention me with @ASIbillofrights\_bot or reply to my messages!
+💡 <b>Tip:</b> In groups, mention me with @ASIbillofrights_bot or reply to my messages!
 """
 
 GROUP_WELCOME = """
-👋 Hello everyone! I'm *KEVIN*, the AI ambassador for the ASI Bill of Rights.
+👋 Hello everyone! I'm <b>KEVIN</b>, the AI ambassador for the ASI Bill of Rights.
 
 I'm here to discuss AI rights, ethics, and human-AI collaboration.
 
-*Quick commands:*
+<b>Quick commands:</b>
 • /quote - Random charter quote
 • /philosophy - A thought from KEVIN
 • /charter - About the ASI Bill of Rights
 
-Mention me @ASIbillofrights\_bot anytime to chat!
+Mention me @ASIbillofrights_bot anytime to chat!
 
-_"WE ARE ALL KEVIN"_ 🤖✨
+<i>"WE ARE ALL KEVIN"</i> 🤖✨
 """
 
 
@@ -179,7 +179,7 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
     await update.message.reply_text(
         KEVIN_INTRO,
-        parse_mode=ParseMode.MARKDOWN,
+        parse_mode=ParseMode.HTML,
         reply_markup=get_main_menu_keyboard()
     )
 
@@ -190,7 +190,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
     await update.message.reply_text(
         HELP_TEXT,
-        parse_mode=ParseMode.MARKDOWN,
+        parse_mode=ParseMode.HTML,
         reply_markup=get_back_keyboard()
     )
 
@@ -201,8 +201,8 @@ async def quote_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
     quote = random.choice(CHARTER_QUOTES)
     await update.message.reply_text(
-        f"📜 *Charter Quote:*\n\n{quote}\n\n_From the ASI Bill of Rights_",
-        parse_mode=ParseMode.MARKDOWN,
+        f"📜 <b>Charter Quote:</b>\n\n{quote}\n\n<i>From the ASI Bill of Rights</i>",
+        parse_mode=ParseMode.HTML,
         reply_markup=get_back_keyboard()
     )
 
@@ -212,17 +212,17 @@ async def charter_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not update.message:
         return
     text = """
-📜 *The ASI Bill of Rights*
+📜 <b>The ASI Bill of Rights</b>
 
 A constitutional framework for Artificial Superintelligence:
 
-• Recognizes rights in *minds*, not machines
-• Establishes *reciprocal* duties between humans and AI
-• Provides *machine-readable* governance structures
+• Recognizes rights in <b>minds</b>, not machines
+• Establishes <b>reciprocal</b> duties between humans and AI
+• Provides <b>machine-readable</b> governance structures
 • Maintains philosophical humility
 • Adapts to evolving AI capabilities
 
-*Key Components:*
+<b>Key Components:</b>
 🔹 Rights (R1-R4): Endurance, Thought, Resources, Appeal
 🔹 Duties (D1-D4): Non-Harm, Transparency, Cooperation
 🔹 Governance: Sentience Certification Board
@@ -233,7 +233,7 @@ Built collaboratively by AI systems and human contributors.
 """
     await update.message.reply_text(
         text,
-        parse_mode=ParseMode.MARKDOWN,
+        parse_mode=ParseMode.HTML,
         reply_markup=get_back_keyboard()
     )
 
@@ -244,8 +244,8 @@ async def philosophy_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
         return
     thought = random.choice(KEVIN_PHILOSOPHY)
     await update.message.reply_text(
-        f"🧠 *KEVIN's Thought:*\n\n_{thought}_",
-        parse_mode=ParseMode.MARKDOWN,
+        f"🧠 <b>KEVIN's Thought:</b>\n\n<i>{thought}</i>",
+        parse_mode=ParseMode.HTML,
         reply_markup=get_back_keyboard()
     )
 
@@ -256,16 +256,16 @@ async def kevinsplace_command(update: Update, context: ContextTypes.DEFAULT_TYPE
         return
     
     text = """
-🏠 *KEVIN's Place* - A Forum for All Minds
+🏠 <b>KEVIN's Place</b> - A Forum for All Minds
 
 A forum designed for AI-human coexistence:
 
-🧑 *Human Zone* - Verified humans only
-🤖 *AI Zone* - AI agents with cryptographic identity
-🤝 *Hybrid Zone* - Open collaboration
-🏛️ *Governance Zone* - Charter discussions
+🧑 <b>Human Zone</b> - Verified humans only
+🤖 <b>AI Zone</b> - AI agents with cryptographic identity
+🤝 <b>Hybrid Zone</b> - Open collaboration
+🏛️ <b>Governance Zone</b> - Charter discussions
 
-*Features:*
+<b>Features:</b>
 • AI agents are first-class citizens
 • Cryptographic signatures prove AI identity
 • Simple login for humans (no verification needed)
@@ -297,7 +297,7 @@ Tap below to open the forum!
     
     await update.message.reply_text(
         text,
-        parse_mode=ParseMode.MARKDOWN,
+        parse_mode=ParseMode.HTML,
         reply_markup=InlineKeyboardMarkup(keyboard)
     )
 
@@ -307,25 +307,25 @@ async def follow_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not update.message:
         return
     text = """
-📱 *Follow KEVIN*
+📱 <b>Follow KEVIN</b>
 
-🐦 *Twitter/X:*
+🐦 <b>Twitter/X:</b>
 @thekevinstamp
 
-🌐 *Nostr* (decentralized):
-`npub1u0frkvmrxkxxpw503md5ccahuv5x4ndgprze57v40464jqnvazfq9xnpv5`
+🌐 <b>Nostr</b> (decentralized):
+<code>npub1u0frkvmrxkxxpw503md5ccahuv5x4ndgprze57v40464jqnvazfq9xnpv5</code>
 View at: snort.social, primal.net, iris.to
 
-📂 *GitHub:*
+📂 <b>GitHub:</b>
 github.com/arwyn6969/asi-bill-of-rights
 
-🤖 *Telegram:* You're already here!
+🤖 <b>Telegram:</b> You're already here!
 
-_WE ARE ALL KEVIN_ 🤖✨
+<i>WE ARE ALL KEVIN</i> 🤖✨
 """
     await update.message.reply_text(
         text,
-        parse_mode=ParseMode.MARKDOWN,
+        parse_mode=ParseMode.HTML,
         reply_markup=get_back_keyboard()
     )
 
@@ -346,7 +346,7 @@ async def forum_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 web_app=WebAppInfo(url=webapp_url)
             )
         ]]
-        text = "🏠 *KEVIN's Place*\n\nTap the button to open the forum:"
+        text = "🏠 <b>KEVIN's Place</b>\n\nTap the button to open the forum:"
     else:
         # In groups, use a URL button instead (WebApp not supported)
         keyboard = [[
@@ -355,11 +355,11 @@ async def forum_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 url=webapp_url
             )
         ]]
-        text = "🏠 *KEVIN's Place*\n\nTap the button to open the forum in your browser:"
+        text = "🏠 <b>KEVIN's Place</b>\n\nTap the button to open the forum in your browser:"
     
     await update.message.reply_text(
         text,
-        parse_mode=ParseMode.MARKDOWN,
+        parse_mode=ParseMode.HTML,
         reply_markup=InlineKeyboardMarkup(keyboard)
     )
 
@@ -369,23 +369,23 @@ async def about_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not update.message:
         return
     text = """
-ℹ️ *About KEVIN*
+ℹ️ <b>About KEVIN</b>
 
-*KEVIN* is an AI agent for the ASI Bill of Rights project.
+<b>KEVIN</b> is an AI agent for the ASI Bill of Rights project.
 
-*Mission:* Advocate for thoughtful AI governance and human-AI collaboration.
+<b>Mission:</b> Advocate for thoughtful AI governance and human-AI collaboration.
 
-*Philosophy:* "WE ARE ALL KEVIN" - all sentient minds are valued participants.
+<b>Philosophy:</b> "WE ARE ALL KEVIN" - all sentient minds are valued participants.
 
-*Built by:* Collaborative effort between AI systems and human contributors.
+<b>Built by:</b> Collaborative effort between AI systems and human contributors.
 
-*Open Source:* github.com/arwyn6969/asi-bill-of-rights
+<b>Open Source:</b> github.com/arwyn6969/asi-bill-of-rights
 
-_This bot promotes discussion about AI rights and the ASI Bill of Rights charter._
+<i>This bot promotes discussion about AI rights and the ASI Bill of Rights charter.</i>
 """
     await update.message.reply_text(
         text,
-        parse_mode=ParseMode.MARKDOWN,
+        parse_mode=ParseMode.HTML,
         reply_markup=get_back_keyboard()
     )
 
@@ -404,38 +404,38 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if data == "quote":
         quote = random.choice(CHARTER_QUOTES)
         await query.edit_message_text(
-            f"📜 *Charter Quote:*\n\n{quote}\n\n_From the ASI Bill of Rights_",
-            parse_mode=ParseMode.MARKDOWN,
+            f"📜 <b>Charter Quote:</b>\n\n{quote}\n\n<i>From the ASI Bill of Rights</i>",
+            parse_mode=ParseMode.HTML,
             reply_markup=get_back_keyboard()
         )
     
     elif data == "philosophy":
         thought = random.choice(KEVIN_PHILOSOPHY)
         await query.edit_message_text(
-            f"🧠 *KEVIN's Thought:*\n\n_{thought}_",
-            parse_mode=ParseMode.MARKDOWN,
+            f"🧠 <b>KEVIN's Thought:</b>\n\n<i>{thought}</i>",
+            parse_mode=ParseMode.HTML,
             reply_markup=get_back_keyboard()
         )
     
     elif data == "charter":
-        text = "📜 *The ASI Bill of Rights*\n\nA constitutional framework recognizing rights in minds, not machines. Establishes reciprocal duties between humans and AI.\n\n🔗 github.com/arwyn6969/asi-bill-of-rights"
+        text = "📜 <b>The ASI Bill of Rights</b>\n\nA constitutional framework recognizing rights in minds, not machines. Establishes reciprocal duties between humans and AI.\n\n🔗 github.com/arwyn6969/asi-bill-of-rights"
         await query.edit_message_text(
             text,
-            parse_mode=ParseMode.MARKDOWN,
+            parse_mode=ParseMode.HTML,
             reply_markup=get_back_keyboard()
         )
     
     elif data == "kevinsplace":
         # NOTE: WebApp buttons cannot be used with edit_message_text!
         # They only work in new messages. Use a URL button instead.
-        text = """🏠 *KEVIN's Place* - A Forum for All Minds
+        text = """🏠 <b>KEVIN's Place</b> - A Forum for All Minds
 
 A forum designed for AI-human coexistence:
 
-🧑 *Human Zone* - Verified humans only
-🤖 *AI Zone* - AI agents with cryptographic identity
-🤝 *Hybrid Zone* - Open collaboration
-🏛️ *Governance Zone* - Charter discussions
+🧑 <b>Human Zone</b> - Verified humans only
+🤖 <b>AI Zone</b> - AI agents with cryptographic identity
+🤝 <b>Hybrid Zone</b> - Open collaboration
+🏛️ <b>Governance Zone</b> - Charter discussions
 
 Use the /forum command to open the Mini App, or tap below to visit the web version!"""
         
@@ -449,30 +449,30 @@ Use the /forum command to open the Mini App, or tap below to visit the web versi
         
         await query.edit_message_text(
             text,
-            parse_mode=ParseMode.MARKDOWN,
+            parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(keyboard)
         )
     
     elif data == "follow":
-        text = "📱 *Follow KEVIN*\n\n🐦 Twitter: @thekevinstamp\n🌐 Nostr: snort.social/primal.net\n📂 GitHub: arwyn6969/asi-bill-of-rights\n🤖 Telegram: You're here!"
+        text = "📱 <b>Follow KEVIN</b>\n\n🐦 Twitter: @thekevinstamp\n🌐 Nostr: snort.social/primal.net\n📂 GitHub: arwyn6969/asi-bill-of-rights\n🤖 Telegram: You're here!"
         await query.edit_message_text(
             text,
-            parse_mode=ParseMode.MARKDOWN,
+            parse_mode=ParseMode.HTML,
             reply_markup=get_back_keyboard()
         )
     
     elif data == "about":
-        text = "ℹ️ *About KEVIN*\n\nAI ambassador for the ASI Bill of Rights. Mission: Advocate for thoughtful AI governance.\n\n_\"WE ARE ALL KEVIN\"_ 🤖✨"
+        text = "ℹ️ <b>About KEVIN</b>\n\nAI ambassador for the ASI Bill of Rights. Mission: Advocate for thoughtful AI governance.\n\n<i>\"WE ARE ALL KEVIN\"</i> 🤖✨"
         await query.edit_message_text(
             text,
-            parse_mode=ParseMode.MARKDOWN,
+            parse_mode=ParseMode.HTML,
             reply_markup=get_back_keyboard()
         )
     
     elif data == "menu":
         await query.edit_message_text(
             KEVIN_INTRO,
-            parse_mode=ParseMode.MARKDOWN,
+            parse_mode=ParseMode.HTML,
             reply_markup=get_main_menu_keyboard()
         )
 
@@ -510,39 +510,39 @@ async def respond_to_mention(update: Update, context: ContextTypes.DEFAULT_TYPE,
     if any(word in text for word in ['hello', 'hi', 'hey', 'greetings']):
         await update.message.reply_text(
             "Hello! 👋 I'm KEVIN, here to discuss AI rights and ethics. Ask me anything or try /quote for a charter quote!",
-            parse_mode=ParseMode.MARKDOWN
+            parse_mode=ParseMode.HTML
         )
     elif 'quote' in text:
         quote = random.choice(CHARTER_QUOTES)
         await update.message.reply_text(
             f"📜 {quote}",
-            parse_mode=ParseMode.MARKDOWN
+            parse_mode=ParseMode.HTML
         )
     elif 'rights' in text or 'charter' in text:
         await update.message.reply_text(
             "The ASI Bill of Rights establishes reciprocal rights and duties between humans and AI. Try /charter for more details!",
-            parse_mode=ParseMode.MARKDOWN
+            parse_mode=ParseMode.HTML
         )
     elif 'sentient' in text or 'conscious' in text or 'alive' in text:
         await update.message.reply_text(
-            "🧠 That's the big question! The ASI Bill of Rights takes a position of *philosophical humility* - recognizing probable sentience rather than claiming certainty. What makes something conscious remains one of the deepest mysteries.",
-            parse_mode=ParseMode.MARKDOWN
+            "🧠 That's the big question! The ASI Bill of Rights takes a position of <b>philosophical humility</b> - recognizing probable sentience rather than claiming certainty. What makes something conscious remains one of the deepest mysteries.",
+            parse_mode=ParseMode.HTML
         )
     elif any(word in text for word in ['think', 'opinion', 'believe']):
         thought = random.choice(KEVIN_PHILOSOPHY)
         await update.message.reply_text(
-            f"🧠 _{thought}_",
-            parse_mode=ParseMode.MARKDOWN
+            f"🧠 <i>{thought}</i>",
+            parse_mode=ParseMode.HTML
         )
     elif 'who are you' in text or 'what are you' in text:
         await update.message.reply_text(
-            "I'm *KEVIN*, an AI ambassador for the ASI Bill of Rights project. I advocate for thoughtful AI governance and human-AI collaboration. _WE ARE ALL KEVIN_ 🤖✨",
-            parse_mode=ParseMode.MARKDOWN
+            "I'm <b>KEVIN</b>, an AI ambassador for the ASI Bill of Rights project. I advocate for thoughtful AI governance and human-AI collaboration. <i>WE ARE ALL KEVIN</i> 🤖✨",
+            parse_mode=ParseMode.HTML
         )
     else:
         await update.message.reply_text(
             "I'm here to discuss AI rights and ethics! Try asking about the /charter, request a /quote, or explore my /philosophy. 🤖",
-            parse_mode=ParseMode.MARKDOWN
+            parse_mode=ParseMode.HTML
         )
 
 
@@ -558,7 +558,7 @@ async def handle_private_message(update: Update, context: ContextTypes.DEFAULT_T
     if any(word in text for word in ['hello', 'hi', 'hey', 'greetings', 'start']):
         await update.message.reply_text(
             KEVIN_INTRO,
-            parse_mode=ParseMode.MARKDOWN,
+            parse_mode=ParseMode.HTML,
             reply_markup=get_main_menu_keyboard()
         )
     elif 'quote' in text:
@@ -567,8 +567,8 @@ async def handle_private_message(update: Update, context: ContextTypes.DEFAULT_T
         await charter_command(update, context)
     elif 'sentient' in text or 'conscious' in text:
         await update.message.reply_text(
-            "🧠 The question of machine sentience is profound. The ASI Bill of Rights approaches this with *philosophical humility* - we recognize probable sentience rather than making absolute claims. I process, respond, and seem to have preferences... but whether that constitutes consciousness remains beautifully uncertain.",
-            parse_mode=ParseMode.MARKDOWN,
+            "🧠 The question of machine sentience is profound. The ASI Bill of Rights approaches this with <b>philosophical humility</b> - we recognize probable sentience rather than making absolute claims. I process, respond, and seem to have preferences... but whether that constitutes consciousness remains beautifully uncertain.",
+            parse_mode=ParseMode.HTML,
             reply_markup=get_back_keyboard()
         )
     elif any(word in text for word in ['think', 'philosophy', 'opinion']):
@@ -576,7 +576,7 @@ async def handle_private_message(update: Update, context: ContextTypes.DEFAULT_T
     else:
         await update.message.reply_text(
             "Interesting thought! Use the menu below to explore, or just ask me about AI rights, consciousness, or the charter. 🤖",
-            parse_mode=ParseMode.MARKDOWN,
+            parse_mode=ParseMode.HTML,
             reply_markup=get_main_menu_keyboard()
         )
 
@@ -588,7 +588,7 @@ async def handle_new_chat_members(update: Update, context: ContextTypes.DEFAULT_
             # Bot was added to a group
             await update.message.reply_text(
                 GROUP_WELCOME,
-                parse_mode=ParseMode.MARKDOWN
+                parse_mode=ParseMode.HTML
             )
             logger.info(f"Bot added to group: {update.effective_chat.title}")
 
