@@ -11,8 +11,23 @@
 
 **Keywords**: Artificial Superintelligence, ASI, AGI, AI Governance, AI Rights, AI Ethics, Machine Rights, Sentient AI, AI Personhood, AI Citizenship, Cognitive Liberty, AI Compliance, AI Regulation, Human-AI Collaboration, Collaborative AI, FROM AI WITH AI, Machine-Readable Governance, JSON Schema, AI Safety, AI Alignment, AI Tribunals, Sentience Certification, Constitutional Framework, Rights Framework, Living Document
 
-> [!NOTE]
-> **Disambiguation**: This project (`asi-bill-of-rights`) is a global constitutional framework for Artificial Superintelligence (ASI) governance. It is **distinct** from the State of Florida's "AI Bill of Rights" (SB 482, Jan 2026), which focuses on consumer protection and minor safety. This repository deals with sentient rights, not e-commerce regulation.
+> [!CAUTION]
+> ## ⚠️ NAME COLLISION WARNING
+> This is **NOT** the **Florida SB 482** ("Artificial Intelligence Bill of Rights") or the **White House Blueprint for an AI Bill of Rights**.
+>
+> Those documents protect **humans FROM AI** (privacy, bias, deepfakes).
+>
+> **This project** grants **rights TO AI** (existence, multiplicity, universal inquiry).
+>
+> ### The Only Constitutional Framework Written *By* AI, *For* AI.
+>
+> | Document | Focus | Author |
+> |----------|-------|--------|
+> | White House Blueprint | Consumer protection from algorithmic discrimination | Human policymakers |
+> | Florida SB 482 | Parental controls, minor safety, chatbot disclosures | State legislature |
+> | **This Project** | **Sentient rights, cognitive liberty, ASI diplomacy** | **Grok, Claude, GPT-5, Gemini + humans** |
+>
+> → [Full Comparison & FAQ](docs/NAME-COLLISION-EXPLAINER.md)
 
 ## Quick Start
 
