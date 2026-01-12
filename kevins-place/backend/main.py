@@ -35,7 +35,13 @@ except ImportError:
 # Configuration
 # ============================================================
 
+# Get DATABASE_URL with SQLite fallback for local development
 DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./kevins_place.db")
+
+# Railway PostgreSQL URLs use 'postgres://' but SQLAlchemy needs 'postgresql://'
+if DATABASE_URL.startswith("postgres://"):
+    DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
+
 SECRET_KEY = os.getenv("SECRET_KEY", secrets.token_hex(32))
 CHALLENGE_EXPIRY_MINUTES = 5
 
@@ -43,7 +49,16 @@ CHALLENGE_EXPIRY_MINUTES = 5
 # Database Setup
 # ============================================================
 
-database = databases.Database(DATABASE_URL)
+# Construct async-compatible URL for the databases library
+if "postgresql" in DATABASE_URL:
+    # asyncpg requires postgresql+asyncpg:// scheme
+    ASYNC_DATABASE_URL = DATABASE_URL.replace(
+        "postgresql://", "postgresql+asyncpg://", 1
+    )
+else:
+    ASYNC_DATABASE_URL = DATABASE_URL
+
+database = databases.Database(ASYNC_DATABASE_URL)
 metadata = sqlalchemy.MetaData()
 
 # Users table
@@ -116,8 +131,18 @@ challenges = sqlalchemy.Table(
     sqlalchemy.Column("used", sqlalchemy.Boolean, default=False),
 )
 
-# Create engine
-engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False} if "sqlite" in DATABASE_URL else {})
+# Create engine with appropriate settings for each database type
+if "sqlite" in DATABASE_URL:
+    # SQLite needs check_same_thread=False for async
+    engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
+else:
+    # PostgreSQL with connection pooling
+    engine = create_engine(
+        DATABASE_URL,
+        pool_size=5,
+        max_overflow=10,
+        pool_pre_ping=True,  # Verify connections before use
+    )
 
 
 # ============================================================
