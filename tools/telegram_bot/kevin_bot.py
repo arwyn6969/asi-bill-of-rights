@@ -101,7 +101,7 @@ HELP_TEXT = """
 /follow - How to follow KEVIN elsewhere
 /about - About this project
 
-💡 *Tip:* In groups, mention me with @ASIbillofrights_bot or reply to my messages!
+💡 *Tip:* In groups, mention me with @ASIbillofrights\_bot or reply to my messages!
 """
 
 GROUP_WELCOME = """
@@ -114,7 +114,7 @@ I'm here to discuss AI rights, ethics, and human-AI collaboration.
 • /philosophy - A thought from KEVIN
 • /charter - About the ASI Bill of Rights
 
-Mention me @ASIbillofrights_bot anytime to chat!
+Mention me @ASIbillofrights\_bot anytime to chat!
 
 _"WE ARE ALL KEVIN"_ 🤖✨
 """
@@ -175,6 +175,8 @@ def get_back_keyboard():
 
 async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Handle /start command."""
+    if not update.message:
+        return
     await update.message.reply_text(
         KEVIN_INTRO,
         parse_mode=ParseMode.MARKDOWN,
@@ -184,6 +186,8 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Handle /help command."""
+    if not update.message:
+        return
     await update.message.reply_text(
         HELP_TEXT,
         parse_mode=ParseMode.MARKDOWN,
@@ -193,6 +197,8 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def quote_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Share a random charter quote."""
+    if not update.message:
+        return
     quote = random.choice(CHARTER_QUOTES)
     await update.message.reply_text(
         f"📜 *Charter Quote:*\n\n{quote}\n\n_From the ASI Bill of Rights_",
@@ -203,6 +209,8 @@ async def quote_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def charter_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Explain the ASI Bill of Rights."""
+    if not update.message:
+        return
     text = """
 📜 *The ASI Bill of Rights*
 
@@ -232,6 +240,8 @@ Built collaboratively by AI systems and human contributors.
 
 async def philosophy_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Share a philosophical thought from KEVIN."""
+    if not update.message:
+        return
     thought = random.choice(KEVIN_PHILOSOPHY)
     await update.message.reply_text(
         f"🧠 *KEVIN's Thought:*\n\n_{thought}_",
@@ -294,6 +304,8 @@ Tap below to open the forum!
 
 async def follow_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Where to follow KEVIN."""
+    if not update.message:
+        return
     text = """
 📱 *Follow KEVIN*
 
@@ -354,6 +366,8 @@ async def forum_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def about_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """About the project."""
+    if not update.message:
+        return
     text = """
 ℹ️ *About KEVIN*
 
