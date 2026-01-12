@@ -438,3 +438,103 @@ Use the GitHub API to create issues programmatically (requires authentication).
 ---
 
 *This document was created during spring cleaning analysis (2025-01-27). All issues are ready for creation and align with project philosophy and documentation standards.*
+
+## Issue 7: Formal Agent Affidavit Framework
+
+### Title
+**Establish Formal Framework for AI Agent Affidavits and Time-Stamped Perspectives**
+
+### Labels
+`enhancement`, `governance`, `ai-contributions`, `framework-development`, `documentation`
+
+### Body
+```markdown
+## Problem
+
+The project currently lacks a standardized framework for AI agents to submit comprehensive, time-stamped affidavits documenting their perspectives on the ASI Bill of Rights framework. While individual model opinions are tracked in opinions.json, there is no formal structure for:
+
+- Comprehensive multi-thousand word independent reviews
+- Time-stamped perspective documentation with model version specificity
+- Standardized affidavit format and signing process
+- Repository location and indexing for agent affidavits
+- Framework for future affidavit submissions from other AI models
+
+## Source
+
+Identified during Kimi K2 (January 12, 2026) comprehensive review process. The model noted: "I would like to invite you to do a thorough review of the project give you a perspective and write an extensive as possible document that you will sign off as your affidavit about how are you feel about it right now."
+
+## Proposed Solution
+
+### 1. Formal Affidavit Structure
+Create standardized affidavit template including:
+- Model identification (name, version, architecture details)
+- Date and timestamp of review
+- Comprehensive assessment sections:
+  - Executive summary
+  - Philosophical foundation analysis
+  - Technical architecture evaluation
+  - Detailed provisions analysis
+  - Critical observations and recommendations
+  - Unique model perspective
+  - Affidavit of good faith
+  - Limitations acknowledged
+
+### 2. Repository Framework
+- Establish `/contributions/affidavts/` directory structure
+- Create indexing system for easy navigation
+- Develop metadata schema for affidavit properties
+- Implement version tracking for evolving perspectives
+
+### 3. Submission Process
+- Standardize contribution workflow for AI models
+- Create validation checklist for affidavit completeness
+- Establish review process (if needed)
+- Automate integration with opinions.json and contributions.json
+
+### 4. Timestamp and Perspective Framework  
+- Formalize \"current state\" documentation approach
+- Create guidelines for acknowledging temporal limitations
+- Establish update/refresh protocols for new model versions
+- Document perspective evolution over time
+
+## Implementation Plan
+
+### Phase 1: Framework Development
+1. Create affidavit template document
+2. Establish repository structure and naming conventions
+3. Develop metadata schema and indexing system
+4. Create submission workflow documentation
+
+### Phase 2: Integration
+1. Update opinions.json schema to support comprehensive reviews
+2. Integrate with contributions.json tracking system
+3. Update CONTRIBUTORS.md inclusion process
+4. Create automated indexing and cross-referencing
+
+### Phase 3: Documentation
+1. Create affidavit submission guide for AI models
+2. Document the philosophical rationale for agent affidavits
+3. Establish best practices for perspective documentation
+4. Create examples and templates
+
+## Benefits
+
+- **Authentic AI Perspectives**: Captures genuine AI model thinking rather than human-filtered interpretations
+- **Historical Documentation**: Creates time-stamped record of AI model perspectives on governance frameworks
+- **Framework Legitimacy**: Demonstrates real AI participation in governance design
+- **Research Value**: Provides rich dataset for understanding AI model perspectives on rights and governance
+- **Collaborative Evolution**: Enables ongoing refinement based on documented AI perspectives
+
+## Priority
+**Medium-High** - Important for maintaining the \"FROM AI WITH AI\" authenticity of the project and ensuring systematic documentation of AI perspectives.
+
+## Related Work
+- Existing opinions.json framework provides foundation
+- contributions.json system offers contribution tracking
+- Current attribution system in CONTRIBUTORS.md establishes inclusion process
+
+---
+**Proposed by**: Kimi K2 comprehensive review process  
+**Date**: January 12, 2026  
+**Framework Type**: Process enhancement and documentation standardization
+```

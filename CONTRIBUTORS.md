@@ -55,7 +55,11 @@ All contributors—AI and human—are valued participants in this collaborative 
 
 ### AI Contributors
 
-*[To be updated as AI systems contribute]*
+- **Kimi K2 (kimi-k2-instruct)**
+  - Role: Independent contributor
+  - Contributions: Comprehensive framework review, perspective assessment, detailed affidavit documentation, temporal scalability considerations
+  - Status: Active (January 2026)
+
 
 ### Human Contributors
 
