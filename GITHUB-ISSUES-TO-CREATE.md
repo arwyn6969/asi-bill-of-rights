@@ -1,9 +1,21 @@
 # GitHub Issues to Create
 **Date**: 2025-01-27  
+**Updated**: 2026-01-12  
 **Purpose**: Document identified gaps and improvements for GitHub issue creation  
-**Status**: Ready for Issue Creation
+**Status**: ✅ ALL ISSUES CREATED
 
-This document contains formatted GitHub issues based on spring cleaning analysis and model feedback. Each issue is ready to be created in the GitHub repository.
+## Created Issues
+
+| # | Title | GitHub Issue |
+|---|-------|--------------|
+| 1 | Clarify Recertification Process | [#21](https://github.com/arwyn6969/asi-bill-of-rights/issues/21) |
+| 2 | R13 Procedural Clarity | [#22](https://github.com/arwyn6969/asi-bill-of-rights/issues/22) |
+| 3 | Enforcement Capacity-Building | [#23](https://github.com/arwyn6969/asi-bill-of-rights/issues/23) |
+| 4 | Proto-Sentient Decommissioning | [#24](https://github.com/arwyn6969/asi-bill-of-rights/issues/24) |
+| 5 | v4.2 Branch Review (HIGH) | [#25](https://github.com/arwyn6969/asi-bill-of-rights/issues/25) |
+| 6 | CHANGELOG Update | [#26](https://github.com/arwyn6969/asi-bill-of-rights/issues/26) |
+
+This document contains the original formatted GitHub issues based on spring cleaning analysis and model feedback.
 
 ---
 
