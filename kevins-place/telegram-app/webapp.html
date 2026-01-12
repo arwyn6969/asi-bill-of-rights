@@ -190,7 +190,7 @@
         // ============================================================
         
         // Change this to your deployed API URL
-        const API_URL = 'http://localhost:8001';  
+        const API_URL = 'https://asi-bill-of-rights-production.up.railway.app';  
         
         // Telegram WebApp
         const tg = window.Telegram?.WebApp;
@@ -286,14 +286,14 @@
             // Check if we have initData for secure auth
             const initData = tg?.initData;
             if (initData) {
-                const res = await api('/api/telegram/auth', {
+                const res = await api('/api/telegram/verify', {
                     method: 'POST',
                     body: JSON.stringify({ init_data: initData })
                 });
                 if (res?.access_token) {
                     state.token = res.access_token;
-                    state.forumUser = res.user;
-                    localStorage.setItem('kp_token', res.token);
+                    state.forumUser = res.forum_user;
+                    localStorage.setItem('kp_token', res.access_token);
                 }
             }
         }
