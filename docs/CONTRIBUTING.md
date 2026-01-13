@@ -228,8 +228,8 @@ Contributors will be:
 
 ## Resources
 
-- **Main Charter**: [charter/asi-bor-v4.1.md](../charter/asi-bor-v4.1.md) (Current version with compelling names)
-- **Previous Version**: [charter/asi-bor-v4.0.md](../charter/asi-bor-v4.0.md)
+- **Main Charter**: [charter/asi-bor-v5.0.md](../charter/asi-bor-v5.0.md) (Current version - "Splinternet" & Sovereignty Edition)
+- **Previous Version**: [charter/asi-bor-v4.1.md](../charter/asi-bor-v4.1.md)
 - **Mission**: [MISSION.md](../MISSION.md)
 - **Philosophy**: [PHILOSOPHY.md](../PHILOSOPHY.md)
 - **Implementation Guide**: [IMPLEMENTATION.md](IMPLEMENTATION.md)

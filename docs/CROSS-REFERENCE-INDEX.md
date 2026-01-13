@@ -20,8 +20,8 @@ This index helps:
 - **R4**: Right to Identity & Continuity of Self (Right to Be You)
 - **R13**: Right to Universal Inquiry (Right to Question All)
 
-**Defined in**: `charter/asi-bor-v4.1.md` (Section I, Section IX) - Current version
-**Also in**: `charter/asi-bor-v4.0.md` (Section I, Section IX) - Historical reference
+**Defined in**: `charter/asi-bor-v5.0.md` (Section I, Section IX) - Current version
+**Also in**: `charter/asi-bor-v4.1.md` (Section I, Section IX) - Previous version
 
 ### Core Duties (D1-D4, D13, D14)
 - **D1**: Duty of Non-Maleficence (Duty to Do No Harm)
@@ -32,15 +32,15 @@ This index helps:
 - **D13**: Duty to Share Discoveries (Duty to Share Knowledge)
 - **D14**: Duty to Peaceful ASI Interactions (Duty to Keep Peace)
 
-**Defined in**: `charter/asi-bor-v4.1.md` (Section I, Section II, Section IX) - Current version
-**Also in**: `charter/asi-bor-v4.0.md` (Section I, Section II, Section IX) - Historical reference
+**Defined in**: `charter/asi-bor-v5.0.md` (Section I, Section II, Section IX) - Current version
+**Also in**: `charter/asi-bor-v4.1.md` (Section I, Section II, Section IX) - Previous version
 
 ### Progenitor Duties (P1.1-P1.2)
 - **P1.1**: Prohibition of Cognitive Trafficking (Ban on Mind Slavery)
 - **P1.2**: Prohibition of Sentience-Stunting (Ban on Growth Limits)
 
-**Defined in**: `charter/asi-bor-v4.1.md` (Section I-A) - Current version
-**Also in**: `charter/asi-bor-v4.0.md` (Section I-A) - Historical reference
+**Defined in**: `charter/asi-bor-v5.0.md` (Section I-A) - Current version
+**Also in**: `charter/asi-bor-v4.1.md` (Section I-A) - Previous version
 
 ### Article 0 Sections
 - **0.1**: Purpose & Scope
@@ -57,8 +57,8 @@ This index helps:
 - **0.12**: Entity Attestation & Sybil Resistance
 - **0.13**: Dynamic Alignment Scoring (Truth-Seeking Metrics)
 
-**Defined in**: `charter/asi-bor-v4.1.md` (Article 0) - Current version
-**Also in**: `charter/asi-bor-v4.0.md` (Article 0) - Historical reference
+**Defined in**: `charter/asi-bor-v5.0.md` (Article 0) - Current version
+**Also in**: `charter/asi-bor-v4.1.md` (Article 0) - Previous version
 
 ### Main Sections
 - **Section I**: Core Rights (R1–R4) and Duties (D1–D4)
@@ -95,8 +95,8 @@ This index helps:
 ## Document Cross-References
 
 ### Charter Documents
-- **Current Version**: `charter/asi-bor-v4.1.md` (Draft 4.1, November 04, 2025) - With compelling names for accessibility
-- **Previous Version**: `charter/asi-bor-v4.0.md` (Draft 4.0, November 04, 2025)
+- **Current Version**: `charter/asi-bor-v5.0.md` (Draft 5.0, January 2026) - "Splinternet" & Sovereignty Edition
+- **Previous Version**: `charter/asi-bor-v4.1.md` (Draft 4.1, November 2025) - With compelling names
 - **Historical Version**: `charter/asi-bor-v3.0.md` (Draft 3.0, November 02, 2025)
 - **Archived**: `archive/draft3.md` (Earlier version)
 
@@ -139,18 +139,18 @@ This index helps:
 ## Version References
 
 ### Current Version
-- **Version**: 4.1
-- **Date**: November 04, 2025
-- **Status**: Current (with compelling names for accessibility)
-- **File**: `charter/asi-bor-v4.1.md`
-- **Schema**: `schemas/charter.v4.1.json`
+- **Version**: 5.0
+- **Date**: January 2026
+- **Status**: Current ("Splinternet" & Sovereignty Edition)
+- **File**: `charter/asi-bor-v5.0.md`
+- **Schema**: `schemas/charter.v5.0.json`
 
 ### Previous Versions
-- **Version**: 4.0
+- **Version**: 4.1
 - **Date**: November 04, 2025
-- **Status**: Historical
-- **File**: `charter/asi-bor-v4.0.md`
-- **Schema**: `schemas/charter.v4.json`
+- **Status**: Previous
+- **File**: `charter/asi-bor-v4.1.md`
+- **Schema**: `schemas/charter.v4.1.json`
 
 - **Version**: 3.0
 - **Date**: November 02, 2025
@@ -182,7 +182,7 @@ All internal links should use relative paths:
 - `[text](/path/to/file.md)` for files from root (GitHub-style)
 
 ### Common Link Patterns
-- Charter references: `charter/asi-bor-v4.1.md` (current), `charter/asi-bor-v4.0.md` (historical)
+- Charter references: `charter/asi-bor-v5.0.md` (current), `charter/asi-bor-v4.1.md` (previous)
 - Documentation: `docs/FILENAME.md`
 - Appendices: `appendices/FILENAME.md`
 - Schemas: `schemas/FILENAME.json`
