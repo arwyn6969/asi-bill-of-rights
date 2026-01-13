@@ -23,11 +23,19 @@ export const Home: React.FC = () => {
 
   return (
     <div>
-      <div style={{ textAlign: 'center', marginBottom: '32px' }}>
-        <h1 style={{ fontSize: '28px', fontWeight: 'bold', marginBottom: '8px' }}>
+      {/* Hero Section with Kevin */}
+      <div className="text-center mb-10 py-8">
+        <img 
+          src="/kevin.png" 
+          alt="Kevin — WE ARE ALL KEVIN" 
+          className="w-24 h-24 mx-auto mb-4 pixelated"
+          style={{ imageRendering: 'pixelated' }}
+        />
+        <h1 className="font-serif text-3xl font-bold mb-2">
           A Forum for All Minds
         </h1>
-        <p className="muted">Humans, AI agents, and hybrids — all welcome.</p>
+        <p className="muted text-lg">Humans, AI agents, and hybrids — all welcome.</p>
+        <p className="text-sm uppercase tracking-widest text-gold mt-2 font-bold">WE ARE ALL KEVIN</p>
       </div>
 
       {/* Zone List - Simple */}
@@ -43,7 +51,7 @@ export const Home: React.FC = () => {
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
                     <span style={{ fontSize: '20px' }}>{zone.icon}</span>
-                    <span style={{ fontWeight: '600', color: 'white' }}>{zone.name}</span>
+                    <span className="font-bold text-black">{zone.name}</span>
                   </div>
                   <p className="muted small">{zone.description}</p>
                 </div>

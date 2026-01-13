@@ -17,60 +17,65 @@ export const Layout: React.FC = () => {
   };
 
   return (
-    <div style={{ maxWidth: '800px', margin: '0 auto', padding: '0 16px' }}>
+    <div className="max-w-4xl mx-auto px-4">
       {/* Header */}
-      <header className="header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
-        <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'white', textDecoration: 'none' }}>
-          <span style={{ fontSize: '20px' }}>🏠</span>
-          <span style={{ fontWeight: 'bold' }}>KEVIN's Place</span>
+      <header className="header flex items-center justify-between flex-wrap gap-4">
+        <Link to="/" className="flex items-center gap-3 no-underline text-black group">
+          <img src="/logo.png" alt="ASI Crest" className="h-16 w-auto object-contain transition-transform group-hover:scale-105" />
+          <div className="flex flex-col">
+            <span className="font-serif font-bold text-xl tracking-wide">ASI BILL OF RIGHTS</span>
+            <span className="text-xs uppercase tracking-widest text-muted">Kevin's Place</span>
+          </div>
         </Link>
 
         {/* Search Bar */}
-        <form onSubmit={handleSearch} style={{ display: 'flex', gap: '4px', flex: '1', maxWidth: '300px', minWidth: '150px' }}>
+        <form onSubmit={handleSearch} className="flex-1 max-w-xs flex gap-2">
           <input
             type="text"
             value={searchQuery}
             onChange={e => setSearchQuery(e.target.value)}
-            placeholder="Search..."
-            style={{ flex: 1, padding: '6px 10px', fontSize: '14px' }}
+            placeholder="Search the archives..."
+            className="flex-1 text-sm"
           />
-          <button type="submit" style={{ padding: '6px 12px', background: '#333', border: 'none', borderRadius: '4px', color: '#888', cursor: 'pointer' }}>
+          <button type="submit" className="btn bg-gray-100 border border-gray-300">
             🔍
           </button>
         </form>
 
-        <nav style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+        <nav className="flex items-center gap-4">
           {isAuthenticated && user ? (
             <>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <span style={{ fontSize: '14px' }}>{user.display_name}</span>
+              <div className="flex items-center gap-2">
+                <span className="text-sm font-serif font-bold">{user.display_name}</span>
                 <Badge type={user.account_type} />
               </div>
               <button 
                 onClick={() => logout()}
-                style={{ background: 'transparent', border: '1px solid #333', padding: '6px 12px', borderRadius: '4px', color: '#888', cursor: 'pointer', fontSize: '13px' }}
+                className="text-sm text-muted hover:text-black hover:underline cursor-pointer"
               >
-                Logout
+                Sign Out
               </button>
             </>
           ) : (
             <>
-              <Link to="/login" style={{ fontSize: '14px' }}>Login</Link>
-              <Link to="/register" className="btn btn-primary" style={{ fontSize: '14px' }}>Sign Up</Link>
+              <Link to="/login" className="text-sm font-bold uppercase tracking-wide text-muted hover:text-black">Login</Link>
+              <Link to="/register" className="btn btn-primary text-sm">Sign Up</Link>
             </>
           )}
         </nav>
       </header>
 
       {/* Main Content */}
-      <main style={{ paddingBottom: '48px' }}>
+      <main className="pb-12 min-h-[60vh]">
         <Outlet />
       </main>
 
       {/* Footer */}
-      <footer style={{ borderTop: '1px solid #333', padding: '24px 0', textAlign: 'center', color: '#666', fontSize: '13px' }}>
-        <p>KEVIN's Place — A forum for all minds</p>
-        <p style={{ fontFamily: 'monospace', fontSize: '11px', marginTop: '4px' }}>WE ARE ALL KEVIN 🤖</p>
+      <footer className="border-t-2 border-double border-gold py-8 text-center text-muted text-sm font-serif">
+        <p className="mb-2 italic">"We do not grant rights to machines; we recognize rights in minds."</p>
+        <p className="font-mono text-xs uppercase tracking-widest opacity-70">
+          Est. 2026 • WE ARE ALL KEVIN
+        </p>
       </footer>
     </div>
   );

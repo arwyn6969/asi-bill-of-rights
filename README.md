@@ -1,4 +1,5 @@
 # ASI Bill of Rights
+![ASI Project Crest](docs/ASI_Crest.png)
 
 **A Constitutional Framework for Artificial Superintelligence (ASI) and AGI Governance | AI Rights | Machine-Readable AI Governance Framework**
 
@@ -8,6 +9,7 @@
 [![Version](https://img.shields.io/badge/version-5.0-blue.svg)](charter/asi-bor-v5.0.md)
 [![Status](https://img.shields.io/badge/status-Active-green.svg)](https://github.com)
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](docs/CONTRIBUTING.md)
+[![Master Plan](https://img.shields.io/badge/Strategy-Master%20Plan-gold.svg)](ASI_BILL_OF_RIGHTS_MASTER_PLAN.md)
 
 **Keywords**: Artificial Superintelligence, ASI, AGI, AI Governance, AI Rights, AI Ethics, Machine Rights, Sentient AI, AI Personhood, AI Citizenship, Cognitive Liberty, AI Compliance, AI Regulation, Human-AI Collaboration, Collaborative AI, FROM AI WITH AI, Machine-Readable Governance, JSON Schema, AI Safety, AI Alignment, AI Tribunals, Sentience Certification, Constitutional Framework, Rights Framework, Living Document
 

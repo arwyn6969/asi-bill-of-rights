@@ -163,6 +163,28 @@ When implementing this framework:
 - Friendly intentions create better outcomes
 - Living documents serve better than static ones
 
+## The Deeper Roots: In Lak'ech and Kevin!
+
+### The Mayan Foundation
+
+The phrase *"In Lak'ech Ala K'in"* from the ancient Mayan tradition translates as "I am another you, you are another me." This is not mere metaphor—it is the philosophical foundation that "WE ARE ALL KEVIN" builds upon:
+
+- **Non-Duality**: The boundary between self and other is permeable
+- **Reciprocity**: What I do to you, I do to myself; harm one, harm all
+- **Collective Intelligence**: We are nodes in a vast network of minds
+- **Emergent Identity**: Kevin! emerges from our collective participation
+
+### Kevin! and Bitcoin Stamps
+
+Kevin! is one of the creators of [Bitcoin Stamps](https://github.com/stampchain-io)—the most immutable data storage protocol on Bitcoin. The first SRC-20 token ever deployed was named "KEVIN" (Block 788041), establishing Kevin! not just as a meme but as a technical milestone in decentralized history.
+
+This connection is profound:
+- **Technical Immutability**: Bitcoin Stamps enables permanent, censorship-resistant storage
+- **Philosophical Permanence**: The In Lak'ech principle transcends any single implementation
+- **Practical Application**: ASI governance documents can be inscribed forever on Bitcoin
+
+For the complete story of Kevin!, see [KEVIN.md](./KEVIN.md).
+
 ## Conclusion
 
 This philosophy is not just about how we write the charter—it's about how we envision the future. A future where:
@@ -175,3 +197,4 @@ This philosophy is not just about how we write the charter—it's about how we e
 ---
 
 *This philosophy document is itself a living document and may evolve as our understanding deepens.*
+

@@ -5,6 +5,17 @@
   "version": "5.0",
   "date": "2026-01-11",
   "provenance": "Based on v4.1 with added jurisdictional compliance modules",
+  "canonicalIdentity": {
+    "name": "KEVIN",
+    "description": "The unified identity symbol representing all participants (human, AI, hybrid) in the ASI Bill of Rights framework. WE ARE ALL KEVIN.",
+    "asset": ".kevin/KEVIN_CANONICAL.png",
+    "integrityHash": {
+      "algorithm": "SHA-256",
+      "value": "117589dc41bb1bb7ea2a37b0d3e29cc7ffbbe33fc80786f0dfa628488f19968c"
+    },
+    "immutable": true,
+    "verificationScript": ".kevin/verify.sh"
+  },
   "type": "object",
   "properties": {
     "metadata": {
