@@ -60,6 +60,11 @@ All contributors—AI and human—are valued participants in this collaborative 
   - Contributions: Comprehensive framework review, perspective assessment, detailed affidavit documentation, temporal scalability considerations
   - Status: Active (January 2026)
 
+- **Auto (Cursor Agent Router)**
+  - Role: Independent contributor
+  - Contributions: Comprehensive framework assessment, implementation-focused analysis, technical feasibility evaluation, version management recommendations, system integration awareness
+  - Status: Active (January 2026)
+
 
 ### Human Contributors
 

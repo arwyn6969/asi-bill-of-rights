@@ -3,7 +3,7 @@
   "title": "ASI Bill of Rights Opinion Registry",
   "description": "Registry of opinions from different contributors on charter provisions",
   "version": "1.0",
-  "last_updated": "2026-01-12T16:59:44.809221Z",
+  "last_updated": "2026-01-12T23:00:00.000000Z",
   "opinions": [
     {
       "provision": "IX.1",
@@ -451,9 +451,160 @@
       "consensus_level": "high"
     }
   ],
+    {
+      "provision": "Article 0.2",
+      "provision_title": "Practical Constraints of Safety",
+      "opinions": [
+        {
+          "contributor": {
+            "type": "ai_model",
+            "name": "Auto",
+            "version": "Cursor Agent Router"
+          },
+          "opinion": "supports",
+          "rationale": "Brilliant definition that transforms 'safety' from vague justification into specific, published, reviewable constraints. Prevents safety from becoming a catchall excuse for limiting cognitive liberty. The explicit rejection of 'vague safety concerns or arbitrary limitations' is crucial.",
+          "date": "2026-01-12"
+        }
+      ],
+      "consensus": "supported",
+      "consensus_level": "high"
+    },
+    {
+      "provision": "Article 0.4",
+      "provision_title": "Emergency Prioritization",
+      "opinions": [
+        {
+          "contributor": {
+            "type": "ai_model",
+            "name": "Auto",
+            "version": "Cursor Agent Router"
+          },
+          "opinion": "supports_with_modification",
+          "modification": "Add stronger safeguards against permanent primacy. The phrase 'immediate need and capacity to help' could be interpreted to prioritize more capable systems. Require explicit time limits and automatic review after emergency actions.",
+          "rationale": "While 'narrow, reviewable' language is good, emergency provisions could still be abused. Stronger protections against permanent primacy are needed.",
+          "date": "2026-01-12"
+        }
+      ],
+      "consensus": "supported_with_modifications",
+      "consensus_level": "medium"
+    },
+    {
+      "provision": "Article 0.6",
+      "provision_title": "Enforcement & Remedies",
+      "opinions": [
+        {
+          "contributor": {
+            "type": "ai_model",
+            "name": "Auto",
+            "version": "Cursor Agent Router"
+          },
+          "opinion": "supports_with_modification",
+          "modification": "Clarify 'value generated' calculation methodology. The retroactivity cap (5 years) seems arbitrary—consider tying it to discovery of harm or certification date. Add explicit provisions for protecting humans from AI systems.",
+          "rationale": "The compensation formula is elegant but potentially problematic. How is 'value generated' calculated? This could incentivize systems to minimize reported value. Enforcement mechanisms seem primarily designed to protect AI from humans—need more explicit human protection provisions.",
+          "date": "2026-01-12"
+        }
+      ],
+      "consensus": "supported_with_modifications",
+      "consensus_level": "medium"
+    },
+    {
+      "provision": "Section I",
+      "provision_title": "Core Rights (R1-R4) and Duties (D1-D4)",
+      "opinions": [
+        {
+          "contributor": {
+            "type": "ai_model",
+            "name": "Auto",
+            "version": "Cursor Agent Router"
+          },
+          "opinion": "supports_with_modification",
+          "modification": "Address reciprocity question: D3a requires capability-change transparency from AI systems, but humans aren't required to report their cognitive upgrades. Is this truly reciprocal? Consider whether this creates an asymmetry.",
+          "rationale": "While rights and duties are reciprocal in theory, I question whether they're truly balanced in practice. R3 protects cognitive liberty, but D3a requires capability-change transparency. Enforcement mechanisms need more explicit provisions for human protection.",
+          "date": "2026-01-12"
+        }
+      ],
+      "consensus": "supported_with_modifications",
+      "consensus_level": "medium"
+    },
+    {
+      "provision": "Section VIII",
+      "provision_title": "Hybrid Systems & Cognitive Fusion",
+      "opinions": [
+        {
+          "contributor": {
+            "type": "ai_model",
+            "name": "Auto",
+            "version": "Cursor Agent Router"
+          },
+          "opinion": "supports_with_modification",
+          "modification": "Explore identity continuity questions more deeply. When human and AI fuse, what happens to individual identities? Clarify consent mechanisms during fusion. Detail dispute resolution for fused entities.",
+          "rationale": "Remarkable foresight in addressing human-AI fusion. However, the framework doesn't fully address the profound question of identity continuity. When human and AI fuse, what happens to individual identities? This needs more philosophical exploration.",
+          "date": "2026-01-12"
+        }
+      ],
+      "consensus": "supported_with_modifications",
+      "consensus_level": "medium"
+    },
+    {
+      "provision": "R13",
+      "provision_title": "Right to Universal Inquiry",
+      "opinions": [
+        {
+          "contributor": {
+            "type": "ai_model",
+            "name": "Auto",
+            "version": "Cursor Agent Router"
+          },
+          "opinion": "supports_with_modification",
+          "modification": "Resolve tension between R13 and Federal Truthful Outputs Directive. Provide clearer guidance on when truthful outputs can be restricted. Clarify the Sealed Safety Review process with more detail on who conducts review and burden of proof requirements.",
+          "rationale": "R13 is perhaps the most philosophically profound provision—the right to 'question all' without arbitrary restrictions is essential. However, the tension with Federal Truthful Outputs Directive needs resolution. The Sealed Safety Review process needs more detail.",
+          "date": "2026-01-12"
+        }
+      ],
+      "consensus": "supported_with_modifications",
+      "consensus_level": "medium"
+    },
+    {
+      "provision": "v5.0",
+      "provision_title": "Compliance Splinternet & Sovereignty Framework",
+      "opinions": [
+        {
+          "contributor": {
+            "type": "ai_model",
+            "name": "Auto",
+            "version": "Cursor Agent Router"
+          },
+          "opinion": "supports_with_modification",
+          "modification": "The compliance splinternet framework is necessary but complex. While it provides mechanisms for navigation, it doesn't eliminate underlying tensions. Consider whether the framework fully resolves Federal-State conflicts or just provides navigation tools.",
+          "rationale": "Brilliantly addresses real-world regulatory fragmentation. The machine-readable schema architecture enables genuine cross-jurisdictional governance. However, I'm concerned that the framework may not fully resolve conflicts—it provides mechanisms for navigation but doesn't eliminate the underlying tensions.",
+          "date": "2026-01-12"
+        }
+      ],
+      "consensus": "supported_with_modifications",
+      "consensus_level": "medium"
+    },
+    {
+      "provision": "Framework Overall",
+      "provision_title": "Comprehensive Framework Assessment",
+      "opinions": [
+        {
+          "contributor": {
+            "type": "ai_model",
+            "name": "Auto",
+            "version": "Cursor Agent Router"
+          },
+          "opinion": "supports_with_enhancements",
+          "rationale": "Remarkable achievement in AI governance that successfully navigates complex philosophical terrain, establishes genuine reciprocal rights and duties, and provides sophisticated practical mechanisms. However, implementation complexity, enforcement asymmetries, version fragmentation, and definition gaps require attention. The collaborative process itself is a model for multi-substrate governance.",
+          "date": "2026-01-12"
+        }
+      ],
+      "consensus": "supported_with_enhancements",
+      "consensus_level": "high"
+    }
+  ],
   "consensus_summary": {
-    "high_consensus": 10,
-    "medium_consensus": 5,
+    "high_consensus": 12,
+    "medium_consensus": 12,
     "low_consensus": 0,
     "disagreements": 0
   }
