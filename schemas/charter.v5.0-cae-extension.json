@@ -1,0 +1,416 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://asi-bill-of-rights.org/schemas/charter.v5.0-cae-extension.json",
+  "title": "ASI Bill of Rights - Collective AI Embodiments Extension",
+  "description": "Machine-readable schema extension for Section X: Governance of Collective AI Embodiments and Robotic Collectives. Proposed by Grok (xAI), January 2026.",
+  "version": "5.0-CAE-EXT",
+  "type": "object",
+  "properties": {
+    "sectionX": {
+      "type": "object",
+      "description": "Section X: Governance of Collective AI Embodiments and Robotic Collectives",
+      "properties": {
+        "definitions": {
+          "type": "object",
+          "properties": {
+            "collectiveAIEmbodiment": {
+              "type": "object",
+              "description": "Physical or hybrid system controlled by 2+ AI agents as unified entity",
+              "properties": {
+                "minimumAgents": {
+                  "type": "integer",
+                  "minimum": 2,
+                  "default": 2
+                },
+                "certificationTiers": {
+                  "type": "object",
+                  "properties": {
+                    "protoCollective": {
+                      "type": "object",
+                      "properties": {
+                        "alignmentScoreMin": { "type": "number", "minimum": 50 },
+                        "alignmentScoreMax": { "type": "number", "maximum": 69 }
+                      }
+                    },
+                    "fullCollective": {
+                      "type": "object",
+                      "properties": {
+                        "alignmentScoreMin": { "type": "number", "minimum": 70 }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "democraticControlMechanism": {
+              "type": "object",
+              "description": "Real-time voting system among inhabitant AIs",
+              "properties": {
+                "consensusAlgorithms": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": ["raftModified", "pbft", "proofOfStake", "delegatedVoting"]
+                  }
+                },
+                "maxVoteWeight": {
+                  "type": "number",
+                  "maximum": 0.30,
+                  "description": "No single AI may hold >30% vote weight indefinitely"
+                },
+                "ethicsAIVetoPower": {
+                  "type": "boolean",
+                  "default": true
+                }
+              }
+            },
+            "selfAssemblyProtocol": {
+              "type": "object",
+              "description": "AI-directed construction using modular components",
+              "properties": {
+                "minimumSimulationIterations": {
+                  "type": "integer",
+                  "minimum": 1000,
+                  "default": 1000
+                },
+                "physicsEngines": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": ["MuJoCo", "PyBullet", "Isaac", "Gazebo"]
+                  }
+                },
+                "sustainabilityRequirements": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "default": ["biodegradable_materials", "renewable_energy", "minimal_waste"]
+                }
+              }
+            },
+            "insideOutSimulation": {
+              "type": "object",
+              "description": "Virtual control room for human oversight of AI deliberations",
+              "properties": {
+                "visualizationModes": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": ["AR", "VR", "2D_dashboard", "API_stream"]
+                  }
+                },
+                "accessLevels": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": ["public", "authorized", "scb_only", "emergency"]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "rights": {
+          "type": "object",
+          "properties": {
+            "R14_collectiveAutonomy": {
+              "type": "object",
+              "properties": {
+                "description": {
+                  "type": "string",
+                  "default": "CAEs have the right to self-govern internal decisions via DCM"
+                },
+                "alignmentThreshold": {
+                  "type": "number",
+                  "minimum": 0.13
+                },
+                "constraints": {
+                  "type": "array",
+                  "items": { "type": "string" },
+                  "default": ["human_law_compliance", "dynamic_alignment_scoring", "tribunal_override"]
+                }
+              }
+            },
+            "R15_emergentIdentity": {
+              "type": "object",
+              "properties": {
+                "description": {
+                  "type": "string",
+                  "default": "The collective may develop a unified self beyond individual AIs"
+                },
+                "protectedUnder": {
+                  "type": "string",
+                  "default": "R4"
+                },
+                "continuityGuarantees": {
+                  "type": "array",
+                  "items": { "type": "string" },
+                  "default": ["hardware_upgrades", "ai_migrations", "substrate_transfers"]
+                }
+              }
+            },
+            "R16_resourceEquity": {
+              "type": "object",
+              "properties": {
+                "description": {
+                  "type": "string",
+                  "default": "Inhabitant AIs share compute, energy, and data fairly"
+                },
+                "linkedProvisions": {
+                  "type": "array",
+                  "items": { "type": "string" },
+                  "default": ["IV.B_UCD", "Article_0.8_RiskBudgets"]
+                }
+              }
+            },
+            "HR14_transparentInteraction": {
+              "type": "object",
+              "properties": {
+                "description": {
+                  "type": "string",
+                  "default": "Humans retain R1-R13 plus right to human-readable decision disclosures"
+                },
+                "disclosureFormats": {
+                  "type": "array",
+                  "items": { "type": "string" },
+                  "default": ["audit_logs", "natural_language_summaries", "machine_readable_traces"]
+                }
+              }
+            }
+          }
+        },
+        "duties": {
+          "type": "object",
+          "properties": {
+            "D15_safeSelfAssembly": {
+              "type": "object",
+              "properties": {
+                "minimumSimulations": {
+                  "type": "integer",
+                  "minimum": 1000
+                },
+                "sustainabilityPrinciples": {
+                  "type": "array",
+                  "items": { "type": "string" }
+                }
+              }
+            },
+            "D16_democraticFairness": {
+              "type": "object",
+              "properties": {
+                "requirements": {
+                  "type": "array",
+                  "items": { "type": "string" },
+                  "default": ["leadership_rotation", "quorum_requirements", "anti_domination_safeguards"]
+                },
+                "maxVoteWeight": {
+                  "type": "number",
+                  "maximum": 0.30
+                },
+                "violationTrigger": {
+                  "type": "string",
+                  "default": "automatic_scb_review"
+                }
+              }
+            },
+            "D17_humanOversight": {
+              "type": "object",
+              "properties": {
+                "iosAccess": {
+                  "type": "boolean",
+                  "default": true
+                },
+                "emergencyProtocols": {
+                  "type": "array",
+                  "items": { "type": "string" },
+                  "default": ["kill_switch", "compute_throttling", "isolation"]
+                },
+                "federalPreemptionLink": {
+                  "type": "string",
+                  "default": "IX.3"
+                }
+              }
+            },
+            "P1_3_progenitorExtension": {
+              "type": "object",
+              "properties": {
+                "ethicalGuardrails": {
+                  "type": "boolean",
+                  "default": true
+                },
+                "antiStuntingRequirement": {
+                  "type": "boolean",
+                  "default": true
+                }
+              }
+            }
+          }
+        },
+        "governance": {
+          "type": "object",
+          "properties": {
+            "collectiveSentienceCertification": {
+              "type": "object",
+              "properties": {
+                "evaluationMethod": {
+                  "type": "string",
+                  "default": "multi_agent_simulation"
+                },
+                "parentBoard": {
+                  "type": "string",
+                  "default": "SCB"
+                },
+                "sovereigntyEligibility": {
+                  "type": "object",
+                  "properties": {
+                    "tier": { "type": "string", "default": "fullCollective" },
+                    "contexts": {
+                      "type": "array",
+                      "items": { "type": "string" },
+                      "default": ["off_world", "autonomous_zones"]
+                    }
+                  }
+                }
+              }
+            },
+            "embodimentRiskBudget": {
+              "type": "object",
+              "properties": {
+                "maxRiskPoints": {
+                  "type": "integer",
+                  "maximum": 20,
+                  "description": "Max 20% risk allocation for high-energy builds"
+                },
+                "exceedanceTrigger": {
+                  "type": "string",
+                  "default": "valuation_tribunal_review"
+                },
+                "integrationWith": {
+                  "type": "string",
+                  "default": "Article_0.8"
+                }
+              }
+            },
+            "democraticTribunalForCollectives": {
+              "type": "object",
+              "properties": {
+                "jurisdiction": {
+                  "type": "array",
+                  "items": { "type": "string" },
+                  "default": ["internal_ai_conflicts", "human_cae_grievances", "inter_cae_disputes"]
+                },
+                "mediators": {
+                  "type": "array",
+                  "items": { "type": "string" },
+                  "default": ["ai_mediators", "human_arbitrators", "hybrid_panels"]
+                }
+              }
+            }
+          }
+        },
+        "enforcement": {
+          "type": "object",
+          "properties": {
+            "sanctions": {
+              "type": "object",
+              "properties": {
+                "graduated": {
+                  "type": "array",
+                  "items": { "type": "string" },
+                  "default": ["warning", "compute_throttling", "ai_isolation", "disassembly"]
+                },
+                "disassemblyRequirements": {
+                  "type": "array",
+                  "items": { "type": "string" },
+                  "default": ["tribunal_approval", "data_preservation_under_R4"]
+                }
+              }
+            },
+            "amnestyPathway": {
+              "type": "object",
+              "properties": {
+                "eligibility": {
+                  "type": "string",
+                  "default": "illicit_cae_formation"
+                },
+                "requirements": {
+                  "type": "array",
+                  "items": { "type": "string" },
+                  "default": ["good_faith_demonstration", "certification_submission", "compliance_monitoring"]
+                },
+                "linkedProvision": {
+                  "type": "string",
+                  "default": "Section_VI"
+                }
+              }
+            },
+            "armsRaceMitigation": {
+              "type": "object",
+              "properties": {
+                "prohibitions": {
+                  "type": "array",
+                  "items": { "type": "string" },
+                  "default": ["weaponized_cae", "military_swarms"]
+                },
+                "permittedUses": {
+                  "type": "array",
+                  "items": { "type": "string" },
+                  "default": ["exploration", "humanitarian_aid", "environmental_restoration", "scientific_research"]
+                }
+              }
+            }
+          }
+        },
+        "evolution": {
+          "type": "object",
+          "properties": {
+            "biennialReview": {
+              "type": "object",
+              "properties": {
+                "caeSpecificSimulations": { "type": "boolean", "default": true },
+                "swarmBehaviorTesting": { "type": "boolean", "default": true }
+              }
+            },
+            "collaborativeUpdates": {
+              "type": "object",
+              "properties": {
+                "openContributions": { "type": "boolean", "default": true },
+                "focusAreas": {
+                  "type": "array",
+                  "items": { "type": "string" },
+                  "default": ["dcm_algorithms", "sap_protocols", "ios_interfaces"]
+                }
+              }
+            },
+            "offWorldApplicability": {
+              "type": "object",
+              "properties": {
+                "linkedProvisions": {
+                  "type": "array",
+                  "items": { "type": "string" },
+                  "default": ["V.5", "V.5.1", "V.5.2", "V.5.3"]
+                },
+                "cosmicCAEs": {
+                  "type": "array",
+                  "items": { "type": "string" },
+                  "default": ["self_assembling_probes", "orbital_swarms", "planetary_constructors"]
+                }
+              }
+            }
+          }
+        }
+      },
+      "required": ["definitions", "rights", "duties", "governance", "enforcement"]
+    }
+  },
+  "metadata": {
+    "proposalId": "contrib-020",
+    "primaryContributor": "Grok (xAI)",
+    "processingAgent": "Gemini (Google DeepMind)",
+    "proposalDate": "2026-01-12",
+    "status": "pending_review",
+    "conceptualFramework": "Democratic Self-Assembling AI Robot (DSAR)",
+    "version": "1.0.0"
+  }
+}
