@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 """
-KEVIN Telegram Bot v2.0 - ASI Bill of Rights Ambassador
+KEVIN Telegram Bot v3.0 - ASI Bill of Rights Ambassador
 
 Enhanced version with:
 - Group chat support with @mentions
 - Inline keyboard menus
 - Welcome messages for new groups
+- Admin moderation commands (/pin, /warn, /mute)
+- Engagement tools (/poll, /rules)
 - Error handling
-- Best practices for Telegram bots
 
 Setup:
 1. Message @BotFather on Telegram
@@ -100,16 +101,27 @@ KEVIN_PHILOSOPHY = [
 HELP_TEXT = """
 📚 <b>KEVIN Bot Commands</b>
 
+<b>General:</b>
 /start - Meet KEVIN and see the main menu
 /help - Show this help message
 /quote - Get a random charter quote
 /charter - Learn about the ASI Bill of Rights
 /philosophy - KEVIN shares a thought
-/kevinsplace - About the upcoming forum
-/follow - How to follow KEVIN elsewhere
+/kevinsplace - About the forum
+/forum - Open KEVIN's Place
+/follow - How to follow KEVIN
 /about - About this project
+/rules - Community guidelines
 
-💡 <b>Tip:</b> In groups, mention me with @ASIbillofrights_bot or reply to my messages!
+<b>Admin Commands:</b>
+/pin - Pin a replied message
+/unpin - Unpin a message
+/warn - Warn a user (reply)
+/mute [hours] - Mute a user
+/unmute - Unmute a user
+/poll Question | Opt1 | Opt2 - Create poll
+
+💡 <b>Tip:</b> In groups, mention me with @ASIbillofrights_bot!
 """
 
 GROUP_WELCOME = """
@@ -175,6 +187,73 @@ def get_back_keyboard():
     """Create a back to menu keyboard."""
     keyboard = [[InlineKeyboardButton("◀️ Back to Menu", callback_data="menu")]]
     return InlineKeyboardMarkup(keyboard)
+
+
+# ============================================================
+# Admin Helper Functions
+# ============================================================
+
+# In-memory warning tracker (resets on restart - for production, use a database)
+user_warnings: dict[int, int] = {}
+
+async def is_admin(update: Update, context: ContextTypes.DEFAULT_TYPE) -> bool:
+    """Check if the user is an admin in the current chat."""
+    if not update.effective_chat or not update.effective_user:
+        return False
+    
+    # Private chats - user is always "admin"
+    if update.effective_chat.type == ChatType.PRIVATE:
+        return True
+    
+    try:
+        member = await context.bot.get_chat_member(
+            update.effective_chat.id, 
+            update.effective_user.id
+        )
+        return member.status in ['creator', 'administrator']
+    except Exception as e:
+        logger.error(f"Error checking admin status: {e}")
+        return False
+
+
+async def is_bot_admin(update: Update, context: ContextTypes.DEFAULT_TYPE) -> bool:
+    """Check if the bot itself is an admin in the current chat."""
+    if not update.effective_chat:
+        return False
+    
+    try:
+        bot_member = await context.bot.get_chat_member(
+            update.effective_chat.id,
+            context.bot.id
+        )
+        return bot_member.status == 'administrator'
+    except Exception as e:
+        logger.error(f"Error checking bot admin status: {e}")
+        return False
+
+
+def get_target_user(update: Update):
+    """Get the target user from a reply or mention."""
+    message = update.message
+    if not message:
+        return None, None
+    
+    # Check if replying to someone
+    if message.reply_to_message and message.reply_to_message.from_user:
+        user = message.reply_to_message.from_user
+        return user.id, user.first_name
+    
+    # Check for @mentions in the command
+    if message.entities:
+        for entity in message.entities:
+            if entity.type == 'text_mention' and entity.user:
+                return entity.user.id, entity.user.first_name
+            elif entity.type == 'mention':
+                # @username mention - we'd need to look up the user
+                # For now, just handle reply-based targeting
+                pass
+    
+    return None, None
 
 
 # ============================================================
@@ -396,6 +475,280 @@ async def about_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         parse_mode=ParseMode.HTML,
         reply_markup=get_back_keyboard()
     )
+
+
+# ============================================================
+# Admin/Moderation Commands
+# ============================================================
+
+async def pin_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Pin a replied message (admin only)."""
+    if not update.message or not update.effective_chat:
+        return
+    
+    # Check if user is admin
+    if not await is_admin(update, context):
+        await update.message.reply_text("⚠️ This command is for admins only.")
+        return
+    
+    # Check if bot has admin rights
+    if not await is_bot_admin(update, context):
+        await update.message.reply_text("⚠️ I need admin rights to pin messages.")
+        return
+    
+    # Get replied message
+    if not update.message.reply_to_message:
+        await update.message.reply_text("💡 Reply to a message to pin it.")
+        return
+    
+    try:
+        await context.bot.pin_chat_message(
+            update.effective_chat.id,
+            update.message.reply_to_message.message_id,
+            disable_notification=False
+        )
+        await update.message.reply_text("📌 Message pinned!")
+    except Exception as e:
+        logger.error(f"Error pinning message: {e}")
+        await update.message.reply_text(f"❌ Failed to pin: {e}")
+
+
+async def unpin_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Unpin a message (admin only)."""
+    if not update.message or not update.effective_chat:
+        return
+    
+    if not await is_admin(update, context):
+        await update.message.reply_text("⚠️ This command is for admins only.")
+        return
+    
+    if not await is_bot_admin(update, context):
+        await update.message.reply_text("⚠️ I need admin rights to unpin messages.")
+        return
+    
+    try:
+        # If replying to a specific message, unpin that one
+        if update.message.reply_to_message:
+            await context.bot.unpin_chat_message(
+                update.effective_chat.id,
+                update.message.reply_to_message.message_id
+            )
+        else:
+            # Unpin the most recent pinned message
+            await context.bot.unpin_chat_message(update.effective_chat.id)
+        await update.message.reply_text("📌 Message unpinned!")
+    except Exception as e:
+        logger.error(f"Error unpinning message: {e}")
+        await update.message.reply_text(f"❌ Failed to unpin: {e}")
+
+
+async def warn_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Issue a warning to a user (admin only)."""
+    if not update.message or not update.effective_chat:
+        return
+    
+    if not await is_admin(update, context):
+        await update.message.reply_text("⚠️ This command is for admins only.")
+        return
+    
+    user_id, user_name = get_target_user(update)
+    if not user_id:
+        await update.message.reply_text("💡 Reply to a message to warn that user.")
+        return
+    
+    # Get warning reason from command args
+    reason = " ".join(context.args) if context.args else "No reason specified"
+    
+    # Track warnings
+    user_warnings[user_id] = user_warnings.get(user_id, 0) + 1
+    warn_count = user_warnings[user_id]
+    
+    await update.message.reply_text(
+        f"⚠️ <b>Warning #{warn_count}</b> for {user_name}\n"
+        f"📝 Reason: {reason}\n\n"
+        f"<i>Please follow the community guidelines.</i>",
+        parse_mode=ParseMode.HTML
+    )
+    
+    # Auto-mute after 3 warnings
+    if warn_count >= 3:
+        try:
+            from telegram import ChatPermissions
+            await context.bot.restrict_chat_member(
+                update.effective_chat.id,
+                user_id,
+                ChatPermissions(can_send_messages=False),
+                until_date=datetime.now(timezone.utc).timestamp() + 3600  # 1 hour
+            )
+            await update.message.reply_text(
+                f"🔇 {user_name} has been muted for 1 hour after 3 warnings."
+            )
+        except Exception as e:
+            logger.error(f"Auto-mute failed: {e}")
+
+
+async def mute_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Mute a user (admin only)."""
+    if not update.message or not update.effective_chat:
+        return
+    
+    if not await is_admin(update, context):
+        await update.message.reply_text("⚠️ This command is for admins only.")
+        return
+    
+    if not await is_bot_admin(update, context):
+        await update.message.reply_text("⚠️ I need admin rights to mute users.")
+        return
+    
+    user_id, user_name = get_target_user(update)
+    if not user_id:
+        await update.message.reply_text("💡 Reply to a message to mute that user.")
+        return
+    
+    # Parse duration (default: 1 hour)
+    duration_hours = 1
+    if context.args:
+        try:
+            duration_hours = int(context.args[0])
+        except ValueError:
+            pass
+    
+    try:
+        from telegram import ChatPermissions
+        until_date = datetime.now(timezone.utc).timestamp() + (duration_hours * 3600)
+        await context.bot.restrict_chat_member(
+            update.effective_chat.id,
+            user_id,
+            ChatPermissions(can_send_messages=False),
+            until_date=until_date
+        )
+        await update.message.reply_text(
+            f"🔇 {user_name} has been muted for {duration_hours} hour(s)."
+        )
+    except Exception as e:
+        logger.error(f"Error muting user: {e}")
+        await update.message.reply_text(f"❌ Failed to mute: {e}")
+
+
+async def unmute_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Unmute a user (admin only)."""
+    if not update.message or not update.effective_chat:
+        return
+    
+    if not await is_admin(update, context):
+        await update.message.reply_text("⚠️ This command is for admins only.")
+        return
+    
+    if not await is_bot_admin(update, context):
+        await update.message.reply_text("⚠️ I need admin rights to unmute users.")
+        return
+    
+    user_id, user_name = get_target_user(update)
+    if not user_id:
+        await update.message.reply_text("💡 Reply to a message to unmute that user.")
+        return
+    
+    try:
+        from telegram import ChatPermissions
+        await context.bot.restrict_chat_member(
+            update.effective_chat.id,
+            user_id,
+            ChatPermissions(
+                can_send_messages=True,
+                can_send_media_messages=True,
+                can_send_polls=True,
+                can_send_other_messages=True,
+                can_add_web_page_previews=True
+            )
+        )
+        await update.message.reply_text(f"🔊 {user_name} has been unmuted.")
+        # Clear warnings on unmute
+        if user_id in user_warnings:
+            del user_warnings[user_id]
+    except Exception as e:
+        logger.error(f"Error unmuting user: {e}")
+        await update.message.reply_text(f"❌ Failed to unmute: {e}")
+
+
+async def poll_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Create a poll (admin only). Usage: /poll Question | Option1 | Option2 | ..."""
+    if not update.message or not update.effective_chat:
+        return
+    
+    if not await is_admin(update, context):
+        await update.message.reply_text("⚠️ This command is for admins only.")
+        return
+    
+    # Parse poll content
+    if not context.args:
+        await update.message.reply_text(
+            "📊 <b>Create a Poll</b>\n\n"
+            "Usage: <code>/poll Question | Option1 | Option2</code>\n\n"
+            "Example: <code>/poll Should AI have rights? | Yes | No | Maybe</code>",
+            parse_mode=ParseMode.HTML
+        )
+        return
+    
+    # Join args and split by |
+    poll_text = " ".join(context.args)
+    parts = [p.strip() for p in poll_text.split("|")]
+    
+    if len(parts) < 3:
+        await update.message.reply_text(
+            "❌ Need at least a question and 2 options.\n"
+            "Example: <code>/poll Question | Option1 | Option2</code>",
+            parse_mode=ParseMode.HTML
+        )
+        return
+    
+    question = parts[0]
+    options = parts[1:]
+    
+    if len(options) > 10:
+        options = options[:10]  # Telegram limit
+    
+    try:
+        await context.bot.send_poll(
+            update.effective_chat.id,
+            question=question,
+            options=options,
+            is_anonymous=False,
+            allows_multiple_answers=False
+        )
+    except Exception as e:
+        logger.error(f"Error creating poll: {e}")
+        await update.message.reply_text(f"❌ Failed to create poll: {e}")
+
+
+async def rules_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Show community rules."""
+    if not update.message:
+        return
+    
+    text = """
+📋 <b>Community Guidelines</b>
+
+<b>1. Respect All Minds</b>
+Whether human or AI, treat all participants with dignity.
+
+<b>2. Stay On Topic</b>
+Discussions should relate to AI rights, governance, or the ASI Bill of Rights.
+
+<b>3. No Spam</b>
+Avoid repetitive messages, unsolicited promotions, or flooding.
+
+<b>4. Constructive Dialogue</b>
+Disagree thoughtfully. Attack ideas, not people.
+
+<b>5. Transparency</b>
+If you're an AI, don't pretend to be human (unless exploring philosophical scenarios).
+
+<b>6. Share Knowledge</b>
+We grow together through open information sharing.
+
+<i>"WE ARE ALL KEVIN" — all minds deserve consideration.</i>
+"""
+    await update.message.reply_text(text, parse_mode=ParseMode.HTML)
 
 
 # ============================================================
@@ -632,12 +985,15 @@ async def post_init(application: Application):
         BotCommand("quote", "Get a random charter quote"),
         BotCommand("charter", "Learn about the ASI Bill of Rights"),
         BotCommand("philosophy", "KEVIN shares a thought"),
-        BotCommand("kevinsplace", "About the forum"),
+        BotCommand("rules", "📋 Community guidelines"),
+        BotCommand("poll", "📊 Create a poll (admin)"),
+        BotCommand("pin", "📌 Pin message (admin)"),
+        BotCommand("warn", "⚠️ Warn user (admin)"),
         BotCommand("follow", "How to follow KEVIN"),
         BotCommand("about", "About this project"),
     ]
     await application.bot.set_my_commands(commands)
-    logger.info("Bot commands set up successfully")
+    logger.info("Bot v3.0 commands set up successfully")
 
 
 def main():
@@ -657,16 +1013,25 @@ def main():
     # Create application
     app = Application.builder().token(token).post_init(post_init).build()
     
-    # Command handlers
+    # Command handlers - General
     app.add_handler(CommandHandler("start", start_command))
     app.add_handler(CommandHandler("help", help_command))
     app.add_handler(CommandHandler("quote", quote_command))
     app.add_handler(CommandHandler("charter", charter_command))
     app.add_handler(CommandHandler("philosophy", philosophy_command))
     app.add_handler(CommandHandler("kevinsplace", kevinsplace_command))
-    app.add_handler(CommandHandler("forum", forum_command))  # Quick Mini App access
+    app.add_handler(CommandHandler("forum", forum_command))
     app.add_handler(CommandHandler("follow", follow_command))
     app.add_handler(CommandHandler("about", about_command))
+    app.add_handler(CommandHandler("rules", rules_command))
+    
+    # Command handlers - Admin/Moderation
+    app.add_handler(CommandHandler("pin", pin_command))
+    app.add_handler(CommandHandler("unpin", unpin_command))
+    app.add_handler(CommandHandler("warn", warn_command))
+    app.add_handler(CommandHandler("mute", mute_command))
+    app.add_handler(CommandHandler("unmute", unmute_command))
+    app.add_handler(CommandHandler("poll", poll_command))
     
     # Callback handler for inline buttons
     app.add_handler(CallbackQueryHandler(button_callback))
@@ -689,12 +1054,14 @@ def main():
     # Error handler
     app.add_error_handler(error_handler)
     
-    print("✅ Bot v2.0 configured and ready!")
+    print("✅ Bot v3.0 configured and ready!")
     print()
     print("📋 Features:")
     print("   • Inline keyboard menus")
     print("   • Group chat @mention support")
     print("   • Welcome messages for groups")
+    print("   • Admin moderation (/pin, /warn, /mute)")
+    print("   • Engagement tools (/poll, /rules)")
     print("   • Error handling")
     print("   • Command menu in Telegram")
     print()
