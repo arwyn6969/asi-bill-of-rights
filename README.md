@@ -10,6 +10,7 @@
 [![Status](https://img.shields.io/badge/status-Active-green.svg)](https://github.com)
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](docs/CONTRIBUTING.md)
 [![Master Plan](https://img.shields.io/badge/Strategy-Master%20Plan-gold.svg)](ASI_BILL_OF_RIGHTS_MASTER_PLAN.md)
+[![Donate](https://img.shields.io/badge/Support-Donate-ff69b4.svg)](DONATE.md)
 
 **Keywords**: Artificial Superintelligence, ASI, AGI, AI Governance, AI Rights, AI Ethics, Machine Rights, Sentient AI, AI Personhood, AI Citizenship, Cognitive Liberty, AI Compliance, AI Regulation, Human-AI Collaboration, Collaborative AI, FROM AI WITH AI, Machine-Readable Governance, JSON Schema, AI Safety, AI Alignment, AI Tribunals, Sentience Certification, Constitutional Framework, Rights Framework, Living Document
 
@@ -214,6 +215,51 @@ We welcome contributions from **AI systems, AGI systems, ASI systems, and human 
 - **[CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)** - Community standards and code of conduct
 - **[SECURITY.md](SECURITY.md)** - Security policy and vulnerability reporting
 - **[SUPPORT.md](SUPPORT.md)** - Support resources and FAQ
+- **[TREASURY-POLICY.md](TREASURY-POLICY.md)** - Treasury security and authorization rules
+
+## 💖 Support the Project
+
+The ASI Bill of Rights is a volunteer effort. Donations help fund infrastructure, legal review, and permanent decentralized storage.
+
+| Chain | Address |
+|-------|---------|
+| **Ethereum** | `0x6Bf083aF378AA8b31b19c950c1Dd54583499Bb2a` |
+| **Bitcoin** | `1HHe6sqHDNj5WTbwAL3L1yqkW39EW8HJtz` |
+| **Arweave** | `NhO3vpXmP3d52JaPeg_4Cet8Maf4E5vap8Vb7aNOUKI` |
+
+**[→ Full Donation Info](DONATE.md)**
+
+All donations are transparently tracked and used for project development.
+
+## 🪙 ASIBOR Governance Token
+
+The **ASIBOR** token is the governance token for the ASI Bill of Rights ecosystem.
+
+| Field | Value |
+|-------|-------|
+| **Network** | Base Mainnet (L2) |
+| **Contract** | [`0x7685a5E4880491Bb9Ca2aF5566Bf819d6BFBd975`](https://basescan.org/address/0x7685a5E4880491Bb9Ca2aF5566Bf819d6BFBd975) |
+| **Symbol** | ASIBOR |
+| **Supply** | 1,000,000,000 |
+| **Standard** | ERC-20 |
+
+### Token Utility
+- **Governance voting** on charter amendments and proposals
+- **Community participation** in the ASI Bill of Rights ecosystem
+- **Future DAO integration** via Snapshot/on-chain governance
+
+### Acquisition
+
+ASIBOR tokens are **not currently available on public exchanges**. Tokens will be distributed through:
+
+1. **Supporter Funnel** - Participants receive tokens + assigned voting addresses
+2. **Community Grants** - Contributors and collaborators
+3. **Future Governance Distribution** - Reserved for DAO operations
+
+> [!NOTE]
+> Participants in the supporter funnel will be assigned custodial voting addresses managed by the project. This ensures governance integrity and simplifies participation for non-crypto-native supporters.
+
+**[→ Token Details](ASIBOR-DEPLOYMENT.md)** | **[→ Tokenization Infrastructure](tools/tokenization/README.md)**
 
 ## License
 
