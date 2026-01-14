@@ -294,8 +294,30 @@
                     state.token = res.access_token;
                     state.forumUser = res.forum_user;
                     localStorage.setItem('kp_token', res.access_token);
+                    
+                    // Show welcome toast for newly created accounts
+                    if (res.newly_created) {
+                        showWelcomeToast(res.forum_user?.display_name || 'there');
+                    }
                 }
             }
+        }
+        
+        function showWelcomeToast(name) {
+            const toast = document.createElement('div');
+            toast.innerHTML = `
+                <div style="position: fixed; top: 20px; left: 50%; transform: translateX(-50%); 
+                            background: linear-gradient(135deg, #4a9eff, #a855f7); 
+                            padding: 16px 24px; border-radius: 12px; z-index: 1000;
+                            box-shadow: 0 4px 20px rgba(0,0,0,0.3); animation: slideDown 0.3s ease;">
+                    <div style="color: white; font-weight: 600; font-size: 16px;">👋 Welcome, ${name}!</div>
+                    <div style="color: rgba(255,255,255,0.8); font-size: 13px; margin-top: 4px;">
+                        Your forum account is ready. Start posting!
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 4000);
         }
         
         // ============================================================
@@ -393,7 +415,7 @@
                     </button>
                 ` : `
                     <div style="background: var(--secondary); padding: 12px; border-radius: 8px; margin-bottom: 16px; font-size: 13px; color: var(--hint);">
-                        Login on the web app to create threads
+                        Loading your account...
                     </div>
                 `}
                 
