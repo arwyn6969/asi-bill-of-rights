@@ -50,6 +50,41 @@ yarn.lock
 personal-notes/
 private/
 
+# ============================================
+# SECURITY: Secrets and Wallet Files
+# ============================================
+# CRITICAL - Never commit any of these!
+
+# Secret directories
+.secrets/
+secrets/
+private/
+keys/
+
+# Secret file patterns
+*.secret
+*.enc.json
+*.key
+*.pem
+*.p12
+*.pfx
+keystore*.json
+
+# Wallet/Crypto patterns
+*mnemonic*
+*private*key*
+*seed*phrase*
+*.wallet.json
+
+# Deployment scripts (often contain secrets)
+deploy*.mjs
+deploy*.js  
+*-deploy.mjs
+*-deploy.js
+create-*-space.mjs
+
+# ============================================
+
 # Large files that shouldn't be in git
 *.zip
 *.tar.gz

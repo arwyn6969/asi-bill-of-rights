@@ -1,0 +1,19 @@
+{
+  "token": {
+    "tick": "ASIBOR",
+    "max": "1000000000",
+    "lim": "1000",
+    "dec": "8"
+  },
+  "network": "mainnet",
+  "api": {
+    "baseUrl": "https://stampchain.io/api/v2",
+    "docsUrl": "https://stampchain.io/docs"
+  },
+  "deployment": {
+    "status": "pending",
+    "txid": null,
+    "block": null,
+    "stampId": null
+  }
+}

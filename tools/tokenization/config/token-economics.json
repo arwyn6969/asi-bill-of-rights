@@ -1,0 +1,111 @@
+{
+  "token": {
+    "name": "ASI Bill of Rights",
+    "symbol": "ASIBOR",
+    "decimals": 8,
+    "maxSupply": 1000000000
+  },
+  "distribution": {
+    "daoTreasury": {
+      "percentage": 40,
+      "description": "Governance-controlled funds for project development"
+    },
+    "liquidityProvision": {
+      "percentage": 25,
+      "description": "DEX pools on each chain"
+    },
+    "contributors": {
+      "percentage": 20,
+      "description": "Historical and ongoing contributors"
+    },
+    "aiAgents": {
+      "percentage": 10,
+      "description": "Agent-controlled treasury for autonomous operations"
+    },
+    "reserve": {
+      "percentage": 5,
+      "description": "Emergency and future use"
+    }
+  },
+  "chains": {
+    "bitcoinStamps": {
+      "enabled": true,
+      "priority": 1,
+      "standard": "SRC-20",
+      "config": {
+        "tick": "ASIBOR",
+        "lim": 1000
+      }
+    },
+    "ethereum": {
+      "enabled": true,
+      "priority": 1,
+      "standard": "ERC-20",
+      "networks": {
+        "mainnet": {
+          "chainId": 1,
+          "deployed": false
+        },
+        "sepolia": {
+          "chainId": 11155111,
+          "deployed": false
+        }
+      }
+    },
+    "arweave": {
+      "enabled": true,
+      "priority": 2,
+      "standard": "Atomic Token"
+    },
+    "base": {
+      "enabled": true,
+      "priority": 2,
+      "standard": "ERC-20",
+      "networks": {
+        "mainnet": {
+          "chainId": 8453,
+          "deployed": false
+        }
+      }
+    },
+    "arbitrum": {
+      "enabled": true,
+      "priority": 2,
+      "standard": "ERC-20"
+    },
+    "solana": {
+      "enabled": true,
+      "priority": 2,
+      "standard": "SPL Token"
+    },
+    "polygon": {
+      "enabled": true,
+      "priority": 3,
+      "standard": "ERC-20"
+    }
+  },
+  "governance": {
+    "quorum": {
+      "charterAmendment": {
+        "percentage": 20,
+        "threshold": 66
+      },
+      "treasurySpend": {
+        "percentage": 10,
+        "threshold": 50
+      },
+      "emergencyAction": {
+        "percentage": 5,
+        "threshold": 75
+      },
+      "agentCertification": {
+        "percentage": 5,
+        "threshold": 50
+      }
+    },
+    "votingPeriod": {
+      "standard": "7 days",
+      "emergency": "24 hours"
+    }
+  }
+}

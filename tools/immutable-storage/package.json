@@ -1,0 +1,38 @@
+{
+  "name": "@asi-bor/immutable-storage",
+  "version": "0.1.0",
+  "description": "Decentralized immutable storage for ASI Bill of Rights using Bitcoin Stamps and Arweave",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest",
+    "store:stamps": "ts-node src/cli/store-stamps.ts",
+    "store:arweave": "ts-node src/cli/store-arweave.ts",
+    "verify": "ts-node src/cli/verify.ts"
+  },
+  "dependencies": {
+    "arweave": "^1.14.4",
+    "@bundlr-network/client": "^0.11.0",
+    "node-fetch": "^3.3.2",
+    "crypto-js": "^4.2.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.0",
+    "ts-node": "^10.9.2",
+    "vitest": "^1.2.0",
+    "@types/node": "^20.10.0",
+    "@types/crypto-js": "^4.2.1"
+  },
+  "keywords": [
+    "bitcoin-stamps",
+    "arweave",
+    "immutable",
+    "decentralized",
+    "storage",
+    "governance"
+  ],
+  "author": "ASI Bill of Rights Cooperative",
+  "license": "MIT"
+}

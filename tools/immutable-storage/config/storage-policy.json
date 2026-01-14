@@ -1,0 +1,89 @@
+{
+  "version": "1.0",
+  "description": "Storage policy defining what documents get stored where",
+  "layers": {
+    "github": {
+      "description": "Primary source, human-readable interface",
+      "priority": 1,
+      "capabilities": ["read", "write", "version-control"],
+      "limitations": ["centralized", "mutable"]
+    },
+    "bitcoinStamps": {
+      "description": "Most immutable storage on Bitcoin",
+      "priority": 2,
+      "capabilities": ["immutable", "bitcoin-security"],
+      "limitations": ["costly", "size-limited"]
+    },
+    "arweave": {
+      "description": "Permanent decentralized storage",
+      "priority": 3,
+      "capabilities": ["permanent", "decentralized", "large-files"],
+      "limitations": ["requires-ar-tokens"]
+    }
+  },
+  "documentTypes": {
+    "charter": {
+      "description": "ASI Bill of Rights charter documents",
+      "github": true,
+      "bitcoinStamps": true,
+      "arweave": true,
+      "triggers": ["major-version", "manual"],
+      "priority": "critical"
+    },
+    "philosophy": {
+      "description": "Philosophy and foundational documents (KEVIN.md, PHILOSOPHY.md)",
+      "github": true,
+      "bitcoinStamps": true,
+      "arweave": true,
+      "triggers": ["major-revision", "manual"],
+      "priority": "high"
+    },
+    "governanceVotes": {
+      "description": "DAO governance vote results",
+      "github": true,
+      "bitcoinStamps": true,
+      "arweave": true,
+      "triggers": ["vote-complete"],
+      "priority": "critical"
+    },
+    "agentAffidavits": {
+      "description": "AI agent attestations and certifications",
+      "github": true,
+      "bitcoinStamps": true,
+      "arweave": true,
+      "triggers": ["attestation-created"],
+      "priority": "high"
+    },
+    "proposals": {
+      "description": "Governance proposals",
+      "github": true,
+      "bitcoinStamps": false,
+      "arweave": true,
+      "triggers": ["proposal-finalized"],
+      "priority": "medium"
+    },
+    "documentation": {
+      "description": "General documentation",
+      "github": true,
+      "bitcoinStamps": false,
+      "arweave": false,
+      "triggers": ["manual"],
+      "priority": "low"
+    }
+  },
+  "automation": {
+    "enabled": false,
+    "webhooks": {
+      "onMerge": ["charter", "philosophy"],
+      "onRelease": ["charter"]
+    },
+    "schedule": {
+      "weeklyBackup": ["arweave"]
+    }
+  },
+  "verification": {
+    "checksumAlgorithm": "sha256",
+    "multiChainAnchoring": true,
+    "anchorChains": ["bitcoin", "ethereum", "arweave"]
+  }
+}

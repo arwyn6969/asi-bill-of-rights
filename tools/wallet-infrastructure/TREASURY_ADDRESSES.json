@@ -1,0 +1,34 @@
+{
+  "version": "1.1",
+  "createdAt": "2026-01-14T04:09:17.100Z",
+  "project": "Sentience Foundation",
+  "purpose": "Treasury Addresses",
+  "note": "Derived from same seed as ASIBOR deployer",
+  "addresses": {
+    "ethereum": {
+      "address": "0x6Bf083aF378AA8b31b19c950c1Dd54583499Bb2a",
+      "chain": "Base Mainnet (Chain ID: 8453)",
+      "assets": [
+        "ETH",
+        "USDC",
+        "ASIBOR"
+      ],
+      "derivationPath": "m/44'/60'/0'/0/0"
+    },
+    "bitcoin": {
+      "address": "bc1q50yr5qrypjd8w2x8htuagwmy0zefnll04pcc4c",
+      "network": "Bitcoin Mainnet",
+      "format": "Native SegWit (bc1q...)",
+      "derivationPath": "m/84'/0'/0'/0/0"
+    },
+    "solana": {
+      "address": "BM8ZKwdKaf7vgMeQidsdmLKreySGRuZc9h4Fpw4w9Uz8",
+      "network": "Solana Mainnet",
+      "assets": [
+        "SOL",
+        "USDC"
+      ],
+      "derivationPath": "m/44'/501'/0'/0'"
+    }
+  }
+}
