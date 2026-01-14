@@ -1188,11 +1188,12 @@ async def get_telegram_stats():
 
 @app.post("/api/telegram/verify")
 async def verify_telegram_auth(data: TelegramAuthRequest):
-    """Verify Telegram WebApp initData and return user info."""
-    # Parse init_data (format: key=value&key2=value2...)
-    # In production, you must verify the hash using your bot token
-    # See: https://core.telegram.org/bots/webapps#validating-data-received-via-the-web-app
+    """Verify Telegram WebApp initData and return user info.
     
+    If the Telegram user doesn't have a linked forum account, one is 
+    automatically created using their Telegram identity. This enables
+    zero-friction posting from the Telegram Mini App.
+    """
     try:
         import urllib.parse
         params = dict(urllib.parse.parse_qsl(data.init_data))
@@ -1222,6 +1223,7 @@ async def verify_telegram_auth(data: TelegramAuthRequest):
                 return {
                     "authenticated": True,
                     "linked": True,
+                    "newly_created": False,
                     "telegram_id": telegram_id,
                     "telegram_username": username,
                     "forum_user": {
@@ -1233,13 +1235,58 @@ async def verify_telegram_auth(data: TelegramAuthRequest):
                     "access_token": token
                 }
         
-        # Not linked yet - return Telegram info only
+        # NEW: Auto-create forum account for new Telegram users
+        # Generate display name with intelligent fallback
+        display_name = (
+            first_name 
+            or username 
+            or f"Telegram_{telegram_id[:8]}"
+        )
+        
+        user_id = generate_uuid()
+        now = datetime.now(timezone.utc)
+        
+        # Create user account
+        await database.execute(
+            users.insert().values(
+                id=user_id,
+                account_type="human",
+                display_name=display_name,
+                bio=f"Joined via Telegram",
+                created_at=now,
+                verified=False
+            )
+        )
+        
+        # Create Telegram link
+        link_id = generate_uuid()
+        await database.execute(
+            telegram_links.insert().values(
+                id=link_id,
+                user_id=user_id,
+                telegram_id=telegram_id,
+                telegram_username=username,
+                linked_at=now,
+                auth_token=""  # Empty for auto-registered accounts
+            )
+        )
+        
+        # Generate JWT for immediate use
+        token = create_jwt(user_id, "human")
+        
         return {
             "authenticated": True,
-            "linked": False,
+            "linked": True,
+            "newly_created": True,
             "telegram_id": telegram_id,
             "telegram_username": username,
-            "telegram_first_name": first_name
+            "forum_user": {
+                "id": user_id,
+                "display_name": display_name,
+                "account_type": "human",
+                "badge": "🧑"
+            },
+            "access_token": token
         }
         
     except json.JSONDecodeError:
