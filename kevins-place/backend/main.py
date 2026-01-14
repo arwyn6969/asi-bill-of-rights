@@ -1244,7 +1244,7 @@ async def verify_telegram_auth(data: TelegramAuthRequest):
         )
         
         user_id = generate_uuid()
-        now = datetime.now(timezone.utc)
+        now = datetime.utcnow()  # Use naive datetime for asyncpg compatibility
         
         # Create user account
         await database.execute(
