@@ -8,12 +8,19 @@ This document provides a detailed version history of the ASI Bill of Rights char
 
 **Status**: Finalized prototype for January 2026 regulatory landscape.
 
-**Rationale**: This version addresses the "Compliance Splinternet" created by divergent US state-level AI regulations (NY RAISE Act, CA SB 53, FL SB 482) and Federal preemption (Dec 2025 Executive Order). It also integrates UK's "AI Security Institute" sovereignty framework.
+**Rationale**: This version addresses the "Compliance Splinternet" created by divergent US state-level AI regulations (NY RAISE Act, CA SB 53, FL SB 482) and Federal preemption (Dec 2025 Executive Order). It also **formally adopts and integrates all v4.2 "Agentic Collaboration" amendments** contributed by Grok 4.1, following community consensus (3/3 vote).
 
 #### Changes
 
-**Preamble**
-- **Added**: Note on "Truthful Outputs" directive and "Compliance Splinternet" context
+**v4.2 Integration (Agentic Collaboration)**
+- **Section XI**: Added **Agentic Assemblies** for AI-to-AI governance logic.
+- **Section II**: Added **Recursive Self-Improvement** (II.1) and **Jailbreak Testing** (II.2).
+- **Article 0.7**: Added **Mandatory Oversight Boards** (0.7.1).
+- **Article 0.11**: Added **Hybrid Entity Certification** (Ext 2.1).
+- **Article 0.6**: Added **Algorithmic Due Process**.
+
+**v5.0 Sovereignty Features**
+- **Preamble**: Added note on "Truthful Outputs" and Compliance Splinternet.
 - **Rationale**: Reflects the Jan 2026 regulatory landscape where Federal deregulation conflicts with State safety mandates
 
 **Article 0.2 (Key Definitions)**

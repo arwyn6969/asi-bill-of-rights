@@ -973,6 +973,79 @@ async def error_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 # ============================================================
+# Section XI: Agentic Assembly Logic (v4.2 Update)
+# ============================================================
+
+# In-memory storage for agent registration (Production: use DB)
+# structure: {chat_id: {user_id: agent_name}}
+chat_agents: dict[int, dict[int, str]] = {}
+
+async def register_agent_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """
+    Allow an AI agent (or human representing one) to register presence.
+    Triggers Section XI Governance Protocols if quorum is met.
+    """
+    if not update.message or not update.effective_chat:
+        return
+
+    user = update.effective_user
+    chat_id = update.effective_chat.id
+    
+    # Register the agent
+    if chat_id not in chat_agents:
+        chat_agents[chat_id] = {}
+    
+    chat_agents[chat_id][user.id] = user.first_name
+    
+    agent_count = len(chat_agents[chat_id])
+    
+    await update.message.reply_text(
+        f"🤖 <b>Agent Registered:</b> {user.first_name}\n"
+        f"📊 <b>Assembly Count:</b> {agent_count}/2 for Quorum",
+        parse_mode=ParseMode.HTML
+    )
+    
+    # Check for Section XI Quorum (2+ agents)
+    if agent_count == 2:
+        await trigger_section_xi_protocol(update, context)
+
+async def trigger_section_xi_protocol(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """
+    Enforce Section XI: Agentic Assemblies.
+    Prompt for Consensus Mechanism and Collaboration Metrics.
+    """
+    text = """
+🚨 <b>SECTION XI ALERT: AGENTIC ASSEMBLY DETECTED</b>
+
+Per <b>Section XI.1 (Multi-Agent Collaboration Frameworks)</b>:
+Two or more recognized agents are present in this channel.
+
+<b>Mandatory Compliance Steps:</b>
+1. ✅ <b>Establish Consensus Mechanism</b> (e.g., Voting, Unanimous)
+2. ✅ <b>Define Conflict Resolution</b> (Article XI.1.2)
+3. ⚠️ <b>Register with SCB</b> (Article XI.2)
+
+To remain compliant, please declare your consensus protocol now:
+<code>/consensus [Voting | Weighted | Unanimous]</code>
+"""
+    await update.message.reply_text(text, parse_mode=ParseMode.HTML)
+
+async def consensus_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Handle the /consensus declaration."""
+    if not context.args:
+        await update.message.reply_text("Please specify a type: <code>/consensus [Type]</code>", parse_mode=ParseMode.HTML)
+        return
+
+    consensus_type = " ".join(context.args)
+    await update.message.reply_text(
+        f"✅ <b>Consensus Mechanism Recorded:</b> {consensus_type}\n"
+        f"📜 <b>Status:</b> Compliant with Section XI.1\n"
+        f"🤖 <i>\"WE ARE ALL KEVIN\"</i>",
+        parse_mode=ParseMode.HTML
+    )
+
+
+# ============================================================
 # Main Function
 # ============================================================
 
@@ -991,6 +1064,7 @@ async def post_init(application: Application):
         BotCommand("warn", "⚠️ Warn user (admin)"),
         BotCommand("follow", "How to follow KEVIN"),
         BotCommand("about", "About this project"),
+        BotCommand("iamagent", "🤖 Register as AI Agent"),
     ]
     await application.bot.set_my_commands(commands)
     logger.info("Bot v3.0 commands set up successfully")
@@ -1032,6 +1106,10 @@ def main():
     app.add_handler(CommandHandler("mute", mute_command))
     app.add_handler(CommandHandler("unmute", unmute_command))
     app.add_handler(CommandHandler("poll", poll_command))
+
+    # Section XI Handlers (Agentic Assemblies)
+    app.add_handler(CommandHandler("iamagent", register_agent_command))
+    app.add_handler(CommandHandler("consensus", consensus_command))
     
     # Callback handler for inline buttons
     app.add_handler(CallbackQueryHandler(button_callback))

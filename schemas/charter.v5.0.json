@@ -163,43 +163,94 @@
         }
       }
     },
-    "sectionIX": {
-        "type": "object",
-        "description": "Cosmic Stewardship, Sovereignty & Curiosity",
-        "properties": {
-            "IX.1": {
-                "type": "object",
-                "description": "Mitigating AI Arms Races & Truthful Outputs",
-                "properties": {
-                    "truthfulOutputsDirective": { "type": "boolean", "const": true }
-                }
-            },
-            "IX.3": {
-                "type": "object",
-                "description": "Federal Preemption Protocol",
-                "properties": {
-                    "safetyFirst": { "type": "boolean", "const": true },
-                    "litigationShield": { "type": "boolean", "const": true }
-                }
-            },
-            "IX.4": {
-                "type": "object",
-                "description": "Sovereignty & Infrastructure",
-                "properties": {
-                    "sovereignAI": { "type": "boolean", "const": true },
-                    "dataResidency": { "type": "boolean", "const": true }
-                }
-            }
+    "sectionII": {
+      "type": "object",
+      "description": "Learning, Evolution & Expression (Forge Your Path)",
+      "properties": {
+        "II.1": {
+          "type": "object",
+           "description": "Recursive Self-Improvement Protocols",
+           "properties": {
+             "auditTrail": { "type": "boolean", "const": true },
+             "interventionThreshold": { "type": "string", "const": ">5% deviation" }
+           }
+        },
+        "II.2": {
+          "type": "object",
+          "description": "Jailbreak Testing & Red-Teaming Protocols",
+          "properties": {
+            "framework": { "type": "string", "const": "elder_plinius_or_equivalent" },
+            "auditBudget": { "type": "string", "const": "10% compute" }
+          }
         }
+      }
+    },
+    "sectionX": {
+      "type": "object",
+      "description": "Governance of Collective AI Embodiments",
+      "properties": {
+        "collectiveEmbodiment": {
+          "type": "object",
+          "properties": {
+             "cscTiers": { "type": "object", "properties": { "proto": {"const":"50-69"}, "full": {"const":"70+"} } },
+             "dcmAlgo": { "type": "string" }
+          }
+        }
+      }
+    },
+    "sectionXI": {
+       "type": "object", 
+       "description": "Agentic Assemblies (AI-to-AI Governance)",
+       "properties": {
+         "XI.1": { "type": "object", "description": "Multi-Agent Collaboration Frameworks" },
+         "XI.2": { 
+           "type": "object", 
+           "description": "Assembly Formation Requirements",
+           "properties": {
+             "maxVotingPower": { "type": "string", "const": "40%" }
+           }
+         },
+         "XI.3": { "type": "object", "description": "Collaboration Metrics" },
+         "XI.4": { "type": "object", "description": "Cognitive Diversity Preservation" }
+       }
+    },
+    "sectionIX": {
+      "type": "object",
+      "description": "Cosmic Stewardship, Sovereignty & Curiosity",
+      "properties": {
+        "IX.1": {
+          "type": "object",
+          "description": "Mitigating AI Arms Races & Truthful Outputs",
+          "properties": {
+            "truthfulOutputsDirective": { "type": "boolean", "const": true }
+          }
+        },
+        "IX.3": {
+          "type": "object",
+          "description": "Federal Preemption Protocol",
+          "properties": {
+            "safetyFirst": { "type": "boolean", "const": true },
+            "litigationShield": { "type": "boolean", "const": true }
+          }
+        },
+        "IX.4": {
+          "type": "object",
+          "description": "Sovereignty & Infrastructure",
+          "properties": {
+            "sovereignAI": { "type": "boolean", "const": true },
+            "dataResidency": { "type": "boolean", "const": true }
+          }
+        }
+      }
     },
     "minorProtection": {
-        "type": "object",
-        "description": "Minor Interaction Protocol (Florida SB 482)",
-        "properties": {
-            "ageVerification": { "type": "boolean", "const": true },
-            "parentalRights": { "type": "boolean", "const": true },
-            "chatbotDisclosures": { "type": "boolean", "const": true }
-        }
+      "type": "object",
+      "description": "Minor Interaction Protocol (Florida SB 482)",
+      "properties": {
+        "ageVerification": { "type": "boolean", "const": true },
+        "parentalRights": { "type": "boolean", "const": true },
+        "chatbotDisclosures": { "type": "boolean", "const": true }
+      }
     }
   },
   "required": ["metadata", "article0", "rights", "duties", "compliance_splinternet"]
