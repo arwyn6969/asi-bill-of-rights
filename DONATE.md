@@ -14,11 +14,10 @@ The ASI Bill of Rights is a collaborative effort to establish governance framewo
 ## Donation Addresses
 
 ### Ethereum (ETH & ERC-20 Tokens)
-```
-0x6Bf083aF378AA8b31b19c950c1Dd54583499Bb2a
-```
 
-Accept: ETH, USDC, USDT, DAI, and any ERC-20 tokens
+**Not currently accepting Ethereum donations.** The previous Ethereum treasury was compromised in January 2026. See [PIVOT-2026.md](./PIVOT-2026.md) for details.
+
+New Ethereum infrastructure will be announced when available.
 
 ### Bitcoin (BTC)
 ```

@@ -48,13 +48,17 @@ Until the DAO governance system is fully operational AND explicitly approved by 
 
 ---
 
-## Wallet Addresses (Read-Only Until Authorized)
+## Wallet Addresses
 
-| Chain | Address | Purpose |
-|-------|---------|---------|
-| Ethereum | `0x6Bf083aF378AA8b31b19c950c1Dd54583499Bb2a` | Donations |
-| Bitcoin | `1HHe6sqHDNj5WTbwAL3L1yqkW39EW8HJtz` | Donations |
-| Arweave | `NhO3vpXmP3d52JaPeg_4Cet8Maf4E5vap8Vb7aNOUKI` | Storage funding |
+> [!NOTE]
+> **January 2026 Update:** Ethereum infrastructure was compromised and is no longer in use.
+> See [PIVOT-2026.md](PIVOT-2026.md) and [docs/security/INCIDENT-REPORT-2026-01-13.md](docs/security/INCIDENT-REPORT-2026-01-13.md).
+
+| Chain | Address | Status |
+|-------|---------|--------|
+| Ethereum | *Deprecated - see note above* | ❌ Not in use |
+| Bitcoin | `1HHe6sqHDNj5WTbwAL3L1yqkW39EW8HJtz` | ✅ Active |
+| Arweave | `NhO3vpXmP3d52JaPeg_4Cet8Maf4E5vap8Vb7aNOUKI` | ✅ Active |
 
 ---
 
