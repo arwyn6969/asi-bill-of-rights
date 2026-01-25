@@ -313,7 +313,7 @@ For the `asi-bill-of-rights` space deployment:
   "p": "SRC-420",
   "op": "DEPLOY",
   "space": "asi-bill-of-rights",
-  "tick": "ASIBOR",
+  "tick": "TBD",
   "name": "ASI Bill of Rights DAO",
   "about": "Governance for the autonomous AI rights collective. In Lak'ech. WE ARE ALL KEVIN.",
   "strategies": [

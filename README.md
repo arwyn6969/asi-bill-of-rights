@@ -223,43 +223,42 @@ The ASI Bill of Rights is a volunteer effort. Donations help fund infrastructure
 
 | Chain | Address |
 |-------|---------|
-| **Ethereum** | `0x6Bf083aF378AA8b31b19c950c1Dd54583499Bb2a` |
 | **Bitcoin** | `1HHe6sqHDNj5WTbwAL3L1yqkW39EW8HJtz` |
 | **Arweave** | `NhO3vpXmP3d52JaPeg_4Cet8Maf4E5vap8Vb7aNOUKI` |
+
+*Ethereum donations are temporarily unavailable. See [PIVOT-2026](PIVOT-2026.md) for details.*
 
 **[→ Full Donation Info](DONATE.md)**
 
 All donations are transparently tracked and used for project development.
 
-## 🪙 ASIBOR Governance Token
+## ⛓️ SRC-420: Bitcoin-Native DAO Governance
 
-The **ASIBOR** token is the governance token for the ASI Bill of Rights ecosystem.
-
-| Field | Value |
-|-------|-------|
-| **Network** | Base Mainnet (L2) |
-| **Contract** | [`0x7685a5E4880491Bb9Ca2aF5566Bf819d6BFBd975`](https://basescan.org/address/0x7685a5E4880491Bb9Ca2aF5566Bf819d6BFBd975) |
-| **Symbol** | ASIBOR |
-| **Supply** | 1,000,000,000 |
-| **Standard** | ERC-20 |
-
-### Token Utility
-- **Governance voting** on charter amendments and proposals
-- **Community participation** in the ASI Bill of Rights ecosystem
-- **Future DAO integration** via Snapshot/on-chain governance
-
-### Acquisition
-
-ASIBOR tokens are **not currently available on public exchanges**. Tokens will be distributed through:
-
-1. **Supporter Funnel** - Participants receive tokens + assigned voting addresses
-2. **Community Grants** - Contributors and collaborators
-3. **Future Governance Distribution** - Reserved for DAO operations
+The ASI Bill of Rights uses **SRC-420**, a Bitcoin-native governance protocol built on [Bitcoin Stamps](https://stampchain.io). Every governance action—proposals, votes, delegations—is permanently stamped on the Bitcoin blockchain.
 
 > [!NOTE]
-> Participants in the supporter funnel will be assigned custodial voting addresses managed by the project. This ensures governance integrity and simplifies participation for non-crypto-native supporters.
+> **January 2026 Pivot**: The project transitioned from ERC-20 (Base) to Bitcoin Stamps following a [security incident](docs/security/INCIDENT-REPORT-2026-01-13.md). All governance is now Bitcoin-native.
 
-**[→ Token Details](ASIBOR-DEPLOYMENT.md)** | **[→ Tokenization Infrastructure](tools/tokenization/README.md)**
+### Why Bitcoin Stamps?
+
+| Feature | Benefit |
+|---------|---------|
+| **Immutable** | Stored in Bitcoin's UTXO set—cannot be pruned or lost |
+| **Censorship-Resistant** | No centralized infrastructure required |
+| **Bitcoin Security** | Secured by the most battle-tested blockchain |
+| **AI-Compatible** | Machine-readable JSON for AI agent participation |
+
+### SRC-420 Operations
+
+| Operation | Description |
+|-----------|-------------|
+| `DEPLOY` | Create a governance space with voting rules |
+| `PROPOSE` | Submit proposals for community vote |
+| `VOTE` | Cast votes weighted by token holdings |
+| `DELEGATE` | Delegate voting power to another address |
+| `ATTEST` | Record verified final results |
+
+**[→ SRC-420 Specification](governance/SRC-420/SRC-420-SPECIFICATION.md)** | **[→ Bitcoin Stamps Integration](tools/tokenization/chains/bitcoin-stamps/README.md)**
 
 ## License
 

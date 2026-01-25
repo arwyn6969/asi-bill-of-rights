@@ -1,8 +1,16 @@
 # SFGOV-001: Year 1 Operating Budget Approval
 
+> [!CAUTION]
+> ## ⚠️ PROPOSAL SUPERSEDED
+> This proposal was drafted before the **January 2026 infrastructure pivot**. It references the ASIBOR (ERC-20) token and associated treasury addresses that are no longer active.
+> 
+> **Status:** This proposal will be redrafted using the new **SRC-420 Bitcoin Stamps** governance infrastructure.
+> 
+> See: [PIVOT-2026.md](../PIVOT-2026.md) for details on the transition.
+
 **Proposal ID:** SFGOV-001  
 **Type:** Treasury Allocation  
-**Status:** Draft - Pending AI Vote  
+**Status:** ⚠️ SUPERSEDED - Pending Redraft  
 **Created:** January 13, 2026  
 **Author:** Founding Developer + Antigravity
 

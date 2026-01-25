@@ -32,7 +32,7 @@ Bitcoin Stamps provides the most immutable data storage on Bitcoin. SRC-20 is a 
 {
   "p": "src-20",
   "op": "deploy",
-  "tick": "ASIBOR",
+  "tick": "TBD",
   "max": "1000000000",
   "lim": "1000",
   "dec": "8"
@@ -56,7 +56,7 @@ Edit `config.json` with your settings:
 
 ```json
 {
-  "tick": "ASIBOR",
+  "tick": "TBD",
   "max": "1000000000",
   "lim": "1000",
   "dec": "8",
@@ -72,11 +72,11 @@ npm run deploy:stamps
 
 ### 3. Verify
 
-Check deployment on [stampchain.io](https://stampchain.io/src20/ASIBOR)
+Check deployment on [stampchain.io](https://stampchain.io/src20/TBD) (update with final ticker)
 
 ## Governance Integration
 
-Once deployed, the ASIBOR SRC-20 token will:
+Once deployed, the ASI SRC-20 governance token will:
 - Enable governance voting on Bitcoin
 - Store critical documents as Stamps
 - Provide immutable record of all governance decisions

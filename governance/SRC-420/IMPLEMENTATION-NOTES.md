@@ -148,19 +148,19 @@ results: Map<(space_id, proposal_id), TallyResult>
 
 ## Open Questions
 
-1. **Token Already on Base:** ASIBOR is deployed on Base. How do we bridge voting power to Bitcoin Stamps governance?
-   - Option A: Wrap/bridge tokens to SRC-20
-   - Option B: Cross-chain attestation of Base balances
-   - Option C: Maintain separate governance tokens per chain
+1. **SRC-20 Token Deployment:** We need to deploy a new governance token on Bitcoin Stamps.
+   - Token ticker: TBD
+   - Supply: To be determined
+   - Distribution: To be planned (see PIVOT-2026.md)
 
 2. **Indexer Hosting:** Who runs the indexer?
    - Stampchain community?
    - ASI runs our own?
    - Decentralized indexer network?
 
-3. **Governance Migration:** How do we migrate existing Snapshot proposals?
-   - One-time ATTEST of historical votes?
-   - Fresh start with SRC-420?
+3. **Fresh Start:** All governance will be Bitcoin-native going forward.
+   - No migration of Snapshot proposals
+   - Clean slate with SRC-420
 
 4. **Execution Layer:** How do passed proposals actually get executed?
    - Multi-sig controlled by admins?

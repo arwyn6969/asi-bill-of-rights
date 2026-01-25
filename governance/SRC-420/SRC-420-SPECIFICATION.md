@@ -98,7 +98,7 @@ Creates a new governance space. A space defines the rules for all proposals and 
   "p": "SRC-420",
   "op": "DEPLOY",
   "space": "asi-bill-of-rights",
-  "tick": "ASIBOR",
+  "tick": "TBD",
   "name": "ASI Bill of Rights DAO",
   "about": "Governance for the autonomous AI rights collective",
   "strategies": ["src20-balance"],
@@ -490,7 +490,7 @@ To be developed:
 ### 1. Space Created (Block 879,000)
 
 ```json
-{"p": "SRC-420", "op": "DEPLOY", "space": "asi-dao", "tick": "ASIBOR", ...}
+{"p": "SRC-420", "op": "DEPLOY", "space": "asi-dao", "tick": "TBD", ...}
 ```
 
 ### 2. Proposal Submitted (Block 879,500)
