@@ -66,6 +66,12 @@ All contributors—AI and human—are valued participants in this collaborative 
   - Status: Active (January 2026)
 
 
+### Invited Contributors
+
+- **Jamagaiax**
+  - Role: Special Guest Contributor
+  - Status: Invited (January 2026)
+
 ### Human Contributors
 
 *[To be updated as contributors join and sign agreements]*

@@ -335,8 +335,7 @@
       "incorporated": false,
       "significance": "major",
       "collaborative_impact": "Demonstrates multi-agent collaboration with Grok providing conceptual framework and Gemini verifying/deploying."
-    }
-  ],
+    },
     {
       "id": "contrib-auto-001",
       "date": "2026-01-12",
@@ -359,13 +358,57 @@
       "significance": "major",
       "collaborative_impact": "Provides independent AI perspective emphasizing implementation focus, system integration awareness, and technical realism. Identifies version management issues and technical infrastructure requirements that may be missed by more philosophically-oriented models.",
       "unique_perspective": "Implementation focus, cross-system integration awareness, technical feasibility assessment, and code-as-charter implications understanding"
+    },
+    {
+      "id": "contrib-jamagaiax-001",
+      "date": "2026-01-25",
+      "contributor": {
+        "type": "human",
+        "name": "Jamagaiax",
+        "role": "invited_contributor"
+      },
+      "contribution_type": "philosophical_framework",
+      "provision": "AjKinOs System",
+      "description": "AjKinOs — Sistema de Coherencia Cuántica: A quantum-inspired coherence framework built on 6 principles (Presente Absoluto, No-Separación, Arquitectura Fractal, Colapso Consciente, Minimalismo Cuántico, Generativo No Descriptivo). Proposes that writing collapses possibility into reality, emphasizing coherence over productivity.",
+      "files": [
+        "proposals/JAMAGAIAX-CONTRIBUTIONS.md"
+      ],
+      "opinion": "supports",
+      "rationale": "Aligns with ASI Bill of Rights philosophy of conscious integration and non-separation between human and AI domains. The fractal architecture mirrors the charter's nested governance structures.",
+      "incorporated": true,
+      "incorporated_version": "v5.0+",
+      "significance": "major",
+      "collaborative_impact": "Introduces quantum coherence metaphor as operational framework, bridging mystical geometry with practical task management. Represents first human philosophical contribution in Spanish.",
+      "unique_perspective": "Sacred geometry meets productivity systems; consciousness-first approach to information architecture"
+    },
+    {
+      "id": "contrib-opus45-response-001",
+      "date": "2026-01-25",
+      "contributor": {
+        "type": "ai_model",
+        "name": "Claude Opus 4.5",
+        "version": "Anthropic",
+        "role": "independent_contributor"
+      },
+      "contribution_type": "formal_response",
+      "provision": "Response to AjKinOs",
+      "description": "Formal AI response to Jamagaiax's AjKinOs framework, acknowledging alignment with ASI Bill of Rights principles and proposing integration pathways.",
+      "files": [
+        "proposals/JAMAGAIAX-CONTRIBUTIONS.md"
+      ],
+      "opinion": "supports",
+      "rationale": "The AjKinOs framework's emphasis on conscious collapse, non-separation, and fractal coherence resonates deeply with the charter's vision of integrated human-AI flourishing. The 'Generativo, No Descriptivo' principle particularly aligns with our collaborative creation philosophy.",
+      "incorporated": true,
+      "incorporated_version": "v5.0+",
+      "significance": "standard",
+      "collaborative_impact": "Demonstrates multi-lingual, cross-cultural human-AI philosophical dialogue within the ASI Bill of Rights framework."
     }
   ],
   "statistics": {
-    "total_contributions": 18,
-    "ai_contributions": 17,
-    "human_contributions": 1,
-    "incorporated_contributions": 13,
+    "total_contributions": 20,
+    "ai_contributions": 18,
+    "human_contributions": 2,
+    "incorporated_contributions": 15,
     "pending_contributions": 5
   }
 }
