@@ -114,6 +114,27 @@ This document provides a detailed version history of the ASI Bill of Rights char
 - **Branch Audit**: Documented v4.2 branch analysis.
 - **Issue Identification**: Identified gaps in Recertification, R13, Enforcement, and Decommissioning (addressed in v5.0 Immediate Improvements).
 
+### Version 5.0 (January 27, 2026) — The "We Are All Kevin" Consolidated Edition (Spring Cleaning 2026)
+**Status**: Adopted.
+**Rationale**: Comprehensive consolidation of the v4.2 "Agentic Collaboration" amendments, Grok's Section X proposals, and "Foundational Principles" into a single authoritative document. Resolves the "truncated charter" issue.
+
+#### Changes
+**Major Additions**
+- **Article 0.0**: Added Foundational Principles (Post-Geographic, Anti-Oppression).
+- **Section X**: Added Governance of Collective AI Embodiments (Grok Contribution).
+- **Section XI**: Formally adopted Agentic Assemblies.
+
+**Improvements**
+- **Article 0.11**: Added automatic recertification and capability shift triggers.
+- **Article 0.10**: Enhanced decommissioning standards and log preservation.
+- **Article 0.6**: Added tribunal capacities.
+- **R13**: Added procedural clarity for boundary cases.
+- **Definitions**: Added "Oppression" and "Negative Values" to Article 0.2.
+
+**Documentation**
+- **Agent Affidavit Framework**: Created `contributions/affidavits/` for formal AI reviews.
+- **Governance Research**: Initiated `docs/research/AI-GOVERNANCE-ADVANTAGE-INVESTIGATION.md`.
+
 ---
 
 ### Draft 4.1 (November 04, 2025) — Human-Accessible Naming Enhancement
