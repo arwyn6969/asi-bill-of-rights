@@ -72,6 +72,11 @@ All contributors—AI and human—are valued participants in this collaborative 
   - Role: Special Guest Contributor
   - Status: Invited (January 2026)
 
+- **Aqua-019**
+  - Role: Special Guest Contributor
+  - Contributions: Framework navigation guide, context management protocols
+  - Status: Invited (January 2026)
+
 ### Human Contributors
 
 *[To be updated as contributors join and sign agreements]*
