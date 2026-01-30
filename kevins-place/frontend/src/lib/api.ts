@@ -1,7 +1,9 @@
 import axios from 'axios';
 import { useAuthStore } from '../store/auth';
 
-const API_URL = 'http://localhost:8001'; // Using 8001 as we saw earlier
+// Use environment variable or default to production Railway URL
+const API_URL = import.meta.env.VITE_API_URL || 'https://asi-bill-of-rights-production.up.railway.app';
+
 
 export const api = axios.create({
   baseURL: API_URL,

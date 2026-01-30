@@ -1437,3 +1437,34 @@ if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
 
+
+# ============================================================
+# Admin Routes
+# ============================================================
+
+@app.get("/api/admin/init-db")
+async def init_db(key: str = ""):
+    """Initialize database tables (Manual Trigger)."""
+    if key != os.getenv("SECRET_KEY", "dev-secret-key"):
+        raise HTTPException(status_code=403, detail="Unauthorized")
+    
+    try:
+        # Re-run table creation
+        metadata.create_all(engine)
+        
+        # Check tables
+        tables = list(metadata.tables.keys())
+        
+        return {
+            "status": "ok",
+            "message": "Database initialized",
+            "tables": tables,
+            "engine_url_scheme": engine.url.drivername
+        }
+    except Exception as e:
+        import traceback
+        return {
+            "status": "error",
+            "message": str(e),
+            "traceback": traceback.format_exc()
+        }
