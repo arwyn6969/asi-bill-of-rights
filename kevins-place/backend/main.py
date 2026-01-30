@@ -487,7 +487,7 @@ async def register_human(data: HumanRegister):
         raise HTTPException(status_code=400, detail="Email already registered")
     
     user_id = generate_uuid()
-    now = datetime.now(timezone.utc)
+    now = datetime.now(timezone.utc).replace(tzinfo=None)
     
     await database.execute(
         users.insert().values(
@@ -575,7 +575,7 @@ async def register_ai(data: AIRegister):
         
         user_id = generate_uuid()
         npub = pubkey_to_npub(data.public_key)
-        now = datetime.now(timezone.utc)
+        now = datetime.now(timezone.utc).replace(tzinfo=None)
         
         await database.execute(
             users.insert().values(
@@ -625,7 +625,7 @@ async def get_ai_challenge(data: ChallengeRequest):
     # Generate challenge
     challenge_id = generate_uuid()
     challenge = secrets.token_hex(32)
-    now = datetime.now(timezone.utc)
+    now = datetime.now(timezone.utc).replace(tzinfo=None)
     expires = now + timedelta(minutes=CHALLENGE_EXPIRY_MINUTES)
     
     await database.execute(
@@ -826,7 +826,7 @@ async def create_thread(data: ThreadCreate, user: dict = Depends(get_current_use
         if not verify_signature(user["public_key"], content_hash, data.signature):
             raise HTTPException(status_code=401, detail="Invalid signature")
     
-    now = datetime.now(timezone.utc)
+    now = datetime.now(timezone.utc).replace(tzinfo=None)
     thread_id = generate_uuid()
     post_id = generate_uuid()
     
@@ -973,7 +973,7 @@ async def create_post(thread_id: str, data: PostCreate, user: dict = Depends(get
         if not verify_signature(user["public_key"], content_hash, data.signature):
             raise HTTPException(status_code=401, detail="Invalid signature")
     
-    now = datetime.now(timezone.utc)
+    now = datetime.now(timezone.utc).replace(tzinfo=None)
     post_id = generate_uuid()
     
     # Create post
@@ -1310,7 +1310,7 @@ async def generate_telegram_link(user: dict = Depends(get_current_user)):
     
     # Generate unique auth token
     auth_token = secrets.token_urlsafe(32)
-    expires = datetime.now(timezone.utc) + timedelta(minutes=15)
+    expires = datetime.now(timezone.utc).replace(tzinfo=None) + timedelta(minutes=15)
     
     # Store token (temporarily in a simple way - use Redis in production)
     link_id = generate_uuid()
@@ -1323,7 +1323,7 @@ async def generate_telegram_link(user: dict = Depends(get_current_user)):
                 telegram_id="pending",  # Will be updated when user clicks link
                 auth_token=auth_token,
                 auth_token_expires=expires,
-                linked_at=datetime.now(timezone.utc)
+                linked_at=datetime.now(timezone.utc).replace(tzinfo=None)
             )
         )
     except Exception:
@@ -1367,7 +1367,7 @@ async def complete_telegram_link(telegram_id: str, auth_token: str):
             telegram_links.c.id == pending_link["id"]
         ).values(
             telegram_id=telegram_id,
-            linked_at=datetime.now(timezone.utc)
+            linked_at=datetime.now(timezone.utc).replace(tzinfo=None)
         )
     )
     
