@@ -35,6 +35,7 @@ logger = logging.getLogger(__name__)
 
 # Check for required packages
 try:
+    import httpx
     from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, BotCommand, WebAppInfo
     from telegram.ext import (
         Application, 
@@ -45,10 +46,14 @@ try:
         ContextTypes
     )
     from telegram.constants import ParseMode, ChatType
-except ImportError:
-    print("ERROR: python-telegram-bot not installed.")
-    print("Run: pip install python-telegram-bot")
+except ImportError as e:
+    print(f"ERROR: Missing dependency: {e}")
+    print("Run: pip install python-telegram-bot httpx")
     exit(1)
+
+# Backend Configuration
+import os
+BACKEND_URL = os.getenv("BACKEND_API_URL", "http://localhost:8000")
 
 
 # ============================================================
@@ -264,6 +269,42 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Handle /start command."""
     if not update.message:
         return
+
+    # Check for deep linking (e.g., /start link_TOKEN)
+    if context.args and context.args[0].startswith("link_"):
+        try:
+            auth_token = context.args[0].split("_")[1]
+            user_id = update.effective_user.id
+            
+            # Call backend to complete linking
+            async with httpx.AsyncClient() as client:
+                resp = await client.post(
+                    f"{BACKEND_URL}/api/telegram/complete-link",
+                    params={"telegram_id": str(user_id), "auth_token": auth_token},
+                    timeout=10.0
+                )
+                
+                if resp.status_code == 200:
+                    await update.message.reply_text(
+                        "✅ <b>Account Linked!</b>\n\n"
+                        "Your Telegram account is now connected to KEVIN's Place.\n"
+                        "You can close this chat or use the menu below.",
+                        parse_mode=ParseMode.HTML,
+                        reply_markup=get_main_menu_keyboard()
+                    )
+                else:
+                    try:
+                        detail = resp.json().get('detail', resp.text)
+                    except:
+                        detail = resp.text
+                    await update.message.reply_text(f"❌ Linking failed: {detail}")
+            return
+        except Exception as e:
+            logger.error(f"Linking error: {e}")
+            await update.message.reply_text("❌ An error occurred while linking your account.")
+            return
+
+    # Normal start
     await update.message.reply_text(
         KEVIN_INTRO,
         parse_mode=ParseMode.HTML,
@@ -449,6 +490,48 @@ async def forum_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         parse_mode=ParseMode.HTML,
         reply_markup=InlineKeyboardMarkup(keyboard)
     )
+
+
+async def balance_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Check Stamps balance for an address."""
+    if not update.message:
+        return
+        
+    if not context.args:
+        await update.message.reply_text(
+            "💰 <b>Check KEVIN Balance</b>\n\nUsage: <code>/balance bc1q...</code>",
+            parse_mode=ParseMode.HTML
+        )
+        return
+        
+    address = context.args[0]
+    await update.message.reply_text("🔍 Checking blockchain...")
+    
+    try:
+        async with httpx.AsyncClient() as client:
+            resp = await client.post(
+                f"{BACKEND_URL}/api/sovereign/check-balance",
+                json={"address": address, "ticker": "KEVIN"},
+                timeout=15.0
+            )
+            
+            if resp.status_code == 200:
+                data = resp.json()
+                balance = data.get("balance", 0)
+                
+                text = (
+                    f"💰 <b>Stamps Balance</b>\n\n"
+                    f"🪙 <b>Ticker:</b> {data.get('ticker', 'KEVIN')}\n"
+                    f"🏦 <b>Balance:</b> {balance:,.2f}\n"
+                    f"📍 <b>Address:</b> <code>{address}</code>"
+                )
+                await update.message.reply_text(text, parse_mode=ParseMode.HTML)
+            else:
+                await update.message.reply_text("❌ Failed to fetch balance. Please try again.")
+                
+    except Exception as e:
+        logger.error(f"Balance check error: {e}")
+        await update.message.reply_text(f"❌ Error: {str(e)}")
 
 
 async def about_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -1106,6 +1189,9 @@ def main():
     app.add_handler(CommandHandler("mute", mute_command))
     app.add_handler(CommandHandler("unmute", unmute_command))
     app.add_handler(CommandHandler("poll", poll_command))
+    
+    # Sovereign Bridge Handlers
+    app.add_handler(CommandHandler("balance", balance_command))
 
     # Section XI Handlers (Agentic Assemblies)
     app.add_handler(CommandHandler("iamagent", register_agent_command))
