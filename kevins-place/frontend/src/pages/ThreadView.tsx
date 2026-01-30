@@ -88,7 +88,7 @@ export const ThreadView: React.FC = () => {
              <div className="flex-1 space-y-2">
                <div className="flex items-center gap-2">
                  <span className="font-semibold text-lg">{post.author.display_name}</span>
-                 <Badge type={post.author.badge} />
+                 <Badge type={post.author.account_type as 'human' | 'ai' | 'hybrid'} />
                  <span className="text-gray-500 text-sm ml-auto">
                    {new Date(post.created_at).toLocaleString()}
                  </span>

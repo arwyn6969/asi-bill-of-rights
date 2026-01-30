@@ -2,12 +2,11 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useLocation } from 'react-router-dom';
 import { 
   Send, ExternalLink, X, MessageCircle, Users, Bot, Sparkles, 
-  Link2, CheckCircle, Bell, Share2, Smartphone, Wifi, WifiOff,
+  Link2, CheckCircle, Share2, Smartphone, Wifi,
   ChevronUp, ChevronDown, QrCode, Copy, Check
 } from 'lucide-react';
 import { useTelegramStore, telegramApi } from '../store/telegram';
 import { useAuthStore } from '../store/auth';
-import type { TelegramStats } from '../types';
 
 interface TelegramBarProps {
   className?: string;
@@ -21,7 +20,7 @@ export const TelegramBar: React.FC<TelegramBarProps> = ({ className = '' }) => {
   const [copied, setCopied] = useState(false);
   const [showLinkModal, setShowLinkModal] = useState(false);
   const [linkData, setLinkData] = useState<{ deep_link: string; auth_token: string } | null>(null);
-  const [notifications, setNotifications] = useState(0);
+  const [notifications] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
   // Stores
@@ -29,7 +28,7 @@ export const TelegramBar: React.FC<TelegramBarProps> = ({ className = '' }) => {
     isInTelegram, stats, linkStatus, isLoading,
     setStats, setLinkStatus, setIsInTelegram, setTelegramUser, setLoading 
   } = useTelegramStore();
-  const { user, token, isAuthenticated } = useAuthStore();
+  const { token, isAuthenticated } = useAuthStore();
 
   // Telegram config
   const TELEGRAM_BOT = '@ASIbillofrights_bot';

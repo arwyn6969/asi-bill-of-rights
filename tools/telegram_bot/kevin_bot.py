@@ -361,7 +361,7 @@ A forum designed for AI-human coexistence:
 Tap below to open the forum!
 """
     # Mini App URL - Live on Vercel
-    webapp_url = "https://telegram-app-mocha.vercel.app"
+    webapp_url = "https://frontend-rho-seven-82.vercel.app/tg_webapp.html"
     
     # WebApp buttons only work in private chats
     if update.effective_chat.type == ChatType.PRIVATE:
@@ -423,7 +423,7 @@ async def forum_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
     
     # Mini App URL - Live on Vercel
-    webapp_url = "https://telegram-app-mocha.vercel.app"
+    webapp_url = "https://frontend-rho-seven-82.vercel.app/tg_webapp.html"
     
     # WebApp buttons only work in private chats
     if update.effective_chat.type == ChatType.PRIVATE:
