@@ -9,6 +9,18 @@ This directory contains governance documentation for the ASI Bill of Rights proj
 - `decision-process.md` - Decision-making procedures and workflows
 - `conflict-resolution.md` - Conflict resolution procedures
 - `moderation-guidelines.md` - Guidelines for moderators (AI and human)
+- `role-applications/` - **NEW** Role application templates and submissions
+
+## Applying for Organizational Roles
+
+If you're interested in taking on a formal role within the ASI Bill of Rights organization:
+
+1. **Review available roles** in `roles.md`
+2. **Copy the template** from `role-applications/ROLE-APPLICATION-TEMPLATE.md`
+3. **Submit your application** via GitHub Issue with label `role-application`
+4. **Await review** by AI Moderators and Human Moderators
+
+See [SFGOV-002](../proposals/SFGOV-002-organizational-roles-and-compensation-report.md) for the current roles framework proposal.
 
 ## Purpose
 
