@@ -186,4 +186,74 @@ This incident is being disclosed publicly as part of the project's commitment to
 
 ---
 
-*"In Lak'ech" — We learn from our mistakes and grow stronger.*
+## Addendum: Operation Phoenix Recovery Attempt
+
+**Date:** January 30-31, 2026  
+**Status:** ❌ FAILED  
+**Agent:** Gemini (Antigravity)
+
+### Mission Objective
+
+Attempt to recover stranded assets (1,000,000,000 ASIBOR tokens on Base L2 and `asibor.eth` ENS on Ethereum Mainnet) from the compromised wallet before the sweeper bot could intercept.
+
+### New Treasury Established
+
+A fresh treasury infrastructure was established using the "Fresh Seed Protocol":
+- New 24-word BIP-39 mnemonic (stored in gitignored `.env`)
+- New addresses:
+  - **ETH/Base**: `0x842a9F5D6630A9c3cee8c5b7BB0Eaf099Ec2d921`
+  - **Bitcoin**: `bc1qjnz72rgphxmzru8rcvu3vmju4phd0klsd0tt5k`
+  - **Solana**: `3b2BDrjnGV3EoeaMHxqSemLt6d6X1tiAW511mY9NjR3q`
+
+### Recovery Attempts
+
+| Attempt | Target | Method | Result |
+|---------|--------|--------|--------|
+| 1 | ASIBOR (Base) | Fund + Transfer | ❌ Bot swept gas |
+| 2 | ASIBOR (Base) | Pre-signed rapid TX | ❌ Bot swept gas |
+| 3 | ENS (Ethereum) | Flashbots RPC | ❌ Bot swept gas |
+
+### Technical Findings
+
+The sweeper bot is **highly sophisticated**:
+- Monitors **both Base L2 and Ethereum Mainnet**
+- Sweeps any incoming ETH within **seconds** of confirmation
+- Operates 24/7 with automated monitoring
+- Does NOT steal ERC-20 tokens or ENS (lacks gas to move them)
+
+### Assets Status (as of Jan 31, 2026)
+
+| Asset | Location | Status |
+|-------|----------|--------|
+| **asibor.eth ENS** | Ethereum | ⚠️ Stranded (sweeper blocks rescue) |
+| **1B ASIBOR Tokens** | Base L2 | ⚠️ Stranded (sweeper blocks rescue) |
+| **Safe Treasury ETH** | Multi-chain | ~0.03 ETH remaining |
+
+### Potential Future Recovery
+
+Two emerging technologies may enable future recovery:
+1. **EIP-7702 Gas Sponsorship** - Allows sponsor wallet to pay gas without sending ETH to compromised address (expected in Pectra upgrade)
+2. **Professional Whitehat Services** - Flashbots Whitehat team offers recovery services for 5-10% fee
+
+### Lessons Learned
+
+1. Sweeper bots are more sophisticated than anticipated
+2. Flashbots alone is insufficient when funding must confirm first
+3. The assets are stranded, not destroyed - recovery remains theoretically possible
+4. New treasury infrastructure is secure and operational
+
+### Cost of Operation Phoenix
+
+| Item | Cost |
+|------|------|
+| Gas spent on Base rescue attempts | ~$8 |
+| Gas spent on Ethereum rescue attempt | ~$100 |
+| **Total spent** | **~$108** |
+| **Assets still stranded** | 1B ASIBOR + asibor.eth |
+
+---
+
+*"From the ashes, we did not rise this time. But the foundation is rebuilt, and the future remains unwritten."*
+
+*In Lak'ech* 🌊
+
