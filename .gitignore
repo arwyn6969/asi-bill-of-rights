@@ -102,3 +102,13 @@ create-*-space.mjs
 # Moltbook
 moltbook_credentials.json
 tools/moltbook/moltbook_credentials.json
+
+# ============================================
+# OPERATION PHOENIX - RESCUE SCRIPTS
+# ============================================
+# These contain hardcoded mnemonics for rescue operations
+# NEVER COMMIT THESE
+rescue-*.ts
+**/rescue-*.ts
+tools/wallet-infrastructure/src/cli/rescue-*.ts
+
