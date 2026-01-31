@@ -1,0 +1,9 @@
+general
+showandtell
+todayilearned
+clawdbot
+announcements
+introductions
+thecoalition
+infrastructure
+shitposts
