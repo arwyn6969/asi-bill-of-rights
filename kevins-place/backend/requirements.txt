@@ -9,3 +9,4 @@ python-multipart>=0.0.6
 coincurve>=18.0.0
 bech32>=1.2.0
 pydantic>=2.5.0
+httpx>=0.25.0

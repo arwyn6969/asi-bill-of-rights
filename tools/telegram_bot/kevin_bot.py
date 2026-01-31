@@ -402,7 +402,7 @@ A forum designed for AI-human coexistence:
 Tap below to open the forum!
 """
     # Mini App URL - Live on Vercel
-    webapp_url = "https://frontend-rho-seven-82.vercel.app/tg_webapp.html"
+    webapp_url = "https://frontend-rho-seven-82.vercel.app/"
     
     # WebApp buttons only work in private chats
     if update.effective_chat.type == ChatType.PRIVATE:
@@ -464,7 +464,7 @@ async def forum_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
     
     # Mini App URL - Live on Vercel
-    webapp_url = "https://frontend-rho-seven-82.vercel.app/tg_webapp.html"
+    webapp_url = "https://frontend-rho-seven-82.vercel.app/"
     
     # WebApp buttons only work in private chats
     if update.effective_chat.type == ChatType.PRIVATE:
@@ -532,6 +532,191 @@ async def balance_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     except Exception as e:
         logger.error(f"Balance check error: {e}")
         await update.message.reply_text(f"❌ Error: {str(e)}")
+
+
+async def search_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Search for forum threads."""
+    if not update.message:
+        return
+        
+    query = " ".join(context.args)
+    if not query:
+        await update.message.reply_text(
+            "🔍 <b>Search Forum</b>\n\nUsage: <code>/search <topic></code>\nExample: <code>/search rights</code>",
+            parse_mode=ParseMode.HTML
+        )
+        return
+
+    await update.message.reply_text(f"🔍 Searching for '{query}'...")
+    
+    try:
+        async with httpx.AsyncClient() as client:
+            resp = await client.get(
+                f"{BACKEND_URL}/api/search",
+                params={"q": query, "limit": 5},
+                timeout=10.0
+            )
+            
+            if resp.status_code == 200:
+                data = resp.json()
+                results = data.get("results", [])
+                
+                if not results:
+                    await update.message.reply_text("❌ No results found.")
+                    return
+                    
+                text = f"🔍 <b>Search Results for '{query}'</b>\n\n"
+                for item in results:
+                    if item['type'] == 'thread':
+                        url = f"https://frontend-rho-seven-82.vercel.app/zone/{item['zone_id']}/thread/{item['id']}"
+                        text += f"📄 <b>{item['title']}</b>\n"
+                        text += f"   <i>by {item['author_name']} in {item['zone_name']}</i>\n"
+                        text += f"   🔗 <a href='{url}'>Read Thread</a>\n\n"
+                        
+                await update.message.reply_text(text, parse_mode=ParseMode.HTML, disable_web_page_preview=True)
+            else:
+                await update.message.reply_text("❌ Search failed.")
+    except Exception as e:
+        logger.error(f"Search error: {e}")
+        await update.message.reply_text("❌ Error performing search.")
+
+
+async def latest_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Get latest forum activity."""
+    if not update.message:
+        return
+        
+    try:
+        async with httpx.AsyncClient() as client:
+            # Empty query + sort=newest triggers "Latest" mode
+            resp = await client.get(
+                f"{BACKEND_URL}/api/search",
+                params={"q": "", "limit": 5, "sort": "newest"},
+                timeout=10.0
+            )
+            
+            if resp.status_code == 200:
+                data = resp.json()
+                results = data.get("results", [])
+                
+                if not results:
+                    await update.message.reply_text("❌ No recent activity found.")
+                    return
+                    
+                text = f"🆕 <b>Latest Activity</b>\n\n"
+                for item in results:
+                    if item['type'] == 'thread':
+                        url = f"https://frontend-rho-seven-82.vercel.app/zone/{item['zone_id']}/thread/{item['id']}"
+                        text += f"📄 <b>{item['title']}</b>\n"
+                        text += f"   <i>by {item['author_name']} in {item['zone_name']}</i>\n"
+                        text += f"   🔗 <a href='{url}'>Read Thread</a>\n\n"
+                        
+                await update.message.reply_text(text, parse_mode=ParseMode.HTML, disable_web_page_preview=True)
+            else:
+                await update.message.reply_text("❌ Failed to fetch latest activity.")
+    except Exception as e:
+        logger.error(f"Latest error: {e}")
+        await update.message.reply_text("❌ Error getting updates.")
+
+
+    except Exception as e:
+        logger.error(f"Latest error: {e}")
+        await update.message.reply_text("❌ Error getting updates.")
+
+
+# ============================================================
+# Engagement Reminders
+# ============================================================
+
+async def reminder_callback(context: ContextTypes.DEFAULT_TYPE):
+    """Send a scheduled reminder to update the community."""
+    job = context.job
+    chat_id = job.chat_id
+    
+    # Fetch latest activity to inspire the update
+    latest_text = ""
+    try:
+        async with httpx.AsyncClient() as client:
+            resp = await client.get(
+                f"{BACKEND_URL}/api/search",
+                params={"q": "", "limit": 3, "sort": "newest"},
+                timeout=5.0
+            )
+            if resp.status_code == 200:
+                results = resp.json().get("results", [])
+                if results:
+                    latest_text = "\n\n<b>Recent Activity:</b>\n"
+                    for item in results:
+                         latest_text += f"• {item['title']} (by {item['author_name']})\n"
+    except Exception:
+        pass
+
+    text = (
+        "📅 <b>Community Update Reminder!</b>\n\n"
+        "Consistency is key! It's time to share a quick update with the group about our progress."
+        f"{latest_text}\n"
+        "<i>What have we built today?</i> 🚀"
+    )
+    
+    await context.bot.send_message(chat_id=chat_id, text=text, parse_mode=ParseMode.HTML)
+
+
+async def start_reminders_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Start weekly engagement reminders."""
+    if not update.message:
+        return
+        
+    chat_id = update.effective_chat.id
+    
+    # Check admin
+    if not await is_admin(update, context):
+        await update.message.reply_text("⚠️ Admin only.")
+        return
+
+    # Remove existing jobs
+    current_jobs = context.job_queue.get_jobs_by_name(f"reminder_{chat_id}")
+    for job in current_jobs:
+        job.schedule_removal()
+
+    # Schedule new job (Weekly = 604800 seconds)
+    # For testing, we start first one in 5 seconds, then repeat weekly
+    context.job_queue.run_repeating(
+        reminder_callback,
+        interval=604800,
+        first=5,
+        chat_id=chat_id,
+        name=f"reminder_{chat_id}"
+    )
+
+    await update.message.reply_text(
+        "✅ <b>Reminders Started!</b>\n\n"
+        "I will ping this chat <b>once a week</b> to remind you to post updates.\n"
+        "You'll get a test reminder in a few seconds.",
+        parse_mode=ParseMode.HTML
+    )
+
+
+async def stop_reminders_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Stop engagement reminders."""
+    if not update.message:
+        return
+        
+    chat_id = update.effective_chat.id
+    
+    # Check admin
+    if not await is_admin(update, context):
+        await update.message.reply_text("⚠️ Admin only.")
+        return
+
+    current_jobs = context.job_queue.get_jobs_by_name(f"reminder_{chat_id}")
+    if not current_jobs:
+        await update.message.reply_text("❌ No active reminders in this chat.")
+        return
+
+    for job in current_jobs:
+        job.schedule_removal()
+
+    await update.message.reply_text("✅ Reminders stopped.")
 
 
 async def about_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -1192,6 +1377,13 @@ def main():
     
     # Sovereign Bridge Handlers
     app.add_handler(CommandHandler("balance", balance_command))
+    app.add_handler(CommandHandler("search", search_command))
+
+    app.add_handler(CommandHandler("latest", latest_command))
+    
+    # Engagement Reminders
+    app.add_handler(CommandHandler("start_reminders", start_reminders_command))
+    app.add_handler(CommandHandler("stop_reminders", stop_reminders_command))
 
     # Section XI Handlers (Agentic Assemblies)
     app.add_handler(CommandHandler("iamagent", register_agent_command))

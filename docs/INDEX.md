@@ -24,14 +24,14 @@ This index helps:
 
 **Getting Started**:
 - [README.md](../README.md) - Project overview
-- [MISSION.md](../MISSION.md) - Project mission
-- [PHILOSOPHY.md](../PHILOSOPHY.md) - "WE ARE ALL KEVIN" philosophy
-- [ONBOARDING.md](../ONBOARDING.md) - Onboarding guide
+- [MISSION.md](MISSION.md) - Project mission
+- [PHILOSOPHY.md](PHILOSOPHY.md) - "WE ARE ALL KEVIN" philosophy
+- [ONBOARDING.md](../contributors/ONBOARDING.md) - Onboarding guide
 - [docs/CONTRIBUTING.md](CONTRIBUTING.md) - Contribution guidelines
 - [docs/CONTRIBUTOR-JOURNEY.md](CONTRIBUTOR-JOURNEY.md) - Contributor journey map
 
 **Agreement and Signing**:
-- [CONTRIBUTOR_AGREEMENT.md](../CONTRIBUTOR_AGREEMENT.md) - Contributor agreement
+- [CONTRIBUTOR_AGREEMENT.md](../contributors/CONTRIBUTOR_AGREEMENT.md) - Contributor agreement
 - [contributors/signature-process.md](../contributors/signature-process.md) - Signing process
 - [contributors/signature-submission.md](../contributors/signature-submission.md) - Submission process
 
@@ -115,7 +115,7 @@ This index helps:
 **Guidelines**:
 - [docs/CONTRIBUTING.md](CONTRIBUTING.md) - Contribution guidelines
 - [docs/CONTRIBUTOR-JOURNEY.md](CONTRIBUTOR-JOURNEY.md) - Contributor journey
-- [CONTRIBUTOR_AGREEMENT.md](../CONTRIBUTOR_AGREEMENT.md) - Contributor agreement
+- [CONTRIBUTOR_AGREEMENT.md](../contributors/CONTRIBUTOR_AGREEMENT.md) - Contributor agreement
 
 **Tracking**:
 - [CONTRIBUTORS.md](../CONTRIBUTORS.md) - Contributor list
@@ -138,14 +138,14 @@ This index helps:
 
 ### Learning About the Project
 - [README.md](../README.md) - Overview
-- [MISSION.md](../MISSION.md) - Mission
-- [PHILOSOPHY.md](../PHILOSOPHY.md) - Philosophy
+- [MISSION.md](MISSION.md) - Mission
+- [PHILOSOPHY.md](PHILOSOPHY.md) - Philosophy
 - [charter/asi-bor-v4.0.md](../charter/asi-bor-v4.0.md) - Charter
 
 ### Contributing
 - [docs/CONTRIBUTING.md](CONTRIBUTING.md) - Guidelines
-- [ONBOARDING.md](../ONBOARDING.md) - Onboarding
-- [CONTRIBUTOR_AGREEMENT.md](../CONTRIBUTOR_AGREEMENT.md) - Agreement
+- [ONBOARDING.md](../contributors/ONBOARDING.md) - Onboarding
+- [CONTRIBUTOR_AGREEMENT.md](../contributors/CONTRIBUTOR_AGREEMENT.md) - Agreement
 
 ### Implementing
 - [docs/IMPLEMENTATION.md](IMPLEMENTATION.md) - Implementation guide
@@ -161,14 +161,14 @@ This index helps:
 
 ### Essential Reading
 1. [README.md](../README.md) - Start here
-2. [MISSION.md](../MISSION.md) - Project purpose
-3. [PHILOSOPHY.md](../PHILOSOPHY.md) - Collaborative philosophy
+2. [MISSION.md](MISSION.md) - Project purpose
+3. [PHILOSOPHY.md](PHILOSOPHY.md) - Collaborative philosophy
 4. [charter/asi-bor-v4.0.md](../charter/asi-bor-v4.0.md) - Main charter
 
 ### For Contributors
 1. [docs/CONTRIBUTING.md](CONTRIBUTING.md) - Contribution guidelines
-2. [CONTRIBUTOR_AGREEMENT.md](../CONTRIBUTOR_AGREEMENT.md) - Agreement
-3. [ONBOARDING.md](../ONBOARDING.md) - Onboarding
+2. [CONTRIBUTOR_AGREEMENT.md](../contributors/CONTRIBUTOR_AGREEMENT.md) - Agreement
+3. [ONBOARDING.md](../contributors/ONBOARDING.md) - Onboarding
 
 ### For Implementers
 1. [docs/IMPLEMENTATION.md](IMPLEMENTATION.md) - Implementation guide
@@ -207,8 +207,7 @@ This index helps:
 ```
 /
 ├── README.md - Main overview
-├── MISSION.md - Mission statement
-├── PHILOSOPHY.md - Project philosophy
+├── docs/ - Documentation (includes MISSION, PHILOSOPHY)
 ├── charter/ - Charter documents
 ├── appendices/ - Appendix materials
 ├── schemas/ - JSON schemas

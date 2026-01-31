@@ -47,19 +47,48 @@ export const TelegramBar: React.FC<TelegramBarProps> = ({ className = '' }) => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Initialize Telegram detection
+  // Initialize Telegram detection & Auto-Auth
   useEffect(() => {
     const inTelegram = telegramApi.isInTelegram();
     setIsInTelegram(inTelegram);
     
+    // Auto-login if in Telegram and not authenticated
+    const initTelegramAuth = async () => {
+      if (inTelegram && !isAuthenticated) {
+        setLoading(true);
+        const webApp = telegramApi.getWebApp();
+        const initData = webApp?.initData;
+        
+        if (initData) {
+          const authResponse = await telegramApi.verifyAuth(initData);
+          if (authResponse && authResponse.authenticated && authResponse.access_token) {
+            // Login to auth store
+            useAuthStore.getState().login(
+              authResponse.forum_user, 
+              authResponse.access_token
+            );
+            
+            // Show welcome toast for new users
+            if (authResponse.newly_created) {
+               // We can use a simple alert or a custom toast here
+               // For now, let's use the webApp native popup if available or just console
+               console.log('Welcome to Kevin\'s Place!');
+            }
+          }
+        }
+        setLoading(false);
+      }
+    };
+
     if (inTelegram) {
       telegramApi.init();
       const tgUser = telegramApi.getTelegramUser();
       if (tgUser) {
         setTelegramUser(tgUser);
       }
+      initTelegramAuth();
     }
-  }, [setIsInTelegram, setTelegramUser]);
+  }, [setIsInTelegram, setTelegramUser, isAuthenticated, setLoading]);
 
   // Fetch stats on mount
   useEffect(() => {

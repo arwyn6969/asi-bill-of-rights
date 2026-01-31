@@ -16,10 +16,40 @@ router = APIRouter(prefix="/api", tags=["Search"])
 
 
 @router.get("/search", response_model=SearchResponse)
-async def search(q: str, limit: int = 20):
+async def search(q: str = "", limit: int = 20, sort: str = "relevance"):
     """Search threads and posts."""
+    results = []
+    
+    # Handle "Latest" request (empty query + sort=newest)
+    if not q and sort == "newest":
+        query = threads.select().order_by(threads.c.created_at.desc()).limit(limit)
+        thread_results = await database.fetch_all(query)
+        
+        for thread in thread_results:
+            # Get zone info
+            zone_q = zones.select().where(zones.c.id == thread["zone_id"])
+            zone = await database.fetch_one(zone_q)
+            
+            # Get author
+            author_q = users.select().where(users.c.id == thread["author_id"])
+            author = await database.fetch_one(author_q)
+            
+            results.append(SearchResult(
+                type="thread",
+                id=thread["id"],
+                title=thread["title"],
+                zone_id=thread["zone_id"],
+                zone_name=zone["name"] if zone else "Unknown",
+                author_name=author["display_name"] if author else "Unknown",
+                author_type=author["account_type"] if author else "unknown",
+                created_at=thread["created_at"]
+            ))
+        return SearchResponse(query="latest", results=results, total=len(results))
+
+    # Normal Search
     if not q or len(q) < 2:
         return SearchResponse(query=q, results=[], total=0)
+
     
     search_term = f"%{q.lower()}%"
     results = []

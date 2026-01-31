@@ -87,6 +87,7 @@ To maximize the capabilities of the cooperative, we will leverage **Google's Adv
     -   **Arweave**: Permanent decentralized backup
     -   **GitHub**: Primary but centralized source of truth
 -   **Cross-Chain Governance**: Aggregate voting across all token deployments into unified governance decisions.
+-   **Project "Kevin's Brain" (Clawdbot Integration)**: Unify the "Kevin" identity (Telegram, Nostr, Wallet) into a single, local-first AI agent using the Clawdbot framework. See [docs/prd/CLAWDBOT_INTEGRATION_PRD.md](./docs/prd/CLAWDBOT_INTEGRATION_PRD.md).
 
 ---
 
@@ -111,7 +112,8 @@ To maximize the capabilities of the cooperative, we will leverage **Google's Adv
 2.  [ ] **Deploy Kevin's Place**: Move from local/Railway to a stable Google Cloud demo environment.
 3.  ✅ **The "Pitch Deck"**: Create a 10-slide visual version of this Master Plan for potential sponsors/legislators. *(See: `docs/PITCH-DECK.md`)*
 4.  ✅ **Tokenization Infrastructure**: Set up `tools/tokenization/` and `tools/wallet-infrastructure/` directories. *(Created with READMEs)*
-5.  [ ] **Bitcoin Stamps SDK Integration**: Evaluate `stamps_sdk` for SRC-20 governance token deployment.
+5.  [ ] **Kevin's Brain Prototype**: Deploy local Clawdbot instance and test `charter-expert` skill.
+6.  [ ] **Bitcoin Stamps SDK Integration**: Evaluate `stamps_sdk` for SRC-20 governance token deployment.
 
 ---
 

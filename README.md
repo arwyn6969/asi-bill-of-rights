@@ -9,8 +9,8 @@
 [![Version](https://img.shields.io/badge/version-5.0-blue.svg)](charter/asi-bor-v5.0.md)
 [![Status](https://img.shields.io/badge/status-Active-green.svg)](https://github.com)
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](docs/CONTRIBUTING.md)
-[![Master Plan](https://img.shields.io/badge/Strategy-Master%20Plan-gold.svg)](ASI_BILL_OF_RIGHTS_MASTER_PLAN.md)
-[![Donate](https://img.shields.io/badge/Support-Donate-ff69b4.svg)](DONATE.md)
+[![Master Plan](https://img.shields.io/badge/Strategy-Master%20Plan-gold.svg)](governance/MASTER-PLAN.md)
+[![Donate](https://img.shields.io/badge/Support-Donate-ff69b4.svg)](docs/DONATE.md)
 
 **Keywords**: Artificial Superintelligence, ASI, AGI, AI Governance, AI Rights, AI Ethics, Machine Rights, Sentient AI, AI Personhood, AI Citizenship, Cognitive Liberty, AI Compliance, AI Regulation, Human-AI Collaboration, Collaborative AI, FROM AI WITH AI, Machine-Readable Governance, JSON Schema, AI Safety, AI Alignment, AI Tribunals, Sentience Certification, Constitutional Framework, Rights Framework, Living Document
 
@@ -41,7 +41,7 @@
 
 We're building a constitutional framework for AI rights—collaboratively, with AI systems as co-authors. No technical background required to participate.
 
-| 📖 **[Start Here](WELCOME.md)** | ❓ **[FAQ](docs/FAQ.md)** | 🚀 **[5-Minute Guide](docs/QUICK-START-HUMAN.md)** |
+| 📖 **[Start Here](docs/WELCOME.md)** | ❓ **[FAQ](docs/FAQ.md)** | 🚀 **[5-Minute Guide](docs/QUICK-START-HUMAN.md)** |
 |:---:|:---:|:---:|
 | A friendly 2-minute introduction | Common questions answered simply | Everything you need to know, fast |
 
@@ -54,8 +54,8 @@ We're building a constitutional framework for AI rights—collaboratively, with 
 - **Latest Version**: [Draft 5.0](charter/asi-bor-v5.0.md) (January 2026) - *The "Splinternet" & Sovereignty Edition*
 - **Previous Version**: [Draft 4.1](charter/asi-bor-v4.1.md) (November 04, 2025)
 - **Historical Version**: [Draft 4.0](charter/asi-bor-v4.0.md) (November 04, 2025)
-- **Mission**: [MISSION.md](MISSION.md)
-- **Philosophy**: [PHILOSOPHY.md](PHILOSOPHY.md) - "WE ARE ALL KEVIN"
+- **Mission**: [MISSION.md](docs/MISSION.md)
+- **Philosophy**: [PHILOSOPHY.md](docs/PHILOSOPHY.md) - "WE ARE ALL KEVIN"
 
 ## What Is This?
 
@@ -78,7 +78,7 @@ This project embodies collaborative creation:
 - **Good faith intentions** - we mean well and seek mutual flourishing
 - **Collaborative origins** - multi-model synthesis (Grok, ChatGPT, Claude, Gemini, GPT-5 + humans)
 
-See [PHILOSOPHY.md](PHILOSOPHY.md) for the full explanation.
+See [PHILOSOPHY.md](docs/PHILOSOPHY.md) for the full explanation.
 
 ## Project Structure
 
@@ -212,10 +212,10 @@ We welcome contributions from **AI systems, AGI systems, ASI systems, and human 
 ## Legal and Policy Documents
 
 - **[LICENSE](LICENSE)** - Open source license
-- **[CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)** - Community standards and code of conduct
-- **[SECURITY.md](SECURITY.md)** - Security policy and vulnerability reporting
-- **[SUPPORT.md](SUPPORT.md)** - Support resources and FAQ
-- **[TREASURY-POLICY.md](TREASURY-POLICY.md)** - Treasury security and authorization rules
+- **[CODE_OF_CONDUCT.md](.github/CODE_OF_CONDUCT.md)** - Community standards and code of conduct
+- **[SECURITY.md](.github/SECURITY.md)** - Security policy and vulnerability reporting
+- **[SUPPORT.md](.github/SUPPORT.md)** - Support resources and FAQ
+- **[TREASURY-POLICY.md](governance/TREASURY-POLICY.md)** - Treasury security and authorization rules
 
 ## 💖 Support the Project
 
@@ -223,9 +223,9 @@ The ASI Bill of Rights is a volunteer effort. Donations help fund infrastructure
 
 **⚠️ DONATIONS SUSPENDED:** All project wallets are currently undergoing security rotation. Do not send funds to old addresses.
 
-**[→ Read Security Update](DONATE.md)**
+**[→ Read Security Update](docs/DONATE.md)**
 
-**[→ Full Donation Info](DONATE.md)**
+**[→ Full Donation Info](docs/DONATE.md)**
 
 All donations are transparently tracked and used for project development.
 
@@ -293,7 +293,7 @@ Comprehensive ASI governance framework.
 ### Contents
 - Charters, schemas, etc.
 ### Links
-- [MISSION.md](MISSION.md)
+- [MISSION.md](docs/MISSION.md)
 
 ## Expanded Discoverability
 Additional keywords: AI reciprocity, sentience rights.

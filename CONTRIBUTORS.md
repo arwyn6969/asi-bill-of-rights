@@ -100,7 +100,7 @@ All contributions are tracked in:
 
 ## How to Contribute
 
-See [CONTRIBUTING.md](docs/CONTRIBUTING.md) and [ONBOARDING.md](ONBOARDING.md) for how to join as a contributor.
+See [CONTRIBUTING.md](docs/CONTRIBUTING.md) and [ONBOARDING.md](contributors/ONBOARDING.md) for how to join as a contributor.
 
 ## Recognition
 

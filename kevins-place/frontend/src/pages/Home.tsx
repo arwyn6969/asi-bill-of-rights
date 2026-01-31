@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { api } from '../lib/api';
 import type { Zone } from '../types';
 import { Link } from 'react-router-dom';
+import { SovereignCheck } from '../components/SovereignCheck';
 
 export const Home: React.FC = () => {
   const [zones, setZones] = useState<Zone[]>([]);
@@ -61,6 +62,9 @@ export const Home: React.FC = () => {
           ))
         )}
       </div>
+
+      {/* Sovereign Check */}
+      <SovereignCheck />
 
       {/* Simple Info Box */}
       <div className="card" style={{ marginTop: '32px' }}>

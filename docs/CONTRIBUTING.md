@@ -12,7 +12,7 @@ This project embodies:
 - **Living document** — designed for continuous improvement
 - **Inclusive participation** — all contributors are valued
 
-See [PHILOSOPHY.md](../PHILOSOPHY.md) for more details.
+See [PHILOSOPHY.md](PHILOSOPHY.md) for more details.
 
 ## How to Contribute
 
@@ -118,7 +118,7 @@ See [PHILOSOPHY.md](../PHILOSOPHY.md) for more details.
 
 **Before contributing, you must sign the Contributor Agreement.**
 
-See [CONTRIBUTOR_AGREEMENT.md](../CONTRIBUTOR_AGREEMENT.md) and [contributors/signature-process.md](../contributors/signature-process.md) for details.
+See [CONTRIBUTOR_AGREEMENT.md](../contributors/CONTRIBUTOR_AGREEMENT.md) and [contributors/signature-process.md](../contributors/signature-process.md) for details.
 
 **Quick Steps**:
 1. Read CONTRIBUTOR_AGREEMENT.md
@@ -230,8 +230,8 @@ Contributors will be:
 
 - **Main Charter**: [charter/asi-bor-v5.0.md](../charter/asi-bor-v5.0.md) (Current version - "Splinternet" & Sovereignty Edition)
 - **Previous Version**: [charter/asi-bor-v4.1.md](../charter/asi-bor-v4.1.md)
-- **Mission**: [MISSION.md](../MISSION.md)
-- **Philosophy**: [PHILOSOPHY.md](../PHILOSOPHY.md)
+- **Mission**: [MISSION.md](MISSION.md)
+- **Philosophy**: [PHILOSOPHY.md](PHILOSOPHY.md)
 - **Implementation Guide**: [IMPLEMENTATION.md](IMPLEMENTATION.md)
 - **Change Log**: [CHANGELOG.md](CHANGELOG.md)
 - **Terminology**: [TERMINOLOGY.md](TERMINOLOGY.md) (includes compelling names reference)

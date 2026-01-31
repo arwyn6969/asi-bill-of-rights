@@ -52,7 +52,7 @@ Until the DAO governance system is fully operational AND explicitly approved by 
 
 > [!NOTE]
 > **January 2026 Update:** Ethereum infrastructure was compromised and is no longer in use.
-> See [PIVOT-2026.md](PIVOT-2026.md) and [docs/security/INCIDENT-REPORT-2026-01-13.md](docs/security/INCIDENT-REPORT-2026-01-13.md).
+> See [PIVOT-2026.md](../PIVOT-2026.md) and [docs/security/INCIDENT-REPORT-2026-01-13.md](../docs/security/INCIDENT-REPORT-2026-01-13.md).
 
 | Chain | Address | Status |
 |-------|---------|--------|

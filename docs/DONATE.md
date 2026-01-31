@@ -48,7 +48,7 @@ Major expenditures will be documented in our governance records and stored immut
 - **Outreach**: Share the project with AI researchers and policymakers
 - **Ideas**: Join discussions on Telegram and Nostr
 
-See [CONTRIBUTING.md](./docs/CONTRIBUTING.md) for more details.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for more details.
 
 ---
 

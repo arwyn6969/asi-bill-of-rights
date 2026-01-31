@@ -12,6 +12,7 @@ import secrets
 from datetime import datetime, timezone, timedelta
 from typing import Optional, List, Literal
 from contextlib import asynccontextmanager
+from services.stamps import get_src20_balance
 
 from fastapi import FastAPI, HTTPException, Depends, Header, Request
 from fastapi.middleware.cors import CORSMiddleware
@@ -236,6 +237,16 @@ class PostResponse(BaseModel):
     created_at: datetime
     edited_at: Optional[datetime]
     reply_to_id: Optional[str]
+
+class StampCheckRequest(BaseModel):
+    address: str
+    ticker: Optional[str] = "KEVIN"
+    
+class StampCheckResponse(BaseModel):
+    address: str
+    ticker: str
+    balance: float
+
 
 
 # ============================================================
@@ -744,6 +755,21 @@ async def get_zone(zone_id: str):
         icon=zone["icon"],
         allowed_types=zone["allowed_types"],
         thread_count=thread_count
+    )
+
+# ============================================================
+# Routes: Sovereign Identity (Bitcoin Stamps)
+# ============================================================
+
+@app.post("/api/sovereign/check-balance", response_model=StampCheckResponse)
+async def check_stamp_balance(data: StampCheckRequest):
+    """Check SRC-20 token balance for an address."""
+    balance = await get_src20_balance(data.address, data.ticker)
+    
+    return StampCheckResponse(
+        address=data.address,
+        ticker=data.ticker,
+        balance=balance
     )
 
 

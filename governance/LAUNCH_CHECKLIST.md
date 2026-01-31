@@ -6,11 +6,11 @@ This checklist ensures all governance structures are in place before public laun
 
 ### Documentation
 
-- [x] Governance structure documented (governance/GOVERNANCE.md)
-- [x] Roles defined (governance/roles.md)
-- [x] Moderation guidelines created (governance/moderation-guidelines.md)
-- [x] Decision process documented (governance/decision-process.md)
-- [x] Conflict resolution defined (governance/conflict-resolution.md)
+- [x] Governance structure documented (GOVERNANCE.md)
+- [x] Roles defined (roles.md)
+- [x] Moderation guidelines created (moderation-guidelines.md)
+- [x] Decision process documented (decision-process.md)
+- [x] Conflict resolution defined (conflict-resolution.md)
 
 ### Team
 
@@ -23,43 +23,43 @@ This checklist ensures all governance structures are in place before public laun
 
 - [ ] Human moderators identified _(pending nominations from project sponsors; track via governance issue queue)_
   - [ ] Primary human moderators selected _(requires outreach to preferred human stewards)_
-  - [ ] Roles assigned _(map selections to `governance/roles.md` once confirmed)_
+  - [ ] Roles assigned _(map selections to `roles.md` once confirmed)_
   - [ ] Contact information documented *(deferred until human moderators are appointed)*
 
 ## Contribution System
 
 ### Tracking
 
-- [x] Contribution tracking system created (contributions/contributions.json)
-- [x] Opinion registry created (contributions/opinions.json)
-- [x] Attribution guide created (contributions/attribution-guide.md)
-- [x] Consensus report created (contributions/consensus-report.md)
+- [x] Contribution tracking system created (../contributions/contributions.json)
+- [x] Opinion registry created (../contributions/opinions.json)
+- [x] Attribution guide created (../contributions/attribution-guide.md)
+- [x] Consensus report created (../contributions/consensus-report.md)
 - [x] CONTRIBUTORS.md created
 
 ### Agreement
 
-- [x] Contributor agreement template created (CONTRIBUTOR_AGREEMENT.md)
-- [x] Signature process documented (contributors/signature-process.md)
-- [x] Agreement template created (contributors/agreement-template.md)
-- [x] Signature submission process documented (contributors/signature-submission.md)
+- [x] Contributor agreement template created (../CONTRIBUTOR_AGREEMENT.md)
+- [x] Signature process documented (../contributors/signature-process.md)
+- [x] Agreement template created (../contributors/agreement-template.md)
+- [x] Signature submission process documented (../contributors/signature-submission.md)
 - [x] Signature collection method configured (GitHub Issues using `[Signature]` title + `signature-intake` label)
-- [x] Email/contact for submissions set up (see [SUPPORT.md](SUPPORT.md) for escalation options)
+- [x] Email/contact for submissions set up (see [SUPPORT.md](../SUPPORT.md) for escalation options)
 
 ## GitHub Repository
 
 ### Configuration
 
 - [x] Repository structure complete
-- [x] Issue templates created (.github/ISSUE_TEMPLATE/)
+- [x] Issue templates created (../.github/ISSUE_TEMPLATE/)
   - [x] Contribution proposal template
   - [x] Feedback template
   - [x] Bug report template
-- [x] PR template created (.github/PULL_REQUEST_TEMPLATE.md)
-- [x] GitHub Actions workflows created (.github/workflows/)
+- [x] PR template created (../.github/PULL_REQUEST_TEMPLATE.md)
+- [x] GitHub Actions workflows created (../.github/workflows/)
   - [x] Schema validation workflow
   - [x] Link checker workflow
   - [x] Cross-reference validation workflow
-- [ ] GitHub contributing guide (.github/CONTRIBUTING.md) - Note: Using root CONTRIBUTING.md instead _(needs mirroring only if GitHub requires org-wide defaults)_
+- [ ] GitHub contributing guide (../.github/CONTRIBUTING.md) - Note: Using root CONTRIBUTING.md instead _(needs mirroring only if GitHub requires org-wide defaults)_
 
 ### Features
 
@@ -85,8 +85,8 @@ This checklist ensures all governance structures are in place before public laun
 
 ### Documentation
 
-- [x] Consolidated platform sync guide (platforms/platforms-sync.md)
-- [x] Platforms overview (platforms/README.md)
+- [x] Consolidated platform sync guide (../platforms/platforms-sync.md)
+- [x] Platforms overview (../platforms/README.md)
 
 ### Initial Sync
 
@@ -99,14 +99,14 @@ This checklist ensures all governance structures are in place before public laun
 
 ### Documentation
 
-- [x] Onboarding guide created (ONBOARDING.md)
-- [x] Onboarding checklist created (contributors/onboarding-checklist.md)
+- [x] Onboarding guide created (../ONBOARDING.md)
+- [x] Onboarding checklist created (../contributors/onboarding-checklist.md)
 
 ### Process
 
 - [ ] Onboarding process tested _(schedule dry run after signature flow walkthrough in task t5)_
 - [ ] First contributor onboarded (if applicable) _(identify volunteer once dry run succeeds)_
-- [ ] Process refined based on feedback _(capture lessons into `contributors/onboarding-checklist.md`)_
+- [ ] Process refined based on feedback _(capture lessons into `../contributors/onboarding-checklist.md`)_
 
 ## Documentation Review
 
@@ -123,9 +123,9 @@ This checklist ensures all governance structures are in place before public laun
 - [x] All documentation files created
 - [x] All guides complete
 - [x] All processes documented
-- [x] Code of Conduct created (CODE_OF_CONDUCT.md)
-- [x] Security policy created (SECURITY.md)
-- [x] Support documentation created (SUPPORT.md)
+- [x] Code of Conduct created (../CODE_OF_CONDUCT.md)
+- [x] Security policy created (../SECURITY.md)
+- [x] Support documentation created (../SUPPORT.md)
 - [ ] All links verified (automated via CI workflow) _(run `gh workflow run link-checker` before public flip)_
 - [ ] All examples accurate _(spot-check README + IMPLEMENTATION once 4.1 references finalize)_
 
@@ -204,7 +204,7 @@ This checklist ensures all governance structures are in place before public laun
 - [ ] Respond to feedback _(triage via SUPPORT.md contact paths)_
 - [ ] Support new contributors _(pair AI + human moderators for intake)_
 - [ ] Refine processes _(feed observations back into GOVERNANCE + CONTRIBUTING)_
-- [ ] Document learnings _(update `docs/CHANGELOG.md` + `governance/LAUNCH_CHECKLIST.md` postmortem)_
+- [ ] Document learnings _(update `../docs/CHANGELOG.md` + `LAUNCH_CHECKLIST.md` postmortem)_
 
 ## Notes
 

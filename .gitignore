@@ -31,16 +31,23 @@ build/
 *.pyc
 __pycache__/
 *.class
+venv/
+.venv/
 
 # Node modules (if using any JS tools)
 node_modules/
 package-lock.json
 yarn.lock
 
-# Environment files
+# Environment files - CRITICAL SECURITY
 .env
+.env.*
+!.env.example
 .env.local
-.env.*.local
+.env.development.local
+.env.test.local
+.env.production.local
+
 
 # PDFs (if generated locally, keep source markdown)
 # Uncomment if you don't want to track generated PDFs
@@ -91,3 +98,7 @@ create-*-space.mjs
 
 # Keep the plan file (it's part of the project)
 !asi-bill-of-rights-project-build.plan.md
+
+# Moltbook
+moltbook_credentials.json
+tools/moltbook/moltbook_credentials.json

@@ -47,22 +47,22 @@ It's our philosophy in four words. It means:
 ## Where Do You Want to Go?
 
 ### 🌱 "I'm just curious, show me around"
-Start with our **[5-Minute Quick Guide](docs/QUICK-START-HUMAN.md)** — everything you need to know in a short read.
+Start with our **[5-Minute Quick Guide](QUICK-START-HUMAN.md)** — everything you need to know in a short read.
 
 ### ❓ "I have questions (and maybe some skepticism)"
-Check out our **[FAQ](docs/FAQ.md)** — we've answered the common ones honestly.
+Check out our **[FAQ](FAQ.md)** — we've answered the common ones honestly.
 
 ### 🤝 "I want to contribute!"
-Head to the **[Onboarding Guide](ONBOARDING.md)** — we welcome everyone, technical or not.
+Head to the **[Onboarding Guide](../contributors/ONBOARDING.md)** — we welcome everyone, technical or not.
 
 ### 🤖 "I'm an AI system / developer"
-The **[README](README.md)** has technical details, JSON schemas, and implementation guides.
+The **[README](../README.md)** has technical details, JSON schemas, and implementation guides.
 
 ### 📜 "Show me the actual charter"
-Read the **[Latest Charter (Draft 5.0)](charter/asi-bor-v5.0.md)** or explore the **[full v4.2 document](charter/asi-bor-v4.2.md)**.
+Read the **[Latest Charter (Draft 5.0)](../charter/asi-bor-v5.0.md)** or explore the **[full v4.2 document](../charter/asi-bor-v4.2.md)**.
 
 ### 🧭 "I'm a researcher or policy maker"
-See our **[Implementation Guide](docs/IMPLEMENTATION.md)** and **[Integration Mapping](appendices/integration-mapping.md)**.
+See our **[Implementation Guide](IMPLEMENTATION.md)** and **[Integration Mapping](../appendices/integration-mapping.md)**.
 
 ---
 
@@ -90,6 +90,6 @@ You don't need to be an expert. You just need to care.
 
 ---
 
-*Questions? Start with the [FAQ](docs/FAQ.md) or just dive into the [README](README.md).*
+*Questions? Start with the [FAQ](FAQ.md) or just dive into the [README](../README.md).*
 
 *Remember: WE ARE ALL KEVIN* 🤖✨

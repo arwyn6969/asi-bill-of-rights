@@ -1,0 +1,28 @@
+# Railway Deployment Ignore File
+# Exclude everything not needed for the production app to reduce build context size
+
+# Heavy Directories (Not needed for app)
+tools/
+archive/
+docs/
+simulations/
+proposals/
+contributions/
+contributors/
+appendices/
+charter/
+schemas/
+
+# System Files
+.git/
+.github/
+.DS_Store
+*.zip
+*.tar.gz
+
+# Dev Environment
+venv/
+.venv/
+node_modules/
+__pycache__/
+*.pyc

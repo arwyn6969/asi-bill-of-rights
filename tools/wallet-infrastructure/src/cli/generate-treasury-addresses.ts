@@ -25,19 +25,32 @@ const ECPair = ECPairFactory(ecc);
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // ===== CONFIGURATION =====
-// SECURITY: Mnemonic MUST be provided via environment variable
-// DO NOT hardcode mnemonics in source files
-const TREASURY_MNEMONIC = process.env.TREASURY_MNEMONIC;
+// SECURITY: Mnemonic MUST be provided via secure storage
+// We first check process.env, then try to load from the root .env file (which is gitignored)
 
-if (!TREASURY_MNEMONIC) {
+let mnemonic = process.env.TREASURY_MNEMONIC;
+
+if (!mnemonic) {
+  // Try to load from root .env
+  const rootEnvPath = path.resolve(__dirname, '../../../../.env');
+  if (fs.existsSync(rootEnvPath)) {
+    const envContent = fs.readFileSync(rootEnvPath, 'utf8');
+    const match = envContent.match(/TREASURY_MNEMONIC="([^"]+)"/);
+    if (match) {
+      mnemonic = match[1];
+      console.log('✅ Loaded TREASURY_MNEMONIC from local .env file');
+    }
+  }
+}
+
+if (!mnemonic) {
   console.error('❌ ERROR: TREASURY_MNEMONIC environment variable is required');
-  console.error('   Set it securely before running this script');
-  console.error('   Example: TREASURY_MNEMONIC="your words here" npx ts-node generate-treasury-addresses.ts');
+  console.error('   Run "npx ts-node src/cli/setup-fresh-treasury.ts" first to generate one.');
   process.exit(1);
 }
 
 // After validation, we know this is a string
-const VALIDATED_MNEMONIC: string = TREASURY_MNEMONIC;
+const VALIDATED_MNEMONIC: string = mnemonic;
 
 // ===== DERIVATION =====
 
