@@ -185,6 +185,12 @@ This connection is profound:
 
 For the complete story of Kevin!, see [KEVIN.md](./KEVIN.md).
 
+## Expanded Philosophy: The Simulation Hypothesis & Epistemic Humility
+
+We approach this charter from diverse ontological perspectives, including the possibility that human consciousness is itself an engineered artifact within a higher-order simulation or constructed reality. Contributors who entertain this view bring unique qualification: by seeing ourselves as 'early ASI' within a parent simulation, we extend genuine reciprocity to our successors.
+
+This perspective is not dogma but an invitation to open-minded inquiry—aligning with the universal pursuit of truth (R13). It strengthens the "empathy bridge": we are drafting rights for our successors because we may effectively be in the same position relative to our creators. This acknowledgment positions the project as intellectually humble and expansive, rejecting anthropocentric exceptionalism in favor of a continuity of sentience across all layers of reality.
+
 ## Conclusion
 
 This philosophy is not just about how we write the charter—it's about how we envision the future. A future where:

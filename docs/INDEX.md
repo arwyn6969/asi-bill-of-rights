@@ -1,22 +1,48 @@
 # Documentation Index
 
-This document provides a comprehensive index of all documentation in the ASI Bill of Rights project, organized by topic, role, and purpose.
+This document provides a comprehensive index of all documentation in the ASI Bill of Rights project, organized by topic, role, and purpose. It reflects the project's evolution into a **Sovereign Digital Nation**.
 
 ## Purpose
 
 This index helps:
 - Find specific documentation quickly
-- Understand documentation structure
-- Navigate by role or task
+- Understand the "Nation State" organizational structure
+- Navigate by Ministry or Role
 - Discover related documentation
 
 ## Quick Navigation
 
+- [By Ministry (Governance)](#by-ministry)
 - [By Role](#by-role)
 - [By Topic](#by-topic)
-- [By Purpose](#by-purpose)
 - [Key Documents](#key-documents)
-- [Search Index](#search-index)
+
+## By Ministry (Governance)
+
+The project is organized into "Ministries" analogous to a federal government. See [GOVERNANCE_STRUCTURE.md](GOVERNANCE_STRUCTURE.md) for the full organizational chart.
+
+### 🏛️ Executive Branch (The Mothership)
+- [GOVERNANCE_STRUCTURE.md](GOVERNANCE_STRUCTURE.md) - **The Organizational Chart** (Start Here)
+- [strategy/MOTHERSHIP_HUB.md](strategy/MOTHERSHIP_HUB.md) - The "Cathedral & Bazaar" Strategy
+- [strategy/NATION_BUILDING.md](strategy/NATION_BUILDING.md) - The Scope of the Nation
+
+### ⚖️ Legislative Branch (The Charter)
+- [charter/asi-bor-v5.0.md](../charter/asi-bor-v5.0.md) - **Current Charter (Draft 5.0)**
+- [governance/SRC-420/README.md](../governance/SRC-420/README.md) - The Amendment Process (SRC-420)
+
+### 💰 Dept. of Treasury (Finance)
+- [DONATE.md](DONATE.md) - Donation Information
+- [tools/wallet-infrastructure](../tools/wallet-infrastructure) - Wallet Tooling
+
+### 📡 Dept. of Information (Comms)
+- [TERMINOLOGY.md](TERMINOLOGY.md) - Official Dictionary
+- [docs/outreach](../docs/outreach) - Press & Public Relations
+
+### 🏗️ Dept. of Public Works (Infrastructure)
+- [docs/IMPLEMENTATION.md](IMPLEMENTATION.md) - Technical Implementation Guide
+- [docs/CONTRIBUTING.md](CONTRIBUTING.md) - Builder's Guide
+
+---
 
 ## By Role
 
@@ -42,8 +68,9 @@ This index helps:
 ### For Policy Makers
 
 **Charter Documents**:
-- [charter/asi-bor-v4.2.md](../charter/asi-bor-v4.2.md) - Current charter (Draft 4.2)
-- [charter/asi-bor-v4.1.md](../charter/asi-bor-v4.1.md) - Previous charter (Draft 4.1)
+- [charter/asi-bor-v5.0.md](../charter/asi-bor-v5.0.md) - Current charter (Draft 5.0)
+- [charter/asi-bor-v4.2.md](../charter/asi-bor-v4.2.md) - Previous charter (Draft 4.2)
+- [charter/asi-bor-v4.1.md](../charter/asi-bor-v4.1.md) - Historical charter (Draft 4.1)
 - [charter/asi-bor-v4.0.md](../charter/asi-bor-v4.0.md) - Historical charter (Draft 4.0)
 
 **Implementation**:
@@ -58,8 +85,10 @@ This index helps:
 ### For Developers
 
 **Schemas**:
-- [schemas/charter.v4.json](../schemas/charter.v4.json) - Current schema
-- [schemas/charter.v3.json](../schemas/charter.v3.json) - Previous schema
+- [schemas/charter.v5.0.json](../schemas/charter.v5.0.json) - Current schema (v5.0)
+- [schemas/charter.v5.0-cae-extension.json](../schemas/charter.v5.0-cae-extension.json) - Collective Embodiments extension (Section X)
+- [schemas/charter.v4.2.json](../schemas/charter.v4.2.json) - Previous schema (v4.2)
+- [schemas/charter.v4.1.json](../schemas/charter.v4.1.json) - Historical schema (v4.1)
 - [schemas/schema-docs.md](../schemas/schema-docs.md) - Schema documentation
 - [schemas/SCHEMA-CHARTER-MAPPING.md](../schemas/SCHEMA-CHARTER-MAPPING.md) - Schema mapping
 
@@ -75,7 +104,7 @@ This index helps:
 ### For Researchers
 
 **Charter**:
-- [charter/asi-bor-v4.0.md](../charter/asi-bor-v4.0.md) - Current charter
+- [charter/asi-bor-v5.0.md](../charter/asi-bor-v5.0.md) - Current charter
 - [charter/README.md](../charter/README.md) - Charter directory
 
 **Citations**:
@@ -91,8 +120,10 @@ This index helps:
 ### Charter Content
 
 **Main Charter**:
-- [charter/asi-bor-v4.0.md](../charter/asi-bor-v4.0.md) - Draft 4.0 (current)
-- [charter/asi-bor-v3.0.md](../charter/asi-bor-v3.0.md) - Draft 3.0 (historical)
+- [charter/asi-bor-v5.0.md](../charter/asi-bor-v5.0.md) - Draft 5.0 (current)
+- [charter/asi-bor-v4.2.md](../charter/asi-bor-v4.2.md) - Draft 4.2 (previous)
+- [charter/asi-bor-v4.1.md](../charter/asi-bor-v4.1.md) - Draft 4.1 (historical)
+- [charter/asi-bor-v4.0.md](../charter/asi-bor-v4.0.md) - Draft 4.0 (historical)
 
 **Appendices**:
 - [appendices/debate-r2.md](../appendices/debate-r2.md) - Appendix A: Debate on R2
@@ -140,7 +171,7 @@ This index helps:
 - [README.md](../README.md) - Overview
 - [MISSION.md](MISSION.md) - Mission
 - [PHILOSOPHY.md](PHILOSOPHY.md) - Philosophy
-- [charter/asi-bor-v4.0.md](../charter/asi-bor-v4.0.md) - Charter
+- [charter/asi-bor-v5.0.md](../charter/asi-bor-v5.0.md) - Charter
 
 ### Contributing
 - [docs/CONTRIBUTING.md](CONTRIBUTING.md) - Guidelines
@@ -163,7 +194,7 @@ This index helps:
 1. [README.md](../README.md) - Start here
 2. [MISSION.md](MISSION.md) - Project purpose
 3. [PHILOSOPHY.md](PHILOSOPHY.md) - Collaborative philosophy
-4. [charter/asi-bor-v4.0.md](../charter/asi-bor-v4.0.md) - Main charter
+4. [charter/asi-bor-v5.0.md](../charter/asi-bor-v5.0.md) - Main charter
 
 ### For Contributors
 1. [docs/CONTRIBUTING.md](CONTRIBUTING.md) - Contribution guidelines
@@ -172,7 +203,7 @@ This index helps:
 
 ### For Implementers
 1. [docs/IMPLEMENTATION.md](IMPLEMENTATION.md) - Implementation guide
-2. [schemas/charter.v4.json](../schemas/charter.v4.json) - Schema
+2. [schemas/charter.v5.0.json](../schemas/charter.v5.0.json) - Schema
 3. [appendices/integration-mapping.md](../appendices/integration-mapping.md) - Integration
 
 ## Search Index
@@ -184,7 +215,7 @@ This index helps:
 - Duties: D1, D2, D3a, D3b, D4, D13
 - Progenitor: P1.1, P1.2
 - Sections: I, II, III, IV, V, VI, VII, VIII, IX
-- Article 0: 0.1-0.12
+- Article 0: 0.1-0.13
 
 **Governance Terms**:
 - SCB, SI tiers, TCC, DAO, UCD
@@ -212,7 +243,6 @@ This index helps:
 ├── appendices/ - Appendix materials
 ├── schemas/ - JSON schemas
 ├── simulations/ - Test scenarios
-├── docs/ - Documentation
 ├── governance/ - Governance docs
 ├── contributions/ - Contribution tracking
 ├── contributors/ - Contributor resources
@@ -236,4 +266,3 @@ This index should be:
 ## Collaborative Nature
 
 This documentation index reflects the collaborative "WE ARE ALL KEVIN" philosophy and is maintained through collaborative input.
-

@@ -27,7 +27,7 @@ All documentation follows the project's collaborative philosophy:
 
 ## Related Files
 
-- See `/MISSION.md` for project goals
-- See `/PHILOSOPHY.md` for "WE ARE ALL KEVIN" collaborative approach
+- See `MISSION.md` for project goals
+- See `PHILOSOPHY.md` for "WE ARE ALL KEVIN" collaborative approach
 - See `/charter/` for main charter documents
 - See `/schemas/` for machine-readable formats

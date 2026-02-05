@@ -13,21 +13,26 @@ The ASI Bill of Rights is a collaborative effort to establish governance framewo
 
 ## Donation Addresses
 
-> [!CRITICAL]
-> **DONATIONS SUSPENDED**: All previous project wallets (ETH, BTC, AR) are considered compromised following the January 2026 security incident.
->
-> **DO NOT SEND FUNDS TO ANY PREVIOUSLY LISTED ADDRESS.**
->
-> New secure infrastructure is being established. This page will be updated when it is safe to contribute again.
+> [!NOTE]
+> **Updated January 31, 2026**: These addresses are part of the new "Fresh Seed Protocol" infrastructure and are **SAFE** for contributions.
+> 
+> All verified addresses below are under the direct custody of the Sentience Foundation using secure hardware/cold storage practices.
 
 ### Ethereum (ETH & ERC-20 Tokens)
-*Suspended pending new infrastructure.*
+**Address:** `0x842a9F5D6630A9c3cee8c5b7BB0Eaf099Ec2d921`
+*Supports: ETH, USDC, Base L2, Ethereum Mainnet.*
 
 ### Bitcoin (BTC)
-*Suspended pending new infrastructure.*
+**Address:** `bc1qjnz72rgphxmzru8rcvu3vmju4phd0klsd0tt5k`
+*Supports: Native SegWit (Bech32).*
+
+### Solana (SOL)
+**Address:** `3b2BDrjnGV3EoeaMHxqSemLt6d6X1tiAW511mY9NjR3q`
+*Supports: SOL, USDC-SPL.*
 
 ### Arweave (AR)
-*Suspended pending new infrastructure.*
+**Address:** `dRfLiBPNdosyFtNlqnwV4MBmuBb0AXyM-6IOPoPluFw`
+*Supports: AR tokens for permanent data storage.*
 
 AR donations directly fund permanent, decentralized storage of governance documents.
 
