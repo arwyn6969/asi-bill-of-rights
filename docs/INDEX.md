@@ -164,6 +164,8 @@ The project is organized into "Ministries" analogous to a federal government. Se
 - [docs/CROSS-REFERENCE-INDEX.md](CROSS-REFERENCE-INDEX.md) - Cross-reference index
 - [docs/CITATIONS.md](CITATIONS.md) - Citations
 - [docs/CHANGELOG.md](CHANGELOG.md) - Changelog
+- [docs/publication/README.md](publication/README.md) - Publication builds (the “Bible” markdown compilation)
+- [docs/reports/STATUS-REPORT-2026-02-05.md](reports/STATUS-REPORT-2026-02-05.md) - Project status report (2026-02-05)
 
 ## By Purpose
 
