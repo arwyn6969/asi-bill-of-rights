@@ -8,7 +8,7 @@
 
 ## Executive Summary
 
-The ASI Bill of Rights project has transitioned its governance infrastructure from the **ASIBOR ERC-20 token on Base** to **Bitcoin Stamps via the SRC-420 protocol**. This pivot was catalyzed by a security incident but represents a strategic improvement toward truly permanent, censorship-resistant governance.
+The ASI Bill of Rights project has transitioned its governance infrastructure from the **ASIBOR ERC-20 token on Base (DEAD)** to **Bitcoin Stamps via the SRC-420 protocol**. This pivot was catalyzed by a security incident but represents a strategic improvement toward truly permanent, censorship-resistant governance under the new ticker **$KVNSI**.
 
 ---
 
@@ -45,7 +45,7 @@ On January 13, 2026, the ASIBOR token deployer wallet was compromised due to exp
 
 ### Full Report
 
-📄 See: [`docs/security/INCIDENT-REPORT-2026-01-13.md`](docs/security/INCIDENT-REPORT-2026-01-13.md)
+📄 See: [`docs/security/INCIDENT-REPORT-2026-01-13.md`](../docs/security/INCIDENT-REPORT-2026-01-13.md)
 
 ---
 
@@ -111,8 +111,8 @@ While the financial loss was minimal, the incident exposed the fragility of main
 
 ### Phase 2: SRC-20 Token Deployment (Planned)
 - [ ] Define token parameters
-- [ ] Deploy SRC-20 token on Bitcoin Stamps
-- [ ] Announce ticker and supply
+- [ ] Deploy **$KVNSI** SRC-20 token on Bitcoin Stamps
+- [ ] Announce ticker ($KVNSI) and supply
 
 ### Phase 3: Governance Space Deployment (Planned)
 - [ ] Deploy SRC-420 governance space
@@ -129,7 +129,7 @@ While the financial loss was minimal, the incident exposed the fragility of main
 ## Frequently Asked Questions
 
 ### Q: What happened to my ASIBOR tokens?
-**A:** The ASIBOR ERC-20 token on Base still exists but is no longer administered by the project. The deployer wallet was compromised, making it unsafe to use for governance. A new SRC-20 token will be deployed on Bitcoin Stamps.
+**A:** The ASIBOR ERC-20 token on Base is **technically dead/rekt** due to the deployer wallet compromise. It is unsafe for governance. The project has moved on to **$KVNSI** on Bitcoin Stamps. Do not buy or trade ASIBOR.
 
 ### Q: Will there be an airdrop for ASIBOR holders?
 **A:** TBD. The project may recognize early ASIBOR holders when the new token launches, but this is not confirmed.

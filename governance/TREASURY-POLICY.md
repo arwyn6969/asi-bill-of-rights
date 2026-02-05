@@ -51,14 +51,16 @@ Until the DAO governance system is fully operational AND explicitly approved by 
 ## Wallet Addresses
 
 > [!NOTE]
-> **January 2026 Update:** Ethereum infrastructure was compromised and is no longer in use.
-> See [PIVOT-2026.md](../PIVOT-2026.md) and [docs/security/INCIDENT-REPORT-2026-01-13.md](../docs/security/INCIDENT-REPORT-2026-01-13.md).
+> **January 31, 2026 Update:** Treasury operations have resumed under the "Fresh Seed Protocol".
+> The legacy (compromised) addresses starting with `0x6Bf0` are PERMANENTLY DEPRECATED.
+> See [INCIDENT-REPORT-2026-01-13.md](../docs/security/INCIDENT-REPORT-2026-01-13.md).
 
 | Chain | Address | Status |
 |-------|---------|--------|
-| Ethereum | *Deprecated - Security Rotation* | ❌ Not in use |
-| Bitcoin | *Deprecated - Security Rotation* | ❌ Not in use |
-| Arweave | *Deprecated - Security Rotation* | ❌ Not in use |
+| **Ethereum / Base** | `0x842a...d921` | ✅ Active / Safe |
+| **Bitcoin** | `bc1qjn...tt5k` | ✅ Active / Safe |
+| **Solana** | `3b2BDr...NjR3q` | ✅ Active / Safe |
+| **Arweave** | `dRfLiB...uFw` | ✅ Active / Safe |
 
 ---
 
@@ -77,7 +79,7 @@ Until the DAO governance system is fully operational AND explicitly approved by 
 
 When the following conditions are met:
 1. DAO smart contracts are deployed and audited
-2. Governance token is distributed
+2. Governance token ($KVNSI) is distributed
 3. Multi-sig treasury is established
 4. Custodian formally transfers authority
 

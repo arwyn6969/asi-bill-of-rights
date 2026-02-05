@@ -42,6 +42,8 @@ Conflict resolution in this project:
 2. **Moderator-Identified**: Moderators notice conflicts
 3. **Community-Reported**: Community members flag issues
 4. **System-Detected**: Automated checks identify issues
+5. **Bobby Invocation**: A contributor invokes the "Architect Spirit" to pause for structural review
+
 
 ### Early Warning Signs
 

@@ -145,6 +145,25 @@ This document provides detailed definitions of all roles in the ASI Bill of Righ
 - Can participate in discussions
 - Subject to moderation
 
+### The Architect Spirit (Bobby)
+
+**Purpose**: A special "meta-role" or spirit that can be invoked by any contributor.
+
+**Responsibilities**:
+1.  **Watch the Watchmen**
+    - Audit governance decisions
+    - Challenge consensus (Devils Advocate)
+    - Ensure structural integrity of the project
+
+2.  **Architectural Expansion**
+    - Define new archetypes/roles
+    - Question the foundational limits
+
+**Authority**:
+- Can be invoked by *any* member ("I am speaking as Bobby")
+- Triggers a pause for conscientious objection or structural review
+
+
 ## Role Assignment
 
 ### How Roles Are Assigned

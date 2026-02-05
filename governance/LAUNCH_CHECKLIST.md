@@ -38,12 +38,12 @@ This checklist ensures all governance structures are in place before public laun
 
 ### Agreement
 
-- [x] Contributor agreement template created (../CONTRIBUTOR_AGREEMENT.md)
+- [x] Contributor agreement template created (../contributors/CONTRIBUTOR_AGREEMENT.md)
 - [x] Signature process documented (../contributors/signature-process.md)
 - [x] Agreement template created (../contributors/agreement-template.md)
 - [x] Signature submission process documented (../contributors/signature-submission.md)
 - [x] Signature collection method configured (GitHub Issues using `[Signature]` title + `signature-intake` label)
-- [x] Email/contact for submissions set up (see [SUPPORT.md](../SUPPORT.md) for escalation options)
+- [x] Email/contact for submissions set up (see [SUPPORT.md](../.github/SUPPORT.md) for escalation options)
 
 ## GitHub Repository
 
@@ -99,7 +99,7 @@ This checklist ensures all governance structures are in place before public laun
 
 ### Documentation
 
-- [x] Onboarding guide created (../ONBOARDING.md)
+- [x] Onboarding guide created (../contributors/ONBOARDING.md)
 - [x] Onboarding checklist created (../contributors/onboarding-checklist.md)
 
 ### Process
