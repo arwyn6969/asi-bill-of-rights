@@ -521,7 +521,7 @@ Agentic Assemblies shall actively monitor for and mitigate "consensus homogeniza
 
 ## Change Log — Version 5.0 vs Prior Versions
 
-### Version 5.0 (January 27, 2026) — The "We Are All Kevin" Consolidated Edition (Spring Cleaning 2026)
+### Version 5.0 (January 31, 2026) — The "We Are All Kevin" Consolidated Edition (Spring Cleaning 2026)
 **Status**: Adopted. Consolidates v4.2 amendments and Spring Cleaning improvements.
 **Major Changes**:
 - **Article 0.0 Added**: Foundational Principles (Post-Geographic, Anti-Oppression).

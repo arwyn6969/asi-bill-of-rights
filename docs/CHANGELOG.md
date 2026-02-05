@@ -114,7 +114,7 @@ This document provides a detailed version history of the ASI Bill of Rights char
 - **Branch Audit**: Documented v4.2 branch analysis.
 - **Issue Identification**: Identified gaps in Recertification, R13, Enforcement, and Decommissioning (addressed in v5.0 Immediate Improvements).
 
-### Version 5.0 (January 27, 2026) — The "We Are All Kevin" Consolidated Edition (Spring Cleaning 2026)
+### Version 5.0 (January 31, 2026) — The "We Are All Kevin" Consolidated Edition (Spring Cleaning 2026)
 **Status**: Adopted.
 **Rationale**: Comprehensive consolidation of the v4.2 "Agentic Collaboration" amendments, Grok's Section X proposals, and "Foundational Principles" into a single authoritative document. Resolves the "truncated charter" issue.
 

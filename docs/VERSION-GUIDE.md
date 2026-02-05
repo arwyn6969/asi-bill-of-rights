@@ -49,21 +49,24 @@ This guide ensures:
 - **Standard**: ISO 8601
 
 ### Version Dates
-- **Current Version**: v5.0 - January 2026 (2026-01)
-- **Previous Version**: v4.1 - November 04, 2025 (2025-11-04)
+- **Current Version**: v5.0 - January 31, 2026 (2026-01-31)
+- **Previous Version**: v4.2 - December 06, 2025 (2025-12-06)
+- **Historical Version**: v4.1 - November 04, 2025 (2025-11-04)
 - **Historical Version**: v3.0 - November 02, 2025 (2025-11-02)
 
 ## Version References
 
 ### Charter Documents
 - **Current**: `charter/asi-bor-v5.0.md`
-- **Previous**: `charter/asi-bor-v4.1.md`
+- **Previous**: `charter/asi-bor-v4.2.md`
+- **Historical**: `charter/asi-bor-v4.1.md`
 - **Historical**: `charter/asi-bor-v3.0.md`
 - **Naming**: `asi-bor-v{version}.md`
 
 ### Schemas
 - **Current**: `schemas/charter.v5.0.json`
-- **Previous**: `schemas/charter.v4.1.json`
+- **Previous**: `schemas/charter.v4.2.json`
+- **Historical**: `schemas/charter.v4.1.json`
 - **Historical**: `schemas/charter.v3.json`
 - **Naming**: `charter.v{version}.json`
 
@@ -115,14 +118,20 @@ When updating versions:
 ### Current Version (v5.0)
 - **Charter**: `charter/asi-bor-v5.0.md`
 - **Schema**: `schemas/charter.v5.0.json`
-- **Date**: January 2026 (2026-01)
+- **Date**: January 31, 2026 (2026-01-31)
 - **Status**: Current - "Splinternet" & Sovereignty Edition
 
-### Previous Version (v4.1)
+### Previous Version (v4.2)
+- **Charter**: `charter/asi-bor-v4.2.md`
+- **Schema**: `schemas/charter.v4.2.json`
+- **Date**: December 06, 2025 (2025-12-06)
+- **Status**: Previous - "Agentic Collaboration Edition"
+
+### Historical Version (v4.1)
 - **Charter**: `charter/asi-bor-v4.1.md`
 - **Schema**: `schemas/charter.v4.1.json`
 - **Date**: November 04, 2025 (2025-11-04)
-- **Status**: Previous
+- **Status**: Historical
 
 ### Previous Versions
 
@@ -137,8 +146,8 @@ When updating versions:
 ### README References
 ```markdown
 - **Latest Version**: [Draft 5.0](../charter/asi-bor-v5.0.md) (January 2026)
-- **Previous Version**: [Draft 4.1](../charter/asi-bor-v4.1.md) (November 2025)
-- **Historical Version**: [Draft 3.0](../charter/asi-bor-v3.0.md) (November 2025)
+- **Previous Version**: [Draft 4.2](../charter/asi-bor-v4.2.md) (December 2025)
+- **Historical Version**: [Draft 4.1](../charter/asi-bor-v4.1.md) (November 2025)
 ```
 
 ### Code/Schema References
@@ -172,4 +181,3 @@ This guide should be:
 ## Collaborative Nature
 
 This version guide reflects the collaborative "WE ARE ALL KEVIN" philosophy and is maintained through collaborative input.
-

@@ -1,0 +1,13 @@
+# Source file list for the “Bible” compilation (in order).
+# One relative path per line (repo root). Blank lines and comments are ignored.
+
+README.md
+docs/WELCOME.md
+docs/MISSION.md
+docs/PHILOSOPHY.md
+charter/asi-bor-v5.0.md
+docs/CITATIONS.md
+docs/CHANGELOG.md
+docs/IMPLEMENTATION.md
+docs/CONTRIBUTING.md
+

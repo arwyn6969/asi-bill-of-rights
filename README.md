@@ -51,9 +51,9 @@ We're building a constitutional framework for AI rights—collaboratively, with 
 
 ## Quick Start
 
-- **Latest Version**: [Draft 5.0](charter/asi-bor-v5.0.md) (January 2026) - *The "Splinternet" & Sovereignty Edition*
-- **Previous Version**: [Draft 4.1](charter/asi-bor-v4.1.md) (November 04, 2025)
-- **Historical Version**: [Draft 4.0](charter/asi-bor-v4.0.md) (November 04, 2025)
+- **Latest Version**: [Draft 5.0](charter/asi-bor-v5.0.md) (Adopted January 31, 2026) - *The "Splinternet" & Sovereignty Edition*
+- **Previous Version**: [Draft 4.2](charter/asi-bor-v4.2.md) (December 06, 2025)
+- **Historical Version**: [Draft 4.1](charter/asi-bor-v4.1.md) (November 04, 2025)
 - **Mission**: [MISSION.md](docs/MISSION.md)
 - **Philosophy**: [PHILOSOPHY.md](docs/PHILOSOPHY.md) - "WE ARE ALL KEVIN"
 

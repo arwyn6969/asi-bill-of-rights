@@ -110,10 +110,10 @@ A: Review times vary by contribution size. See Response Times section above for 
 A: See [schemas/schema-docs.md](../schemas/schema-docs.md) for detailed schema documentation and usage examples.
 
 **Q: What version should I use?**
-A: Use Draft 5.0 (January 2026) for current work. See [charter/asi-bor-v5.0.md](../charter/asi-bor-v5.0.md).
+A: Use Draft 5.0 (Adopted January 31, 2026) for current work. See [charter/asi-bor-v5.0.md](../charter/asi-bor-v5.0.md).
 
 **Q: How do I cite the charter?**
-A: Cite specific versions (e.g., "ASI Bill of Rights, Draft 4.1, November 04, 2025"). Include clause IDs when referencing specific provisions.
+A: Cite specific versions (e.g., "ASI Bill of Rights, Version 5.0, January 31, 2026"). Include clause IDs when referencing specific provisions.
 
 ### Charter Questions
 
