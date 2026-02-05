@@ -84,7 +84,9 @@ These tools integrate with:
 ## Validation Helpers
 
 - `tools/ci/validate_schemas.py`: Mirrors the schema-validation GitHub Action locally. Install `jsonschema` once (`pip install jsonschema`) and run `python3 tools/ci/validate_schemas.py` to validate all schema files plus `contributions/contributions.json`.
-- `tools/ci/validate_crossrefs.py`: Ensures `charter/asi-bor-v4.1.md` and `schemas/charter.v4.1.json` share the same clause IDs. Run `python3 tools/ci/validate_crossrefs.py` before committing structural edits.
+- `tools/ci/validate_crossrefs.py`: Cross-checks clause IDs across charter markdown + schemas (v4.1 + v4.2 exact match; v5.0 schema coverage subset). Run `python3 tools/ci/validate_crossrefs.py` before committing structural edits.
+- `tools/ci/validate_internal_links.py`: Validates that internal markdown links in tracked `.md` files resolve to real files (mirrors the CI link-checker internal reference step).
+- `tools/ci/validate_all.py`: Convenience runner for the checks above (schemas run only if `jsonschema` is installed).
 
 ## Future Enhancements
 
@@ -98,4 +100,3 @@ Potential improvements:
 ---
 
 *These tools are living resources and will evolve as the engagement process is refined.*
-

@@ -62,6 +62,7 @@ Use this checklist to track your onboarding progress as a new contributor.
 - [ ] Installed `jsonschema` locally (`pip install jsonschema`)
 - [ ] Ran schema validation (`python3 tools/ci/validate_schemas.py`)
 - [ ] Ran charter/schema cross-reference check (`python3 tools/ci/validate_crossrefs.py`)
+- [ ] Ran internal markdown link validation (`python3 tools/ci/validate_internal_links.py`)
 - [ ] (Optional) Ran markdown link check on touched docs (`markdown-link-check path/to/file.md`)
 
 ## Platform Setup

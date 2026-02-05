@@ -173,6 +173,31 @@ python3 tools/ci/validate_crossrefs.py
 2. v5.0: Ensures every clause ID present in the schema exists in the charter (schema coverage subset).
 3. Prints concise ✓/✗ output identical to the CI job.
 
+#### ci/validate_internal_links.py
+**Purpose**: Validates that internal markdown links in tracked `.md` files resolve to real files.
+
+**Location**: `tools/ci/validate_internal_links.py`
+
+**Usage**:
+```bash
+python3 tools/ci/validate_internal_links.py
+```
+
+**What It Does**:
+1. Scans tracked markdown files (`git ls-files '*.md'`) for links of the form `[text] (path)`.
+2. Skips external links and pure anchors; strips fragments/querystrings.
+3. Reports broken internal references with `file:line` diagnostics.
+
+#### ci/validate_all.py
+**Purpose**: Runs the local validation helpers in one command (internal links + crossrefs + schemas when available).
+
+**Location**: `tools/ci/validate_all.py`
+
+**Usage**:
+```bash
+python3 tools/ci/validate_all.py
+```
+
 ## Tool Categories
 
 ### By Function

@@ -387,7 +387,7 @@ See [appendices/integration-mapping.md](../appendices/integration-mapping.md) fo
 Keeping prose, schemas, and docs in sync is part of the implementation story. Three GitHub Actions enforce this; run them (or their local equivalents) before opening a PR:
 
 ### 1. Schema Validation (`schema-validation.yml`)
-- **What it checks**: `schemas/charter.v4.1.json`, `schemas/charter.v4.json`, `schemas/charter.v3.json`, plus `contributions/contributions.json` statistics integrity.
+- **What it checks**: All charter schemas (`schemas/charter.v5.0.json`, `schemas/charter.v5.0-cae-extension.json`, `schemas/charter.v4.2.json`, `schemas/charter.v4.1.json`, `schemas/charter.v4.json`, `schemas/charter.v3.json`) plus `contributions/contributions.json` statistics integrity.
 - **Local command**:
   ```bash
   pip install jsonschema  # one-time setup
@@ -396,7 +396,7 @@ Keeping prose, schemas, and docs in sync is part of the implementation story. Th
 - **CI trigger**: Push/PR touches `schemas/**` or `charter/**`.
 
 ### 2. Cross-Reference Validation (`crossref-validation.yml`)
-- **What it checks**: Every clause ID in `charter/asi-bor-v4.1.md` has a matching entry in `schemas/charter.v4.1.json` (and vice versa), including the new V.5.*, Article 0.13, VII.1, D14/IX.2 additions.
+- **What it checks**: Clause IDs stay in sync between charter markdown + schemas (v4.1 + v4.2 exact match; v5.0 schema coverage subset).
 - **Local command**:
   ```bash
   python3 tools/ci/validate_crossrefs.py
@@ -409,6 +409,10 @@ Keeping prose, schemas, and docs in sync is part of the implementation story. Th
   ```bash
   npm install -g markdown-link-check
   markdown-link-check README.md  # repeat for other files or script it
+  ```
+  For internal references only (CI’s strictest part), run:
+  ```bash
+  python3 tools/ci/validate_internal_links.py
   ```
   For a full sweep (matching CI), run the workflow with GitHub CLI: `gh workflow run link-checker.yml`.
 
@@ -425,4 +429,3 @@ Keeping prose, schemas, and docs in sync is part of the implementation story. Th
 ---
 
 *This implementation guide is a living document and will be updated as the charter evolves and implementation experience accumulates.*
-

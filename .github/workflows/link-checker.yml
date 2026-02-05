@@ -32,7 +32,7 @@ jobs:
               echo "✗ Broken links detected in $file"
               status=1
             fi
-          done < <(find . -name "*.md" -type f ! -path "./.git/*" ! -path "./node_modules/*")
+          done < <(find . -name "*.md" -type f ! -path "./.git/*" ! -path "*/node_modules/*" ! -path "*/venv/*" ! -path "*/.venv/*")
           if [ "$status" -ne 0 ]; then
             echo "✗ Markdown link check failed"
             exit 1
@@ -45,65 +45,4 @@ jobs:
           python-version: '3.11'
 
       - name: Check internal file references
-        run: |
-          python3 << 'EOF'
-          import os
-          import re
-          import sys
-          
-          errors = []
-          
-          # Patterns for internal links
-          patterns = [
-              r'\[([^\]]+)\]\(([^)]+)\)',  # Markdown links
-              r'`([^`]+)`',  # Code references
-          ]
-          
-          # Files to check
-          md_files = []
-          for root, dirs, files in os.walk('.'):
-              # Skip .git and other hidden directories
-              dirs[:] = [d for d in dirs if not d.startswith('.')]
-              for file in files:
-                  if file.endswith('.md'):
-                      md_files.append(os.path.join(root, file))
-          
-          # Check each file
-          for md_file in md_files:
-              try:
-                  with open(md_file, 'r', encoding='utf-8') as f:
-                      content = f.read()
-                      lines = content.split('\n')
-                      
-                  # Check relative links
-                  for i, line in enumerate(lines, 1):
-                      # Match markdown links
-                      for match in re.finditer(r'\[([^\]]+)\]\(([^)]+)\)', line):
-                          link = match.group(2)
-                          # Skip external links
-                          if link.startswith('http://') or link.startswith('https://') or link.startswith('mailto:'):
-                              continue
-                          # Skip anchors
-                          if link.startswith('#'):
-                              continue
-                          
-                          # Resolve relative path
-                          base_dir = os.path.dirname(md_file)
-                          if base_dir == '.':
-                              base_dir = ''
-                          target = os.path.normpath(os.path.join(base_dir, link))
-                          
-                          # Check if file exists
-                          if not os.path.exists(target):
-                              errors.append(f"{md_file}:{i} - Broken link: {link} -> {target}")
-              except Exception as e:
-                  errors.append(f"{md_file} - Error reading file: {e}")
-          
-          if errors:
-              print("✗ Found broken internal links:")
-              for error in errors:
-                  print(f"  {error}")
-              sys.exit(1)
-          else:
-              print("✓ All internal links valid")
-          EOF
+        run: python3 tools/ci/validate_internal_links.py

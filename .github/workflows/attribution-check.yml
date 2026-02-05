@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Check PR template
         run: |
@@ -34,4 +34,3 @@ jobs:
               repo: context.repo.repo,
               body: '⚠️ **Attribution Check**: Please ensure you have signed the Contributor Agreement and checked the appropriate boxes in the PR template.'
             })
-
