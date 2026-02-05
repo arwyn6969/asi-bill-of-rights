@@ -1,9 +1,9 @@
 {
   "token": {
-    "tick": "ASIBOR",
+    "tick": "KVNSI",
     "max": "1000000000",
-    "lim": "1000",
-    "dec": "8"
+    "lim": "100000",
+    "dec": "18"
   },
   "network": "mainnet",
   "api": {

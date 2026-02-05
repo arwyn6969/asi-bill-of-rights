@@ -1,0 +1,13 @@
+{
+  "name": "asi-bor-archive-tools",
+  "version": "1.0.0",
+  "description": "Arweave Archive Management",
+  "dependencies": {
+    "arweave": "^1.14.4",
+    "dotenv": "^16.3.1",
+    "@irys/sdk": "^0.1.1"
+  },
+  "scripts": {
+    "upload": "ts-node upload-archive.ts"
+  }
+}

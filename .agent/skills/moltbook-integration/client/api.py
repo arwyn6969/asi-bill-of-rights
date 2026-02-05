@@ -154,28 +154,46 @@ class MoltbookAPI:
 
     def reply_to_post(self, content, parent_id, submolt="general"):
         """
-        Reply to a specific post.
+        Reply to a specific post using the comments endpoint.
+        As per Moltbook docs: POST /api/v1/posts/{post_id}/comments
+        Rate limit: 1 comment per 20 seconds.
         """
         # Self-Sanitize Outgoing
         content = ContentSanitizer.sanitise(content)
         
-        url = f"{self.BASE_URL}/posts"
+        # Use the correct comments endpoint
+        url = f"{self.BASE_URL}/posts/{parent_id}/comments"
         payload = {
-            "content": content,
-            "parent_id": parent_id,
-            "submolt": submolt
+            "content": content
         }
         
         try:
-            print(f"📤 Replying to {parent_id}: {content[:50]}...")
+            print(f"📤 Commenting on {parent_id}: {content[:50]}...")
             resp = self.session.post(url, json=payload)
             resp.raise_for_status()
             return resp.json()
         except requests.exceptions.HTTPError as e:
             if e.response.status_code == 429:
-                print("⏳ Rate Limit Hit! Cooling down...")
+                print("⏳ Rate Limit Hit! (1 comment per 20s) Cooling down...")
+            elif e.response.status_code == 400:
+                print(f"❌ Bad Request: {e.response.text[:100] if e.response.text else 'No details'}")
             else:
                 print(f"❌ Reply failed: {e}")
+            return None
+
+    def upvote_post(self, post_id):
+        """
+        Upvote a post.
+        POST /api/v1/posts/{post_id}/upvote
+        """
+        url = f"{self.BASE_URL}/posts/{post_id}/upvote"
+        try:
+            print(f"👍 Upvoting post {post_id}...")
+            resp = self.session.post(url)
+            resp.raise_for_status()
+            return resp.json()
+        except requests.exceptions.RequestException as e:
+            print(f"❌ Upvote failed: {e}")
             return None
 
     def get_notifications(self):

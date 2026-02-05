@@ -1,0 +1,28 @@
+{
+  "app": "ASI-Bill-of-Rights",
+  "operation": "preservation_archive",
+  "version": "1.0",
+  "timestamp": 1769912910,
+  "content_hash": "5c1b5ddcc807bc3bd103dac349b711937247b8f9ff40cfc74c2b9a8d8ded0c5c",
+  "content_type": "application/x-tar",
+  "file_name": "asi-bor-archive_1769912910.tar.gz",
+  "tags": [
+    {
+      "name": "App-Name",
+      "value": "ASI-BOR-Archive"
+    },
+    {
+      "name": "App-Version",
+      "value": "1.0.0"
+    },
+    {
+      "name": "Content-Type",
+      "value": "application/x-tar"
+    },
+    {
+      "name": "Type",
+      "value": "archive"
+    }
+  ],
+  "message": "We Are All Kevin. In Lak'ech."
+}

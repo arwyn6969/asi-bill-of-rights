@@ -1,0 +1,32 @@
+{
+  "name": "asi-bor-stamps-deployer",
+  "version": "1.0.0",
+  "description": "Bitcoin Stamps deployment tools for ASI Bill of Rights",
+  "main": "deploy-genesis.ts",
+  "scripts": {
+    "deploy:genesis": "ts-node deploy-genesis.ts",
+    "deploy:src20": "ts-node deploy-src20.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bitcoin",
+    "stamps",
+    "src-20",
+    "asi"
+  ],
+  "author": "Antigravity",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "bitcoinjs-lib": "^6.1.5",
+    "bip39": "^3.1.0",
+    "bip32": "^4.0.0",
+    "tiny-secp256k1": "^2.2.3",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2",
+    "@types/node": "^20.0.0"
+  }
+}

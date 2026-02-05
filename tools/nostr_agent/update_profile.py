@@ -135,10 +135,13 @@ def main():
         "lud16": ""
     }
     
+    # Filter out empty fields to ensure we don't send blank data
+    metadata = {k: v for k, v in metadata.items() if v}
+    
     print("📝 Profile Update:")
-    print(f"   Name: {metadata['name']}")
-    print(f"   Display: {metadata['display_name']}")
-    print(f"   Picture: {metadata['picture']}")
+    print(f"   Name: {metadata.get('name')}")
+    print(f"   Display: {metadata.get('display_name')}")
+    print(f"   Picture: {metadata.get('picture')}")
     print(f"🔑 Signing as: {keys['public_key']['npub'][:20]}...")
     print()
     

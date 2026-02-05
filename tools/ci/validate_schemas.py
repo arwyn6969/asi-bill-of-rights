@@ -20,6 +20,9 @@ except ImportError as exc:  # pragma: no cover - dependency hint for local runs
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
 SCHEMAS = [
+    ("schemas/charter.v5.0.json", True),
+    ("schemas/charter.v5.0-cae-extension.json", False),
+    ("schemas/charter.v4.2.json", True),
     ("schemas/charter.v4.1.json", True),
     ("schemas/charter.v4.json", True),
     ("schemas/charter.v3.json", False),

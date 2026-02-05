@@ -1116,6 +1116,13 @@ async def handle_group_message(update: Update, context: ContextTypes.DEFAULT_TYP
     if not message or not message.text:
         return
     
+    # DEBUG: Save Chat ID for setup
+    try:
+        with open("tools/telegram_bot/last_chat_id.txt", "w") as f:
+            f.write(str(update.effective_chat.id))
+    except Exception:
+        pass
+
     text = message.text.lower()
     bot_username = context.bot.username.lower()
     

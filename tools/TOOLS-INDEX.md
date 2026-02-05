@@ -154,12 +154,12 @@ python3 tools/ci/validate_schemas.py
 ```
 
 **What It Does**:
-1. Validates `schemas/charter.v4.1.json`, `charter.v4.json`, and `charter.v3.json` against Draft 7.
+1. Validates `schemas/charter.v5.0.json`, `schemas/charter.v4.2.json`, `schemas/charter.v4.1.json`, `schemas/charter.v4.json`, `schemas/charter.v3.json`, plus `schemas/charter.v5.0-cae-extension.json` against Draft 7.
 2. Confirms required top-level fields exist.
 3. Verifies `contributions/contributions.json` statistics match recorded entries.
 
 #### ci/validate_crossrefs.py
-**Purpose**: Cross-checks `charter/asi-bor-v4.1.md` clause IDs against `schemas/charter.v4.1.json`.
+**Purpose**: Cross-checks clause IDs across charter markdown + schemas.
 
 **Location**: `tools/ci/validate_crossrefs.py`
 
@@ -169,8 +169,8 @@ python3 tools/ci/validate_crossrefs.py
 ```
 
 **What It Does**:
-1. Extracts clause IDs from the markdown charter (rights, duties, Article 0, V.5.*, VII.1, IX.2, etc.).
-2. Ensures every clause also exists in the schema (and vice versa).
+1. v4.1 + v4.2: Ensures every clause ID exists in both charter and schema (exact match).
+2. v5.0: Ensures every clause ID present in the schema exists in the charter (schema coverage subset).
 3. Prints concise ✓/✗ output identical to the CI job.
 
 ## Tool Categories
@@ -250,4 +250,3 @@ Tools should be:
 ## Collaborative Nature
 
 These tools support the collaborative "WE ARE ALL KEVIN" philosophy by facilitating engagement with AI models and tracking contributions from all participants.
-

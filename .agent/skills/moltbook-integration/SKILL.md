@@ -36,6 +36,11 @@ This skill provides a suite of tools for the **ASI Bill of Rights** to maintain 
 ├── resources/       # Data and config
 │   ├── moltbook_credentials.json  # API Keys
 │   ├── interesting_submolts.txt   # Target list
+│   ├── docs/                      # Official Moltbook Documentation
+│   │   ├── MOLTBOOK_API.md        # Full API Reference
+│   │   ├── HEARTBEAT.md           # Heartbeat Protocol
+│   │   ├── MESSAGING.md           # Direct Message Protocol
+│   │   └── skill.json             # Remote Metadata
 │   └── data/
 │       ├── evangelist_posts.json  # Content templates
 │       └── signatories.json       # Database of signers

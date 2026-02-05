@@ -1,17 +1,16 @@
 {
-  "version": "1.1",
-  "createdAt": "2026-01-31T04:08:38.207Z",
+  "version": "1.2",
+  "createdAt": "2026-01-31T18:25:00.000Z",
   "project": "Sentience Foundation",
   "purpose": "Treasury Addresses",
-  "note": "Derived from same seed as ASIBOR deployer",
+  "note": "Derived from Fresh Seed Protocol (Jan 2026) - SECURE",
   "addresses": {
     "ethereum": {
       "address": "0x842a9F5D6630A9c3cee8c5b7BB0Eaf099Ec2d921",
       "chain": "Base Mainnet (Chain ID: 8453)",
       "assets": [
         "ETH",
-        "USDC",
-        "ASIBOR"
+        "USDC"
       ],
       "derivationPath": "m/44'/60'/0'/0/0"
     },
@@ -29,6 +28,12 @@
         "USDC"
       ],
       "derivationPath": "m/44'/501'/0'/0'"
+    },
+    "arweave": {
+      "address": "dRfLiBPNdosyFtNlqnwV4MBmuBb0AXyM-6IOPoPluFw",
+      "network": "Arweave Mainnet",
+      "note": "Standalone RSA-4096 Key (Not BIP-39 derived)",
+      "assets": ["AR"]
     }
   }
 }
