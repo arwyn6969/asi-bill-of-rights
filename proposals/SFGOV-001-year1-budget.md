@@ -6,7 +6,7 @@
 > 
 > **Status:** This proposal will be redrafted using the new **SRC-420 Bitcoin Stamps** governance infrastructure.
 > 
-> See: [PIVOT-2026.md](../PIVOT-2026.md) for details on the transition.
+> See: [PIVOT-2026.md](../governance/PIVOT-2026.md) for details on the transition.
 
 **Proposal ID:** SFGOV-001  
 **Type:** Treasury Allocation  

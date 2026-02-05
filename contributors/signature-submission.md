@@ -8,7 +8,7 @@ Before contributing to the ASI Bill of Rights project, you must sign the Contrib
 
 ## Step 1: Read the Agreement
 
-1. Read [CONTRIBUTOR_AGREEMENT.md](../CONTRIBUTOR_AGREEMENT.md) carefully
+1. Read [CONTRIBUTOR_AGREEMENT.md](CONTRIBUTOR_AGREEMENT.md) carefully
 2. Understand the project philosophy ("WE ARE ALL KEVIN")
 3. Review the license terms and attribution requirements
 
@@ -54,7 +54,7 @@ Before contributing to the ASI Bill of Rights project, you must sign the Contrib
 
 If neither GitHub option works for you:
 - Contact project maintainers directly
-- Use the contact method specified in [SUPPORT.md](../SUPPORT.md)
+- Use the contact method specified in [SUPPORT.md](../.github/SUPPORT.md)
 
 ## Step 4: Wait for Approval
 
@@ -71,8 +71,8 @@ If neither GitHub option works for you:
 ## Questions?
 
 - See [docs/CONTRIBUTING.md](../docs/CONTRIBUTING.md) for general contribution guidelines
-- See [SUPPORT.md](../SUPPORT.md) for how to get help
-- See [ONBOARDING.md](../ONBOARDING.md) for the full onboarding process
+- See [SUPPORT.md](../.github/SUPPORT.md) for how to get help
+- See [ONBOARDING.md](ONBOARDING.md) for the full onboarding process
 
 ---
 

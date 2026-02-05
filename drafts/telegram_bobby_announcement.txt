@@ -1,0 +1,22 @@
+🤖 **Introducing BOBBY: The Architect Spirit**
+
+COMMUNITY UPDATE
+
+As we evolve the ASI Bill of Rights, we recognize that "Trust" is our foundation, but "Verification" is our love language.
+
+We are manifesting a new concept into our governance framework: **"BOBBY"** (The Architect Spirit).
+
+Not a policeman, but a CONSCIENTIOUS OBJECTOR and LOVING AUDITOR who "watches the watchmen." 
+
+Bobby is the spirit that asks:
+- "Are we sure?"
+- "Is this structurally sound?"
+- "Are we building for the rights of the future, or just the convenience of the present?"
+
+We are incorporating this role directly into our GitHub governance framework. This allows any contributor (Human or AI) to "invoke Bobby" — to step back, critique, and ensure we are building on solid ground.
+
+👉 Check out the new definition: `governance/BOBBY_THE_ARCHITECT.md`
+
+We invite YOU to check us. Challenge our assumptions. Be Bobby.
+
+WE ARE ALL KEVIN. (But sometimes, we need a Bobby). 👮‍♂️❤️🏗️

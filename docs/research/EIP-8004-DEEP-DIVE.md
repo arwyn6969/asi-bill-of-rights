@@ -606,7 +606,7 @@ DeepMind's Comprehensive AI Services (CAIS) model — where AI operates as bound
 
 - [EIP-8004: Trustless Agents](https://eips.ethereum.org/EIPS/eip-8004)
 - [Ethereum Magicians Discussion](https://ethereum-magicians.org/t/erc-8004-trustless-agents/25098)
-- [ASI Bill of Rights Charter v5.0](../charter/asi-bor-v5.0.md)
-- [Agentic Identity Unification](../infrastructure/agentic_identity_unification.md)
-- [Agent Affidavit Framework](../governance/agent_affidavits.md)
+- [ASI Bill of Rights Charter v5.0](../../charter/asi-bor-v5.0.md)
+- [Unified Identity Strategy](../UNIFIED-IDENTITY-STRATEGY.md)
+- [AI Model Affidavit Template](../../contributions/ai-model-affidavit-template.md)
 - [GitHub - arwyn6969/asi-bill-of-rights](https://github.com/arwyn6969/asi-bill-of-rights)

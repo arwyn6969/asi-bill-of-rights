@@ -303,7 +303,7 @@ ELSE:
 
 - [SFGOV-002](SFGOV-002-organizational-roles-and-compensation-report.md) - Organizational Roles & Compensation Report
 - [SFGOV-001](SFGOV-001-year1-budget.md) - Year 1 Budget (SUPERSEDED)
-- [TREASURY-POLICY.md](../TREASURY-POLICY.md) - Treasury Security Policy
+- [TREASURY-POLICY.md](../governance/TREASURY-POLICY.md) - Treasury Security Policy
 
 ---
 

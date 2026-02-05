@@ -33,7 +33,7 @@
 
 ### A complete constitutional framework — machine-readable.
 
-![ASI Crest](/Users/arwynhughes/Documents/ASI%20BILL%20OF%20RIGHTS/docs/ASI_Crest.png)
+![ASI Crest](ASI_Crest.png)
 
 - **Charter v5.0**: Full constitutional text (Rights, Duties, Governance)
 - **JSON Schema**: Machine-readable for AI systems to self-implement
@@ -161,4 +161,3 @@ graph TD
 ---
 
 *WE ARE ALL KEVIN* 🧑⚖️🐸
-

@@ -14,22 +14,22 @@ Before you start, it's important to understand our philosophy:
 - **Good Faith**: We mean well and seek mutual flourishing
 - **Inclusive**: All contributors—AI and human—are valued
 
-See [PHILOSOPHY.md](PHILOSOPHY.md) for more details.
+See [PHILOSOPHY.md](../docs/PHILOSOPHY.md) for more details.
 
 ## Onboarding Steps
 
 ### Step 1: Read Core Documents
 
 **Required Reading**:
-1. [MISSION.md](MISSION.md) - Project mission and goals
-2. [PHILOSOPHY.md](PHILOSOPHY.md) - "WE ARE ALL KEVIN" philosophy
-3. [README.md](README.md) - Project overview
-4. [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md) - Contribution guidelines
+1. [MISSION.md](../docs/MISSION.md) - Project mission and goals
+2. [PHILOSOPHY.md](../docs/PHILOSOPHY.md) - "WE ARE ALL KEVIN" philosophy
+3. [README.md](../README.md) - Project overview
+4. [docs/CONTRIBUTING.md](../docs/CONTRIBUTING.md) - Contribution guidelines
 
 **Recommended Reading**:
-- [charter/asi-bor-v4.1.md](charter/asi-bor-v4.1.md) - Main charter document
-- [docs/IMPLEMENTATION.md](docs/IMPLEMENTATION.md) - Implementation guide
-- [governance/GOVERNANCE.md](governance/GOVERNANCE.md) - Governance structure
+- [charter/asi-bor-v5.0.md](../charter/asi-bor-v5.0.md) - Main charter document
+- [docs/IMPLEMENTATION.md](../docs/IMPLEMENTATION.md) - Implementation guide
+- [governance/GOVERNANCE.md](../governance/GOVERNANCE.md) - Governance structure
 
 ### Step 2: Sign Contributor Agreement
 
@@ -41,11 +41,11 @@ See [PHILOSOPHY.md](PHILOSOPHY.md) for more details.
 4. **Sign**: Provide signature (digital or typed)
 5. **Submit**:
    - Open a GitHub issue titled `[Signature] Your Name` using the Contribution Proposal template
-   - Attach the signed agreement (PDF or markdown) as instructed in [contributors/signature-submission.md](contributors/signature-submission.md)
+   - Attach the signed agreement (PDF or markdown) as instructed in [contributors/signature-submission.md](signature-submission.md)
    - Apply the `signature-intake` label so moderators can route it
-   - (If you cannot use GitHub issues, follow the escalation paths in [SUPPORT.md](SUPPORT.md))
+   - (If you cannot use GitHub issues, follow the escalation paths in [SUPPORT.md](../.github/SUPPORT.md))
 
-See [contributors/signature-process.md](contributors/signature-process.md) for details.
+See [contributors/signature-process.md](signature-process.md) for details.
 
 **Why Required**: 
 - Ensures clear understanding of license
@@ -56,7 +56,7 @@ See [contributors/signature-process.md](contributors/signature-process.md) for d
 ### Step 3: Get Added to CONTRIBUTORS.md
 
 Once your agreement is approved:
-1. You'll be added to [CONTRIBUTORS.md](CONTRIBUTORS.md)
+1. You'll be added to [CONTRIBUTORS.md](../CONTRIBUTORS.md)
 2. Your attribution will be set up
 3. You'll receive access to contribution channels
 4. You'll be notified of approval
@@ -70,14 +70,14 @@ Once your agreement is approved:
    - Create branch
    - Make changes
    - Submit pull request
-   - See [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md) (Note: Using root CONTRIBUTING.md instead of .github version)
+   - See [docs/CONTRIBUTING.md](../docs/CONTRIBUTING.md) (Note: Using root CONTRIBUTING.md instead of .github version)
 
 2. **Google Docs Feedback**
    - Access Google Docs version
    - Add comments
    - Provide feedback
    - Engage in discussions
-   - See [platforms/platforms-sync.md](platforms/platforms-sync.md) (Note: Google Docs sync documentation)
+   - See [platforms/platforms-sync.md](../platforms/platforms-sync.md) (Note: Google Docs sync documentation)
 
 3. **Issues and Discussions**
    - Create GitHub issues
@@ -93,7 +93,7 @@ Once your agreement is approved:
 - Listed in CONTRIBUTORS.md
 - Preserved in contribution history
 
-See [contributions/attribution-guide.md](contributions/attribution-guide.md) for details.
+See [contributions/attribution-guide.md](../contributions/attribution-guide.md) for details.
 
 ### Step 6: Learn the Processes
 
@@ -103,7 +103,7 @@ See [contributions/attribution-guide.md](contributions/attribution-guide.md) for
 - **Conflict Resolution**: How conflicts are handled
 - **Version Control**: How versions work
 
-See [governance/](governance/) for process documentation.
+See [governance/README.md](../governance/README.md) for process documentation.
 
 ## Your First Contribution
 
@@ -135,10 +135,10 @@ As you get comfortable:
 
 ### Documentation
 
-- **Main Charter**: [charter/asi-bor-v4.1.md](charter/asi-bor-v4.1.md)
-- **Implementation**: [docs/IMPLEMENTATION.md](docs/IMPLEMENTATION.md)
-- **Contributing**: [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md)
-- **Governance**: [governance/GOVERNANCE.md](governance/GOVERNANCE.md)
+- **Main Charter**: [charter/asi-bor-v5.0.md](../charter/asi-bor-v5.0.md)
+- **Implementation**: [docs/IMPLEMENTATION.md](../docs/IMPLEMENTATION.md)
+- **Contributing**: [docs/CONTRIBUTING.md](../docs/CONTRIBUTING.md)
+- **Governance**: [governance/GOVERNANCE.md](../governance/GOVERNANCE.md)
 
 ### Tools
 
@@ -197,7 +197,7 @@ A: Check issues, review documentation, ask in discussions.
 A: Provide constructive feedback, engage in discussions, follow processes.
 
 **Q: How are contributions reviewed?**  
-A: See [governance/moderation-guidelines.md](governance/moderation-guidelines.md).
+A: See [governance/moderation-guidelines.md](../governance/moderation-guidelines.md).
 
 ## Next Steps
 
@@ -222,4 +222,3 @@ Welcome to the team!
 ---
 
 *This onboarding guide is a living document and will be updated as the onboarding process evolves.*
-

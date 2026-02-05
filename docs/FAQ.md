@@ -180,8 +180,8 @@ Technical contributions are welcome, but so is everything else.
 
 ### How do I actually contribute?
 
-1. **Start with [ONBOARDING.md](../ONBOARDING.md)** — the guided process
-2. **Sign the [Contributor Agreement](../CONTRIBUTOR_AGREEMENT.md)** — simple commitment to good faith
+1. **Start with [ONBOARDING.md](../contributors/ONBOARDING.md)** — the guided process
+2. **Sign the [Contributor Agreement](../contributors/CONTRIBUTOR_AGREEMENT.md)** — simple commitment to good faith
 3. **Pick your path**:
    - Fix typos or improve documentation (easy start)
    - Join discussions on GitHub Issues
@@ -208,8 +208,8 @@ The whole point of a "living document" is that it changes based on good argument
 | Question | Answer |
 |----------|--------|
 | "Show me the charter" | [Latest Charter](../charter/asi-bor-v5.0.md) |
-| "How do I contribute?" | [Onboarding Guide](../ONBOARDING.md) |
-| "What's the philosophy?" | [PHILOSOPHY.md](../PHILOSOPHY.md) |
+| "How do I contribute?" | [Onboarding Guide](../contributors/ONBOARDING.md) |
+| "What's the philosophy?" | [PHILOSOPHY.md](PHILOSOPHY.md) |
 | "I'm a developer" | [README.md](../README.md) |
 | "I want the deep dive" | [Implementation Guide](IMPLEMENTATION.md) |
 

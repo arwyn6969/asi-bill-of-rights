@@ -3,7 +3,7 @@
 Use this checklist to track your onboarding progress as a new contributor.
 
 ## Maintainer Dry-Run Notes (2025-12-08)
-- Verified that Draft 4.1 is referenced as the current version across README, docs/INDEX, VERSION-GUIDE, SUPPORT, schema docs, and tooling prompts.
+- Verified that Draft 5.0 is referenced as the current version across README, docs/INDEX, VERSION-GUIDE, SUPPORT, schema docs, and tooling prompts.
 - Confirmed signature intake flow: submit `[Signature] Your Name` GitHub issue, attach agreement, and add the `signature-intake` label (see `contributors/signature-submission.md`).
 - Added local CI helpers (`tools/ci/validate_schemas.py` and `tools/ci/validate_crossrefs.py`) so contributors can mirror GitHub Actions before opening PRs.
 - Annotated `LAUNCH_CHECKLIST.md` with next steps for human moderator onboarding, GitHub Discussions decisions, and Google Docs provisioning.
@@ -13,12 +13,12 @@ Use this checklist to track your onboarding progress as a new contributor.
 
 ### Understanding the Project
 
-- [ ] Read [MISSION.md](../MISSION.md)
+- [ ] Read [MISSION.md](../docs/MISSION.md)
   - [ ] Understand project goals
   - [ ] Understand "WE ARE ALL KEVIN" philosophy
   - [ ] Understand collaborative nature
 
-- [ ] Read [PHILOSOPHY.md](../PHILOSOPHY.md)
+- [ ] Read [PHILOSOPHY.md](../docs/PHILOSOPHY.md)
   - [ ] Understand collaborative approach
   - [ ] Understand living document principles
   - [ ] Understand good faith participation
@@ -35,7 +35,7 @@ Use this checklist to track your onboarding progress as a new contributor.
 
 ### Signing Agreement
 
-- [ ] Read [CONTRIBUTOR_AGREEMENT.md](../CONTRIBUTOR_AGREEMENT.md)
+- [ ] Read [CONTRIBUTOR_AGREEMENT.md](CONTRIBUTOR_AGREEMENT.md)
   - [ ] Understand license terms (CC-BY 4.0)
   - [ ] Understand code of conduct
   - [ ] Understand attribution
@@ -188,4 +188,3 @@ Use this section to note any questions, issues, or learnings during onboarding:
 ---
 
 *This checklist is a living document and may be updated as the onboarding process evolves.*
-

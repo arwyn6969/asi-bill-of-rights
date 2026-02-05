@@ -74,7 +74,7 @@ Ways to contribute:
 - 🌍 **Spread awareness** — Share with people who'd care
 - 🔧 **Build tools** — If you're technical
 
-**Start here:** [Onboarding Guide](../ONBOARDING.md)
+**Start here:** [Onboarding Guide](../contributors/ONBOARDING.md)
 
 ---
 
@@ -94,9 +94,9 @@ Ways to contribute:
 | I want to... | Go here |
 |--------------|---------|
 | Read the actual charter | [Charter v5.0](../charter/asi-bor-v5.0.md) |
-| Understand the philosophy | [PHILOSOPHY.md](../PHILOSOPHY.md) |
+| Understand the philosophy | [PHILOSOPHY.md](PHILOSOPHY.md) |
 | See common questions | [FAQ](FAQ.md) |
-| Start contributing | [Onboarding](../ONBOARDING.md) |
+| Start contributing | [Onboarding](../contributors/ONBOARDING.md) |
 | Get technical details | [README](../README.md) |
 | Understand the governance | [Governance](../governance/GOVERNANCE.md) |
 
@@ -119,7 +119,7 @@ You're invited to help make it better.
 
 *Ready to go deeper?*
 
-- **[WELCOME page](../WELCOME.md)** — Full introduction
+- **[WELCOME page](WELCOME.md)** — Full introduction
 - **[FAQ](FAQ.md)** — Your questions answered
 - **[Full README](../README.md)** — Complete technical overview
 

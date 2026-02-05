@@ -248,7 +248,7 @@ All amendments:
 
 ### Community Review
 
-Please use the [Community Review Guide](docs/V4.2-COMMUNITY-REVIEW.md) to:
+Please use the [Community Review Guide](../docs/V4.2-COMMUNITY-REVIEW.md) to:
 - Review each feature individually
 - Provide specific feedback
 - Vote on adoption
