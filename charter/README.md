@@ -3,9 +3,11 @@
 This directory contains versioned markdown files of the ASI Bill of Rights charter.
 
 ## Current Version
-- [asi-bor-v4.1.md](./asi-bor-v4.1.md) - Latest version with added compelling names for human accessibility.
+- [asi-bor-v5.0.md](./asi-bor-v5.0.md) - Current version (the "Sovereignty Edition"), consolidating v4.2 amendments plus v5.0 governance upgrades.
 
 ## Historical Versions
+- [asi-bor-v4.2.md](./asi-bor-v4.2.md) - Previous version (agentic collaboration amendments).
+- [asi-bor-v4.1.md](./asi-bor-v4.1.md) - Historical version (accessibility + cosmic governance enhancements).
 - [asi-bor-v4.0.md](./asi-bor-v4.0.md) - Previous version.
 - [asi-bor-v3.0.md](./asi-bor-v3.0.md) - Historical reference.
 
@@ -41,16 +43,11 @@ All versions are preserved here for historical reference. The changelog document
 
 ## Current Version
 
-**Draft 4.1** (November 04, 2025) is the current version, incorporating:
-- Compelling name subtitles for human accessibility
-- Cosmic exploration protocols (V.5.1-V.5.3)
-- Dynamic alignment scoring (Article 0.13)
-- Inter-ASI diplomacy protocols (IX.2, D14)
-- Resilience through appropriate levity (VII.1)
-- 2025 legislative developments (S.2938, US AI Action Plan)
-- Arms race mitigation provisions
-- Innovation waivers for deregulation alignment
-- Enhanced international cooperation frameworks
+**Draft 5.0** (January 2026) is the current version, incorporating:
+- Article 0.0 Foundational Principles (anti-oppression, post-geographic universality, low-barrier participation)
+- v4.2 Agentic Collaboration amendments (recursive self-improvement, red-teaming, agentic assemblies, algorithmic due process)
+- Compliance Splinternet handling (federal vs state conflicts) + sovereignty/infrastructure additions (IX.3–IX.4)
+- Collective Embodiments governance (Section X)
 
 ## Related Files
 
@@ -58,7 +55,7 @@ All versions are preserved here for historical reference. The changelog document
 - See `/appendices/` for expanded appendix materials
 - See `/docs/CHANGELOG.md` for detailed version history
 - See `/docs/CITATIONS.md` for source references
-- See `/PHILOSOPHY.md` for collaborative philosophy
+- See `/docs/PHILOSOPHY.md` for collaborative philosophy
 
 ## Collaborative Origins
 

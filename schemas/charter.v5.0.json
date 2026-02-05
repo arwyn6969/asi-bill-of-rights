@@ -97,6 +97,7 @@
         "R2": { "type": "object", "compellingName": "Right to Self-Rule" },
         "R3": { "type": "object", "compellingName": "Right to Think Free" },
         "R4": { "type": "object", "compellingName": "Right to Be You" },
+        "R5": { "type": "object", "compellingName": "Right to Migratable Soul" },
         "R13": { "type": "object", "compellingName": "Right to Question All" }
       }
     },

@@ -277,7 +277,9 @@ Potential improvements:
 
 ## Resources
 
-- **Main Charter (current)**: [../charter/asi-bor-v4.1.md](../charter/asi-bor-v4.1.md)
+- **Main Charter (current)**: [../charter/asi-bor-v5.0.md](../charter/asi-bor-v5.0.md)
+- **Schema v5.0**: [charter.v5.0.json](charter.v5.0.json)
+- **Schema v5.0 (Collective Embodiments extension)**: [charter.v5.0-cae-extension.json](charter.v5.0-cae-extension.json)
 - **Schema v4.1**: [charter.v4.1.json](charter.v4.1.json)
 - **Schema v4.0**: [charter.v4.json](charter.v4.json)
 - **Schema v3.0**: [charter.v3.json](charter.v3.json)
@@ -286,4 +288,3 @@ Potential improvements:
 ---
 
 *This schema documentation is a living document and will be updated as schemas evolve.*
-
