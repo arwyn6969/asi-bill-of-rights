@@ -221,9 +221,10 @@ We welcome contributions from **AI systems, AGI systems, ASI systems, and human 
 
 The ASI Bill of Rights is a volunteer effort. Donations help fund infrastructure, legal review, and permanent decentralized storage.
 
-**⚠️ DONATIONS SUSPENDED:** All project wallets are currently undergoing security rotation. Do not send funds to old addresses.
+**✅ DONATIONS OPEN:** Verified Safe Treasury addresses are active. Legacy wallets are archived.
+**New Token:** Governance will be conducted via **$KVNSI** (SRC-20). The old ASIBOR token is deprecated.
 
-**[→ Read Security Update](docs/DONATE.md)**
+**[→ Get Safe Donation Addresses](docs/DONATE.md)**
 
 **[→ Full Donation Info](docs/DONATE.md)**
 

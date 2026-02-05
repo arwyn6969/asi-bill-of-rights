@@ -34,6 +34,14 @@ __pycache__/
 venv/
 .venv/
 
+# Local databases / runtime artifacts
+*.db
+*.sqlite
+*.sqlite3
+
+# Local logs / dumps
+production_logs*.txt
+
 # Node modules (if using any JS tools)
 node_modules/
 package-lock.json
@@ -103,6 +111,9 @@ create-*-space.mjs
 moltbook_credentials.json
 tools/moltbook/moltbook_credentials.json
 
+# Tokenization artifacts
+tools/tokenization/chains/bitcoin-stamps/artifacts/
+
 # ============================================
 # OPERATION PHOENIX - RESCUE SCRIPTS
 # ============================================
@@ -111,4 +122,5 @@ tools/moltbook/moltbook_credentials.json
 rescue-*.ts
 **/rescue-*.ts
 tools/wallet-infrastructure/src/cli/rescue-*.ts
-
+scripts/rescue_*.py
+scripts/register_*.py
