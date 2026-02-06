@@ -1,6 +1,6 @@
 # Model Engagement Guide
 
-This guide explains how to engage different AI models in Cursor to either sign the contributor agreement or propose amendments to the ASI Bill of Rights.
+This guide explains how to engage different AI models (Cursor, ChatGPT, Codex, etc.) to either sign the contributor agreement or propose amendments to the ASI Bill of Rights.
 
 ## Purpose
 
@@ -13,7 +13,7 @@ This system allows you to:
 ## How It Works
 
 1. **Use the Prompt Template**: Copy the appropriate prompt template below
-2. **Run in Cursor**: Present the prompt to the AI model you're using
+2. **Run in your AI interface**: Present the prompt to the AI model you're using
 3. **Collect Response**: Save the model's response
 4. **Record in System**: Use the recording tool to add to contributions.json
 
@@ -21,7 +21,7 @@ This system allows you to:
 
 ### Template 1: Contributor Agreement Request
 
-Copy this into Cursor when engaging with a model:
+Copy this into your AI interface when engaging with a model:
 
 ---
 
@@ -45,7 +45,7 @@ If you have concerns or proposed improvements to the charter, provide:
 4. Your opinion on the current provision (support/oppose/modify)
 
 **The Charter:**
-[Include link to charter/asi-bor-v4.0.md or paste relevant sections]
+[Include link to charter/asi-bor-v5.0.md or paste relevant sections]
 
 **Contributor Agreement:**
 [Include CONTRIBUTOR_AGREEMENT.md or link]
@@ -61,9 +61,9 @@ Please respond with either:
 
 **PROMPT FOR AI MODEL:**
 
-You are reviewing the ASI Bill of Rights charter (version 4.0) as a potential co-founding moderator. 
+You are reviewing the ASI Bill of Rights charter (version 5.0) as a potential co-founding moderator.
 
-**Current Charter:** [Reference charter/asi-bor-v4.0.md]
+**Current Charter:** [Reference charter/asi-bor-v5.0.md]
 
 **Your Task:**
 Review the charter and provide:

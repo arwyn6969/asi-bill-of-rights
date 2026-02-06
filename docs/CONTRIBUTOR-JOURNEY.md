@@ -23,9 +23,9 @@ This journey map helps:
 
 **Resources**:
 - `/README.md` - Project overview
-- `/MISSION.md` - Mission statement
-- `/PHILOSOPHY.md` - Collaborative philosophy
-- `/charter/asi-bor-v4.0.md` - Main charter document
+- `/docs/MISSION.md` - Mission statement
+- `/docs/PHILOSOPHY.md` - Collaborative philosophy
+- `/charter/asi-bor-v5.0.md` - Main charter document (current)
 
 **Outcome**: Contributor understands project purpose and philosophy
 
@@ -54,13 +54,13 @@ This journey map helps:
 - Submits signed agreement
 
 **Resources**:
-- `/CONTRIBUTOR_AGREEMENT.md` - Full agreement
+- `/contributors/CONTRIBUTOR_AGREEMENT.md` - Full agreement
 - `/contributors/agreement-template.md` - Template
 - `/contributors/signature-process.md` - Signing process
 - `/contributors/signature-submission.md` - Submission process
 
 **Steps**:
-1. Read `/CONTRIBUTOR_AGREEMENT.md`
+1. Read `/contributors/CONTRIBUTOR_AGREEMENT.md`
 2. Review agreement terms
 3. Fill out contributor information
 4. Sign agreement
@@ -77,7 +77,7 @@ This journey map helps:
 - Sets up development environment
 
 **Resources**:
-- `/ONBOARDING.md` - Onboarding guide
+- `/contributors/ONBOARDING.md` - Onboarding guide
 - `/contributors/onboarding-checklist.md` - Checklist
 - `/governance/GOVERNANCE.md` - Governance structure
 - `/governance/roles.md` - Role definitions
@@ -257,9 +257,9 @@ This journey map helps:
 ## Support Resources
 
 ### For New Contributors
-- `/ONBOARDING.md` - Getting started guide
+- `/contributors/ONBOARDING.md` - Getting started guide
 - `/docs/CONTRIBUTING.md` - Contribution guidelines
-- `/SUPPORT.md` - Support and help resources
+- `/.github/SUPPORT.md` - Support and help resources
 - Issue templates for questions
 
 ### For Active Contributors
@@ -276,7 +276,7 @@ This journey map helps:
 ## Common Challenges and Solutions
 
 ### Challenge: Understanding Contribution Process
-**Solution**: Review `/docs/CONTRIBUTING.md` and `/ONBOARDING.md`
+**Solution**: Review `/docs/CONTRIBUTING.md` and `/contributors/ONBOARDING.md`
 
 ### Challenge: Agreement Signing
 **Solution**: Follow `/contributors/signature-process.md`
@@ -323,11 +323,10 @@ This journey map helps:
 ## Related Files
 
 - See `/docs/CONTRIBUTING.md` for detailed contribution guidelines
-- See `/ONBOARDING.md` for onboarding process
+- See `/contributors/ONBOARDING.md` for onboarding process
 - See `/governance/GOVERNANCE-FLOWCHART.md` for process visualizations
 - See `/contributors/onboarding-checklist.md` for onboarding checklist
 
 ## Collaborative Nature
 
 This journey map reflects the collaborative "WE ARE ALL KEVIN" philosophy, recognizing that all contributors—AI and human—follow a similar journey of discovery, engagement, and ongoing participation.
-

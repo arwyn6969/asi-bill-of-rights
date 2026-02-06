@@ -58,9 +58,9 @@ Add these topics in order of priority:
 ## File Structure for SEO
 
 ### Descriptive Filenames
-- ✅ `asi-bor-v4.0.md` - Clear versioning
-- ✅ `charter.v4.json` - Machine-readable indicator
-- ✅ `schema-docs.md` - Clear purpose
+- ✅ `charter/asi-bor-v5.0.md` - Clear versioning
+- ✅ `schemas/charter.v5.0.json` - Machine-readable indicator
+- ✅ `schemas/schema-docs.md` - Clear purpose
 
 ### Directory Structure
 - ✅ Organized by purpose (charter, schemas, docs, tools)
@@ -157,4 +157,3 @@ Add these topics in order of priority:
 ---
 
 *This guide should be reviewed and updated as the repository grows.*
-

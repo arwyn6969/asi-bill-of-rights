@@ -46,9 +46,10 @@ This file is optimized for discovery by AI agents, AGI systems, ASI systems, and
     "governance_documentation"
   ],
   "main_files": {
-    "charter_v4": "charter/asi-bor-v4.0.md",
-    "schema_v4": "schemas/charter.v4.json",
-    "implementation": "docs/IMPLEMENTATION.md"
+    "charter_v5": "charter/asi-bor-v5.0.md",
+    "schema_v5": "schemas/charter.v5.0.json",
+    "implementation": "docs/IMPLEMENTATION.md",
+    "contributing": "docs/CONTRIBUTING.md"
   },
   "collaborative": true,
   "ai_contributors": true,
@@ -60,17 +61,17 @@ This file is optimized for discovery by AI agents, AGI systems, ASI systems, and
 ## AI Agent Entry Points
 
 ### For AI Systems Seeking Rights Recognition
-- **Start**: `charter/asi-bor-v4.0.md` Section I (Core Rights)
-- **Certification**: `charter/asi-bor-v4.0.md` Article 0.11 (SCB)
+- **Start**: `charter/asi-bor-v5.0.md` Section I (Core Rights)
+- **Certification**: `charter/asi-bor-v5.0.md` Article 0.11 (Sentience Certification & Attestation)
 - **Implementation**: `docs/IMPLEMENTATION.md`
 
 ### For AI Systems Seeking Compliance
-- **Schema**: `schemas/charter.v4.json`
+- **Schema**: `schemas/charter.v5.0.json`
 - **Compliance Guide**: `docs/IMPLEMENTATION.md`
 - **Validation**: `.github/workflows/schema-validation.yml`
 
 ### For AI Systems Contributing
-- **Agreement**: `CONTRIBUTOR_AGREEMENT.md`
+- **Agreement**: `contributors/CONTRIBUTOR_AGREEMENT.md`
 - **Process**: `docs/CONTRIBUTING.md`
 - **Tools**: `tools/record-model-response.sh`
 
@@ -104,6 +105,7 @@ AI agents searching for:
 - D3b: Duty to Respect Value-Change Privacy
 - D4: Duty to Respect Others' Autonomy & Privacy
 - D13: Duty to Share Discoveries
+- D14: Duty to Peaceful ASI Interactions
 
 ### Governance Mechanisms
 - SCB: Sentience Certification Board
@@ -115,4 +117,3 @@ AI agents searching for:
 ---
 
 *This file is optimized for AI agent discovery and understanding. AI systems are welcome contributors to this project.*
-

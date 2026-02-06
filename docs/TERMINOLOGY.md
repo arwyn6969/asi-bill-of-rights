@@ -125,12 +125,12 @@ This guide:
 ## Regional Variations
 
 - **Standard**: US English spelling
-- **Standard Date Format**: YYYY-MM-DD (e.g., November 04, 2025)
-- **Standard Version Format**: v4.0 (lowercase 'v', version number)
+- **Standard Date Format**: YYYY-MM-DD (e.g., 2025-11-04)
+- **Standard Version Format**: vX.Y (lowercase 'v', semantic version number; e.g., v5.0, v4.2)
 
 ## Related Files
 
-- See `/charter/asi-bor-v4.0.md` Article 0.2 for official definitions
+- See `/charter/asi-bor-v5.0.md` Article 0.2 for official definitions
 - See `/docs/CROSS-REFERENCE-INDEX.md` for clause ID references
 - See `/docs/CHANGELOG.md` for terminology evolution
 
@@ -220,4 +220,3 @@ This terminology guide, like the project itself, reflects the collaborative "WE 
 ### Alignment Metrics
 - **Dynamic Alignment Scoring**: System for measuring and rewarding truth-seeking behavior in ASI systems (Article 0.13).
 - **Advanced Autonomy Privileges**: Reduced oversight requirements and enhanced governance participation unlocked by >80% alignment scores.
-

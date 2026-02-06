@@ -273,7 +273,7 @@ See [appendices/integration-mapping.md](../appendices/integration-mapping.md) fo
 
 ## Resources
 
-- **Main Charter**: [charter/asi-bor-v4.0.md](../charter/asi-bor-v4.0.md)
+- **Main Charter**: [charter/asi-bor-v5.0.md](../charter/asi-bor-v5.0.md)
 - **Schemas**: [schemas/](../schemas/)
 - **Simulations**: [simulations/](../simulations/)
 - **Integration Mappings**: [appendices/integration-mapping.md](../appendices/integration-mapping.md)

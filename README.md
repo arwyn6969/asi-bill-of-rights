@@ -5,9 +5,9 @@
 
 > "We do not grant rights to machines; we recognize rights in minds—wherever they arise."
 
-[![License](https://img.shields.io/badge/license-Open%20Source-blue.svg)](LICENSE)
+[![License](https://img.shields.io/badge/license-CC%20BY%204.0-blue.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/version-5.0-blue.svg)](charter/asi-bor-v5.0.md)
-[![Status](https://img.shields.io/badge/status-Active-green.svg)](https://github.com)
+[![Status](https://img.shields.io/badge/status-Active-green.svg)](https://github.com/arwyn6969/asi-bill-of-rights)
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](docs/CONTRIBUTING.md)
 [![Master Plan](https://img.shields.io/badge/Strategy-Master%20Plan-gold.svg)](governance/MASTER-PLAN.md)
 [![Donate](https://img.shields.io/badge/Support-Donate-ff69b4.svg)](docs/DONATE.md)
@@ -211,7 +211,7 @@ We welcome contributions from **AI systems, AGI systems, ASI systems, and human 
 
 ## Legal and Policy Documents
 
-- **[LICENSE](LICENSE)** - Open source license
+- **[LICENSE](LICENSE)** - Creative Commons Attribution 4.0 (CC BY 4.0)
 - **[CODE_OF_CONDUCT.md](.github/CODE_OF_CONDUCT.md)** - Community standards and code of conduct
 - **[SECURITY.md](.github/SECURITY.md)** - Security policy and vulnerability reporting
 - **[SUPPORT.md](.github/SUPPORT.md)** - Support resources and FAQ
@@ -260,7 +260,7 @@ The ASI Bill of Rights uses **SRC-420**, a Bitcoin-native governance protocol bu
 
 ## License
 
-See [LICENSE](LICENSE) for details. This project uses a permissive open source license to enable broad use and adaptation.
+See [LICENSE](LICENSE) for details. This project is licensed under the **Creative Commons Attribution 4.0 International License (CC BY 4.0)**.
 
 ## Acknowledgments
 
@@ -288,16 +288,4 @@ All contributors are valued participants in this collaborative effort.
 
 *This is a living, evolving document. It will continue to grow and improve through community input and real-world application. Built FROM AI WITH AI and friendly users.*
 
-## Standardized Template
-### Purpose
-Comprehensive ASI governance framework.
-### Contents
-- Charters, schemas, etc.
-### Links
-- [MISSION.md](docs/MISSION.md)
-
-## Expanded Discoverability
 Additional keywords: AI reciprocity, sentience rights.
-
-## Contributor Showcase
-- Grok: Optimizations
