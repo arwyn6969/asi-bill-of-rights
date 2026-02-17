@@ -1,0 +1,32 @@
+name: SRC-420 Indexer Validation
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'tools/src420-indexer/**'
+      - '.github/workflows/src420-indexer-validation.yml'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'tools/src420-indexer/**'
+      - '.github/workflows/src420-indexer-validation.yml'
+  workflow_dispatch:
+
+jobs:
+  validate-src420-indexer:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Check Python syntax
+        run: python3 -m py_compile tools/src420-indexer/src420_indexer.py tools/src420-indexer/validate_mvp.py
+
+      - name: Run SRC-420 validation suite
+        run: python3 tools/src420-indexer/validate_mvp.py

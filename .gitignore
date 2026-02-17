@@ -104,6 +104,18 @@ create-*-space.mjs
 *.zip
 *.tar.gz
 
+# ============================================
+# MODEL WEIGHTS & BINARIES
+# ============================================
+# These are too large for GitHub (8+ GB)
+*.safetensors
+*.gguf
+*.bin
+model/Qwen2.5-14B-SOVEREIGN/merges.txt
+model/Qwen2.5-14B-SOVEREIGN/tokenizer.json
+model/Qwen2.5-14B-SOVEREIGN/vocab.json
+model/adapters/
+
 # Keep the plan file (it's part of the project)
 !asi-bill-of-rights-project-build.plan.md
 

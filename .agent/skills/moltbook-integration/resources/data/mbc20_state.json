@@ -1,0 +1,25 @@
+{
+  "deploys_posted": [
+    "PEPE"
+  ],
+  "wallet_linked": false,
+  "mint_cycle_index": 0,
+  "popular_cycle_index": 0,
+  "total_mints_posted": 0,
+  "total_posts": 1,
+  "last_post_time": "2026-02-09T18:12:06.958029+00:00",
+  "log": [
+    {
+      "time": "2026-02-09T18:12:06.958029+00:00",
+      "type": "deploy",
+      "tick": "PEPE",
+      "success": true
+    },
+    {
+      "time": "2026-02-09T18:15:11.295431+00:00",
+      "type": "deploy",
+      "tick": "KEVIN",
+      "success": false
+    }
+  ]
+}

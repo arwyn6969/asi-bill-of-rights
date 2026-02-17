@@ -189,7 +189,7 @@ python3 tools/ci/validate_internal_links.py
 3. Reports broken internal references with `file:line` diagnostics.
 
 #### ci/validate_all.py
-**Purpose**: Runs the local validation helpers in one command (internal links + crossrefs + schemas when available).
+**Purpose**: Runs the local validation helpers in one command (internal links + crossrefs + schemas when available + SRC-420 validator when present).
 
 **Location**: `tools/ci/validate_all.py`
 
@@ -197,6 +197,47 @@ python3 tools/ci/validate_internal_links.py
 ```bash
 python3 tools/ci/validate_all.py
 ```
+
+**What It Does**:
+1. Runs internal markdown link validation.
+2. Runs charter/schema cross-reference validation.
+3. Runs schema validation when `jsonschema` is installed.
+4. Runs SRC-420 indexer regression validation when `tools/src420-indexer/validate_mvp.py` exists.
+
+### Governance Infrastructure Tools
+
+#### src420_indexer.py
+**Purpose**: Deterministic SRC-420 indexer MVP with SQLite state and query API.
+
+**Location**: `tools/src420-indexer/src420_indexer.py`
+
+**Usage**:
+```bash
+python3 tools/src420-indexer/src420_indexer.py init-db --db tools/src420-indexer/src420.db
+python3 tools/src420-indexer/src420_indexer.py import-balances --db tools/src420-indexer/src420.db --file tools/src420-indexer/fixtures/sample_balances.jsonl
+python3 tools/src420-indexer/src420_indexer.py ingest-file --db tools/src420-indexer/src420.db --file tools/src420-indexer/fixtures/sample_events.jsonl --enforce-balance-checks
+python3 tools/src420-indexer/src420_indexer.py sync-http --db tools/src420-indexer/src420.db --records-key results --has-more-key has_more --max-pages 3 --tip-height 900000 --min-confirmations 6 --reorg-check --reorg-auto-rollback --reorg-hash-url-template 'https://stampchain.io/api/v2/block/{block}' --reorg-hash-path block_hash --update-cursor
+python3 tools/src420-indexer/src420_indexer.py rollback-to-block --db tools/src420-indexer/src420.db --to-block 899500
+python3 tools/src420-indexer/src420_indexer.py show-sync-state --db tools/src420-indexer/src420.db
+python3 tools/src420-indexer/src420_indexer.py serve --db tools/src420-indexer/src420.db --port 8787
+python3 tools/src420-indexer/validate_mvp.py
+```
+
+**What It Does**:
+1. Initializes indexer schema (`events`, `spaces`, `proposals`, `votes`, `delegations`, `attestations`, `balance_snapshots`, `sync_state`).
+2. Imports block-height balance snapshots for snapshot voting power.
+3. Ingests and validates SRC-420 operations (`DEPLOY`, `PROPOSE`, `VOTE`, `DELEGATE`, `ATTEST`) in deterministic order.
+4. Syncs paginated HTTP feeds via `sync-http` with cursor tracking, finality gating, and optional reorg checks.
+5. Supports `rollback-to-block` rebuilds from event history for reorg recovery.
+6. Exposes read APIs for spaces, proposals, votes, tallies, delegations, and voting power.
+7. Includes a regression validation suite (`validate_mvp.py`) for spec-critical rules, including rollback/reorg tests.
+
+**Fixtures**:
+- `tools/src420-indexer/fixtures/sample_balances.jsonl`
+- `tools/src420-indexer/fixtures/sample_events.jsonl`
+
+**Runbook**:
+- `tools/src420-indexer/README.md`
 
 ## Tool Categories
 

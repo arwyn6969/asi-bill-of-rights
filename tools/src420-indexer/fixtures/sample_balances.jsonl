@@ -1,0 +1,3 @@
+{"tick":"KVNSI","address":"bc1p_alice","block_height":100,"balance":40,"source":"fixture"}
+{"tick":"KVNSI","address":"bc1p_bob","block_height":100,"balance":60,"source":"fixture"}
+{"tick":"KVNSI","address":"bc1p_charlie","block_height":100,"balance":30,"source":"fixture"}

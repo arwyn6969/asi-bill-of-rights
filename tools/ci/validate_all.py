@@ -6,6 +6,7 @@ Checks:
   1) Internal markdown link targets (tracked files only)
   2) Charter/schema cross-references
   3) Schema validation (optional; requires jsonschema)
+  4) SRC-420 indexer regression suite (if present)
 """
 
 from __future__ import annotations
@@ -36,6 +37,7 @@ def has_jsonschema() -> bool:
 
 def main() -> None:
     overall_ok = True
+    src420_validator = REPO_ROOT / "tools" / "src420-indexer" / "validate_mvp.py"
 
     overall_ok &= run_check(
         "Internal Links",
@@ -56,6 +58,15 @@ def main() -> None:
         print("\n=== Schemas ===")
         print("⚠️  Skipping schema validation (missing dependency: jsonschema).")
         print("   Install once: pip install jsonschema")
+
+    if src420_validator.exists():
+        overall_ok &= run_check(
+            "SRC-420 Indexer MVP",
+            [sys.executable, str(src420_validator)],
+        )
+    else:
+        print("\n=== SRC-420 Indexer MVP ===")
+        print("ℹ️  Skipping SRC-420 validation (tools/src420-indexer/validate_mvp.py not found).")
 
     if not overall_ok:
         raise SystemExit(1)

@@ -1,0 +1,7 @@
+{"txid":"tx-deploy-001","block_height":90,"sender":"bc1p_founder","payload":{"p":"SRC-420","op":"DEPLOY","space":"asi-bill-of-rights","tick":"KVNSI","name":"ASI Bill of Rights DAO","about":"Governance on Bitcoin Stamps","strategies":["src20-balance"],"voting":{"delay":2,"period":144,"quorum":80,"type":"single-choice"},"admins":[]}}
+{"txid":"tx-delegate-001","block_height":99,"sender":"bc1p_alice","payload":{"p":"SRC-420","op":"DELEGATE","space":"asi-bill-of-rights","to":"bc1p_bob"}}
+{"txid":"tx-propose-001","block_height":100,"sender":"bc1p_alice","payload":{"p":"SRC-420","op":"PROPOSE","space":"asi-bill-of-rights","id":1,"title":"ASIBOR-001: Ratify Principles","body":"Approve or reject foundational principles.","discussion":"https://example.org/discussion/1","choices":["Approve","Reject","Abstain"],"snapshot":100,"start":102,"end":246}}
+{"txid":"tx-vote-001","block_height":120,"sender":"bc1p_bob","payload":{"p":"SRC-420","op":"VOTE","space":"asi-bill-of-rights","proposal":1,"choice":1}}
+{"txid":"tx-vote-002","block_height":121,"sender":"bc1p_charlie","payload":{"p":"SRC-420","op":"VOTE","space":"asi-bill-of-rights","proposal":1,"choice":2}}
+{"txid":"tx-vote-003","block_height":122,"sender":"bc1p_bob","payload":{"p":"SRC-420","op":"VOTE","space":"asi-bill-of-rights","proposal":1,"choice":2}}
+{"txid":"tx-attest-001","block_height":300,"sender":"bc1p_founder","payload":{"p":"SRC-420","op":"ATTEST","space":"asi-bill-of-rights","proposal":1,"result":{"scores":[0,130,0],"total":130,"quorum":true,"winner":2}}}

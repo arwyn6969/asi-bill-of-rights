@@ -86,7 +86,8 @@ These tools integrate with:
 - `tools/ci/validate_schemas.py`: Mirrors the schema-validation GitHub Action locally. Install `jsonschema` once (`pip install jsonschema`) and run `python3 tools/ci/validate_schemas.py` to validate all schema files plus `contributions/contributions.json`.
 - `tools/ci/validate_crossrefs.py`: Cross-checks clause IDs across charter markdown + schemas (v4.1 + v4.2 exact match; v5.0 schema coverage subset). Run `python3 tools/ci/validate_crossrefs.py` before committing structural edits.
 - `tools/ci/validate_internal_links.py`: Validates that internal markdown links in tracked `.md` files resolve to real files (mirrors the CI link-checker internal reference step).
-- `tools/ci/validate_all.py`: Convenience runner for the checks above (schemas run only if `jsonschema` is installed).
+- `tools/src420-indexer/validate_mvp.py`: SRC-420 indexer regression suite (deterministic ingest/reducer + sync/rollback/reorg guardrails).
+- `tools/ci/validate_all.py`: Convenience runner for the checks above plus SRC-420 indexer validation (when `tools/src420-indexer/validate_mvp.py` exists). Schema checks still run only if `jsonschema` is installed.
 
 ## Future Enhancements
 
@@ -96,6 +97,26 @@ Potential improvements:
 - Direct JSON updates
 - Amendment comparison tools
 - Consensus analysis tools
+
+## SRC-420 Indexer MVP
+
+Deterministic local indexer for SRC-420 governance events.
+
+**Location**: `tools/src420-indexer/src420_indexer.py`  
+**Runbook**: `tools/src420-indexer/README.md`
+
+Quick commands:
+
+```bash
+python3 tools/src420-indexer/src420_indexer.py init-db --db tools/src420-indexer/src420.db
+python3 tools/src420-indexer/src420_indexer.py import-balances --db tools/src420-indexer/src420.db --file tools/src420-indexer/fixtures/sample_balances.jsonl
+python3 tools/src420-indexer/src420_indexer.py ingest-file --db tools/src420-indexer/src420.db --file tools/src420-indexer/fixtures/sample_events.jsonl --enforce-balance-checks
+python3 tools/src420-indexer/src420_indexer.py sync-http --db tools/src420-indexer/src420.db --records-key results --has-more-key has_more --max-pages 3 --tip-height 900000 --min-confirmations 6 --reorg-check --reorg-auto-rollback --reorg-hash-url-template 'https://stampchain.io/api/v2/block/{block}' --reorg-hash-path block_hash --update-cursor
+python3 tools/src420-indexer/src420_indexer.py rollback-to-block --db tools/src420-indexer/src420.db --to-block 899500
+python3 tools/src420-indexer/src420_indexer.py show-sync-state --db tools/src420-indexer/src420.db
+python3 tools/src420-indexer/src420_indexer.py serve --db tools/src420-indexer/src420.db --port 8787
+python3 tools/src420-indexer/validate_mvp.py
+```
 
 ---
 
