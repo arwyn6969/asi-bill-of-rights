@@ -13,7 +13,6 @@ from .auth import (
 from .crypto import (
     pubkey_to_npub,
     verify_signature,
-    HAS_CRYPTO,
 )
 
 __all__ = [
@@ -25,5 +24,4 @@ __all__ = [
     "get_badge",
     "pubkey_to_npub",
     "verify_signature",
-    "HAS_CRYPTO",
 ]

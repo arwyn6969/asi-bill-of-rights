@@ -15,13 +15,8 @@ import argparse
 import requests
 from typing import Optional
 
-try:
-    from coincurve import PrivateKey
-    import bech32
-    HAS_CRYPTO = True
-except ImportError:
-    HAS_CRYPTO = False
-    print("WARNING: coincurve not installed. Install with: pip install coincurve bech32")
+from coincurve import PrivateKey
+import bech32
 
 
 class AIForumClient:
@@ -39,31 +34,20 @@ class AIForumClient:
         self.private_key_hex = private_key_hex
         self.private_key_bytes = bytes.fromhex(private_key_hex)
         
-        if HAS_CRYPTO:
-            self.private_key = PrivateKey(self.private_key_bytes)
-            self.public_key_bytes = self.private_key.public_key.format(compressed=True)[1:]
-            self.public_key_hex = self.public_key_bytes.hex()
-        else:
-            # Simulated for development
-            self.public_key_hex = hashlib.sha256(self.private_key_bytes).hexdigest()
+        self.private_key = PrivateKey(self.private_key_bytes)
+        self.public_key_bytes = self.private_key.public_key.format(compressed=True)[1:]
+        self.public_key_hex = self.public_key_bytes.hex()
         
         self.access_token: Optional[str] = None
         self.user_info: Optional[dict] = None
     
     def _get_npub(self) -> str:
         """Get the npub (bech32-encoded public key)."""
-        if not HAS_CRYPTO:
-            return f"npub_{self.public_key_hex[:16]}"
-        
         converted = bech32.convertbits(list(self.public_key_bytes), 8, 5)
         return bech32.bech32_encode("npub", converted)
     
     def _sign_message(self, message: str) -> str:
         """Sign a message with the private key."""
-        if not HAS_CRYPTO:
-            # Simulated signature for development
-            return hashlib.sha256((message + self.private_key_hex).encode()).hexdigest() * 2
-        
         message_hash = hashlib.sha256(message.encode()).digest()
         signature = self.private_key.sign_schnorr(message_hash)
         return signature.hex()
