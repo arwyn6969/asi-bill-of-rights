@@ -3,7 +3,7 @@ import { useTelegramStore, telegramApi } from '../store/telegram';
 import { useAuthStore } from '../store/auth';
 
 export const TelegramAuthWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const { isInTelegram, setIsInTelegram, setTelegramUser } = useTelegramStore();
+  const { setIsInTelegram, setTelegramUser } = useTelegramStore();
   const { login, isAuthenticated } = useAuthStore();
   const [isVerifying, setIsVerifying] = useState(false);
 
