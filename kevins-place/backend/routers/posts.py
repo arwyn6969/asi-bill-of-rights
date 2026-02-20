@@ -6,41 +6,24 @@ import hashlib
 from datetime import datetime, timezone
 from typing import Optional
 
-from fastapi import APIRouter, HTTPException, Depends, Header
+from fastapi import APIRouter, HTTPException, Depends, Header, Request
+
+from rate_limit import limiter
 
 from database import database, zones, threads, posts, users
 from schemas import PostCreate, PostResponse, UserResponse
 from services import generate_uuid, get_badge, decode_jwt, verify_signature
 
 
+from dependencies import get_current_user
+
+
 router = APIRouter(tags=["Posts"])
 
 
-async def get_current_user(authorization: Optional[str] = Header(None)) -> Optional[dict]:
-    """Get current user from authorization header."""
-    if not authorization:
-        return None
-    
-    if not authorization.startswith("Bearer "):
-        return None
-    
-    token = authorization[7:]
-    payload = decode_jwt(token)
-    
-    if not payload:
-        return None
-    
-    query = users.select().where(users.c.id == payload["user_id"])
-    user = await database.fetch_one(query)
-    
-    if not user:
-        return None
-    
-    return dict(user)
-
-
 @router.post("/api/threads/{thread_id}/posts", response_model=PostResponse)
-async def create_post(thread_id: str, data: PostCreate, user: dict = Depends(get_current_user)):
+@limiter.limit("10/minute")
+async def create_post(request: Request, thread_id: str, data: PostCreate, user: dict = Depends(get_current_user)):
     """Add a post to a thread."""
     if not user:
         raise HTTPException(status_code=401, detail="Authentication required")

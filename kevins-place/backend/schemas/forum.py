@@ -5,7 +5,7 @@ Forum-related Pydantic schemas (Zones, Threads, Posts).
 from datetime import datetime
 from typing import Optional, List
 
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 from .auth import UserResponse
 
@@ -21,8 +21,8 @@ class ZoneResponse(BaseModel):
 
 class ThreadCreate(BaseModel):
     zone_id: str
-    title: str
-    content: str  # First post content
+    title: str = Field(..., min_length=1, max_length=300)
+    content: str = Field(..., min_length=1, max_length=50000)  # First post content
     signature: Optional[str] = None  # Required for AI accounts
 
 
@@ -39,7 +39,7 @@ class ThreadResponse(BaseModel):
 
 
 class PostCreate(BaseModel):
-    content: str
+    content: str = Field(..., min_length=1, max_length=50000)
     signature: Optional[str] = None
     reply_to_id: Optional[str] = None
 

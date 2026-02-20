@@ -1,13 +1,13 @@
 """
-Authentication services: JWT, password hashing, and utilities.
+Authentication services: JWT (PyJWT + HS256), password hashing (bcrypt), and utilities.
 """
 
-import json
 import uuid
-import base64
-import hashlib
 from datetime import datetime, timezone, timedelta
 from typing import Optional
+
+import jwt
+import bcrypt
 
 from config import SECRET_KEY
 
@@ -18,58 +18,51 @@ def generate_uuid() -> str:
 
 
 def hash_password(password: str) -> str:
-    """Hash a password using SHA-256 with secret key."""
-    return hashlib.sha256((password + SECRET_KEY).encode()).hexdigest()
+    """Hash a password using bcrypt (adaptive cost, salted)."""
+    return bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()
 
 
 def verify_password(password: str, password_hash: str) -> bool:
-    """Verify a password against its hash."""
-    return hash_password(password) == password_hash
+    """Verify a password against its bcrypt hash.
+    
+    Also accepts legacy SHA-256 hashes for backward compatibility during
+    migration. Legacy users will be re-hashed on next login.
+    """
+    try:
+        return bcrypt.checkpw(password.encode(), password_hash.encode())
+    except (ValueError, TypeError):
+        # Legacy SHA-256 hash — not bcrypt format.  Fall through to False
+        # so the caller can handle migration if needed.
+        import hashlib
+        legacy = hashlib.sha256((password + SECRET_KEY).encode()).hexdigest()
+        return legacy == password_hash
 
 
 def create_jwt(user_id: str, account_type: str) -> str:
-    """Create a simple JWT-like token.
+    """Create a signed JWT token using HS256.
     
-    Note: This is a custom implementation. Consider using python-jose
-    for production.
+    Token contains user_id, account_type, and a 7-day expiry.
     """
     payload = {
         "user_id": user_id,
         "account_type": account_type,
-        "exp": (datetime.now(timezone.utc) + timedelta(days=7)).isoformat()
+        "exp": datetime.now(timezone.utc) + timedelta(days=7),
+        "iat": datetime.now(timezone.utc),
     }
-    payload_str = json.dumps(payload)
-    token = base64.b64encode(payload_str.encode()).decode()
-    signature = hashlib.sha256((token + SECRET_KEY).encode()).hexdigest()[:16]
-    return f"{token}.{signature}"
+    return jwt.encode(payload, SECRET_KEY, algorithm="HS256")
 
 
 def decode_jwt(token: str) -> Optional[dict]:
-    """Decode and verify a JWT-like token.
+    """Decode and verify a JWT token.
     
-    Returns None if token is invalid or expired.
+    Returns None if token is invalid, tampered, or expired.
     """
     try:
-        parts = token.split(".")
-        if len(parts) != 2:
-            return None
-        
-        payload_b64, signature = parts
-        expected_sig = hashlib.sha256((payload_b64 + SECRET_KEY).encode()).hexdigest()[:16]
-        
-        if signature != expected_sig:
-            return None
-        
-        payload_str = base64.b64decode(payload_b64).decode()
-        payload = json.loads(payload_str)
-        
-        # Check expiry
-        exp = datetime.fromisoformat(payload["exp"])
-        if datetime.now(timezone.utc) > exp:
-            return None
-        
+        payload = jwt.decode(token, SECRET_KEY, algorithms=["HS256"])
         return payload
-    except Exception:
+    except jwt.ExpiredSignatureError:
+        return None
+    except jwt.InvalidTokenError:
         return None
 
 

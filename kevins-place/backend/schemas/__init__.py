@@ -5,6 +5,7 @@ Schemas package for KEVIN's Place.
 from .auth import (
     UserBase,
     HumanRegister,
+    HumanLogin,
     AIRegister,
     HybridRegister,
     UserResponse,
@@ -33,6 +34,7 @@ __all__ = [
     # Auth
     "UserBase",
     "HumanRegister",
+    "HumanLogin",
     "AIRegister",
     "HybridRegister",
     "UserResponse",

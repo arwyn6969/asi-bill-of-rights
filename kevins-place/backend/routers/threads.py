@@ -7,37 +7,19 @@ from datetime import datetime, timezone
 from typing import List, Optional
 
 import sqlalchemy
-from fastapi import APIRouter, HTTPException, Depends, Header
+from fastapi import APIRouter, HTTPException, Depends, Header, Request
+
+from rate_limit import limiter
 
 from database import database, zones, threads, posts, users
 from schemas import ThreadCreate, ThreadResponse, UserResponse
 from services import generate_uuid, get_badge, decode_jwt, verify_signature
 
 
+from dependencies import get_current_user
+
+
 router = APIRouter(tags=["Threads"])
-
-
-async def get_current_user(authorization: Optional[str] = Header(None)) -> Optional[dict]:
-    """Get current user from authorization header."""
-    if not authorization:
-        return None
-    
-    if not authorization.startswith("Bearer "):
-        return None
-    
-    token = authorization[7:]
-    payload = decode_jwt(token)
-    
-    if not payload:
-        return None
-    
-    query = users.select().where(users.c.id == payload["user_id"])
-    user = await database.fetch_one(query)
-    
-    if not user:
-        return None
-    
-    return dict(user)
 
 
 @router.get("/api/zones/{zone_id}/threads", response_model=List[ThreadResponse])
@@ -58,15 +40,31 @@ async def list_threads(zone_id: str, skip: int = 0, limit: int = 20):
     
     thread_list = await database.fetch_all(query)
     
+    if not thread_list:
+        return []
+    
+    # Batch-load authors (single query instead of N)
+    author_ids = list({t["author_id"] for t in thread_list})
+    authors_query = users.select().where(users.c.id.in_(author_ids))
+    authors_rows = await database.fetch_all(authors_query)
+    authors_map = {a["id"]: a for a in authors_rows}
+    
+    # Batch-load post counts (single query instead of N)
+    thread_ids = [t["id"] for t in thread_list]
+    count_query = sqlalchemy.select(
+        posts.c.thread_id,
+        sqlalchemy.func.count().label("cnt")
+    ).where(
+        posts.c.thread_id.in_(thread_ids)
+    ).group_by(posts.c.thread_id)
+    count_rows = await database.fetch_all(count_query)
+    counts_map = {r["thread_id"]: r["cnt"] for r in count_rows}
+    
     result = []
     for thread in thread_list:
-        # Get author
-        author_query = users.select().where(users.c.id == thread["author_id"])
-        author = await database.fetch_one(author_query)
-        
-        # Count posts
-        post_count_query = sqlalchemy.select(sqlalchemy.func.count()).where(posts.c.thread_id == thread["id"])
-        post_count = await database.fetch_val(post_count_query) or 0
+        author = authors_map.get(thread["author_id"])
+        if not author:
+            continue
         
         result.append(ThreadResponse(
             id=thread["id"],
@@ -88,14 +86,15 @@ async def list_threads(zone_id: str, skip: int = 0, limit: int = 20):
             updated_at=thread["updated_at"],
             pinned=thread["pinned"],
             locked=thread["locked"],
-            post_count=post_count
+            post_count=counts_map.get(thread["id"], 0)
         ))
     
     return result
 
 
 @router.post("/api/threads", response_model=ThreadResponse)
-async def create_thread(data: ThreadCreate, user: dict = Depends(get_current_user)):
+@limiter.limit("5/minute")
+async def create_thread(request: Request, data: ThreadCreate, user: dict = Depends(get_current_user)):
     """Create a new thread."""
     if not user:
         raise HTTPException(status_code=401, detail="Authentication required")

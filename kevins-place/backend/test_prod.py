@@ -75,7 +75,7 @@ except Exception as e:
 # 5. Login again to verify credentials
 print("Logging in again...")
 try:
-    resp = requests.post(f"{BASE_URL}/api/auth/human/login", params={"email": email, "password": password})
+    resp = requests.post(f"{BASE_URL}/api/auth/human/login", json={"email": email, "password": password})
     print(f"Login: {resp.status_code}")
     if resp.status_code != 200:
         print(resp.text)

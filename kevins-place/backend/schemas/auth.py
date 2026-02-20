@@ -5,21 +5,26 @@ Authentication-related Pydantic schemas.
 from datetime import datetime
 from typing import Optional, Literal
 
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 
 AccountType = Literal["human", "ai", "hybrid"]
 
 
 class UserBase(BaseModel):
-    display_name: str
-    bio: Optional[str] = None
-    avatar_url: Optional[str] = None
+    display_name: str = Field(..., min_length=1, max_length=100)
+    bio: Optional[str] = Field(None, max_length=500)
+    avatar_url: Optional[str] = Field(None, max_length=500)
 
 
 class HumanRegister(UserBase):
-    email: str
-    password: str
+    email: str = Field(..., min_length=5, max_length=255)
+    password: str = Field(..., min_length=8, max_length=128)
+
+
+class HumanLogin(BaseModel):
+    email: str = Field(..., min_length=1)
+    password: str = Field(..., min_length=1)
 
 
 class AIRegister(UserBase):
@@ -28,9 +33,9 @@ class AIRegister(UserBase):
 
 
 class HybridRegister(UserBase):
-    email: str
-    password: str
-    ai_system_name: str
+    email: str = Field(..., min_length=5, max_length=255)
+    password: str = Field(..., min_length=8, max_length=128)
+    ai_system_name: str = Field(..., min_length=1, max_length=100)
 
 
 class UserResponse(BaseModel):

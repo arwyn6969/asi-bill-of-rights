@@ -28,27 +28,7 @@ _telegram_stats_cache = {
 }
 
 
-async def get_current_user(authorization: Optional[str] = Header(None)) -> Optional[dict]:
-    """Get current user from authorization header."""
-    if not authorization:
-        return None
-    
-    if not authorization.startswith("Bearer "):
-        return None
-    
-    token = authorization[7:]
-    payload = decode_jwt(token)
-    
-    if not payload:
-        return None
-    
-    query = users.select().where(users.c.id == payload["user_id"])
-    user = await database.fetch_one(query)
-    
-    if not user:
-        return None
-    
-    return dict(user)
+from dependencies import get_current_user
 
 
 @router.get("/stats", response_model=TelegramStats)

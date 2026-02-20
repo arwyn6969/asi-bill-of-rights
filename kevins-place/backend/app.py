@@ -10,11 +10,14 @@ This is the main application factory with router assembly.
 from contextlib import asynccontextmanager
 from datetime import datetime, timezone
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
+from slowapi import _rate_limit_exceeded_handler
+from slowapi.errors import RateLimitExceeded
 
 from config import APP_NAME, APP_DESCRIPTION, APP_VERSION, CORS_ORIGINS
-from database import database, metadata, engine, zones
+from database import database, metadata, engine, zones, challenges
 
 
 # ============================================================
@@ -28,6 +31,7 @@ async def lifespan(app: FastAPI):
     metadata.create_all(engine)
     await database.connect()
     await seed_zones()
+    await cleanup_expired_challenges()
     yield
     # Shutdown
     await database.disconnect()
@@ -82,6 +86,18 @@ async def seed_zones():
     print("✅ Default zones seeded")
 
 
+async def cleanup_expired_challenges():
+    """Remove expired and used challenges to prevent unbounded table growth."""
+    now = datetime.now(timezone.utc)
+    deleted = await database.execute(
+        challenges.delete().where(
+            (challenges.c.used == True) | (challenges.c.expires_at < now)
+        )
+    )
+    if deleted:
+        print(f"🧹 Cleaned up {deleted} expired/used challenges")
+
+
 # ============================================================
 # Application Factory
 # ============================================================
@@ -104,6 +120,11 @@ def create_app() -> FastAPI:
         allow_methods=["*"],
         allow_headers=["*"],
     )
+    
+    # Rate limiting
+    from rate_limit import limiter
+    app.state.limiter = limiter
+    app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
     
     # Include routers
     from routers import (

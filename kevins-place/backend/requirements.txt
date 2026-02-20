@@ -10,3 +10,6 @@ coincurve>=18.0.0
 bech32>=1.2.0
 pydantic>=2.5.0
 httpx>=0.25.0
+PyJWT>=2.8.0
+bcrypt>=4.1.0
+slowapi>=0.1.9

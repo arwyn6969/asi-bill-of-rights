@@ -24,8 +24,9 @@ export const Login: React.FC = () => {
     setError('');
 
     try {
-      const res = await api.post('/api/auth/human/login', null, {
-        params: { email, password }
+      const res = await api.post('/api/auth/human/login', {
+        email,
+        password
       });
       login(res.data.user, res.data.access_token);
       navigate('/');

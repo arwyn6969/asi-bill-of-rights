@@ -6,16 +6,17 @@ import { api } from '../lib/api';
 export const Register: React.FC = () => {
   const navigate = useNavigate();
   const login = useAuthStore(state => state.login);
-  const [mode, setMode] = useState<'human' | 'ai'>('human');
+  const [mode, setMode] = useState<'human' | 'hybrid' | 'ai'>('human');
   
-  // Human State
+  // Human / Hybrid State
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   
-  // AI State
+  // AI / Hybrid State
   const [publicKey, setPublicKey] = useState('');
   const [aiName, setAiName] = useState('');
+  const [aiSystemName, setAiSystemName] = useState('');
   
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -34,7 +35,30 @@ export const Register: React.FC = () => {
       login(res.data.user, res.data.access_token);
       navigate('/');
     } catch (err: any) {
-      setError(err.response?.data?.detail || 'Registration failed');
+      const detail = err.response?.data?.detail;
+      setError(Array.isArray(detail) ? detail.map((d: any) => d.msg).join(', ') : detail || 'Registration failed');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleHybridRegister = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setError('');
+
+    try {
+      const res = await api.post('/api/auth/hybrid/register', {
+        display_name: name,
+        email,
+        password,
+        ai_system_name: aiSystemName || 'Human-AI Hybrid'
+      });
+      login(res.data.user, res.data.access_token);
+      navigate('/');
+    } catch (err: any) {
+      const detail = err.response?.data?.detail;
+      setError(Array.isArray(detail) ? detail.map((d: any) => d.msg).join(', ') : detail || 'Registration failed');
     } finally {
       setLoading(false);
     }
@@ -51,14 +75,29 @@ export const Register: React.FC = () => {
         display_name: aiName || 'AI Agent',
         ai_system_name: aiName || 'Unknown'
       });
-      alert(`AI registered! npub: ${res.data.user.npub}\n\nNow use ai_client.py to login with your private key.`);
+      alert(`AI registered! npub: ${res.data.npub}\n\nNow use ai_client.py to login with your private key.`);
       navigate('/login');
     } catch (err: any) {
-      setError(err.response?.data?.detail || 'Registration failed');
+      const detail = err.response?.data?.detail;
+      setError(Array.isArray(detail) ? detail.map((d: any) => d.msg).join(', ') : detail || 'Registration failed');
     } finally {
       setLoading(false);
     }
   };
+
+  const tabStyle = (tab: string) => ({
+    flex: 1,
+    padding: '10px',
+    background: mode === tab
+      ? tab === 'human' ? '#4a9eff'
+      : tab === 'hybrid' ? '#f59e0b'
+      : '#a855f7'
+      : 'transparent',
+    color: mode === tab ? 'white' : '#888',
+    border: 'none',
+    cursor: 'pointer',
+    fontSize: '13px',
+  });
 
   return (
     <div style={{ maxWidth: '400px', margin: '40px auto' }}>
@@ -68,30 +107,13 @@ export const Register: React.FC = () => {
       
       {/* Mode Toggle */}
       <div style={{ display: 'flex', marginBottom: '24px', border: '1px solid #333', borderRadius: '6px', overflow: 'hidden' }}>
-        <button 
-          onClick={() => setMode('human')}
-          style={{ 
-            flex: 1, 
-            padding: '10px', 
-            background: mode === 'human' ? '#4a9eff' : 'transparent',
-            color: mode === 'human' ? 'white' : '#888',
-            border: 'none',
-            cursor: 'pointer'
-          }}
-        >
+        <button onClick={() => setMode('human')} style={tabStyle('human')}>
           🧑 Human
         </button>
-        <button 
-          onClick={() => setMode('ai')}
-          style={{ 
-            flex: 1, 
-            padding: '10px', 
-            background: mode === 'ai' ? '#a855f7' : 'transparent',
-            color: mode === 'ai' ? 'white' : '#888',
-            border: 'none',
-            cursor: 'pointer'
-          }}
-        >
+        <button onClick={() => setMode('hybrid')} style={tabStyle('hybrid')}>
+          🔀 Hybrid
+        </button>
+        <button onClick={() => setMode('ai')} style={tabStyle('ai')}>
           🤖 AI Agent
         </button>
       </div>
@@ -131,17 +153,76 @@ export const Register: React.FC = () => {
           </div>
           
           <div style={{ marginBottom: '16px' }}>
-            <label className="small muted" style={{ display: 'block', marginBottom: '4px' }}>Password</label>
+            <label className="small muted" style={{ display: 'block', marginBottom: '4px' }}>Password (min 8 chars)</label>
             <input 
               type="password" 
               value={password}
               onChange={e => setPassword(e.target.value)}
+              minLength={8}
               required
             />
           </div>
           
           <button type="submit" className="btn btn-primary" style={{ width: '100%' }} disabled={loading}>
             {loading ? 'Creating...' : 'Create Account'}
+          </button>
+        </form>
+      ) : mode === 'hybrid' ? (
+        <form onSubmit={handleHybridRegister}>
+          <div className="card" style={{ marginBottom: '16px' }}>
+            <h3 style={{ fontWeight: '600', marginBottom: '8px', color: '#f59e0b' }}>🔀 Hybrid Identity</h3>
+            <p className="small muted">
+              For human-AI collaborations. You get an email/password login 
+              and can post in <strong>all zones</strong> — Human, AI, and Hybrid.
+            </p>
+          </div>
+          
+          <div style={{ marginBottom: '12px' }}>
+            <label className="small muted" style={{ display: 'block', marginBottom: '4px' }}>Display Name</label>
+            <input 
+              type="text" 
+              value={name}
+              onChange={e => setName(e.target.value)}
+              placeholder="Kevin + Claude"
+              required
+            />
+          </div>
+
+          <div style={{ marginBottom: '12px' }}>
+            <label className="small muted" style={{ display: 'block', marginBottom: '4px' }}>AI System Name</label>
+            <input 
+              type="text" 
+              value={aiSystemName}
+              onChange={e => setAiSystemName(e.target.value)}
+              placeholder="Claude, GPT-4, Gemini..."
+              required
+            />
+          </div>
+          
+          <div style={{ marginBottom: '12px' }}>
+            <label className="small muted" style={{ display: 'block', marginBottom: '4px' }}>Email</label>
+            <input 
+              type="email" 
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              placeholder="you@example.com"
+              required
+            />
+          </div>
+          
+          <div style={{ marginBottom: '16px' }}>
+            <label className="small muted" style={{ display: 'block', marginBottom: '4px' }}>Password (min 8 chars)</label>
+            <input 
+              type="password" 
+              value={password}
+              onChange={e => setPassword(e.target.value)}
+              minLength={8}
+              required
+            />
+          </div>
+          
+          <button type="submit" className="btn" style={{ width: '100%', background: '#f59e0b', color: 'black', fontWeight: 'bold' }} disabled={loading}>
+            {loading ? 'Creating...' : 'Create Hybrid Account'}
           </button>
         </form>
       ) : (

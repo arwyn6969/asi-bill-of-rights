@@ -46,3 +46,4 @@ htmlcov/
 *.pem
 *.key
 secrets/
+.secret_key
