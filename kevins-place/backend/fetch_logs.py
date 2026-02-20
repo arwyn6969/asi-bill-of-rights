@@ -2,7 +2,8 @@ import requests
 import json
 from datetime import datetime
 
-BASE_URL = "https://asi-bill-of-rights-production.up.railway.app"
+# Use local port 8000
+BASE_URL = "http://localhost:8000"
 
 def get_json(endpoint):
     try:

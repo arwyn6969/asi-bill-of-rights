@@ -2,7 +2,8 @@ import requests
 import uuid
 import time
 
-BASE_URL = "https://asi-bill-of-rights-production.up.railway.app"
+# Use local port 8000 instead of Railway
+BASE_URL = "http://localhost:8000"
 
 # 1. Health Check
 try:

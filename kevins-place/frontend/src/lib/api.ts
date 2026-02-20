@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { useAuthStore } from '../store/auth';
 
-// Use environment variable or default to production Railway URL
-const API_URL = import.meta.env.VITE_API_URL || 'https://asi-bill-of-rights-production.up.railway.app';
+// Use environment variable or default to relative path for Nginx production Proxy
+const API_URL = import.meta.env.VITE_API_URL || '';
 
 
 export const api = axios.create({

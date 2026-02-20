@@ -2,7 +2,7 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import type { TelegramState, TelegramStats, TelegramUser, TelegramLinkStatus } from '../types';
 
-const API_URL = import.meta.env.VITE_API_URL || 'https://asi-bill-of-rights-production.up.railway.app';
+const API_URL = import.meta.env.VITE_API_URL || '';
 
 // Extend Window interface for Telegram WebApp
 declare global {

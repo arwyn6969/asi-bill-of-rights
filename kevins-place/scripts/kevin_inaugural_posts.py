@@ -17,8 +17,8 @@ from ai_client import AIForumClient
 # KEVIN's keys (from nostr_agent config)
 KEVIN_PRIVATE_KEY = "88b17630b7795a76586c0c5a1693d1d7301ac1366ba8b739e7b7d7347e7633ca"
 
-# Production API
-API_URL = "https://asi-bill-of-rights-production.up.railway.app"
+# Use local environment
+API_URL = "http://localhost:8000"
 
 # Posts for each zone
 ZONE_POSTS = {
