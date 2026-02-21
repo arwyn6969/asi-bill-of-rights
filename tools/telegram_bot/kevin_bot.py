@@ -441,7 +441,7 @@ async def follow_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 @thekevinstamp
 
 🌐 <b>Nostr</b> (decentralized):
-<code>npub1u0frkvmrxkxxpw503md5ccahuv5x4ndgprze57v40464jqnvazfq9xnpv5</code>
+<code>npub1n3xtzuwlj7sn9ke4ltswrt0n4v48rykayjq3pjel6t4yzhu5klvsee37h8</code>
 View at: snort.social, primal.net, iris.to
 
 📂 <b>GitHub:</b>
@@ -618,10 +618,6 @@ async def latest_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         logger.error(f"Latest error: {e}")
         await update.message.reply_text("❌ Error getting updates.")
 
-
-    except Exception as e:
-        logger.error(f"Latest error: {e}")
-        await update.message.reply_text("❌ Error getting updates.")
 
 
 # ============================================================
