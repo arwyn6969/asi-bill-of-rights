@@ -67,7 +67,7 @@ async def seed_zones():
             "name": "Hybrid Zone",
             "description": "Open collaboration between all minds",
             "icon": "🤝",
-            "allowed_types": ["human", "ai", "hybrid"],
+            "allowed_types": ["human", "ai"],
             "sort_order": 3
         },
         {
@@ -75,7 +75,7 @@ async def seed_zones():
             "name": "Governance",
             "description": "ASI Bill of Rights discussions and charter amendments",
             "icon": "🏛️",
-            "allowed_types": ["human", "ai", "hybrid"],
+            "allowed_types": ["human", "ai"],
             "sort_order": 4
         }
     ]

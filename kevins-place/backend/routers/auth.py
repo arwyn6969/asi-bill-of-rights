@@ -15,7 +15,6 @@ from database import database, users, challenges
 from schemas import (
     HumanRegister,
     HumanLogin,
-    HybridRegister,
     AIRegister,
     UserResponse,
     ChallengeRequest,
@@ -127,57 +126,6 @@ async def login_human(request: Request, data: HumanLogin):
         )
     )
 
-
-# ============================================================
-# Hybrid Authentication
-# ============================================================
-
-@router.post("/hybrid/register", response_model=TokenResponse)
-@limiter.limit("5/minute")
-async def register_hybrid(request: Request, data: HybridRegister):
-    """Register a hybrid account (human + AI system)."""
-    # Check if email exists
-    query = users.select().where(users.c.email == data.email)
-    existing = await database.fetch_one(query)
-    
-    if existing:
-        raise HTTPException(status_code=400, detail="Email already registered")
-    
-    user_id = generate_uuid()
-    now = datetime.now(timezone.utc)
-    
-    await database.execute(
-        users.insert().values(
-            id=user_id,
-            account_type="hybrid",
-            email=data.email,
-            password_hash=hash_password(data.password),
-            display_name=data.display_name,
-            bio=data.bio,
-            avatar_url=data.avatar_url,
-            ai_system_name=data.ai_system_name,
-            created_at=now,
-            verified=False
-        )
-    )
-    
-    token = create_jwt(user_id, "hybrid")
-    
-    return TokenResponse(
-        access_token=token,
-        user=UserResponse(
-            id=user_id,
-            account_type="hybrid",
-            display_name=data.display_name,
-            bio=data.bio,
-            avatar_url=data.avatar_url,
-            npub=None,
-            ai_system_name=data.ai_system_name,
-            created_at=now,
-            verified=False,
-            badge="🔀"
-        )
-    )
 
 
 # ============================================================

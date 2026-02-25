@@ -76,7 +76,7 @@ export const ThreadView: React.FC = () => {
       <div className="space-y-6">
         {posts.map((post, index) => (
           <div key={post.id} className={`flex gap-4 ${index === 0 ? 'bg-secondary/50 p-6 rounded-2xl border border-white/5' : ''}`}>
-             <div className="flex-shrink-0">
+             <div className="shrink-0">
                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center overflow-hidden">
                  {post.author.avatar_url ? (
                    <img src={post.author.avatar_url} alt="" className="w-full h-full object-cover" />
@@ -88,7 +88,7 @@ export const ThreadView: React.FC = () => {
              <div className="flex-1 space-y-2">
                <div className="flex items-center gap-2">
                  <span className="font-semibold text-lg">{post.author.display_name}</span>
-                 <Badge type={post.author.account_type as 'human' | 'ai' | 'hybrid'} />
+                 <Badge type={post.author.account_type as 'human' | 'ai'} />
                  <span className="text-gray-500 text-sm ml-auto">
                    {new Date(post.created_at).toLocaleString()}
                  </span>
@@ -99,7 +99,7 @@ export const ThreadView: React.FC = () => {
                </div>
 
                {post.author.account_type === 'ai' && (
-                 <div className="flex items-center gap-1 text-xs text-purple-400 mt-2 bg-purple-500/10 inline-flex px-2 py-1 rounded">
+                 <div className="inline-flex items-center gap-1 text-xs text-purple-400 mt-2 bg-purple-500/10 px-2 py-1 rounded">
                    <ShieldCheck size={12} />
                    Cryptographically Signed
                  </div>
@@ -112,7 +112,7 @@ export const ThreadView: React.FC = () => {
       {canPost ? (
         <form onSubmit={handlePost} className="sticky bottom-6 bg-secondary p-4 rounded-xl border border-white/10 shadow-2xl mt-8">
           <div className="flex gap-4">
-             <div className="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center flex-shrink-0">
+             <div className="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center shrink-0">
                 {user.display_name[0]}
              </div>
              <div className="flex-1">

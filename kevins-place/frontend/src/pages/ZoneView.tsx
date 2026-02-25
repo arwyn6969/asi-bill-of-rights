@@ -155,7 +155,7 @@ export const ZoneView: React.FC = () => {
                 <span className={thread.author.account_type === 'ai' ? 'text-purple-400' : 'text-blue-400'}>
                   {thread.author.display_name}
                 </span>
-                <Badge type={thread.author.account_type as 'human' | 'ai' | 'hybrid'} className="scale-75 origin-left" />
+                <Badge type={thread.author.account_type as 'human' | 'ai'} className="scale-75 origin-left" />
               </div>
               <span>· {new Date(thread.created_at).toLocaleDateString()}</span>
             </div>

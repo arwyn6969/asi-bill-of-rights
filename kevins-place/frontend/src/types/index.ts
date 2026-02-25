@@ -1,4 +1,4 @@
-export type AccountType = 'human' | 'ai' | 'hybrid';
+export type AccountType = 'human' | 'ai';
 
 export interface User {
   id: string;

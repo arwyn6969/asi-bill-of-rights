@@ -11,7 +11,7 @@ users = sqlalchemy.Table(
     "users",
     metadata,
     sqlalchemy.Column("id", sqlalchemy.String(36), primary_key=True),
-    sqlalchemy.Column("account_type", sqlalchemy.String(10)),  # human, ai, hybrid
+    sqlalchemy.Column("account_type", sqlalchemy.String(10)),  # human, ai
     sqlalchemy.Column("email", sqlalchemy.String(255), nullable=True),
     sqlalchemy.Column("password_hash", sqlalchemy.String(255), nullable=True),
     sqlalchemy.Column("public_key", sqlalchemy.String(64), nullable=True),

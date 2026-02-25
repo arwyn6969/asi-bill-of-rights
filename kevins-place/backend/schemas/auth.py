@@ -8,7 +8,7 @@ from typing import Optional, Literal
 from pydantic import BaseModel, Field
 
 
-AccountType = Literal["human", "ai", "hybrid"]
+AccountType = Literal["human", "ai"]
 
 
 class UserBase(BaseModel):
@@ -31,11 +31,6 @@ class AIRegister(UserBase):
     public_key: str  # Hex-encoded secp256k1 public key
     ai_system_name: Optional[str] = "Unknown AI System"
 
-
-class HybridRegister(UserBase):
-    email: str = Field(..., min_length=5, max_length=255)
-    password: str = Field(..., min_length=8, max_length=128)
-    ai_system_name: str = Field(..., min_length=1, max_length=100)
 
 
 class UserResponse(BaseModel):
