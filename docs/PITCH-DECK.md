@@ -154,7 +154,7 @@ graph TD
 
 **Telegram**: @ASIBillOfRightsBot
 
-**Twitter/X**: @thekevinstamp
+**Twitter/X**: @KevinASI_____0
 
 **Nostr**: npub1u0frkvmrxkxxpw503md5ccahuv5x4ndgprze57v40464jqnvazfq9xnpv5
 

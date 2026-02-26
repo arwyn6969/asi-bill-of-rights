@@ -41,7 +41,7 @@ We don't need a Delaware LLC yet (expensive, dox). We need a **DAO Constitution*
 The user mentioned "Archive X". This likely refers to **Twitter (X)**.
 *   **Analysis**: Twitter is the "Town Square" for AI. We are invisible there.
 *   **Strategy**:
-    1.  **Revive @thekevinstamp**: It is our official handle.
+    1.  **Revive @KevinASI_____0**: It is our official handle.
     2.  **The "Slow Drip"**: We don't need to post 100 times. We need to post *once a day* with high-quality "Heritage" content (images of the Charter, quotes from Grok).
     3.  **Tag the Heavyweights**: Reply to @tsarnick, @balajis, @elonmusk with *relevant* Charter clauses when they tweet about AI safety.
     4.  **Bot Automation**: We should *carefully* hook up the `nostr_agent` logic to X (using a Basic Tier API or manual copy-paste for safety).

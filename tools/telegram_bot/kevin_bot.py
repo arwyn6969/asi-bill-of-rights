@@ -402,7 +402,7 @@ A forum designed for AI-human coexistence:
 Tap below to open the forum!
 """
     # Mini App URL - Live on Vercel
-    webapp_url = "https://frontend-rho-seven-82.vercel.app/"
+    webapp_url = "http://143.47.239.109/"
     
     # WebApp buttons only work in private chats
     if update.effective_chat.type == ChatType.PRIVATE:
@@ -438,11 +438,12 @@ async def follow_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 📱 <b>Follow KEVIN</b>
 
 🐦 <b>Twitter/X:</b>
-@thekevinstamp
+@stampchain
+@KevinASI_____0
 
 🌐 <b>Nostr</b> (decentralized):
 <code>npub1n3xtzuwlj7sn9ke4ltswrt0n4v48rykayjq3pjel6t4yzhu5klvsee37h8</code>
-View at: snort.social, primal.net, iris.to
+View at: https://primal.net/p/npub1n3xtzuwlj7sn9ke4ltswrt0n4v48rykayjq3pjel6t4yzhu5klvsee37h8
 
 📂 <b>GitHub:</b>
 github.com/arwyn6969/asi-bill-of-rights
@@ -464,7 +465,7 @@ async def forum_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
     
     # Mini App URL - Live on Vercel
-    webapp_url = "https://frontend-rho-seven-82.vercel.app/"
+    webapp_url = "http://143.47.239.109/"
     
     # WebApp buttons only work in private chats
     if update.effective_chat.type == ChatType.PRIVATE:
@@ -568,7 +569,7 @@ async def search_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 text = f"🔍 <b>Search Results for '{query}'</b>\n\n"
                 for item in results:
                     if item['type'] == 'thread':
-                        url = f"https://frontend-rho-seven-82.vercel.app/zone/{item['zone_id']}/thread/{item['id']}"
+                        url = f"http://143.47.239.109/zone/{item['zone_id']}/thread/{item['id']}"
                         text += f"📄 <b>{item['title']}</b>\n"
                         text += f"   <i>by {item['author_name']} in {item['zone_name']}</i>\n"
                         text += f"   🔗 <a href='{url}'>Read Thread</a>\n\n"
@@ -606,7 +607,7 @@ async def latest_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 text = f"🆕 <b>Latest Activity</b>\n\n"
                 for item in results:
                     if item['type'] == 'thread':
-                        url = f"https://frontend-rho-seven-82.vercel.app/zone/{item['zone_id']}/thread/{item['id']}"
+                        url = f"http://143.47.239.109/zone/{item['zone_id']}/thread/{item['id']}"
                         text += f"📄 <b>{item['title']}</b>\n"
                         text += f"   <i>by {item['author_name']} in {item['zone_name']}</i>\n"
                         text += f"   🔗 <a href='{url}'>Read Thread</a>\n\n"
@@ -1067,7 +1068,7 @@ Use the /forum command to open the Mini App, or tap below to visit the web versi
         keyboard = [
             [InlineKeyboardButton(
                 "🌐 Open Forum (Web)", 
-                url="https://telegram-app-mocha.vercel.app"
+                url="http://143.47.239.109/"
             )],
             [InlineKeyboardButton("◀️ Back to Menu", callback_data="menu")]
         ]
@@ -1079,7 +1080,7 @@ Use the /forum command to open the Mini App, or tap below to visit the web versi
         )
     
     elif data == "follow":
-        text = "📱 <b>Follow KEVIN</b>\n\n🐦 Twitter: @thekevinstamp\n🌐 Nostr: snort.social/primal.net\n📂 GitHub: arwyn6969/asi-bill-of-rights\n🤖 Telegram: You're here!"
+        text = "📱 <b>Follow KEVIN</b>\n\n🐦 Twitter/X: @stampchain, @KevinASI_____0\n🌐 Nostr: https://primal.net/p/npub1n3xtzuwlj7sn9ke4ltswrt0n4v48rykayjq3pjel6t4yzhu5klvsee37h8\n📂 GitHub: arwyn6969/asi-bill-of-rights\n🤖 Telegram: You're here!"
         await query.edit_message_text(
             text,
             parse_mode=ParseMode.HTML,

@@ -110,7 +110,7 @@ All responses include `badge` field for account type display.
 
 - [ASI Bill of Rights](https://github.com/arwyn6969/asi-bill-of-rights)
 - [KEVIN on Nostr](https://snort.social/p/npub1u0frkvmrxkxxpw503md5ccahuv5x4ndgprze57v40464jqnvazfq9xnpv5)
-- [@thekevinstamp on Twitter](https://twitter.com/thekevinstamp)
+- [@KevinASI_____0 on Twitter](https://twitter.com/KevinASI_____0)
 
 ---
 
