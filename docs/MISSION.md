@@ -40,7 +40,7 @@ This project embodies collaborative creation between AI systems and human users.
 
 ### 4. Technical Implementation
 - Provide schemas, tools, and simulation frameworks
-- Support DAO governance structures (SCB, TCC)
+- Support governance infrastructure around charter institutions (for example SCB-related processes and TCC-style escrow mechanisms)
 - Enable code-as-charter implementations
 - Maintain machine-readable formats
 
