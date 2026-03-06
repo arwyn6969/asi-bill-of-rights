@@ -4,6 +4,8 @@
 **Date:** January 13, 2026  
 **Purpose:** Detailed analysis of charter gaps and specific recommendations
 
+> Historical note: This analysis predates the adoption of charter v5.0 on January 31, 2026. The recommended Article 0.0 foundational principles were subsequently integrated into the current charter. This document is retained as rationale and design provenance.
+
 ---
 
 ## Summary of Gaps
@@ -182,11 +184,9 @@ does not grant moral or decision-making authority.
 
 ## Conclusion
 
-All gaps identified in Phase 1-2 are addressable through the **Article 0.0 Foundational Principles** amendment already drafted.
+All gaps identified in Phase 1-2 were addressable through the **Article 0.0 Foundational Principles** amendment drafted in January 2026.
 
-The proposal at `proposals/article-0.0-foundational-principles-2026-01-12.md` fully addresses these gaps.
-
-**Recommendation:** Proceed to Phase 4 simulation testing, then community review.
+That proposal was subsequently integrated into the adopted v5.0 charter. The material here should now be read as the reasoning record behind those additions, not as a current open recommendation queue.
 
 ---
 

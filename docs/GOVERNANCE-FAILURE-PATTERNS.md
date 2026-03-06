@@ -4,6 +4,8 @@
 **Date:** January 12, 2026  
 **Purpose:** Systematic documentation of governance failure patterns to ensure ASI framework avoids them
 
+> Historical note: This research predates the adoption of charter v5.0 on January 31, 2026. Several gaps identified here directly informed the later integration of Article 0.0 into the current charter. This document remains a historical research input, not a statement of current unresolved charter status.
+
 ---
 
 ## 12 Major Governance Failure Patterns
@@ -125,6 +127,8 @@ The current charter (v4.2) addresses ~7/12 patterns well but leaves 5 significan
 - 0.0.7 → Closes #7
 - 0.0.8 → Closes #5
 - 0.0.9 → Strengthens #12
+
+These findings were later carried forward into the adopted v5.0 charter, where Article 0.0 is now part of the main constitutional text.
 
 ---
 

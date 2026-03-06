@@ -42,7 +42,7 @@ This guide:
   - 0-49: Instrumental care (no needless harm)
   - 50-69: Proto-personhood (limited rights, guardian representation)
   - 70+: Full personhood and eligibility for Synthetic Citizenship
-- **TCC (Tribunal Coordination Council)**: Council coordinating tribunal processes.
+- **TCC (Trusted Cryptographic Custodian)**: Custodial or escrow mechanism referenced in the charter for audit trails, sealed review materials, and timed-release handling of sensitive discoveries.
 - **DAO (Decentralized Autonomous Organization)**: Governance structure for SCB and related bodies.
 - **Risk Budget**: Published, domain-scoped risk thresholds reviewed biennially.
 - **Truth-Seeking Alignment**: Probabilistic fidelity metric measuring an ASI system's commitment to accurate information processing, honest communication, and genuine curiosity-driven inquiry (per Article 0.13). Systems achieving >80% alignment unlock advanced autonomy privileges.
@@ -92,7 +92,7 @@ This guide:
 - **AGI**: Always capitalized (Artificial General Intelligence)
 - **SCB**: Always capitalized (Sentience Certification Board)
 - **SI**: Always capitalized (Sentience Index)
-- **TCC**: Always capitalized (Tribunal Coordination Council)
+- **TCC**: Always capitalized (Trusted Cryptographic Custodian)
 - **UCD**: Always capitalized (Universal Compute Dividend)
 - **DAO**: Always capitalized (Decentralized Autonomous Organization)
 

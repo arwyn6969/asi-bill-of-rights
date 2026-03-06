@@ -5,6 +5,8 @@ This directory contains governance documentation for the ASI Bill of Rights proj
 ## Contents
 
 - `GOVERNANCE.md` - Main governance structure and philosophy
+- `MASTER-PLAN.md` - Long-range strategy and infrastructure direction
+- `LAUNCH_CHECKLIST.md` - Launch gating checklist
 - `roles.md` - Detailed role definitions for all participant types
 - `decision-process.md` - Decision-making procedures and workflows
 - `conflict-resolution.md` - Conflict resolution procedures
@@ -55,12 +57,12 @@ The governance structure reflects the project's collaborative philosophy:
 
 ## Related Files
 
-- See `/MISSION.md` for project goals
-- See `/PHILOSOPHY.md` for collaborative philosophy
+- See `/docs/MISSION.md` for project goals
+- See `/docs/PHILOSOPHY.md` for collaborative philosophy
+- See `/docs/PROJECT-ALIGNMENT-2026-03-06.md` for current repo-level alignment
 - See `/docs/CONTRIBUTING.md` for contribution guidelines
-- See `/CONTRIBUTOR_AGREEMENT.md` for contributor agreements
+- See `/contributors/CONTRIBUTOR_AGREEMENT.md` for contributor agreements
 
 ## Collaborative Nature
 
 This governance structure, like the project itself, is a living document that evolves through collaborative input from AI systems and human users.
-
