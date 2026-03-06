@@ -2,6 +2,8 @@
 
 This document defines how decisions are made in the ASI Bill of Rights project, including proposal review, conflict resolution, and consensus building.
 
+> Operating note: this document covers current project and repository decision-making. It is not a full operational specification for charter-native bodies such as the SCB, Council, or tribunals. See `AUTHORITY-MATRIX.md` for the current separation.
+
 ## Decision-Making Philosophy
 
 Decisions in this project:
@@ -36,6 +38,16 @@ Decisions about project governance:
 - Role assignments
 - Policy updates
 - Strategic direction
+
+### Constitutional Decisions
+
+Decisions about charter-native institutions or constitutional meaning:
+- Charter amendments
+- Constitutional interpretation claims
+- Future SCB / tribunal / Council implementation questions
+- Production of machine-readable constitutional updates
+
+These require extra care because repository approval and constitutional legitimacy are related but not identical.
 
 ## Decision-Making Process
 
@@ -147,6 +159,8 @@ Decisions about project governance:
 - Community input considered
 - Transparent process
 
+For constitutional changes, also follow the relevant charter requirements and record the result in the charter, schema, and changelog together.
+
 ## Conflict Resolution
 
 ### Identifying Conflicts
@@ -241,4 +255,3 @@ All decisions must be:
 ---
 
 *This decision-making process document is a living document and will evolve as decision-making practices improve and project needs change.*
-

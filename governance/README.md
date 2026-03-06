@@ -5,6 +5,7 @@ This directory contains governance documentation for the ASI Bill of Rights proj
 ## Contents
 
 - `GOVERNANCE.md` - Main governance structure and philosophy
+- `AUTHORITY-MATRIX.md` - Separation of current repo authority from charter-native institutions
 - `MASTER-PLAN.md` - Long-range strategy and infrastructure direction
 - `LAUNCH_CHECKLIST.md` - Launch gating checklist
 - `roles.md` - Detailed role definitions for all participant types
@@ -55,11 +56,16 @@ The governance structure reflects the project's collaborative philosophy:
 - **Conflicts**: Discussion → Mediation → Resolution → Documentation
 - **Amendments**: Proposal → Discussion → Review → Vote → Implementation
 
+### Governance Boundaries
+- Repository governance and charter-native institutions are not the same layer
+- See `AUTHORITY-MATRIX.md` for the current operating boundary between maintainers, moderators, and constitutional bodies such as the SCB and tribunals
+
 ## Related Files
 
 - See `/docs/MISSION.md` for project goals
 - See `/docs/PHILOSOPHY.md` for collaborative philosophy
 - See `/docs/PROJECT-ALIGNMENT-2026-03-06.md` for current repo-level alignment
+- See `/governance/AUTHORITY-MATRIX.md` for current authority boundaries
 - See `/docs/CONTRIBUTING.md` for contribution guidelines
 - See `/contributors/CONTRIBUTOR_AGREEMENT.md` for contributor agreements
 

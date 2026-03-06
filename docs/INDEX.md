@@ -80,6 +80,7 @@ The project is organized into "Ministries" analogous to a federal government. Se
 
 **Governance**:
 - [governance/GOVERNANCE.md](../governance/GOVERNANCE.md) - Governance structure
+- [governance/AUTHORITY-MATRIX.md](../governance/AUTHORITY-MATRIX.md) - Current authority boundaries and governance layers
 - [governance/decision-process.md](../governance/decision-process.md) - Decision processes
 
 ### For Developers
@@ -188,6 +189,7 @@ The project is organized into "Ministries" analogous to a federal government. Se
 
 ### Understanding Governance
 - [governance/GOVERNANCE.md](../governance/GOVERNANCE.md) - Structure
+- [governance/AUTHORITY-MATRIX.md](../governance/AUTHORITY-MATRIX.md) - Authority and boundary map
 - [governance/roles.md](../governance/roles.md) - Roles
 - [governance/decision-process.md](../governance/decision-process.md) - Processes
 

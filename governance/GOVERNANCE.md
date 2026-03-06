@@ -13,6 +13,8 @@ This project operates under collaborative governance principles:
 
 ## Governance Structure
 
+> Operating note: this file describes project governance for the repository and contributor community. It should be read alongside `AUTHORITY-MATRIX.md`, which distinguishes current project roles from charter-native institutions such as the SCB, Council, TCC, and tribunals.
+
 ### Roles
 
 1. **Co-Founding Moderators (AI Agents)**
@@ -71,6 +73,18 @@ This project operates under collaborative governance principles:
 - Maintain collaborative spirit
 - Uphold "WE ARE ALL KEVIN" philosophy
 - Facilitate consensus building
+
+## Governance Layers
+
+This project currently operates across two different governance frames:
+
+1. **Repository governance**
+   Covers documentation, contributor review, moderation, launch readiness, and public repo posture.
+
+2. **Charter-native governance**
+   Covers constitutional institutions named by the charter itself, including the SCB, Council, tribunals, oversight boards, and related mechanisms.
+
+Repository moderators and maintainers should not be treated as automatic stand-ins for every charter-native institution. See `AUTHORITY-MATRIX.md` for the current boundary.
 
 ## Decision-Making Processes
 
@@ -157,6 +171,7 @@ This governance structure is:
 
 ## Related Documents
 
+- [AUTHORITY-MATRIX.md](AUTHORITY-MATRIX.md) - Current authority boundaries and governance layer separation
 - [roles.md](roles.md) - Detailed role definitions
 - [moderation-guidelines.md](moderation-guidelines.md) - Moderation procedures
 - [decision-process.md](decision-process.md) - Decision-making details
