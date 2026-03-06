@@ -189,6 +189,8 @@ For constitutional changes, also follow the relevant charter requirements and re
 
 ## Decision Documentation
 
+Use `DECISION-RECORD-TEMPLATE.md` when a decision should remain easy to audit and revisit later.
+
 ### What Must Be Documented
 
 - Decision made

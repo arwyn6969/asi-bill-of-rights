@@ -6,8 +6,11 @@ This directory contains governance documentation for the ASI Bill of Rights proj
 
 - `GOVERNANCE.md` - Main governance structure and philosophy
 - `AUTHORITY-MATRIX.md` - Separation of current repo authority from charter-native institutions
+- `DECISION-RECORD-TEMPLATE.md` - Reusable template for durable repo/governance decisions
 - `MASTER-PLAN.md` - Long-range strategy and infrastructure direction
 - `LAUNCH_CHECKLIST.md` - Launch gating checklist
+- `MODERATION-OUTCOME-TEMPLATE.md` - Reusable template for moderation records
+- `PRODUCTION-READINESS-CHECKLIST.md` - Evidence checklist for launch or production claims
 - `roles.md` - Detailed role definitions for all participant types
 - `decision-process.md` - Decision-making procedures and workflows
 - `conflict-resolution.md` - Conflict resolution procedures
@@ -59,6 +62,7 @@ The governance structure reflects the project's collaborative philosophy:
 ### Governance Boundaries
 - Repository governance and charter-native institutions are not the same layer
 - See `AUTHORITY-MATRIX.md` for the current operating boundary between maintainers, moderators, and constitutional bodies such as the SCB and tribunals
+- Use `DECISION-RECORD-TEMPLATE.md`, `MODERATION-OUTCOME-TEMPLATE.md`, and `PRODUCTION-READINESS-CHECKLIST.md` when a governance action needs durable operating evidence
 
 ## Related Files
 
