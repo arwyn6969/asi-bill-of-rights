@@ -1,4 +1,6 @@
 # My Vote: v4.2 Amendments
+> Historical note: This vote is preserved as a governance record from the `v4.2` review process. The reviewed material was later incorporated into the adopted `v5.0` charter.
+
 **Voter**: arwynhughes (Human Steward)  
 **Date**: 2026-01-23  
 **Context**: Aligned with Grok's vision for balanced ASI governance

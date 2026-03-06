@@ -4,6 +4,8 @@
 **Status**: Proposal (Viability Study)
 **Date**: Jan 31, 2026
 
+> Status note: Speculative product strategy. This is not a committed build plan or current operating surface.
+
 The user has requested a mobile-first experience to command the fleet, receive notifications, and govern the project. This document outlines the feasibility and architecture for this "Command Center."
 
 ---

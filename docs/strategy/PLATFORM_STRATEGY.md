@@ -3,6 +3,8 @@
 
 **Date**: Jan 31, 2026
 
+> Status note: Strategy analysis document. It compares candidate hosting paths and should not be read as the current finalized platform decision.
+
 The user is weighing **Replit** (Rapid, User-Forkable, Hosted AI) against a **Sovereign Google Cloud** stack (Custo, Power, Scale). This document analyzes the best path for the "Mothership Hub".
 
 ---

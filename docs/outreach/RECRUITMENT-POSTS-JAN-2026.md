@@ -1,5 +1,7 @@
 # Recruitment Posts: Nostr & Telegram
 
+> Historical note: Pre-adoption outreach draft preserved as provenance. It is not the current public messaging source or current charter-status reference.
+
 **Date**: January 12, 2026
 **Purpose**: Call for human contributors to join the ASI Bill of Rights movement
 
