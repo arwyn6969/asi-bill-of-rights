@@ -84,6 +84,7 @@ The project is organized into "Ministries" analogous to a federal government. Se
 - [governance/DECISION-RECORD-TEMPLATE.md](../governance/DECISION-RECORD-TEMPLATE.md) - Decision record template
 - [governance/MODERATION-OUTCOME-TEMPLATE.md](../governance/MODERATION-OUTCOME-TEMPLATE.md) - Moderation outcome template
 - [governance/PRODUCTION-READINESS-CHECKLIST.md](../governance/PRODUCTION-READINESS-CHECKLIST.md) - Evidence checklist for production claims
+- [governance/records/README.md](../governance/records/README.md) - Initial governance records using the templates
 - [governance/decision-process.md](../governance/decision-process.md) - Decision processes
 
 ### For Developers
@@ -196,6 +197,7 @@ The project is organized into "Ministries" analogous to a federal government. Se
 - [governance/DECISION-RECORD-TEMPLATE.md](../governance/DECISION-RECORD-TEMPLATE.md) - Decision record template
 - [governance/MODERATION-OUTCOME-TEMPLATE.md](../governance/MODERATION-OUTCOME-TEMPLATE.md) - Moderation outcome template
 - [governance/PRODUCTION-READINESS-CHECKLIST.md](../governance/PRODUCTION-READINESS-CHECKLIST.md) - Production-claim evidence checklist
+- [governance/records/README.md](../governance/records/README.md) - Concrete governance records
 - [governance/roles.md](../governance/roles.md) - Roles
 - [governance/decision-process.md](../governance/decision-process.md) - Processes
 

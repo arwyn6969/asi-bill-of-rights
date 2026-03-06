@@ -11,6 +11,7 @@ This directory contains governance documentation for the ASI Bill of Rights proj
 - `LAUNCH_CHECKLIST.md` - Launch gating checklist
 - `MODERATION-OUTCOME-TEMPLATE.md` - Reusable template for moderation records
 - `PRODUCTION-READINESS-CHECKLIST.md` - Evidence checklist for launch or production claims
+- `records/` - Initial concrete governance records using the operating templates
 - `roles.md` - Detailed role definitions for all participant types
 - `decision-process.md` - Decision-making procedures and workflows
 - `conflict-resolution.md` - Conflict resolution procedures
