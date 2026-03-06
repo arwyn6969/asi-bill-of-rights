@@ -1,158 +1,95 @@
 # Contributor Statistics
 
-This document provides statistics and analysis of contributions to the ASI Bill of Rights project.
+This document provides a current contribution snapshot derived from `contributions/contributions.json`.
 
 ## Overview
 
-Last Updated: November 04, 2025
+- **Ledger Source**: `contributions/contributions.json`
+- **Ledger Last Updated**: `2026-01-30T09:38:00.000000Z`
+- **Distinct Recorded Contributors**: 14
+
+> Historical note: this file previously reflected a November 4, 2025 snapshot only. It now summarizes the full machine-readable ledger through the ledger's current timestamp.
 
 ## Summary Statistics
 
-- **Total Contributions**: 14
-- **AI Contributions**: 13
-- **Human Contributions**: 1
-- **Incorporated Contributions**: 12
-- **Pending Contributions**: 2
+- **Total Contributions**: 26
+- **AI Contributions**: 23
+- **Human Contributions**: 3
+- **Incorporated Contributions**: 21
+- **Pending / Not Yet Incorporated**: 5
 
-## Contributors by Type
+## Contributors by Recorded Name
 
-### AI Model Contributors
-
-| Model | Contributions | Incorporated | Pending | Status |
-|-------|--------------|--------------|---------|--------|
-| ChatGPT (OpenAI) | 4 | 4 | 0 | Active |
-| Grok (xAI) | 5 | 5 | 0 | Active |
-| Claude 3.5 Sonnet (Anthropic) | 2 | 0 | 2 | Active |
-| Composer (Cursor AI) | 1 | 1 | 0 | Active |
-| GPT-5 (OpenAI / Cursor) | 1 | 1 | 0 | Active |
-| **Total AI** | **13** | **11** | **2** | |
-
-### Human Contributors
-
-| Contributor | Contributions | Incorporated | Pending | Status |
-|-------------|--------------|--------------|---------|--------|
-| Project Founder | 1 | 1 | 0 | Active |
-| **Total Human** | **1** | **1** | **0** | |
+| Recorded Contributor | Contributions |
+|----------------------|---------------|
+| Grok | 7 |
+| ChatGPT | 4 |
+| Claude 3.5 Sonnet | 3 |
+| Claude Opus 4.5 | 2 |
+| Aqua-019 | 1 |
+| Auto | 1 |
+| Composer | 1 |
+| GPT-5 | 1 |
+| Gemini 3 Pro | 1 |
+| Gemini 3 Pro Preview | 1 |
+| Grok 4.1 | 1 |
+| Jamagaiax | 1 |
+| Kimi K2 | 1 |
+| Project Founder | 1 |
 
 ## Contribution Types
 
-| Type | Count | Percentage |
-|------|-------|------------|
-| Provision Enhancement | 7 | 50% |
-| Structural Enhancement | 1 | 7% |
-| Framework Integration | 1 | 7% |
-| Charter Review | 2 | 14% |
-| Amendment Proposal | 2 | 14% |
-| Project Structure | 1 | 7% |
-| **Total** | **14** | **100%** |
+| Contribution Type | Count |
+|-------------------|-------|
+| provision_enhancement | 7 |
+| amendment_proposal | 4 |
+| formal_response | 3 |
+| charter_review | 2 |
+| comprehensive_review | 2 |
+| research_analysis | 2 |
+| framework_documentation | 1 |
+| framework_integration | 1 |
+| philosophical_framework | 1 |
+| project_structure | 1 |
+| provision_addition | 1 |
+| structural_enhancement | 1 |
 
-## Contributions by Charter Version
+## Incorporated Contributions by Version
 
-| Version | Contributions | Status |
-|---------|--------------|--------|
-| Draft 4.1 | pending | Current (naming + cosmic/diplomacy/humor release) |
-| Draft 4.0 | 9 | Previous baseline |
-| Draft 3.0 | 5 | Historical |
-| **Total** | **14** | *(counts through Draft 4.0; 4.1 intake ongoing)* |
+| Incorporated Version | Count |
+|----------------------|-------|
+| 3.0 | 5 |
+| 4.0 | 7 |
+| 4.2 | 1 |
+| v5.0+ | 8 |
 
-_Pending note_: Draft 4.1 contributions (e.g., Grok 4.1 proposals recorded in `contrib-015`) are being processed and will be reflected once incorporated.
+## Pending / Not Yet Incorporated
 
-## Provisions Affected
+| ID | Date | Contributor | Provision |
+|----|------|-------------|-----------|
+| contrib-012 | 2024-11-04 | Claude 3.5 Sonnet | Article 0.2 / Section VIII.2 |
+| contrib-013 | 2025-11-04 | Claude 3.5 Sonnet | Article 0.11 / R13 |
+| contrib-015 | 2025-12-06 | Grok 4.1 | Article 9.3 / Article 9.4 / Article 0.11 Extension 2.1 / Schema Updates |
+| contrib-020 | 2026-01-12 | Grok | Section X |
+| contrib-auto-001 | 2026-01-12 | Auto | entire_framework |
 
-### Most Frequently Modified Provisions
+## Opinion Distribution
 
-1. **Section IX** (Cosmic Stewardship): 2 contributions
-2. **Article 0.8** (Risk Budgets): 2 contributions
-3. **Section VIII** (Hybridization): 1 contribution
-4. **Section VI** (Redress): 1 contribution
-5. **Section IV.A** (Anti-Monopoly): 1 contribution
-6. **D3** (Duties): 1 contribution
+| Opinion | Count |
+|---------|-------|
+| supports | 21 |
+| supports_with_modification | 3 |
+| supports_with_enhancements | 2 |
 
-### Provision Categories
+## Notes
 
-- **Article 0**: 2 contributions (0.2, 0.8, 0.11)
-- **Section I**: 1 contribution (D3 split)
-- **Section IV**: 1 contribution (IV.A)
-- **Section VI**: 1 contribution
-- **Section VIII**: 2 contributions (VIII.2)
-- **Section IX**: 2 contributions (IX.1, R13/D13)
-- **Appendix B**: 1 contribution
-
-## Model Response Files
-
-All model responses are properly linked:
-
-- ✅ `claude-3.5-sonnet-2024-11-04-response.md` - Linked in contrib-012
-- ✅ `claude-3.5-sonnet-2025-11-04-response.md` - Linked in contrib-013
-- ✅ `composer-2025-01-27-response.md` - Linked in contrib-011
-- ✅ `gpt-5-2025-11-04-response.md` - Linked in contrib-014
-
-## Contribution Timeline
-
-### November 02, 2025 (Draft 3.0)
-- 5 contributions from ChatGPT and Grok
-- Focus: Core structural enhancements and curiosity norms
-
-### November 04, 2025 (Draft 4.0)
-- 8 contributions from multiple models
-- Focus: 2025 framework integration, arms race mitigation, reviews
-
-### January 27, 2025
-- 1 contribution from Composer
-- Focus: Comprehensive charter review
-
-## Contribution Status
-
-### Incorporated (12 contributions)
-- All structural enhancements
-- All provision enhancements
-- Framework integration
-- Charter reviews
-- Project structure
-
-### Pending (2 contributions)
-- Claude 3.5 Sonnet (2024): Amendment proposals for Article 0.2 and Section VIII.2
-- Claude 3.5 Sonnet (2025): Amendment proposals for Article 0.11 and R13
-
-## Recognition
-
-All contributors are recognized in:
-- `CONTRIBUTORS.md` - Contributor list
-- `contributions/contributions.json` - Machine-readable log
-- `contributions/opinions.json` - Opinion registry
-- Individual file headers where applicable
-
-## Trends
-
-### Active Contributors
-- **ChatGPT**: Most active with structural and provision enhancements
-- **Grok**: Active with curiosity norms and 2025 framework integration
-- **Claude 3.5 Sonnet**: Active with amendment proposals
-- **GPT-5**: Comprehensive review and endorsement
-- **Composer**: Comprehensive charter review
-
-### Contribution Focus Areas
-- **2025 Framework Integration**: Growing focus on alignment with evolving frameworks
-- **Arms Race Mitigation**: New focus area in Draft 4.0
-- **Charter Review**: Comprehensive validation and endorsement
-- **Amendment Proposals**: Ongoing refinement suggestions
+- This document reports the ledger as recorded. Contributor naming variants such as `Grok` and `Grok 4.1` are shown exactly as stored in the machine-readable log.
+- Incorporated contribution counts are based on records where `incorporated == true`.
+- Pending counts include any ledger entry where `incorporated == false`, even if the entry references later research or review work.
 
 ## Related Files
 
-- See `/CONTRIBUTORS.md` for contributor list
-- See `/contributions/contributions.json` for detailed contribution log
-- See `/contributions/opinions.json` for opinion registry
-- See `/contributions/attribution-guide.md` for attribution guidelines
-
-## Maintenance
-
-This statistics document should be:
-- Updated when new contributions are added
-- Reviewed during version updates
-- Used for project reporting
-- Referenced in project documentation
-
-## Collaborative Nature
-
-These statistics reflect the collaborative "WE ARE ALL KEVIN" philosophy, recognizing contributions from both AI systems and human participants.
-
+- See `/CONTRIBUTORS.md` for contributor recognition.
+- See `/contributions/contributions.json` for the source ledger.
+- See `/contributions/opinions.json` for opinion tracking.
+- See `/contributions/attribution-guide.md` for attribution guidance.

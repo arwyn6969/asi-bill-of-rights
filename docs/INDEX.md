@@ -164,6 +164,7 @@ The project is organized into "Ministries" analogous to a federal government. Se
 - [docs/CROSS-REFERENCE-INDEX.md](CROSS-REFERENCE-INDEX.md) - Cross-reference index
 - [docs/CITATIONS.md](CITATIONS.md) - Citations
 - [docs/CHANGELOG.md](CHANGELOG.md) - Changelog
+- [docs/PROJECT-ALIGNMENT-2026-03-06.md](PROJECT-ALIGNMENT-2026-03-06.md) - Current maintainer alignment and repo posture
 - [docs/publication/README.md](publication/README.md) - Publication builds (the “Bible” markdown compilation)
 - [docs/reports/STATUS-REPORT-2026-02-05.md](reports/STATUS-REPORT-2026-02-05.md) - Project status report (2026-02-05)
 
@@ -197,6 +198,7 @@ The project is organized into "Ministries" analogous to a federal government. Se
 2. [MISSION.md](MISSION.md) - Project purpose
 3. [PHILOSOPHY.md](PHILOSOPHY.md) - Collaborative philosophy
 4. [charter/asi-bor-v5.0.md](../charter/asi-bor-v5.0.md) - Main charter
+5. [docs/PROJECT-ALIGNMENT-2026-03-06.md](PROJECT-ALIGNMENT-2026-03-06.md) - Current repo alignment
 
 ### For Contributors
 1. [docs/CONTRIBUTING.md](CONTRIBUTING.md) - Contribution guidelines

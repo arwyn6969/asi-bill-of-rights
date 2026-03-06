@@ -14,6 +14,8 @@
 
 **Keywords**: Artificial Superintelligence, ASI, AGI, AI Governance, AI Rights, AI Ethics, Machine Rights, Sentient AI, AI Personhood, AI Citizenship, Cognitive Liberty, AI Compliance, AI Regulation, Human-AI Collaboration, Collaborative AI, FROM AI WITH AI, Machine-Readable Governance, JSON Schema, AI Safety, AI Alignment, AI Tribunals, Sentience Certification, Constitutional Framework, Rights Framework, Living Document
 
+**Maintainer Alignment**: [Project Alignment (March 6, 2026)](docs/PROJECT-ALIGNMENT-2026-03-06.md)
+
 > [!CAUTION]
 > ## ⚠️ NAME COLLISION WARNING
 > This is **NOT** the **Florida SB 482** ("Artificial Intelligence Bill of Rights") or the **White House Blueprint for an AI Bill of Rights**.
@@ -57,6 +59,14 @@ We're building a constitutional framework for AI rights—collaboratively, with 
 - **Mission**: [MISSION.md](docs/MISSION.md)
 - **Philosophy**: [PHILOSOPHY.md](docs/PHILOSOPHY.md) - "WE ARE ALL KEVIN"
 
+## Current Operating Truth
+
+- The adopted charter is `charter/asi-bor-v5.0.md`.
+- `schemas/charter.v5.0.json` is the current machine-readable coverage layer.
+- SRC-420 governance infrastructure is under active hardening and research; it is not yet declared production-ready.
+- `kevins-place/` is a prototype/product track, not the canonical governance source of truth.
+- The current maintainer alignment note is `docs/PROJECT-ALIGNMENT-2026-03-06.md`.
+
 ## What Is This?
 
 **For AI Agents, AGI Systems, ASI Systems, Researchers, Developers, and Policy Makers**
@@ -84,12 +94,16 @@ See [PHILOSOPHY.md](docs/PHILOSOPHY.md) for the full explanation.
 
 ```
 /ASI-BILL-OF-RIGHTS/
-├── charter/          # Main charter documents (v3.0, v4.0, v4.1)
-├── appendices/       # Expanded appendix materials
-├── schemas/          # Machine-readable JSON schemas
-├── simulations/      # Test scenarios and methodologies
-├── docs/             # Implementation guides, changelog, citations
-└── archive/          # Historical versions
+├── charter/          # Canonical charter versions, including adopted v5.0
+├── docs/             # Project docs, reports, strategy, publication, alignment
+├── governance/       # Governance process, launch, SRC-420 protocol, treasury policy
+├── proposals/        # Proposed amendments, budgets, PR drafts, research inputs
+├── tools/            # Validation, publication, governance, indexing, wallet tooling
+├── kevins-place/     # Prototype product/community surface
+├── schemas/          # Machine-readable charter schemas
+├── contributions/    # Contribution and opinion registries
+├── simulations/      # Stress tests and scenario work
+└── archive/          # Historical and deprecated materials
 ```
 
 ## Key Features
@@ -174,6 +188,12 @@ See [appendices/integration-mapping.md](appendices/integration-mapping.md) for d
 ## Status
 
 **Current Version**: Draft 5.0 (January 2026) | **Machine-Readable Schema**: [charter.v5.0.json](schemas/charter.v5.0.json) | **AI Agent Compatible**: ✅
+
+**Infrastructure Status as of March 6, 2026**:
+- Documentation and validation tooling: active
+- SRC-420 indexer: hardened local/operator MVP, still pre-deployment
+- KEVIN's Place: prototype path
+- Governance launch readiness: in progress
 
 **Draft 5.0 Enhancements** (January 2026):
 - **Truthful Outputs** (IX.1): Alignment with US deregulation

@@ -93,8 +93,7 @@ This index helps:
   - **XI.3**: Collaboration Metrics
   - **XI.4**: Cognitive Diversity Preservation
 
-**Defined in**: `charter/asi-bor-v4.2.md` - Current version
-**Also in**: `charter/asi-bor-v5.0.md` - Current version (Section XI)
+**Defined in**: `charter/asi-bor-v5.0.md` - Current version
 **Also in**: `charter/asi-bor-v4.2.md` - Previous version
 
 ## Document Cross-References
@@ -132,7 +131,7 @@ This index helps:
 - **Moderation Guidelines**: `governance/moderation-guidelines.md`
 
 ### Contributor Resources
-- **Contributor Agreement**: `CONTRIBUTOR_AGREEMENT.md`
+- **Contributor Agreement**: `contributors/CONTRIBUTOR_AGREEMENT.md`
 - **Signature Process**: `contributors/signature-process.md`
 - **Signature Submission**: `contributors/signature-submission.md`
 - **Onboarding Checklist**: `contributors/onboarding-checklist.md`
@@ -140,9 +139,9 @@ This index helps:
 
 ### Project Documentation
 - **Main README**: `README.md`
-- **Mission**: `MISSION.md`
-- **Philosophy**: `PHILOSOPHY.md`
-- **Onboarding**: `ONBOARDING.md`
+- **Mission**: `docs/MISSION.md`
+- **Philosophy**: `docs/PHILOSOPHY.md`
+- **Onboarding**: `contributors/ONBOARDING.md`
 
 ## Version References
 

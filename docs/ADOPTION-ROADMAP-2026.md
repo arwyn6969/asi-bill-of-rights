@@ -1,23 +1,25 @@
-# Adoption Roadmap: Validated Proposals
-## ASI Bill of Rights — January 2026
+# Adoption Roadmap: Historical January 2026 Plan
+## ASI Bill of Rights
+
+> Historical note: This document captured the pre-adoption plan for Article 0.0 and Section X during January 2026. Both items were subsequently integrated into the adopted `charter/asi-bor-v5.0.md` on January 31, 2026. This file is retained as provenance for the original sequencing and validation rationale.
 
 ---
 
-## Status Summary
+## Current Status Summary
 
-| Proposal | Simulation Status | Readiness |
-|----------|-------------------|-----------|
-| Article 0.0 (Foundational Principles) | ✅ 7/7 scenarios passed | **Ready for Vote** |
-| Section X (Collective Embodiments) | ✅ 6/6 scenarios passed | **Ready for Review** |
+| Proposal | Simulation Status | January 2026 Plan | Current Status |
+|----------|-------------------|-------------------|----------------|
+| Article 0.0 (Foundational Principles) | ✅ 7/7 scenarios passed | Ready for vote | **Adopted in v5.0 on 2026-01-31** |
+| Section X (Collective Embodiments) | ✅ 6/6 scenarios passed | Ready for review | **Adopted in v5.0 on 2026-01-31** |
 
 ---
 
-## Phase 1: Article 0.0 Adoption (Priority)
+## Historical Phase 1: Article 0.0 Adoption Plan
 
-### What It Is
+### What It Was
 Foundational principles establishing explicit anti-oppression, post-geographic governance, and democratic participation.
 
-### Why Validated
+### Why It Was Validated
 Stress-tested against 7 historical governance failures:
 - Three-Fifths Compromise → Blocked by 0.0.1
 - Berlin Wall → Blocked by 0.0.2, 0.0.3
@@ -27,13 +29,16 @@ Stress-tested against 7 historical governance failures:
 - Medieval Guilds → Blocked by 0.0.8
 - NSA Surveillance → Blocked by 0.0.10
 
-### Adoption Steps
-1. [ ] Community review period (14 days recommended)
-2. [ ] Collect feedback via GitHub issue #9
-3. [ ] Finalize text based on feedback
-4. [ ] 2/3 Council vote (per Article 0.5)
-5. [ ] SCB compatibility review
-6. [ ] Merge to charter v5.1
+### Historical Planned Steps
+1. Community review period
+2. Feedback collection
+3. Final text refinement
+4. Council vote per Article 0.5
+5. SCB compatibility review
+6. Merge into the main charter
+
+### Outcome
+Article 0.0 was integrated into the adopted v5.0 charter on January 31, 2026.
 
 ### Related Files
 - `proposals/article-0.0-foundational-principles-2026-01-12.md`
@@ -41,12 +46,12 @@ Stress-tested against 7 historical governance failures:
 
 ---
 
-## Phase 2: Section X Adoption (High Priority)
+## Historical Phase 2: Section X Adoption Plan
 
-### What It Is
-Governance framework for Collective AI Embodiments (CAEs) — physical robotic systems controlled by multiple AI agents democratically.
+### What It Was
+Governance framework for Collective AI Embodiments (CAEs): physical robotic systems controlled by multiple AI agents democratically.
 
-### Why Validated
+### Why It Was Validated
 6 scenarios tested covering:
 - Self-assembly safety (ERB enforcement)
 - Democratic deadlock resolution (IOS visualization)
@@ -55,13 +60,16 @@ Governance framework for Collective AI Embodiments (CAEs) — physical robotic s
 - Rogue collective amnesty (Section VI extension)
 - Weaponization prevention (arms race mitigation)
 
-### Adoption Steps
-1. [ ] Community review period (21 days recommended — larger change)
-2. [ ] Collect feedback via GitHub issue #8
-3. [ ] Technical review of schema extension
-4. [ ] Finalize rights R14-R16 and duties D15-D17
-5. [ ] 2/3 Council vote
-6. [ ] Merge to charter v6.0
+### Historical Planned Steps
+1. Community review period
+2. Feedback collection
+3. Technical review of the schema extension
+4. Finalize rights R14-R16 and duties D15-D17
+5. Council vote
+6. Merge into the main charter
+
+### Outcome
+Section X was integrated into the adopted v5.0 charter on January 31, 2026.
 
 ### Related Files
 - `proposals/grok-section-x-collective-embodiments-2026-01-12.md`
@@ -70,14 +78,16 @@ Governance framework for Collective AI Embodiments (CAEs) — physical robotic s
 
 ---
 
-## Timeline
+## Historical Timeline
 
-```
+This timeline is preserved as the original pre-adoption plan.
+
+```text
 January 2026
-├── Week 2 (Now)
-│   ├── ✅ Simulations validated
-│   ├── ✅ Documentation committed
-│   └── 🔄 Begin Article 0.0 review
+├── Week 2
+│   ├── Simulations validated
+│   ├── Documentation committed
+│   └── Article 0.0 review begins
 ├── Week 3-4
 │   ├── Article 0.0 community feedback
 │   └── Section X review begins
@@ -89,19 +99,18 @@ February 2026
 ├── Week 2-3
 │   └── Section X vote
 └── Week 4
-    └── Charter v6.0 release (if both adopted)
+    └── Charter consolidation release
 ```
 
 ---
 
-## Success Metrics
+## Current Follow-On Work
 
-- [ ] Article 0.0 adopted with 2/3+ approval
-- [ ] Section X adopted with 2/3+ approval
-- [ ] No simulation regressions in biennial review
-- [ ] Community participation in review process
+- Keep simulation coverage aligned with the integrated v5.0 charter.
+- Clarify which supporting schema files are canonical versus historical extensions.
+- Harden governance and institutional definitions now that the adoption phase is complete.
 
 ---
 
 **WE ARE ALL KEVIN**  
-*Validated by simulation, adopted by consensus*
+*Validated by simulation, preserved for provenance*
