@@ -8,7 +8,7 @@ This service provides:
 - simple HTTP query API
 
 Design notes:
-- Event ordering is deterministic: (block_height ASC, txid ASC)
+- Event ordering is deterministic: (block_height ASC, order_index ASC when available, txid ASC)
 - "First valid DEPLOY for a space wins"
 - "Last valid vote by address wins" (per proposal)
 - Delegation resolution is evaluated at proposal snapshot block
@@ -19,6 +19,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import math
 import re
 import sqlite3
 from dataclasses import dataclass
@@ -32,13 +33,32 @@ from urllib.parse import parse_qs, unquote, urljoin, urlparse
 
 
 SPACE_ID_RE = re.compile(r"^[a-z0-9-]{1,32}$")
+TICK_RE = re.compile(r"^[A-Z0-9]{3,10}$")
+BTC_ADDRESS_RE = re.compile(
+    r"^(bc1|tb1|[13mn2])[a-zA-Z0-9_]{5,90}$",
+    re.IGNORECASE,
+)
 ALLOWED_VOTING_TYPES = {"single-choice", "weighted", "quadratic", "approval"}
+SUPPORTED_MVP_VOTING_TYPES = {"single-choice", "approval", "weighted"}
+CHAIN_TIP_STATE_KEY = "chain:tip_height"
+SRC20_PROTOCOL = "SRC-20"
+ORDER_INDEX_FIELDS = (
+    "tx_index",
+    "transaction_index",
+    "tx_position",
+    "tx_pos",
+    "block_index",
+    "position",
+    "stamp_index",
+    "stamp_number",
+)
 
 
 @dataclass(frozen=True)
 class ReducerSettings:
     enforce_balance_checks: bool = False
     default_voting_power: float = 1.0
+    enforce_tick_registry: bool = False
 
 
 @dataclass(frozen=True)
@@ -46,10 +66,18 @@ class NormalizedEvent:
     txid: str
     stamp_id: Optional[str]
     block_height: int
+    order_index: Optional[int]
     block_time: Optional[str]
     sender: str
     op: str
     payload: Dict[str, Any]
+
+
+@dataclass(frozen=True)
+class VoteSelection:
+    ballot_type: str
+    primary_choice: int
+    ballot: Dict[str, Any]
 
 
 def utc_now_iso() -> str:
@@ -84,6 +112,85 @@ def synthetic_txid(raw: Dict[str, Any], index: int) -> str:
     seed = json.dumps(raw, sort_keys=True, default=str)
     digest = hashlib.sha256(seed.encode("utf-8")).hexdigest()[:24]
     return f"synthetic-{digest}-{index}"
+
+
+def extract_event_txid(raw: Dict[str, Any], index: int) -> str:
+    return str(
+        raw.get("txid")
+        or raw.get("transaction_id")
+        or raw.get("id")
+        or synthetic_txid(raw, index)
+    ).strip()
+
+
+def resolve_block_height_candidate(raw: Dict[str, Any], payload: Dict[str, Any]) -> Optional[Any]:
+    for candidate in (
+        raw.get("block_height"),
+        raw.get("block"),
+        raw.get("height"),
+        payload.get("block_height"),
+    ):
+        if candidate is None:
+            continue
+        if isinstance(candidate, str) and candidate.strip() == "":
+            continue
+        return candidate
+    return None
+
+
+def resolve_order_index_candidate(raw: Dict[str, Any], payload: Dict[str, Any]) -> Optional[int]:
+    containers: List[Any] = [raw]
+    for key in ("meta", "record"):
+        nested = raw.get(key)
+        if isinstance(nested, dict):
+            containers.append(nested)
+    containers.append(payload)
+
+    for container in containers:
+        if not isinstance(container, dict):
+            continue
+        for field in ORDER_INDEX_FIELDS:
+            candidate = container.get(field)
+            if candidate is None:
+                continue
+            if isinstance(candidate, str) and candidate.strip() == "":
+                continue
+            try:
+                order_index = int(candidate)
+            except (TypeError, ValueError):
+                continue
+            if order_index >= 0:
+                return order_index
+    return None
+
+
+def is_plausible_bitcoin_address(value: str) -> bool:
+    return BTC_ADDRESS_RE.fullmatch(value.strip()) is not None
+
+
+def validate_strategy_config(strategies: Any) -> Optional[str]:
+    if not isinstance(strategies, list) or len(strategies) == 0:
+        return "strategies must be a non-empty list"
+    if len(strategies) != 1:
+        return "MVP only supports a single 'src20-balance' strategy"
+
+    strategy = strategies[0]
+    if isinstance(strategy, str):
+        strategy_id = strategy.strip()
+    elif isinstance(strategy, dict):
+        strategy_id = str(strategy.get("id", "")).strip()
+        weight = strategy.get("weight", 1)
+        try:
+            if float(weight) != 1.0:
+                return "MVP only supports 'src20-balance' with weight 1.0"
+        except (TypeError, ValueError):
+            return "strategy weight must be numeric"
+    else:
+        return "strategy entries must be strings or objects"
+
+    if strategy_id != "src20-balance":
+        return "MVP only supports the 'src20-balance' strategy"
+    return None
 
 
 def load_json_records(path: Path) -> List[Dict[str, Any]]:
@@ -145,24 +252,17 @@ def normalize_event(raw: Dict[str, Any], index: int) -> Tuple[Optional[Normalize
     if payload is None:
         return None, "no SRC-420 payload found"
 
-    txid = str(
-        raw.get("txid")
-        or raw.get("transaction_id")
-        or raw.get("id")
-        or synthetic_txid(raw, index)
-    ).strip()
+    txid = extract_event_txid(raw, index)
 
-    block_height_raw = (
-        raw.get("block_height")
-        or raw.get("block")
-        or raw.get("height")
-        or payload.get("block_height")
-        or 0
-    )
+    block_height_raw = resolve_block_height_candidate(raw, payload)
+    if block_height_raw is None:
+        return None, "missing block_height"
     try:
         block_height = int(block_height_raw)
     except (TypeError, ValueError):
-        block_height = 0
+        return None, "invalid block_height"
+    if block_height < 0:
+        return None, "block_height must be >= 0"
 
     sender = str(
         raw.get("sender")
@@ -184,12 +284,22 @@ def normalize_event(raw: Dict[str, Any], index: int) -> Tuple[Optional[Normalize
             txid=txid,
             stamp_id=(str(raw.get("stamp_id")).strip() if raw.get("stamp_id") is not None else None),
             block_height=block_height,
+            order_index=resolve_order_index_candidate(raw, payload),
             block_time=(str(raw.get("block_time")).strip() if raw.get("block_time") is not None else None),
             sender=sender,
             op=op,
             payload=payload,
         ),
         None,
+    )
+
+
+def event_sort_key(event: NormalizedEvent) -> Tuple[int, int, int, str]:
+    return (
+        event.block_height,
+        1 if event.order_index is None else 0,
+        -1 if event.order_index is None else int(event.order_index),
+        event.txid,
     )
 
 
@@ -200,6 +310,16 @@ def open_db(db_path: str) -> sqlite3.Connection:
     return conn
 
 
+def ensure_column(conn: sqlite3.Connection, table: str, column: str, definition: str) -> None:
+    existing_columns = {
+        str(row["name"])
+        for row in conn.execute(f"PRAGMA table_info({table})").fetchall()
+    }
+    if column in existing_columns:
+        return
+    conn.execute(f"ALTER TABLE {table} ADD COLUMN {column} {definition}")
+
+
 def init_db(conn: sqlite3.Connection) -> None:
     conn.executescript(
         """
@@ -207,6 +327,7 @@ def init_db(conn: sqlite3.Connection) -> None:
             txid TEXT PRIMARY KEY,
             stamp_id TEXT,
             block_height INTEGER NOT NULL,
+            order_index INTEGER,
             block_time TEXT,
             sender TEXT NOT NULL,
             op TEXT NOT NULL,
@@ -255,8 +376,11 @@ def init_db(conn: sqlite3.Connection) -> None:
             proposal_id INTEGER NOT NULL,
             voter TEXT NOT NULL,
             choice INTEGER NOT NULL,
+            ballot_type TEXT NOT NULL DEFAULT 'single-choice',
+            ballot_json TEXT,
             voting_power REAL NOT NULL,
             cast_block INTEGER NOT NULL,
+            cast_order_index INTEGER,
             cast_txid TEXT NOT NULL,
             PRIMARY KEY (space_id, proposal_id, voter),
             FOREIGN KEY (space_id, proposal_id) REFERENCES proposals(space_id, proposal_id)
@@ -267,6 +391,7 @@ def init_db(conn: sqlite3.Connection) -> None:
             delegator TEXT NOT NULL,
             delegate TEXT NOT NULL,
             block_height INTEGER NOT NULL,
+            order_index INTEGER,
             txid TEXT NOT NULL,
             PRIMARY KEY (space_id, delegator, txid),
             FOREIGN KEY (space_id) REFERENCES spaces(space_id)
@@ -303,6 +428,16 @@ def init_db(conn: sqlite3.Connection) -> None:
             PRIMARY KEY (tick, address, block_height)
         );
 
+        CREATE TABLE IF NOT EXISTS token_registry (
+            tick TEXT PRIMARY KEY,
+            protocol TEXT NOT NULL,
+            deployment_txid TEXT,
+            deployed_block INTEGER,
+            metadata_json TEXT NOT NULL,
+            source TEXT,
+            imported_at TEXT NOT NULL
+        );
+
         CREATE TABLE IF NOT EXISTS sync_state (
             key TEXT PRIMARY KEY,
             value TEXT NOT NULL,
@@ -314,8 +449,14 @@ def init_db(conn: sqlite3.Connection) -> None:
         CREATE INDEX IF NOT EXISTS idx_votes_space_proposal ON votes(space_id, proposal_id);
         CREATE INDEX IF NOT EXISTS idx_delegation_events_space_block ON delegation_events(space_id, block_height);
         CREATE INDEX IF NOT EXISTS idx_balances_tick_addr_block ON balance_snapshots(tick, address, block_height);
+        CREATE INDEX IF NOT EXISTS idx_token_registry_protocol ON token_registry(protocol, tick);
         """
     )
+    ensure_column(conn, "events", "order_index", "INTEGER")
+    ensure_column(conn, "votes", "ballot_type", "TEXT NOT NULL DEFAULT 'single-choice'")
+    ensure_column(conn, "votes", "ballot_json", "TEXT")
+    ensure_column(conn, "votes", "cast_order_index", "INTEGER")
+    ensure_column(conn, "delegation_events", "order_index", "INTEGER")
     conn.commit()
 
 
@@ -324,14 +465,15 @@ def write_event_log(conn: sqlite3.Connection, event: NormalizedEvent, valid: boo
         conn.execute(
             """
             INSERT INTO events (
-                txid, stamp_id, block_height, block_time, sender, op, payload_json,
+                txid, stamp_id, block_height, order_index, block_time, sender, op, payload_json,
                 valid, error, applied_at
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """,
             (
                 event.txid,
                 event.stamp_id,
                 event.block_height,
+                event.order_index,
                 event.block_time,
                 event.sender,
                 event.op,
@@ -344,6 +486,39 @@ def write_event_log(conn: sqlite3.Connection, event: NormalizedEvent, valid: boo
         return True
     except sqlite3.IntegrityError:
         return False
+
+
+def update_event_log(conn: sqlite3.Connection, event: NormalizedEvent, valid: bool, error: Optional[str]) -> None:
+    conn.execute(
+        """
+        UPDATE events
+        SET
+            stamp_id = ?,
+            block_height = ?,
+            order_index = ?,
+            block_time = ?,
+            sender = ?,
+            op = ?,
+            payload_json = ?,
+            valid = ?,
+            error = ?,
+            applied_at = ?
+        WHERE txid = ?
+        """,
+        (
+            event.stamp_id,
+            event.block_height,
+            event.order_index,
+            event.block_time,
+            event.sender,
+            event.op,
+            json_dumps(event.payload),
+            1 if valid else 0,
+            error,
+            utc_now_iso(),
+            event.txid,
+        ),
+    )
 
 
 def get_space(conn: sqlite3.Connection, space_id: str) -> Optional[sqlite3.Row]:
@@ -363,6 +538,17 @@ def get_proposal(conn: sqlite3.Connection, space_id: str, proposal_id: int) -> O
 def get_latest_block(conn: sqlite3.Connection) -> int:
     row = conn.execute("SELECT COALESCE(MAX(block_height), 0) AS block FROM events WHERE valid = 1").fetchone()
     return int(row["block"] if row is not None else 0)
+
+
+def get_status_reference_block(conn: sqlite3.Connection) -> int:
+    indexed_block = get_latest_block(conn)
+    chain_tip_raw = get_sync_state(conn, CHAIN_TIP_STATE_KEY)
+    if chain_tip_raw is None:
+        return indexed_block
+    try:
+        return max(int(chain_tip_raw), indexed_block)
+    except ValueError:
+        return indexed_block
 
 
 def get_sync_state(conn: sqlite3.Connection, key: str) -> Optional[str]:
@@ -401,6 +587,18 @@ def list_sync_state(conn: sqlite3.Connection) -> List[Dict[str, str]]:
     ]
 
 
+def is_registered_tick(conn: sqlite3.Connection, tick: str) -> bool:
+    row = conn.execute(
+        """
+        SELECT tick
+        FROM token_registry
+        WHERE tick = ? AND protocol = ?
+        """,
+        (tick.upper(), SRC20_PROTOCOL),
+    ).fetchone()
+    return row is not None
+
+
 def get_latest_delegation_at_block(
     conn: sqlite3.Connection, space_id: str, delegator: str, snapshot_block: int
 ) -> Optional[str]:
@@ -409,7 +607,11 @@ def get_latest_delegation_at_block(
         SELECT delegate
         FROM delegation_events
         WHERE space_id = ? AND delegator = ? AND block_height <= ?
-        ORDER BY block_height DESC, txid DESC
+        ORDER BY
+            block_height DESC,
+            CASE WHEN order_index IS NULL THEN 1 ELSE 0 END DESC,
+            order_index DESC,
+            txid DESC
         LIMIT 1
         """,
         (space_id, delegator, snapshot_block),
@@ -524,8 +726,120 @@ def compute_effective_voting_power(
     return total
 
 
+def build_single_choice_ballot(choice: int) -> VoteSelection:
+    return VoteSelection(
+        ballot_type="single-choice",
+        primary_choice=choice,
+        ballot={
+            "choice": choice,
+            "allocations": [{"choice": choice, "fraction": 1.0}],
+        },
+    )
+
+
+def build_approval_ballot(choice_count: int, selected_choices: Sequence[Any]) -> VoteSelection:
+    normalized: List[int] = []
+    seen = set()
+
+    for raw_choice in selected_choices:
+        choice = parse_int(raw_choice, "choices")
+        if choice < 1 or choice > choice_count:
+            raise ValueError("invalid choice index")
+        if choice in seen:
+            raise ValueError("approval choices must be unique")
+        seen.add(choice)
+        normalized.append(choice)
+
+    if len(normalized) == 0:
+        raise ValueError("approval vote must select at least one choice")
+
+    normalized.sort()
+    fraction = 1.0 / len(normalized)
+    return VoteSelection(
+        ballot_type="approval",
+        primary_choice=normalized[0],
+        ballot={
+            "choices": normalized,
+            "allocations": [{"choice": choice, "fraction": fraction} for choice in normalized],
+        },
+    )
+
+
+def build_weighted_ballot(choice_count: int, raw_weights: Any) -> VoteSelection:
+    normalized_weights: Dict[int, float] = {}
+
+    if isinstance(raw_weights, dict):
+        items = raw_weights.items()
+        for raw_choice, raw_weight in items:
+            choice = parse_int(raw_choice, "weights choice")
+            weight = parse_float(raw_weight, "weights value")
+            normalized_weights[choice] = weight
+    elif isinstance(raw_weights, list):
+        for entry in raw_weights:
+            if not isinstance(entry, dict):
+                raise ValueError("weights entries must be objects")
+            choice = parse_int(entry.get("choice"), "weights choice")
+            weight = parse_float(entry.get("weight"), "weights value")
+            normalized_weights[choice] = weight
+    else:
+        raise ValueError("weighted vote requires a 'weights' object or array")
+
+    if len(normalized_weights) == 0:
+        raise ValueError("weighted vote must include at least one choice")
+
+    total = 0.0
+    for choice, weight in normalized_weights.items():
+        if choice < 1 or choice > choice_count:
+            raise ValueError("invalid choice index")
+        if weight <= 0:
+            raise ValueError("weighted vote entries must be > 0")
+        total += weight
+
+    if not math.isclose(total, 100.0, rel_tol=0.0, abs_tol=1e-6):
+        raise ValueError("weighted vote weights must sum to 100")
+
+    ordered_weights = sorted(normalized_weights.items())
+    primary_choice = sorted(
+        ordered_weights,
+        key=lambda item: (-item[1], item[0]),
+    )[0][0]
+
+    return VoteSelection(
+        ballot_type="weighted",
+        primary_choice=primary_choice,
+        ballot={
+            "weights": [{"choice": choice, "weight": weight} for choice, weight in ordered_weights],
+            "allocations": [
+                {"choice": choice, "fraction": weight / 100.0}
+                for choice, weight in ordered_weights
+            ],
+        },
+    )
+
+
+def normalize_vote_selection(payload: Dict[str, Any], choice_count: int, voting_type: str) -> VoteSelection:
+    if voting_type == "single-choice":
+        choice = parse_int(payload.get("choice"), "choice")
+        if choice < 1 or choice > choice_count:
+            raise ValueError("invalid choice index")
+        return build_single_choice_ballot(choice)
+
+    if voting_type == "approval":
+        selected_choices = payload.get("choices")
+        if selected_choices is None and payload.get("choice") is not None:
+            selected_choices = [payload.get("choice")]
+        if not isinstance(selected_choices, list):
+            raise ValueError("approval vote requires a 'choices' array")
+        return build_approval_ballot(choice_count, selected_choices)
+
+    if voting_type == "weighted":
+        return build_weighted_ballot(choice_count, payload.get("weights"))
+
+    raise ValueError(f"unsupported voting type '{voting_type}'")
+
+
 def reduce_deploy(
-    conn: sqlite3.Connection, event: NormalizedEvent
+    conn: sqlite3.Connection, event: NormalizedEvent, settings: ReducerSettings
 ) -> Tuple[bool, Optional[str]]:
     payload = event.payload
     space_id = str(payload.get("space", "")).strip()
@@ -538,16 +852,24 @@ def reduce_deploy(
 
     if not SPACE_ID_RE.fullmatch(space_id):
         return False, "invalid space id"
-    if not tick:
-        return False, "missing tick"
+    if not TICK_RE.fullmatch(tick):
+        return False, "invalid tick"
+    if settings.enforce_tick_registry and not is_registered_tick(conn, tick):
+        return False, "tick is not present in the local SRC-20 registry"
     if not name or len(name) > 64:
         return False, "invalid name"
-    if not isinstance(strategies, list) or len(strategies) == 0:
-        return False, "strategies must be a non-empty list"
+    if isinstance(about, str) and len(about) > 280:
+        return False, "about must be <= 280 characters"
+    strategy_error = validate_strategy_config(strategies)
+    if strategy_error:
+        return False, strategy_error
     if not isinstance(voting, dict):
         return False, "voting must be an object"
     if not isinstance(admins, list):
         return False, "admins must be an array"
+    for admin in admins:
+        if not isinstance(admin, str) or not is_plausible_bitcoin_address(admin):
+            return False, "admins must contain valid Bitcoin addresses"
     if get_space(conn, space_id) is not None:
         return False, "space already exists (first valid DEPLOY wins)"
 
@@ -561,6 +883,8 @@ def reduce_deploy(
     voting_type = str(voting.get("type", "")).strip()
     if voting_type not in ALLOWED_VOTING_TYPES:
         return False, "invalid voting type"
+    if voting_type not in SUPPORTED_MVP_VOTING_TYPES:
+        return False, "MVP only supports voting.type='single-choice'"
     if delay < 0:
         return False, "voting.delay must be >= 0"
     if period < 144:
@@ -630,10 +954,12 @@ def reduce_propose(
     choices = payload.get("choices")
     if not title or len(title) > 128:
         return False, "invalid title"
-    if not body:
+    if not body or len(body) > 32768:
         return False, "body is required"
     if not isinstance(choices, list) or not (2 <= len(choices) <= 10):
         return False, "choices must contain 2-10 entries"
+    if any(not isinstance(choice, str) or not choice.strip() for choice in choices):
+        return False, "choices must be non-empty strings"
 
     if snapshot > event.block_height:
         return False, "snapshot must be <= current block"
@@ -689,7 +1015,6 @@ def reduce_vote(
     space_id = str(payload.get("space", "")).strip()
     try:
         proposal_id = parse_int(payload.get("proposal"), "proposal")
-        choice = parse_int(payload.get("choice"), "choice")
     except ValueError as exc:
         return False, str(exc)
 
@@ -701,12 +1026,18 @@ def reduce_vote(
         return False, "vote is outside proposal voting window"
 
     choices = json_loads(proposal["choices_json"], default=[])
-    if not isinstance(choices, list) or choice < 1 or choice > len(choices):
-        return False, "invalid choice index"
+    if not isinstance(choices, list):
+        return False, "proposal choices are invalid"
 
     space = get_space(conn, space_id)
     if space is None:
         return False, "space does not exist"
+
+    voting_type = str(space["voting_type"])
+    try:
+        selection = normalize_vote_selection(payload, len(choices), voting_type)
+    except ValueError as exc:
+        return False, str(exc)
 
     snapshot_block = int(proposal["snapshot_block"])
     voting_power = compute_effective_voting_power(
@@ -726,21 +1057,28 @@ def reduce_vote(
     conn.execute(
         """
         INSERT INTO votes (
-            space_id, proposal_id, voter, choice, voting_power, cast_block, cast_txid
-        ) VALUES (?, ?, ?, ?, ?, ?, ?)
+            space_id, proposal_id, voter, choice, ballot_type, ballot_json,
+            voting_power, cast_block, cast_order_index, cast_txid
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         ON CONFLICT(space_id, proposal_id, voter) DO UPDATE SET
             choice = excluded.choice,
+            ballot_type = excluded.ballot_type,
+            ballot_json = excluded.ballot_json,
             voting_power = excluded.voting_power,
             cast_block = excluded.cast_block,
+            cast_order_index = excluded.cast_order_index,
             cast_txid = excluded.cast_txid
         """,
         (
             space_id,
             proposal_id,
             event.sender,
-            choice,
+            selection.primary_choice,
+            selection.ballot_type,
+            json_dumps(selection.ballot),
             voting_power,
             event.block_height,
+            event.order_index,
             event.txid,
         ),
     )
@@ -756,16 +1094,16 @@ def reduce_delegate(
 
     if get_space(conn, space_id) is None:
         return False, "space does not exist"
-    if len(delegate) < 8:
-        return False, "delegate address is too short"
+    if not is_plausible_bitcoin_address(delegate):
+        return False, "delegate must be a valid Bitcoin address"
 
     conn.execute(
         """
         INSERT INTO delegation_events (
-            space_id, delegator, delegate, block_height, txid
-        ) VALUES (?, ?, ?, ?, ?)
+            space_id, delegator, delegate, block_height, order_index, txid
+        ) VALUES (?, ?, ?, ?, ?, ?)
         """,
-        (space_id, event.sender, delegate, event.block_height, event.txid),
+        (space_id, event.sender, delegate, event.block_height, event.order_index, event.txid),
     )
 
     conn.execute(
@@ -867,7 +1205,7 @@ def reduce_event(
     conn: sqlite3.Connection, event: NormalizedEvent, settings: ReducerSettings
 ) -> Tuple[bool, Optional[str]]:
     if event.op == "DEPLOY":
-        return reduce_deploy(conn, event)
+        return reduce_deploy(conn, event, settings)
     if event.op == "PROPOSE":
         return reduce_propose(conn, event, settings)
     if event.op == "VOTE":
@@ -885,40 +1223,59 @@ def ingest_records(
     settings: ReducerSettings,
 ) -> Dict[str, int]:
     normalized: List[NormalizedEvent] = []
-    invalid_records = 0
+    applied = 0
+    rejected = 0
+    duplicates = 0
+    total_input = 0
 
     for idx, raw in enumerate(records):
+        total_input += 1
         event, error = normalize_event(raw, idx)
         if event is None:
-            invalid_records += 1
+            placeholder_txid = extract_event_txid(raw, idx)
             placeholder = NormalizedEvent(
-                txid=synthetic_txid(raw, idx),
+                txid=placeholder_txid,
                 stamp_id=None,
                 block_height=0,
+                order_index=resolve_order_index_candidate(raw, {}),
                 block_time=None,
-                sender="unknown",
+                sender=str(raw.get("sender") or raw.get("address") or raw.get("from") or "unknown"),
                 op="INVALID",
                 payload={"raw": raw},
             )
             with conn:
-                write_event_log(conn, placeholder, valid=False, error=error or "invalid event")
+                existing = conn.execute(
+                    "SELECT valid FROM events WHERE txid = ?",
+                    (placeholder.txid,),
+                ).fetchone()
+                if existing is not None and int(existing["valid"]) == 1:
+                    duplicates += 1
+                    continue
+                if existing is None:
+                    write_event_log(conn, placeholder, valid=False, error=error or "invalid event")
+                else:
+                    update_event_log(conn, placeholder, valid=False, error=error or "invalid event")
+            rejected += 1
             continue
         normalized.append(event)
 
-    normalized.sort(key=lambda e: (e.block_height, e.txid))
-
-    applied = 0
-    rejected = invalid_records
-    duplicates = 0
+    normalized.sort(key=event_sort_key)
 
     for event in normalized:
         with conn:
-            if conn.execute("SELECT 1 FROM events WHERE txid = ?", (event.txid,)).fetchone() is not None:
+            existing = conn.execute(
+                "SELECT valid FROM events WHERE txid = ?",
+                (event.txid,),
+            ).fetchone()
+            if existing is not None and int(existing["valid"]) == 1:
                 duplicates += 1
                 continue
 
             valid, error = reduce_event(conn, event, settings)
-            write_event_log(conn, event, valid=valid, error=error)
+            if existing is None:
+                write_event_log(conn, event, valid=valid, error=error)
+            else:
+                update_event_log(conn, event, valid=valid, error=error)
 
             if valid:
                 applied += 1
@@ -929,7 +1286,7 @@ def ingest_records(
         "applied": applied,
         "rejected": rejected,
         "duplicates": duplicates,
-        "total_input": applied + rejected + duplicates,
+        "total_input": total_input,
     }
 
 
@@ -964,6 +1321,91 @@ def import_balance_records(conn: sqlite3.Connection, records: Sequence[Dict[str,
                 (tick, address, block_height, balance, source, now),
             )
             if cursor.rowcount == 1:
+                inserted += 1
+            else:
+                updated += 1
+
+    return {"inserted": inserted, "updated": updated, "skipped": skipped}
+
+
+def import_tick_registry_records(conn: sqlite3.Connection, records: Sequence[Dict[str, Any]]) -> Dict[str, int]:
+    inserted = 0
+    updated = 0
+    skipped = 0
+    now = utc_now_iso()
+
+    with conn:
+        for record in records:
+            try:
+                tick = str(record["tick"]).strip().upper()
+            except KeyError:
+                skipped += 1
+                continue
+
+            if not TICK_RE.fullmatch(tick):
+                skipped += 1
+                continue
+
+            protocol_raw = str(record.get("protocol") or record.get("p") or SRC20_PROTOCOL).strip().upper()
+            protocol = "SRC-20" if protocol_raw in {"SRC20", "SRC-20"} else protocol_raw
+            if protocol != SRC20_PROTOCOL:
+                skipped += 1
+                continue
+
+            deployment_txid_raw = record.get("deployment_txid", record.get("txid"))
+            deployment_txid = None
+            if deployment_txid_raw is not None:
+                deployment_txid = str(deployment_txid_raw).strip() or None
+
+            deployed_block = None
+            deployed_block_raw = record.get("deployed_block", record.get("block_height"))
+            if deployed_block_raw is not None and not (
+                isinstance(deployed_block_raw, str) and deployed_block_raw.strip() == ""
+            ):
+                try:
+                    deployed_block = int(deployed_block_raw)
+                except (TypeError, ValueError):
+                    skipped += 1
+                    continue
+
+            metadata = record.get("metadata")
+            if metadata is None:
+                metadata = {
+                    key: value
+                    for key, value in record.items()
+                    if key not in {"tick", "protocol", "p", "deployment_txid", "txid", "deployed_block", "block_height"}
+                }
+            if not isinstance(metadata, (dict, list)):
+                metadata = {"value": metadata}
+
+            existing = conn.execute(
+                "SELECT 1 FROM token_registry WHERE tick = ?",
+                (tick,),
+            ).fetchone()
+            conn.execute(
+                """
+                INSERT INTO token_registry (
+                    tick, protocol, deployment_txid, deployed_block, metadata_json, source, imported_at
+                ) VALUES (?, ?, ?, ?, ?, ?, ?)
+                ON CONFLICT(tick) DO UPDATE SET
+                    protocol = excluded.protocol,
+                    deployment_txid = excluded.deployment_txid,
+                    deployed_block = excluded.deployed_block,
+                    metadata_json = excluded.metadata_json,
+                    source = excluded.source,
+                    imported_at = excluded.imported_at
+                """,
+                (
+                    tick,
+                    protocol,
+                    deployment_txid,
+                    deployed_block,
+                    json_dumps(metadata),
+                    str(record.get("source", "manual")),
+                    now,
+                ),
+            )
+            if existing is None:
                 inserted += 1
             else:
                 updated += 1
@@ -1220,12 +1662,9 @@ def sync_http_feed(
 ) -> Dict[str, Any]:
     pages_fetched = 0
     total_records = 0
-    applied = 0
-    rejected = 0
-    duplicates = 0
-    max_seen_block: Optional[int] = None
     filtered_out = 0
     stop_reason = "max_pages_reached"
+    staged_records: List[Dict[str, Any]] = []
 
     for page in range(1, max_pages + 1):
         url = build_url_from_template(
@@ -1239,46 +1678,67 @@ def sync_http_feed(
         payload = fetcher(url, timeout_sec=timeout_sec, headers=headers)
         pages_fetched += 1
 
-        records = extract_records_from_payload(payload, records_key=records_key)
-        total_records += len(records)
+        raw_records = extract_records_from_payload(payload, records_key=records_key)
+        total_records += len(raw_records)
         records, filtered = filter_records_by_block_range(
-            records=records,
+            records=raw_records,
             start_block=start_block,
             end_block=end_block,
         )
         filtered_out += filtered
-
-        page_max_block = estimate_max_block_height(records)
-        if page_max_block is not None:
-            if max_seen_block is None or page_max_block > max_seen_block:
-                max_seen_block = page_max_block
-
-        summary = ingest_records(conn, records, settings=settings)
-        applied += int(summary["applied"])
-        rejected += int(summary["rejected"])
-        duplicates += int(summary["duplicates"])
+        staged_records.extend(records)
 
         has_more = extract_has_more(payload, has_more_key=has_more_key)
         if has_more is False:
             stop_reason = "has_more_false"
             break
-        if has_more is None and len(records) < page_size:
+        if has_more is None and len(raw_records) < page_size:
             stop_reason = "short_page"
             break
-        if len(records) == 0:
+        if len(raw_records) == 0:
             stop_reason = "empty_page"
             break
+
+    summary = ingest_records(conn, staged_records, settings=settings)
+    max_seen_block = estimate_max_block_height(staged_records)
 
     return {
         "pages_fetched": pages_fetched,
         "records_fetched": total_records,
-        "applied": applied,
-        "rejected": rejected,
-        "duplicates": duplicates,
+        "applied": int(summary["applied"]),
+        "rejected": int(summary["rejected"]),
+        "duplicates": int(summary["duplicates"]),
         "filtered_out_of_range": filtered_out,
         "max_seen_block": max_seen_block,
         "stop_reason": stop_reason,
     }
+
+
+def resolve_cursor_advance(
+    summary: Dict[str, Any],
+    update_cursor: bool,
+    policy: str,
+) -> Tuple[bool, Optional[str], str]:
+    if not update_cursor:
+        return False, None, "update_cursor_disabled"
+
+    max_seen_block = summary.get("max_seen_block")
+    if max_seen_block is None:
+        return False, None, "no_seen_block"
+
+    if policy == "always":
+        return True, str(max_seen_block), "policy_always"
+
+    if int(summary.get("rejected", 0)) > 0:
+        return False, None, "rejected_records"
+
+    if policy == "complete-window" and summary.get("stop_reason") == "max_pages_reached":
+        return False, None, "window_incomplete"
+
+    if policy == "no-rejections":
+        return True, str(max_seen_block), "no_rejections"
+
+    raise ValueError(f"unsupported cursor advance policy '{policy}'")
 
 
 def reset_derived_state(conn: sqlite3.Connection) -> None:
@@ -1299,19 +1759,27 @@ def replay_valid_events(
     if max_block is None:
         rows = conn.execute(
             """
-            SELECT txid, stamp_id, block_height, block_time, sender, op, payload_json
+            SELECT txid, stamp_id, block_height, order_index, block_time, sender, op, payload_json
             FROM events
             WHERE valid = 1
-            ORDER BY block_height, txid
+            ORDER BY
+                block_height ASC,
+                CASE WHEN order_index IS NULL THEN 1 ELSE 0 END ASC,
+                order_index ASC,
+                txid ASC
             """
         ).fetchall()
     else:
         rows = conn.execute(
             """
-            SELECT txid, stamp_id, block_height, block_time, sender, op, payload_json
+            SELECT txid, stamp_id, block_height, order_index, block_time, sender, op, payload_json
             FROM events
             WHERE valid = 1 AND block_height <= ?
-            ORDER BY block_height, txid
+            ORDER BY
+                block_height ASC,
+                CASE WHEN order_index IS NULL THEN 1 ELSE 0 END ASC,
+                order_index ASC,
+                txid ASC
             """,
             (max_block,),
         ).fetchall()
@@ -1334,6 +1802,7 @@ def replay_valid_events(
             txid=str(row["txid"]),
             stamp_id=(str(row["stamp_id"]) if row["stamp_id"] is not None else None),
             block_height=int(row["block_height"]),
+            order_index=(int(row["order_index"]) if row["order_index"] is not None else None),
             block_time=(str(row["block_time"]) if row["block_time"] is not None else None),
             sender=str(row["sender"]),
             op=str(row["op"]),
@@ -1616,6 +2085,27 @@ def serialize_proposal(row: sqlite3.Row, latest_block: int) -> Dict[str, Any]:
     }
 
 
+def extract_ballot_allocations(vote_row: sqlite3.Row) -> List[Tuple[int, float]]:
+    ballot_json = json_loads(vote_row["ballot_json"], default={})
+    if isinstance(ballot_json, dict):
+        allocations = ballot_json.get("allocations")
+        if isinstance(allocations, list):
+            parsed_allocations: List[Tuple[int, float]] = []
+            for entry in allocations:
+                if not isinstance(entry, dict):
+                    continue
+                try:
+                    choice = int(entry.get("choice"))
+                    fraction = float(entry.get("fraction"))
+                except (TypeError, ValueError):
+                    continue
+                parsed_allocations.append((choice, fraction))
+            if parsed_allocations:
+                return parsed_allocations
+
+    return [(int(vote_row["choice"]), 1.0)]
+
+
 def calculate_results(conn: sqlite3.Connection, space_id: str, proposal_id: int) -> Optional[Dict[str, Any]]:
     proposal = get_proposal(conn, space_id, proposal_id)
     if proposal is None:
@@ -1629,7 +2119,7 @@ def calculate_results(conn: sqlite3.Connection, space_id: str, proposal_id: int)
 
     votes = conn.execute(
         """
-        SELECT choice, voting_power
+        SELECT choice, ballot_type, ballot_json, voting_power
         FROM votes
         WHERE space_id = ? AND proposal_id = ?
         """,
@@ -1637,9 +2127,10 @@ def calculate_results(conn: sqlite3.Connection, space_id: str, proposal_id: int)
     ).fetchall()
 
     for vote in votes:
-        idx = int(vote["choice"]) - 1
-        if 0 <= idx < len(scores):
-            scores[idx] += float(vote["voting_power"])
+        for choice, fraction in extract_ballot_allocations(vote):
+            idx = int(choice) - 1
+            if 0 <= idx < len(scores) and fraction > 0:
+                scores[idx] += float(vote["voting_power"]) * float(fraction)
 
     total = float(sum(scores))
     quorum_required = float(space["voting_quorum"])
@@ -1727,11 +2218,16 @@ class IndexerAPIHandler(BaseHTTPRequestHandler):
 
             if segments == ["health"]:
                 with open_db(self.db_path) as conn:
+                    indexed_block = get_latest_block(conn)
+                    status_reference_block = get_status_reference_block(conn)
                     self._json_response(
                         200,
                         {
                             "ok": True,
-                            "latest_block": get_latest_block(conn),
+                            "latest_block": indexed_block,
+                            "latest_indexed_block": indexed_block,
+                            "status_reference_block": status_reference_block,
+                            "chain_tip_height": get_sync_state(conn, CHAIN_TIP_STATE_KEY),
                             "timestamp": utc_now_iso(),
                         },
                     )
@@ -1743,6 +2239,7 @@ class IndexerAPIHandler(BaseHTTPRequestHandler):
 
             with open_db(self.db_path) as conn:
                 latest_block = get_latest_block(conn)
+                status_reference_block = get_status_reference_block(conn)
 
                 if len(segments) == 1:
                     rows = conn.execute("SELECT * FROM spaces ORDER BY created_block, space_id").fetchall()
@@ -1772,7 +2269,7 @@ class IndexerAPIHandler(BaseHTTPRequestHandler):
                             (space_id,),
                         ).fetchall()
 
-                        proposals = [serialize_proposal(row, latest_block) for row in rows]
+                        proposals = [serialize_proposal(row, status_reference_block) for row in rows]
                         if status_filter:
                             proposals = [p for p in proposals if p["status"] == status_filter]
 
@@ -1795,7 +2292,7 @@ class IndexerAPIHandler(BaseHTTPRequestHandler):
                             self._json_response(
                                 200,
                                 {
-                                    "proposal": serialize_proposal(proposal, latest_block),
+                                    "proposal": serialize_proposal(proposal, status_reference_block),
                                 },
                             )
                             return
@@ -1803,10 +2300,14 @@ class IndexerAPIHandler(BaseHTTPRequestHandler):
                         if len(segments) == 5 and segments[4] == "votes":
                             votes = conn.execute(
                                 """
-                                SELECT voter, choice, voting_power, cast_block, cast_txid
+                                SELECT voter, choice, ballot_type, ballot_json, voting_power, cast_block, cast_order_index, cast_txid
                                 FROM votes
                                 WHERE space_id = ? AND proposal_id = ?
-                                ORDER BY cast_block, voter
+                                ORDER BY
+                                    cast_block ASC,
+                                    CASE WHEN cast_order_index IS NULL THEN 1 ELSE 0 END ASC,
+                                    cast_order_index ASC,
+                                    voter ASC
                                 """,
                                 (space_id, proposal_id),
                             ).fetchall()
@@ -1817,8 +2318,11 @@ class IndexerAPIHandler(BaseHTTPRequestHandler):
                                         {
                                             "voter": row["voter"],
                                             "choice": row["choice"],
+                                            "ballot_type": row["ballot_type"],
+                                            "ballot": json_loads(row["ballot_json"], default={}),
                                             "voting_power": row["voting_power"],
                                             "cast_block": row["cast_block"],
+                                            "cast_order_index": row["cast_order_index"],
                                             "cast_txid": row["cast_txid"],
                                         }
                                         for row in votes
@@ -1934,6 +2438,7 @@ def cmd_ingest_file(args: argparse.Namespace) -> None:
     settings = ReducerSettings(
         enforce_balance_checks=args.enforce_balance_checks,
         default_voting_power=args.default_voting_power,
+        enforce_tick_registry=args.enforce_tick_registry,
     )
 
     with open_db(args.db) as conn:
@@ -1942,6 +2447,7 @@ def cmd_ingest_file(args: argparse.Namespace) -> None:
     summary["file"] = str(path)
     summary["enforce_balance_checks"] = args.enforce_balance_checks
     summary["default_voting_power"] = args.default_voting_power
+    summary["enforce_tick_registry"] = args.enforce_tick_registry
     print(json.dumps(summary, indent=2))
 
 
@@ -1952,6 +2458,17 @@ def cmd_import_balances(args: argparse.Namespace) -> None:
     with open_db(args.db) as conn:
         init_db(conn)
         summary = import_balance_records(conn, records)
+    summary["file"] = str(path)
+    print(json.dumps(summary, indent=2))
+
+
+def cmd_import_tick_registry(args: argparse.Namespace) -> None:
+    path = Path(args.file)
+    records = load_json_records(path)
+
+    with open_db(args.db) as conn:
+        init_db(conn)
+        summary = import_tick_registry_records(conn, records)
     summary["file"] = str(path)
     print(json.dumps(summary, indent=2))
 
@@ -1970,6 +2487,7 @@ def cmd_rollback_to_block(args: argparse.Namespace) -> None:
     settings = ReducerSettings(
         enforce_balance_checks=args.enforce_balance_checks,
         default_voting_power=args.default_voting_power,
+        enforce_tick_registry=args.enforce_tick_registry,
     )
     cursor_key = args.cursor_key if args.cursor_key != "" else None
 
@@ -2005,6 +2523,9 @@ def cmd_sync_http(args: argparse.Namespace) -> None:
 
     with open_db(args.db) as conn:
         init_db(conn)
+        if args.tip_height is not None:
+            with conn:
+                set_sync_state(conn, CHAIN_TIP_STATE_KEY, str(args.tip_height))
 
         headers = parse_header_values(args.header)
         if args.api_key:
@@ -2015,6 +2536,7 @@ def cmd_sync_http(args: argparse.Namespace) -> None:
             settings_for_reorg = ReducerSettings(
                 enforce_balance_checks=args.enforce_balance_checks,
                 default_voting_power=args.default_voting_power,
+                enforce_tick_registry=args.enforce_tick_registry,
             )
             reorg_summary = run_reorg_check(
                 conn=conn,
@@ -2101,6 +2623,7 @@ def cmd_sync_http(args: argparse.Namespace) -> None:
         settings = ReducerSettings(
             enforce_balance_checks=args.enforce_balance_checks,
             default_voting_power=args.default_voting_power,
+            enforce_tick_registry=args.enforce_tick_registry,
         )
 
         summary = sync_http_feed(
@@ -2118,10 +2641,17 @@ def cmd_sync_http(args: argparse.Namespace) -> None:
         )
 
         cursor_after = cursor_before
-        if args.update_cursor and summary["max_seen_block"] is not None:
-            cursor_after = str(summary["max_seen_block"])
+        cursor_advanced = False
+        should_advance, next_cursor, cursor_advance_reason = resolve_cursor_advance(
+            summary=summary,
+            update_cursor=args.update_cursor,
+            policy=args.cursor_advance_policy,
+        )
+        if should_advance and next_cursor is not None:
+            cursor_after = next_cursor
             with conn:
                 set_sync_state(conn, args.cursor_key, cursor_after)
+            cursor_advanced = True
 
             if args.reorg_hash_url_template:
                 refreshed_hash = fetch_block_hash(
@@ -2149,6 +2679,9 @@ def cmd_sync_http(args: argparse.Namespace) -> None:
             "page_size": args.page_size,
             "max_pages": args.max_pages,
             "reorg": reorg_summary,
+            "cursor_advanced": cursor_advanced,
+            "cursor_advance_policy": args.cursor_advance_policy,
+            "cursor_advance_reason": cursor_advance_reason,
         }
     )
     print(json.dumps(summary, indent=2))
@@ -2177,6 +2710,14 @@ def build_parser() -> argparse.ArgumentParser:
     import_balances_parser.add_argument("--db", default="src420_indexer.db", help="SQLite database path.")
     import_balances_parser.add_argument("--file", required=True, help="Path to balance snapshot JSON/JSONL.")
     import_balances_parser.set_defaults(func=cmd_import_balances)
+
+    import_tick_registry_parser = subparsers.add_parser(
+        "import-tick-registry",
+        help="Import canonical SRC-20 tick registry records from JSON array or JSONL.",
+    )
+    import_tick_registry_parser.add_argument("--db", default="src420_indexer.db", help="SQLite database path.")
+    import_tick_registry_parser.add_argument("--file", required=True, help="Path to tick registry JSON/JSONL.")
+    import_tick_registry_parser.set_defaults(func=cmd_import_tick_registry)
 
     show_sync_state_parser = subparsers.add_parser(
         "show-sync-state",
@@ -2217,6 +2758,11 @@ def build_parser() -> argparse.ArgumentParser:
         default=1.0,
         help="Fallback voting power used when replaying with balance checks disabled.",
     )
+    rollback_parser.add_argument(
+        "--enforce-tick-registry",
+        action="store_true",
+        help="Require DEPLOY ticks to exist in the local SRC-20 registry during replay.",
+    )
     rollback_parser.set_defaults(func=cmd_rollback_to_block)
 
     ingest_parser = subparsers.add_parser(
@@ -2235,6 +2781,11 @@ def build_parser() -> argparse.ArgumentParser:
         type=float,
         default=1.0,
         help="Fallback voting power used when balances are missing and enforcement is disabled.",
+    )
+    ingest_parser.add_argument(
+        "--enforce-tick-registry",
+        action="store_true",
+        help="Require DEPLOY ticks to exist in the local SRC-20 registry.",
     )
     ingest_parser.set_defaults(func=cmd_ingest_file)
 
@@ -2347,7 +2898,18 @@ def build_parser() -> argparse.ArgumentParser:
     sync_http_parser.add_argument(
         "--update-cursor",
         action="store_true",
-        help="Persist max seen block back into sync_state cursor key.",
+        help="Persist cursor back into sync_state when allowed by --cursor-advance-policy.",
+    )
+    sync_http_parser.add_argument(
+        "--cursor-advance-policy",
+        default="no-rejections",
+        choices=("no-rejections", "complete-window", "always"),
+        help=(
+            "Cursor advancement rule used with --update-cursor. "
+            "'no-rejections' advances only when the run has zero rejected records. "
+            "'complete-window' also requires the run not to stop on max-pages. "
+            "'always' restores the previous optimistic behavior."
+        ),
     )
     sync_http_parser.add_argument(
         "--enforce-balance-checks",
@@ -2359,6 +2921,11 @@ def build_parser() -> argparse.ArgumentParser:
         type=float,
         default=1.0,
         help="Fallback voting power used when balances are missing and enforcement is disabled.",
+    )
+    sync_http_parser.add_argument(
+        "--enforce-tick-registry",
+        action="store_true",
+        help="Require DEPLOY ticks to exist in the local SRC-20 registry.",
     )
     sync_http_parser.set_defaults(func=cmd_sync_http)
 
