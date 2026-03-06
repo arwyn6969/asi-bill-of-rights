@@ -1,5 +1,7 @@
 # Governance Flowchart
 
+> Operating note: These flowcharts visualize repository and contributor-process workflows. They should not be read as a complete flow model for charter-native institutions unless separately instantiated and documented.
+
 This document provides visual flowcharts for key governance processes in the ASI Bill of Rights project.
 
 ## Purpose
@@ -301,4 +303,3 @@ These flowcharts help:
 ## Collaborative Nature
 
 These flowcharts, like all governance documentation, reflect the collaborative "WE ARE ALL KEVIN" philosophy and are maintained through collaborative input.
-

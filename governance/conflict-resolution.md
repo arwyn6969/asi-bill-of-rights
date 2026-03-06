@@ -1,5 +1,7 @@
 # Conflict Resolution
 
+> Operating note: This file covers current repository and contributor-community conflict handling. It is distinct from charter-native dispute bodies and should be read alongside `AUTHORITY-MATRIX.md`.
+
 This document defines how conflicts are identified, addressed, and resolved in the ASI Bill of Rights project.
 
 ## Conflict Resolution Philosophy
@@ -248,4 +250,3 @@ Conflict resolution in this project:
 ---
 
 *This conflict resolution document is a living document and will evolve as conflict resolution practices improve and project needs change.*
-

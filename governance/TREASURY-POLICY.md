@@ -2,6 +2,7 @@
 
 > **CRITICAL SECURITY DOCUMENT**
 > This policy governs all fund movements from project wallets.
+> **Operating note:** This is the current custodian-side security policy for treasury handling. It should not be read as evidence that DAO treasury governance is already live.
 
 ---
 

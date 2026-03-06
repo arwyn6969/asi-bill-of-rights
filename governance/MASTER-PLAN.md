@@ -4,6 +4,8 @@
 **Date:** January 31, 2026
 **Status:** DRAFT 1.2 (The "Google Strategic Alignment" Update)
 
+> Status note: Long-range strategy draft. This document describes direction and sequencing, not the current repo-wide status or launch authority. For current posture use `AUTHORITY-MATRIX.md`, `LAUNCH_CHECKLIST.md`, and `../docs/reports/STATUS-REPORT-2026-02-05.md`.
+
 ---
 
 ## 1. Executive Summary

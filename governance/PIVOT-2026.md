@@ -4,6 +4,8 @@
 **Status:** Complete  
 **Effective Immediately**
 
+> Historical note: This document records the January 2026 tokenization pivot decision. It is provenance for the shift away from ASIBOR/Base, not evidence that the replacement governance infrastructure is fully launched or production-ready today.
+
 ---
 
 ## Executive Summary

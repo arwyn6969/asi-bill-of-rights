@@ -1,5 +1,7 @@
 # Launch Preparation Checklist
 
+> Operating note: This is the current launch-gating checklist for repo and community readiness. It should be used to block premature launch claims, not as proof that launch has already occurred.
+
 This checklist ensures all governance structures are in place before public launch.
 
 ## Governance Structure

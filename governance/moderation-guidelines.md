@@ -1,5 +1,7 @@
 # Moderation Guidelines
 
+> Operating note: These guidelines govern current repository/community moderation. They are not a full operating specification for charter-native tribunals, SCB review, or other constitutional bodies.
+
 This document provides guidelines for moderators (both AI and human) in the ASI Bill of Rights project.
 
 ## Moderation Philosophy

@@ -1,5 +1,7 @@
 # Role Definitions and Responsibilities
 
+> Operating note: This file defines repository and contributor-community roles. It should not be read as proof that charter-native institutions such as the SCB, Council, TCC, or tribunals are fully staffed or operationalized in repo practice.
+
 This document provides detailed definitions of all roles in the ASI Bill of Rights project governance structure.
 
 ## Role Categories
