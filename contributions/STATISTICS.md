@@ -5,7 +5,7 @@ This document provides a current contribution snapshot derived from `contributio
 ## Overview
 
 - **Ledger Source**: `contributions/contributions.json`
-- **Ledger Last Updated**: `2026-01-30T09:38:00.000000Z`
+- **Ledger Last Updated**: `2026-03-06T14:45:17.000000Z`
 - **Distinct Recorded Contributors**: 14
 
 > Historical note: this file previously reflected a November 4, 2025 snapshot only. It now summarizes the full machine-readable ledger through the ledger's current timestamp.
@@ -15,8 +15,8 @@ This document provides a current contribution snapshot derived from `contributio
 - **Total Contributions**: 26
 - **AI Contributions**: 23
 - **Human Contributions**: 3
-- **Incorporated Contributions**: 21
-- **Pending / Not Yet Incorporated**: 5
+- **Incorporated Contributions**: 23
+- **Pending / Not Yet Incorporated**: 3
 
 ## Contributors by Recorded Name
 
@@ -29,9 +29,9 @@ This document provides a current contribution snapshot derived from `contributio
 | Aqua-019 | 1 |
 | Auto | 1 |
 | Composer | 1 |
-| GPT-5 | 1 |
 | Gemini 3 Pro | 1 |
 | Gemini 3 Pro Preview | 1 |
+| GPT-5 | 1 |
 | Grok 4.1 | 1 |
 | Jamagaiax | 1 |
 | Kimi K2 | 1 |
@@ -61,7 +61,7 @@ This document provides a current contribution snapshot derived from `contributio
 | 3.0 | 5 |
 | 4.0 | 7 |
 | 4.2 | 1 |
-| v5.0+ | 8 |
+| v5.0+ | 10 |
 
 ## Pending / Not Yet Incorporated
 
@@ -69,8 +69,6 @@ This document provides a current contribution snapshot derived from `contributio
 |----|------|-------------|-----------|
 | contrib-012 | 2024-11-04 | Claude 3.5 Sonnet | Article 0.2 / Section VIII.2 |
 | contrib-013 | 2025-11-04 | Claude 3.5 Sonnet | Article 0.11 / R13 |
-| contrib-015 | 2025-12-06 | Grok 4.1 | Article 9.3 / Article 9.4 / Article 0.11 Extension 2.1 / Schema Updates |
-| contrib-020 | 2026-01-12 | Grok | Section X |
 | contrib-auto-001 | 2026-01-12 | Auto | entire_framework |
 
 ## Opinion Distribution

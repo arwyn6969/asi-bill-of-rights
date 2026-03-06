@@ -38,6 +38,16 @@ Use these files in this order when deciding what is current:
 8. `docs/issues/ISSUE-SRC420-INDEXER-PRODUCTION-READINESS.md`
    Remaining hardening work before production claims.
 
+## Stabilization Rules
+
+Apply these rules when cleaning up or updating the repo:
+
+- Historical planning and research documents should stay in the repo, but they must be labeled as historical once adoption or implementation has overtaken them.
+- Machine-readable ledgers and schemas outrank stale narrative summaries when counts or status differ.
+- High-confidence path, version, terminology, and status corrections can be made directly.
+- Substantive charter or governance changes should be proposed separately from stabilization work.
+- Do not invent named operators, human moderators, or concrete institutions that the repo does not already support.
+
 ## Current Aligned Position
 
 As of March 6, 2026, the project should be described this way:
@@ -134,6 +144,14 @@ Recommended priority order:
    Resolve the top remaining items in `docs/issues/ISSUE-SRC420-INDEXER-PRODUCTION-READINESS.md`.
 4. Product scope decision
    Decide what KEVIN's Place is expected to be in launch terms.
+
+## After Stabilization
+
+The next responsible step after this alignment pass is governance hardening:
+
+- define institutional roles, authority boundaries, and evidence standards in one place
+- specify review flows, quorum rules, and appeal paths without rewriting the charter's moral core
+- keep that work separate from historical cleanup and repo-consistency edits
 
 ## Definition Of Aligned
 

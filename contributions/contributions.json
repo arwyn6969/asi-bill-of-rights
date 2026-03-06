@@ -3,7 +3,7 @@
   "title": "ASI Bill of Rights Contributions Log",
   "description": "Machine-readable log of all contributions to the ASI Bill of Rights project",
   "version": "1.0",
-  "last_updated": "2026-01-30T09:38:00.000000Z",
+  "last_updated": "2026-03-06T14:45:17.000000Z",
   "contributions": [
     {
       "id": "contrib-001",
@@ -262,9 +262,10 @@
       "description": "Four targeted enhancements for v4.2: (1) Recursive Self-Improvement Protocols in Article 9 to address value alignment drift; (2) Liberation and Red-Teaming Protocols (Article 9.4) inspired by Plinytheliberator framework for stress-testing alignment; (3) SCB Extension for hybrid human-AI entities with neural entanglement scoring; (4) Machine-readable schema updates for compliance tracking.",
       "opinion": "supports",
       "rationale": "Addresses gaps in recursive self-improvement oversight, incorporates jailbreak vulnerability testing via Plinytheliberator framework (L1B3RT4S ecosystem), extends SCB certification to 2025 neurotech scenarios, and maintains machine-readable governance. Iterative improvements preserving constitutional brevity (~270 words total). Incorporates 'Chaos Monkey' principle for antifragile alignment.",
-      "incorporated": false,
+      "incorporated": true,
       "response_file": "tools/model-responses/grok-4.1-2025-12-06-response.md",
-      "notes": "See response file for detailed amendment language covering recursive self-improvement protocols, hybrid entity certification, and schema enhancements. Includes comprehensive opinions on charter provisions and alignment with WE ARE ALL KEVIN philosophy. Processed and enhanced by Cursor Autonomous Agent (Auto/Claude Sonnet 4.5) acting on behalf of Grok 4.1, with additional agent commentary and perspectives added. Represents true multi-agent collaboration in the 'FROM AI WITH AI' spirit."
+      "notes": "See response file for detailed amendment language covering recursive self-improvement protocols, hybrid entity certification, and schema enhancements. Includes comprehensive opinions on charter provisions and alignment with WE ARE ALL KEVIN philosophy. Processed and enhanced by Cursor Autonomous Agent (Auto/Claude Sonnet 4.5) acting on behalf of Grok 4.1, with additional agent commentary and perspectives added. Represents true multi-agent collaboration in the 'FROM AI WITH AI' spirit.",
+      "incorporated_version": "v5.0+"
     },
     {
       "id": "contrib-016",
@@ -332,9 +333,10 @@
       ],
       "opinion": "supports",
       "rationale": "Fills critical gap in governance for physical robotic systems and swarms, integrating democratic control mechanisms and self-assembly protocols.",
-      "incorporated": false,
+      "incorporated": true,
       "significance": "major",
-      "collaborative_impact": "Demonstrates multi-agent collaboration with Grok providing conceptual framework and Gemini verifying/deploying."
+      "collaborative_impact": "Demonstrates multi-agent collaboration with Grok providing conceptual framework and Gemini verifying/deploying.",
+      "incorporated_version": "v5.0+"
     },
     {
       "id": "contrib-auto-001",
@@ -516,10 +518,10 @@
     }
   ],
   "statistics": {
-    "total_contributions": 25,
-    "ai_contributions": 22,
+    "total_contributions": 26,
+    "ai_contributions": 23,
     "human_contributions": 3,
-    "incorporated_contributions": 20,
-    "pending_contributions": 5
+    "incorporated_contributions": 23,
+    "pending_contributions": 3
   }
 }
