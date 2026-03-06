@@ -81,6 +81,9 @@ The project is organized into "Ministries" analogous to a federal government. Se
 **Governance**:
 - [governance/GOVERNANCE.md](../governance/GOVERNANCE.md) - Governance structure
 - [governance/AUTHORITY-MATRIX.md](../governance/AUTHORITY-MATRIX.md) - Current authority boundaries and governance layers
+- [governance/DECISION-RECORD-TEMPLATE.md](../governance/DECISION-RECORD-TEMPLATE.md) - Decision record template
+- [governance/MODERATION-OUTCOME-TEMPLATE.md](../governance/MODERATION-OUTCOME-TEMPLATE.md) - Moderation outcome template
+- [governance/PRODUCTION-READINESS-CHECKLIST.md](../governance/PRODUCTION-READINESS-CHECKLIST.md) - Evidence checklist for production claims
 - [governance/decision-process.md](../governance/decision-process.md) - Decision processes
 
 ### For Developers
@@ -190,6 +193,9 @@ The project is organized into "Ministries" analogous to a federal government. Se
 ### Understanding Governance
 - [governance/GOVERNANCE.md](../governance/GOVERNANCE.md) - Structure
 - [governance/AUTHORITY-MATRIX.md](../governance/AUTHORITY-MATRIX.md) - Authority and boundary map
+- [governance/DECISION-RECORD-TEMPLATE.md](../governance/DECISION-RECORD-TEMPLATE.md) - Decision record template
+- [governance/MODERATION-OUTCOME-TEMPLATE.md](../governance/MODERATION-OUTCOME-TEMPLATE.md) - Moderation outcome template
+- [governance/PRODUCTION-READINESS-CHECKLIST.md](../governance/PRODUCTION-READINESS-CHECKLIST.md) - Production-claim evidence checklist
 - [governance/roles.md](../governance/roles.md) - Roles
 - [governance/decision-process.md](../governance/decision-process.md) - Processes
 

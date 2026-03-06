@@ -154,17 +154,17 @@ Use this for claims like "production-ready," "launched," or "canonical backend."
 These remain open after this clarification pass:
 
 - named human moderator roster
-- explicit repo-level decision record format for moderation outcomes
 - concrete operational definition of Council composition
 - real-world instantiation path for SCB and tribunal processes
 - production-readiness closure for SRC-420 infrastructure
+- consistent use of decision and moderation records in live governance work
 
 ## Recommended Next Step
 
-After this authority clarification, the next useful move is a narrow operating-procedure pack:
+After this authority clarification, the current operating-procedure pack should be used consistently:
 
-- a repo decision record template
-- a moderation outcome template
-- a production-readiness evidence checklist for infrastructure claims
+- `DECISION-RECORD-TEMPLATE.md`
+- `MODERATION-OUTCOME-TEMPLATE.md`
+- `PRODUCTION-READINESS-CHECKLIST.md`
 
-Those additions would make project governance more legible without forcing premature constitutional implementation.
+The next useful move after that is practical adoption: start recording real decisions, moderation outcomes, and infrastructure posture calls with those documents so governance evidence accumulates over time.

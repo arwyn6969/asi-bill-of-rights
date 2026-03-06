@@ -152,6 +152,8 @@ Resources: [Helpful links or examples]
 
 ### Documentation Requirements
 
+Use `MODERATION-OUTCOME-TEMPLATE.md` when a moderation action needs a reusable written record.
+
 - Review decision recorded
 - Rationale documented
 - Feedback provided
@@ -213,4 +215,3 @@ Resources: [Helpful links or examples]
 ---
 
 *These moderation guidelines are living documents and will be updated as moderation practices evolve and improve.*
-
