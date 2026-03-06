@@ -2,6 +2,7 @@
 
 > **Last updated:** 2026-02-21
 > **Status:** ✅ LIVE on Oracle VM
+> **Classification:** Operational runbook / point-in-time deployment note. Use this for bot operations, not as the repo-wide status authority.
 
 ## Overview
 

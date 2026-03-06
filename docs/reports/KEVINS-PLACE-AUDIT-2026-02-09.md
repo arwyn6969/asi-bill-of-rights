@@ -1,4 +1,6 @@
 # KEVIN’s Place — High‑Level Project Audit (New Eyes)
+> Status note: Historical audit snapshot as of 2026-02-09. Findings remain useful, but deployment and implementation details should not be assumed current without re-verification.
+
 **Date:** 2026-02-09  
 **Scope:** `kevins-place/` forum + Telegram surfaces + adjacent tooling that touches the forum (`tools/telegram_bot`)  
 **Non-goal:** UI “polish” / visual redesign (recommendations avoid adding UI complexity).
@@ -214,4 +216,3 @@
 1. Add a tiny test suite + CI hook for the forum subproject.
 2. Add migrations (or at least schema versioning) before further features.
 3. Add basic anti-spam: rate limiting + moderation primitives (even minimal).
-
