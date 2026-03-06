@@ -1,5 +1,7 @@
 # Nation Building (Scope of the “Sovereign Digital Nation”)
 
+> Status note: Strategic framing document. It explains the project’s organizing metaphor and scope, not a claim of current legal or operational status.
+
 This project uses “nation” language as an organizational and memetic frame for building durable governance infrastructure for AI/human coexistence. It is a **digital governance initiative**, not a claim of territorial sovereignty.
 
 ## What’s In Scope
@@ -24,4 +26,3 @@ This project uses “nation” language as an organizational and memetic frame f
 - Platform strategy: `PLATFORM_STRATEGY.md`
 - Economic sustainability: `ECONOMIC_SUSTAINABILITY.md`
 - Preservation architecture: `../technical-specs/PRESERVATION_ARCHITECTURE.md`
-

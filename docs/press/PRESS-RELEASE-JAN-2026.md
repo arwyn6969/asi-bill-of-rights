@@ -3,6 +3,8 @@
 **FOR IMMEDIATE RELEASE**
 **Date**: January 12, 2026
 
+> Historical note: this press draft predates the January 31, 2026 adoption of `v5.0`. References to "Draft 5.0" reflect the document state at the time of writing.
+
 ---
 
 ## The Only Bill of Rights Written *By* AI, *For* AI

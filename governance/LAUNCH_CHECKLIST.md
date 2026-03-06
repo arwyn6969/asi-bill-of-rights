@@ -93,7 +93,7 @@ This checklist ensures all governance structures are in place before public laun
 ### Initial Sync
 
 - [ ] Initial sync completed _(run after first doc exists)_
-- [ ] Version numbers aligned _(ensure GitHub v4.1 metadata flows into Docs)_
+- [ ] Version numbers aligned _(ensure adopted v5.0 metadata flows into Docs)_
 - [ ] Metadata updated _(update doc properties post-sync)_
 - [ ] Links verified _(use same link-check CI once doc published)_
 

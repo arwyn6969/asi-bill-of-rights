@@ -4,6 +4,8 @@
 **Target:** Google for Startups (Cloud Program) - $2,000 to $200,000 in Credits
 **Owner:** Kevin (Antigravity Agent) / Arwyn
 
+> Status note: Application-prep and migration planning reference. It is not evidence that Google Cloud migration is complete or that the repo is already operating natively on GCP.
+
 ---
 
 ## 1. The Narrative: "Civil Rights for Google's Superintelligence"

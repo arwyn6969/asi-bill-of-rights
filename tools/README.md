@@ -109,13 +109,15 @@ Quick commands:
 
 ```bash
 python3 tools/src420-indexer/src420_indexer.py init-db --db tools/src420-indexer/src420.db
+python3 tools/src420-indexer/src420_indexer.py import-tick-registry --db tools/src420-indexer/src420.db --file tools/src420-indexer/fixtures/sample_tick_registry.jsonl
 python3 tools/src420-indexer/src420_indexer.py import-balances --db tools/src420-indexer/src420.db --file tools/src420-indexer/fixtures/sample_balances.jsonl
-python3 tools/src420-indexer/src420_indexer.py ingest-file --db tools/src420-indexer/src420.db --file tools/src420-indexer/fixtures/sample_events.jsonl --enforce-balance-checks
-python3 tools/src420-indexer/src420_indexer.py sync-http --db tools/src420-indexer/src420.db --records-key results --has-more-key has_more --max-pages 3 --tip-height 900000 --min-confirmations 6 --reorg-check --reorg-auto-rollback --reorg-hash-url-template 'https://stampchain.io/api/v2/block/{block}' --reorg-hash-path block_hash --update-cursor
+python3 tools/src420-indexer/src420_indexer.py ingest-file --db tools/src420-indexer/src420.db --file tools/src420-indexer/fixtures/sample_events.jsonl --enforce-balance-checks --enforce-tick-registry
+python3 tools/src420-indexer/src420_indexer.py sync-http --db tools/src420-indexer/src420.db --records-key results --has-more-key has_more --max-pages 3 --tip-height 900000 --min-confirmations 6 --reorg-check --reorg-auto-rollback --reorg-hash-url-template 'https://stampchain.io/api/v2/block/{block}' --reorg-hash-path block_hash --update-cursor --enforce-tick-registry
 python3 tools/src420-indexer/src420_indexer.py rollback-to-block --db tools/src420-indexer/src420.db --to-block 899500
 python3 tools/src420-indexer/src420_indexer.py show-sync-state --db tools/src420-indexer/src420.db
 python3 tools/src420-indexer/src420_indexer.py serve --db tools/src420-indexer/src420.db --port 8787
 python3 tools/src420-indexer/validate_mvp.py
+TIP_HEIGHT=900000 TICK_REGISTRY_FILE=tools/src420-indexer/fixtures/sample_tick_registry.jsonl ENFORCE_TICK_REGISTRY=1 bash tools/src420-indexer/run_stampchain_sync.sh
 ```
 
 ---

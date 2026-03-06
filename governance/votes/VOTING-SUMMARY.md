@@ -1,7 +1,9 @@
 # v4.2 Amendments - Collaborative Voting Summary
+> Historical note: This vote summary records the governance path for `v4.2` amendments before their later incorporation into the adopted `charter/asi-bor-v5.0.md`.
+
 **Date**: 2025-01-27 (Updated: 2026-01-23)  
 **Purpose**: Collect and compare all model votes for collaborative decision-making  
-**Status**: ✅ **CONSENSUS REACHED - READY TO MERGE**
+**Status**: Historical voting record
 
 ## Voters
 

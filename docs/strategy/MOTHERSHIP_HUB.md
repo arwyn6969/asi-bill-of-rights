@@ -1,4 +1,7 @@
 # The Mothership Hub Strategy
+
+> Status note: Strategy vision document. It describes a possible future operating model, not the current authoritative repo structure or deployment state.
+
 > "The project is the Mothership. Users are the fleet."
 
 ## 1. The Vision: From Repository to Hub

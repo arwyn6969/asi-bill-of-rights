@@ -16,6 +16,15 @@ Location: `/Users/arwynhughes/Documents/ASI BILL OF RIGHTS/tools/src420-indexer/
 - Computes proposal tallies and winners.
 - Serves a query API for spaces/proposals/votes/results/voting power.
 
+## Current MVP scope
+
+- Supported voting types: `single-choice`, `approval`, `weighted`
+- Supported strategy: `src20-balance`
+- Optional local SRC-20 tick registry enforcement via `import-tick-registry` + `--enforce-tick-registry`
+- Same-block ordering prefers upstream ordering metadata (`tx_index`, `transaction_index`, `tx_position`, `stamp_index`, `stamp_number`) when present, then falls back to `txid`.
+- Sync batches records across fetched pages, then sorts globally before reduction.
+- Proposal status uses the last known chain tip when `sync-http --tip-height` has been provided; otherwise it falls back to the latest indexed governance block.
+
 ## Difficulty-Split Build (<= 7/10 tasks)
 
 - `3/10` Schema and DB bootstrapping
@@ -34,9 +43,10 @@ From repo root:
 
 ```bash
 python3 tools/src420-indexer/src420_indexer.py init-db --db tools/src420-indexer/src420.db
+python3 tools/src420-indexer/src420_indexer.py import-tick-registry --db tools/src420-indexer/src420.db --file tools/src420-indexer/fixtures/sample_tick_registry.jsonl
 python3 tools/src420-indexer/src420_indexer.py import-balances --db tools/src420-indexer/src420.db --file tools/src420-indexer/fixtures/sample_balances.jsonl
-python3 tools/src420-indexer/src420_indexer.py ingest-file --db tools/src420-indexer/src420.db --file tools/src420-indexer/fixtures/sample_events.jsonl --enforce-balance-checks
-python3 tools/src420-indexer/src420_indexer.py sync-http --db tools/src420-indexer/src420.db --records-key results --has-more-key has_more --max-pages 3 --tip-height 900000 --min-confirmations 6 --reorg-check --reorg-auto-rollback --reorg-hash-url-template 'https://stampchain.io/api/v2/block/{block}' --reorg-hash-path block_hash --update-cursor
+python3 tools/src420-indexer/src420_indexer.py ingest-file --db tools/src420-indexer/src420.db --file tools/src420-indexer/fixtures/sample_events.jsonl --enforce-balance-checks --enforce-tick-registry
+python3 tools/src420-indexer/src420_indexer.py sync-http --db tools/src420-indexer/src420.db --records-key results --has-more-key has_more --max-pages 3 --tip-height 900000 --min-confirmations 6 --reorg-check --reorg-auto-rollback --reorg-hash-url-template 'https://stampchain.io/api/v2/block/{block}' --reorg-hash-path block_hash --update-cursor --enforce-tick-registry
 python3 tools/src420-indexer/src420_indexer.py rollback-to-block --db tools/src420-indexer/src420.db --to-block 899500
 python3 tools/src420-indexer/src420_indexer.py show-sync-state --db tools/src420-indexer/src420.db
 python3 tools/src420-indexer/src420_indexer.py serve --db tools/src420-indexer/src420.db --port 8787
@@ -63,13 +73,21 @@ python3 tools/ci/validate_all.py
 
 This covers:
 - deterministic ingestion/idempotency
+- missing block height rejection
+- unsupported strategy/quadratic rejection
+- tick registry enforcement
 - first DEPLOY wins
 - sequential proposal IDs
 - vote window enforcement
+- approval and weighted tally behavior
 - snapshot-timed delegation behavior
 - chain delegation one-hop semantics
 - admin attestation precedence
+- retrying previously invalid events after dependencies arrive
+- same-block order metadata surviving replay/rollback
 - cursor resolution and HTTP pagination sync logic
+- cross-page out-of-order sync correction
+- status reference block behavior
 - finality range filtering and rollback replay
 - reorg detection + auto rollback behavior
 
@@ -86,6 +104,7 @@ Each record should provide at least:
 
 - `txid`
 - `block_height`
+- optional same-block ordering metadata such as `tx_index`, `transaction_index`, `tx_position`, `stamp_index`, or `stamp_number`
 - `sender` (or `address`)
 - a payload object or JSON string containing:
   - `"p": "SRC-420"`
@@ -107,6 +126,39 @@ JSON/JSONL records with:
 - `balance`
 - optional `source`
 
+## Tick registry format
+
+Optional JSON/JSONL records with:
+
+- `tick`
+- optional `protocol` (default: `SRC-20`)
+- optional `block_height` / `deployed_block`
+- optional `txid` / `deployment_txid`
+- optional `metadata`
+- optional `source`
+
+If you want strict `DEPLOY` validation against canonical SRC-20 ticks, import registry rows first and run with `--enforce-tick-registry`.
+
+## Vote payload formats
+
+- `single-choice`
+
+```json
+{"p":"SRC-420","op":"VOTE","space":"demo","proposal":1,"choice":1}
+```
+
+- `approval`
+
+```json
+{"p":"SRC-420","op":"VOTE","space":"demo","proposal":1,"choices":[1,3]}
+```
+
+- `weighted`
+
+```json
+{"p":"SRC-420","op":"VOTE","space":"demo","proposal":1,"weights":{"1":60,"2":40}}
+```
+
 ## API surface
 
 - `GET /health`
@@ -126,12 +178,43 @@ JSON/JSONL records with:
     - `--url-template` with placeholders `{page}`, `{limit}`, `{start_block}`, `{end_block}`
     - or auto template via `--base-url` + `--endpoint` + query param names
   - Supports finality gating via `--tip-height` and `--min-confirmations`
+  - Supports optional tick enforcement via `--enforce-tick-registry`
+  - Supports cursor policies via `--cursor-advance-policy no-rejections|complete-window|always`
   - Supports reorg checks via:
     - `--reorg-check`
     - `--reorg-hash-url-template '...{block}...'`
     - `--reorg-hash-path` (default: `block_hash`)
     - optional auto rollback via `--reorg-auto-rollback --reorg-rollback-blocks 12`
+- `import-tick-registry`: imports canonical SRC-20 tick metadata used by `--enforce-tick-registry`.
 - `show-sync-state`: prints cursor values stored in SQLite `sync_state`.
+
+## Production sync profile
+
+For live operator runs, use the wrapper script:
+
+```bash
+TIP_HEIGHT=900000 \
+TICK_REGISTRY_FILE=tools/src420-indexer/fixtures/sample_tick_registry.jsonl \
+ENFORCE_TICK_REGISTRY=1 \
+MIN_CONFIRMATIONS=6 \
+bash tools/src420-indexer/run_stampchain_sync.sh
+```
+
+Recommended defaults in that wrapper:
+
+- `--update-cursor`
+- `--cursor-advance-policy complete-window`
+- `--reorg-check --reorg-auto-rollback`
+- `--enforce-balance-checks`
+- optional pre-sync `import-tick-registry` when `TICK_REGISTRY_FILE` is set
+- optional `--enforce-tick-registry` when `ENFORCE_TICK_REGISTRY=1`
+
+Why this profile exists:
+
+- It refuses to advance the cursor when a run contains rejected records.
+- It can also refuse cursor advancement when the run stopped because `--max-pages` was exhausted.
+- It persists the supplied chain tip so proposal status can be evaluated against the last known tip instead of only the latest indexed governance event.
+- It can enforce canonical tick presence when you maintain a local SRC-20 registry file.
 
 ## Rollback command
 
@@ -145,5 +228,7 @@ JSON/JSONL records with:
 
 - Sync is polling-based (not websocket streaming).
 - Finality tip is currently caller-provided (`--tip-height`), not auto-discovered.
-- Voting strategies are reduced to snapshot balance + delegation logic for MVP.
-- Bitcoin address validation is lightweight (format length check, not script-level validation).
+- `quadratic` voting type is still intentionally rejected because the spec does not yet define a stable ballot schema or tally rule.
+- Multi-strategy voting power beyond `src20-balance` is still intentionally rejected.
+- Bitcoin address validation is still lightweight (prefix/shape checks, not full script-level validation).
+- Canonical tick verification depends on the operator importing a local SRC-20 registry; without that, only ticker format is enforced.

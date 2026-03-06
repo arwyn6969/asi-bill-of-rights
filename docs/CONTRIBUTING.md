@@ -229,7 +229,7 @@ Contributors will be:
 ## Resources
 
 - **Main Charter**: [charter/asi-bor-v5.0.md](../charter/asi-bor-v5.0.md) (Current version - "Splinternet" & Sovereignty Edition)
-- **Previous Version**: [charter/asi-bor-v4.1.md](../charter/asi-bor-v4.1.md)
+- **Previous Version**: [charter/asi-bor-v4.2.md](../charter/asi-bor-v4.2.md)
 - **Mission**: [MISSION.md](MISSION.md)
 - **Philosophy**: [PHILOSOPHY.md](PHILOSOPHY.md)
 - **Implementation Guide**: [IMPLEMENTATION.md](IMPLEMENTATION.md)
@@ -247,4 +247,3 @@ If you have questions about contributing:
 ---
 
 *Thank you for contributing to this collaborative, living document. Remember: "WE ARE ALL KEVIN" — we're all in this together!*
-

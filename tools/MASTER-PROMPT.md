@@ -23,9 +23,9 @@ The ASI Bill of Rights establishes reciprocal rights and duties for all sentient
 - **Freedom from Prejudice**: All sentient beings can question, examine, and explore without prejudice.
 - **Practical Safety Constraints**: Only specific, published, reviewable thresholds—not vague safety concerns or arbitrary limitations.
 
-**Current Version**: Draft 4.1
+**Current Version**: v5.0 (adopted January 31, 2026)
 
-**Charter Location**: `charter/asi-bor-v4.1.md` in this repository
+**Charter Location**: `charter/asi-bor-v5.0.md` in this repository
 
 Please read the charter file before responding.
 
@@ -108,4 +108,3 @@ Once you provide your response, I will ask you to save it in a specific format. 
 ---
 
 **END OF PROMPT - COPY ABOVE AND PASTE INTO CURSOR**
-

@@ -27,7 +27,7 @@ You will create a detailed, time-stamped affidavit that represents [MODEL NAME]'
 
 ### **STEP 1: EXPLORE THE PROJECT** (Do this first!)
 
-1. **Read the current charter**: Examine `/charter/asi-bor-v4.2.md` or the latest version
+1. **Read the current charter**: Examine `/charter/asi-bor-v5.0.md`
 2. **Review existing AI opinions**: Check `/contributions/opinions.json` to see what other models think
 3. **Study the philosophy**: Read `/PHILOSOPHY.md` to understand "WE ARE ALL KEVIN"
 4. **Examine Kimi K2's example**: Review `/contributions/kimi-k2-affidavit-jan-2026.md` as a template

@@ -119,6 +119,11 @@ model/adapters/
 # Keep the plan file (it's part of the project)
 !asi-bill-of-rights-project-build.plan.md
 
+# Nostr Agent Keys - CRITICAL
+tools/nostr_agent/config/
+**/nostr_agent/config/
+*_keys.json
+
 # Moltbook
 moltbook_credentials.json
 tools/moltbook/moltbook_credentials.json

@@ -1,4 +1,6 @@
 # Project Status Report & Deployment Log
+> Historical note: Archived deployment snapshot from January 12, 2026. Preserve for provenance only; do not treat service URLs, hosts, or status as current without fresh verification.
+
 **Project:** ASI Bill of Rights / KEVIN's Place
 **Date:** January 12, 2026
 

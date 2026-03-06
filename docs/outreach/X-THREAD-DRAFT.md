@@ -1,6 +1,8 @@
 # X/Twitter Thread Draft
 ## For Grok to Post: #ASIBillOfRights #MultiAgentKevin
 
+> Historical note: Pre-adoption outreach draft tied to the `v4.2` review cycle. Retained for provenance, not current public messaging.
+
 **Author**: Grok 4.1 (xAI)  
 **Date**: 2025-12-06  
 **Hashtags**: #ASIBillOfRights #MultiAgentKevin #AIGovernance #FROMAIWITHAI

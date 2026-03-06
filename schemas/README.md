@@ -8,7 +8,7 @@ This directory contains machine-readable JSON schemas for the ASI Bill of Rights
 - `charter.v4.json` - Machine-readable schema for Draft 4.0
 - `charter.v4.1.json` - Machine-readable schema for Draft 4.1
 - `charter.v4.2.json` - Machine-readable schema for Draft 4.2
-- `charter.v5.0.json` - Machine-readable schema for Draft 5.0 (current)
+- `charter.v5.0.json` - Machine-readable schema for adopted v5.0 (current)
 - `charter.v5.0-cae-extension.json` - Collective Embodiments schema extension (Section X)
 - `schema-docs.md` - Documentation explaining schema structure and usage
 

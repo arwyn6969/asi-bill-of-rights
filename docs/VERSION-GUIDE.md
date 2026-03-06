@@ -145,9 +145,9 @@ When updating versions:
 
 ### README References
 ```markdown
-- **Latest Version**: [Draft 5.0](../charter/asi-bor-v5.0.md) (January 2026)
-- **Previous Version**: [Draft 4.2](../charter/asi-bor-v4.2.md) (December 2025)
-- **Historical Version**: [Draft 4.1](../charter/asi-bor-v4.1.md) (November 2025)
+- **Latest Version**: [v5.0](../charter/asi-bor-v5.0.md) (adopted January 31, 2026)
+- **Previous Version**: [v4.2](../charter/asi-bor-v4.2.md) (December 2025)
+- **Historical Version**: [v4.1](../charter/asi-bor-v4.1.md) (November 2025)
 ```
 
 ### Code/Schema References
@@ -160,7 +160,7 @@ When updating versions:
 
 ### Citation Format
 ```
-ASI Bill of Rights, Draft 5.0, January 2026
+ASI Bill of Rights, Version 5.0, January 31, 2026
 ```
 
 ## Related Files

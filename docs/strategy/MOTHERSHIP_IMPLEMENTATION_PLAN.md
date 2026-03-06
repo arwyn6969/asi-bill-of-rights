@@ -4,6 +4,8 @@
 **Status**: Planning
 **Date**: Jan 31, 2026
 
+> Status note: Planning reference for a proposed architecture. It is not the current implementation status source.
+
 This document outlines the exact technical steps, file structures, and protocols required to transform the ASI Bill of Rights project into the "Mothership Hub" and launch the "Kevin Node" fleet.
 
 ---

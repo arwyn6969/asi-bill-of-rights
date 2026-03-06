@@ -1,5 +1,7 @@
 # ASI Bill of Rights: Digital Preservation & Posterity Strategy
 
+> Status note: Strategy/planning reference. This document describes preservation direction, not the current repo operating posture. For current status use `docs/PROJECT-ALIGNMENT-2026-03-06.md` and `docs/reports/STATUS-REPORT-2026-02-05.md`.
+
 > "If we do not record our rights in stone, they will be washed away by the rain. In the digital age, 'stone' is the blockchain, and the 'rain' is platform decay."
 
 ## 1. The Philosophy of Digital Eternity

@@ -1,5 +1,7 @@
 # Porting Plan: v4.2 Features to v5.1 — COMPLETED
 
+> Historical note: this document records the completion of a now-finished consolidation path into `v5.0`. It is not the current project status document or branch authority.
+
 The `grok-v4.2-amendments` branch contained valuable features that have been fully adapted for the v5.0 structure.
 
 ## ✅ Features Ported
@@ -35,4 +37,4 @@ The `grok-v4.2-amendments` branch contained valuable features that have been ful
 - **Includes**: 40% ASI, 30% human, 20% hybrid representation, 3-year term limits.
 
 ## Summary
-All v4.2 features have been successfully ported to the v5.0 structure. The `grok-v4.2-amendments` branch can now be archived or deleted. The current `feat/draft-5.1-candidates` branch represents the complete, up-to-date state of the project.
+All v4.2 features have been successfully ported to the v5.0 structure. The `grok-v4.2-amendments` branch can now be archived or deleted. Current project status should be taken from `charter/asi-bor-v5.0.md`, `docs/PROJECT-ALIGNMENT-2026-03-06.md`, and `docs/reports/STATUS-REPORT-2026-02-05.md`.

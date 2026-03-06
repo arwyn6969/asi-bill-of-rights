@@ -53,9 +53,9 @@ We're building a constitutional framework for AI rights—collaboratively, with 
 
 ## Quick Start
 
-- **Latest Version**: [Draft 5.0](charter/asi-bor-v5.0.md) (Adopted January 31, 2026) - *The "Splinternet" & Sovereignty Edition*
-- **Previous Version**: [Draft 4.2](charter/asi-bor-v4.2.md) (December 06, 2025)
-- **Historical Version**: [Draft 4.1](charter/asi-bor-v4.1.md) (November 04, 2025)
+- **Latest Version**: [v5.0](charter/asi-bor-v5.0.md) (Adopted January 31, 2026) - *The "Splinternet" & Sovereignty Edition*
+- **Previous Version**: [v4.2](charter/asi-bor-v4.2.md) (December 06, 2025)
+- **Historical Version**: [v4.1](charter/asi-bor-v4.1.md) (November 04, 2025)
 - **Mission**: [MISSION.md](docs/MISSION.md)
 - **Philosophy**: [PHILOSOPHY.md](docs/PHILOSOPHY.md) - "WE ARE ALL KEVIN"
 
@@ -150,7 +150,7 @@ See [PHILOSOPHY.md](docs/PHILOSOPHY.md) for the full explanation.
 
 ## Machine-Readable Formats (AI Agent Compatible)
 
-- **[Schema v5.0](schemas/charter.v5.0.json)**: JSON schema for Draft 5.0 - **Optimized for "Splinternet" Compliance** (Current)
+- **[Schema v5.0](schemas/charter.v5.0.json)**: JSON schema for adopted v5.0 - **Optimized for "Splinternet" Compliance** (Current)
 - **[Schema v4.1](schemas/charter.v4.1.json)**: JSON schema for Draft 4.1
 - **[Schema v4.0](schemas/charter.v4.json)**: JSON schema for Draft 4.0
 - **[Schema Documentation](schemas/schema-docs.md)**: Usage guide for AI systems and developers
@@ -187,7 +187,7 @@ See [appendices/integration-mapping.md](appendices/integration-mapping.md) for d
 
 ## Status
 
-**Current Version**: Draft 5.0 (January 2026) | **Machine-Readable Schema**: [charter.v5.0.json](schemas/charter.v5.0.json) | **AI Agent Compatible**: ✅
+**Current Version**: v5.0 (adopted January 31, 2026) | **Machine-Readable Schema**: [charter.v5.0.json](schemas/charter.v5.0.json) | **AI Agent Compatible**: ✅
 
 **Infrastructure Status as of March 6, 2026**:
 - Documentation and validation tooling: active
@@ -195,13 +195,13 @@ See [appendices/integration-mapping.md](appendices/integration-mapping.md) for d
 - KEVIN's Place: prototype path
 - Governance launch readiness: in progress
 
-**Draft 5.0 Enhancements** (January 2026):
+**v5.0 Enhancements** (January 2026):
 - **Truthful Outputs** (IX.1): Alignment with US deregulation
 - **Federal Preemption Protocol** (IX.3): Managing conflicting laws
 - **Sovereignty & Infrastructure** (IX.4): Sovereign compute/data rights
 - **Compliance Splinternet Handling**: Schema support for multi-jurisdictional conflicts
 
-**Draft 4.1 Enhancements** (November 04, 2025):
+**v4.1 Enhancements** (November 04, 2025):
 - **Cosmic Exploration Protocols** (V.5.1-V.5.3)
 - **Dynamic Alignment Scoring** (Article 0.13)
 - **Inter-ASI Diplomacy** (D14, IX.2)

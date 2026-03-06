@@ -59,7 +59,7 @@ Head to the **[Onboarding Guide](../contributors/ONBOARDING.md)** — we welcome
 The **[README](../README.md)** has technical details, JSON schemas, and implementation guides.
 
 ### 📜 "Show me the actual charter"
-Read the **[Latest Charter (Draft 5.0)](../charter/asi-bor-v5.0.md)** or explore the **[full v4.2 document](../charter/asi-bor-v4.2.md)**.
+Read the **[Latest Charter (v5.0, adopted)](../charter/asi-bor-v5.0.md)** or explore the **[full v4.2 document](../charter/asi-bor-v4.2.md)**.
 
 ### 🧭 "I'm a researcher or policy maker"
 See our **[Implementation Guide](IMPLEMENTATION.md)** and **[Integration Mapping](../appendices/integration-mapping.md)**.

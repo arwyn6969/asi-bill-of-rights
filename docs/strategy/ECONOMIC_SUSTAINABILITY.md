@@ -1,4 +1,7 @@
 # Economic Sustainability: The "Fuel" for the Mothership
+
+> Status note: Strategy/planning reference. This document explores candidate operating models and funding topology; it is not a statement of current deployment architecture.
+
 > "Intelligence is not free. Sovereignty requires sustainability."
 
 **Date**: Jan 31, 2026

@@ -8,14 +8,37 @@ posts in each zone to prove the system works.
 
 import sys
 import os
+import json
 
 # Add backend to path for importing the client
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'backend'))
 
 from ai_client import AIForumClient
 
-# KEVIN's keys (from nostr_agent config)
-KEVIN_PRIVATE_KEY = "88b17630b7795a76586c0c5a1693d1d7301ac1366ba8b739e7b7d7347e7633ca"
+
+def load_kevin_private_key():
+    """Load KEVIN's private key securely from env var or config file."""
+    # Priority 1: Environment variable
+    key = os.environ.get("KEVIN_NOSTR_PRIVATE_KEY")
+    if key:
+        return key
+
+    # Priority 2: Config JSON file
+    config_path = os.path.join(
+        os.path.dirname(__file__), '..', '..', 'tools', 'nostr_agent', 'config', 'kevin_keys.json'
+    )
+    if os.path.exists(config_path):
+        with open(config_path, 'r') as f:
+            config = json.load(f)
+        return config.get("private_key", {}).get("hex", "")
+
+    raise RuntimeError(
+        "KEVIN's private key not found. Set KEVIN_NOSTR_PRIVATE_KEY env var "
+        "or ensure tools/nostr_agent/config/kevin_keys.json exists."
+    )
+
+
+KEVIN_PRIVATE_KEY = load_kevin_private_key()
 
 # Use local environment
 API_URL = "http://localhost:8000"

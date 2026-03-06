@@ -72,6 +72,9 @@ class Src420IndexerValidation(unittest.TestCase):
     def import_balances(self, rows: List[Dict]) -> None:
         IDX.import_balance_records(self.conn, rows)
 
+    def import_tick_registry(self, rows: List[Dict]) -> None:
+        IDX.import_tick_registry_records(self.conn, rows)
+
     def test_basic_flow_results(self) -> None:
         self.import_balances(
             [
@@ -151,11 +154,237 @@ class Src420IndexerValidation(unittest.TestCase):
         self.assertEqual(results["winner"], 2)
         self.assertAlmostEqual(results["total"], 130.0)
 
+    def test_approval_votes_split_power_evenly(self) -> None:
+        self.import_balances(
+            [
+                {"tick": "KVNSI", "address": "bc1p_founder", "block_height": 20, "balance": 10},
+                {"tick": "KVNSI", "address": "bc1p_voter", "block_height": 20, "balance": 30},
+            ]
+        )
+        events = [
+            {
+                **deploy_event("bc1p_founder"),
+                "sender": "bc1p_founder",
+                "payload": {
+                    **deploy_event("bc1p_founder")["payload"],
+                    "space": "approval-space",
+                    "voting": {"delay": 0, "period": 144, "quorum": 1, "type": "approval"},
+                },
+            },
+            {
+                "txid": "p1",
+                "block_height": 20,
+                "sender": "bc1p_founder",
+                "payload": {
+                    "p": "SRC-420",
+                    "op": "PROPOSE",
+                    "space": "approval-space",
+                    "id": 1,
+                    "title": "Approval",
+                    "body": "B",
+                    "choices": ["A", "B", "C"],
+                    "snapshot": 20,
+                    "start": 20,
+                    "end": 164,
+                },
+            },
+            {
+                "txid": "v1",
+                "block_height": 40,
+                "sender": "bc1p_voter",
+                "payload": {
+                    "p": "SRC-420",
+                    "op": "VOTE",
+                    "space": "approval-space",
+                    "proposal": 1,
+                    "choices": [1, 3],
+                },
+            },
+        ]
+        summary = self.ingest(events, enforce=True)
+        self.assertEqual(summary["applied"], 3)
+        self.assertEqual(summary["rejected"], 0)
+
+        vote_row = self.conn.execute(
+            "SELECT ballot_type, ballot_json FROM votes WHERE space_id = 'approval-space' AND proposal_id = 1"
+        ).fetchone()
+        self.assertEqual(vote_row["ballot_type"], "approval")
+
+        results = IDX.calculate_results(self.conn, "approval-space", 1)
+        self.assertEqual(results["winner"], None)
+        self.assertAlmostEqual(results["scores"][0], 15.0)
+        self.assertAlmostEqual(results["scores"][1], 0.0)
+        self.assertAlmostEqual(results["scores"][2], 15.0)
+        self.assertAlmostEqual(results["total"], 30.0)
+
+    def test_weighted_votes_allocate_power_by_percent(self) -> None:
+        self.import_balances(
+            [
+                {"tick": "KVNSI", "address": "bc1p_founder", "block_height": 20, "balance": 10},
+                {"tick": "KVNSI", "address": "bc1p_voter", "block_height": 20, "balance": 50},
+            ]
+        )
+        events = [
+            {
+                **deploy_event("bc1p_founder"),
+                "sender": "bc1p_founder",
+                "payload": {
+                    **deploy_event("bc1p_founder")["payload"],
+                    "space": "weighted-space",
+                    "voting": {"delay": 0, "period": 144, "quorum": 1, "type": "weighted"},
+                },
+            },
+            {
+                "txid": "p1",
+                "block_height": 20,
+                "sender": "bc1p_founder",
+                "payload": {
+                    "p": "SRC-420",
+                    "op": "PROPOSE",
+                    "space": "weighted-space",
+                    "id": 1,
+                    "title": "Weighted",
+                    "body": "B",
+                    "choices": ["A", "B", "C"],
+                    "snapshot": 20,
+                    "start": 20,
+                    "end": 164,
+                },
+            },
+            {
+                "txid": "v1",
+                "block_height": 40,
+                "sender": "bc1p_voter",
+                "payload": {
+                    "p": "SRC-420",
+                    "op": "VOTE",
+                    "space": "weighted-space",
+                    "proposal": 1,
+                    "weights": {"1": 60, "3": 40},
+                },
+            },
+        ]
+        summary = self.ingest(events, enforce=True)
+        self.assertEqual(summary["applied"], 3)
+        self.assertEqual(summary["rejected"], 0)
+
+        results = IDX.calculate_results(self.conn, "weighted-space", 1)
+        self.assertEqual(results["winner"], 1)
+        self.assertAlmostEqual(results["scores"][0], 30.0)
+        self.assertAlmostEqual(results["scores"][1], 0.0)
+        self.assertAlmostEqual(results["scores"][2], 20.0)
+        self.assertAlmostEqual(results["total"], 50.0)
+
+    def test_weighted_vote_requires_100_percent_total(self) -> None:
+        self.import_balances(
+            [
+                {"tick": "KVNSI", "address": "bc1p_founder", "block_height": 20, "balance": 10},
+                {"tick": "KVNSI", "address": "bc1p_voter", "block_height": 20, "balance": 50},
+            ]
+        )
+        events = [
+            {
+                **deploy_event("bc1p_founder"),
+                "sender": "bc1p_founder",
+                "payload": {
+                    **deploy_event("bc1p_founder")["payload"],
+                    "space": "weighted-space",
+                    "voting": {"delay": 0, "period": 144, "quorum": 1, "type": "weighted"},
+                },
+            },
+            {
+                "txid": "p1",
+                "block_height": 20,
+                "sender": "bc1p_founder",
+                "payload": {
+                    "p": "SRC-420",
+                    "op": "PROPOSE",
+                    "space": "weighted-space",
+                    "id": 1,
+                    "title": "Weighted",
+                    "body": "B",
+                    "choices": ["A", "B"],
+                    "snapshot": 20,
+                    "start": 20,
+                    "end": 164,
+                },
+            },
+            {
+                "txid": "v1",
+                "block_height": 40,
+                "sender": "bc1p_voter",
+                "payload": {
+                    "p": "SRC-420",
+                    "op": "VOTE",
+                    "space": "weighted-space",
+                    "proposal": 1,
+                    "weights": {"1": 70, "2": 20},
+                },
+            },
+        ]
+        summary = self.ingest(events, enforce=True)
+        self.assertEqual(summary["applied"], 2)
+        self.assertEqual(summary["rejected"], 1)
+
     def test_idempotent_ingestion(self) -> None:
         summary1 = self.ingest([deploy_event("bc1p_addr_a")], enforce=False)
         summary2 = self.ingest([deploy_event("bc1p_addr_a")], enforce=False)
         self.assertEqual(summary1["applied"], 1)
         self.assertEqual(summary2["duplicates"], 1)
+
+    def test_missing_block_height_is_rejected(self) -> None:
+        event = deploy_event("bc1p_addr_a")
+        event.pop("block_height")
+
+        summary = self.ingest([event], enforce=False)
+        self.assertEqual(summary["applied"], 0)
+        self.assertEqual(summary["rejected"], 1)
+
+        row = self.conn.execute("SELECT valid, error FROM events WHERE txid = 'd1'").fetchone()
+        self.assertEqual(int(row["valid"]), 0)
+        self.assertEqual(row["error"], "missing block_height")
+
+    def test_quadratic_voting_type_is_rejected(self) -> None:
+        event = deploy_event("bc1p_addr_a")
+        event["payload"]["voting"]["type"] = "quadratic"
+
+        summary = self.ingest([event], enforce=False)
+        self.assertEqual(summary["applied"], 0)
+        self.assertEqual(summary["rejected"], 1)
+
+    def test_unsupported_strategy_is_rejected(self) -> None:
+        event = deploy_event("bc1p_addr_a")
+        event["payload"]["strategies"] = ["src20-quadratic"]
+
+        summary = self.ingest([event], enforce=False)
+        self.assertEqual(summary["applied"], 0)
+        self.assertEqual(summary["rejected"], 1)
+
+    def test_tick_registry_enforcement_requires_registered_tick(self) -> None:
+        summary = IDX.ingest_records(
+            self.conn,
+            [deploy_event("bc1p_addr_a")],
+            settings=IDX.ReducerSettings(
+                enforce_balance_checks=False,
+                default_voting_power=1.0,
+                enforce_tick_registry=True,
+            ),
+        )
+        self.assertEqual(summary["applied"], 0)
+        self.assertEqual(summary["rejected"], 1)
+
+        self.import_tick_registry([{"tick": "KVNSI", "protocol": "SRC-20", "block_height": 1, "txid": "src20d1"}])
+        summary = IDX.ingest_records(
+            self.conn,
+            [deploy_event("bc1p_addr_a")],
+            settings=IDX.ReducerSettings(
+                enforce_balance_checks=False,
+                default_voting_power=1.0,
+                enforce_tick_registry=True,
+            ),
+        )
+        self.assertEqual(summary["applied"], 1)
+        self.assertEqual(summary["rejected"], 0)
 
     def test_first_deploy_wins(self) -> None:
         events = [
@@ -373,6 +602,112 @@ class Src420IndexerValidation(unittest.TestCase):
         self.assertEqual(row["attestor"], "bc1p_admin")
         self.assertEqual(row["txid"], "a-admin")
 
+    def test_invalid_vote_can_be_replayed_after_dependency_arrives(self) -> None:
+        self.import_balances([{"tick": "KVNSI", "address": "bc1p_addr_a", "block_height": 10, "balance": 10}])
+
+        deploy_summary = self.ingest([deploy_event("bc1p_addr_a")], enforce=True)
+        self.assertEqual(deploy_summary["applied"], 1)
+
+        vote = {
+            "txid": "v1",
+            "block_height": 20,
+            "sender": "bc1p_addr_a",
+            "payload": {"p": "SRC-420", "op": "VOTE", "space": "s1", "proposal": 1, "choice": 1},
+        }
+        vote_summary = self.ingest([vote], enforce=True)
+        self.assertEqual(vote_summary["applied"], 0)
+        self.assertEqual(vote_summary["rejected"], 1)
+
+        proposal = {
+            "txid": "p1",
+            "block_height": 10,
+            "sender": "bc1p_addr_a",
+            "payload": {
+                "p": "SRC-420",
+                "op": "PROPOSE",
+                "space": "s1",
+                "id": 1,
+                "title": "T",
+                "body": "B",
+                "choices": ["Y", "N"],
+                "snapshot": 10,
+                "start": 10,
+                "end": 154,
+            },
+        }
+        retry_summary = self.ingest([proposal, vote], enforce=True)
+        self.assertEqual(retry_summary["applied"], 2)
+        self.assertEqual(retry_summary["rejected"], 0)
+
+        row = self.conn.execute(
+            "SELECT valid, error FROM events WHERE txid = 'v1'"
+        ).fetchone()
+        self.assertEqual(int(row["valid"]), 1)
+        self.assertIsNone(row["error"])
+
+    def test_same_block_order_index_overrides_txid_order(self) -> None:
+        self.import_balances(
+            [
+                {"tick": "KVNSI", "address": "bc1p_addr_a", "block_height": 20, "balance": 40},
+                {"tick": "KVNSI", "address": "bc1p_addr_b", "block_height": 20, "balance": 60},
+                {"tick": "KVNSI", "address": "bc1p_addr_c", "block_height": 20, "balance": 30},
+            ]
+        )
+        events = [
+            deploy_event("bc1p_addr_a"),
+            {
+                "txid": "z-last-by-txid",
+                "block_height": 20,
+                "tx_index": 0,
+                "sender": "bc1p_addr_a",
+                "payload": {"p": "SRC-420", "op": "DELEGATE", "space": "s1", "to": "bc1p_addr_b"},
+            },
+            {
+                "txid": "a-first-by-txid",
+                "block_height": 20,
+                "tx_index": 1,
+                "sender": "bc1p_addr_a",
+                "payload": {"p": "SRC-420", "op": "DELEGATE", "space": "s1", "to": "bc1p_addr_c"},
+            },
+            {
+                "txid": "p1",
+                "block_height": 20,
+                "tx_index": 2,
+                "sender": "bc1p_addr_a",
+                "payload": {
+                    "p": "SRC-420",
+                    "op": "PROPOSE",
+                    "space": "s1",
+                    "id": 1,
+                    "title": "T",
+                    "body": "B",
+                    "choices": ["Y", "N"],
+                    "snapshot": 20,
+                    "start": 20,
+                    "end": 164,
+                },
+            },
+        ]
+        summary = self.ingest(events, enforce=True)
+        self.assertEqual(summary["applied"], 4)
+        self.assertEqual(summary["rejected"], 0)
+
+        delegate = IDX.get_latest_delegation_at_block(self.conn, "s1", "bc1p_addr_a", 20)
+        self.assertEqual(delegate, "bc1p_addr_c")
+
+        rollback_summary = IDX.rollback_to_block(
+            conn=self.conn,
+            to_block=20,
+            settings=IDX.ReducerSettings(enforce_balance_checks=True, default_voting_power=1.0),
+            prune_future_events=False,
+            prune_balance_snapshots=False,
+            cursor_key=None,
+        )
+        self.assertEqual(rollback_summary["replayed_events"], 4)
+
+        delegate_after_replay = IDX.get_latest_delegation_at_block(self.conn, "s1", "bc1p_addr_a", 20)
+        self.assertEqual(delegate_after_replay, "bc1p_addr_c")
+
     def test_cursor_resolution(self) -> None:
         start = IDX.resolve_start_block(self.conn, "sync:http:last_block", None)
         self.assertEqual(start, 0)
@@ -383,6 +718,36 @@ class Src420IndexerValidation(unittest.TestCase):
 
         start = IDX.resolve_start_block(self.conn, "sync:http:last_block", 33)
         self.assertEqual(start, 33)
+
+    def test_cursor_advance_policy_blocks_rejections(self) -> None:
+        should_advance, next_cursor, reason = IDX.resolve_cursor_advance(
+            summary={"max_seen_block": 120, "rejected": 1, "stop_reason": "has_more_false"},
+            update_cursor=True,
+            policy="no-rejections",
+        )
+        self.assertFalse(should_advance)
+        self.assertIsNone(next_cursor)
+        self.assertEqual(reason, "rejected_records")
+
+    def test_cursor_advance_policy_requires_complete_window(self) -> None:
+        should_advance, next_cursor, reason = IDX.resolve_cursor_advance(
+            summary={"max_seen_block": 120, "rejected": 0, "stop_reason": "max_pages_reached"},
+            update_cursor=True,
+            policy="complete-window",
+        )
+        self.assertFalse(should_advance)
+        self.assertIsNone(next_cursor)
+        self.assertEqual(reason, "window_incomplete")
+
+    def test_cursor_advance_policy_allows_safe_advance(self) -> None:
+        should_advance, next_cursor, reason = IDX.resolve_cursor_advance(
+            summary={"max_seen_block": 120, "rejected": 0, "stop_reason": "has_more_false"},
+            update_cursor=True,
+            policy="no-rejections",
+        )
+        self.assertTrue(should_advance)
+        self.assertEqual(next_cursor, "120")
+        self.assertEqual(reason, "no_rejections")
 
     def test_sync_http_feed_pagination(self) -> None:
         self.import_balances(
@@ -483,6 +848,88 @@ class Src420IndexerValidation(unittest.TestCase):
         self.assertTrue(any("page=1" in url for url in seen_urls))
         self.assertTrue(any("page=2" in url for url in seen_urls))
 
+    def test_sync_http_feed_reorders_records_across_pages(self) -> None:
+        self.import_balances([{"tick": "KVNSI", "address": "bc1p_founder", "block_height": 10, "balance": 10}])
+
+        payloads = {
+            1: {
+                "results": [
+                    {
+                        "txid": "d1",
+                        "block_height": 1,
+                        "sender": "bc1p_founder",
+                        "payload": {
+                            "p": "SRC-420",
+                            "op": "DEPLOY",
+                            "space": "s1",
+                            "tick": "KVNSI",
+                            "name": "N",
+                            "strategies": ["src20-balance"],
+                            "voting": {"delay": 0, "period": 144, "quorum": 1, "type": "single-choice"},
+                            "admins": [],
+                        },
+                    },
+                    {
+                        "txid": "v1",
+                        "block_height": 20,
+                        "sender": "bc1p_founder",
+                        "payload": {"p": "SRC-420", "op": "VOTE", "space": "s1", "proposal": 1, "choice": 1},
+                    },
+                ],
+                "has_more": True,
+            },
+            2: {
+                "results": [
+                    {
+                        "txid": "p1",
+                        "block_height": 10,
+                        "sender": "bc1p_founder",
+                        "payload": {
+                            "p": "SRC-420",
+                            "op": "PROPOSE",
+                            "space": "s1",
+                            "id": 1,
+                            "title": "T",
+                            "body": "B",
+                            "choices": ["Y", "N"],
+                            "snapshot": 10,
+                            "start": 10,
+                            "end": 154,
+                        },
+                    }
+                ],
+                "has_more": False,
+            },
+        }
+
+        def fake_fetcher(url: str, timeout_sec: float, headers=None):
+            if "page=1" in url:
+                return payloads[1]
+            if "page=2" in url:
+                return payloads[2]
+            return {"results": [], "has_more": False}
+
+        summary = IDX.sync_http_feed(
+            conn=self.conn,
+            settings=IDX.ReducerSettings(enforce_balance_checks=True, default_voting_power=0.0),
+            url_template="https://example.test/stamps?page={page}&limit={limit}&from={start_block}",
+            start_block=0,
+            end_block=None,
+            page_size=100,
+            max_pages=5,
+            timeout_sec=1.0,
+            records_key="results",
+            has_more_key="has_more",
+            headers=None,
+            fetcher=fake_fetcher,
+        )
+
+        self.assertEqual(summary["applied"], 3)
+        self.assertEqual(summary["rejected"], 0)
+
+        results = IDX.calculate_results(self.conn, "s1", 1)
+        self.assertAlmostEqual(results["total"], 10.0)
+
     def test_sync_http_feed_filters_out_of_range_blocks(self) -> None:
         self.import_balances(
             [
@@ -568,6 +1015,44 @@ class Src420IndexerValidation(unittest.TestCase):
             ),
             214,
         )
+
+    def test_status_reference_uses_chain_tip_when_available(self) -> None:
+        self.import_balances([{"tick": "KVNSI", "address": "bc1p_founder", "block_height": 10, "balance": 10}])
+        events = [
+            deploy_event("bc1p_founder"),
+            {
+                "txid": "p1",
+                "block_height": 10,
+                "sender": "bc1p_founder",
+                "payload": {
+                    "p": "SRC-420",
+                    "op": "PROPOSE",
+                    "space": "s1",
+                    "id": 1,
+                    "title": "T",
+                    "body": "B",
+                    "choices": ["Y", "N"],
+                    "snapshot": 10,
+                    "start": 10,
+                    "end": 154,
+                },
+            },
+            {
+                "txid": "v1",
+                "block_height": 20,
+                "sender": "bc1p_founder",
+                "payload": {"p": "SRC-420", "op": "VOTE", "space": "s1", "proposal": 1, "choice": 1},
+            },
+        ]
+        summary = self.ingest(events, enforce=True)
+        self.assertEqual(summary["applied"], 3)
+
+        proposal = IDX.get_proposal(self.conn, "s1", 1)
+        self.assertEqual(IDX.proposal_status(proposal, IDX.get_latest_block(self.conn)), "active")
+
+        IDX.set_sync_state(self.conn, IDX.CHAIN_TIP_STATE_KEY, "200")
+        self.assertEqual(IDX.get_status_reference_block(self.conn), 200)
+        self.assertEqual(IDX.proposal_status(proposal, IDX.get_status_reference_block(self.conn)), "closed")
 
     def test_rollback_to_block_prunes_and_replays(self) -> None:
         self.import_balances(

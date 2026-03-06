@@ -99,10 +99,10 @@ This index helps:
 ## Document Cross-References
 
 ### Charter Documents
-- **Current Version**: `charter/asi-bor-v5.0.md` (Draft 5.0, January 2026) - "Splinternet" & Sovereignty Edition
-- **Previous Version**: `charter/asi-bor-v4.2.md` (Draft 4.2, December 06, 2025) - Agentic Collaboration Edition
-- **Historical Version**: `charter/asi-bor-v4.1.md` (Draft 4.1, November 04, 2025) - With compelling names
-- **Historical Version**: `charter/asi-bor-v3.0.md` (Draft 3.0, November 02, 2025)
+- **Current Version**: `charter/asi-bor-v5.0.md` (v5.0, adopted January 31, 2026) - "Splinternet" & Sovereignty Edition
+- **Previous Version**: `charter/asi-bor-v4.2.md` (v4.2, December 06, 2025) - Agentic Collaboration Edition
+- **Historical Version**: `charter/asi-bor-v4.1.md` (v4.1, November 04, 2025) - With compelling names
+- **Historical Version**: `charter/asi-bor-v3.0.md` (v3.0, November 02, 2025)
 - **Archived**: `archive/draft3.md` (Earlier version)
 
 ### Appendices
@@ -147,8 +147,8 @@ This index helps:
 
 ### Current Version
 - **Version**: 5.0
-- **Date**: January 2026
-- **Status**: Current ("Splinternet" & Sovereignty Edition)
+- **Date**: January 31, 2026
+- **Status**: Current and adopted ("Splinternet" & Sovereignty Edition)
 - **File**: `charter/asi-bor-v5.0.md`
 - **Schema**: `schemas/charter.v5.0.json`
 

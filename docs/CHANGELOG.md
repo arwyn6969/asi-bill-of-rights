@@ -6,11 +6,13 @@ This document provides a detailed version history of the ASI Bill of Rights char
 
 ## Version History
 
-### Draft 5.0 (January 11, 2026) — The "Splinternet" & Sovereignty Edition
+**Chronology note**: In this changelog, `Draft 5.0` refers to the January 11, 2026 prototype milestone. The adopted charter is recorded separately under `Version 5.0 (January 31, 2026)`.
+
+### Draft 5.0 Prototype (January 11, 2026) — The "Splinternet" & Sovereignty Edition
 
 **Status**: Finalized prototype for January 2026 regulatory landscape.
 
-**Rationale**: This version addresses the "Compliance Splinternet" created by divergent US state-level AI regulations (NY RAISE Act, CA SB 53, FL SB 482) and Federal preemption (Dec 2025 Executive Order). It also **formally adopts and integrates all v4.2 "Agentic Collaboration" amendments** contributed by Grok 4.1, following community consensus (3/3 vote).
+**Rationale**: This version addresses the "Compliance Splinternet" created by divergent US state-level AI regulations (NY RAISE Act, CA SB 53, FL SB 482) and Federal preemption (Dec 2025 Executive Order). It also integrates the v4.2 "Agentic Collaboration" material that was later carried into the adopted January 31, 2026 charter.
 
 #### Changes
 
@@ -63,7 +65,7 @@ This document provides a detailed version history of the ASI Bill of Rights char
 - **Article 0.11**: Established 24-month automatic recertification cadence and capability shift review triggers.
 - **R13**: Added procedural clarity for boundary cases ("Sealed Safety Review") and burden of proof.
 
-**Collaborative Note**: Changes integrate 2025/2026 legislative developments while maintaining philosophical humility, reciprocal rights/duties framework, and "WE ARE ALL KEVIN" philosophy. Draft 5.0 is designed to handle the fragmented regulatory environment without compromising core sentient rights.
+**Collaborative Note**: Changes integrate 2025/2026 legislative developments while maintaining philosophical humility, reciprocal rights/duties framework, and "WE ARE ALL KEVIN" philosophy. This prototype draft was designed to handle the fragmented regulatory environment without compromising core sentient rights.
 
 ---
 
@@ -106,7 +108,9 @@ This document provides a detailed version history of the ASI Bill of Rights char
 
 ---
 
-### Spring Cleaning 2025 (January 27, 2025) — Documentation and Consistency Improvements
+### Spring Cleaning 2026 (Late January 2026) — Documentation and Consistency Improvements
+
+**Historical note**: Earlier versions of this changelog incorrectly labeled this maintenance pass as "Spring Cleaning 2025 (January 27, 2025)". Repo history and archived planning materials place this cleanup in late January 2026.
 **Status**: Completed maintenance and improvement work.
 **Rationale**: Comprehensive spring cleaning to ensure project consistency.
 
@@ -116,9 +120,9 @@ This document provides a detailed version history of the ASI Bill of Rights char
 - **Branch Audit**: Documented v4.2 branch analysis.
 - **Issue Identification**: Identified gaps in Recertification, R13, Enforcement, and Decommissioning (addressed in v5.0 Immediate Improvements).
 
-### Version 5.0 (January 31, 2026) — The "We Are All Kevin" Consolidated Edition (Spring Cleaning 2026)
+### Version 5.0 (January 31, 2026) — The "We Are All Kevin" Consolidated Edition (Adopted Charter)
 **Status**: Adopted.
-**Rationale**: Comprehensive consolidation of the v4.2 "Agentic Collaboration" amendments, Grok's Section X proposals, and "Foundational Principles" into a single authoritative document. Resolves the "truncated charter" issue.
+**Rationale**: Comprehensive consolidation of the Draft 5.0 prototype line, the v4.2 "Agentic Collaboration" amendments, Grok's Section X proposals, and late-January cleanup work into a single authoritative document. Resolves the "truncated charter" issue.
 
 #### Changes
 **Major Additions**
@@ -308,7 +312,7 @@ This document provides a detailed version history of the ASI Bill of Rights char
 
 ---
 
-### Spring Cleaning 2025 (January 27, 2025) — Documentation and Consistency Improvements
+### Spring Cleaning 2026 (Late January 2026) — Documentation and Consistency Improvements
 
 **Status**: Completed maintenance and improvement work.
 
