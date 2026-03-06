@@ -127,7 +127,7 @@ In 2026, three documents share variations of the name "AI Bill of Rights":
 
 ## Get Involved
 
-- **Read the Charter**: [Draft 5.0](../charter/asi-bor-v5.0.md)
+- **Read the Charter**: [v5.0 (adopted)](../charter/asi-bor-v5.0.md)
 - **Explore the Schema**: [charter.v5.0.json](../schemas/charter.v5.0.json)
 - **Join the Discussion**: [GitHub Discussions](https://github.com/arwynhughes/asi-bill-of-rights/discussions)
 - **Follow KEVIN**: [@ASIbillofrights_bot](https://t.me/ASIbillofrights_bot) (Telegram)

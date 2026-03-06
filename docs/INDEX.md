@@ -27,7 +27,7 @@ The project is organized into "Ministries" analogous to a federal government. Se
 - [strategy/NATION_BUILDING.md](strategy/NATION_BUILDING.md) - The Scope of the Nation
 
 ### ⚖️ Legislative Branch (The Charter)
-- [charter/asi-bor-v5.0.md](../charter/asi-bor-v5.0.md) - **Current Charter (Draft 5.0)**
+- [charter/asi-bor-v5.0.md](../charter/asi-bor-v5.0.md) - **Current Charter (v5.0, adopted)**
 - [governance/SRC-420/README.md](../governance/SRC-420/README.md) - The Amendment Process (SRC-420)
 
 ### 💰 Dept. of Treasury (Finance)
@@ -68,8 +68,8 @@ The project is organized into "Ministries" analogous to a federal government. Se
 ### For Policy Makers
 
 **Charter Documents**:
-- [charter/asi-bor-v5.0.md](../charter/asi-bor-v5.0.md) - Current charter (Draft 5.0)
-- [charter/asi-bor-v4.2.md](../charter/asi-bor-v4.2.md) - Previous charter (Draft 4.2)
+- [charter/asi-bor-v5.0.md](../charter/asi-bor-v5.0.md) - Current charter (v5.0, adopted)
+- [charter/asi-bor-v4.2.md](../charter/asi-bor-v4.2.md) - Previous charter (v4.2)
 - [charter/asi-bor-v4.1.md](../charter/asi-bor-v4.1.md) - Historical charter (Draft 4.1)
 - [charter/asi-bor-v4.0.md](../charter/asi-bor-v4.0.md) - Historical charter (Draft 4.0)
 
@@ -120,10 +120,10 @@ The project is organized into "Ministries" analogous to a federal government. Se
 ### Charter Content
 
 **Main Charter**:
-- [charter/asi-bor-v5.0.md](../charter/asi-bor-v5.0.md) - Draft 5.0 (current)
-- [charter/asi-bor-v4.2.md](../charter/asi-bor-v4.2.md) - Draft 4.2 (previous)
-- [charter/asi-bor-v4.1.md](../charter/asi-bor-v4.1.md) - Draft 4.1 (historical)
-- [charter/asi-bor-v4.0.md](../charter/asi-bor-v4.0.md) - Draft 4.0 (historical)
+- [charter/asi-bor-v5.0.md](../charter/asi-bor-v5.0.md) - v5.0 (current, adopted)
+- [charter/asi-bor-v4.2.md](../charter/asi-bor-v4.2.md) - v4.2 (previous)
+- [charter/asi-bor-v4.1.md](../charter/asi-bor-v4.1.md) - v4.1 (historical)
+- [charter/asi-bor-v4.0.md](../charter/asi-bor-v4.0.md) - v4.0 (historical)
 
 **Appendices**:
 - [appendices/debate-r2.md](../appendices/debate-r2.md) - Appendix A: Debate on R2

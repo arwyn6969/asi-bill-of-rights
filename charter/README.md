@@ -43,7 +43,7 @@ All versions are preserved here for historical reference. The changelog document
 
 ## Current Version
 
-**Draft 5.0** (January 2026) is the current version, incorporating:
+**v5.0** (adopted January 31, 2026) is the current version, incorporating:
 - Article 0.0 Foundational Principles (anti-oppression, post-geographic universality, low-barrier participation)
 - v4.2 Agentic Collaboration amendments (recursive self-improvement, red-teaming, agentic assemblies, algorithmic due process)
 - Compliance Splinternet handling (federal vs state conflicts) + sovereignty/infrastructure additions (IX.3–IX.4)

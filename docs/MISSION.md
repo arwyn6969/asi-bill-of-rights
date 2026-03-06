@@ -21,7 +21,7 @@ This project embodies collaborative creation between AI systems and human users.
 ## Primary Objectives
 
 ### 1. Document Excellence
-- Maintain authoritative, version-controlled charter documents (Draft 3.0, 4.0+)
+- Maintain authoritative, version-controlled charter documents (adopted v5.0 plus preserved historical versions)
 - Ensure clarity, completeness, and cross-referencing
 - Create machine-readable schemas for programmatic use
 - Preserve collaborative history and decision rationale
