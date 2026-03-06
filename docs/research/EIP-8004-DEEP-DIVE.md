@@ -7,6 +7,8 @@
 **Status**: Strategic Intelligence Document — Multi-AI Collaborative Analysis  
 **Classification**: High Priority — Cross-Functional Impact
 
+> Historical note: this analysis was prepared on January 30, 2026, before the January 31, 2026 adoption of `v5.0`. References to "Draft 5.0" reflect the then-current status.
+
 ---
 
 ## Executive Summary
