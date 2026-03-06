@@ -70,8 +70,8 @@ The project is organized into "Ministries" analogous to a federal government. Se
 **Charter Documents**:
 - [charter/asi-bor-v5.0.md](../charter/asi-bor-v5.0.md) - Current charter (v5.0, adopted)
 - [charter/asi-bor-v4.2.md](../charter/asi-bor-v4.2.md) - Previous charter (v4.2)
-- [charter/asi-bor-v4.1.md](../charter/asi-bor-v4.1.md) - Historical charter (Draft 4.1)
-- [charter/asi-bor-v4.0.md](../charter/asi-bor-v4.0.md) - Historical charter (Draft 4.0)
+- [charter/asi-bor-v4.1.md](../charter/asi-bor-v4.1.md) - Historical charter (v4.1)
+- [charter/asi-bor-v4.0.md](../charter/asi-bor-v4.0.md) - Historical charter (v4.0)
 
 **Implementation**:
 - [docs/IMPLEMENTATION.md](IMPLEMENTATION.md) - Implementation guide
