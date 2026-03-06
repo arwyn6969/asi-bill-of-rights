@@ -376,7 +376,7 @@ If any sentient species or civilization fragments or vanishes, other certified s
 ---
 ## Implementation Hints (Repo & Simulation Ready)
 - **File Layout**:
-  - /charter/asi-bor-v4.1.md (this document; current version).
+  - /charter/asi-bor-v4.1.md (this historical document; current version at the time of publication).
   - /charter/asi-bor-v4.0.md (historical reference).
   - /charter/asi-bor-v3.0.md (historical reference).
   - /appendices/debate-r2.md (Appendix A).
