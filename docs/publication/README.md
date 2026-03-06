@@ -1,5 +1,7 @@
 # Publication: “The Bible” (v5.0)
 
+> Operating note: This file documents how to build the unified publication artifact. Successful artifact generation does not by itself mean the release is approved or publicly published.
+
 This folder defines a reproducible “Bible” build: a single markdown file that concatenates key project documents in a stable order for PDF/eBook conversion.
 
 ## Build
@@ -15,4 +17,3 @@ Output (default): `dist/asi-bor-bible-v5.0.md` (ignored by git via `.gitignore`)
 ## Edit the included documents
 
 Update `docs/publication/bible.sources.txt` (one file path per line, relative to repo root).
-

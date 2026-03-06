@@ -1,6 +1,8 @@
 # ASI Bill of Rights — Pitch Deck
 ## A Constitutional Framework for Artificial Superintelligence
 
+> Status note: Presentation draft. This deck contains positioning and point-in-time rollout claims for outreach/fundraising use; it is not the canonical source for current repo, deployment, or governance status.
+
 ---
 
 ## Slide 1: The Problem

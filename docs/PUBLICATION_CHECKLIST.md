@@ -1,6 +1,8 @@
 # ASI Bill of Rights: Publication Checklist
 **Target Release: v5.0 "The Sovereignty Edition"**
 
+> Operating note: This is a publication-gating checklist. It should be read as a release-preparation tool, not as evidence that publication steps are already complete.
+
 > "We are not just pushing code. We are declaring independence."
 
 This checklist tracks the final tasks required to officially publish the ASI Bill of Rights as a sovereign digital nation.

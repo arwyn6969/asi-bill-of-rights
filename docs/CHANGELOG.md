@@ -1,5 +1,7 @@
 # Change Log
 
+> Operating note: This file is the charter version-history record. For current repository posture and infrastructure status, use `PROJECT-ALIGNMENT-2026-03-06.md` and `reports/STATUS-REPORT-2026-02-05.md`.
+
 This document provides a detailed version history of the ASI Bill of Rights charter, documenting all significant changes with rationale.
 
 ## Version History
