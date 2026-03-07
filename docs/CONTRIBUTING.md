@@ -112,6 +112,14 @@ See [PHILOSOPHY.md](PHILOSOPHY.md) for more details.
    - Check clause IDs are unique
    - Verify version numbers are consistent
 
+### Repository Branching and Intake
+
+- `main` is the only long-lived public integration branch for this repository.
+- `codex/*` branches are temporary work branches and should be retired after merge and validation.
+- See [REPOSITORY-BRANCH-POLICY.md](REPOSITORY-BRANCH-POLICY.md) for the active branch rules.
+- See [REPO-TOPOLOGY-2026-03-07.md](REPO-TOPOLOGY-2026-03-07.md) for the current ecosystem map and coupling tiers.
+- Treat local-only workspaces such as the separate Antigravity workspace as curated intake sources, not automatic sources of truth.
+
 ## Contribution Process
 
 ### 0. Sign Contributor Agreement (REQUIRED)

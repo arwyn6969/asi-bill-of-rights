@@ -11,6 +11,7 @@ Purpose:
 ## Current Records
 
 - `DR-2026-03-06-repo-alignment.md` - repository decision record for the March 2026 alignment and stabilization pass
+- `DR-2026-03-07-multi-repo-recovery-model.md` - repository decision record establishing the one-hub, multi-repo recovery model
 - `MOD-2026-03-06-status-claim-language.md` - moderation outcome for correcting overstated infrastructure posture claims
 - `READINESS-2026-03-06-src420-indexer.md` - production-readiness evidence review for the SRC-420 indexer
 

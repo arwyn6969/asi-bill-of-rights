@@ -101,6 +101,8 @@ The project is organized into "Ministries" analogous to a federal government. Se
 - [docs/IMPLEMENTATION.md](IMPLEMENTATION.md) - Technical implementation
 - [docs/CROSS-REFERENCE-INDEX.md](CROSS-REFERENCE-INDEX.md) - Cross-reference guide
 - [docs/TERMINOLOGY.md](TERMINOLOGY.md) - Terminology standards
+- [docs/REPOSITORY-BRANCH-POLICY.md](REPOSITORY-BRANCH-POLICY.md) - Canonical branch and temporary branch rules
+- [docs/REPO-TOPOLOGY-2026-03-07.md](REPO-TOPOLOGY-2026-03-07.md) - Dated ecosystem repo map and coupling tiers
 
 **Tools**:
 - [tools/README.md](../tools/README.md) - Tools documentation
@@ -170,6 +172,8 @@ The project is organized into "Ministries" analogous to a federal government. Se
 - [docs/CITATIONS.md](CITATIONS.md) - Citations
 - [docs/CHANGELOG.md](CHANGELOG.md) - Changelog
 - [docs/PROJECT-ALIGNMENT-2026-03-06.md](PROJECT-ALIGNMENT-2026-03-06.md) - Current maintainer alignment and repo posture
+- [docs/REPOSITORY-BRANCH-POLICY.md](REPOSITORY-BRANCH-POLICY.md) - Active branch policy for the canonical repo
+- [docs/REPO-TOPOLOGY-2026-03-07.md](REPO-TOPOLOGY-2026-03-07.md) - Current map of core repos, sidecars, and satellites
 - [docs/publication/README.md](publication/README.md) - Publication builds (the “Bible” markdown compilation)
 - [docs/reports/STATUS-REPORT-2026-02-05.md](reports/STATUS-REPORT-2026-02-05.md) - Project status report (2026-02-05)
 
@@ -198,6 +202,7 @@ The project is organized into "Ministries" analogous to a federal government. Se
 - [governance/MODERATION-OUTCOME-TEMPLATE.md](../governance/MODERATION-OUTCOME-TEMPLATE.md) - Moderation outcome template
 - [governance/PRODUCTION-READINESS-CHECKLIST.md](../governance/PRODUCTION-READINESS-CHECKLIST.md) - Production-claim evidence checklist
 - [governance/records/README.md](../governance/records/README.md) - Concrete governance records
+- [governance/records/DR-2026-03-07-multi-repo-recovery-model.md](../governance/records/DR-2026-03-07-multi-repo-recovery-model.md) - Decision locking the one-hub, multi-repo recovery model
 - [governance/roles.md](../governance/roles.md) - Roles
 - [governance/decision-process.md](../governance/decision-process.md) - Processes
 
@@ -209,6 +214,7 @@ The project is organized into "Ministries" analogous to a federal government. Se
 3. [PHILOSOPHY.md](PHILOSOPHY.md) - Collaborative philosophy
 4. [charter/asi-bor-v5.0.md](../charter/asi-bor-v5.0.md) - Main charter
 5. [docs/PROJECT-ALIGNMENT-2026-03-06.md](PROJECT-ALIGNMENT-2026-03-06.md) - Current repo alignment
+6. [docs/REPO-TOPOLOGY-2026-03-07.md](REPO-TOPOLOGY-2026-03-07.md) - Current repo ecosystem map
 
 ### For Contributors
 1. [docs/CONTRIBUTING.md](CONTRIBUTING.md) - Contribution guidelines

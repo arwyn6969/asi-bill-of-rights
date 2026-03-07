@@ -9,6 +9,8 @@ This directory contains comprehensive documentation supporting the ASI Bill of R
 - `CITATIONS.md` - All source references with links and verification dates
 - `CONTRIBUTING.md` - Community guidelines emphasizing collaborative, friendly approach
 - `PROJECT-ALIGNMENT-2026-03-06.md` - Current whole-repo alignment note for maintainers
+- `REPOSITORY-BRANCH-POLICY.md` - Canonical branch and temporary branch rules
+- `REPO-TOPOLOGY-2026-03-07.md` - Dated ecosystem repo map and coupling tiers
 - `reports/STATUS-REPORT-2026-02-05.md` - Operational status baseline
 
 ## Purpose
@@ -32,5 +34,7 @@ All documentation follows the project's collaborative philosophy:
 - See `MISSION.md` for project goals
 - See `PHILOSOPHY.md` for "WE ARE ALL KEVIN" collaborative approach
 - See `PROJECT-ALIGNMENT-2026-03-06.md` for current repo-level operating truth
+- See `REPOSITORY-BRANCH-POLICY.md` for active branch rules
+- See `REPO-TOPOLOGY-2026-03-07.md` for the current repo topology and intake boundaries
 - See `/charter/` for main charter documents
 - See `/schemas/` for machine-readable formats
