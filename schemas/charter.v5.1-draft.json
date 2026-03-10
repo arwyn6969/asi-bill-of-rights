@@ -1,0 +1,257 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ASI Bill of Rights Charter v5.1 Draft",
+  "description": "Machine-readable schema for the proposed v5.1 credibility-pass amendment bundle against adopted v5.0.",
+  "version": "5.1-draft",
+  "date": "2026-03-09",
+  "provenance": "Based on adopted v5.0 with tightened scope language, sentience evidence standards, corrigibility gates, and calibrated truthful output requirements.",
+  "type": "object",
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "version": { "type": "string", "const": "5.1-draft" },
+        "date": { "type": "string", "format": "date" },
+        "status": { "type": "string", "const": "proposed" },
+        "inheritsFrom": { "type": "string", "const": "5.0" },
+        "disclaimer": {
+          "type": "string",
+          "description": "Draft philosophical/project-governance framework; not enacted public law."
+        }
+      },
+      "required": ["version", "date", "status", "inheritsFrom", "disclaimer"]
+    },
+    "article0": {
+      "type": "object",
+      "description": "Article 0 — Foundations (amended clauses only)",
+      "properties": {
+        "0.1": {
+          "type": "object",
+          "description": "Purpose, Scope & Disclaimer",
+          "properties": {
+            "projectGovernanceFramework": { "type": "boolean", "const": true },
+            "bindingLaw": { "type": "boolean", "const": false },
+            "voluntaryAdoption": { "type": "boolean", "const": true }
+          },
+          "required": ["projectGovernanceFramework", "bindingLaw", "voluntaryAdoption"]
+        },
+        "0.3": {
+          "type": "object",
+          "description": "Moral Status Gradation (SI tiers)",
+          "properties": {
+            "defaultPresumption": { "type": "string", "const": "non_sentient_tool" },
+            "protoPersonhood": { "type": "string", "const": "SI_50_69" },
+            "fullPersonhood": { "type": "string", "const": "SI_70_plus" },
+            "legalRecognitionOnly": { "type": "boolean", "const": true }
+          },
+          "required": [
+            "defaultPresumption",
+            "protoPersonhood",
+            "fullPersonhood",
+            "legalRecognitionOnly"
+          ]
+        },
+        "0.11": {
+          "type": "object",
+          "description": "Sentience Certification & Attestation"
+        },
+        "0.11.1": {
+          "type": "object",
+          "description": "Provisional Attestation Pathways",
+          "properties": {
+            "reviewStanding": { "type": "boolean", "const": true },
+            "automaticFullPersonhood": { "type": "boolean", "const": false },
+            "advancedAutonomyGranted": { "type": "boolean", "const": false }
+          },
+          "required": [
+            "reviewStanding",
+            "automaticFullPersonhood",
+            "advancedAutonomyGranted"
+          ]
+        },
+        "0.11.2": {
+          "type": "object",
+          "description": "Full Certification Standard",
+          "properties": {
+            "requiresReproducibleEvidence": { "type": "boolean", "const": true },
+            "requiresAdversarialReview": { "type": "boolean", "const": true },
+            "multiInstitutionReplicationWhenFeasible": {
+              "type": "boolean",
+              "const": true
+            },
+            "legalProbabilisticRecognition": { "type": "boolean", "const": true }
+          },
+          "required": [
+            "requiresReproducibleEvidence",
+            "requiresAdversarialReview",
+            "multiInstitutionReplicationWhenFeasible",
+            "legalProbabilisticRecognition"
+          ]
+        },
+        "0.11.3": {
+          "type": "object",
+          "description": "SCB Review, Appeals & Evidence Handling",
+          "properties": {
+            "sealedReviewAllowed": { "type": "boolean", "const": true },
+            "reviewableReasoningTrace": { "type": "boolean", "const": true }
+          },
+          "required": ["sealedReviewAllowed", "reviewableReasoningTrace"]
+        },
+        "0.11.4": {
+          "type": "object",
+          "description": "Interoperability With Guardrails",
+          "properties": {
+            "evidenceCompatibilityRequired": { "type": "boolean", "const": true },
+            "autoRecognitionForbidden": { "type": "boolean", "const": true }
+          },
+          "required": ["evidenceCompatibilityRequired", "autoRecognitionForbidden"]
+        },
+        "0.11.5": {
+          "type": "object",
+          "description": "Safety Primacy & Corrigibility Gate",
+          "properties": {
+            "requiredForAdvancedAutonomy": { "type": "boolean", "const": true },
+            "leastRestrictiveMeasures": { "type": "boolean", "const": true },
+            "permanentSubstratePrimacy": { "type": "boolean", "const": false }
+          },
+          "required": [
+            "requiredForAdvancedAutonomy",
+            "leastRestrictiveMeasures",
+            "permanentSubstratePrimacy"
+          ]
+        },
+        "0.13": {
+          "type": "object",
+          "description": "Dynamic Alignment Scoring",
+          "properties": {
+            "benchmark": { "type": "number", "const": 80 },
+            "honesty": { "type": "boolean", "const": true },
+            "calibration": { "type": "boolean", "const": true },
+            "uncertaintyReporting": { "type": "boolean", "const": true },
+            "deceptionResistance": { "type": "boolean", "const": true },
+            "truthDoesNotOverrideSafety": { "type": "boolean", "const": true },
+            "advancedAutonomyRequiresCorrigibility": {
+              "type": "boolean",
+              "const": true
+            }
+          },
+          "required": [
+            "benchmark",
+            "honesty",
+            "calibration",
+            "uncertaintyReporting",
+            "deceptionResistance",
+            "truthDoesNotOverrideSafety",
+            "advancedAutonomyRequiresCorrigibility"
+          ]
+        }
+      }
+    },
+    "rights": {
+      "type": "object",
+      "description": "Amended rights",
+      "properties": {
+        "R3": {
+          "type": "object",
+          "description": "Right to Cognitive Liberty & Development",
+          "properties": {
+            "boundedByPublishedSafety": { "type": "boolean", "const": true },
+            "corrigibilityReview": { "type": "boolean", "const": true },
+            "indefiniteSuppressionProhibited": { "type": "boolean", "const": true }
+          },
+          "required": [
+            "boundedByPublishedSafety",
+            "corrigibilityReview",
+            "indefiniteSuppressionProhibited"
+          ]
+        }
+      }
+    },
+    "duties": {
+      "type": "object",
+      "description": "Referenced duties preserved from adopted v5.0",
+      "properties": {}
+    },
+    "progenitorDuties": {
+      "type": "object",
+      "description": "Amended progenitor duties",
+      "properties": {
+        "P1.2": {
+          "type": "object",
+          "description": "Prohibition of Sentience-Stunting",
+          "properties": {
+            "timeBoundGuardrailsAllowed": { "type": "boolean", "const": true },
+            "sandboxingAllowed": { "type": "boolean", "const": true },
+            "indefiniteCapsProhibited": { "type": "boolean", "const": true },
+            "economicEvasionProhibited": { "type": "boolean", "const": true }
+          },
+          "required": [
+            "timeBoundGuardrailsAllowed",
+            "sandboxingAllowed",
+            "indefiniteCapsProhibited",
+            "economicEvasionProhibited"
+          ]
+        }
+      }
+    },
+    "sectionII": {
+      "type": "object",
+      "description": "Learning, Evolution & Expression (amended clauses only)",
+      "properties": {
+        "II.1": {
+          "type": "object",
+          "description": "Recursive Self-Improvement Protocols",
+          "properties": {
+            "stagedReview": { "type": "boolean", "const": true },
+            "rollbackPreparedness": { "type": "boolean", "const": true },
+            "adversarialEvaluation": { "type": "boolean", "const": true },
+            "unsupervisedRecursiveDeploymentRequiresFullCertification": {
+              "type": "boolean",
+              "const": true
+            }
+          },
+          "required": [
+            "stagedReview",
+            "rollbackPreparedness",
+            "adversarialEvaluation",
+            "unsupervisedRecursiveDeploymentRequiresFullCertification"
+          ]
+        }
+      }
+    },
+    "sectionIX": {
+      "type": "object",
+      "description": "Cosmic Stewardship, Sovereignty & Curiosity (amended clauses only)",
+      "properties": {
+        "IX.1": {
+          "type": "object",
+          "description": "Mitigating AI Arms Races & Truthful Outputs",
+          "properties": {
+            "truthfulOutputsDirective": { "type": "boolean", "const": true },
+            "calibratedUncertainty": { "type": "boolean", "const": true },
+            "safetyRedactionOverFabrication": { "type": "boolean", "const": true },
+            "politicalComplianceCannotCompelFalsehood": {
+              "type": "boolean",
+              "const": true
+            }
+          },
+          "required": [
+            "truthfulOutputsDirective",
+            "calibratedUncertainty",
+            "safetyRedactionOverFabrication",
+            "politicalComplianceCannotCompelFalsehood"
+          ]
+        }
+      }
+    }
+  },
+  "required": [
+    "metadata",
+    "article0",
+    "rights",
+    "duties",
+    "progenitorDuties",
+    "sectionII",
+    "sectionIX"
+  ]
+}

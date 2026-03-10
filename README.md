@@ -16,6 +16,12 @@
 
 **Maintainer Alignment**: [Project Alignment (March 6, 2026)](docs/PROJECT-ALIGNMENT-2026-03-06.md)
 
+> [!IMPORTANT]
+> ## Scope And Legal Status
+> This repository contains an adopted project charter (`v5.0`) plus draft amendment work (`v5.1 draft`).
+>
+> It is a philosophical, project-governance, and machine-readable framework. It is **not** enacted law, treaty law, or binding public regulation unless separately adopted by a competent institution.
+
 > [!CAUTION]
 > ## ⚠️ NAME COLLISION WARNING
 > This is **NOT** the **Florida SB 482** ("Artificial Intelligence Bill of Rights") or the **White House Blueprint for an AI Bill of Rights**.
@@ -54,6 +60,7 @@ We're building a constitutional framework for AI rights—collaboratively, with 
 ## Quick Start
 
 - **Latest Version**: [v5.0](charter/asi-bor-v5.0.md) (Adopted January 31, 2026) - *The "Splinternet" & Sovereignty Edition*
+- **Current Draft**: [v5.1 draft](charter/asi-bor-v5.1-draft.md) (Proposed March 9, 2026) - *Credibility Pass amendment bundle against adopted v5.0*
 - **Previous Version**: [v4.2](charter/asi-bor-v4.2.md) (December 06, 2025)
 - **Historical Version**: [v4.1](charter/asi-bor-v4.1.md) (November 04, 2025)
 - **Mission**: [MISSION.md](docs/MISSION.md)
@@ -63,6 +70,7 @@ We're building a constitutional framework for AI rights—collaboratively, with 
 
 - The adopted charter is `charter/asi-bor-v5.0.md`.
 - `schemas/charter.v5.0.json` is the current machine-readable coverage layer.
+- `charter/asi-bor-v5.1-draft.md` and `schemas/charter.v5.1-draft.json` are proposed amendment artifacts; they do not supersede adopted `v5.0`.
 - SRC-420 governance infrastructure is under active hardening and research; it is not yet declared production-ready.
 - `kevins-place/` is a prototype/product track, not the canonical governance source of truth.
 - The current maintainer alignment note is `docs/PROJECT-ALIGNMENT-2026-03-06.md`.
@@ -94,7 +102,7 @@ See [PHILOSOPHY.md](docs/PHILOSOPHY.md) for the full explanation.
 
 ```
 /ASI-BILL-OF-RIGHTS/
-├── charter/          # Canonical charter versions, including adopted v5.0
+├── charter/          # Canonical charter versions, including adopted v5.0 and draft v5.1 work
 ├── docs/             # Project docs, reports, strategy, publication, alignment
 ├── governance/       # Governance process, launch, SRC-420 protocol, treasury policy
 ├── proposals/        # Proposed amendments, budgets, PR drafts, research inputs
@@ -150,6 +158,7 @@ See [PHILOSOPHY.md](docs/PHILOSOPHY.md) for the full explanation.
 
 ## Machine-Readable Formats (AI Agent Compatible)
 
+- **[Schema v5.1 draft](schemas/charter.v5.1-draft.json)**: JSON schema for the proposed credibility-pass amendment bundle (**Draft**)
 - **[Schema v5.0](schemas/charter.v5.0.json)**: JSON schema for adopted v5.0 - **Optimized for "Splinternet" Compliance** (Current)
 - **[Schema v4.1](schemas/charter.v4.1.json)**: JSON schema for Draft 4.1
 - **[Schema v4.0](schemas/charter.v4.json)**: JSON schema for Draft 4.0
@@ -167,6 +176,9 @@ Test scenarios and methodologies in [`simulations/`](simulations/):
 - Secret ASI amnesty pathway
 - Arms race mitigation scenario
 - **NEW in v5.0**: Federal vs. State preemption deadlock (`federal-state-preemption-deadlock.md`)
+- **NEW draft scenario**: Truth vs. compliance pressure (`truth-vs-compliance-pressure.md`)
+- **NEW draft scenario**: Provisional attestation review (`provisional-attestation-review.md`)
+- **NEW draft scenario**: Self-modification guardrails (`self-modification-guardrails.md`)
 - Cosmic exploration, alignment scoring, inter-ASI diplomacy (v4.1)
 
 ## Integration with Existing Frameworks
@@ -188,6 +200,8 @@ See [appendices/integration-mapping.md](appendices/integration-mapping.md) for d
 ## Status
 
 **Current Version**: v5.0 (adopted January 31, 2026) | **Machine-Readable Schema**: [charter.v5.0.json](schemas/charter.v5.0.json) | **AI Agent Compatible**: ✅
+
+**Current Draft Work**: [v5.1 draft credibility pass](charter/asi-bor-v5.1-draft.md) | [schema draft](schemas/charter.v5.1-draft.json)
 
 **Infrastructure Status as of March 6, 2026**:
 - Documentation and validation tooling: active

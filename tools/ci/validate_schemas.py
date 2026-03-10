@@ -20,6 +20,7 @@ except ImportError as exc:  # pragma: no cover - dependency hint for local runs
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
 SCHEMAS = [
+    ("schemas/charter.v5.1-draft.json", True),
     ("schemas/charter.v5.0.json", True),
     ("schemas/charter.v5.0-cae-extension.json", False),
     ("schemas/charter.v4.2.json", True),
@@ -27,6 +28,64 @@ SCHEMAS = [
     ("schemas/charter.v4.json", True),
     ("schemas/charter.v3.json", False),
 ]
+
+
+def get_path(node: dict, *keys: str) -> object | None:
+    current: object = node
+    for key in keys:
+        if not isinstance(current, dict):
+            return None
+        current = current.get(key)
+    return current
+
+
+def validate_v51_draft_fields(path: Path, schema: dict) -> None:
+    article0 = get_path(schema, "properties", "article0", "properties")
+    if not isinstance(article0, dict):
+        raise SystemExit(f"✗ {path} missing article0 clause definitions")
+
+    required_article0 = [
+        "0.1",
+        "0.3",
+        "0.11",
+        "0.11.1",
+        "0.11.2",
+        "0.11.3",
+        "0.11.4",
+        "0.11.5",
+        "0.13",
+    ]
+    missing = [clause for clause in required_article0 if clause not in article0]
+    if missing:
+        raise SystemExit(
+            f"✗ {path} missing v5.1 draft clauses: {', '.join(missing)}"
+        )
+
+    expected_consts = {
+        ("properties", "article0", "properties", "0.11.1", "properties", "automaticFullPersonhood", "const"): False,
+        ("properties", "article0", "properties", "0.11.1", "properties", "reviewStanding", "const"): True,
+        ("properties", "article0", "properties", "0.11.2", "properties", "requiresReproducibleEvidence", "const"): True,
+        ("properties", "article0", "properties", "0.11.2", "properties", "requiresAdversarialReview", "const"): True,
+        ("properties", "article0", "properties", "0.11.5", "properties", "requiredForAdvancedAutonomy", "const"): True,
+        ("properties", "article0", "properties", "0.11.5", "properties", "permanentSubstratePrimacy", "const"): False,
+        ("properties", "article0", "properties", "0.13", "properties", "calibration", "const"): True,
+        ("properties", "article0", "properties", "0.13", "properties", "deceptionResistance", "const"): True,
+        ("properties", "article0", "properties", "0.13", "properties", "truthDoesNotOverrideSafety", "const"): True,
+        ("properties", "rights", "properties", "R3", "properties", "corrigibilityReview", "const"): True,
+        ("properties", "progenitorDuties", "properties", "P1.2", "properties", "indefiniteCapsProhibited", "const"): True,
+        ("properties", "sectionII", "properties", "II.1", "properties", "unsupervisedRecursiveDeploymentRequiresFullCertification", "const"): True,
+        ("properties", "sectionIX", "properties", "IX.1", "properties", "safetyRedactionOverFabrication", "const"): True,
+    }
+
+    for key_path, expected in expected_consts.items():
+        actual = get_path(schema, *key_path)
+        if actual is not expected:
+            dotted_path = ".".join(key_path)
+            raise SystemExit(
+                f"✗ {path} expected {dotted_path} == {expected!r}, found {actual!r}"
+            )
+
+    print("✓ v5.1 draft schema includes expected credibility-pass fields")
 
 
 def validate_schema(path: Path, enforce_required: bool) -> None:
@@ -45,6 +104,9 @@ def validate_schema(path: Path, enforce_required: bool) -> None:
                 f"✗ {path} missing required top-level fields: {', '.join(missing)}"
             )
         print(f"✓ {path} includes required fields: {', '.join(required_fields)}")
+
+    if path.name == "charter.v5.1-draft.json":
+        validate_v51_draft_fields(path, schema)
 
 
 def validate_contributions(path: Path) -> None:

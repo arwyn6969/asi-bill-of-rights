@@ -5,8 +5,9 @@ every clause ID defined in one surface exists in the other.
 
 Notes:
 - v4.1/v4.2 schemas are treated as full structural mirrors (exact match).
-- v5.0 schema is treated as a partial machine-readable coverage layer, so we
-  validate that every clause ID present in the schema exists in the charter.
+- v5.0 and v5.1 draft schemas are treated as partial machine-readable coverage
+  layers, so we validate that every clause ID present in the schema exists in
+  the charter.
 """
 
 from __future__ import annotations
@@ -23,6 +24,12 @@ VERSION_PAIRS = [
     ("4.1", "charter/asi-bor-v4.1.md", "schemas/charter.v4.1.json", "exact"),
     ("4.2", "charter/asi-bor-v4.2.md", "schemas/charter.v4.2.json", "exact"),
     ("5.0", "charter/asi-bor-v5.0.md", "schemas/charter.v5.0.json", "subset"),
+    (
+        "5.1-draft",
+        "charter/asi-bor-v5.1-draft.md",
+        "schemas/charter.v5.1-draft.json",
+        "subset",
+    ),
 ]
 
 CLAUSE_KEY_PATTERN = re.compile(

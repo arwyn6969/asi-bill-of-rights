@@ -58,6 +58,7 @@ export const Layout: React.FC = () => {
             </>
           ) : (
             <>
+              <Link to="/proposals" className="text-sm font-bold uppercase tracking-wide text-muted hover:text-black">Proposals</Link>
               <Link to="/login" className="text-sm font-bold uppercase tracking-wide text-muted hover:text-black">Login</Link>
               <Link to="/register" className="btn btn-primary text-sm">Sign Up</Link>
             </>

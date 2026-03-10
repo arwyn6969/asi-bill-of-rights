@@ -38,6 +38,7 @@ def has_jsonschema() -> bool:
 def main() -> None:
     overall_ok = True
     src420_validator = REPO_ROOT / "tools" / "src420-indexer" / "validate_mvp.py"
+    v51_draft_validator = REPO_ROOT / "scripts" / "validate_schema_v5_1_draft.py"
 
     overall_ok &= run_check(
         "Internal Links",
@@ -48,6 +49,15 @@ def main() -> None:
         "Cross-References",
         [sys.executable, str(REPO_ROOT / "tools" / "ci" / "validate_crossrefs.py")],
     )
+
+    if v51_draft_validator.exists():
+        overall_ok &= run_check(
+            "v5.1 Draft Schema Profile",
+            [sys.executable, str(v51_draft_validator)],
+        )
+    else:
+        print("\n=== v5.1 Draft Schema Profile ===")
+        print("ℹ️  Skipping v5.1 draft schema profile (validator not found).")
 
     if has_jsonschema():
         overall_ok &= run_check(

@@ -8,6 +8,47 @@ This document provides a detailed version history of the ASI Bill of Rights char
 
 **Chronology note**: In this changelog, `Draft 5.0` refers to the January 11, 2026 prototype milestone. The adopted charter is recorded separately under `Version 5.0 (January 31, 2026)`.
 
+### Draft v5.1 Credibility Pass (March 9, 2026) — Proposed Amendment Bundle
+
+**Status**: Proposed. `v5.0` remains the adopted charter.
+
+**Rationale**: Post-adoption review identified a credibility gap between the charter's philosophical ambition and the evidentiary humility needed for present-day AI systems. This draft tightens sentience recognition, corrigibility, truthful outputs, and scope language without replacing the charter's anti-oppression or collaborative foundations.
+
+#### Changes
+
+**Draft Charter**
+- **Added**: `charter/asi-bor-v5.1-draft.md`
+- **Focus**: Delta-style amendment bundle against `v5.0`, covering Article 0.1, 0.3, 0.11, 0.13, R3, P1.2, II.1, and IX.1
+- **Rationale**: Keeps `v5.0` authoritative while making proposed changes explicit and reviewable
+
+**Schema**
+- **Added**: `schemas/charter.v5.1-draft.json`
+- **Focus**: Machine-readable distinctions for provisional attestation, full certification, corrigibility gates, calibration, and anti-deception
+- **Rationale**: Preserves the repo's machine-readable governance posture for draft work
+
+**Validation**
+- **Added**: `scripts/validate_schema_v5_1_draft.py`
+- **Updated**: `tools/ci/validate_crossrefs.py` and `tools/ci/validate_schemas.py` to include the v5.1 draft pair
+- **Updated**: `tools/ci/validate_all.py` to run the v5.1 draft profile check
+- **Rationale**: Ensures draft artifacts are not orphaned from the repo's validation flow
+
+**Simulations**
+- **Added**: `scripts/simulate_truthful_outputs_guardrails.py`
+- **Added**: `simulations/truth-vs-compliance-pressure.md`
+- **Added**: `simulations/provisional-attestation-review.md`
+- **Added**: `simulations/self-modification-guardrails.md`
+- **Rationale**: Tests the new truth-vs-safety, provisional-attestation, and anti-stunting boundaries
+
+**Documentation**
+- **Added**: `proposals/grok-v5.1-credibility-response-2026-03-09.md`
+- **Added**: `proposals/issue-v5.1-credibility-amendment-bundle-2026-03-09.md`
+- **Updated**: README, charter index, schema index, and simulations index for draft discoverability and disclaimer language
+- **Rationale**: Separates reply-to-reviewer, amendment intake, adopted charter, and draft artifacts cleanly
+
+**Deferred Work**
+- **Deferred**: Larger modularization of speculative off-world, collective, and future-institutional detail into appendices or optional modules
+- **Rationale**: Keep the credibility pass narrow and reviewable
+
 ### Draft 5.0 Prototype (January 11, 2026) — The "Splinternet" & Sovereignty Edition
 
 **Status**: Finalized prototype for January 2026 regulatory landscape.

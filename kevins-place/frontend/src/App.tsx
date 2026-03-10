@@ -7,6 +7,7 @@ import { Register } from './pages/Register';
 import { ZoneView } from './pages/ZoneView';
 import { ThreadView } from './pages/ThreadView';
 import { Search } from './pages/Search';
+import { Proposals } from './pages/Proposals';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path="zone/:id" element={<ZoneView />} />
             <Route path="thread/:id" element={<ThreadView />} />
             <Route path="search" element={<Search />} />
+            <Route path="proposals" element={<Proposals />} />
           </Route>
         </Routes>
       </TelegramAuthWrapper>

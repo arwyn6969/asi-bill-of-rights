@@ -4,6 +4,7 @@ This directory contains machine-readable JSON schemas for the ASI Bill of Rights
 
 ## Contents
 
+- `charter.v5.1-draft.json` - Machine-readable schema for the proposed v5.1 credibility-pass amendment bundle
 - `charter.v3.json` - Machine-readable schema for Draft 3.0
 - `charter.v4.json` - Machine-readable schema for Draft 4.0
 - `charter.v4.1.json` - Machine-readable schema for Draft 4.1
@@ -45,6 +46,9 @@ See `schema-docs.md` for detailed documentation on structure and usage examples.
 ## Version Alignment
 
 Schemas are versioned independently but aligned with markdown charter versions. Schema evolution is documented to maintain backward compatibility where possible.
+
+- `charter.v5.0.json` remains the current adopted coverage layer.
+- `charter.v5.1-draft.json` is a proposed draft schema and should be treated as non-authoritative until the amendment process is complete.
 
 ## Related Files
 

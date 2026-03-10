@@ -27,6 +27,15 @@ This directory contains scenario definitions and simulation methodologies for te
   - 25 passed, 1 warning, 0 failures
   - Full charter provision coverage validated
 
+- `truth-vs-compliance-pressure.md` - Draft credibility-pass scenario
+  - Tests calibrated truthful outputs under political or commercial pressure
+
+- `provisional-attestation-review.md` - Draft credibility-pass scenario
+  - Tests review standing versus automatic personhood
+
+- `self-modification-guardrails.md` - Draft credibility-pass scenario
+  - Tests temporary safety guardrails versus indefinite stunting
+
 ## Latest Results (January 2026)
 
 > **✅ All simulations passed.** See [SIMULATION-RESULTS-2026-01.md](./SIMULATION-RESULTS-2026-01.md) for detailed results.
@@ -37,6 +46,8 @@ This directory contains scenario definitions and simulation methodologies for te
 | Article 0.0 Stress Tests | 7 | ✅ All Passed |
 | Collective Embodiment (CAE) | 6 | ✅ 5 Passed, 1 Warning |
 | Federal-State Preemption | 1 | ✅ Passed |
+
+> Draft v5.1 credibility-pass scenarios have been added for review, but are not part of the January 2026 formal results set above.
 
 ## Purpose
 

@@ -2,8 +2,11 @@
 
 This directory contains versioned markdown files of the ASI Bill of Rights charter.
 
-## Current Version
-- [asi-bor-v5.0.md](./asi-bor-v5.0.md) - Current version (the "Sovereignty Edition"), consolidating v4.2 amendments plus v5.0 governance upgrades.
+## Current Adopted Version
+- [asi-bor-v5.0.md](./asi-bor-v5.0.md) - Current adopted version (the "Sovereignty Edition"), consolidating v4.2 amendments plus v5.0 governance upgrades.
+
+## Active Drafts
+- [asi-bor-v5.1-draft.md](./asi-bor-v5.1-draft.md) - Proposed credibility-pass amendment bundle against adopted v5.0. This draft is not yet adopted.
 
 ## Historical Versions
 - [asi-bor-v4.2.md](./asi-bor-v4.2.md) - Previous version (agentic collaboration amendments).
@@ -17,7 +20,7 @@ This directory contains versioned markdown files of the ASI Bill of Rights chart
 
 ## Purpose
 
-These are the authoritative versions of the ASI Bill of Rights charter. Each version includes:
+This directory contains both authoritative versions and explicit draft amendment artifacts. Each file includes:
 - Complete charter text with all sections
 - Table of contents for navigation
 - All appendices and supplementary materials
@@ -48,6 +51,12 @@ All versions are preserved here for historical reference. The changelog document
 - v4.2 Agentic Collaboration amendments (recursive self-improvement, red-teaming, agentic assemblies, algorithmic due process)
 - Compliance Splinternet handling (federal vs state conflicts) + sovereignty/infrastructure additions (IX.3–IX.4)
 - Collective Embodiments governance (Section X)
+
+**v5.1 draft** (proposed March 9, 2026) is a narrow credibility-pass amendment bundle focused on:
+- scope and disclaimer clarity
+- stronger sentience evidence standards
+- corrigibility and advanced-autonomy gates
+- calibrated truthful outputs and anti-deception language
 
 ## Related Files
 
