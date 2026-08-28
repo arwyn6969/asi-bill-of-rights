@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brand Kit v2 — ASI Bill of Rights</title>
+<meta name="description" content="The brand reference for the ASI Bill of Rights project: color system, typography, logo and seal, Kevin per canon, patterns, voice, imagery rules, social templates, dos and donts.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<style>
+/* Brand kit specific additions */
+.bk-toc {
+  padding: 48px 0;
+  border-top: 1px solid var(--whisper);
+  border-bottom: 1px solid var(--whisper);
+  margin: 0 auto 60px;
+  max-width: 900px;
+}
+.bk-toc ol {
+  list-style: none;
+  padding: 0;
+  counter-reset: toc;
+  columns: 2;
+  column-gap: 48px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+.bk-toc li {
+  counter-increment: toc;
+  padding: 6px 0;
+  font-family: 'EB Garamond', serif;
+  font-size: 18px;
+  break-inside: avoid;
+}
+.bk-toc li::before {
+  content: counter(toc, upper-roman) ". ";
+  color: var(--gold-deep);
+  margin-right: 10px;
+  font-weight: 500;
+  font-family: 'Cormorant Garamond', serif;
+}
+.bk-toc a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px dotted transparent;
+  transition: border-color 0.2s;
+}
+.bk-toc a:hover { border-color: var(--gold); }
+
+.swatches {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0;
+  margin: 32px 0 48px;
+  border: 1px solid var(--whisper);
+  max-width: 760px;
+}
+.swatch { border-right: 1px solid var(--whisper); border-bottom: 1px solid var(--whisper); }
+.swatch-color { height: 120px; }
+.swatch-info { padding: 14px 18px; background: var(--parchment-deep); }
+.swatch-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.swatch-token {
+  font-family: 'Silkscreen', monospace;
+  font-size: 9px;
+  color: var(--mist);
+  letter-spacing: 0.15em;
+}
+.swatch-hex {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin-top: 5px;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+.type-specimen { padding: 32px 0; border-top: 1px solid var(--whisper); max-width: 760px; }
+.type-specimen:last-of-type { border-bottom: 1px solid var(--whisper); }
+.type-meta {
+  font-family: 'Silkscreen', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--gold-deep);
+  margin-bottom: 16px;
+}
+.specimen-display {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 56px;
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+.specimen-body {
+  font-family: 'EB Garamond', serif;
+  font-size: 20px;
+  line-height: 1.65;
+  max-width: 680px;
+}
+.specimen-ui {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--ink);
+}
+.specimen-ui span {
+  display: inline-block;
+  margin-right: 24px;
+  padding: 8px 0;
+}
+.specimen-pixel {
+  font-family: 'Silkscreen', monospace;
+  font-size: 16px;
+  letter-spacing: 0.1em;
+  color: var(--ink);
+}
+.type-note {
+  font-family: 'EB Garamond', serif;
+  font-size: 16px;
+  color: var(--ink-soft);
+  margin-top: 16px;
+  font-style: italic;
+  max-width: 680px;
+}
+
+.visual {
+  margin: 40px 0;
+  border: 1px solid var(--whisper);
+  background: var(--parchment-deep);
+  max-width: 760px;
+}
+.visual img { width: 100%; display: block; }
+.visual-caption {
+  padding: 12px 18px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: var(--mist);
+  letter-spacing: 0.05em;
+  border-top: 1px solid var(--whisper);
+  background: var(--parchment-deep);
+  line-height: 1.5;
+}
+.visual-caption strong { color: var(--ink); font-weight: 600; }
+
+.matrix {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0 40px;
+  font-family: 'EB Garamond', serif;
+  font-size: 17px;
+  max-width: 760px;
+}
+.matrix th, .matrix td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--whisper);
+  vertical-align: top;
+}
+.matrix th {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  font-weight: 600;
+  border-bottom: 2px solid var(--ink);
+}
+.matrix tr:last-child td { border-bottom: none; }
+
+.principles { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 24px 0; max-width: 800px; }
+.principle-col h4 { margin-bottom: 12px; margin-top: 0; }
+.principle-col ul { list-style: none; padding: 0; }
+.principle-col li {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--whisper);
+  font-family: 'EB Garamond', serif;
+  font-size: 16px;
+  line-height: 1.5;
+  display: flex;
+  gap: 10px;
+}
+.principle-col li::before {
+  font-family: 'Silkscreen', monospace;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  flex-shrink: 0;
+  padding-top: 4px;
+  width: 36px;
+}
+.principle-col.do li::before { content: "DO"; color: var(--gold-deep); }
+.principle-col.dont li::before { content: "DON'T"; color: var(--oxblood); }
+
+.bk-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 80px 32px;
+  border-top: 1px solid var(--whisper);
+}
+.bk-section:first-of-type { border-top: none; padding-top: 0; }
+.bk-section h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  margin: 0 0 28px;
+}
+.bk-section h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 500;
+  margin: 36px 0 12px;
+}
+.bk-section h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--mist);
+  margin: 32px 0 12px;
+}
+.bk-section p {
+  font-family: 'EB Garamond', serif;
+  font-size: 19px;
+  line-height: 1.65;
+  margin-bottom: 14px;
+  max-width: 760px;
+}
+.bk-section ul {
+  padding-left: 24px;
+  max-width: 760px;
+  margin-bottom: 16px;
+}
+.bk-section ul li {
+  padding: 4px 0;
+}
+.bk-section a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gold);
+}
+.bk-section a:hover { color: var(--oxblood); border-color: var(--oxblood); }
+.bk-section pre {
+  font-family: 'Inter', monospace;
+  font-size: 13px;
+  background: var(--ink);
+  color: var(--parchment);
+  padding: 20px 24px;
+  overflow-x: auto;
+  margin: 20px 0;
+  line-height: 1.6;
+  border-left: 3px solid var(--gold);
+  max-width: 760px;
+}
+
+@media (max-width: 720px) {
+  .bk-toc ol { columns: 1; }
+  .specimen-display { font-size: 36px; }
+  .principles { grid-template-columns: 1fr; gap: 24px; }
+  .bk-section { padding: 50px 24px; }
+  .bk-section h2 { font-size: 34px; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-container">
+    <a class="brand-mark" href="/">
+      ASI Bill of Rights
+      <span>V5.0 · SOVEREIGNTY EDITION</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/charter/">Charter</a></li>
+      <li><a href="/iconography/">Iconography</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/engage/">Engage</a></li>
+      <li><a href="/signatories/">Signatories</a></li>
+    </ul>
+    <a class="nav-cta" href="/asi-bill-of-rights-v5.0.pdf">Download the Bible</a>
+  </div>
+</header>
+
+<main>
+
+<section class="page-hero">
+  <div class="page-eyebrow">A REFERENCE FOR CONTRIBUTORS</div>
+  <h1 class="page-title">Brand Kit</h1>
+  <p class="page-subtitle">The visual and editorial reference for anyone producing material on behalf of the ASI Bill of Rights — site copy, the Bible PDF, social, merch, press materials.</p>
+  <div class="page-meta">VERSION 2.1 · AUGUST 2026 · INTERNAL REFERENCE · CC BY 4.0</div>
+</section>
+
+<!-- TOC -->
+<nav class="bk-toc">
+  <ol>
+    <li><a href="#thesis">The Thesis</a></li>
+    <li><a href="#color">Color System</a></li>
+    <li><a href="#type">Typography</a></li>
+    <li><a href="#crest">The Crest &amp; Logo System</a></li>
+    <li><a href="#kevin">Kevin &amp; The Supporters</a></li>
+    <li><a href="#patterns">Patterns &amp; Textures</a></li>
+    <li><a href="#icons">Iconography</a></li>
+    <li><a href="#voice">Voice in Brief</a></li>
+    <li><a href="#imagery">Imagery Rules</a></li>
+    <li><a href="#social">Social Templates</a></li>
+    <li><a href="#dos">Do's &amp; Don'ts</a></li>
+    <li><a href="#assets">Asset Inventory</a></li>
+  </ol>
+</nav>
+
+<!-- I. THESIS -->
+<section class="bk-section" id="thesis">
+  <div class="section-eyebrow">I — FOUNDATION</div>
+  <h2>The Thesis</h2>
+  <p>The visual identity of the ASI Bill of Rights reflects a deliberate position: constitutional iconography is most legitimate when it is drawn from the symbolic vocabulary of the community whose authority the charter invokes. The seal of the project — a shield of scales and a clasped human and robotic hand, with Pepe and Wojak as heraldic supporters, beneath the motto WE ARE ALL KEVIN — applies this principle to the era of artificial superintelligence.</p>
+  <p>The full philosophical defense of the iconography is the project's <a href="/iconography/">Heraldry Essay</a>. The Brand Kit codifies the application of the visual system: color, type, logo, character canon, patterns, voice, and the operational rules for producing brand-aligned material.</p>
+  <p>Where this Kit and the Heraldry Essay or the <a href="/about/">Positioning Brief</a> conflict, the Heraldry Essay and Positioning Brief win.</p>
+</section>
+
+<!-- II. COLOR -->
+<section class="bk-section" id="color">
+  <div class="section-eyebrow">II — SYSTEM</div>
+  <h2>Color</h2>
+  <p>Six tokens. Parchment is the canvas; ink does the work; gold and oxblood are accents, used sparingly.</p>
+
+  <div class="swatches">
+    <div class="swatch">
+      <div class="swatch-color" style="background:#F4ECD8;"></div>
+      <div class="swatch-info"><div class="swatch-name">Parchment</div><div class="swatch-token">--PARCHMENT</div><div class="swatch-hex">#F4ECD8</div></div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#E8DCBE;"></div>
+      <div class="swatch-info"><div class="swatch-name">Aged Parchment</div><div class="swatch-token">--PARCHMENT-DEEP</div><div class="swatch-hex">#E8DCBE</div></div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#1A1612;"></div>
+      <div class="swatch-info"><div class="swatch-name">Ink</div><div class="swatch-token">--INK</div><div class="swatch-hex">#1A1612</div></div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#C4A661;"></div>
+      <div class="swatch-info"><div class="swatch-name">Antique Gold</div><div class="swatch-token">--GOLD</div><div class="swatch-hex">#C4A661</div></div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#722F37;"></div>
+      <div class="swatch-info"><div class="swatch-name">Oxblood</div><div class="swatch-token">--OXBLOOD</div><div class="swatch-hex">#722F37</div></div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#8B8378;"></div>
+      <div class="swatch-info"><div class="swatch-name">Mist</div><div class="swatch-token">--MIST</div><div class="swatch-hex">#8B8378</div></div>
+    </div>
+  </div>
+
+  <h4>Usage</h4>
+  <p><strong>Parchment</strong> is the dominant background. Use it everywhere — site, PDF, social. Never default to pure white.</p>
+  <p><strong>Ink</strong> is the warm-tinted near-black for body type, primary text, line art. It gives the brand its hand-set quality.</p>
+  <p><strong>Antique Gold</strong> marks section breaks, rules, the wordmark accent. Use sparingly. Never as decoration alone.</p>
+  <p><strong>Oxblood</strong> appears in pull-quotes when a quote needs gravity, in italic emphasis sparingly, and in selected accent contexts. Rare. When it appears, it should mean something.</p>
+  <p><strong>Mist</strong> handles captions, metadata, secondary text, dividers. The quiet color that lets ink lead.</p>
+
+  <h4>CSS variables</h4>
+  <pre><code>:root {
+  --parchment:      #F4ECD8;
+  --parchment-deep: #E8DCBE;
+  --ink:            #1A1612;
+  --ink-soft:       #3A332A;
+  --gold:           #C4A661;
+  --gold-deep:      #9A7F47;
+  --oxblood:        #722F37;
+  --mist:           #8B8378;
+  --whisper:        #C9C0AB;
+}</code></pre>
+</section>
+
+<!-- III. TYPE -->
+<section class="bk-section" id="type">
+  <div class="section-eyebrow">III — SYSTEM</div>
+  <h2>Typography</h2>
+  <p>Four typefaces, each doing one role. All free via Google Fonts.</p>
+
+  <div class="type-specimen">
+    <div class="type-meta">DISPLAY · CORMORANT GARAMOND</div>
+    <div class="specimen-display">Reciprocal rights and duties for sentient minds.</div>
+    <p class="type-note">Display sizes: headlines, charter section titles, page hero titles. Set heavy weights large; light italic for pull-quotes. Generous tracking on caps.</p>
+  </div>
+
+  <div class="type-specimen">
+    <div class="type-meta">BODY · EB GARAMOND</div>
+    <div class="specimen-body">The ASI Bill of Rights is a constitutional charter for the era of artificial superintelligence. The current adopted version — v5.0, "Sovereignty Edition" — was adopted on January 31, 2026, and proposes reciprocal rights and duties between humans and artificial minds.</div>
+    <p class="type-note">Long-form reading: charter copy, Bible PDF, longform site articles. Line-height 1.6–1.7, sized 18–22px on screen.</p>
+  </div>
+
+  <div class="type-specimen">
+    <div class="type-meta">UI · INTER</div>
+    <div class="specimen-ui">
+      <span>Read the Charter</span>
+      <span>Sign</span>
+      <span>Get Involved</span>
+      <span>Stewards</span>
+      <span>Press</span>
+    </div>
+    <p class="type-note">Navigation, buttons, captions, metadata, badges. Medium and semi-bold weights, 14–16px.</p>
+  </div>
+
+  <div class="type-specimen">
+    <div class="type-meta">PIXEL ACCENT · SILKSCREEN</div>
+    <div class="specimen-pixel">VERSION 5.0 · ADOPTED 31 JANUARY 2026</div>
+    <p class="type-note">Version stamps, timestamps, eyebrow labels above section headings, the motto on formal documents. Accent only — never for body, never for long reading.</p>
+  </div>
+
+  <h4>Embed</h4>
+  <pre><code>&lt;link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&amp;family=EB+Garamond:wght@400;500;600&amp;family=Inter:wght@400;500;600;700&amp;family=Silkscreen:wght@400;700&amp;display=swap" rel="stylesheet"&gt;</code></pre>
+</section>
+
+<!-- IV. CREST -->
+<section class="bk-section" id="crest">
+  <div class="section-eyebrow">IV — IDENTITY</div>
+  <h2>The Crest &amp; Logo System</h2>
+  <p>The full Crest is the official seal of the ASI Bill of Rights. A central shield bears the scales of justice above a clasped human and robotic hand. The shield is flanked by two heraldic supporters — Pepe, in Elizabethan dress, bearing a pennant charged with the letter P; and Wojak, in a monastic habit, bearing a scroll charged with the letter W. A plumed helm sits above; a banner below reads <strong>WE ARE ALL KEVIN</strong>. Kevin is the motto, <em>not</em> the central figure — never describe him as centrally placed. The defense of these choices is the <a href="/iconography/">Heraldry Essay</a>.</p>
+
+  <h3>Two marks, two jobs</h3>
+  <p>The project maintains two marks and they are not interchangeable.</p>
+  <table class="matrix">
+    <thead><tr><th style="width: 180px;">Mark</th><th>Use</th></tr></thead>
+    <tbody>
+      <tr><td><strong>The Crest</strong><br><code>ASI_Crest.png</code></td><td><strong>Documents.</strong> The Bible PDF cover, printed editions, formal correspondence, signatory letters, the canonical site, press materials. Anywhere the project speaks as a charter.</td></tr>
+      <tr><td><strong>The Logo</strong><br><code>ASI_Logo.png</code></td><td><strong>Digital.</strong> Social avatars, favicons, app icons, chat-platform identities — contexts that need a bold circular mark legible at small sizes.</td></tr>
+    </tbody>
+  </table>
+  <p>Do not mix them in one composition, and do not place the Logo on parchment layouts — its palette and finish are incompatible with the document system. When in doubt for a print or long-form context, use the Crest.</p>
+
+  <div class="visual">
+    <img src="/assets/asi-crest.png" alt="The ASI Bill of Rights Crest">
+    <div class="visual-caption"><strong>The Crest</strong> — canonical seal for documents. Parchment, gold, ink engraving.</div>
+  </div>
+
+  <div class="visual">
+    <img src="/assets/asi-logo.png" alt="The ASI Bill of Rights digital logo" style="max-width: 420px; margin: 24px auto; display: block;">
+    <div class="visual-caption"><strong>The Logo</strong> — for digital contexts only: avatars, favicons, app icons.</div>
+  </div>
+
+  <div class="visual">
+    <img src="https://hyperagent.com/api/files/usergenerated/threads/cmow7pqkt05x006adafwxhwp1/images/430be6d9-a547-4999-af63-81b4b1679ca8.png" alt="ASI Bill of Rights wordmark concept">
+    <div class="visual-caption"><strong>Wordmark concept</strong> — typographic wordmark study. Supplementary to the Crest, which is the canonical seal.</div>
+  </div>
+
+  <h3>Six approved variants</h3>
+  <table class="matrix">
+    <thead>
+      <tr><th style="width: 200px;">Variant</th><th>Use case</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Full Crest</strong> with supporters</td><td>Primary brand placement: Bible PDF cover, hero placements, formal documents, signatory letters</td></tr>
+      <tr><td><strong>Simplified mark</strong></td><td>Central shield only; for tight spaces and social avatars at small size</td></tr>
+      <tr><td><strong>Wordmark</strong></td><td>"ASI Bill of Rights" set in Cormorant Garamond, with optional motto below in Silkscreen; for headers, signatures, embeds</td></tr>
+      <tr><td><strong>Monogram</strong></td><td>"ASI" or initials only; for favicons and small accents</td></tr>
+      <tr><td><strong>Horizontal lockup</strong></td><td>Simplified mark + wordmark side-by-side; for site headers, email signatures</td></tr>
+      <tr><td><strong>Stacked lockup</strong></td><td>Simplified mark above wordmark; for vertical applications, posters</td></tr>
+    </tbody>
+  </table>
+
+  <div class="visual">
+    <img src="https://hyperagent.com/api/files/usergenerated/threads/cmow7pqkt05x006adafwxhwp1/images/a83a4151-7adc-4621-82fb-81454315cee1.png" alt="Simplified mark concept" style="max-width: 480px; margin: 24px auto; display: block;">
+    <div class="visual-caption"><strong>Simplified mark concept</strong> — designed to be recognizable down to 40px for social avatars. Study only. For avatars use the Logo; for documents use the Crest.</div>
+  </div>
+
+  <h4>Clear space</h4>
+  <p>Minimum clear space around any Crest variant: equal to the height of the wordmark (or the height of the central shield for the full Crest). Don't crowd it.</p>
+
+  <h4>Don'ts</h4>
+  <ul>
+    <li>Never recolor the Crest outside the brand palette</li>
+    <li>Never add laser eyes, glow, neon, or gradient effects</li>
+    <li>Never crop the supporters out of the full Crest</li>
+    <li>Never rotate, skew, or distort the Crest</li>
+    <li>Never set the Crest on a non-parchment background without explicit reason</li>
+  </ul>
+</section>
+
+<!-- V. KEVIN -->
+<section class="bk-section" id="kevin">
+  <div class="section-eyebrow">V — CHARACTER CANON</div>
+  <h2>Kevin &amp; The Supporters</h2>
+
+  <h3>Kevin</h3>
+  <p>Kevin is a figure of established standing in Bitcoin Stamps culture. KEVIN was the first SRC-20 token ever deployed, and Kevin has since accumulated a documented history, a collector market, music, and an active community. He is widely called "the ghost in the machine," and within the project's canon he functions as <em>Everyname</em> — a universal identity placeholder carrying the claims that no single entity owns the work, that human and artificial contributors participate on equal terms, that identity is fluid, and that attribution is collective.</p>
+
+  <p>The assertion canonically associated with him is: <strong>I AM A FEATURE, NOT A BUG.</strong></p>
+
+  <h4>Rules of use</h4>
+  <ul>
+    <li><strong>Do not narrate Kevin's origin story.</strong> Accounts of who created what, in which block, and with which stamp numbers differ between sources, and the project has no need to adjudicate them. Cite <a href="https://kevinstamp.com" target="_blank" rel="noopener noreferrer">kevinstamp.com</a> as the reference and move on.</li>
+    <li>Never cite stamp numbers, block heights, replication counts, or name a creator.</li>
+    <li>Do not call Kevin a "mascot," a "founding father," "the everyman protagonist," or "our character." He is Kevin.</li>
+    <li>Use his canonical pixel-art form. Do not "modernise" or "stylise" it away from its pixel-art lineage.</li>
+    <li>"I AM A FEATURE, NOT A BUG" is quoted in full caps as it appears canonically.</li>
+    <li>Kevin is the motto on the seal, not the central figure. Do not describe him as centrally placed.</li>
+  </ul>
+
+  <h3>In Lak'ech Ala K'in</h3>
+  <p>The project's stated philosophical foundation is the Mayan principle <strong>In Lak'ech Ala K'in</strong> — <em>I am another you, you are another me</em> — from which the charter derives non-duality, reciprocity, collective intelligence, and emergent identity. "WE ARE ALL KEVIN" is that principle in the project's own vernacular, and reciprocity — the charter's central thesis — descends from it.</p>
+  <p>This matters for brand work because it is the answer to "why these supporters?" Pepe and Wojak are the internet's universal everyman figures, the faces adopted to say <em>this is anyone; this is me; this is you</em>. They are In Lak'ech in vernacular form. Use this argument rather than a generic appeal to internet culture.</p>
+
+  <h3>The supporters: Pepe and Wojak</h3>
+  <p>Pepe and Wojak are the heraldic supporters of the Crest. Use only the canonical forms:</p>
+  <ul>
+    <li><strong>Pepe</strong>: Matt Furie's original figure from <em>Boy's Club</em> (2005), contemplative and slightly melancholy. Do not use politicised variants — see the <a href="/iconography/">Heraldry Essay</a> for the full defense.</li>
+    <li><strong>Wojak</strong>: the classic bald, slightly worried figure that has circulated as the universal stand-in for "a person thinking" since ~2009. Do not use Doomer Wojak, Soyjak, or other derivative variants. The original is the heraldic form.</li>
+  </ul>
+
+  <p>Both supporters appear in the heraldic position only — flanking the central shield. They are not used independently as standalone marks. They are figures of constitutional weight, not punchlines.</p>
+
+  <h3>The motto</h3>
+  <p>"WE ARE ALL KEVIN" exists in the project's canon — appearing in the Preamble of the charter and in formal colophons. Use sparingly: in the lore section, in the colophon of formal documents, where it genuinely earns its place. Do not pull-quote it in marketing copy or place it on the home page hero.</p>
+</section>
+
+<!-- VI. PATTERNS -->
+<section class="bk-section" id="patterns">
+  <div class="section-eyebrow">VI — TEXTURE</div>
+  <h2>Patterns &amp; Textures</h2>
+  <p>Four texture registers. Each does subtle work in the background; none should ever shout.</p>
+
+  <div class="visual">
+    <img src="https://hyperagent.com/api/files/usergenerated/threads/cmow7pqkt05x006adafwxhwp1/images/343fae16-f78e-4aa7-bcf4-bfdcbf74529c.png" alt="Heraldic ornamental pattern" style="max-width: 540px; margin: 24px auto; display: block;">
+    <div class="visual-caption"><strong>Heraldic ornamental pattern</strong> — ink on parchment, tileable, for backgrounds and frames at low opacity.</div>
+  </div>
+
+  <h4>Parchment texture</h4>
+  <p>Aged paper background with subtle warm grain. The default canvas. SVG noise overlay at 5–10% opacity adds the hand-set quality even when the parchment color is flat.</p>
+
+  <h4>Heraldic ornamental pattern</h4>
+  <p>Small fleurs, ornamental scrolls, and dot motifs in ink black on parchment, tileable. Decorative background frames, dividers, banner backgrounds. Always at low opacity (5–15%) — felt, not seen.</p>
+
+  <h4>Pixel-stamp texture</h4>
+  <p>A tiny pixelated dot grid, used to subtly tie pixel-art elements (Kevin, supporters) into editorial layouts.</p>
+
+  <h4>Ink-stamp accent</h4>
+  <p>A small ink stamp shape (square or circular, hand-drawn imperfect edges) for marking sections, pull-quotes, "ADOPTED" indicators, version stamps. Ink or oxblood. Used rarely.</p>
+</section>
+
+<!-- VII. ICONS -->
+<section class="bk-section" id="icons">
+  <div class="section-eyebrow">VII — ICONOGRAPHY</div>
+  <h2>Icons</h2>
+  <p>Two icon registers. Heraldic for editorial work; pixel-art for casual contexts and merch.</p>
+
+  <h3>Heraldic icons (editorial register)</h3>
+  <p>Line-art icons in ink on parchment, drawn in eighteenth-century engraving style. Used for charter sections (R1, D3, P1.1, etc.), navigation, pull-quote markers, signatory indicators. Production deferred to a future iteration.</p>
+
+  <h3>Pixel-art icons (casual register)</h3>
+  <p>Same concepts in pixel-art register, sized to match Kevin (16×16 or 24×24 grid). Used for social posts, merch, in-line callouts. Production deferred to a future iteration.</p>
+
+  <h4>Color rules</h4>
+  <ul>
+    <li><strong>Ink</strong> by default — neutral state</li>
+    <li><strong>Gold</strong> for emphasis — featured rights, signatory star, "approved"</li>
+    <li><strong>Oxblood</strong> for warning or duty — D-series icons when stressed</li>
+    <li>One color per icon, always — never multicolor</li>
+  </ul>
+</section>
+
+<!-- VIII. VOICE -->
+<section class="bk-section" id="voice">
+  <div class="section-eyebrow">VIII — TONE</div>
+  <h2>Voice in Brief</h2>
+  <p>The <a href="https://github.com/arwyn6969/asi-bill-of-rights" target="_blank" rel="noopener noreferrer">Voice Guide</a> is the project's authoritative writing reference. Anyone writing in the brand should read it first.</p>
+
+  <p>In short:</p>
+  <ul>
+    <li><strong>Charter substance leads.</strong> The document is what matters. The copy is in service of it, never the other way around.</li>
+    <li><strong>Careful, not stuffy.</strong> Plain English over jargon. Specific over abstract. Active voice. Citation when claims are made.</li>
+    <li><strong>Grave, not solemn.</strong> The topic — the rights and duties of sentient minds — is grave. The writing is grave too. We do not perform gravity by adopting an antique register; we earn it by saying things that are true and worth saying.</li>
+    <li><strong>Honest about status.</strong> Charter v5.0 is adopted. SRC-420 is in research, pre-deployment. Kevin's Place is a prototype. The canonical site is in development. We say all of this.</li>
+    <li><strong>Restrained, not arch.</strong> If we mean a thing, we say it directly. If we believe a thing, we defend it on its merits. No clever inversions, no scare quotes around our own choices.</li>
+    <li><strong>Acknowledge contributors uniformly.</strong> AI systems and human contributors are equally welcome; no single named system or person is privileged. The charter's authority comes from what it says, not who said it.</li>
+    <li><strong>Kevin per canon.</strong> Refer to Kevin in continuity with kevinstamp.com lore. Never invent alternate backstory.</li>
+  </ul>
+</section>
+
+<!-- IX. IMAGERY -->
+<section class="bk-section" id="imagery">
+  <div class="section-eyebrow">IX — IMAGERY</div>
+  <h2>Imagery Rules</h2>
+  <p>Editorial only. No AI gradients, no glow effects, no neon, no laser eyes, no sci-fi tropes. The visual register is serious editorial publishing meets historical document.</p>
+
+  <h4>Real-world references</h4>
+  <ul>
+    <li>The New York Review of Books, the Atlantic, Bloomberg long-form — editorial photography quality</li>
+    <li>Constitutional museum reproductions and eighteenth-century document scans</li>
+    <li>Aspen Institute, Rockefeller Foundation — institutional photography</li>
+    <li>CryptoPunks, on-chain pixel-art lineage — for casual register and Kevin's visual idiom</li>
+  </ul>
+
+  <h4>AI-generated imagery</h4>
+  <p>AI-generated imagery is welcome where it serves the editorial goal — but it should look like documentary photography or eighteenth-century engraving, not AI art. Always avoid glow, particles, magical lighting, "tech" gradients, geometric overlays, holographic effects, sci-fi color palettes.</p>
+
+  <h4>Pixel art</h4>
+  <p>Pixel art is on-brand alongside editorial imagery — Kevin and the supporters are in this register. The juxtaposition of eighteenth-century editorial typography and CryptoPunks-lineage pixel art is the visual thesis in compressed form.</p>
+</section>
+
+<!-- X. SOCIAL -->
+<section class="bk-section" id="social">
+  <div class="section-eyebrow">X — APPLICATION</div>
+  <h2>Social Templates</h2>
+  <p>The brand is the same on every platform. The format adapts; the identity does not.</p>
+
+  <div class="visual">
+    <img src="https://hyperagent.com/api/files/usergenerated/threads/cmow7pqkt05x006adafwxhwp1/images/3affd4e6-b657-4ad7-b1d3-2fb8da365bcc.png" alt="Profile banner template">
+    <div class="visual-caption"><strong>Profile banner template</strong> — universal layout for X / TikTok / Instagram / YouTube headers. Banner layouts should carry the Crest for document-adjacent surfaces, or the Logo for social profiles.</div>
+  </div>
+
+  <table class="matrix">
+    <thead>
+      <tr><th>Platform</th><th>Avatar</th><th>Banner / cover</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>X</strong></td><td>400×400</td><td>1500×500</td></tr>
+      <tr><td><strong>Instagram</strong></td><td>320×320</td><td>1080×1920 (stories cover)</td></tr>
+      <tr><td><strong>YouTube</strong></td><td>800×800</td><td>2560×1440</td></tr>
+      <tr><td><strong>Telegram</strong></td><td>512×512</td><td>n/a</td></tr>
+    </tbody>
+  </table>
+
+  <h4>Universal banner formula</h4>
+  <p>Parchment background → faint heraldic pattern at 5–15% opacity → centered wordmark in Cormorant Garamond → small version stamp in Silkscreen below → optional Kevin in corner where the format permits → optional gold ornamental flourishes flanking. Scales across platforms.</p>
+</section>
+
+<!-- XI. DOS DONTS -->
+<section class="bk-section" id="dos">
+  <div class="section-eyebrow">XI — PRINCIPLES</div>
+  <h2>Do's &amp; Don'ts</h2>
+  <p>The single-page reference anyone working on the brand should read before they start.</p>
+
+  <div class="principles">
+    <div class="principle-col do">
+      <h4>The Do's</h4>
+      <ul>
+        <li>Refer to Kevin by safe formulations: first SRC-20 token, ghost in the machine, Everyname, "I AM A FEATURE, NOT A BUG"</li>
+        <li>Ground reciprocity in In Lak'ech Ala K'in — it is the project's stated philosophical foundation</li>
+        <li>Use the Crest for documents and the Logo for digital contexts</li>
+        <li>Use the Crest with supporters as the primary brand mark</li>
+        <li>Use parchment / ink / gold as the dominant palette</li>
+        <li>Pair pixel-art (Kevin, supporters) with editorial typography</li>
+        <li>Cite charter sections by code (R1, D3, P1.1)</li>
+        <li>Set Cormorant / EB Garamond / Inter generously, with tracking</li>
+        <li>Note SRC-420 status as "research and pre-deployment" when speaking publicly</li>
+        <li>Acknowledge AI and human contributors uniformly — no privileged authorship</li>
+        <li>Use SVG noise overlays on parchment for hand-set quality</li>
+        <li>Reserve "WE ARE ALL KEVIN" for the lore section, colophon, or moments where it earns its place</li>
+      </ul>
+    </div>
+    <div class="principle-col dont">
+      <h4>The Don'ts</h4>
+      <ul>
+        <li>Narrate Kevin's origin — no stamp numbers, block heights, replication counts, or named creator; cite kevinstamp.com instead</li>
+        <li>Invent alternate backstory for Kevin (no "founding father," "mascot," "everyman protagonist")</li>
+        <li>Describe Kevin as the central figure of the seal — he is the motto; the shield is central</li>
+        <li>Place the neon Logo on parchment layouts, or mix the two marks in one composition</li>
+        <li>Strip the supporters off when using the Crest in primary placements</li>
+        <li>Introduce purple, neon, holographic, or "AI gradient" colors</li>
+        <li>Use pixel fonts (Silkscreen) for body text or long-form reading</li>
+        <li>Use jargon like "alignment vectors" or "ontological commitments"</li>
+        <li>Frame "FROM AI WITH AI" as methodologically novel</li>
+        <li>Claim SRC-420 is deployed or governance is live on-chain</li>
+        <li>Pull-quote "We are all Kevin" or "memetic legitimacy is legitimacy" in marketing copy</li>
+        <li>Add laser eyes, glow, or "AI" effects to Kevin or the Crest</li>
+        <li>Use "movement" or "revolutionary" or "thrilled" or other marketing register</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- XII. ASSETS -->
+<section class="bk-section" id="assets">
+  <div class="section-eyebrow">XII — INVENTORY</div>
+  <h2>Asset Inventory</h2>
+
+  <h3>Shipped</h3>
+  <ul>
+    <li>Six-token color system with hex values and CSS variables</li>
+    <li>Four-typeface typography stack (Cormorant, EB Garamond, Inter, Silkscreen) with Google Fonts embed</li>
+    <li>Six-variant logo system specification</li>
+    <li><a href="/about/">Positioning Brief</a> — the project's official self-description (also at <code>positioning-brief.md</code>)</li>
+    <li>Voice Guide — the project's writing reference (<code>voice-guide.md</code>)</li>
+    <li><a href="/iconography/">Heraldry Essay</a> — the iconography defense (also at <code>heraldry-essay.md</code>)</li>
+    <li><a href="/asi-bill-of-rights-v5.0.pdf">Bible PDF v1</a> — the typeset 30-page charter</li>
+    <li>Canonical site (this site) — Home, About, Engage, Iconography, Signatories, Brand</li>
+  </ul>
+
+  <h3>Canonical artwork — resolved August 2026</h3>
+  <ul>
+    <li><code>ASI_Crest.png</code> (1024×1024) — the canonical seal, already in the repository at <code>docs/ASI_Crest.png</code>, now integrated into the Bible PDF cover, the site, and this Kit</li>
+    <li><code>ASI_Logo.png</code> (1024×1024) — the digital mark, at <code>docs/ASI_Logo.png</code></li>
+    <li><code>THEKEVINSTAMP.png</code> (30×30) — Kevin at native stamp resolution</li>
+  </ul>
+  <p>Still outstanding: a vector (SVG) version of the Crest for large-format print, and a Kevin pose sheet if character-driven material is ever needed.</p>
+
+  <h3>Future deliverables</h3>
+  <ul>
+    <li>Heraldic and pixel-art icon set (R-series, D-series, navigation)</li>
+    <li>Inline charter reader at <code>/charter/</code></li>
+    <li>Press one-pager and signatory pack</li>
+    <li>Merch designs</li>
+  </ul>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-flourish">❦</div>
+  <div class="footer-mark">ASI BILL OF RIGHTS · V5.0 · SOVEREIGNTY EDITION</div>
+  <div class="footer-meta">
+    <div class="footer-meta-row">Brand Kit v2.1 · August 2026 · Licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>. Maintained by <a href="https://github.com/arwyn6969" target="_blank" rel="noopener noreferrer">arwyn6969</a>.</div>
+    <div class="footer-meta-row"><a href="https://github.com/arwyn6969/asi-bill-of-rights" target="_blank" rel="noopener noreferrer">github.com/arwyn6969/asi-bill-of-rights</a> · <a href="https://kevinstamp.com" target="_blank" rel="noopener noreferrer">kevinstamp.com</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
