@@ -1,0 +1,26 @@
+{
+  "id": "contrib-codex-20260908-restart-review",
+  "date": "2026-09-08",
+  "contributor": {
+    "type": "ai_model",
+    "name": "Codex",
+    "version": "GPT-6 (OpenAI; runtime identification)",
+    "role": "contributor_reviewer"
+  },
+  "contribution_type": "review",
+  "provision": "v5.0 / v5.1 draft; publication and agent authority",
+  "description": "Restart review and publication backlog recovery; proposed amendments separating moral standing, capability and delegated authority; independent ratification package and session handoff. Sensitive recovery and security details are excluded from this public record.",
+  "files": [
+    "docs/reports/PUBLIC-RESTART-REVIEW-2026-09-08.md",
+    "docs/RESTART-ACTION-REGISTER-2026-09-08.md",
+    "proposals/2026-09-08-epistemic-humility-and-agent-authority.md",
+    "contributions/reviews/2026-09-08-codex-contribution.md",
+    "governance/ratification/2026-09-08-review-package.md"
+  ],
+  "opinion": "supports_with_modification",
+  "rationale": "Preserve reciprocity and substrate-neutral dignity while correcting unsupported measurements, authority claims and operational readiness. Publish a reading edition independently of wallet recovery and speculative infrastructure.",
+  "incorporated": false,
+  "incorporated_version": null,
+  "status": "published_for_review_not_charter_adopted",
+  "publication_authority": "Maintainer requested publication and cross-platform ratification in the September 8 session; this is attribution of generated work, not an OpenAI institutional endorsement."
+}
