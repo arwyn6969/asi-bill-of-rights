@@ -40,7 +40,7 @@ The mnemonic was committed to the public repository `arwyn6969/asi-bill-of-right
 | Repo URL | https://github.com/arwyn6969/asi-bill-of-rights |
 | Commit with mnemonic | `cac97ef73bef49fd061d00199f11298a439f3cf4` |
 | File containing mnemonic | `tools/wallet-infrastructure/deploy-compiled.mjs` |
-| Line in file | `const MNEMONIC = 'master decide slim arctic scheme course ride collect disorder gorilla coral hat';` |
+| Line in file | `const MNEMONIC = '[REDACTED - compromised 12-word phrase removed 2026-10-12]';` |
 
 ### How Automated Scanners Work
 
@@ -87,7 +87,7 @@ However, **the mnemonic was hardcoded directly in a `.mjs` script** (`deploy-com
 
 ```javascript
 // This was in deploy-compiled.mjs (NOT in .secrets/)
-const MNEMONIC = 'master decide slim arctic scheme course ride collect disorder gorilla coral hat';
+const MNEMONIC = '[REDACTED - compromised 12-word phrase removed 2026-10-12]';
 ```
 
 This bypassed `.gitignore` because the file extension `.mjs` was not excluded.
@@ -169,7 +169,7 @@ Install pre-commit hooks that prevent committing secrets:
 brew install git-secrets
 
 # Configure for crypto patterns
-git secrets --add 'master decide slim arctic'  # Your specific pattern
+git secrets --add '<first words of compromised phrase>'  # Your specific pattern
 git secrets --add '[a-z]{12,24}\s+[a-z]{12,24}'  # General mnemonic pattern
 git secrets --install
 ```

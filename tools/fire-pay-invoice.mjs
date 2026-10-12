@@ -4,11 +4,13 @@
  * 
  * Usage: node fire-pay-invoice.mjs <payAddress> <amountSats>
  * 
- * SECURITY: This script reads TREASURY_MNEMONIC from ../.env
+ * SECURITY: By default the mnemonic is typed at a hidden prompt and never read
+ *   from disk. Reading TREASURY_MNEMONIC from .env is opt-in (--from-env-file)
+ *   and refused unless the file is owner-only (chmod 600).
  * AUTHORIZED BY: Arwyn Hughes (project custodian) in direct conversation
  * 
  * This script:
- *  1. Loads mnemonic from .env
+ *  1. Loads mnemonic (hidden prompt, or .env with --from-env-file)
  *  2. Derives BIP84 (bc1q) key at m/84'/0'/0'/0/0
  *  3. Fetches UTXOs from mempool.space API
  *  4. Builds, signs, and DRY-RUN displays the transaction
@@ -47,9 +49,15 @@ if (!PAY_ADDRESS || !AMOUNT_SATS) {
 const FEE_RATE = 5; // sat/vbyte
 
 // --- LOAD MNEMONIC ---
-function loadMnemonic() {
+const FROM_ENV_FILE = process.argv.includes('--from-env-file');
+
+function loadMnemonicFromEnvFile() {
   if (!fs.existsSync(ENV_PATH)) {
     throw new Error(`.env file not found at ${ENV_PATH}`);
+  }
+  const mode = fs.statSync(ENV_PATH).mode & 0o777;
+  if (mode & 0o077) {
+    throw new Error(`Refusing to read ${ENV_PATH}: permissions ${mode.toString(8)} allow other users. Run: chmod 600 ${ENV_PATH}`);
   }
   const envContent = fs.readFileSync(ENV_PATH, 'utf8');
   const match = envContent.match(/TREASURY_MNEMONIC="([^"]+)"/);
@@ -57,6 +65,43 @@ function loadMnemonic() {
     throw new Error('TREASURY_MNEMONIC not found in .env');
   }
   return match[1];
+}
+
+function promptHidden(question) {
+  return new Promise((resolve, reject) => {
+    if (!process.stdin.isTTY) {
+      reject(new Error('No terminal for hidden prompt. Run interactively, or pass --from-env-file.'));
+      return;
+    }
+    process.stdout.write(question);
+    const stdin = process.stdin;
+    stdin.setRawMode(true);
+    stdin.resume();
+    stdin.setEncoding('utf8');
+    let input = '';
+    const onData = (ch) => {
+      if (ch === '\r' || ch === '\n' || ch === '\u0004') {
+        stdin.setRawMode(false);
+        stdin.pause();
+        stdin.removeListener('data', onData);
+        process.stdout.write('\n');
+        resolve(input.trim().replace(/\s+/g, ' '));
+      } else if (ch === '\u0003') {
+        stdin.setRawMode(false);
+        process.exit(130);
+      } else if (ch === '\u007f' || ch === '\b') {
+        input = input.slice(0, -1);
+      } else {
+        input += ch;
+      }
+    };
+    stdin.on('data', onData);
+  });
+}
+
+async function loadMnemonic() {
+  if (FROM_ENV_FILE) return loadMnemonicFromEnvFile();
+  return promptHidden('Treasury mnemonic (input hidden): ');
 }
 
 // --- DERIVE KEY ---
@@ -126,9 +171,9 @@ async function main() {
   
   // 1. Load mnemonic
   console.log('[1/6] Loading treasury mnemonic...');
-  const mnemonic = loadMnemonic();
+  const mnemonic = await loadMnemonic();
   if (!bip39.validateMnemonic(mnemonic)) {
-    throw new Error('Invalid mnemonic in .env');
+    throw new Error('Invalid mnemonic');
   }
   console.log('  ✅ Valid 24-word mnemonic loaded');
   

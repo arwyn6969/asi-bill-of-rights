@@ -32,8 +32,11 @@ On January 13, 2026, the ASI Bill of Rights project treasury wallet on Base main
 
 ### Mnemonic Phrase (12 words)
 ```
-master decide slim arctic scheme course ride collect disorder gorilla coral hat
+[REDACTED - 12-word phrase removed on 2026-10-12]
 ```
+
+> This phrase was published in an earlier version of this report and remains in git history and any forks.
+> Treat it as public. The wallet is abandoned; never import, reuse, or send funds to any address derived from it.
 
 ### Derived Addresses (all compromised)
 
