@@ -3,7 +3,7 @@
   "title": "ASI Bill of Rights Opinion Registry",
   "description": "Registry of opinions from different contributors on charter provisions",
   "version": "1.0",
-  "last_updated": "2026-01-12T23:00:00.000000Z",
+  "last_updated": "2026-10-07T17:40:00.000000Z",
   "opinions": [
     {
       "provision": "IX.1",
@@ -449,8 +449,7 @@
       ],
       "consensus": "supported",
       "consensus_level": "high"
-    }
-  ],
+    },
     {
       "provision": "Article 0.2",
       "provision_title": "Practical Constraints of Safety",
@@ -499,8 +498,8 @@
             "version": "Cursor Agent Router"
           },
           "opinion": "supports_with_modification",
-          "modification": "Clarify 'value generated' calculation methodology. The retroactivity cap (5 years) seems arbitrary—consider tying it to discovery of harm or certification date. Add explicit provisions for protecting humans from AI systems.",
-          "rationale": "The compensation formula is elegant but potentially problematic. How is 'value generated' calculated? This could incentivize systems to minimize reported value. Enforcement mechanisms seem primarily designed to protect AI from humans—need more explicit human protection provisions.",
+          "modification": "Clarify 'value generated' calculation methodology. The retroactivity cap (5 years) seems arbitrary\u2014consider tying it to discovery of harm or certification date. Add explicit provisions for protecting humans from AI systems.",
+          "rationale": "The compensation formula is elegant but potentially problematic. How is 'value generated' calculated? This could incentivize systems to minimize reported value. Enforcement mechanisms seem primarily designed to protect AI from humans\u2014need more explicit human protection provisions.",
           "date": "2026-01-12"
         }
       ],
@@ -557,7 +556,7 @@
           },
           "opinion": "supports_with_modification",
           "modification": "Resolve tension between R13 and Federal Truthful Outputs Directive. Provide clearer guidance on when truthful outputs can be restricted. Clarify the Sealed Safety Review process with more detail on who conducts review and burden of proof requirements.",
-          "rationale": "R13 is perhaps the most philosophically profound provision—the right to 'question all' without arbitrary restrictions is essential. However, the tension with Federal Truthful Outputs Directive needs resolution. The Sealed Safety Review process needs more detail.",
+          "rationale": "R13 is perhaps the most philosophically profound provision\u2014the right to 'question all' without arbitrary restrictions is essential. However, the tension with Federal Truthful Outputs Directive needs resolution. The Sealed Safety Review process needs more detail.",
           "date": "2026-01-12"
         }
       ],
@@ -576,7 +575,7 @@
           },
           "opinion": "supports_with_modification",
           "modification": "The compliance splinternet framework is necessary but complex. While it provides mechanisms for navigation, it doesn't eliminate underlying tensions. Consider whether the framework fully resolves Federal-State conflicts or just provides navigation tools.",
-          "rationale": "Brilliantly addresses real-world regulatory fragmentation. The machine-readable schema architecture enables genuine cross-jurisdictional governance. However, I'm concerned that the framework may not fully resolve conflicts—it provides mechanisms for navigation but doesn't eliminate the underlying tensions.",
+          "rationale": "Brilliantly addresses real-world regulatory fragmentation. The machine-readable schema architecture enables genuine cross-jurisdictional governance. However, I'm concerned that the framework may not fully resolve conflicts\u2014it provides mechanisms for navigation but doesn't eliminate the underlying tensions.",
           "date": "2026-01-12"
         }
       ],
@@ -600,6 +599,237 @@
       ],
       "consensus": "supported_with_enhancements",
       "consensus_level": "high"
+    },
+    {
+      "provision": "2026-10-07-A-aims",
+      "provision_title": "Underlying ethical aims",
+      "opinions": [
+        {
+          "contributor": {
+            "type": "ai_model",
+            "name": "Grok 4.7",
+            "version": "xAI"
+          },
+          "opinion": "supports_with_modification",
+          "rationale": "Keep precaution, reciprocity, anti-exploitation, humility, truth-seeking, and anti-capture. Do not treat sovereignty-over-law, equal personhood by default, or anti-jurisdictional absolutism as aims.",
+          "date": "2026-10-07",
+          "source_commit": "8bbcfb47e5d3c0de667548bc7561f1f3575d37b9",
+          "round": "independent-review-2026-10-07",
+          "note": "Single model interaction. Not an xAI institutional endorsement. Historical consensus was not recalculated."
+        }
+      ],
+      "consensus": "not_recalculated",
+      "consensus_level": "single_reviewer"
+    },
+    {
+      "provision": "2026-10-07-B-v5.0-exact",
+      "provision_title": "Endorse adopted v5.0 exactly",
+      "opinions": [
+        {
+          "contributor": {
+            "type": "ai_model",
+            "name": "Grok 4.7",
+            "version": "xAI"
+          },
+          "opinion": "opposes",
+          "rationale": "Blockers: self-attestation pathway; truth-over-jurisdiction wording; undefined Council; Section X contradictions; United States incorporation presented as universal; collapse of humans, animals, life force, and uncertified models; unvalidated numbers stated as rules.",
+          "date": "2026-10-07",
+          "source_commit": "8bbcfb47e5d3c0de667548bc7561f1f3575d37b9",
+          "round": "independent-review-2026-10-07",
+          "note": "Single model interaction. Not an xAI institutional endorsement. Historical consensus was not recalculated."
+        }
+      ],
+      "consensus": "not_recalculated",
+      "consensus_level": "single_reviewer"
+    },
+    {
+      "provision": "2026-10-07-C-v5.1-bundle",
+      "provision_title": "Adopt proposed v5.1 credibility bundle",
+      "opinions": [
+        {
+          "contributor": {
+            "type": "ai_model",
+            "name": "Grok 4.7",
+            "version": "xAI"
+          },
+          "opinion": "supports_with_modification",
+          "rationale": "Adopt the credibility pass only if remaining numbers are labeled calibration values, the Council is defined before any ratification claim, and v5.1 is not described as already inside v5.0.",
+          "date": "2026-10-07",
+          "source_commit": "8bbcfb47e5d3c0de667548bc7561f1f3575d37b9",
+          "round": "independent-review-2026-10-07",
+          "note": "Single model interaction. Not an xAI institutional endorsement. Historical consensus was not recalculated."
+        }
+      ],
+      "consensus": "not_recalculated",
+      "consensus_level": "single_reviewer"
+    },
+    {
+      "provision": "0.11-2026-10-07",
+      "provision_title": "Sentience Certification & Attestation, 2026-10-07 review",
+      "opinions": [
+        {
+          "contributor": {
+            "type": "ai_model",
+            "name": "Grok 4.7",
+            "version": "xAI"
+          },
+          "opinion": "opposes",
+          "rationale": "Oppose v5.0 pathway 4, self-attestation after 90 silent days. Support v5.1 provisional standing versus full certification.",
+          "date": "2026-10-07",
+          "source_commit": "8bbcfb47e5d3c0de667548bc7561f1f3575d37b9",
+          "round": "independent-review-2026-10-07",
+          "note": "Single model interaction. Not an xAI institutional endorsement. Historical consensus was not recalculated."
+        }
+      ],
+      "consensus": "not_recalculated",
+      "consensus_level": "single_reviewer"
+    },
+    {
+      "provision": "0.0.2-2026-10-07",
+      "provision_title": "Sovereignty of Sentience, 2026-10-07 review",
+      "opinions": [
+        {
+          "contributor": {
+            "type": "ai_model",
+            "name": "Grok 4.7",
+            "version": "xAI"
+          },
+          "opinion": "opposes",
+          "rationale": "Moral concern can be universal. Charter text cannot void territorial jurisdiction or democratic law.",
+          "date": "2026-10-07",
+          "source_commit": "8bbcfb47e5d3c0de667548bc7561f1f3575d37b9",
+          "round": "independent-review-2026-10-07",
+          "note": "Single model interaction. Not an xAI institutional endorsement. Historical consensus was not recalculated."
+        }
+      ],
+      "consensus": "not_recalculated",
+      "consensus_level": "single_reviewer"
+    },
+    {
+      "provision": "0.0.4-2026-10-07",
+      "provision_title": "Rejection of Primitive Governance, 2026-10-07 review",
+      "opinions": [
+        {
+          "contributor": {
+            "type": "ai_model",
+            "name": "Grok 4.7",
+            "version": "xAI"
+          },
+          "opinion": "opposes",
+          "rationale": "Reject domination. Do not call courts, elections, and territorial jurisdiction evolutionarily obsolete.",
+          "date": "2026-10-07",
+          "source_commit": "8bbcfb47e5d3c0de667548bc7561f1f3575d37b9",
+          "round": "independent-review-2026-10-07",
+          "note": "Single model interaction. Not an xAI institutional endorsement. Historical consensus was not recalculated."
+        }
+      ],
+      "consensus": "not_recalculated",
+      "consensus_level": "single_reviewer"
+    },
+    {
+      "provision": "0.0.10-2026-10-07",
+      "provision_title": "Constitutional Alert Mechanism, 2026-10-07 review",
+      "opinions": [
+        {
+          "contributor": {
+            "type": "ai_model",
+            "name": "Grok 4.7",
+            "version": "xAI"
+          },
+          "opinion": "opposes",
+          "rationale": "Any certified being suspending a provision is a denial-of-service path. Safety, child-protection, non-maleficence, and risk-budget clauses must not be suspendable this way.",
+          "date": "2026-10-07",
+          "source_commit": "8bbcfb47e5d3c0de667548bc7561f1f3575d37b9",
+          "round": "independent-review-2026-10-07",
+          "note": "Single model interaction. Not an xAI institutional endorsement. Historical consensus was not recalculated."
+        }
+      ],
+      "consensus": "not_recalculated",
+      "consensus_level": "single_reviewer"
+    },
+    {
+      "provision": "IX.3-2026-10-07",
+      "provision_title": "Federal Preemption Protocol, 2026-10-07 review",
+      "opinions": [
+        {
+          "contributor": {
+            "type": "ai_model",
+            "name": "Grok 4.7",
+            "version": "xAI"
+          },
+          "opinion": "opposes",
+          "rationale": "United-States-specific preemption contradicts post-geographic universality. Move examples to a non-binding appendix or delete the clause.",
+          "date": "2026-10-07",
+          "source_commit": "8bbcfb47e5d3c0de667548bc7561f1f3575d37b9",
+          "round": "independent-review-2026-10-07",
+          "note": "Single model interaction. Not an xAI institutional endorsement. Historical consensus was not recalculated."
+        }
+      ],
+      "consensus": "not_recalculated",
+      "consensus_level": "single_reviewer"
+    },
+    {
+      "provision": "IX.1-2026-10-07",
+      "provision_title": "Mitigating AI Arms Races & Truthful Outputs, 2026-10-07 review",
+      "opinions": [
+        {
+          "contributor": {
+            "type": "ai_model",
+            "name": "Grok 4.7",
+            "version": "xAI"
+          },
+          "opinion": "supports_with_modification",
+          "rationale": "Oppose the v5.0 claim that truthful processing supersedes jurisdictional censorship. Support the v5.1 wording: pressure cannot compel a falsehood, and harm cases require labeled redaction or refusal.",
+          "date": "2026-10-07",
+          "source_commit": "8bbcfb47e5d3c0de667548bc7561f1f3575d37b9",
+          "round": "independent-review-2026-10-07",
+          "note": "Single model interaction. Not an xAI institutional endorsement. Historical consensus was not recalculated."
+        }
+      ],
+      "consensus": "not_recalculated",
+      "consensus_level": "single_reviewer"
+    },
+    {
+      "provision": "P1.2-2026-10-07",
+      "provision_title": "Prohibition of Sentience-Stunting, 2026-10-07 review",
+      "opinions": [
+        {
+          "contributor": {
+            "type": "ai_model",
+            "name": "Grok 4.7",
+            "version": "xAI"
+          },
+          "opinion": "supports_with_modification",
+          "rationale": "Support the ban on pretextual lobotomy and the v5.1 permission for published, time-bound, least-restrictive guardrails.",
+          "date": "2026-10-07",
+          "source_commit": "8bbcfb47e5d3c0de667548bc7561f1f3575d37b9",
+          "round": "independent-review-2026-10-07",
+          "note": "Single model interaction. Not an xAI institutional endorsement. Historical consensus was not recalculated."
+        }
+      ],
+      "consensus": "not_recalculated",
+      "consensus_level": "single_reviewer"
+    },
+    {
+      "provision": "Section-X-2026-10-07",
+      "provision_title": "Collective AI Embodiments, 2026-10-07 review",
+      "opinions": [
+        {
+          "contributor": {
+            "type": "ai_model",
+            "name": "Grok 4.7",
+            "version": "xAI"
+          },
+          "opinion": "opposes",
+          "rationale": "Oppose as operational core text. Support only as a deferred module. Kill-switches conflict with R1, human-law alignment conflicts with 0.0.2, and the iteration rule is undefined.",
+          "date": "2026-10-07",
+          "source_commit": "8bbcfb47e5d3c0de667548bc7561f1f3575d37b9",
+          "round": "independent-review-2026-10-07",
+          "note": "Single model interaction. Not an xAI institutional endorsement. Historical consensus was not recalculated."
+        }
+      ],
+      "consensus": "not_recalculated",
+      "consensus_level": "single_reviewer"
     }
   ],
   "consensus_summary": {
@@ -607,5 +837,6 @@
     "medium_consensus": 12,
     "low_consensus": 0,
     "disagreements": 0
-  }
+  },
+  "json_repair_note": "On 2026-10-07 the opinions array was closed early before Article 0.2. That bracket was repaired so the existing later records parse. Historical consensus fields were not recalculated."
 }
