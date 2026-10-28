@@ -14,7 +14,7 @@ import sys
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-SCHEMA_PATH = REPO_ROOT / "schemas" / "charter.v5.1-draft.json"
+SCHEMA_PATH = REPO_ROOT / "schemas" / (sys.argv[1] if len(sys.argv) > 1 else "charter.v5.1-draft.json")
 
 
 def load_schema() -> dict:

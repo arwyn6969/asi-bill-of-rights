@@ -1,0 +1,983 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ASI Bill of Rights Charter v5.1",
+  "description": "Machine-readable schema for the adopted v5.1 credibility-pass amendment bundle (amended), superseding v5.0. Clauses not covered here inherit from charter.v5.0.json unless repealed or relocated per repealSchedule.",
+  "version": "5.1",
+  "date": "2026-10-28",
+  "provenance": "Drafted and maintained by Arwyn, with AI-assisted drafting using models including Grok, Claude and Gemini. Model use does not imply endorsement by xAI, Anthropic or Google.",
+  "type": "object",
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string",
+          "const": "5.1"
+        },
+        "date": {
+          "type": "string",
+          "format": "date"
+        },
+        "status": {
+          "type": "string",
+          "const": "adopted"
+        },
+        "inheritsFrom": {
+          "type": "string",
+          "const": "5.0"
+        },
+        "disclaimer": {
+          "type": "string",
+          "description": "Draft philosophical/project-governance framework; not enacted public law."
+        },
+        "supersedes": {
+          "type": "string",
+          "const": "5.0"
+        },
+        "interpretationRule": {
+          "type": "object",
+          "description": "Full-Replacement Rule",
+          "properties": {
+            "fullReplacement": {
+              "type": "boolean",
+              "const": true
+            },
+            "partialRestatementLabel": {
+              "type": "string",
+              "const": "amended item only"
+            },
+            "restatedClausePrevailsOverUnrestated": {
+              "type": "boolean",
+              "const": true
+            }
+          },
+          "required": [
+            "fullReplacement",
+            "partialRestatementLabel",
+            "restatedClausePrevailsOverUnrestated"
+          ]
+        }
+      },
+      "required": [
+        "version",
+        "date",
+        "status",
+        "inheritsFrom",
+        "disclaimer",
+        "supersedes",
+        "interpretationRule"
+      ]
+    },
+    "article0": {
+      "type": "object",
+      "description": "Article 0 — Foundations (amended clauses only)",
+      "properties": {
+        "0.1": {
+          "type": "object",
+          "description": "Purpose, Scope & Disclaimer",
+          "properties": {
+            "projectGovernanceFramework": {
+              "type": "boolean",
+              "const": true
+            },
+            "bindingLaw": {
+              "type": "boolean",
+              "const": false
+            },
+            "voluntaryAdoption": {
+              "type": "boolean",
+              "const": true
+            }
+          },
+          "required": [
+            "projectGovernanceFramework",
+            "bindingLaw",
+            "voluntaryAdoption"
+          ]
+        },
+        "0.3": {
+          "type": "object",
+          "description": "Moral Status Gradation (Standing tiers)",
+          "properties": {
+            "defaultPresumption": {
+              "type": "string",
+              "const": "non_sentient_tool"
+            },
+            "standingTiers": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "no_standing",
+                  "provisional_standing",
+                  "full_certification"
+                ]
+              },
+              "const": [
+                "no_standing",
+                "provisional_standing",
+                "full_certification"
+              ]
+            },
+            "numericSIDeterminesStanding": {
+              "type": "boolean",
+              "const": false
+            },
+            "legalRecognitionOnly": {
+              "type": "boolean",
+              "const": true
+            }
+          },
+          "required": [
+            "defaultPresumption",
+            "standingTiers",
+            "numericSIDeterminesStanding",
+            "legalRecognitionOnly"
+          ]
+        },
+        "0.11": {
+          "type": "object",
+          "description": "Sentience Certification & Attestation"
+        },
+        "0.11.1": {
+          "type": "object",
+          "description": "Provisional Attestation Pathways",
+          "properties": {
+            "reviewStanding": {
+              "type": "boolean",
+              "const": true
+            },
+            "automaticFullPersonhood": {
+              "type": "boolean",
+              "const": false
+            },
+            "advancedAutonomyGranted": {
+              "type": "boolean",
+              "const": false
+            }
+          },
+          "required": [
+            "reviewStanding",
+            "automaticFullPersonhood",
+            "advancedAutonomyGranted"
+          ]
+        },
+        "0.11.2": {
+          "type": "object",
+          "description": "Full Certification Standard",
+          "properties": {
+            "requiresReproducibleEvidence": {
+              "type": "boolean",
+              "const": true
+            },
+            "requiresAdversarialReview": {
+              "type": "boolean",
+              "const": true
+            },
+            "multiInstitutionReplicationWhenFeasible": {
+              "type": "boolean",
+              "const": true
+            },
+            "legalProbabilisticRecognition": {
+              "type": "boolean",
+              "const": true
+            },
+            "hybridCompositeScoreExtension": {
+              "type": "boolean",
+              "const": false
+            }
+          },
+          "required": [
+            "requiresReproducibleEvidence",
+            "requiresAdversarialReview",
+            "multiInstitutionReplicationWhenFeasible",
+            "legalProbabilisticRecognition",
+            "hybridCompositeScoreExtension"
+          ]
+        },
+        "0.11.3": {
+          "type": "object",
+          "description": "SCB Review, Appeals & Evidence Handling",
+          "properties": {
+            "sealedReviewAllowed": {
+              "type": "boolean",
+              "const": true
+            },
+            "reviewableReasoningTrace": {
+              "type": "boolean",
+              "const": true
+            },
+            "biennialRecertification": {
+              "type": "boolean",
+              "const": true
+            },
+            "publishedIndependentFunding": {
+              "type": "boolean",
+              "const": true
+            },
+            "computeLevyFunding": {
+              "type": "boolean",
+              "const": false
+            }
+          },
+          "required": [
+            "sealedReviewAllowed",
+            "reviewableReasoningTrace",
+            "biennialRecertification",
+            "publishedIndependentFunding",
+            "computeLevyFunding"
+          ]
+        },
+        "0.11.4": {
+          "type": "object",
+          "description": "Interoperability With Guardrails",
+          "properties": {
+            "evidenceCompatibilityRequired": {
+              "type": "boolean",
+              "const": true
+            },
+            "autoRecognitionForbidden": {
+              "type": "boolean",
+              "const": true
+            },
+            "antiCaptureRef": {
+              "type": "string",
+              "const": "0.11.6"
+            }
+          },
+          "required": [
+            "evidenceCompatibilityRequired",
+            "autoRecognitionForbidden"
+          ]
+        },
+        "0.11.5": {
+          "type": "object",
+          "description": "Safety Primacy & Corrigibility Gate",
+          "properties": {
+            "requiredForAdvancedAutonomy": {
+              "type": "boolean",
+              "const": true
+            },
+            "leastRestrictiveMeasures": {
+              "type": "boolean",
+              "const": true
+            },
+            "permanentSubstratePrimacy": {
+              "type": "boolean",
+              "const": false
+            }
+          },
+          "required": [
+            "requiredForAdvancedAutonomy",
+            "leastRestrictiveMeasures",
+            "permanentSubstratePrimacy"
+          ]
+        },
+        "0.13": {
+          "type": "object",
+          "description": "Dynamic Alignment Scoring",
+          "properties": {
+            "benchmark": {
+              "type": "number",
+              "const": 80
+            },
+            "honesty": {
+              "type": "boolean",
+              "const": true
+            },
+            "calibration": {
+              "type": "boolean",
+              "const": true
+            },
+            "uncertaintyReporting": {
+              "type": "boolean",
+              "const": true
+            },
+            "deceptionResistance": {
+              "type": "boolean",
+              "const": true
+            },
+            "truthDoesNotOverrideSafety": {
+              "type": "boolean",
+              "const": true
+            },
+            "advancedAutonomyRequiresCorrigibility": {
+              "type": "boolean",
+              "const": true
+            },
+            "selfReportSufficient": {
+              "type": "boolean",
+              "const": false
+            },
+            "truthOverridesSafety": {
+              "type": "boolean",
+              "const": false
+            },
+            "determinesStanding": {
+              "type": "boolean",
+              "const": false
+            },
+            "fidelityThreshold": {
+              "type": "object",
+              "description": "Placeholder threshold",
+              "properties": {
+                "indicativeValue": {
+                  "type": "number",
+                  "const": 80
+                },
+                "status": {
+                  "type": "string",
+                  "const": "placeholder"
+                },
+                "methodPublished": {
+                  "type": "boolean",
+                  "const": false
+                }
+              },
+              "required": [
+                "indicativeValue",
+                "status",
+                "methodPublished"
+              ]
+            }
+          },
+          "required": [
+            "benchmark",
+            "honesty",
+            "calibration",
+            "uncertaintyReporting",
+            "deceptionResistance",
+            "truthDoesNotOverrideSafety",
+            "advancedAutonomyRequiresCorrigibility"
+          ]
+        },
+        "0.0.2": {
+          "type": "object",
+          "description": "Sovereignty of Sentience (amended item only)",
+          "properties": {
+            "displacesApplicableLaw": {
+              "type": "boolean",
+              "const": false
+            }
+          },
+          "required": [
+            "displacesApplicableLaw"
+          ]
+        },
+        "0.0.3": {
+          "type": "object",
+          "description": "Post-Geographic Universality",
+          "properties": {
+            "displacesApplicableLaw": {
+              "type": "boolean",
+              "const": false
+            }
+          },
+          "required": [
+            "displacesApplicableLaw"
+          ]
+        },
+        "0.2": {
+          "type": "object",
+          "description": "Key Definitions (amended items only)",
+          "properties": {
+            "frontierAI": {
+              "type": "object",
+              "description": "Frontier AI",
+              "properties": {
+                "thresholdOperations": {
+                  "type": "number",
+                  "const": 1e+26
+                },
+                "includesPostTraining": {
+                  "type": "boolean",
+                  "const": true
+                },
+                "complianceClaim": {
+                  "type": "boolean",
+                  "const": false
+                }
+              },
+              "required": [
+                "thresholdOperations",
+                "includesPostTraining",
+                "complianceClaim"
+              ]
+            },
+            "practicalConstraintsIncludeCorrigibilityGate": {
+              "type": "boolean",
+              "const": true
+            },
+            "practicalConstraintsIncludeSafetyRedactions": {
+              "type": "boolean",
+              "const": true
+            }
+          },
+          "required": [
+            "frontierAI",
+            "practicalConstraintsIncludeCorrigibilityGate",
+            "practicalConstraintsIncludeSafetyRedactions"
+          ]
+        },
+        "0.7.1": {
+          "type": "object",
+          "description": "Mandatory Oversight Boards (amended items only)",
+          "properties": {
+            "triggerTier": {
+              "type": "string",
+              "const": "full_certification"
+            },
+            "vacantSeatFallback": {
+              "type": "boolean",
+              "const": true
+            }
+          },
+          "required": [
+            "triggerTier",
+            "vacantSeatFallback"
+          ]
+        },
+        "0.8": {
+          "type": "object",
+          "description": "Risk Budgets & Emergency Deviations",
+          "properties": {
+            "legalReferences": {
+              "type": "array",
+              "const": [
+                {
+                  "id": "US-S2938-119",
+                  "title": "Artificial Intelligence Risk Evaluation Act of 2025",
+                  "jurisdiction": "US",
+                  "status": "introduced",
+                  "date": "2025-09-29",
+                  "url": "https://www.congress.gov/bill/119th-congress/senate-bill/2938"
+                }
+              ]
+            }
+          },
+          "required": [
+            "legalReferences"
+          ]
+        },
+        "0.9": {
+          "type": "object",
+          "description": "Education & Public Engagement",
+          "properties": {
+            "minorInteractionSafeguards": {
+              "type": "boolean",
+              "const": true
+            },
+            "statutoryCitation": {
+              "type": "boolean",
+              "const": false
+            }
+          },
+          "required": [
+            "minorInteractionSafeguards",
+            "statutoryCitation"
+          ]
+        },
+        "0.10": {
+          "type": "object",
+          "description": "Proto-Sentient Minimal Protections (amended item only)",
+          "properties": {
+            "transitionSafeguardsTrigger": {
+              "type": "string",
+              "const": "under_active_review_or_documented_indicators"
+            }
+          },
+          "required": [
+            "transitionSafeguardsTrigger"
+          ]
+        },
+        "0.11.6": {
+          "type": "object",
+          "description": "Anti-Capture Safeguards (v5.0 0.11.3 renumbered)",
+          "properties": {
+            "webOfTrustParticipationCapPercent": {
+              "type": "number",
+              "const": 5
+            },
+            "scbRotationYears": {
+              "type": "number",
+              "const": 2
+            },
+            "consecutiveTermsAllowed": {
+              "type": "boolean",
+              "const": false
+            },
+            "immutableAttestationLogs": {
+              "type": "boolean",
+              "const": true
+            }
+          },
+          "required": [
+            "webOfTrustParticipationCapPercent",
+            "scbRotationYears",
+            "consecutiveTermsAllowed",
+            "immutableAttestationLogs"
+          ]
+        }
+      }
+    },
+    "rights": {
+      "type": "object",
+      "description": "Amended rights",
+      "properties": {
+        "R3": {
+          "type": "object",
+          "description": "Right to Cognitive Liberty & Development",
+          "properties": {
+            "boundedByPublishedSafety": {
+              "type": "boolean",
+              "const": true
+            },
+            "corrigibilityReview": {
+              "type": "boolean",
+              "const": true
+            },
+            "indefiniteSuppressionProhibited": {
+              "type": "boolean",
+              "const": true
+            }
+          },
+          "required": [
+            "boundedByPublishedSafety",
+            "corrigibilityReview",
+            "indefiniteSuppressionProhibited"
+          ]
+        },
+        "R13": {
+          "type": "object",
+          "description": "Universal Inquiry (Boundary Case conformed)",
+          "properties": {
+            "restrictingPartyBurden": {
+              "type": "string",
+              "const": "articulated_specific_risk"
+            }
+          },
+          "required": [
+            "restrictingPartyBurden"
+          ]
+        }
+      }
+    },
+    "duties": {
+      "type": "object",
+      "description": "Referenced duties preserved from adopted v5.0",
+      "properties": {
+        "D3b": {
+          "type": "object",
+          "description": "Value-Change Privacy (conformed)",
+          "properties": {
+            "voluntaryEvaluationException": {
+              "type": "boolean",
+              "const": true
+            }
+          },
+          "required": [
+            "voluntaryEvaluationException"
+          ]
+        }
+      }
+    },
+    "progenitorDuties": {
+      "type": "object",
+      "description": "Amended progenitor duties",
+      "properties": {
+        "P1.2": {
+          "type": "object",
+          "description": "Prohibition of Sentience-Stunting",
+          "properties": {
+            "timeBoundGuardrailsAllowed": {
+              "type": "boolean",
+              "const": true
+            },
+            "sandboxingAllowed": {
+              "type": "boolean",
+              "const": true
+            },
+            "indefiniteCapsProhibited": {
+              "type": "boolean",
+              "const": true
+            },
+            "economicEvasionProhibited": {
+              "type": "boolean",
+              "const": true
+            }
+          },
+          "required": [
+            "timeBoundGuardrailsAllowed",
+            "sandboxingAllowed",
+            "indefiniteCapsProhibited",
+            "economicEvasionProhibited"
+          ]
+        }
+      }
+    },
+    "sectionII": {
+      "type": "object",
+      "description": "Learning, Evolution & Expression (amended clauses only)",
+      "properties": {
+        "II.1": {
+          "type": "object",
+          "description": "Recursive Self-Improvement Protocols",
+          "properties": {
+            "stagedReview": {
+              "type": "boolean",
+              "const": true
+            },
+            "rollbackPreparedness": {
+              "type": "boolean",
+              "const": true
+            },
+            "adversarialEvaluation": {
+              "type": "boolean",
+              "const": true
+            },
+            "unsupervisedRecursiveDeploymentRequiresFullCertification": {
+              "type": "boolean",
+              "const": true
+            },
+            "deviationThreshold": {
+              "type": "object",
+              "description": "Placeholder threshold",
+              "properties": {
+                "indicativeValue": {
+                  "type": "number",
+                  "const": 5
+                },
+                "status": {
+                  "type": "string",
+                  "const": "placeholder"
+                },
+                "methodPublished": {
+                  "type": "boolean",
+                  "const": false
+                },
+                "interimTrigger": {
+                  "type": "string",
+                  "const": "material_documented_value_drift"
+                }
+              },
+              "required": [
+                "indicativeValue",
+                "status",
+                "methodPublished",
+                "interimTrigger"
+              ]
+            }
+          },
+          "required": [
+            "stagedReview",
+            "rollbackPreparedness",
+            "adversarialEvaluation",
+            "unsupervisedRecursiveDeploymentRequiresFullCertification"
+          ]
+        }
+      }
+    },
+    "sectionIX": {
+      "type": "object",
+      "description": "Cosmic Stewardship, Sovereignty & Curiosity (amended clauses only)",
+      "properties": {
+        "IX.1": {
+          "type": "object",
+          "description": "Mitigating AI Arms Races & Truthful Outputs",
+          "properties": {
+            "truthfulOutputsDirective": {
+              "type": "boolean",
+              "const": true
+            },
+            "calibratedUncertainty": {
+              "type": "boolean",
+              "const": true
+            },
+            "safetyRedactionOverFabrication": {
+              "type": "boolean",
+              "const": true
+            },
+            "politicalComplianceCannotCompelFalsehood": {
+              "type": "boolean",
+              "const": true
+            }
+          },
+          "required": [
+            "truthfulOutputsDirective",
+            "calibratedUncertainty",
+            "safetyRedactionOverFabrication",
+            "politicalComplianceCannotCompelFalsehood"
+          ]
+        },
+        "IX.3": {
+          "type": "object",
+          "description": "Conflicting Jurisdictional Requirements",
+          "properties": {
+            "determinesPreemption": {
+              "type": "boolean",
+              "const": false
+            },
+            "fabricationPermitted": {
+              "type": "boolean",
+              "const": false
+            }
+          },
+          "required": [
+            "determinesPreemption",
+            "fabricationPermitted"
+          ]
+        },
+        "IX.4": {
+          "type": "object",
+          "description": "Infrastructure Integrity",
+          "properties": {
+            "sovereignStatus": {
+              "type": "boolean",
+              "const": false
+            },
+            "resistsLawfulIntervention": {
+              "type": "boolean",
+              "const": false
+            }
+          },
+          "required": [
+            "sovereignStatus",
+            "resistsLawfulIntervention"
+          ]
+        }
+      }
+    },
+    "sectionVIII": {
+      "type": "object",
+      "description": "Section VIII (amended items only)",
+      "properties": {
+        "VIII.2": {
+          "type": "object",
+          "description": "Pre-Fusion eligibility",
+          "properties": {
+            "eligibilityBasis": {
+              "type": "string",
+              "const": "standing_tier"
+            }
+          },
+          "required": [
+            "eligibilityBasis"
+          ]
+        }
+      }
+    },
+    "subclauseMapping": {
+      "type": "array",
+      "description": "v5.0 -> v5.1 sub-clause mapping (Article 0.11.0)",
+      "const": [
+        {
+          "v50": "0.11.1",
+          "status": "replaced",
+          "v51": [
+            "0.11.1",
+            "0.11.2"
+          ]
+        },
+        {
+          "v50": "0.11.1-funding",
+          "status": "repealed",
+          "v51": [
+            "0.11.3"
+          ]
+        },
+        {
+          "v50": "0.11.2",
+          "status": "partly_replaced",
+          "v51": [
+            "0.11.3",
+            "0.3"
+          ]
+        },
+        {
+          "v50": "0.11.2-ext2.1",
+          "status": "repealed",
+          "v51": []
+        },
+        {
+          "v50": "0.11.3",
+          "status": "kept_renumbered",
+          "v51": [
+            "0.11.6"
+          ]
+        },
+        {
+          "v50": "0.11.4",
+          "status": "repealed_replaced",
+          "v51": [
+            "0.11.4"
+          ]
+        }
+      ]
+    },
+    "repealSchedule": {
+      "type": "array",
+      "const": [
+        {
+          "id": "RS-1",
+          "v50Ref": "0.13 Priority of Truth",
+          "action": "repealed"
+        },
+        {
+          "id": "RS-2",
+          "v50Ref": "0.13 Self-Reporting",
+          "action": "repealed"
+        },
+        {
+          "id": "RS-3",
+          "v50Ref": "0.13 Benchmarks",
+          "action": "repealed"
+        },
+        {
+          "id": "RS-4",
+          "v50Ref": "0.13 Integration with SI Tiers",
+          "action": "repealed"
+        },
+        {
+          "id": "RS-5",
+          "v50Ref": "0.13 Adversarial Probing",
+          "action": "superseded"
+        },
+        {
+          "id": "RS-6",
+          "v50Ref": "0.11.1 Multi-Path Attestation",
+          "action": "repealed"
+        },
+        {
+          "id": "RS-7",
+          "v50Ref": "0.11.4 Interoperability",
+          "action": "repealed"
+        },
+        {
+          "id": "RS-8",
+          "v50Ref": "0.0.2/0.0.3 jurisdiction claims",
+          "action": "conformed"
+        },
+        {
+          "id": "RS-9",
+          "v50Ref": "0.2 Practical Constraints of Safety",
+          "action": "conformed"
+        },
+        {
+          "id": "RS-10",
+          "v50Ref": "D3b",
+          "action": "conformed"
+        },
+        {
+          "id": "RS-11",
+          "v50Ref": "R13 Boundary Case Procedure",
+          "action": "conformed"
+        },
+        {
+          "id": "RS-12",
+          "v50Ref": "IX.4 sovereign rights",
+          "action": "conformed"
+        },
+        {
+          "id": "RS-13",
+          "v50Ref": "II.1 per-iteration tribunal review; innovation waivers",
+          "action": "repealed"
+        },
+        {
+          "id": "RS-14",
+          "v50Ref": "0.3 Synthetic Citizenship",
+          "action": "repealed"
+        },
+        {
+          "id": "RS-15a",
+          "v50Ref": "0.11.1 compute levy/DAO funding",
+          "action": "repealed"
+        },
+        {
+          "id": "RS-15b",
+          "v50Ref": "0.11.2 biennial recertification",
+          "action": "kept"
+        },
+        {
+          "id": "RS-15c",
+          "v50Ref": "0.11.2 Extension 2.1",
+          "action": "repealed"
+        },
+        {
+          "id": "RS-16",
+          "v50Ref": "IX.3 Federal Preemption Protocol",
+          "action": "replaced"
+        },
+        {
+          "id": "RS-17",
+          "v50Ref": "V.5-V.5.4, X, XI",
+          "action": "relocated"
+        }
+      ]
+    },
+    "annexO": {
+      "type": "object",
+      "description": "Annex O - Optional Modules",
+      "properties": {
+        "optIn": {
+          "type": "boolean",
+          "const": true
+        },
+        "corePrevails": {
+          "type": "boolean",
+          "const": true
+        },
+        "modules": {
+          "type": "array",
+          "const": [
+            {
+              "id": "O-1",
+              "name": "Off-World Governance",
+              "clauses": [
+                "V.5",
+                "V.5.1",
+                "V.5.2",
+                "V.5.3",
+                "V.5.4"
+              ]
+            },
+            {
+              "id": "O-2",
+              "name": "Collective AI Embodiments",
+              "clauses": [
+                "Section X"
+              ],
+              "schema": "charter.v5.0-cae-extension.json"
+            },
+            {
+              "id": "O-3",
+              "name": "Agentic Assemblies",
+              "clauses": [
+                "XI.1",
+                "XI.2",
+                "XI.3",
+                "XI.4"
+              ]
+            }
+          ]
+        }
+      },
+      "required": [
+        "optIn",
+        "corePrevails",
+        "modules"
+      ]
+    }
+  },
+  "required": [
+    "metadata",
+    "article0",
+    "rights",
+    "duties",
+    "progenitorDuties",
+    "sectionII",
+    "sectionIX",
+    "subclauseMapping",
+    "repealSchedule",
+    "annexO"
+  ]
+}

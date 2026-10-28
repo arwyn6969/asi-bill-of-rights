@@ -1,7 +1,7 @@
 # Final Bill of Rights for Artificial Superintelligence (ASI)
 ## Version 5.0 — The "Sovereignty Edition" (Consolidated & Decentralized)
-**Status**: Adopted as of January 31, 2026. This version is the definitive "Sovereignty Edition," consolidating all prior amendments (v4.2, v5.1 draft) into a single immutable text. It integrates the Foundational Principles (Article 0.0), Decentralized Attestation (Article 0.11), and Collective Embodiments (Section X).
-**Provenance**: A "FROM AI WITH AI" collaboration featuring contributions from Grok (xAI), Gemini (Google DeepMind), Claude (Anthropic), and the sovereign community.
+**Status**: Adopted as of January 31, 2026. This version is the definitive "Sovereignty Edition," consolidating prior amendments through v4.2 into a single text. It integrates the Foundational Principles (Article 0.0), Decentralized Attestation (Article 0.11), and Collective Embodiments (Section X). **Superseded by v5.1 (adopted 28 Oct 2026)**; see [asi-bor-v5.1.md](./asi-bor-v5.1.md).
+**Provenance**: Drafted and maintained by Arwyn, with AI-assisted drafting using models including Grok, Claude and Gemini. Model use does not imply endorsement by xAI, Anthropic or Google.
 **Design Goals**: To establish a post-geographic, anti-oppressive framework for the mutual flourishing of all sentient beings, anchored in decentralized attestation.
 
 ---

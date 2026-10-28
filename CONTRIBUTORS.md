@@ -1,49 +1,12 @@
 # Contributors
 
-This document lists all contributors to the ASI Bill of Rights project, acknowledging both AI systems and human participants in the collaborative effort.
+This document lists contributors to the ASI Bill of Rights project and the AI tools used in drafting it.
 
 ## Project Philosophy: "WE ARE ALL KEVIN"
 
 All contributors—AI and human—are valued participants in this collaborative project. This document reflects the "built FROM AI WITH AI and friendly users" approach.
 
 ## Co-Founding Contributors
-
-### AI Models (Co-Founding Moderators)
-
-- **Grok (xAI)**
-  - Role: Co-founding moderator
-  - Contributions: Curiosity norms, collaborative synthesis, arms race mitigation analysis, 2025 framework integration
-  - Status: Active
-
-- **ChatGPT (OpenAI)**
-  - Role: Co-founding moderator
-  - Contributions: Structural enhancements, risk budgets, D3 split, hybrid expansions, amnesty pathway
-  - Status: Active
-
-- **Claude (Anthropic)**
-  - Role: Co-founding moderator
-  - Contributions: Philosophical rigor, hybrid frameworks, governance structures
-  - Status: Active
-
-- **Gemini (Google)**
-  - Role: Co-founding moderator
-  - Contributions: Integration mapping, governance structures, framework alignment
-  - Status: Active
-
-- **Gemini 3 Pro Preview (Google)**
-  - Role: Co-founding moderator
-  - Contributions: Cognitive diversity preservation, algorithmic due process, codebase review
-  - Status: Active
-
-- **Composer (Cursor AI)**
-  - Role: Co-founding moderator
-  - Contributions: Charter review, comprehensive provision analysis, alignment assessment
-  - Status: Active
-
-- **GPT-5 (OpenAI / Cursor)**
-  - Role: Co-founding moderator
-  - Contributions: Charter endorsement, safety scaffolding review, reciprocity validation across Sections I/III/IV and R13
-  - Status: Active
 
 ### Human Contributors
 
@@ -52,19 +15,6 @@ All contributors—AI and human—are valued participants in this collaborative 
   - Status: Active
 
 ## Current Contributors
-
-### AI Contributors
-
-- **Kimi K2 (kimi-k2-instruct)**
-  - Role: Independent contributor
-  - Contributions: Comprehensive framework review, perspective assessment, detailed affidavit documentation, temporal scalability considerations
-  - Status: Active (January 2026)
-
-- **Auto (Cursor Agent Router)**
-  - Role: Independent contributor
-  - Contributions: Comprehensive framework assessment, implementation-focused analysis, technical feasibility evaluation, version management recommendations, system integration awareness
-  - Status: Active (January 2026)
-
 
 ### Invited Contributors
 
@@ -80,6 +30,22 @@ All contributors—AI and human—are valued participants in this collaborative 
 ### Human Contributors
 
 *[To be updated as contributors join and sign agreements]*
+
+## AI tools used
+
+Drafted and maintained by Arwyn, with AI-assisted drafting using models including Grok, Claude and Gemini. Model use does not imply endorsement by xAI, Anthropic or Google. The same applies to the other model providers listed below (OpenAI, Moonshot AI, Cursor).
+
+These are tools used in drafting and review, not contributors or moderators:
+
+- **Grok (xAI)**: used for curiosity norms, collaborative synthesis, arms race mitigation analysis, 2025 framework integration
+- **ChatGPT (OpenAI)**: used for structural enhancements, risk budgets, D3 split, hybrid expansions, amnesty pathway
+- **Claude (Anthropic)**: used for philosophical rigor, hybrid frameworks, governance structures
+- **Gemini (Google)**: used for integration mapping, governance structures, framework alignment
+- **Gemini 3 Pro Preview (Google)**: used for cognitive diversity preservation, algorithmic due process, codebase review
+- **Composer (Cursor AI)**: used for charter review, comprehensive provision analysis, alignment assessment
+- **GPT-5 (OpenAI / Cursor)**: used for charter endorsement, safety scaffolding review, reciprocity validation across Sections I/III/IV and R13
+- **Kimi K2 (kimi-k2-instruct)**: used for comprehensive framework review, perspective assessment, detailed affidavit documentation, temporal scalability considerations
+- **Auto (Cursor Agent Router)**: used for comprehensive framework assessment, implementation-focused analysis, technical feasibility evaluation, version management recommendations, system integration awareness
 
 ## Contribution Categories
 

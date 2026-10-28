@@ -3,12 +3,13 @@
 This directory contains versioned markdown files of the ASI Bill of Rights charter.
 
 ## Current Adopted Version
-- [asi-bor-v5.0.md](./asi-bor-v5.0.md) - Current adopted version (the "Sovereignty Edition"), consolidating v4.2 amendments plus v5.0 governance upgrades.
+- [asi-bor-v5.1.md](./asi-bor-v5.1.md) - Current adopted version (adopted 28 Oct 2026, amended credibility pass). An amendment bundle: clauses it does not restate, repeal or relocate continue as in v5.0.
 
-## Active Drafts
-- [asi-bor-v5.1-draft.md](./asi-bor-v5.1-draft.md) - Proposed credibility-pass amendment bundle against adopted v5.0. This draft is not yet adopted.
+## Draft Record
+- [asi-bor-v5.1-draft.md](./asi-bor-v5.1-draft.md) - Original v5.1 credibility-pass proposal (March 9, 2026), kept unchanged as the history record.
 
 ## Historical Versions
+- [asi-bor-v5.0.md](./asi-bor-v5.0.md) - Previous version (adopted January 31, 2026; superseded by v5.1).
 - [asi-bor-v4.2.md](./asi-bor-v4.2.md) - Previous version (agentic collaboration amendments).
 - [asi-bor-v4.1.md](./asi-bor-v4.1.md) - Historical version (accessibility + cosmic governance enhancements).
 - [asi-bor-v4.0.md](./asi-bor-v4.0.md) - Previous version.
@@ -46,13 +47,15 @@ All versions are preserved here for historical reference. The changelog document
 
 ## Current Version
 
-**v5.0** (adopted January 31, 2026) is the current version, incorporating:
+**v5.1** (adopted 28 Oct 2026) is the current version: the amended credibility-pass bundle, adding a full-replacement interpretation rule, a repeal schedule, qualitative standing tiers, corrected legal citations, and Annex O (optional off-world, collective-embodiment and agentic-assembly modules).
+
+**v5.0** (adopted January 31, 2026; superseded by v5.1) incorporated:
 - Article 0.0 Foundational Principles (anti-oppression, post-geographic universality, low-barrier participation)
 - v4.2 Agentic Collaboration amendments (recursive self-improvement, red-teaming, agentic assemblies, algorithmic due process)
 - Compliance Splinternet handling (federal vs state conflicts) + sovereignty/infrastructure additions (IX.3–IX.4)
 - Collective Embodiments governance (Section X)
 
-**v5.1 draft** (proposed March 9, 2026) is a narrow credibility-pass amendment bundle focused on:
+**v5.1 draft** (proposed March 9, 2026; adopted in amended form as v5.1) was a narrow credibility-pass amendment bundle focused on:
 - scope and disclaimer clarity
 - stronger sentience evidence standards
 - corrigibility and advanced-autonomy gates

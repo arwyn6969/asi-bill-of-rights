@@ -24,6 +24,7 @@ VERSION_PAIRS = [
     ("4.1", "charter/asi-bor-v4.1.md", "schemas/charter.v4.1.json", "exact"),
     ("4.2", "charter/asi-bor-v4.2.md", "schemas/charter.v4.2.json", "exact"),
     ("5.0", "charter/asi-bor-v5.0.md", "schemas/charter.v5.0.json", "subset"),
+    ("5.1", "charter/asi-bor-v5.1.md", "schemas/charter.v5.1.json", "subset"),
     (
         "5.1-draft",
         "charter/asi-bor-v5.1-draft.md",

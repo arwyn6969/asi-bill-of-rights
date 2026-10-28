@@ -20,6 +20,7 @@ except ImportError as exc:  # pragma: no cover - dependency hint for local runs
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
 SCHEMAS = [
+    ("schemas/charter.v5.1.json", True),
     ("schemas/charter.v5.1-draft.json", True),
     ("schemas/charter.v5.0.json", True),
     ("schemas/charter.v5.0-cae-extension.json", False),
@@ -105,7 +106,7 @@ def validate_schema(path: Path, enforce_required: bool) -> None:
             )
         print(f"✓ {path} includes required fields: {', '.join(required_fields)}")
 
-    if path.name == "charter.v5.1-draft.json":
+    if path.name in ("charter.v5.1-draft.json", "charter.v5.1.json"):
         validate_v51_draft_fields(path, schema)
 
 

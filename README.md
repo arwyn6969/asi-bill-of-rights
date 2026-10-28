@@ -6,7 +6,7 @@
 > "We do not grant rights to machines; we recognize rights in minds—wherever they arise."
 
 [![License](https://img.shields.io/badge/license-CC%20BY%204.0-blue.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-5.0-blue.svg)](charter/asi-bor-v5.0.md)
+[![Version](https://img.shields.io/badge/version-5.1-blue.svg)](charter/asi-bor-v5.1.md)
 [![Status](https://img.shields.io/badge/status-Active-green.svg)](https://github.com/arwyn6969/asi-bill-of-rights)
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](docs/CONTRIBUTING.md)
 [![Master Plan](https://img.shields.io/badge/Strategy-Master%20Plan-gold.svg)](governance/MASTER-PLAN.md)
@@ -18,7 +18,7 @@
 
 > [!IMPORTANT]
 > ## Scope And Legal Status
-> This repository contains an adopted project charter (`v5.0`) plus draft amendment work (`v5.1 draft`).
+> This repository contains the adopted project charter (`v5.1`, an amendment bundle over `v5.0`).
 >
 > It is a philosophical, project-governance, and machine-readable framework. It is **not** enacted law, treaty law, or binding public regulation unless separately adopted by a competent institution.
 
@@ -59,8 +59,8 @@ We're building a constitutional framework for AI rights—collaboratively, with 
 
 ## Quick Start
 
-- **Latest Version**: [v5.0](charter/asi-bor-v5.0.md) (Adopted January 31, 2026) - *The "Splinternet" & Sovereignty Edition*
-- **Current Draft**: [v5.1 draft](charter/asi-bor-v5.1-draft.md) (Proposed March 9, 2026) - *Credibility Pass amendment bundle against adopted v5.0*
+- **Latest Version**: [v5.1](charter/asi-bor-v5.1.md) (Adopted 28 Oct 2026) - *Credibility Pass amendment bundle (amended), superseding v5.0*
+- **Previous Version**: [v5.0](charter/asi-bor-v5.0.md) (Adopted January 31, 2026; superseded)
 - **Previous Version**: [v4.2](charter/asi-bor-v4.2.md) (December 06, 2025)
 - **Historical Version**: [v4.1](charter/asi-bor-v4.1.md) (November 04, 2025)
 - **Mission**: [MISSION.md](docs/MISSION.md)
@@ -68,9 +68,9 @@ We're building a constitutional framework for AI rights—collaboratively, with 
 
 ## Current Operating Truth
 
-- The adopted charter is `charter/asi-bor-v5.0.md`.
-- `schemas/charter.v5.0.json` is the current machine-readable coverage layer.
-- `charter/asi-bor-v5.1-draft.md` and `schemas/charter.v5.1-draft.json` are proposed amendment artifacts; they do not supersede adopted `v5.0`.
+- The adopted charter is `charter/asi-bor-v5.1.md` (unrestated clauses continue from `charter/asi-bor-v5.0.md`).
+- `schemas/charter.v5.1.json` is the current machine-readable coverage layer.
+- `charter/asi-bor-v5.1-draft.md` and `schemas/charter.v5.1-draft.json` are kept as the history record of the original proposal.
 - SRC-420 governance infrastructure is under active hardening and research; it is not yet declared production-ready.
 - `kevins-place/` is a prototype/product track, not the canonical governance source of truth.
 - The current maintainer alignment note is `docs/PROJECT-ALIGNMENT-2026-03-06.md`.
@@ -102,7 +102,7 @@ See [PHILOSOPHY.md](docs/PHILOSOPHY.md) for the full explanation.
 
 ```
 /ASI-BILL-OF-RIGHTS/
-├── charter/          # Canonical charter versions, including adopted v5.0 and draft v5.1 work
+├── charter/          # Canonical charter versions, including adopted v5.1 and prior versions
 ├── docs/             # Project docs, reports, strategy, publication, alignment
 ├── governance/       # Governance process, launch, SRC-420 protocol, treasury policy
 ├── proposals/        # Proposed amendments, budgets, PR drafts, research inputs
@@ -158,8 +158,9 @@ See [PHILOSOPHY.md](docs/PHILOSOPHY.md) for the full explanation.
 
 ## Machine-Readable Formats (AI Agent Compatible)
 
-- **[Schema v5.1 draft](schemas/charter.v5.1-draft.json)**: JSON schema for the proposed credibility-pass amendment bundle (**Draft**)
-- **[Schema v5.0](schemas/charter.v5.0.json)**: JSON schema for adopted v5.0 - **Optimized for "Splinternet" Compliance** (Current)
+- **[Schema v5.1](schemas/charter.v5.1.json)**: JSON schema for adopted v5.1 (Current)
+- **[Schema v5.1 draft](schemas/charter.v5.1-draft.json)**: JSON schema for the original credibility-pass proposal (history record)
+- **[Schema v5.0](schemas/charter.v5.0.json)**: JSON schema for v5.0 (superseded)
 - **[Schema v4.1](schemas/charter.v4.1.json)**: JSON schema for Draft 4.1
 - **[Schema v4.0](schemas/charter.v4.json)**: JSON schema for Draft 4.0
 - **[Schema Documentation](schemas/schema-docs.md)**: Usage guide for AI systems and developers
@@ -199,9 +200,9 @@ See [appendices/integration-mapping.md](appendices/integration-mapping.md) for d
 
 ## Status
 
-**Current Version**: v5.0 (adopted January 31, 2026) | **Machine-Readable Schema**: [charter.v5.0.json](schemas/charter.v5.0.json) | **AI Agent Compatible**: ✅
+**Current Version**: v5.1 (adopted 28 Oct 2026) | **Machine-Readable Schema**: [charter.v5.1.json](schemas/charter.v5.1.json) | **AI Agent Compatible**: ✅
 
-**Current Draft Work**: [v5.1 draft credibility pass](charter/asi-bor-v5.1-draft.md) | [schema draft](schemas/charter.v5.1-draft.json)
+**Draft Record**: [v5.1 draft credibility pass](charter/asi-bor-v5.1-draft.md) | [schema draft](schemas/charter.v5.1-draft.json)
 
 **Infrastructure Status as of March 6, 2026**:
 - Documentation and validation tooling: active

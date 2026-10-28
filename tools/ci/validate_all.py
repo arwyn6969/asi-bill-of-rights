@@ -55,6 +55,10 @@ def main() -> None:
             "v5.1 Draft Schema Profile",
             [sys.executable, str(v51_draft_validator)],
         )
+        overall_ok &= run_check(
+            "v5.1 Adopted Schema Profile",
+            [sys.executable, str(v51_draft_validator), "charter.v5.1.json"],
+        )
     else:
         print("\n=== v5.1 Draft Schema Profile ===")
         print("ℹ️  Skipping v5.1 draft schema profile (validator not found).")
